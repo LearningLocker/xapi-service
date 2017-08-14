@@ -1,0 +1,18 @@
+languages: typescript
+files:
+  - src/**/*
+exclude:
+  - src/*.ts
+  - src/models/*.ts
+  - src/service/index.ts
+  - src/memoryModelsRepo/index.ts
+  - src/mongoModelsRepo/index.ts
+  - src/s3StorageRepo/index.ts
+  - src/localStorageRepo/index.ts
+  - src/serviceFactory/**/*.ts
+  - src/repoFactory/**/*.ts
+min-lines: 7
+min-tokens: 50
+debug: false
+skip-comments: true
+skip-regex: (import [\'\w\*\{ \,\.\/\}]+\;*)|(\} from [\'\w\*\{ \,\.\/\}]+\;*)|( {2}[A-Z\d_]+\,)|(export\sdefault\s\(config:\sConfig\)\s=>\s{)|( +return\sasync\s\(opts:\s\w+\):\sPromise<[^>]+>\s=>\s{)|(it\([\'\"\`][\w\s]+[\'\"\`],\s(async)?\s)
