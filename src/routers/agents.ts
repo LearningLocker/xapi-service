@@ -1,15 +1,16 @@
 /* tslint:disable:max-file-line-count */
 import { S3 } from 'aws-sdk';
 import { MongoClient } from 'mongodb';
-import expressPresenter from 'xapi-state/dist/expressPresenter';
-import fetchAuthRepo from 'xapi-state/dist/fetchAuthRepo';
-import localStorageRepo from 'xapi-state/dist/localStorageRepo';
-import memoryModelsRepo from 'xapi-state/dist/memoryModelsRepo';
-import mongoModelsRepo from 'xapi-state/dist/mongoModelsRepo';
-import s3StorageRepo from 'xapi-state/dist/s3StorageRepo';
-import service from 'xapi-state/dist/service';
-import testAuthRepo from 'xapi-state/dist/testAuthRepo';
-import enTranslator from 'xapi-state/dist/translatorFactory/en';
+import expressPresenter from 'xapi-agents/dist/expressPresenter';
+import fetchAuthRepo from 'xapi-agents/dist/fetchAuthRepo';
+import localStorageRepo from 'xapi-agents/dist/localStorageRepo';
+import memoryModelsRepo from 'xapi-agents/dist/memoryModelsRepo';
+import AgentProfile from 'xapi-agents/dist/models/Profile';
+import mongoModelsRepo from 'xapi-agents/dist/mongoModelsRepo';
+import s3StorageRepo from 'xapi-agents/dist/s3StorageRepo';
+import service from 'xapi-agents/dist/service';
+import testAuthRepo from 'xapi-agents/dist/testAuthRepo';
+import enTranslator from 'xapi-agents/dist/translatorFactory/en';
 import config from '../config';
 import logger from '../logger';
 
@@ -32,7 +33,7 @@ const getModelsRepo = () => {
       });
     default: case 'memory':
       return memoryModelsRepo({
-        state: { agentProfiles: [], personas: [], personaIdentifiers: [] },
+        state: { agentProfiles: [] as AgentProfile[] },
       });
   }
 };

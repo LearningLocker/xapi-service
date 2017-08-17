@@ -5,6 +5,7 @@ import expressPresenter from 'xapi-activities/dist/expressPresenter';
 import fetchAuthRepo from 'xapi-activities/dist/fetchAuthRepo';
 import localStorageRepo from 'xapi-activities/dist/localStorageRepo';
 import memoryModelsRepo from 'xapi-activities/dist/memoryModelsRepo';
+import ActivityProfile from 'xapi-activities/dist/models/Profile';
 import mongoModelsRepo from 'xapi-activities/dist/mongoModelsRepo';
 import s3StorageRepo from 'xapi-activities/dist/s3StorageRepo';
 import service from 'xapi-activities/dist/service';
@@ -32,7 +33,7 @@ const getModelsRepo = () => {
       });
     default: case 'memory':
       return memoryModelsRepo({
-        state: { activityProfiles: [] },
+        state: { activityProfiles: [] as ActivityProfile[] },
       });
   }
 };
