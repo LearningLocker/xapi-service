@@ -2,14 +2,32 @@
 import { S3 } from 'aws-sdk';
 import { MongoClient } from 'mongodb';
 import expressPresenter from 'xapi-statements/dist/expressPresenter';
+import fetchAuthRepo from 'xapi-statements/dist/fetchAuthRepo';
 import localStorageRepo from 'xapi-statements/dist/localStorageRepo';
 import memoryModelsRepo from 'xapi-statements/dist/memoryModelsRepo';
+import mongoAuthRepo from 'xapi-statements/dist/mongoAuthRepo';
 import mongoModelsRepo from 'xapi-statements/dist/mongoModelsRepo';
 import s3StorageRepo from 'xapi-statements/dist/s3StorageRepo';
 import service from 'xapi-statements/dist/service';
+import testAuthRepo from 'xapi-statements/dist/testAuthRepo';
 import enTranslator from 'xapi-statements/dist/translatorFactory/en';
 import config from '../config';
 import logger from '../logger';
+
+const getAuthRepo = () => {
+  switch (config.repoFactory.authRepoName) {
+    case 'test':
+      return testAuthRepo({});
+    case 'fetch':
+      return fetchAuthRepo({
+        llClientInfoEndpoint: config.fetchAuthRepo.llClientInfoEndpoint,
+      });
+    default: case 'mongo':
+      return mongoAuthRepo({
+        db: MongoClient.connect(config.mongoModelsRepo.url),
+      });
+  }
+};
 
 const getModelsRepo = () => {
   switch (config.repoFactory.modelsRepoName) {
@@ -45,10 +63,12 @@ const getStorageRepo = () => {
 };
 
 const getRepoFacade = () => {
+  const authRepo = getAuthRepo();
   const modelsRepo = getModelsRepo();
   const storageRepo = getStorageRepo();
 
   return {
+    ...authRepo,
     ...modelsRepo,
     ...storageRepo,
 

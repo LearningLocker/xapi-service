@@ -22,6 +22,7 @@ export default {
     morganDirectory: getStringOption(process.env.EXPRESS_MORGAN_DIRECTORY, accessLogsDir),
     port: expressPort,
   },
+
   fetchAuthRepo: {
     llClientInfoEndpoint: getStringOption(process.env.LL_CLIENT_INFO_ENDPOINT, demoAuth),
   },
@@ -33,7 +34,7 @@ export default {
     url: getStringOption(process.env.MONGO_URL, 'mongodb://localhost:27017/xapistate'),
   },
   repoFactory: {
-    authRepoName: getStringOption(process.env.AUTH_REPO, 'fetch'),
+    authRepoName: getStringOption(process.env.AUTH_REPO, 'mongo'),
     modelsRepoName: getStringOption(process.env.MODELS_REPO, 'mongo'),
     storageRepoName: getStringOption(process.env.STORAGE_REPO, 'local'),
   },
