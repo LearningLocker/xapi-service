@@ -11,6 +11,7 @@ import s3StorageRepo from 'xapi-activities/dist/s3StorageRepo';
 import service from 'xapi-activities/dist/service';
 import testAuthRepo from 'xapi-activities/dist/testAuthRepo';
 import enTranslator from 'xapi-activities/dist/translatorFactory/en';
+import mongoAuthRepo from 'xapi-agents/dist/mongoAuthRepo';
 import config from '../config';
 import logger from '../logger';
 
@@ -18,9 +19,13 @@ const getAuthRepo = () => {
   switch (config.repoFactory.authRepoName) {
     case 'test':
       return testAuthRepo({});
-    default: case 'fetch':
+    case 'fetch':
       return fetchAuthRepo({
         llClientInfoEndpoint: config.fetchAuthRepo.llClientInfoEndpoint,
+      });
+    default: case 'mongo':
+      return mongoAuthRepo({
+        db: MongoClient.connect(config.mongoModelsRepo.url),
       });
   }
 };

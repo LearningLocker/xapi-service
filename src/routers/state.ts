@@ -1,6 +1,7 @@
 /* tslint:disable:max-file-line-count */
 import { S3 } from 'aws-sdk';
 import { MongoClient } from 'mongodb';
+import mongoAuthRepo from 'xapi-agents/dist/mongoAuthRepo';
 import expressPresenter from 'xapi-state/dist/expressPresenter';
 import fetchAuthRepo from 'xapi-state/dist/fetchAuthRepo';
 import localStorageRepo from 'xapi-state/dist/localStorageRepo';
@@ -17,9 +18,13 @@ const getAuthRepo = () => {
   switch (config.repoFactory.authRepoName) {
     case 'test':
       return testAuthRepo({});
-    default: case 'fetch':
+    case 'fetch':
       return fetchAuthRepo({
         llClientInfoEndpoint: config.fetchAuthRepo.llClientInfoEndpoint,
+      });
+    default: case 'mongo':
+      return mongoAuthRepo({
+        db: MongoClient.connect(config.mongoModelsRepo.url),
       });
   }
 };
