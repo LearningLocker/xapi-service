@@ -18,7 +18,6 @@ before_script:
 script:
   - npm run build
   - npm run lint -- -c tslint.travis.json
-  - npm run duplication -- --limit=0.01
 
 after_script:
   - pkill mongod
