@@ -17,8 +17,6 @@ before_script:
 
 script:
   - npm run build
-  - npm run cover-memory
-  - npm run cover-mongo
   - npm run lint -- -c tslint.travis.json
   - npm run duplication -- --limit=0.01
 
