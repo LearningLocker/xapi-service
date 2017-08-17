@@ -6,6 +6,7 @@ import fetchAuthRepo from 'xapi-agents/dist/fetchAuthRepo';
 import localStorageRepo from 'xapi-agents/dist/localStorageRepo';
 import memoryModelsRepo from 'xapi-agents/dist/memoryModelsRepo';
 import AgentProfile from 'xapi-agents/dist/models/Profile';
+import mongoAuthRepo from 'xapi-agents/dist/mongoAuthRepo';
 import mongoModelsRepo from 'xapi-agents/dist/mongoModelsRepo';
 import s3StorageRepo from 'xapi-agents/dist/s3StorageRepo';
 import service from 'xapi-agents/dist/service';
@@ -18,9 +19,13 @@ const getAuthRepo = () => {
   switch (config.repoFactory.authRepoName) {
     case 'test':
       return testAuthRepo({});
-    default: case 'fetch':
+    case 'fetch':
       return fetchAuthRepo({
         llClientInfoEndpoint: config.fetchAuthRepo.llClientInfoEndpoint,
+      });
+    default: case 'mongo':
+      return mongoAuthRepo({
+        db: MongoClient.connect(config.mongoModelsRepo.url),
       });
   }
 };

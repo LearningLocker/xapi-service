@@ -40,7 +40,7 @@
     "npm": "^5.3.0",
     "source-map-support": "^0.4.11",
     "xapi-activities": "git+https://git@github.com/LearningLocker/xapi-activities.git",
-    "xapi-agents": "git+https://git@github.com/LearningLocker/xapi-state.git",
+    "xapi-agents": "git+https://git@github.com/LearningLocker/xapi-agents.git",
     "xapi-state": "git+https://git@github.com/LearningLocker/xapi-state.git",
     "xapi-statements": "git+https://git@github.com/LearningLocker/xapi-statements.git"
   },
