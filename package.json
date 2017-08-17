@@ -22,7 +22,7 @@
     "cover-memory": "nyc --lines 100 --check-coverage --exclude '(dist/fetchAuthRepo|dist/mongoModelsRepo|dist/s3StorageRepo|dist/config.js)' npm run test-memory",
     "cover-mongo": "nyc --lines 100 --check-coverage --exclude '(dist/fetchAuthRepo|dist/memoryModelsRepo|dist/s3StorageRepo|dist/config.js)' npm run test-mongo",
     "clean": "rm -rf dist",
-    "lint": "./node_modules/tslint/bin/tslint --project ./tsconfig.json -c ./tslint.json",
+    "lint": "./node_modules/tslint/bin/tslint -p ./tsconfig.json",
     "duplication": "./node_modules/jscpd/bin/jscpd"
   },
   "engines": {
