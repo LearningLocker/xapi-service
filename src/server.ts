@@ -5,7 +5,7 @@ import * as express from 'express';
 import config from './config';
 import logger from './logger';
 import activitiesRouter from './routers/activities';
-// import agentsRouter from './routers/agents';
+import agentsRouter from './routers/agents';
 import stateRouter from './routers/state';
 import statementsRouter from './routers/statements';
 
@@ -22,7 +22,7 @@ const handleExit = (event: string) => {
 };
 
 app.use(statementsRouter);
-// app.use(agentsRouter);
+app.use(agentsRouter);
 app.use(activitiesRouter);
 app.use(stateRouter);
 
