@@ -54,6 +54,7 @@
     "@types/winston": "^2.3.3",
     "jscpd": "git://github.com/ryansmith94/jscpd.git#prepublish",
     "tslint": "^5.5.0",
+    "tslint-consistent-codestyle": "^1.6.0",
     "tslint-immutable": "^4.0.2",
     "typescript": "^2.0.0"
   }
