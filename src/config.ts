@@ -21,6 +21,7 @@ export default {
     bodyParserLimit: getStringOption(process.env.EXPRESS_BODY_PARSER_LIMIT, '5mb'),
     morganDirectory: getStringOption(process.env.EXPRESS_MORGAN_DIRECTORY, accessLogsDir),
     port: expressPort,
+    xAPIPrefix: getStringOption(process.env.XAPI_PREFIX, '/data'),
   },
 
   fetchAuthRepo: {

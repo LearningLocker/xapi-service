@@ -21,12 +21,18 @@ const handleExit = (event: string) => {
   };
 };
 
-app.use(statementsRouter);
-app.use(agentsRouter);
-app.use(activitiesRouter);
-app.use(stateRouter);
+app.use(config.express.xAPIPrefix, [
+  statementsRouter,
+  agentsRouter,
+  activitiesRouter,
+  stateRouter,
+]);
 
 app.listen(config.express.port, () => {
+  const port80 = 80;
+  if (config.express.port === port80) {
+    logger.warning('Express port set to 80; this will not work on non-root Node processes');
+  }
   logger.info(`Listening on port ${config.express.port}`);
   if (process.send !== undefined) {
     logger.info('Process ready');
