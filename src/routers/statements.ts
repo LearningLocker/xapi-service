@@ -1,18 +1,32 @@
 /* tslint:disable:max-file-line-count */
 import { S3 } from 'aws-sdk';
 import { MongoClient } from 'mongodb';
+import * as redis from 'redis';
 import expressPresenter from 'xapi-statements/dist/expressPresenter';
 import fetchAuthRepo from 'xapi-statements/dist/fetchAuthRepo';
 import localStorageRepo from 'xapi-statements/dist/localStorageRepo';
 import memoryModelsRepo from 'xapi-statements/dist/memoryModelsRepo';
 import mongoAuthRepo from 'xapi-statements/dist/mongoAuthRepo';
 import mongoModelsRepo from 'xapi-statements/dist/mongoModelsRepo';
+import redisEventsRepo from 'xapi-statements/dist/redisEventsRepo';
 import s3StorageRepo from 'xapi-statements/dist/s3StorageRepo';
 import service from 'xapi-statements/dist/service';
 import testAuthRepo from 'xapi-statements/dist/testAuthRepo';
 import enTranslator from 'xapi-statements/dist/translatorFactory/en';
 import config from '../config';
 import logger from '../logger';
+
+const getEventsRepo = () => {
+  switch (config.repoFactory.authRepoName) {
+    default: case 'redis':
+      return redisEventsRepo({
+        client: redis.createClient({
+          url: config.redis.url,
+        }),
+        prefix: config.redis.prefix,
+      });
+  }
+};
 
 const getAuthRepo = () => {
   switch (config.repoFactory.authRepoName) {
@@ -63,26 +77,37 @@ const getStorageRepo = () => {
 };
 
 const getRepoFacade = () => {
+  const eventsRepo = getEventsRepo();
   const authRepo = getAuthRepo();
   const modelsRepo = getModelsRepo();
   const storageRepo = getStorageRepo();
 
   return {
+    ...eventsRepo,
     ...authRepo,
     ...modelsRepo,
     ...storageRepo,
 
     clearRepo: async () => {
-      await modelsRepo.clearRepo();
-      await storageRepo.clearRepo();
+      await Promise.all([
+        eventsRepo.clearRepo(),
+        modelsRepo.clearRepo(),
+        storageRepo.clearRepo(),
+      ]);
     },
     migrate: async () => {
-      await modelsRepo.migrate();
-      await storageRepo.migrate();
+      await Promise.all([
+        eventsRepo.migrate(),
+        modelsRepo.migrate(),
+        storageRepo.migrate(),
+      ]);
     },
     rollback: async () => {
-      await modelsRepo.rollback();
-      await storageRepo.rollback();
+      await Promise.all([
+        eventsRepo.rollback(),
+        modelsRepo.rollback(),
+        storageRepo.rollback(),
+      ]);
     },
   };
 };

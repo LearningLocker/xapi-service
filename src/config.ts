@@ -33,8 +33,13 @@ export default {
   mongoModelsRepo: {
     url: getStringOption(process.env.MONGO_URL, 'mongodb://localhost:27017/xapistate'),
   },
+  redis: {
+    prefix: getStringOption(process.env.REDIS_PREFIX, 'xapistatements'),
+    url: getStringOption(process.env.REDIS_URL, 'redis://127.0.0.1:6379/0'),
+  },
   repoFactory: {
     authRepoName: getStringOption(process.env.AUTH_REPO, 'mongo'),
+    eventsRepoName: getStringOption(process.env.EVENTS_REPO, 'redis'),
     modelsRepoName: getStringOption(process.env.MODELS_REPO, 'mongo'),
     storageRepoName: getStringOption(process.env.STORAGE_REPO, 'local'),
   },
