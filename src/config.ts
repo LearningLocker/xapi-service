@@ -57,6 +57,7 @@ export default {
   },
   statementsService: {
     awaitUpdates: getBooleanOption(process.env.STATEMENTS_SERVICE_AWAIT_UODATES),
+    enableActivityUpdates: getBooleanOption(process.env.STATEMENTS_SERVICE_UPDATE_ACTIVITIES),
     enableAttachmentCreation: getBooleanOption(process.env.STATEMENTS_SERVICE_CREATE_ATTACHMENTS),
     enableAttachmentValidation: getBooleanOption(process.env.STATEMENTS_SERVICE_CHECK_ATTACHMENTS),
     enableConflictChecks: getBooleanOption(process.env.STATEMENTS_SERVICE_CHECK_CONFLICTS),

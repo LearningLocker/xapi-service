@@ -51,7 +51,7 @@ const getModelsRepo = () => {
       });
     default: case 'memory':
       return memoryModelsRepo({
-        state: { statements: [] },
+        state: { statements: [], fullActivities: [] },
       });
   }
 };
@@ -123,6 +123,7 @@ const getTranslatorFacade = () => {
 const repoFacade = getRepoFacade();
 const serviceFacade = service({
   awaitUpdates: config.statementsService.awaitUpdates,
+  enableActivityUpdates: config.statementsService.enableActivityUpdates,
   enableAttachmentCreation: config.statementsService.enableAttachmentCreation,
   enableAttachmentValidation: config.statementsService.enableAttachmentValidation,
   enableConflictChecks: config.statementsService.enableConflictChecks,
