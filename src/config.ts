@@ -35,7 +35,7 @@ export default {
     url: getStringOption(process.env.MONGO_URL, 'mongodb://localhost:27017/xapistate'),
   },
   redis: {
-    prefix: getStringOption(process.env.REDIS_PREFIX, 'xapistatements'),
+    prefix: getStringOption(process.env.REDIS_PREFIX, 'LEARNINGLOCKER'),
     url: getStringOption(process.env.REDIS_URL, 'redis://127.0.0.1:6379/0'),
   },
   repoFactory: {
