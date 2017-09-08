@@ -54,6 +54,7 @@ export default {
       sslEnabled: true,
     } as S3.ClientConfiguration,
     bucketName: getStringOption(process.env.FS_S3_BUCKET, 'xapi-service'),
+    subFolder: getStringOption(process.env.FS_S3_BUCKET_SUBFOLDER, '/llv2'),
   },
   statementsService: {
     awaitUpdates: getBooleanOption(process.env.STATEMENTS_SERVICE_AWAIT_UODATES),
@@ -65,12 +66,6 @@ export default {
     enableStatementCreation: getBooleanOption(process.env.STATEMENTS_SERVICE_CREATE_STATEMENTS),
     enableVoiding: getBooleanOption(process.env.STATEMENTS_SERVICE_UPDATE_VOIDS),
     enableVoidingChecks: getBooleanOption(process.env.STATEMENTS_SERVICE_CHECK_VOIDS),
-  },
-  storageSubFolders: {
-    activities: getStringOption(process.env.SUB_FOLDER_ACTIVITIES, '/activities'),
-    agents: getStringOption(process.env.SUB_FOLDER_AGENTS, '/agents'),
-    state: getStringOption(process.env.SUB_FOLDER_STATE, '/state'),
-    statements: getStringOption(process.env.SUB_FOLDER_STATEMENTS, '/statements'),
   },
   winston: {
     cloudWatch: {

@@ -62,15 +62,12 @@ const getStorageRepo = () => {
       return s3StorageRepo({
         bucketName: config.s3StorageRepo.bucketName,
         client: new S3(config.s3StorageRepo.awsConfig),
-        subFolder: config.storageSubFolders.statements,
+        subFolder: config.s3StorageRepo.subFolder,
       });
     default:
     case 'local': {
-      const statementsStorageDir = (
-        `${config.localStorageRepo.storageDir}/${config.storageSubFolders.statements}`
-      );
       return localStorageRepo({
-        storageDir: statementsStorageDir,
+        storageDir: config.localStorageRepo.storageDir,
       });
     }
   }
