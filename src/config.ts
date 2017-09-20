@@ -7,7 +7,7 @@ import getNumberOption from 'jscommons/dist/config/getNumberOption';
 import getStringOption from 'jscommons/dist/config/getStringOption';
 import * as os from 'os';
 
-const DEFAULT_EXPRESS_PORT = 80;
+const DEFAULT_EXPRESS_PORT = 8081;
 const DEFAULT_TIMEOUT_MS = 300000; // 5 minutes.
 
 const storageDir = `${process.cwd()}/storage`;
@@ -32,7 +32,7 @@ export default {
     storageDir: getStringOption(process.env.FS_LOCAL_STORAGE_DIR, storageDir),
   },
   mongoModelsRepo: {
-    url: getStringOption(process.env.MONGO_URL, 'mongodb://localhost:27017/xapistate'),
+    url: getStringOption(process.env.MONGO_URL, 'mongodb://localhost:27017/learninglocker_v2'),
   },
   redis: {
     prefix: getStringOption(process.env.REDIS_PREFIX, 'LEARNINGLOCKER'),
