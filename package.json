@@ -34,16 +34,16 @@
     "dotenv": "^4.0.0",
     "express": "^4.14.1",
     "install": "^0.10.1",
-    "jscommons": "git+https://git@github.com/HT2-Labs/jscommons.git",
+    "jscommons": "^1.0.1",
     "lodash": "^4.17.4",
     "mongodb": "^2.2.26",
     "npm": "^5.3.0",
     "redis": "^2.8.0",
     "source-map-support": "^0.4.11",
-    "xapi-activities": "git+https://git@github.com/LearningLocker/xapi-activities.git",
-    "xapi-agents": "git+https://git@github.com/LearningLocker/xapi-agents.git",
-    "xapi-state": "git+https://git@github.com/LearningLocker/xapi-state.git",
-    "xapi-statements": "git+https://git@github.com/LearningLocker/xapi-statements.git"
+    "xapi-activities": "^1.1.0",
+    "xapi-agents": "^1.1.1",
+    "xapi-state": "^1.1.2",
+    "xapi-statements": "^1.0.1"
   },
   "devDependencies": {
     "@types/dotenv": "^4.0.0",
