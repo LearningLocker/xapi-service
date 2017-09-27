@@ -9,10 +9,12 @@ before_install:
   - wget http://fastdl.mongodb.org/linux/mongodb-linux-x86_64-${MONGODB}.tgz
   - tar xzf mongodb-linux-x86_64-${MONGODB}.tgz
   - ${PWD}/mongodb-linux-x86_64-${MONGODB}/bin/mongod --version
+  - npm install -g greenkeeper-lockfile@1
 
 before_script:
   - mkdir ${PWD}/mongodb-linux-x86_64-${MONGODB}/data
   - ${PWD}/mongodb-linux-x86_64-${MONGODB}/bin/mongod --dbpath ${PWD}/mongodb-linux-x86_64-${MONGODB}/data --logpath ${PWD}/mongodb-linux-x86_64-${MONGODB}/mongodb.log --fork
+  - greenkeeper-lockfile-update
   - npm prune
 
 script:
@@ -25,3 +27,4 @@ after_script:
 after_success:
   - npm prune --production
   - npm run semantic-release
+  - greenkeeper-lockfile-upload
