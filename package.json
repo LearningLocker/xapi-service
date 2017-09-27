@@ -1,6 +1,6 @@
 {
   "name": "xapi-service",
-  "version": "1.0.0",
+  "version": "0.0.0-development",
   "description": "A service for the xAPI",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -9,21 +9,25 @@
     "type": "git",
     "url": "https://github.com/LearningLocker/xapi-service.git"
   },
+  "files": [
+    "dist",
+    ".env.example",
+    "package-lock.json"
+  ],
   "scripts": {
-    "build": "./node_modules/typescript/bin/tsc",
     "start": "node dist/index.js",
-    "test": "./node_modules/mocha/bin/mocha $(find dist -name '*.test.js') --timeout 6000",
-    "test-s3": "AUTH_REPO=test MODELS_REPO=memory STORAGE_REPO=s3 npm run test",
-    "test-mongo": "AUTH_REPO=test MODELS_REPO=mongo STORAGE_REPO=local npm run test",
-    "test-memory": "AUTH_REPO=test MODELS_REPO=memory STORAGE_REPO=local npm run test",
-    "migrate": "node dist/migrate.js",
-    "rollback": "node dist/rollback.js",
-    "cover-s3": "nyc --lines 100 --check-coverage --exclude '(dist/fetchAuthRepo|dist/mongoModelsRepo|dist/memoryStorageRepo|dist/config.js)' npm run test-s3",
-    "cover-memory": "nyc --lines 100 --check-coverage --exclude '(dist/fetchAuthRepo|dist/mongoModelsRepo|dist/s3StorageRepo|dist/config.js)' npm run test-memory",
-    "cover-mongo": "nyc --lines 100 --check-coverage --exclude '(dist/fetchAuthRepo|dist/memoryModelsRepo|dist/s3StorageRepo|dist/config.js)' npm run test-mongo",
+    "acp": "git add -A && npm run commit && git push",
+    "commit": "git-cz",
+    "build": "./node_modules/typescript/bin/tsc",
     "clean": "rm -rf dist",
     "lint": "./node_modules/tslint/bin/tslint -p ./tsconfig.json",
-    "duplication": "./node_modules/jscpd/bin/jscpd"
+    "duplication": "./node_modules/jscpd/bin/jscpd",
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
   },
   "engines": {
     "node": "^8.0.0",
@@ -34,16 +38,16 @@
     "dotenv": "^4.0.0",
     "express": "^4.14.1",
     "install": "^0.10.1",
-    "jscommons": "git+https://git@github.com/HT2-Labs/jscommons.git",
+    "jscommons": "^1.0.1",
     "lodash": "^4.17.4",
     "mongodb": "^2.2.26",
     "npm": "^5.3.0",
     "redis": "^2.8.0",
     "source-map-support": "^0.4.11",
-    "xapi-activities": "git+https://git@github.com/LearningLocker/xapi-activities.git",
-    "xapi-agents": "git+https://git@github.com/LearningLocker/xapi-agents.git",
-    "xapi-state": "git+https://git@github.com/LearningLocker/xapi-state.git",
-    "xapi-statements": "git+https://git@github.com/LearningLocker/xapi-statements.git"
+    "xapi-activities": "^1.1.0",
+    "xapi-agents": "^1.1.1",
+    "xapi-state": "^1.1.2",
+    "xapi-statements": "^1.0.1"
   },
   "devDependencies": {
     "@types/dotenv": "^4.0.0",
@@ -52,9 +56,12 @@
     "@types/mongodb": "^2.2.2",
     "@types/node": "^8.0.6",
     "@types/redis": "^2.6.0",
-    "@types/source-map-support": "^0.2.28",
+    "@types/source-map-support": "^0.4.0",
     "@types/winston": "^2.3.3",
+    "commitizen": "^2.9.6",
+    "cz-conventional-changelog": "^2.0.0",
     "jscpd": "git://github.com/ryansmith94/jscpd.git#prepublish",
+    "semantic-release": "^8.0.3",
     "tslint": "^5.5.0",
     "tslint-consistent-codestyle": "^1.6.0",
     "tslint-immutable": "^4.0.2",
