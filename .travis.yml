@@ -2,6 +2,9 @@ language: node_js
 node_js: node
 sudo: false
 
+notifications:
+  email: false
+
 env:
   - MONGODB=3.2.13
 
