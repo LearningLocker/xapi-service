@@ -23,6 +23,7 @@ before_script:
 script:
   - npm run build
   - npm run lint -- -c tslint.travis.json
+  - docker build -t "$DOCKER_REPO_SLUG:$TRAVIS_BRANCH" .;
 
 after_script:
   - pkill mongod
@@ -32,7 +33,6 @@ after_success:
   - npm run semantic-release
   - greenkeeper-lockfile-upload
   - if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then
-    docker build -t "$DOCKER_REPO_SLUG:$TRAVIS_BRANCH" .;
     docker images;
     docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD";
     docker push $DOCKER_REPO_SLUG:$TRAVIS_BRANCH;
