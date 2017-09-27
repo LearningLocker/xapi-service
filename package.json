@@ -1,6 +1,6 @@
 {
   "name": "xapi-service",
-  "version": "1.0.0",
+  "version": "0.0.0-development",
   "description": "A service for the xAPI",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -9,15 +9,20 @@
     "type": "git",
     "url": "https://github.com/LearningLocker/xapi-service.git"
   },
+  "files": [
+    "dist",
+    ".env.example",
+    "package-lock.json"
+  ],
   "scripts": {
     "start": "node dist/index.js",
-    
     "acp": "git add -A && npm run commit && git push",
     "commit": "git-cz",
     "build": "./node_modules/typescript/bin/tsc",
     "clean": "rm -rf dist",
     "lint": "./node_modules/tslint/bin/tslint -p ./tsconfig.json",
-    "duplication": "./node_modules/jscpd/bin/jscpd"
+    "duplication": "./node_modules/jscpd/bin/jscpd",
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
   "config": {
     "commitizen": {
@@ -56,6 +61,7 @@
     "commitizen": "^2.9.6",
     "cz-conventional-changelog": "^2.0.0",
     "jscpd": "git://github.com/ryansmith94/jscpd.git#prepublish",
+    "semantic-release": "^8.0.3",
     "tslint": "^5.5.0",
     "tslint-consistent-codestyle": "^1.6.0",
     "tslint-immutable": "^4.0.2",
