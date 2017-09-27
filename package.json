@@ -10,20 +10,19 @@
     "url": "https://github.com/LearningLocker/xapi-service.git"
   },
   "scripts": {
-    "build": "./node_modules/typescript/bin/tsc",
     "start": "node dist/index.js",
-    "test": "./node_modules/mocha/bin/mocha $(find dist -name '*.test.js') --timeout 6000",
-    "test-s3": "AUTH_REPO=test MODELS_REPO=memory STORAGE_REPO=s3 npm run test",
-    "test-mongo": "AUTH_REPO=test MODELS_REPO=mongo STORAGE_REPO=local npm run test",
-    "test-memory": "AUTH_REPO=test MODELS_REPO=memory STORAGE_REPO=local npm run test",
-    "migrate": "node dist/migrate.js",
-    "rollback": "node dist/rollback.js",
-    "cover-s3": "nyc --lines 100 --check-coverage --exclude '(dist/fetchAuthRepo|dist/mongoModelsRepo|dist/memoryStorageRepo|dist/config.js)' npm run test-s3",
-    "cover-memory": "nyc --lines 100 --check-coverage --exclude '(dist/fetchAuthRepo|dist/mongoModelsRepo|dist/s3StorageRepo|dist/config.js)' npm run test-memory",
-    "cover-mongo": "nyc --lines 100 --check-coverage --exclude '(dist/fetchAuthRepo|dist/memoryModelsRepo|dist/s3StorageRepo|dist/config.js)' npm run test-mongo",
+    
+    "acp": "git add -A && npm run commit && git push",
+    "commit": "git-cz",
+    "build": "./node_modules/typescript/bin/tsc",
     "clean": "rm -rf dist",
     "lint": "./node_modules/tslint/bin/tslint -p ./tsconfig.json",
     "duplication": "./node_modules/jscpd/bin/jscpd"
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
   },
   "engines": {
     "node": "^8.0.0",
@@ -54,6 +53,8 @@
     "@types/redis": "^2.6.0",
     "@types/source-map-support": "^0.2.28",
     "@types/winston": "^2.3.3",
+    "commitizen": "^2.9.6",
+    "cz-conventional-changelog": "^2.0.0",
     "jscpd": "git://github.com/ryansmith94/jscpd.git#prepublish",
     "tslint": "^5.5.0",
     "tslint-consistent-codestyle": "^1.6.0",
