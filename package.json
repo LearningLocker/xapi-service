@@ -2,8 +2,8 @@
   "name": "xapi-service",
   "version": "0.0.0-development",
   "description": "A service for the xAPI",
-  "main": "dist/index.js",
-  "typings": "dist/index.d.ts",
+  "main": "dist/server.js",
+  "typings": "dist/server.d.ts",
   "license": "GPL-3.0",
   "repository": {
     "type": "git",
@@ -15,7 +15,7 @@
     "package-lock.json"
   ],
   "scripts": {
-    "start": "node dist/index.js",
+    "start": "node dist/server.js",
     "acp": "git add -A && npm run commit && git push",
     "commit": "git-cz",
     "build": "./node_modules/typescript/bin/tsc",
