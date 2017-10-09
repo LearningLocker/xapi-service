@@ -5,6 +5,7 @@ import { S3 } from 'aws-sdk';
 import getBooleanOption from 'jscommons/dist/config/getBooleanOption';
 import getNumberOption from 'jscommons/dist/config/getNumberOption';
 import getStringOption from 'jscommons/dist/config/getStringOption';
+import { defaultTo } from 'lodash';
 import * as os from 'os';
 
 const DEFAULT_EXPRESS_PORT = 8081;
@@ -56,7 +57,10 @@ export default {
     bucketName: getStringOption(process.env.FS_S3_BUCKET, 'xapi-service'),
   },
   statementsService: {
-    awaitUpdates: getBooleanOption(process.env.STATEMENTS_SERVICE_AWAIT_UODATES),
+    awaitUpdates: getBooleanOption(defaultTo<any>(
+      process.env.SERVICE_AWAIT_UPDATES,
+      process.env.SERVICE_AWAIT_UODATES,
+    ), false),
     enableActivityUpdates: getBooleanOption(process.env.STATEMENTS_SERVICE_UPDATE_ACTIVITIES),
     enableAttachmentCreation: getBooleanOption(process.env.STATEMENTS_SERVICE_CREATE_ATTACHMENTS),
     enableAttachmentValidation: getBooleanOption(process.env.STATEMENTS_SERVICE_CHECK_ATTACHMENTS),
