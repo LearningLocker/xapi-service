@@ -30,8 +30,8 @@
     }
   },
   "engines": {
-    "node": "^8.0.0",
-    "npm": "^5.0.0"
+    "node": "^6.0.0",
+    "npm": "^3.10.10"
   },
   "dependencies": {
     "boolean": "^0.1.2",
