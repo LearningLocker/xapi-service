@@ -60,7 +60,7 @@
     "@types/winston": "^2.3.3",
     "commitizen": "^2.9.6",
     "cz-conventional-changelog": "^2.0.0",
-    "jscpd": "git://github.com/ryansmith94/jscpd.git#prepublish",
+    "jscpd": "git+https://github.com/ryansmith94/jscpd.git#prepublish",
     "semantic-release": "^8.0.3",
     "tslint": "^5.5.0",
     "tslint-consistent-codestyle": "^1.6.0",
