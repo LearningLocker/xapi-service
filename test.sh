@@ -20,7 +20,7 @@ log "Installing dependencies for the ADL conformance test suite."
 npm install
 
 log "Running the ADL conformance test suite."
-node bin/console_runner.js -e "http://localhost:$EXPRESS_PORT/data/xAPI" -a -u "AAA" -p "BB"
+node bin/console_runner.js -e "http://localhost:$EXPRESS_PORT/data/xAPI" -a -u "AAA" -p "BBB"
 exitCode=$?
 
 log "Stopping the server."
