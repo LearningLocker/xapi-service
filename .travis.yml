@@ -5,6 +5,9 @@ sudo: false
 notifications:
   email: false
 
+services:
+  - redis-server
+
 env:
   - MONGODB=3.2.13
 
@@ -20,6 +23,7 @@ before_script:
 
 script:
   - npm run build
+  - sh test.sh
   - npm run lint -- -c tslint.travis.json
 
 after_script:
