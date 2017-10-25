@@ -5,6 +5,9 @@ sudo: false
 notifications:
   email: false
 
+services:
+  - redis-server
+
 env:
   - MONGODB=3.2.13
 
@@ -20,14 +23,15 @@ before_script:
 
 script:
   - npm run build
+  - sh test.sh
   - npm run lint -- -c tslint.travis.json
 
 after_script:
   - pkill mongod
 
 after_success:
-  - npm prune --production
   - npm run semantic-release
+  - npm prune --production
   - if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then
     docker build -t "$DOCKER_REPO_SLUG:$TRAVIS_BRANCH" .;
     docker images;
