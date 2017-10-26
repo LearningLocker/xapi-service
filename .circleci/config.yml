@@ -23,7 +23,7 @@ jobs:
           key: v1-dependencies-{{ checksum "package.json" }}
       - run: yarn build
       - run: sh test.sh
-      - run: yarn lint -- -c tslint.travis.json
+      - run: yarn lint -- -c tslint.ci.json
       - deploy:
           name: Semantic Release
           command: yarn semantic-release
