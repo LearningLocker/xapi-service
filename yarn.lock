@@ -106,8 +106,8 @@
     "@types/node" "*"
 
 "@types/serve-static@*":
-  version "1.7.32"
-  resolved "https://registry.yarnpkg.com/@types/serve-static/-/serve-static-1.7.32.tgz#0f6732e4dab0813771dd8fc8fe14940f34728b4c"
+  version "1.13.0"
+  resolved "https://registry.yarnpkg.com/@types/serve-static/-/serve-static-1.13.0.tgz#2ef359d8d5982bc011a7a8fa36016e629e8b7635"
   dependencies:
     "@types/express-serve-static-core" "*"
     "@types/mime" "*"
@@ -1332,8 +1332,8 @@ gitconfiglocal@^1.0.0:
     ini "^1.3.2"
 
 github@^12.0.0:
-  version "12.0.0"
-  resolved "https://registry.yarnpkg.com/github/-/github-12.0.0.tgz#dee4790c290e0e172632592352ae15c345a08998"
+  version "12.0.1"
+  resolved "https://registry.yarnpkg.com/github/-/github-12.0.1.tgz#4f7467434d8d01152782e669e925b3115aa0b219"
   dependencies:
     follow-redirects "1.2.5"
     https-proxy-agent "^2.1.0"
@@ -1629,8 +1629,8 @@ is-arrayish@^0.2.1:
   resolved "https://registry.yarnpkg.com/is-arrayish/-/is-arrayish-0.2.1.tgz#77c99840527aa8ecb1a8ba697b80645a7a926a9d"
 
 is-buffer@^1.1.5:
-  version "1.1.5"
-  resolved "https://registry.yarnpkg.com/is-buffer/-/is-buffer-1.1.5.tgz#1f3b26ef613b214b88cbca23cc6c01d87961eecc"
+  version "1.1.6"
+  resolved "https://registry.yarnpkg.com/is-buffer/-/is-buffer-1.1.6.tgz#efaa2ea9daa0d7ab2ea13a97b2b8ad51fefbe8be"
 
 is-builtin-module@^1.0.0:
   version "1.0.0"
@@ -1783,8 +1783,8 @@ jsbn@~0.1.0:
   resolved "https://registry.yarnpkg.com/jsbn/-/jsbn-0.1.1.tgz#a5e654c2e5a2deb5f201d96cefbca80c0ef2f513"
 
 jscommons@^1.0.1:
-  version "1.0.4"
-  resolved "https://registry.yarnpkg.com/jscommons/-/jscommons-1.0.4.tgz#70a67ca65467470b8b5b646fad8f2edd66f12485"
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/jscommons/-/jscommons-1.0.5.tgz#e774cbf590053ac17e7082447436f8d5d9083f5c"
   dependencies:
     aws-sdk "^2.80.0"
     body-parser "^1.17.2"
@@ -3006,8 +3006,8 @@ sntp@1.x.x:
     hoek "2.x.x"
 
 sntp@2.x.x:
-  version "2.0.2"
-  resolved "https://registry.yarnpkg.com/sntp/-/sntp-2.0.2.tgz#5064110f0af85f7cfdb7d6b67a40028ce52b4b2b"
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/sntp/-/sntp-2.1.0.tgz#2c6cec14fedc2222739caf9b5c3d85d1cc5a2cc8"
   dependencies:
     hoek "4.x.x"
 
@@ -3456,8 +3456,8 @@ x-xss-protection@1.0.0:
   resolved "https://registry.yarnpkg.com/x-xss-protection/-/x-xss-protection-1.0.0.tgz#898afb93869b24661cf9c52f9ee8db8ed0764dd9"
 
 xapi-activities@^1.1.3:
-  version "1.1.5"
-  resolved "https://registry.yarnpkg.com/xapi-activities/-/xapi-activities-1.1.5.tgz#2af4613abcbc86a438a6a5d78c45de20e588c49a"
+  version "1.1.6"
+  resolved "https://registry.yarnpkg.com/xapi-activities/-/xapi-activities-1.1.6.tgz#13cd575b59d4daef67951cdc8d59272c931de1dd"
   dependencies:
     atob "^2.0.3"
     aws-sdk "^2.74.0"
@@ -3481,8 +3481,8 @@ xapi-activities@^1.1.3:
     xapi-validation "^2.1.0"
 
 xapi-agents@^1.1.4:
-  version "1.1.6"
-  resolved "https://registry.yarnpkg.com/xapi-agents/-/xapi-agents-1.1.6.tgz#db00409c91d7a2952f374fb0683e0debf906d845"
+  version "1.1.7"
+  resolved "https://registry.yarnpkg.com/xapi-agents/-/xapi-agents-1.1.7.tgz#2bcca9e0dad7ac0c85fb57b2017ed4c76a209e7b"
   dependencies:
     atob "^2.0.3"
     aws-sdk "^2.74.0"
@@ -3506,8 +3506,8 @@ xapi-agents@^1.1.4:
     xapi-validation "^2.1.0"
 
 xapi-state@^1.1.4:
-  version "1.1.7"
-  resolved "https://registry.yarnpkg.com/xapi-state/-/xapi-state-1.1.7.tgz#661de16507f1f7ef294b3b85ce1f77efbe86774e"
+  version "1.1.8"
+  resolved "https://registry.yarnpkg.com/xapi-state/-/xapi-state-1.1.8.tgz#7268059dd355a4d77b0401f11d0fbc8d0689688f"
   dependencies:
     atob "^2.0.3"
     aws-sdk "^2.74.0"
@@ -3531,8 +3531,8 @@ xapi-state@^1.1.4:
     xapi-validation "^2.1.0"
 
 xapi-statements@^1.0.7:
-  version "1.0.10"
-  resolved "https://registry.yarnpkg.com/xapi-statements/-/xapi-statements-1.0.10.tgz#41c0e6a5f750fb5ca36cdf5bc1ed63c1fe801465"
+  version "1.0.11"
+  resolved "https://registry.yarnpkg.com/xapi-statements/-/xapi-statements-1.0.11.tgz#0ddb7eb578c28db120a2e20ae3ac4c33a8f04cce"
   dependencies:
     accept-language-parser "^1.4.1"
     atob "^2.0.3"
