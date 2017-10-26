@@ -6,7 +6,7 @@ log () {
 log "Running conformance tests."
 
 log "Starting the server on port $EXPRESS_PORT."
-npm start &
+yarn start &
 
 log "Removing clients and creating a new client."
 mongo learninglocker_v2 --eval 'db.client.remove({})'

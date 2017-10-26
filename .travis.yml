@@ -19,19 +19,17 @@ before_install:
 before_script:
   - mkdir ${PWD}/mongodb-linux-x86_64-${MONGODB}/data
   - ${PWD}/mongodb-linux-x86_64-${MONGODB}/bin/mongod --dbpath ${PWD}/mongodb-linux-x86_64-${MONGODB}/data --logpath ${PWD}/mongodb-linux-x86_64-${MONGODB}/mongodb.log --fork
-  - npm prune
 
 script:
-  - npm run build
+  - yarn build
   - sh test.sh
-  - npm run lint -- -c tslint.travis.json
+  - yarn lint -- -c tslint.travis.json
 
 after_script:
   - pkill mongod
 
 after_success:
-  - npm run semantic-release
-  - npm prune --production
+  - yarn semantic-release
   - if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then
     docker build -t "$DOCKER_REPO_SLUG:$TRAVIS_BRANCH" .;
     docker images;
