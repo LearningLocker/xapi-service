@@ -1,9 +1,9 @@
+// tslint:disable:no-console
 import * as sourceMapSupport from 'source-map-support';
 sourceMapSupport.install();
 
 import { MongoClient, ObjectID } from 'mongodb';
 import config from './config';
-import logger from './logger';
 import './server'; // tslint:disable-line:no-import-side-effect
 
 const testClient = {
@@ -28,8 +28,13 @@ const testClient = {
 (async () => {
   const db = MongoClient.connect(config.mongoModelsRepo.url);
   const collection = (await db).collection('client');
-  logger.info('Removing clients for ADL conformance tests.');
-  await collection.remove({});
-  logger.info('Inserting test client for ADL conformance tests.');
-  await collection.insert(testClient);
-})();
+  console.log('Removing clients for ADL conformance tests.');
+  await collection.deleteMany({});
+  console.log('Inserting test client for ADL conformance tests.');
+  await collection.insertOne(testClient);
+})().then(() => {
+  console.log('Completed seeding for ADL conformance tests.');
+}).catch((err) => {
+  console.error(err);
+  process.exit(1);
+});

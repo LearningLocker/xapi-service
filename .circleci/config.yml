@@ -1,8 +1,4 @@
 version: 2
-machine:
-  services:
-    - mongodb
-    - redis-server
 
 jobs:
   build:
@@ -14,7 +10,7 @@ jobs:
       - DOCKER_REPO_SLUG: learninglocker/xapi-service
       - DOCKER_USERNAME: ryansmith94
       - NPM_CONFIG_LOGLEVEL: warn
-      - WINSTON_CONSOLE_LEVEL: info
+      - WINSTON_CONSOLE_LEVEL: none
       - EXPRESS_PORT: 1337
     working_directory: ~/repo
     steps:
