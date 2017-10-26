@@ -14,19 +14,19 @@ jobs:
       - DOCKER_REPO_SLUG: learninglocker/xapi-service
       - DOCKER_USERNAME: ryansmith94
       - NPM_CONFIG_LOGLEVEL: warn
-      - WINSTON_CONSOLE_LEVEL: none
+      - WINSTON_CONSOLE_LEVEL: info
       - EXPRESS_PORT: 1337
     working_directory: ~/repo
     steps:
       - checkout
       - restore_cache:
           keys:
-            - v1-dependencies-{{ checksum "package.json" }}
+            - v1-dependencies-{{ checksum "yarn.lock" }}
       - run: yarn install
       - save_cache:
           paths:
             - node_modules
-          key: v1-dependencies-{{ checksum "package.json" }}
+          key: v1-dependencies-{{ checksum "yarn.lock" }}
       - run: yarn build
       - run: sh test.sh
       - run: yarn lint -- -c tslint.ci.json
