@@ -48,14 +48,16 @@ jobs:
             tar -xz -C /tmp -f /tmp/docker-$DOCKER_VERSION.tgz
             mv /tmp/docker/* /usr/bin
       - run:
+          name: Calculate Docker Tag
+          command: DOCKER_TAG=$(echo $CIRCLE_BRANCH | sed -e "s/\//-/g")
+      - run:
           name: Docker Build
-          command: docker build -t "$DOCKER_REPO_SLUG:$CIRCLE_BRANCH" .
+          command: docker build -t "$DOCKER_REPO_SLUG:$DOCKER_TAG" .
       - deploy:
           name: Semantic Release
           command: yarn semantic-release || true
       - deploy:
           name: Docker Push
           command: |
-            DOCKER_TAG=$(echo $CIRCLE_BRANCH | sed -e "s/\//-/g")
             docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
             docker push $DOCKER_REPO_SLUG:$DOCKER_TAG
