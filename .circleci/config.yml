@@ -37,6 +37,8 @@ jobs:
       - run:
           name: Linting Code
           command: yarn lint -- -c tslint.ci.json
+      - setup_remote_docker
+          docker_layer_caching: true
       - deploy:
           name: Semantic Release
           command: yarn semantic-release || true
