@@ -1,0 +1,60 @@
+version: 2
+machine:
+  services:
+    - docker
+
+jobs:
+  build:
+    docker:
+      - image: node:8.8.0
+      - image: mongo:3.4.4
+      - image: redis:3.2.7
+    environment:
+      - DOCKER_REPO_SLUG: learninglocker/xapi-service
+      - DOCKER_USERNAME: ryansmith94
+      - NPM_CONFIG_LOGLEVEL: warn
+      - WINSTON_CONSOLE_LEVEL: none
+      - EXPRESS_PORT: 1337
+    working_directory: ~/repo
+    steps:
+      - checkout
+      - setup_remote_docker:
+          docker_layer_caching: true
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "yarn.lock" }}
+      - run:
+          name: Installing Dependencies
+          command: yarn install
+      - save_cache:
+          paths:
+            - node_modules
+          key: v1-dependencies-{{ checksum "yarn.lock" }}
+      - run:
+          name: Compiling Code
+          command: yarn build
+      - run:
+          name: Conformance Tests
+          command: sh test.sh
+      - run:
+          name: Linting Code
+          command: yarn lint -- -c tslint.ci.json
+      - run:
+          name: Docker Install
+          command: |
+            set -x
+            DOCKER_VERSION="17.03.0-ce"
+            curl -L -o /tmp/docker-$DOCKER_VERSION.tgz https://get.docker.com/builds/Linux/x86_64/docker-$DOCKER_VERSION.tgz
+            tar -xz -C /tmp -f /tmp/docker-$DOCKER_VERSION.tgz
+            mv /tmp/docker/* /usr/bin
+      - run:
+          name: Docker Build
+          command: docker build -t "$DOCKER_REPO_SLUG:$CIRCLE_BRANCH" .
+      - deploy:
+          name: Semantic Release
+          command: yarn semantic-release || true
+      - deploy:
+          name: Docker Push
+          command: |
+            docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
+            docker push $DOCKER_REPO_SLUG:$CIRCLE_BRANCH
