@@ -18,10 +18,10 @@
     "start": "node dist/server.js",
     "acp": "git add -A && npm run commit && git push",
     "commit": "git-cz",
-    "build": "./node_modules/typescript/bin/tsc",
+    "build": "tsc",
     "clean": "rm -rf dist",
-    "lint": "./node_modules/tslint/bin/tslint -p ./tsconfig.json",
-    "duplication": "./node_modules/jscpd/bin/jscpd",
+    "lint": "tslint -p ./tsconfig.json",
+    "duplication": "jscpd",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
   "config": {
