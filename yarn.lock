@@ -48,8 +48,8 @@
     pify "^3.0.0"
 
 "@types/body-parser@*":
-  version "1.16.6"
-  resolved "https://registry.yarnpkg.com/@types/body-parser/-/body-parser-1.16.6.tgz#ccba8895337444e07f1134dab696edaf969b09a9"
+  version "1.16.7"
+  resolved "https://registry.yarnpkg.com/@types/body-parser/-/body-parser-1.16.7.tgz#455fc23fd0ddaaeda6cd6cbb653558276e5920fa"
   dependencies:
     "@types/express" "*"
     "@types/node" "*"
@@ -67,14 +67,14 @@
     "@types/node" "*"
 
 "@types/express-serve-static-core@*":
-  version "4.0.54"
-  resolved "https://registry.yarnpkg.com/@types/express-serve-static-core/-/express-serve-static-core-4.0.54.tgz#c4f8574d6bc5a616ccd7d60a196baef052f0c0b4"
+  version "4.0.55"
+  resolved "https://registry.yarnpkg.com/@types/express-serve-static-core/-/express-serve-static-core-4.0.55.tgz#f53868838a955f98b380819ec9134f5df7d9482f"
   dependencies:
     "@types/node" "*"
 
-"@types/express@*", "@types/express@4.0.38":
-  version "4.0.38"
-  resolved "https://registry.yarnpkg.com/@types/express/-/express-4.0.38.tgz#500e0524cb57ea8e3119efd5ca7ab8fca29ad9a5"
+"@types/express@*", "@types/express@4.0.39":
+  version "4.0.39"
+  resolved "https://registry.yarnpkg.com/@types/express/-/express-4.0.39.tgz#1441f21d52b33be8d4fa8a865c15a6a91cd0fa09"
   dependencies:
     "@types/body-parser" "*"
     "@types/express-serve-static-core" "*"
@@ -269,8 +269,8 @@ atob@^2.0.3:
   resolved "https://registry.yarnpkg.com/atob/-/atob-2.0.3.tgz#19c7a760473774468f20b2d2d03372ad7d4cbf5d"
 
 aws-sdk@^2.58.0, aws-sdk@^2.74.0, aws-sdk@^2.80.0, aws-sdk@^2.97.0:
-  version "2.140.0"
-  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.140.0.tgz#c15fc5c3db7a1805c59f85767eb1067ae34f9ae4"
+  version "2.141.0"
+  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.141.0.tgz#3d96a5970fd9f540ceabcc1d4baeb33b71583aa7"
   dependencies:
     buffer "4.9.1"
     crypto-browserify "1.0.9"
