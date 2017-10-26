@@ -18,17 +18,25 @@ jobs:
       - restore_cache:
           keys:
             - v1-dependencies-{{ checksum "yarn.lock" }}
-      - run: yarn install
+      - run:
+          name: Installing Dependencies
+          command: yarn install
       - save_cache:
           paths:
             - node_modules
           key: v1-dependencies-{{ checksum "yarn.lock" }}
-      - run: yarn build
-      - run: sh test.sh
-      - run: yarn lint -- -c tslint.ci.json
+      - run:
+          name: Compiling Code
+          command: yarn build
+      - run:
+          name: Conformance Tests
+          command: sh test.sh
+      - run:
+          name: Linting Code
+          command: yarn lint -- -c tslint.ci.json
       - deploy:
           name: Semantic Release
-          command: yarn semantic-release
+          command: yarn semantic-release || true
       - deploy:
           name: Docker Push
           command: docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD" && docker push $DOCKER_REPO_SLUG:$CIRCLE_BRANCH
