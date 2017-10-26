@@ -15,7 +15,6 @@ jobs:
       - NPM_CONFIG_LOGLEVEL: warn
       - WINSTON_CONSOLE_LEVEL: none
       - EXPRESS_PORT: 1337
-      - DOCKER_TAG: $(echo $CIRCLE_BRANCH | sed -e "s/\//-/g")
     working_directory: ~/repo
     steps:
       - checkout
@@ -24,6 +23,9 @@ jobs:
       - restore_cache:
           keys:
             - v1-dependencies-{{ checksum "yarn.lock" }}
+      - run:
+          name: Calculating Docker Tag
+          command: echo 'export DOCKER_TAG=$(echo $CIRCLE_BRANCH | sed -e "s/\//-/g")' >> $BASH_ENV
       - run:
           name: Installing Dependencies
           command: yarn install
