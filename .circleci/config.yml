@@ -39,4 +39,6 @@ jobs:
           command: yarn semantic-release || true
       - deploy:
           name: Docker Push
-          command: docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD" && docker push $DOCKER_REPO_SLUG:$CIRCLE_BRANCH
+          command: |
+            docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
+            docker push $DOCKER_REPO_SLUG:$CIRCLE_BRANCH
