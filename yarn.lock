@@ -798,14 +798,13 @@ cz-conventional-changelog@1.2.0:
     right-pad "^1.0.1"
     word-wrap "^1.0.3"
 
-cz-conventional-changelog@2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/cz-conventional-changelog/-/cz-conventional-changelog-2.0.0.tgz#55a979afdfe95e7024879d2a0f5924630170b533"
+cz-conventional-changelog@2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/cz-conventional-changelog/-/cz-conventional-changelog-2.1.0.tgz#2f4bc7390e3244e4df293e6ba351e4c740a7c764"
   dependencies:
     conventional-commit-types "^2.0.0"
     lodash.map "^4.5.1"
     longest "^1.0.1"
-    pad-right "^0.2.2"
     right-pad "^1.0.1"
     word-wrap "^1.0.3"
 
@@ -1804,8 +1803,8 @@ jsbn@~0.1.0:
   resolved "https://registry.yarnpkg.com/jsbn/-/jsbn-0.1.1.tgz#a5e654c2e5a2deb5f201d96cefbca80c0ef2f513"
 
 jscommons@^1.0.1:
-  version "1.0.5"
-  resolved "https://registry.yarnpkg.com/jscommons/-/jscommons-1.0.5.tgz#e774cbf590053ac17e7082447436f8d5d9083f5c"
+  version "1.0.6"
+  resolved "https://registry.yarnpkg.com/jscommons/-/jscommons-1.0.6.tgz#4a65207c6cbda6887f25481c2b966298bfa7a503"
   dependencies:
     aws-sdk "^2.80.0"
     body-parser "^1.17.2"
