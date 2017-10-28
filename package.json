@@ -22,7 +22,7 @@
     "clean": "rm -rf dist",
     "lint": "tslint -p ./tsconfig.json",
     "duplication": "jscpd",
-    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
+    "semantic-release": "semantic-release"
   },
   "release": {
     "verifyConditions": "condition-circle"
