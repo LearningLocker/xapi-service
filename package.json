@@ -22,7 +22,7 @@
     "clean": "rm -rf dist",
     "lint": "tslint -p ./tsconfig.json",
     "duplication": "jscpd",
-    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
+    "semantic-release": "semantic-release"
   },
   "release": {
     "verifyConditions": "condition-circle"
@@ -64,7 +64,7 @@
     "condition-circle": "1.5.0",
     "cz-conventional-changelog": "2.1.0",
     "jscpd": "0.6.15",
-    "semantic-release": "8.2.3",
+    "semantic-release": "9.0.0",
     "tslint": "5.8.0",
     "tslint-consistent-codestyle": "1.8.0",
     "tslint-immutable": "4.4.0",
