@@ -23,9 +23,9 @@
     semver "^5.0.3"
     travis-deploy-once "^3.0.0"
 
-"@semantic-release/error@^2.0.0":
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/@semantic-release/error/-/error-2.0.1.tgz#38882aa902aef75a3ef36ee9d1bdc8c2b22bf935"
+"@semantic-release/error@^2.0.0", "@semantic-release/error@^2.1.0":
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/@semantic-release/error/-/error-2.1.0.tgz#44771f676f5b148da309111285a97901aa95a6e0"
 
 "@semantic-release/last-release-npm@^2.0.0":
   version "2.0.2"
@@ -36,8 +36,8 @@
     npmlog "^4.0.0"
 
 "@semantic-release/release-notes-generator@^5.0.0":
-  version "5.0.0"
-  resolved "https://registry.yarnpkg.com/@semantic-release/release-notes-generator/-/release-notes-generator-5.0.0.tgz#c25bf17c462bd660b37d8f23796219e2d3867d5f"
+  version "5.0.1"
+  resolved "https://registry.yarnpkg.com/@semantic-release/release-notes-generator/-/release-notes-generator-5.0.1.tgz#16720093bd73457a416e73aaed2422ddc540e8b4"
   dependencies:
     conventional-changelog-angular "^1.4.0"
     conventional-changelog-writer "^2.0.1"
@@ -48,7 +48,6 @@
     import-from "^2.1.0"
     into-stream "^3.1.0"
     lodash "^4.17.4"
-    pify "^3.0.0"
 
 "@types/body-parser@*":
   version "1.16.7"
@@ -2882,13 +2881,13 @@ sax@>=0.6.0:
   version "1.2.4"
   resolved "https://registry.yarnpkg.com/sax/-/sax-1.2.4.tgz#2816234e2378bddc4e5354fab5caa895df7100d9"
 
-semantic-release@9.0.1:
-  version "9.0.1"
-  resolved "https://registry.yarnpkg.com/semantic-release/-/semantic-release-9.0.1.tgz#fe103d2be24dd69d51e752675566b6612e2944b4"
+semantic-release@9.0.2:
+  version "9.0.2"
+  resolved "https://registry.yarnpkg.com/semantic-release/-/semantic-release-9.0.2.tgz#e094a1f824f04e9eb7de0ebbdab2ae569ded1269"
   dependencies:
     "@semantic-release/commit-analyzer" "^3.0.1"
     "@semantic-release/condition-travis" "^6.0.0"
-    "@semantic-release/error" "^2.0.0"
+    "@semantic-release/error" "^2.1.0"
     "@semantic-release/last-release-npm" "^2.0.0"
     "@semantic-release/release-notes-generator" "^5.0.0"
     chalk "^2.3.0"
