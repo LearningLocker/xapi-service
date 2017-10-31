@@ -3535,9 +3535,9 @@ xapi-agents@^1.1.4:
     uuid "^3.0.1"
     xapi-validation "^2.1.0"
 
-xapi-state@^1.1.4:
-  version "1.1.10"
-  resolved "https://registry.yarnpkg.com/xapi-state/-/xapi-state-1.1.10.tgz#a12d0714beae1c097521e4ae4de63ea9181cab9e"
+xapi-state@^1.1.11:
+  version "1.1.11"
+  resolved "https://registry.yarnpkg.com/xapi-state/-/xapi-state-1.1.11.tgz#ae6511b13354d65c490f8d8220e70be7be99f25b"
   dependencies:
     atob "^2.0.3"
     aws-sdk "^2.74.0"
