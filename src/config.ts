@@ -15,6 +15,8 @@ const storageDir = `${process.cwd()}/storage`;
 const expressPort = getNumberOption(process.env.EXPRESS_PORT, DEFAULT_EXPRESS_PORT);
 const demoAuth = `http://localhost:${expressPort}/auth`;
 const accessLogsDir = `${storageDir}/accessLogs`;
+const newRelicLogsDir = `${storageDir}/newrelic-agent.log`;
+const newRelicLicenseKey = getStringOption(process.env.NEW_RELIC_LICENSE_KEY);
 
 export default {
   defaultTimeout: getNumberOption(process.env.DEFAULT_TIMEOUT_MS, DEFAULT_TIMEOUT_MS),
@@ -75,6 +77,14 @@ export default {
     agents: getStringOption(process.env.SUB_FOLDER_AGENTS, '/agents'),
     state: getStringOption(process.env.SUB_FOLDER_STATE, '/state'),
     statements: getStringOption(process.env.SUB_FOLDER_STATEMENTS, '/statements'),
+  },
+  tracker: {
+    newRelic: {
+      enabled: newRelicLicenseKey !== undefined,
+      log: getStringOption(process.env.NEW_RELIC_LOG, newRelicLogsDir),
+      logLevel: getStringOption(process.env.NEW_RELIC_LOG_LEVEL, 'info'),
+      noConfigFile: getStringOption(process.env.NEW_RELIC_NO_CONFIG_FILE, 'true'),
+    },
   },
   winston: {
     cloudWatch: {
