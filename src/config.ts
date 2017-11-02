@@ -1,3 +1,4 @@
+// tslint:disable:max-file-line-count
 import { config } from 'dotenv';
 config();
 
