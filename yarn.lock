@@ -2,6 +2,12 @@
 # yarn lockfile v1
 
 
+"@newrelic/native-metrics@^2.1.0":
+  version "2.1.2"
+  resolved "https://registry.yarnpkg.com/@newrelic/native-metrics/-/native-metrics-2.1.2.tgz#9a595dc602654b717188a294507087a51e79fba3"
+  dependencies:
+    nan "^2.4.0"
+
 "@semantic-release/commit-analyzer@^3.0.1":
   version "3.0.7"
   resolved "https://registry.yarnpkg.com/@semantic-release/commit-analyzer/-/commit-analyzer-3.0.7.tgz#dc955444a6d3d2ae9b8e21f90c2c80c4e9142b2f"
@@ -24,8 +30,8 @@
     travis-deploy-once "^3.0.0"
 
 "@semantic-release/error@^2.0.0":
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/@semantic-release/error/-/error-2.0.0.tgz#f156ecd509f5288c48bc7425a8abe22f975d1f8b"
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/@semantic-release/error/-/error-2.1.0.tgz#44771f676f5b148da309111285a97901aa95a6e0"
 
 "@semantic-release/last-release-npm@^2.0.0":
   version "2.0.2"
@@ -67,8 +73,8 @@
     "@types/node" "*"
 
 "@types/express-serve-static-core@*":
-  version "4.0.55"
-  resolved "https://registry.yarnpkg.com/@types/express-serve-static-core/-/express-serve-static-core-4.0.55.tgz#f53868838a955f98b380819ec9134f5df7d9482f"
+  version "4.0.56"
+  resolved "https://registry.yarnpkg.com/@types/express-serve-static-core/-/express-serve-static-core-4.0.56.tgz#4ed556dcff9012cce6b016e214fdc5ef6e99db7d"
   dependencies:
     "@types/node" "*"
 
@@ -151,6 +157,10 @@ agent-base@^4.1.0:
   resolved "https://registry.yarnpkg.com/agent-base/-/agent-base-4.1.1.tgz#92d8a4fc2524a3b09b3666a33b6c97960f23d6a4"
   dependencies:
     es6-promisify "^5.0.0"
+
+agent-base@~1.0.1:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/agent-base/-/agent-base-1.0.2.tgz#6890d3fb217004b62b70f8928e0fae5f8952a706"
 
 ajv@^5.1.0:
   version "5.3.0"
@@ -250,7 +260,7 @@ async@^1.4.0:
   version "1.5.2"
   resolved "https://registry.yarnpkg.com/async/-/async-1.5.2.tgz#ec6a61ae56480c0c3cb241c95618e20892f9672a"
 
-async@^2.0.1:
+async@^2.0.1, async@^2.1.4:
   version "2.5.0"
   resolved "https://registry.yarnpkg.com/async/-/async-2.5.0.tgz#843190fd6b7357a0b9e1c956edddd5ec8462b54d"
   dependencies:
@@ -269,8 +279,8 @@ atob@^2.0.3:
   resolved "https://registry.yarnpkg.com/atob/-/atob-2.0.3.tgz#19c7a760473774468f20b2d2d03372ad7d4cbf5d"
 
 aws-sdk@^2.58.0, aws-sdk@^2.74.0, aws-sdk@^2.80.0, aws-sdk@^2.97.0:
-  version "2.141.0"
-  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.141.0.tgz#3d96a5970fd9f540ceabcc1d4baeb33b71583aa7"
+  version "2.142.0"
+  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.142.0.tgz#efdf69d2be3132aa51d4e7abb2c28fe42771e3ec"
   dependencies:
     buffer "4.9.1"
     crypto-browserify "1.0.9"
@@ -615,7 +625,7 @@ concat-map@0.0.1:
   version "0.0.1"
   resolved "https://registry.yarnpkg.com/concat-map/-/concat-map-0.0.1.tgz#d8a96bd77fd68df7793a73036a3ba0d5405d477b"
 
-concat-stream@^1.4.7, concat-stream@^1.5.2:
+concat-stream@^1.4.7, concat-stream@^1.5.0, concat-stream@^1.5.2:
   version "1.6.0"
   resolved "https://registry.yarnpkg.com/concat-stream/-/concat-stream-1.6.0.tgz#0aac662fd52be78964d5532f694784e70110acf7"
   dependencies:
@@ -836,17 +846,17 @@ dateformat@^1.0.11, dateformat@^1.0.12:
     get-stdin "^4.0.1"
     meow "^3.3.0"
 
+debug@2, debug@2.6.9, debug@^2.1.3, debug@^2.4.1, debug@^2.6.8, debug@^2.6.9:
+  version "2.6.9"
+  resolved "https://registry.yarnpkg.com/debug/-/debug-2.6.9.tgz#5d128515df134ff327e90a4c93f4e077a536341f"
+  dependencies:
+    ms "2.0.0"
+
 debug@2.2.0:
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/debug/-/debug-2.2.0.tgz#f87057e995b1a1f6ae6a4960664137bc56f039da"
   dependencies:
     ms "0.7.1"
-
-debug@2.6.9, debug@^2.1.3, debug@^2.4.1, debug@^2.6.8, debug@^2.6.9:
-  version "2.6.9"
-  resolved "https://registry.yarnpkg.com/debug/-/debug-2.6.9.tgz#5d128515df134ff327e90a4c93f4e077a536341f"
-  dependencies:
-    ms "2.0.0"
 
 decamelize@^1.0.0, decamelize@^1.1.2:
   version "1.2.0"
@@ -1068,7 +1078,7 @@ express@^4.14.1, express@^4.15.3:
     utils-merge "1.0.1"
     vary "~1.1.2"
 
-extend@^3.0.0, extend@~3.0.0, extend@~3.0.1:
+extend@3, extend@^3.0.0, extend@~3.0.0, extend@~3.0.1:
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/extend/-/extend-3.0.1.tgz#a755ea7bc1adfcc5a31ce7e762dbaadc5e636444"
 
@@ -1564,6 +1574,14 @@ http-signature@~1.2.0:
     jsprim "^1.2.2"
     sshpk "^1.7.0"
 
+https-proxy-agent@^0.3.5:
+  version "0.3.6"
+  resolved "https://registry.yarnpkg.com/https-proxy-agent/-/https-proxy-agent-0.3.6.tgz#713fa38e5d353f50eb14a342febe29033ed1619b"
+  dependencies:
+    agent-base "~1.0.1"
+    debug "2"
+    extend "3"
+
 https-proxy-agent@^2.1.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/https-proxy-agent/-/https-proxy-agent-2.1.0.tgz#1391bee7fd66aeabc0df2a1fa90f58954f43e443"
@@ -1803,9 +1821,9 @@ jsbn@~0.1.0:
   version "0.1.1"
   resolved "https://registry.yarnpkg.com/jsbn/-/jsbn-0.1.1.tgz#a5e654c2e5a2deb5f201d96cefbca80c0ef2f513"
 
-jscommons@^1.0.1:
-  version "1.0.5"
-  resolved "https://registry.yarnpkg.com/jscommons/-/jscommons-1.0.5.tgz#e774cbf590053ac17e7082447436f8d5d9083f5c"
+jscommons@^1.0.1, jscommons@^1.3.0:
+  version "1.3.0"
+  resolved "https://registry.yarnpkg.com/jscommons/-/jscommons-1.3.0.tgz#2ed1065fc7b970ecc728d0bd65ff0bfed564ce54"
   dependencies:
     aws-sdk "^2.80.0"
     body-parser "^1.17.2"
@@ -1820,7 +1838,8 @@ jscommons@^1.0.1:
     moment "^2.18.1"
     mongodb "^2.2.29"
     morgan "^1.8.2"
-    rulr "^3.0.0"
+    newrelic "^2.3.1"
+    rulr "^4.0.1"
     uuid "^3.1.0"
     winston "^2.3.1"
     winston-aws-cloudwatch "^1.5.0"
@@ -1849,7 +1868,7 @@ json-schema@0.2.3:
   version "0.2.3"
   resolved "https://registry.yarnpkg.com/json-schema/-/json-schema-0.2.3.tgz#b480c892e59a2f05954ce727bd3f2a4e882f9e13"
 
-json-stringify-safe@^5.0.1, json-stringify-safe@~5.0.1:
+json-stringify-safe@^5.0.0, json-stringify-safe@^5.0.1, json-stringify-safe@~5.0.1:
   version "5.0.1"
   resolved "https://registry.yarnpkg.com/json-stringify-safe/-/json-stringify-safe-5.0.1.tgz#1296a2d58fd45f19a0f6ce01d65701e2c735b6eb"
 
@@ -2273,6 +2292,10 @@ mute-stream@0.0.6:
   version "0.0.6"
   resolved "https://registry.yarnpkg.com/mute-stream/-/mute-stream-0.0.6.tgz#48962b19e169fd1dfc240b3f1e7317627bbc47db"
 
+nan@^2.4.0:
+  version "2.7.0"
+  resolved "https://registry.yarnpkg.com/nan/-/nan-2.7.0.tgz#d95bf721ec877e08db276ed3fc6eb78f9083ad46"
+
 negotiator@0.6.1:
   version "0.6.1"
   resolved "https://registry.yarnpkg.com/negotiator/-/negotiator-0.6.1.tgz#2b327184e8992101177b28563fb5e7102acd0ca9"
@@ -2284,6 +2307,19 @@ nerf-dart@^1.0.0:
 netrc@^0.1.4:
   version "0.1.4"
   resolved "https://registry.yarnpkg.com/netrc/-/netrc-0.1.4.tgz#6be94fcaca8d77ade0a9670dc460914c94472444"
+
+newrelic@^2.3.1:
+  version "2.3.1"
+  resolved "https://registry.yarnpkg.com/newrelic/-/newrelic-2.3.1.tgz#4b72f908d8e0be373470e9c18097c35c3f9673bc"
+  dependencies:
+    async "^2.1.4"
+    concat-stream "^1.5.0"
+    https-proxy-agent "^0.3.5"
+    json-stringify-safe "^5.0.0"
+    readable-stream "^2.1.4"
+    semver "^5.3.0"
+  optionalDependencies:
+    "@newrelic/native-metrics" "^2.1.0"
 
 nocache@2.0.0:
   version "2.0.0"
@@ -2395,9 +2431,9 @@ object-assign@^4, object-assign@^4.0.1, object-assign@^4.1.0:
   version "4.1.1"
   resolved "https://registry.yarnpkg.com/object-assign/-/object-assign-4.1.1.tgz#2109adc7965887cfc05cbbd442cac8bfbb360863"
 
-object-hash@1.1.8:
-  version "1.1.8"
-  resolved "https://registry.yarnpkg.com/object-hash/-/object-hash-1.1.8.tgz#28a659cf987d96a4dabe7860289f3b5326c4a03c"
+object-hash@1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/object-hash/-/object-hash-1.2.0.tgz#e96af0e96981996a1d47f88ead8f74f1ebc4422b"
 
 object.omit@^2.0.0:
   version "2.0.1"
@@ -2696,7 +2732,7 @@ readable-stream@^1.1.12:
     isarray "0.0.1"
     string_decoder "~0.10.x"
 
-readable-stream@^2.0.6, readable-stream@^2.1.0, readable-stream@^2.1.5, readable-stream@^2.2.2:
+readable-stream@^2.0.6, readable-stream@^2.1.0, readable-stream@^2.1.4, readable-stream@^2.1.5, readable-stream@^2.2.2:
   version "2.3.3"
   resolved "https://registry.yarnpkg.com/readable-stream/-/readable-stream-2.3.3.tgz#368f2512d79f9d46fdfc71349ae7878bbc1eb95c"
   dependencies:
@@ -2886,9 +2922,9 @@ right-pad@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/right-pad/-/right-pad-1.0.1.tgz#8ca08c2cbb5b55e74dafa96bf7fd1a27d568c8d0"
 
-rulr@^3.0.0:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/rulr/-/rulr-3.0.0.tgz#7e671e3fd85190f5976863a0a1cdf2013c7ba2d6"
+rulr@^4.0.0, rulr@^4.0.1:
+  version "4.0.1"
+  resolved "https://registry.yarnpkg.com/rulr/-/rulr-4.0.1.tgz#650a701175d10ac869faeb4102c638dbc1b56f57"
 
 run-async@^2.2.0:
   version "2.3.0"
@@ -3046,12 +3082,6 @@ sntp@2.x.x:
   dependencies:
     hoek "4.x.x"
 
-source-map-support@^0.4.11:
-  version "0.4.18"
-  resolved "https://registry.yarnpkg.com/source-map-support/-/source-map-support-0.4.18.tgz#0286a6de8be42641338594e97ccea75f0a2c585f"
-  dependencies:
-    source-map "^0.5.6"
-
 source-map-support@^0.5.0:
   version "0.5.0"
   resolved "https://registry.yarnpkg.com/source-map-support/-/source-map-support-0.5.0.tgz#2018a7ad2bdf8faf2691e5fddab26bed5a2bacab"
@@ -3064,13 +3094,13 @@ source-map@^0.4.4:
   dependencies:
     amdefine ">=0.0.4"
 
-source-map@^0.5.6, source-map@~0.5.1:
-  version "0.5.7"
-  resolved "https://registry.yarnpkg.com/source-map/-/source-map-0.5.7.tgz#8a039d2d1021d22d1ea14c80d8ea468ba2ef3fcc"
-
 source-map@^0.6.0:
   version "0.6.1"
   resolved "https://registry.yarnpkg.com/source-map/-/source-map-0.6.1.tgz#74722af32e9614e9c287a8d0bbde48b5e2f1a263"
+
+source-map@~0.5.1:
+  version "0.5.7"
+  resolved "https://registry.yarnpkg.com/source-map/-/source-map-0.5.7.tgz#8a039d2d1021d22d1ea14c80d8ea468ba2ef3fcc"
 
 spawn-sync@^1.0.15:
   version "1.0.15"
@@ -3491,8 +3521,8 @@ x-xss-protection@1.0.0:
   resolved "https://registry.yarnpkg.com/x-xss-protection/-/x-xss-protection-1.0.0.tgz#898afb93869b24661cf9c52f9ee8db8ed0764dd9"
 
 xapi-activities@^1.1.3:
-  version "1.1.6"
-  resolved "https://registry.yarnpkg.com/xapi-activities/-/xapi-activities-1.1.6.tgz#13cd575b59d4daef67951cdc8d59272c931de1dd"
+  version "1.1.8"
+  resolved "https://registry.yarnpkg.com/xapi-activities/-/xapi-activities-1.1.8.tgz#ed13a5c2ba1934a336ca61b6501f6c251305c0b3"
   dependencies:
     atob "^2.0.3"
     aws-sdk "^2.74.0"
@@ -3507,17 +3537,17 @@ xapi-activities@^1.1.3:
     mime-types "^2.1.17"
     mongodb "^2.2.26"
     node-fetch "^1.6.3"
-    rulr "^3.0.0"
+    rulr "^4.0.1"
     sha1 "^1.1.1"
-    source-map-support "^0.4.11"
+    source-map-support "^0.5.0"
     stream-to-string "^1.1.0"
     string-to-stream "^1.1.0"
     uuid "^3.0.1"
     xapi-validation "^2.1.0"
 
 xapi-agents@^1.1.4:
-  version "1.1.7"
-  resolved "https://registry.yarnpkg.com/xapi-agents/-/xapi-agents-1.1.7.tgz#2bcca9e0dad7ac0c85fb57b2017ed4c76a209e7b"
+  version "1.1.9"
+  resolved "https://registry.yarnpkg.com/xapi-agents/-/xapi-agents-1.1.9.tgz#226c4de388089b780e57071d6ffe8ccae8143065"
   dependencies:
     atob "^2.0.3"
     aws-sdk "^2.74.0"
@@ -3532,17 +3562,17 @@ xapi-agents@^1.1.4:
     mime-types "^2.1.17"
     mongodb "^2.2.26"
     node-fetch "^1.6.3"
-    rulr "^3.0.0"
+    rulr "^4.0.1"
     sha1 "^1.1.1"
-    source-map-support "^0.4.11"
+    source-map-support "^0.5.0"
     stream-to-string "^1.1.0"
     string-to-stream "^1.1.0"
     uuid "^3.0.1"
     xapi-validation "^2.1.0"
 
 xapi-state@^1.1.4:
-  version "1.1.8"
-  resolved "https://registry.yarnpkg.com/xapi-state/-/xapi-state-1.1.8.tgz#7268059dd355a4d77b0401f11d0fbc8d0689688f"
+  version "1.1.11"
+  resolved "https://registry.yarnpkg.com/xapi-state/-/xapi-state-1.1.11.tgz#ae6511b13354d65c490f8d8220e70be7be99f25b"
   dependencies:
     atob "^2.0.3"
     aws-sdk "^2.74.0"
@@ -3557,17 +3587,17 @@ xapi-state@^1.1.4:
     mime-types "^2.1.17"
     mongodb "^2.2.26"
     node-fetch "^1.6.3"
-    rulr "^3.0.0"
+    rulr "^4.0.1"
     sha1 "^1.1.1"
-    source-map-support "^0.4.11"
+    source-map-support "^0.5.0"
     stream-to-string "^1.1.0"
     string-to-stream "^1.1.0"
     uuid "^3.0.1"
     xapi-validation "^2.1.0"
 
-xapi-statements@^1.0.7:
-  version "1.0.11"
-  resolved "https://registry.yarnpkg.com/xapi-statements/-/xapi-statements-1.0.11.tgz#0ddb7eb578c28db120a2e20ae3ac4c33a8f04cce"
+xapi-statements@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/xapi-statements/-/xapi-statements-1.1.0.tgz#08aef148a73d95faa1c2067d3e90c7b7f61d7c9c"
   dependencies:
     accept-language-parser "^1.4.1"
     atob "^2.0.3"
@@ -3582,7 +3612,7 @@ xapi-statements@^1.0.7:
     file-stream-rotator "^0.2.0"
     fs-extra "^4.0.2"
     helmet "^3.5.0"
-    jscommons "^1.0.1"
+    jscommons "^1.3.0"
     jsonwebtoken "^8.0.1"
     lodash "^4.17.4"
     mime-types "^2.1.17"
@@ -3590,11 +3620,11 @@ xapi-statements@^1.0.7:
     mongodb "^2.2.26"
     morgan "^1.8.1"
     node-fetch "^1.6.3"
-    object-hash "1.1.8"
+    object-hash "1.2.0"
     promise-retry "^1.1.1"
     redis "^2.8.0"
-    rulr "^3.0.0"
-    source-map-support "^0.4.11"
+    rulr "^4.0.0"
+    source-map-support "^0.5.0"
     stream-to-string "^1.1.0"
     string-to-stream "^1.1.0"
     uuid "^3.0.1"
@@ -3603,10 +3633,10 @@ xapi-statements@^1.0.7:
     xapi-validation "^2.1.0"
 
 xapi-validation@^2.1.0:
-  version "2.1.2"
-  resolved "https://registry.yarnpkg.com/xapi-validation/-/xapi-validation-2.1.2.tgz#6a47339d0fccfc995d237b91175fd2377809635b"
+  version "2.1.3"
+  resolved "https://registry.yarnpkg.com/xapi-validation/-/xapi-validation-2.1.3.tgz#af8ee24776652c6bb6a9cbbd8e34065cf07765f2"
   dependencies:
-    rulr "^3.0.0"
+    rulr "^4.0.1"
 
 xml2js@0.4.17:
   version "0.4.17"

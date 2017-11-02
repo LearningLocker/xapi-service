@@ -1,10 +1,7 @@
 // tslint:disable:no-console
-import * as sourceMapSupport from 'source-map-support';
-sourceMapSupport.install();
-
-import { MongoClient, ObjectID } from 'mongodb';
-import config from './config';
 import './server'; // tslint:disable-line:no-import-side-effect
+import { MongoClient, ObjectID } from 'mongodb'; // tslint:disable-line:ordered-imports
+import config from './config';
 
 const testClient = {
   api: {

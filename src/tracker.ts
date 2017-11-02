@@ -4,7 +4,7 @@ import Tracker from 'jscommons/dist/tracker/Tracker';
 import config from './config';
 
 /* istanbul ignore next */
-export default async (): Promise<Tracker> => {
+const trackerFactory = async (): Promise<Tracker> => {
   if (config.tracker.newRelic.enabled) {
     process.env.NEW_RELIC_NO_CONFIG_FILE = config.tracker.newRelic.noConfigFile;
     process.env.NEW_RELIC_LOG = config.tracker.newRelic.log;
@@ -13,3 +13,5 @@ export default async (): Promise<Tracker> => {
   }
   return fakeTracker;
 };
+
+export default trackerFactory();

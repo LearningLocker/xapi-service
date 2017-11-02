@@ -15,6 +15,7 @@ import testAuthRepo from 'xapi-statements/dist/testAuthRepo';
 import enTranslator from 'xapi-statements/dist/translatorFactory/en';
 import config from '../config';
 import logger from '../logger';
+import tracker from '../tracker';
 
 const getEventsRepo = () => {
   switch (config.repoFactory.authRepoName) {
@@ -132,6 +133,7 @@ const serviceFacade = service({
   enableVoiding: config.statementsService.enableVoiding,
   enableVoidingChecks: config.statementsService.enableVoidingChecks,
   repo: repoFacade,
+  tracker,
 });
 const expressFacade = expressPresenter({
   bodyParserLimit: config.express.bodyParserLimit,
