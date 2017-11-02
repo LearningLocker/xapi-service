@@ -284,8 +284,8 @@ atob@^2.0.3:
   resolved "https://registry.yarnpkg.com/atob/-/atob-2.0.3.tgz#19c7a760473774468f20b2d2d03372ad7d4cbf5d"
 
 aws-sdk@^2.58.0, aws-sdk@^2.74.0, aws-sdk@^2.80.0, aws-sdk@^2.97.0:
-  version "2.141.0"
-  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.141.0.tgz#3d96a5970fd9f540ceabcc1d4baeb33b71583aa7"
+  version "2.142.0"
+  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.142.0.tgz#efdf69d2be3132aa51d4e7abb2c28fe42771e3ec"
   dependencies:
     buffer "4.9.1"
     crypto-browserify "1.0.9"
@@ -1809,7 +1809,7 @@ jsbn@~0.1.0:
   version "0.1.1"
   resolved "https://registry.yarnpkg.com/jsbn/-/jsbn-0.1.1.tgz#a5e654c2e5a2deb5f201d96cefbca80c0ef2f513"
 
-jscommons@^1.0.1:
+jscommons@^1.0.1, jscommons@^1.3.0:
   version "1.3.0"
   resolved "https://registry.yarnpkg.com/jscommons/-/jscommons-1.3.0.tgz#2ed1065fc7b970ecc728d0bd65ff0bfed564ce54"
   dependencies:
@@ -3596,9 +3596,9 @@ xapi-state@^1.1.11:
     uuid "^3.0.1"
     xapi-validation "^2.1.0"
 
-xapi-statements@^1.0.16:
-  version "1.0.16"
-  resolved "https://registry.yarnpkg.com/xapi-statements/-/xapi-statements-1.0.16.tgz#9363655ca0ae3c9e8e0bac06914c81df78051d8a"
+xapi-statements@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/xapi-statements/-/xapi-statements-1.1.0.tgz#08aef148a73d95faa1c2067d3e90c7b7f61d7c9c"
   dependencies:
     accept-language-parser "^1.4.1"
     atob "^2.0.3"
@@ -3613,7 +3613,7 @@ xapi-statements@^1.0.16:
     file-stream-rotator "^0.2.0"
     fs-extra "^4.0.2"
     helmet "^3.5.0"
-    jscommons "^1.0.1"
+    jscommons "^1.3.0"
     jsonwebtoken "^8.0.1"
     lodash "^4.17.4"
     mime-types "^2.1.17"

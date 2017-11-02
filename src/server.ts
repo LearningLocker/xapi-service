@@ -1,4 +1,5 @@
-import * as sourceMapSupport from 'source-map-support';
+import './tracker'; // tslint:disable-line:no-import-side-effect
+import * as sourceMapSupport from 'source-map-support'; // tslint:disable-line:ordered-imports
 sourceMapSupport.install();
 
 import * as express from 'express';
