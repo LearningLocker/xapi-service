@@ -68,6 +68,7 @@ export default {
     enableAttachmentCreation: getBooleanOption(process.env.STATEMENTS_SERVICE_CREATE_ATTACHMENTS),
     enableAttachmentValidation: getBooleanOption(process.env.STATEMENTS_SERVICE_CHECK_ATTACHMENTS),
     enableConflictChecks: getBooleanOption(process.env.STATEMENTS_SERVICE_CHECK_CONFLICTS),
+    enableNullRemoval: getBooleanOption(process.env.SERVICE_REMOVE_NULLS, false),
     enableReferencing: getBooleanOption(process.env.STATEMENTS_SERVICE_UPDATE_REFS),
     enableStatementCreation: getBooleanOption(process.env.STATEMENTS_SERVICE_CREATE_STATEMENTS),
     enableVoiding: getBooleanOption(process.env.STATEMENTS_SERVICE_UPDATE_VOIDS),
