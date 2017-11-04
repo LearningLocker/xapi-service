@@ -87,9 +87,9 @@
     "@types/express-serve-static-core" "*"
     "@types/serve-static" "*"
 
-"@types/lodash@4.14.80":
-  version "4.14.80"
-  resolved "https://registry.yarnpkg.com/@types/lodash/-/lodash-4.14.80.tgz#a6b8b7900e6a7dcbc2e90d9b6dfbe3f6a7f69951"
+"@types/lodash@4.14.81":
+  version "4.14.81"
+  resolved "https://registry.yarnpkg.com/@types/lodash/-/lodash-4.14.81.tgz#c944b38118615fa54be6cac1ef7ba5326ff70d6e"
 
 "@types/mime@*":
   version "2.0.0"
@@ -284,8 +284,8 @@ atob@^2.0.3:
   resolved "https://registry.yarnpkg.com/atob/-/atob-2.0.3.tgz#19c7a760473774468f20b2d2d03372ad7d4cbf5d"
 
 aws-sdk@^2.58.0, aws-sdk@^2.74.0, aws-sdk@^2.80.0, aws-sdk@^2.97.0:
-  version "2.142.0"
-  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.142.0.tgz#efdf69d2be3132aa51d4e7abb2c28fe42771e3ec"
+  version "2.145.0"
+  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.145.0.tgz#085bb4553231defd93b96b0d95023717c9c3c093"
   dependencies:
     buffer "4.9.1"
     crypto-browserify "1.0.9"
@@ -1809,7 +1809,7 @@ jsbn@~0.1.0:
   version "0.1.1"
   resolved "https://registry.yarnpkg.com/jsbn/-/jsbn-0.1.1.tgz#a5e654c2e5a2deb5f201d96cefbca80c0ef2f513"
 
-jscommons@^1.0.1, jscommons@^1.3.0:
+jscommons@^1.0.1, jscommons@^1.0.4, jscommons@^1.3.0:
   version "1.3.0"
   resolved "https://registry.yarnpkg.com/jscommons/-/jscommons-1.3.0.tgz#2ed1065fc7b970ecc728d0bd65ff0bfed564ce54"
   dependencies:
@@ -2302,8 +2302,8 @@ netrc@^0.1.4:
   resolved "https://registry.yarnpkg.com/netrc/-/netrc-0.1.4.tgz#6be94fcaca8d77ade0a9670dc460914c94472444"
 
 newrelic@^2.3.1:
-  version "2.3.1"
-  resolved "https://registry.yarnpkg.com/newrelic/-/newrelic-2.3.1.tgz#4b72f908d8e0be373470e9c18097c35c3f9673bc"
+  version "2.3.2"
+  resolved "https://registry.yarnpkg.com/newrelic/-/newrelic-2.3.2.tgz#201007cb1fb824552c0e0571f4e2dba65ca17bb5"
   dependencies:
     async "^2.1.4"
     concat-stream "^1.5.0"
@@ -3338,8 +3338,8 @@ tslint@5.8.0:
     tsutils "^2.12.1"
 
 tsutils@^2.12.0, tsutils@^2.12.1:
-  version "2.12.1"
-  resolved "https://registry.yarnpkg.com/tsutils/-/tsutils-2.12.1.tgz#f4d95ce3391c8971e46e54c4cf0edb0a21dd5b24"
+  version "2.12.2"
+  resolved "https://registry.yarnpkg.com/tsutils/-/tsutils-2.12.2.tgz#ad58a4865d17ec3ddb6631b6ca53be14a5656ff3"
   dependencies:
     tslib "^1.7.1"
 
@@ -3522,8 +3522,8 @@ x-xss-protection@1.0.0:
   resolved "https://registry.yarnpkg.com/x-xss-protection/-/x-xss-protection-1.0.0.tgz#898afb93869b24661cf9c52f9ee8db8ed0764dd9"
 
 xapi-activities@^1.1.3:
-  version "1.1.8"
-  resolved "https://registry.yarnpkg.com/xapi-activities/-/xapi-activities-1.1.8.tgz#ed13a5c2ba1934a336ca61b6501f6c251305c0b3"
+  version "1.1.9"
+  resolved "https://registry.yarnpkg.com/xapi-activities/-/xapi-activities-1.1.9.tgz#fd6828d8a6c550e1e08f0cf4eaa61228023738dd"
   dependencies:
     atob "^2.0.3"
     aws-sdk "^2.74.0"
@@ -3547,8 +3547,8 @@ xapi-activities@^1.1.3:
     xapi-validation "^2.1.0"
 
 xapi-agents@^1.1.4:
-  version "1.1.9"
-  resolved "https://registry.yarnpkg.com/xapi-agents/-/xapi-agents-1.1.9.tgz#226c4de388089b780e57071d6ffe8ccae8143065"
+  version "1.1.10"
+  resolved "https://registry.yarnpkg.com/xapi-agents/-/xapi-agents-1.1.10.tgz#ccba8f8bdfc262d25b3185e018275a80b18e3d7e"
   dependencies:
     atob "^2.0.3"
     aws-sdk "^2.74.0"
@@ -3558,7 +3558,7 @@ xapi-agents@^1.1.4:
     dotenv "^4.0.0"
     express "^4.14.1"
     fs-extra "^4.0.2"
-    jscommons "^1.0.1"
+    jscommons "^1.0.4"
     lodash "^4.17.4"
     mime-types "^2.1.17"
     mongodb "^2.2.26"
@@ -3572,8 +3572,8 @@ xapi-agents@^1.1.4:
     xapi-validation "^2.1.0"
 
 xapi-state@^1.1.11:
-  version "1.1.11"
-  resolved "https://registry.yarnpkg.com/xapi-state/-/xapi-state-1.1.11.tgz#ae6511b13354d65c490f8d8220e70be7be99f25b"
+  version "1.1.12"
+  resolved "https://registry.yarnpkg.com/xapi-state/-/xapi-state-1.1.12.tgz#fdf6572e6d44ae8890aaa209c33ecd7b5cabe637"
   dependencies:
     atob "^2.0.3"
     aws-sdk "^2.74.0"
