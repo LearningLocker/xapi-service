@@ -292,8 +292,8 @@ atob@^2.0.3:
   resolved "https://registry.yarnpkg.com/atob/-/atob-2.0.3.tgz#19c7a760473774468f20b2d2d03372ad7d4cbf5d"
 
 aws-sdk@^2.58.0, aws-sdk@^2.74.0, aws-sdk@^2.80.0, aws-sdk@^2.97.0:
-  version "2.146.0"
-  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.146.0.tgz#e2d75585a030dae116ae32cbf42c496688d04efb"
+  version "2.147.0"
+  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.147.0.tgz#a0d168ad1f8fd5d15ee9bb537fdddfdf63a205c1"
   dependencies:
     buffer "4.9.1"
     crypto-browserify "1.0.9"
@@ -3393,9 +3393,9 @@ tslib@^1.7.1:
   version "1.8.0"
   resolved "https://registry.yarnpkg.com/tslib/-/tslib-1.8.0.tgz#dc604ebad64bcbf696d613da6c954aa0e7ea1eb6"
 
-tslint-consistent-codestyle@1.9.0:
-  version "1.9.0"
-  resolved "https://registry.yarnpkg.com/tslint-consistent-codestyle/-/tslint-consistent-codestyle-1.9.0.tgz#633ed6908776015b4003ee638bc7968035bd7e3e"
+tslint-consistent-codestyle@1.9.1:
+  version "1.9.1"
+  resolved "https://registry.yarnpkg.com/tslint-consistent-codestyle/-/tslint-consistent-codestyle-1.9.1.tgz#d1ad768584f3b5ca80aa0176ebeb3f6fdac23286"
   dependencies:
     tslib "^1.7.1"
     tsutils "^2.12.2"
