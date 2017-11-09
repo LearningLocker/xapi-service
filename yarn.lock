@@ -41,8 +41,8 @@
     npmlog "^4.0.0"
 
 "@semantic-release/release-notes-generator@^5.0.0":
-  version "5.0.1"
-  resolved "https://registry.yarnpkg.com/@semantic-release/release-notes-generator/-/release-notes-generator-5.0.1.tgz#16720093bd73457a416e73aaed2422ddc540e8b4"
+  version "5.0.2"
+  resolved "https://registry.yarnpkg.com/@semantic-release/release-notes-generator/-/release-notes-generator-5.0.2.tgz#9a34cb85b30ac3634a568b17028213496c8c899a"
   dependencies:
     conventional-changelog-angular "^1.4.0"
     conventional-changelog-writer "^2.0.1"
@@ -87,9 +87,9 @@
     "@types/express-serve-static-core" "*"
     "@types/serve-static" "*"
 
-"@types/lodash@4.14.83":
-  version "4.14.83"
-  resolved "https://registry.yarnpkg.com/@types/lodash/-/lodash-4.14.83.tgz#2f2154797ce8fd8d6ea91a8d304a4e44ee95920c"
+"@types/lodash@4.14.84":
+  version "4.14.84"
+  resolved "https://registry.yarnpkg.com/@types/lodash/-/lodash-4.14.84.tgz#ede7e6bbb4f0d35adf8b32d57b44bf125f7a2a41"
 
 "@types/mime@*":
   version "2.0.0"
@@ -113,8 +113,8 @@
     "@types/node" "*"
 
 "@types/serve-static@*":
-  version "1.13.0"
-  resolved "https://registry.yarnpkg.com/@types/serve-static/-/serve-static-1.13.0.tgz#2ef359d8d5982bc011a7a8fa36016e629e8b7635"
+  version "1.13.1"
+  resolved "https://registry.yarnpkg.com/@types/serve-static/-/serve-static-1.13.1.tgz#1d2801fa635d274cd97d4ec07e26b21b44127492"
   dependencies:
     "@types/express-serve-static-core" "*"
     "@types/mime" "*"
@@ -292,8 +292,8 @@ atob@^2.0.3:
   resolved "https://registry.yarnpkg.com/atob/-/atob-2.0.3.tgz#19c7a760473774468f20b2d2d03372ad7d4cbf5d"
 
 aws-sdk@^2.58.0, aws-sdk@^2.74.0, aws-sdk@^2.80.0, aws-sdk@^2.97.0:
-  version "2.148.0"
-  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.148.0.tgz#06d1cde0aeda2d290d2ce8466e6a7305b559bbb2"
+  version "2.149.0"
+  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.149.0.tgz#76f53722a7780bdb3191e83f27c10108c6fe9813"
   dependencies:
     buffer "4.9.1"
     crypto-browserify "1.0.9"
