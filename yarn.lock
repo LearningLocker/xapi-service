@@ -55,8 +55,8 @@
     lodash "^4.17.4"
 
 "@types/body-parser@*":
-  version "1.16.7"
-  resolved "https://registry.yarnpkg.com/@types/body-parser/-/body-parser-1.16.7.tgz#455fc23fd0ddaaeda6cd6cbb653558276e5920fa"
+  version "1.16.8"
+  resolved "https://registry.yarnpkg.com/@types/body-parser/-/body-parser-1.16.8.tgz#687ec34140624a3bec2b1a8ea9268478ae8f3be3"
   dependencies:
     "@types/express" "*"
     "@types/node" "*"
@@ -87,9 +87,9 @@
     "@types/express-serve-static-core" "*"
     "@types/serve-static" "*"
 
-"@types/lodash@4.14.82":
-  version "4.14.82"
-  resolved "https://registry.yarnpkg.com/@types/lodash/-/lodash-4.14.82.tgz#18948897f415ef199a93156a66ef7ce1d0d005b9"
+"@types/lodash@4.14.83":
+  version "4.14.83"
+  resolved "https://registry.yarnpkg.com/@types/lodash/-/lodash-4.14.83.tgz#2f2154797ce8fd8d6ea91a8d304a4e44ee95920c"
 
 "@types/mime@*":
   version "2.0.0"
@@ -292,8 +292,8 @@ atob@^2.0.3:
   resolved "https://registry.yarnpkg.com/atob/-/atob-2.0.3.tgz#19c7a760473774468f20b2d2d03372ad7d4cbf5d"
 
 aws-sdk@^2.58.0, aws-sdk@^2.74.0, aws-sdk@^2.80.0, aws-sdk@^2.97.0:
-  version "2.147.0"
-  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.147.0.tgz#a0d168ad1f8fd5d15ee9bb537fdddfdf63a205c1"
+  version "2.148.0"
+  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.148.0.tgz#06d1cde0aeda2d290d2ce8466e6a7305b559bbb2"
   dependencies:
     buffer "4.9.1"
     crypto-browserify "1.0.9"
@@ -571,8 +571,8 @@ cliui@^2.1.0:
     wordwrap "0.0.2"
 
 clone@^1.0.2:
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/clone/-/clone-1.0.2.tgz#260b7a99ebb1edfe247538175f783243cb19d149"
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/clone/-/clone-1.0.3.tgz#298d7e2231660f40c003c2ed3140decf3f53085f"
 
 co@^4.6.0:
   version "4.6.0"
@@ -587,8 +587,8 @@ codemirror@5.28.0:
   resolved "https://registry.yarnpkg.com/codemirror/-/codemirror-5.28.0.tgz#2978d9280d671351a4f5737d06bbd681a0fd6f83"
 
 color-convert@^1.9.0:
-  version "1.9.0"
-  resolved "https://registry.yarnpkg.com/color-convert/-/color-convert-1.9.0.tgz#1accf97dd739b983bf994d56fec8f95853641b7a"
+  version "1.9.1"
+  resolved "https://registry.yarnpkg.com/color-convert/-/color-convert-1.9.1.tgz#c1261107aeb2f294ebffec9ed9ecad529a6097ed"
   dependencies:
     color-name "^1.1.1"
 

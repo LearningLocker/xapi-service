@@ -54,7 +54,7 @@
   "devDependencies": {
     "@types/dotenv": "4.0.2",
     "@types/express": "4.0.39",
-    "@types/lodash": "4.14.82",
+    "@types/lodash": "4.14.83",
     "@types/mongodb": "2.2.15",
     "@types/node": "8.0.50",
     "@types/redis": "2.8.1",
