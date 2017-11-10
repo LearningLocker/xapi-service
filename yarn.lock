@@ -3020,9 +3020,9 @@ sax@>=0.6.0:
   version "1.2.4"
   resolved "https://registry.yarnpkg.com/sax/-/sax-1.2.4.tgz#2816234e2378bddc4e5354fab5caa895df7100d9"
 
-semantic-release@9.1.0:
-  version "9.1.0"
-  resolved "https://registry.yarnpkg.com/semantic-release/-/semantic-release-9.1.0.tgz#0d85d78343fe9ae39f3e989ad257413f9ba349df"
+semantic-release@9.1.1:
+  version "9.1.1"
+  resolved "https://registry.yarnpkg.com/semantic-release/-/semantic-release-9.1.1.tgz#d1011197d8899128cce96118402c3844e2db51d3"
   dependencies:
     "@semantic-release/commit-analyzer" "^4.0.0"
     "@semantic-release/condition-travis" "^6.0.0"
