@@ -63,7 +63,7 @@
     "commitizen": "2.9.6",
     "condition-circle": "1.5.0",
     "cz-conventional-changelog": "2.1.0",
-    "jscpd": "0.6.15",
+    "jscpd": "0.6.17",
     "semantic-release": "9.1.1",
     "tslint": "5.8.0",
     "tslint-consistent-codestyle": "1.10.0",
