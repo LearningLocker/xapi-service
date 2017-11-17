@@ -292,8 +292,8 @@ atob@^2.0.3:
   resolved "https://registry.yarnpkg.com/atob/-/atob-2.0.3.tgz#19c7a760473774468f20b2d2d03372ad7d4cbf5d"
 
 aws-sdk@^2.58.0, aws-sdk@^2.74.0, aws-sdk@^2.80.0, aws-sdk@^2.97.0:
-  version "2.151.0"
-  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.151.0.tgz#5e73d778b76514f36183b91400477778ab5e58d8"
+  version "2.152.0"
+  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.152.0.tgz#55b8cc861970ade6db4c28cf2f390575d1051e13"
   dependencies:
     buffer "4.9.1"
     crypto-browserify "1.0.9"
@@ -1374,8 +1374,8 @@ git-refs@^1.1.3:
     walk "^2.3.9"
 
 github@^12.0.0:
-  version "12.0.2"
-  resolved "https://registry.yarnpkg.com/github/-/github-12.0.2.tgz#3ab9a67a35ab771cf1a6c1d1f28793509d5e13eb"
+  version "12.0.3"
+  resolved "https://registry.yarnpkg.com/github/-/github-12.0.3.tgz#e54b0917606e09c8bb6777cd5f22b257bf5c79b5"
   dependencies:
     dotenv "^4.0.0"
     follow-redirects "1.2.5"
@@ -1661,8 +1661,8 @@ inquirer@1.2.3:
     through "^2.3.6"
 
 install@^0.10.1:
-  version "0.10.1"
-  resolved "https://registry.yarnpkg.com/install/-/install-0.10.1.tgz#1c7b53c8dd7335ef534c2648de28f599df1bdd97"
+  version "0.10.2"
+  resolved "https://registry.yarnpkg.com/install/-/install-0.10.2.tgz#f1f71902797e5a900069fb9ab80c94055025ffdc"
 
 interpret@^1.0.0, interpret@^1.0.4:
   version "1.0.4"
@@ -1885,9 +1885,9 @@ jscommons@^1.3.0:
     winston "^2.3.1"
     winston-aws-cloudwatch "^1.5.0"
 
-jscommons@^2.0.1:
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/jscommons/-/jscommons-2.0.1.tgz#20c891cd3978b184b5948a50d31c31cd112b58de"
+jscommons@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/jscommons/-/jscommons-2.1.0.tgz#045cd967b33c16809592fd3c57a3f8233d6774dd"
   dependencies:
     aws-sdk "^2.80.0"
     body-parser "^1.17.2"
@@ -3630,9 +3630,34 @@ x-xss-protection@1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/x-xss-protection/-/x-xss-protection-1.0.0.tgz#898afb93869b24661cf9c52f9ee8db8ed0764dd9"
 
-xapi-activities@^2.1.0:
+xapi-activities@^2.2.0:
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/xapi-activities/-/xapi-activities-2.2.0.tgz#871fa75edb2f5b26940b0fde5af49ca8e0b7226d"
+  dependencies:
+    atob "^2.0.3"
+    aws-sdk "^2.74.0"
+    bluebird "^3.5.0"
+    boolean "^0.1.2"
+    btoa "^1.1.2"
+    dotenv "^4.0.0"
+    express "^4.14.1"
+    fs-extra "^4.0.2"
+    jscommons "^2.1.0"
+    lodash "^4.17.4"
+    mime-types "^2.1.17"
+    mongodb "^2.2.26"
+    node-fetch "^1.6.3"
+    rulr "^4.0.1"
+    sha1 "^1.1.1"
+    source-map-support "^0.5.0"
+    stream-to-string "^1.1.0"
+    string-to-stream "^1.1.0"
+    uuid "^3.0.1"
+    xapi-validation "^2.1.0"
+
+xapi-agents@^2.1.0:
   version "2.1.0"
-  resolved "https://registry.yarnpkg.com/xapi-activities/-/xapi-activities-2.1.0.tgz#8dccef8e7b6a35e4edd134aba504d1fb0900b609"
+  resolved "https://registry.yarnpkg.com/xapi-agents/-/xapi-agents-2.1.0.tgz#a8c522bf9a6e17a1ea06ee748d0228260762487a"
   dependencies:
     atob "^2.0.3"
     aws-sdk "^2.74.0"
@@ -3642,7 +3667,7 @@ xapi-activities@^2.1.0:
     dotenv "^4.0.0"
     express "^4.14.1"
     fs-extra "^4.0.2"
-    jscommons "^2.0.1"
+    jscommons "^2.1.0"
     lodash "^4.17.4"
     mime-types "^2.1.17"
     mongodb "^2.2.26"
@@ -3655,9 +3680,9 @@ xapi-activities@^2.1.0:
     uuid "^3.0.1"
     xapi-validation "^2.1.0"
 
-xapi-agents@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/xapi-agents/-/xapi-agents-2.0.0.tgz#6c3c585c99e77333fe18ef21aeb39b115ce41331"
+xapi-state@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/xapi-state/-/xapi-state-2.1.0.tgz#ad01adb27b886f18f6c3fa274b8bd9bd1cbe8841"
   dependencies:
     atob "^2.0.3"
     aws-sdk "^2.74.0"
@@ -3667,32 +3692,7 @@ xapi-agents@^2.0.0:
     dotenv "^4.0.0"
     express "^4.14.1"
     fs-extra "^4.0.2"
-    jscommons "^2.0.1"
-    lodash "^4.17.4"
-    mime-types "^2.1.17"
-    mongodb "^2.2.26"
-    node-fetch "^1.6.3"
-    rulr "^4.0.1"
-    sha1 "^1.1.1"
-    source-map-support "^0.5.0"
-    stream-to-string "^1.1.0"
-    string-to-stream "^1.1.0"
-    uuid "^3.0.1"
-    xapi-validation "^2.1.0"
-
-xapi-state@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/xapi-state/-/xapi-state-2.0.0.tgz#bc8d2d7fa0d5206d93d7a3f0a2a43234998a4a80"
-  dependencies:
-    atob "^2.0.3"
-    aws-sdk "^2.74.0"
-    bluebird "^3.5.0"
-    boolean "^0.1.2"
-    btoa "^1.1.2"
-    dotenv "^4.0.0"
-    express "^4.14.1"
-    fs-extra "^4.0.2"
-    jscommons "^2.0.1"
+    jscommons "^2.1.0"
     lodash "^4.17.4"
     mime-types "^2.1.17"
     mongodb "^2.2.26"
