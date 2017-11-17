@@ -68,6 +68,7 @@ const service = serviceFacade({
   enableStatementCreation: config.statementsService.enableStatementCreation,
   enableVoiding: config.statementsService.enableVoiding,
   enableVoidingChecks: config.statementsService.enableVoidingChecks,
+  logger,
   repo,
   tracker,
 });
@@ -79,6 +80,7 @@ const presenter = presenterFacade({
   logger,
   morganDirectory: config.express.morganDirectory,
   service,
+  tracker,
   translator: getTranslatorFacade(),
 });
 
