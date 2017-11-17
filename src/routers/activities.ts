@@ -14,6 +14,7 @@ import enTranslator from 'xapi-activities/dist/translatorFactory/en';
 import mongoAuthRepo from 'xapi-agents/dist/mongoAuthRepo';
 import config from '../config';
 import logger from '../logger';
+import tracker from '../tracker';
 
 const getAuthRepo = () => {
   switch (config.repoFactory.authRepoName) {
@@ -105,6 +106,7 @@ const expressFacade = expressPresenter({
   logger,
   morganDirectory: config.express.morganDirectory,
   service: serviceFacade,
+  tracker,
   translator: getTranslatorFacade(),
 });
 

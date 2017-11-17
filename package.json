@@ -46,9 +46,9 @@
     "mongodb": "^2.2.26",
     "redis": "^2.8.0",
     "source-map-support": "^0.5.0",
-    "xapi-activities": "^1.2.0",
-    "xapi-agents": "^1.2.0",
-    "xapi-state": "^1.2.0",
+    "xapi-activities": "^2.1.0",
+    "xapi-agents": "^2.0.0",
+    "xapi-state": "^2.0.0",
     "xapi-statements": "^2.2.3"
   },
   "devDependencies": {
