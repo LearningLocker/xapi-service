@@ -3682,7 +3682,7 @@ xapi-state@^1.1.14:
     uuid "^3.0.1"
     xapi-validation "^2.1.0"
 
-xapi-statements@^2.2.2:
+xapi-statements@^2.2.3:
   version "2.2.3"
   resolved "https://registry.yarnpkg.com/xapi-statements/-/xapi-statements-2.2.3.tgz#e2b8ed0f56fce1b24f04d394172982f0416316be"
   dependencies:
