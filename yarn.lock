@@ -1862,30 +1862,7 @@ jsbn@~0.1.0:
   version "0.1.1"
   resolved "https://registry.yarnpkg.com/jsbn/-/jsbn-0.1.1.tgz#a5e654c2e5a2deb5f201d96cefbca80c0ef2f513"
 
-jscommons@^1.3.0:
-  version "1.3.1"
-  resolved "https://registry.yarnpkg.com/jscommons/-/jscommons-1.3.1.tgz#935c3af1d7fbdc84b32ee7cf14eb4e6964992ffe"
-  dependencies:
-    aws-sdk "^2.80.0"
-    body-parser "^1.17.2"
-    boolean "^0.1.3"
-    cors "^2.8.3"
-    express "^4.15.3"
-    file-stream-rotator "^0.2.0"
-    fs-extra "^4.0.2"
-    helmet "^3.6.1"
-    knex "^0.14.0"
-    lodash "^4.17.4"
-    moment "^2.18.1"
-    mongodb "^2.2.29"
-    morgan "^1.8.2"
-    newrelic "^2.3.1"
-    rulr "^4.0.1"
-    uuid "^3.1.0"
-    winston "^2.3.1"
-    winston-aws-cloudwatch "^1.5.0"
-
-jscommons@^2.1.0:
+jscommons@^2.0.0, jscommons@^2.1.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/jscommons/-/jscommons-2.1.0.tgz#045cd967b33c16809592fd3c57a3f8233d6774dd"
   dependencies:
@@ -3630,9 +3607,9 @@ x-xss-protection@1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/x-xss-protection/-/x-xss-protection-1.0.0.tgz#898afb93869b24661cf9c52f9ee8db8ed0764dd9"
 
-xapi-activities@^2.2.0:
-  version "2.2.0"
-  resolved "https://registry.yarnpkg.com/xapi-activities/-/xapi-activities-2.2.0.tgz#871fa75edb2f5b26940b0fde5af49ca8e0b7226d"
+xapi-activities@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/xapi-activities/-/xapi-activities-3.0.0.tgz#c1763ab6d15f7b5d223d11cc954534767567ec90"
   dependencies:
     atob "^2.0.3"
     aws-sdk "^2.74.0"
@@ -3655,9 +3632,9 @@ xapi-activities@^2.2.0:
     uuid "^3.0.1"
     xapi-validation "^2.1.0"
 
-xapi-agents@^2.1.0:
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/xapi-agents/-/xapi-agents-2.1.0.tgz#a8c522bf9a6e17a1ea06ee748d0228260762487a"
+xapi-agents@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/xapi-agents/-/xapi-agents-3.0.0.tgz#3125c86ca0e0ab9f05377e3c832d891f6494fa83"
   dependencies:
     atob "^2.0.3"
     aws-sdk "^2.74.0"
@@ -3680,9 +3657,9 @@ xapi-agents@^2.1.0:
     uuid "^3.0.1"
     xapi-validation "^2.1.0"
 
-xapi-state@^2.1.0:
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/xapi-state/-/xapi-state-2.1.0.tgz#ad01adb27b886f18f6c3fa274b8bd9bd1cbe8841"
+xapi-state@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/xapi-state/-/xapi-state-3.0.0.tgz#9d3b767c006cbc01e0a5d9edcc03341b363bb9b3"
   dependencies:
     atob "^2.0.3"
     aws-sdk "^2.74.0"
@@ -3705,9 +3682,9 @@ xapi-state@^2.1.0:
     uuid "^3.0.1"
     xapi-validation "^2.1.0"
 
-xapi-statements@^v4.0.1:
-  version "4.0.1"
-  resolved "https://registry.yarnpkg.com/xapi-statements/-/xapi-statements-4.0.1.tgz#dd85022fa4e7d8e91b67368fdc3994770fe69f13"
+xapi-statements@^5.0.0:
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/xapi-statements/-/xapi-statements-5.0.0.tgz#ae5e632a4f9062439e1ed734eb816b233a6a723a"
   dependencies:
     accept-language-parser "^1.4.1"
     atob "^2.0.3"
