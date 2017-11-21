@@ -150,8 +150,8 @@ accepts@~1.3.4:
     negotiator "0.6.1"
 
 agent-base@^4.1.0:
-  version "4.1.1"
-  resolved "https://registry.yarnpkg.com/agent-base/-/agent-base-4.1.1.tgz#92d8a4fc2524a3b09b3666a33b6c97960f23d6a4"
+  version "4.1.2"
+  resolved "https://registry.yarnpkg.com/agent-base/-/agent-base-4.1.2.tgz#80fa6cde440f4dcf9af2617cf246099b5d99f0c8"
   dependencies:
     es6-promisify "^5.0.0"
 
@@ -160,8 +160,8 @@ agent-base@~1.0.1:
   resolved "https://registry.yarnpkg.com/agent-base/-/agent-base-1.0.2.tgz#6890d3fb217004b62b70f8928e0fae5f8952a706"
 
 ajv@^5.1.0:
-  version "5.3.0"
-  resolved "https://registry.yarnpkg.com/ajv/-/ajv-5.3.0.tgz#4414ff74a50879c208ee5fdc826e32c303549eda"
+  version "5.4.0"
+  resolved "https://registry.yarnpkg.com/ajv/-/ajv-5.4.0.tgz#32d1cf08dbc80c432f426f12e10b2511f6b46474"
   dependencies:
     co "^4.6.0"
     fast-deep-equal "^1.0.0"
@@ -292,8 +292,8 @@ atob@^2.0.3:
   resolved "https://registry.yarnpkg.com/atob/-/atob-2.0.3.tgz#19c7a760473774468f20b2d2d03372ad7d4cbf5d"
 
 aws-sdk@^2.58.0, aws-sdk@^2.74.0, aws-sdk@^2.80.0, aws-sdk@^2.97.0:
-  version "2.152.0"
-  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.152.0.tgz#55b8cc861970ade6db4c28cf2f390575d1051e13"
+  version "2.154.0"
+  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.154.0.tgz#bbe9439d31e380a2e3617ffa217432b4fab776d1"
   dependencies:
     buffer "4.9.1"
     crypto-browserify "1.0.9"
@@ -2017,8 +2017,8 @@ klaw@^1.0.0:
     graceful-fs "^4.1.9"
 
 knex@^0.14.0:
-  version "0.14.0"
-  resolved "https://registry.yarnpkg.com/knex/-/knex-0.14.0.tgz#dd4569821141429c4e6b0bb5d8068874cdb50cc3"
+  version "0.14.1"
+  resolved "https://registry.yarnpkg.com/knex/-/knex-0.14.1.tgz#ba4ae5afc2824a43b392fbbc8f8a7753e356d808"
   dependencies:
     babel-runtime "^6.23.0"
     bluebird "^3.4.6"
@@ -3655,9 +3655,9 @@ xapi-activities@^2.2.0:
     uuid "^3.0.1"
     xapi-validation "^2.1.0"
 
-xapi-agents@^2.1.0:
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/xapi-agents/-/xapi-agents-2.1.0.tgz#a8c522bf9a6e17a1ea06ee748d0228260762487a"
+xapi-agents@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/xapi-agents/-/xapi-agents-3.0.0.tgz#3125c86ca0e0ab9f05377e3c832d891f6494fa83"
   dependencies:
     atob "^2.0.3"
     aws-sdk "^2.74.0"
@@ -3681,8 +3681,8 @@ xapi-agents@^2.1.0:
     xapi-validation "^2.1.0"
 
 xapi-state@^2.1.0:
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/xapi-state/-/xapi-state-2.1.0.tgz#ad01adb27b886f18f6c3fa274b8bd9bd1cbe8841"
+  version "2.2.1"
+  resolved "https://registry.yarnpkg.com/xapi-state/-/xapi-state-2.2.1.tgz#9df14ef8e745e0bf63f5658d836f71c7aba1507b"
   dependencies:
     atob "^2.0.3"
     aws-sdk "^2.74.0"
