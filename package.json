@@ -49,7 +49,7 @@
     "xapi-activities": "^3.0.0",
     "xapi-agents": "^3.0.0",
     "xapi-state": "^3.0.0",
-    "xapi-statements": "^5.0.0"
+    "xapi-statements": "^5.0.1"
   },
   "devDependencies": {
     "@types/dotenv": "4.0.2",
