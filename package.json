@@ -48,7 +48,7 @@
     "source-map-support": "^0.5.0",
     "xapi-activities": "^2.2.0",
     "xapi-agents": "^2.1.0",
-    "xapi-state": "^2.1.0",
+    "xapi-state": "^3.0.0",
     "xapi-statements": "^2.2.3"
   },
   "devDependencies": {
