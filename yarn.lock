@@ -3630,9 +3630,9 @@ x-xss-protection@1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/x-xss-protection/-/x-xss-protection-1.0.0.tgz#898afb93869b24661cf9c52f9ee8db8ed0764dd9"
 
-xapi-activities@^2.2.0:
-  version "2.2.0"
-  resolved "https://registry.yarnpkg.com/xapi-activities/-/xapi-activities-2.2.0.tgz#871fa75edb2f5b26940b0fde5af49ca8e0b7226d"
+xapi-activities@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/xapi-activities/-/xapi-activities-3.0.0.tgz#c1763ab6d15f7b5d223d11cc954534767567ec90"
   dependencies:
     atob "^2.0.3"
     aws-sdk "^2.74.0"
@@ -3655,9 +3655,9 @@ xapi-activities@^2.2.0:
     uuid "^3.0.1"
     xapi-validation "^2.1.0"
 
-xapi-agents@^2.1.0:
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/xapi-agents/-/xapi-agents-2.1.0.tgz#a8c522bf9a6e17a1ea06ee748d0228260762487a"
+xapi-agents@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/xapi-agents/-/xapi-agents-3.0.0.tgz#3125c86ca0e0ab9f05377e3c832d891f6494fa83"
   dependencies:
     atob "^2.0.3"
     aws-sdk "^2.74.0"
@@ -3680,9 +3680,9 @@ xapi-agents@^2.1.0:
     uuid "^3.0.1"
     xapi-validation "^2.1.0"
 
-xapi-state@^2.1.0:
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/xapi-state/-/xapi-state-2.1.0.tgz#ad01adb27b886f18f6c3fa274b8bd9bd1cbe8841"
+xapi-state@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/xapi-state/-/xapi-state-3.0.0.tgz#9d3b767c006cbc01e0a5d9edcc03341b363bb9b3"
   dependencies:
     atob "^2.0.3"
     aws-sdk "^2.74.0"
