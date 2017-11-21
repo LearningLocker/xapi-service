@@ -22,12 +22,10 @@ const handleExit = (event: string) => {
   };
 };
 
-app.use(config.express.xAPIPrefix, [
-  statementsRouter,
-  agentsRouter,
-  activitiesRouter,
-  stateRouter,
-]);
+app.use(`${config.express.xAPIPrefix}/xAPI/activities/profile`, activitiesRouter);
+app.use(`${config.express.xAPIPrefix}/xAPI/activities/state`, stateRouter);
+app.use(`${config.express.xAPIPrefix}/xAPI/agents`, agentsRouter);
+app.use(config.express.xAPIPrefix, statementsRouter);
 
 app.listen(config.express.port, () => {
   const port80 = 80;
