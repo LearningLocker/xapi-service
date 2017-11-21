@@ -1,8 +1,9 @@
-import './tracker'; // tslint:disable-line:no-import-side-effect
 import * as sourceMapSupport from 'source-map-support'; // tslint:disable-line:ordered-imports
+import './tracker'; // tslint:disable-line:no-import-side-effect
 sourceMapSupport.install();
 
 import * as express from 'express';
+import handleListen from 'jscommons/dist/expressPresenter/utils/handleListen';
 import config from './config';
 import logger from './logger';
 import activitiesRouter from './routers/activities';
@@ -11,16 +12,6 @@ import stateRouter from './routers/state';
 import statementsRouter from './routers/statements';
 
 const app = express();
-
-const handleExit = (event: string) => {
-  return (error?: any) => {
-    if (error !== undefined) {
-      logger.error(error.stack);
-    }
-    logger.info(event);
-    process.exit();
-  };
-};
 
 app.use(`${config.express.xAPIPrefix}/xAPI/activities/profile`, activitiesRouter);
 app.use(`${config.express.xAPIPrefix}/xAPI/activities/state`, stateRouter);
@@ -35,12 +26,5 @@ app.listen(config.express.port, () => {
     logger.warning('Express port set to 80; this will not work on non-root Node processes');
   }
   logger.info(`Listening on port ${config.express.port}`);
-  if (process.send !== undefined) {
-    logger.info('Process ready');
-    process.send('ready');
-  }
-  process.on('exit', handleExit('exit'));
-  process.on('SIGINT', handleExit('SIGINT'));
-  process.on('SIGTERM', handleExit('SIGTERM'));
-  process.on('uncaughtException', handleExit('uncaughtException'));
+  handleListen(logger);
 });
