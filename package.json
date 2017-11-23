@@ -49,13 +49,13 @@
     "xapi-activities": "^3.0.0",
     "xapi-agents": "^3.0.0",
     "xapi-state": "^3.0.0",
-    "xapi-statements": "^5.0.1"
+    "xapi-statements": "^5.0.2"
   },
   "devDependencies": {
     "@types/dotenv": "4.0.2",
     "@types/express": "4.0.39",
     "@types/lodash": "4.14.85",
-    "@types/mongodb": "2.2.15",
+    "@types/mongodb": "2.2.16",
     "@types/node": "8.0.53",
     "@types/redis": "2.8.1",
     "@types/source-map-support": "0.4.0",
@@ -66,7 +66,7 @@
     "jscpd": "0.6.17",
     "semantic-release": "9.1.1",
     "tslint": "5.8.0",
-    "tslint-consistent-codestyle": "1.10.0",
+    "tslint-consistent-codestyle": "1.10.1",
     "tslint-immutable": "4.4.0",
     "typescript": "2.6.1"
   }
