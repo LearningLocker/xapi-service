@@ -3623,9 +3623,9 @@ x-xss-protection@1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/x-xss-protection/-/x-xss-protection-1.0.0.tgz#898afb93869b24661cf9c52f9ee8db8ed0764dd9"
 
-xapi-activities@^3.0.0:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/xapi-activities/-/xapi-activities-3.0.0.tgz#c1763ab6d15f7b5d223d11cc954534767567ec90"
+xapi-activities@^3.0.2:
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/xapi-activities/-/xapi-activities-3.0.2.tgz#5011657547b1ede380abc7a6b6b25531c4b47cec"
   dependencies:
     atob "^2.0.3"
     aws-sdk "^2.74.0"
@@ -3640,6 +3640,7 @@ xapi-activities@^3.0.0:
     mime-types "^2.1.17"
     mongodb "^2.2.26"
     node-fetch "^1.6.3"
+    query-string "^5.0.1"
     rulr "^4.0.1"
     sha1 "^1.1.1"
     source-map-support "^0.5.0"
@@ -3648,9 +3649,9 @@ xapi-activities@^3.0.0:
     uuid "^3.0.1"
     xapi-validation "^2.1.0"
 
-xapi-agents@^3.0.0:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/xapi-agents/-/xapi-agents-3.0.0.tgz#3125c86ca0e0ab9f05377e3c832d891f6494fa83"
+xapi-agents@^3.0.1:
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/xapi-agents/-/xapi-agents-3.0.1.tgz#21d134159b87e68f4a66c7a0d117e459a1e0b4aa"
   dependencies:
     atob "^2.0.3"
     aws-sdk "^2.74.0"
@@ -3665,6 +3666,7 @@ xapi-agents@^3.0.0:
     mime-types "^2.1.17"
     mongodb "^2.2.26"
     node-fetch "^1.6.3"
+    query-string "^5.0.1"
     rulr "^4.0.1"
     sha1 "^1.1.1"
     source-map-support "^0.5.0"
@@ -3673,9 +3675,9 @@ xapi-agents@^3.0.0:
     uuid "^3.0.1"
     xapi-validation "^2.1.0"
 
-xapi-state@^3.0.0:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/xapi-state/-/xapi-state-3.0.0.tgz#9d3b767c006cbc01e0a5d9edcc03341b363bb9b3"
+xapi-state@^3.0.1:
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/xapi-state/-/xapi-state-3.0.1.tgz#40143245258d2d0b460e5f89ecf56f474ae20a8e"
   dependencies:
     atob "^2.0.3"
     aws-sdk "^2.74.0"
@@ -3690,6 +3692,7 @@ xapi-state@^3.0.0:
     mime-types "^2.1.17"
     mongodb "^2.2.26"
     node-fetch "^1.6.3"
+    query-string "^5.0.1"
     rulr "^4.0.1"
     sha1 "^1.1.1"
     source-map-support "^0.5.0"
