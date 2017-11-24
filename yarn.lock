@@ -3701,9 +3701,9 @@ xapi-state@^3.0.1:
     uuid "^3.0.1"
     xapi-validation "^2.1.0"
 
-xapi-statements@^5.0.2:
-  version "5.0.2"
-  resolved "https://registry.yarnpkg.com/xapi-statements/-/xapi-statements-5.0.2.tgz#d2b28c092a38b815df3bade3a6db1feea2e83429"
+xapi-statements@^5.0.3:
+  version "5.0.3"
+  resolved "https://registry.yarnpkg.com/xapi-statements/-/xapi-statements-5.0.3.tgz#66af63bd44653c64b70bbf8f9027808325201e80"
   dependencies:
     accept-language-parser "^1.4.1"
     atob "^2.0.3"
