@@ -8,9 +8,9 @@
   dependencies:
     nan "^2.4.0"
 
-"@semantic-release/commit-analyzer@^4.0.0":
-  version "4.0.1"
-  resolved "https://registry.yarnpkg.com/@semantic-release/commit-analyzer/-/commit-analyzer-4.0.1.tgz#6082371f606807d97a828b758c3b94f6b56d9cea"
+"@semantic-release/commit-analyzer@^5.0.0":
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/@semantic-release/commit-analyzer/-/commit-analyzer-5.0.0.tgz#767a2055b5cd0a67421b1d504f3ca7db97055c42"
   dependencies:
     conventional-changelog-angular "^1.4.0"
     conventional-commits-parser "^2.0.0"
@@ -18,34 +18,33 @@
     import-from "^2.1.0"
     lodash "^4.17.4"
 
-"@semantic-release/condition-travis@^6.0.0":
-  version "6.2.1"
-  resolved "https://registry.yarnpkg.com/@semantic-release/condition-travis/-/condition-travis-6.2.1.tgz#e3421e5bce47f27057d66abad79e432382427982"
+"@semantic-release/condition-travis@^7.0.0":
+  version "7.0.0"
+  resolved "https://registry.yarnpkg.com/@semantic-release/condition-travis/-/condition-travis-7.0.0.tgz#cd42271c8e58a350d1aeeb74e8e3af7c7fb4b3d6"
   dependencies:
     "@semantic-release/error" "^2.0.0"
     github "^12.0.0"
-    parse-github-repo-url "^1.4.1"
-    semver "^5.0.3"
+    parse-github-url "^1.0.1"
     travis-deploy-once "^3.0.0"
 
 "@semantic-release/error@^2.0.0", "@semantic-release/error@^2.1.0":
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/@semantic-release/error/-/error-2.1.0.tgz#44771f676f5b148da309111285a97901aa95a6e0"
 
-"@semantic-release/github@^1.0.0":
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/@semantic-release/github/-/github-1.0.0.tgz#a2b766b699d3aa96dbcd73daa7564207f830f0a0"
+"@semantic-release/github@^2.0.0":
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/@semantic-release/github/-/github-2.0.0.tgz#27b31eb5b1555c125eb9d8af86f77597b8975e8f"
   dependencies:
     "@semantic-release/error" "^2.1.0"
     debug "^3.1.0"
     fs-extra "^4.0.2"
-    git-url-parse "^7.0.1"
-    github "^12.0.3"
+    github "^12.0.5"
     p-each-series "^1.0.0"
+    parse-github-url "^1.0.1"
 
-"@semantic-release/npm@^1.0.0":
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/@semantic-release/npm/-/npm-1.0.0.tgz#c86edc82832e9b3c11906dfadf1bc031e43b9f08"
+"@semantic-release/npm@^2.0.0":
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/@semantic-release/npm/-/npm-2.0.0.tgz#ec9d8e504fbc48682a6ef225764c5e6ef1ff402d"
   dependencies:
     "@semantic-release/error" "^2.1.0"
     execa "^0.8.0"
@@ -53,18 +52,19 @@
     nerf-dart "^1.0.0"
     npm-conf "^1.1.3"
     npm-registry-client "^8.5.0"
+    read-pkg-up "^3.0.0"
     registry-auth-token "^3.3.1"
 
-"@semantic-release/release-notes-generator@^5.0.0":
-  version "5.1.1"
-  resolved "https://registry.yarnpkg.com/@semantic-release/release-notes-generator/-/release-notes-generator-5.1.1.tgz#4bac7a6b5e2b6f9f6d8fb50cace9d14ef150b16c"
+"@semantic-release/release-notes-generator@^6.0.0":
+  version "6.0.0"
+  resolved "https://registry.yarnpkg.com/@semantic-release/release-notes-generator/-/release-notes-generator-6.0.0.tgz#ae4f3e0c698f4cb617d80f4ca4c260a9438701f0"
   dependencies:
     conventional-changelog-angular "^1.4.0"
     conventional-changelog-writer "^2.0.1"
     conventional-commits-parser "^2.0.0"
     debug "^3.1.0"
     get-stream "^3.0.0"
-    hosted-git-info "^2.5.0"
+    git-url-parse "^7.0.1"
     import-from "^2.1.0"
     into-stream "^3.1.0"
     lodash "^4.17.4"
@@ -175,8 +175,8 @@ agent-base@~1.0.1:
   resolved "https://registry.yarnpkg.com/agent-base/-/agent-base-1.0.2.tgz#6890d3fb217004b62b70f8928e0fae5f8952a706"
 
 ajv@^5.1.0:
-  version "5.4.0"
-  resolved "https://registry.yarnpkg.com/ajv/-/ajv-5.4.0.tgz#32d1cf08dbc80c432f426f12e10b2511f6b46474"
+  version "5.5.0"
+  resolved "https://registry.yarnpkg.com/ajv/-/ajv-5.5.0.tgz#eb2840746e9dc48bd5e063a36e3fd400c5eab5a9"
   dependencies:
     co "^4.6.0"
     fast-deep-equal "^1.0.0"
@@ -769,6 +769,15 @@ cors@^2.8.1, cors@^2.8.3:
     object-assign "^4"
     vary "^1"
 
+cosmiconfig@^3.1.0:
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/cosmiconfig/-/cosmiconfig-3.1.0.tgz#640a94bf9847f321800403cd273af60665c73397"
+  dependencies:
+    is-directory "^0.3.1"
+    js-yaml "^3.9.0"
+    parse-json "^3.0.0"
+    require-from-string "^2.0.1"
+
 cross-spawn@4.0.0:
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/cross-spawn/-/cross-spawn-4.0.0.tgz#8254774ab4786b8c5b3cf4dfba66ce563932c252"
@@ -987,7 +996,7 @@ err-code@^1.0.0:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/err-code/-/err-code-1.1.2.tgz#06e0116d3028f6aef4806849eb0ea6a748ae6960"
 
-error-ex@^1.2.0:
+error-ex@^1.2.0, error-ex@^1.3.1:
   version "1.3.1"
   resolved "https://registry.yarnpkg.com/error-ex/-/error-ex-1.3.1.tgz#f855a86ce61adc4e8621c3cda21e7a7612c3a8dc"
   dependencies:
@@ -1209,6 +1218,12 @@ find-up@^1.0.0:
     path-exists "^2.0.0"
     pinkie-promise "^2.0.0"
 
+find-up@^2.0.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/find-up/-/find-up-2.1.0.tgz#45d1b7e506c717ddd482775a2b77920a3c0c57a7"
+  dependencies:
+    locate-path "^2.0.0"
+
 findup-sync@0.4.2:
   version "0.4.2"
   resolved "https://registry.yarnpkg.com/findup-sync/-/findup-sync-0.4.2.tgz#a8117d0f73124f5a4546839579fe52d7129fb5e5"
@@ -1391,7 +1406,7 @@ git-url-parse@^7.0.1:
   dependencies:
     git-up "^2.0.0"
 
-github@^12.0.0, github@^12.0.3:
+github@^12.0.0, github@^12.0.5:
   version "12.0.5"
   resolved "https://registry.yarnpkg.com/github/-/github-12.0.5.tgz#edf37e522546510ae31a58761b93d37b4b397430"
   dependencies:
@@ -1568,7 +1583,7 @@ homedir-polyfill@^1.0.0, homedir-polyfill@^1.0.1:
   dependencies:
     parse-passwd "^1.0.0"
 
-hosted-git-info@^2.1.4, hosted-git-info@^2.4.2, hosted-git-info@^2.5.0:
+hosted-git-info@^2.1.4, hosted-git-info@^2.4.2:
   version "2.5.0"
   resolved "https://registry.yarnpkg.com/hosted-git-info/-/hosted-git-info-2.5.0.tgz#6d60e34b3abbc8313062c3b798ef8d901a07af3c"
 
@@ -1717,6 +1732,10 @@ is-builtin-module@^1.0.0:
   resolved "https://registry.yarnpkg.com/is-builtin-module/-/is-builtin-module-1.0.0.tgz#540572d34f7ac3119f8f76c30cbc1b1e037affbe"
   dependencies:
     builtin-modules "^1.0.0"
+
+is-directory@^0.3.1:
+  version "0.3.1"
+  resolved "https://registry.yarnpkg.com/is-directory/-/is-directory-0.3.1.tgz#61339b6f2475fc772fd9c9d83f5c8575dc154ae1"
 
 is-dotfile@^1.0.0:
   version "1.0.3"
@@ -1875,7 +1894,7 @@ js-tokens@^3.0.2:
   version "3.0.2"
   resolved "https://registry.yarnpkg.com/js-tokens/-/js-tokens-3.0.2.tgz#9866df395102130e38f7f996bceb65443209c25b"
 
-js-yaml@>=3.4.x:
+js-yaml@>=3.4.x, js-yaml@^3.9.0:
   version "3.10.0"
   resolved "https://registry.yarnpkg.com/js-yaml/-/js-yaml-3.10.0.tgz#2e78441646bd4682e963f22b6e92823c309c62dc"
   dependencies:
@@ -1948,6 +1967,10 @@ jscpd@0.6.17:
     shelljs "^0.7.8"
     underscore ">=1.8.x"
     winston ">=1.0.x"
+
+json-parse-better-errors@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/json-parse-better-errors/-/json-parse-better-errors-1.0.1.tgz#50183cd1b2d25275de069e9e71b467ac9eab973a"
 
 json-schema-traverse@^0.3.0:
   version "0.3.1"
@@ -2041,8 +2064,8 @@ klaw@^1.0.0:
     graceful-fs "^4.1.9"
 
 knex@^0.14.0:
-  version "0.14.1"
-  resolved "https://registry.yarnpkg.com/knex/-/knex-0.14.1.tgz#ba4ae5afc2824a43b392fbbc8f8a7753e356d808"
+  version "0.14.2"
+  resolved "https://registry.yarnpkg.com/knex/-/knex-0.14.2.tgz#f3b3fe1ea0711af842770100768af21bfcbcbaea"
   dependencies:
     babel-runtime "^6.23.0"
     bluebird "^3.4.6"
@@ -2090,6 +2113,22 @@ load-json-file@^1.0.0:
     pify "^2.0.0"
     pinkie-promise "^2.0.0"
     strip-bom "^2.0.0"
+
+load-json-file@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/load-json-file/-/load-json-file-4.0.0.tgz#2f5f45ab91e33216234fd53adab668eb4ec0993b"
+  dependencies:
+    graceful-fs "^4.1.2"
+    parse-json "^4.0.0"
+    pify "^3.0.0"
+    strip-bom "^3.0.0"
+
+locate-path@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/locate-path/-/locate-path-2.0.0.tgz#2b568b265eec944c6d9c0de9c3dbbbca0354cd8e"
+  dependencies:
+    p-locate "^2.0.0"
+    path-exists "^3.0.0"
 
 lodash.assign@^4.2.0:
   version "4.2.0"
@@ -2546,6 +2585,16 @@ p-is-promise@^1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/p-is-promise/-/p-is-promise-1.1.0.tgz#9c9456989e9f6588017b0434d56097675c3da05e"
 
+p-limit@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/p-limit/-/p-limit-1.1.0.tgz#b07ff2d9a5d88bec806035895a2bab66a27988bc"
+
+p-locate@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/p-locate/-/p-locate-2.0.0.tgz#20a0103b222a70c8fd39cc2e580680f3dde5ec43"
+  dependencies:
+    p-limit "^1.1.0"
+
 p-reduce@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/p-reduce/-/p-reduce-1.0.0.tgz#18c2b0dd936a4690a529f8231f58a0fdb6a47dfa"
@@ -2570,9 +2619,9 @@ parse-filepath@^1.0.1:
     map-cache "^0.2.0"
     path-root "^0.1.1"
 
-parse-github-repo-url@^1.4.1:
-  version "1.4.1"
-  resolved "https://registry.yarnpkg.com/parse-github-repo-url/-/parse-github-repo-url-1.4.1.tgz#9e7d8bb252a6cb6ba42595060b7bf6df3dbc1f50"
+parse-github-url@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/parse-github-url/-/parse-github-url-1.0.1.tgz#af8d10e58cca8cfcc6e8975dd56942ccb36f5119"
 
 parse-glob@^3.0.4:
   version "3.0.4"
@@ -2588,6 +2637,19 @@ parse-json@^2.2.0:
   resolved "https://registry.yarnpkg.com/parse-json/-/parse-json-2.2.0.tgz#f480f40434ef80741f8469099f8dea18f55a4dc9"
   dependencies:
     error-ex "^1.2.0"
+
+parse-json@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/parse-json/-/parse-json-3.0.0.tgz#fa6f47b18e23826ead32f263e744d0e1e847fb13"
+  dependencies:
+    error-ex "^1.3.1"
+
+parse-json@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/parse-json/-/parse-json-4.0.0.tgz#be35f5425be1f7f6c747184f98a788cb99477ee0"
+  dependencies:
+    error-ex "^1.3.1"
+    json-parse-better-errors "^1.0.1"
 
 parse-passwd@^1.0.0:
   version "1.0.0"
@@ -2609,6 +2671,10 @@ path-exists@2.1.0, path-exists@^2.0.0:
   resolved "https://registry.yarnpkg.com/path-exists/-/path-exists-2.1.0.tgz#0feb6c64f0fc518d9a754dd5efb62c7022761f4b"
   dependencies:
     pinkie-promise "^2.0.0"
+
+path-exists@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/path-exists/-/path-exists-3.0.0.tgz#ce0ebeaa5f78cb18925ea7d810d7b59b010fd515"
 
 path-is-absolute@^1.0.0:
   version "1.0.1"
@@ -2643,6 +2709,12 @@ path-type@^1.0.0:
     graceful-fs "^4.1.2"
     pify "^2.0.0"
     pinkie-promise "^2.0.0"
+
+path-type@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/path-type/-/path-type-3.0.0.tgz#cef31dc8e0a1a3bb0d105c0cd97cf3bf47f4e36f"
+  dependencies:
+    pify "^3.0.0"
 
 performance-now@^2.1.0:
   version "2.1.0"
@@ -2784,6 +2856,13 @@ read-pkg-up@^1.0.1:
     find-up "^1.0.0"
     read-pkg "^1.0.0"
 
+read-pkg-up@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/read-pkg-up/-/read-pkg-up-3.0.0.tgz#3ed496685dba0f8fe118d0691dc51f4a1ff96f07"
+  dependencies:
+    find-up "^2.0.0"
+    read-pkg "^3.0.0"
+
 read-pkg@^1.0.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/read-pkg/-/read-pkg-1.1.0.tgz#f5ffaa5ecd29cb31c0474bca7d756b6bb29e3f28"
@@ -2791,6 +2870,14 @@ read-pkg@^1.0.0:
     load-json-file "^1.0.0"
     normalize-package-data "^2.3.2"
     path-type "^1.0.0"
+
+read-pkg@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/read-pkg/-/read-pkg-3.0.0.tgz#9cbc686978fee65d16c00e2b19c237fcf6e38389"
+  dependencies:
+    load-json-file "^4.0.0"
+    normalize-package-data "^2.3.2"
+    path-type "^3.0.0"
 
 readable-stream@2.2.7:
   version "2.2.7"
@@ -2954,6 +3041,10 @@ request@~2.74.0:
     tough-cookie "~2.3.0"
     tunnel-agent "~0.4.1"
 
+require-from-string@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/require-from-string/-/require-from-string-2.0.1.tgz#c545233e9d7da6616e9d59adfb39fc9f588676ff"
+
 require_optional@~1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/require_optional/-/require_optional-1.0.1.tgz#4cf35a4247f64ca3df8c2ef208cc494b1ca8fc2e"
@@ -3035,32 +3126,32 @@ sax@>=0.6.0:
   version "1.2.4"
   resolved "https://registry.yarnpkg.com/sax/-/sax-1.2.4.tgz#2816234e2378bddc4e5354fab5caa895df7100d9"
 
-semantic-release@10.0.1:
-  version "10.0.1"
-  resolved "https://registry.yarnpkg.com/semantic-release/-/semantic-release-10.0.1.tgz#10d4658a0f0fe5098a99fe246664bde3f516ca2d"
+semantic-release@11.0.0:
+  version "11.0.0"
+  resolved "https://registry.yarnpkg.com/semantic-release/-/semantic-release-11.0.0.tgz#388228a7f8fe59681634c6be01880c1fa3e8fef4"
   dependencies:
-    "@semantic-release/commit-analyzer" "^4.0.0"
-    "@semantic-release/condition-travis" "^6.0.0"
+    "@semantic-release/commit-analyzer" "^5.0.0"
+    "@semantic-release/condition-travis" "^7.0.0"
     "@semantic-release/error" "^2.1.0"
-    "@semantic-release/github" "^1.0.0"
-    "@semantic-release/npm" "^1.0.0"
-    "@semantic-release/release-notes-generator" "^5.0.0"
+    "@semantic-release/github" "^2.0.0"
+    "@semantic-release/npm" "^2.0.0"
+    "@semantic-release/release-notes-generator" "^6.0.0"
     chalk "^2.3.0"
     commander "^2.11.0"
+    cosmiconfig "^3.1.0"
     debug "^3.1.0"
     execa "^0.8.0"
-    fs-extra "^4.0.2"
     get-stream "^3.0.0"
     git-log-parser "^1.2.0"
     import-from "^2.1.0"
     lodash "^4.0.0"
     marked "^0.3.6"
     marked-terminal "^2.0.0"
-    normalize-package-data "^2.3.4"
     p-reduce "^1.0.0"
+    read-pkg-up "^3.0.0"
     semver "^5.4.1"
 
-"semver@2 >=2.2.1 || 3.x || 4 || 5", "semver@2 || 3 || 4 || 5", semver@^5.0.1, semver@^5.0.3, semver@^5.1.0, semver@^5.3.0, semver@^5.4.1:
+"semver@2 >=2.2.1 || 3.x || 4 || 5", "semver@2 || 3 || 4 || 5", semver@^5.0.1, semver@^5.1.0, semver@^5.3.0, semver@^5.4.1:
   version "5.4.1"
   resolved "https://registry.yarnpkg.com/semver/-/semver-5.4.1.tgz#e059c09d8571f0540823733433505d3a2f00b18e"
 
@@ -3312,6 +3403,10 @@ strip-bom@^2.0.0:
   resolved "https://registry.yarnpkg.com/strip-bom/-/strip-bom-2.0.0.tgz#6219a85616520491f35788bdbf1447a99c7e6b0e"
   dependencies:
     is-utf8 "^0.2.0"
+
+strip-bom@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/strip-bom/-/strip-bom-3.0.0.tgz#2334c18e9c759f7bdd56fdef7e9ae3d588e68ed3"
 
 strip-eof@^1.0.0:
   version "1.0.0"
