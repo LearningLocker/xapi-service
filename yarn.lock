@@ -31,7 +31,7 @@
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/@semantic-release/error/-/error-2.1.0.tgz#44771f676f5b148da309111285a97901aa95a6e0"
 
-"@semantic-release/github@^2.0.0":
+"@semantic-release/github@2.0.0", "@semantic-release/github@^2.0.0":
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/@semantic-release/github/-/github-2.0.0.tgz#27b31eb5b1555c125eb9d8af86f77597b8975e8f"
   dependencies:
@@ -42,7 +42,7 @@
     p-each-series "^1.0.0"
     parse-github-url "^1.0.1"
 
-"@semantic-release/npm@^2.0.0":
+"@semantic-release/npm@2.0.0", "@semantic-release/npm@^2.0.0":
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/@semantic-release/npm/-/npm-2.0.0.tgz#ec9d8e504fbc48682a6ef225764c5e6ef1ff402d"
   dependencies:

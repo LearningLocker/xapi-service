@@ -25,7 +25,10 @@
     "semantic-release": "semantic-release"
   },
   "release": {
-    "verifyConditions": []
+    "verifyConditions": [
+      "@semantic-release/github",
+      "@semantic-release/npm"
+    ]
   },
   "config": {
     "commitizen": {
@@ -52,6 +55,8 @@
     "xapi-statements": "^2.2.3"
   },
   "devDependencies": {
+    "@semantic-release/github": "2.0.0",
+    "@semantic-release/npm": "2.0.0",
     "@types/dotenv": "4.0.2",
     "@types/express": "4.0.39",
     "@types/lodash": "4.14.85",

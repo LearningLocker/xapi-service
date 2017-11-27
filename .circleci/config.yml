@@ -58,6 +58,9 @@ jobs:
           command: docker build -t "$DOCKER_REPO_SLUG:$DOCKER_TAG" .
       - deploy:
           name: Semantic Release
+          filters:
+            branches:
+              only: /^master$/
           command: yarn semantic-release || true
       - deploy:
           name: Docker Push
