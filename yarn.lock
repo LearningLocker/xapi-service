@@ -307,8 +307,8 @@ atob@^2.0.3:
   resolved "https://registry.yarnpkg.com/atob/-/atob-2.0.3.tgz#19c7a760473774468f20b2d2d03372ad7d4cbf5d"
 
 aws-sdk@^2.58.0, aws-sdk@^2.74.0, aws-sdk@^2.80.0, aws-sdk@^2.97.0:
-  version "2.156.0"
-  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.156.0.tgz#409c06f7051d58320cb389a024ca7b61ce31f136"
+  version "2.157.0"
+  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.157.0.tgz#b55b16f8413dfa9e7323b60b21fce9743206f8a1"
   dependencies:
     buffer "4.9.1"
     crypto-browserify "1.0.9"
@@ -1386,8 +1386,8 @@ git-url-parse@^7.0.1:
     git-up "^2.0.0"
 
 github@^12.0.0, github@^12.0.5:
-  version "12.0.5"
-  resolved "https://registry.yarnpkg.com/github/-/github-12.0.5.tgz#edf37e522546510ae31a58761b93d37b4b397430"
+  version "12.0.6"
+  resolved "https://registry.yarnpkg.com/github/-/github-12.0.6.tgz#5f951307acc696e41da4ada1e88341cfbc3ae921"
   dependencies:
     dotenv "^4.0.0"
     follow-redirects "1.2.6"
@@ -1883,29 +1883,6 @@ js-yaml@>=3.4.x, js-yaml@^3.9.0:
 jsbn@~0.1.0:
   version "0.1.1"
   resolved "https://registry.yarnpkg.com/jsbn/-/jsbn-0.1.1.tgz#a5e654c2e5a2deb5f201d96cefbca80c0ef2f513"
-
-jscommons@^1.3.0:
-  version "1.3.1"
-  resolved "https://registry.yarnpkg.com/jscommons/-/jscommons-1.3.1.tgz#935c3af1d7fbdc84b32ee7cf14eb4e6964992ffe"
-  dependencies:
-    aws-sdk "^2.80.0"
-    body-parser "^1.17.2"
-    boolean "^0.1.3"
-    cors "^2.8.3"
-    express "^4.15.3"
-    file-stream-rotator "^0.2.0"
-    fs-extra "^4.0.2"
-    helmet "^3.6.1"
-    knex "^0.14.0"
-    lodash "^4.17.4"
-    moment "^2.18.1"
-    mongodb "^2.2.29"
-    morgan "^1.8.2"
-    newrelic "^2.3.1"
-    rulr "^4.0.1"
-    uuid "^3.1.0"
-    winston "^2.3.1"
-    winston-aws-cloudwatch "^1.5.0"
 
 jscommons@^2.0.0, jscommons@^2.1.0:
   version "2.1.0"
@@ -3747,9 +3724,9 @@ xapi-state@^3.0.1:
     uuid "^3.0.1"
     xapi-validation "^2.1.0"
 
-xapi-statements@^2.2.3:
-  version "2.2.3"
-  resolved "https://registry.yarnpkg.com/xapi-statements/-/xapi-statements-2.2.3.tgz#e2b8ed0f56fce1b24f04d394172982f0416316be"
+xapi-statements@^5.0.0:
+  version "5.0.3"
+  resolved "https://registry.yarnpkg.com/xapi-statements/-/xapi-statements-5.0.3.tgz#66af63bd44653c64b70bbf8f9027808325201e80"
   dependencies:
     accept-language-parser "^1.4.1"
     atob "^2.0.3"
@@ -3764,7 +3741,7 @@ xapi-statements@^2.2.3:
     file-stream-rotator "^0.2.0"
     fs-extra "^4.0.2"
     helmet "^3.5.0"
-    jscommons "^1.3.0"
+    jscommons "^2.1.0"
     jsonwebtoken "^8.0.1"
     lodash "^4.17.4"
     mime-types "^2.1.17"
@@ -3774,6 +3751,7 @@ xapi-statements@^2.2.3:
     node-fetch "^1.6.3"
     object-hash "1.2.0"
     promise-retry "^1.1.1"
+    query-string "^5.0.1"
     redis "^2.8.0"
     rulr "^4.0.0"
     source-map-support "^0.5.0"
