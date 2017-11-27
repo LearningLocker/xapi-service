@@ -5,6 +5,9 @@ machine:
 
 jobs:
   build:
+    filters:
+      tags:
+        only: /.*/
     docker:
       - image: node:8.8.0
       - image: mongo:3.4.4
