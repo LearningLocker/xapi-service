@@ -25,7 +25,9 @@
     "semantic-release": "semantic-release"
   },
   "release": {
-    "verifyConditions": "condition-circle"
+    "verifyConditions": [
+      "@semantic-release/github"
+    ]
   },
   "config": {
     "commitizen": {
