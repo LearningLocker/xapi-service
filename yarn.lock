@@ -175,8 +175,8 @@ agent-base@~1.0.1:
   resolved "https://registry.yarnpkg.com/agent-base/-/agent-base-1.0.2.tgz#6890d3fb217004b62b70f8928e0fae5f8952a706"
 
 ajv@^5.1.0:
-  version "5.4.0"
-  resolved "https://registry.yarnpkg.com/ajv/-/ajv-5.4.0.tgz#32d1cf08dbc80c432f426f12e10b2511f6b46474"
+  version "5.5.0"
+  resolved "https://registry.yarnpkg.com/ajv/-/ajv-5.5.0.tgz#eb2840746e9dc48bd5e063a36e3fd400c5eab5a9"
   dependencies:
     co "^4.6.0"
     fast-deep-equal "^1.0.0"
@@ -307,8 +307,8 @@ atob@^2.0.3:
   resolved "https://registry.yarnpkg.com/atob/-/atob-2.0.3.tgz#19c7a760473774468f20b2d2d03372ad7d4cbf5d"
 
 aws-sdk@^2.58.0, aws-sdk@^2.74.0, aws-sdk@^2.80.0, aws-sdk@^2.97.0:
-  version "2.156.0"
-  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.156.0.tgz#409c06f7051d58320cb389a024ca7b61ce31f136"
+  version "2.157.0"
+  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.157.0.tgz#b55b16f8413dfa9e7323b60b21fce9743206f8a1"
   dependencies:
     buffer "4.9.1"
     crypto-browserify "1.0.9"
@@ -1392,8 +1392,8 @@ git-url-parse@^7.0.1:
     git-up "^2.0.0"
 
 github@^12.0.0, github@^12.0.3:
-  version "12.0.5"
-  resolved "https://registry.yarnpkg.com/github/-/github-12.0.5.tgz#edf37e522546510ae31a58761b93d37b4b397430"
+  version "12.0.6"
+  resolved "https://registry.yarnpkg.com/github/-/github-12.0.6.tgz#5f951307acc696e41da4ada1e88341cfbc3ae921"
   dependencies:
     dotenv "^4.0.0"
     follow-redirects "1.2.6"
@@ -1683,8 +1683,8 @@ install@^0.10.1:
   resolved "https://registry.yarnpkg.com/install/-/install-0.10.2.tgz#f1f71902797e5a900069fb9ab80c94055025ffdc"
 
 interpret@^1.0.0, interpret@^1.0.4:
-  version "1.0.4"
-  resolved "https://registry.yarnpkg.com/interpret/-/interpret-1.0.4.tgz#820cdd588b868ffb191a809506d6c9c8f212b1b0"
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/interpret/-/interpret-1.1.0.tgz#7ed1b1410c6a0e0f78cf95d3b8440c63f78b8614"
 
 into-stream@^3.1.0:
   version "3.1.0"
@@ -2041,8 +2041,8 @@ klaw@^1.0.0:
     graceful-fs "^4.1.9"
 
 knex@^0.14.0:
-  version "0.14.1"
-  resolved "https://registry.yarnpkg.com/knex/-/knex-0.14.1.tgz#ba4ae5afc2824a43b392fbbc8f8a7753e356d808"
+  version "0.14.2"
+  resolved "https://registry.yarnpkg.com/knex/-/knex-0.14.2.tgz#f3b3fe1ea0711af842770100768af21bfcbcbaea"
   dependencies:
     babel-runtime "^6.23.0"
     bluebird "^3.4.6"
@@ -3462,9 +3462,9 @@ typedarray@^0.0.6:
   version "0.0.6"
   resolved "https://registry.yarnpkg.com/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
 
-typescript@2.6.1:
-  version "2.6.1"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-2.6.1.tgz#ef39cdea27abac0b500242d6726ab90e0c846631"
+typescript@2.6.2:
+  version "2.6.2"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-2.6.2.tgz#3c5b6fd7f6de0914269027f03c0946758f7673a4"
 
 uglify-js@^2.6:
   version "2.8.29"
