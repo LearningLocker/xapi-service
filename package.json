@@ -54,6 +54,7 @@
     "xapi-statements": "^2.2.3"
   },
   "devDependencies": {
+    "@semantic-release/npm": "semantic-release/npm#userconfig",
     "@types/dotenv": "4.0.2",
     "@types/express": "4.0.39",
     "@types/lodash": "4.14.85",
@@ -66,7 +67,7 @@
     "condition-circle": "1.5.0",
     "cz-conventional-changelog": "2.1.0",
     "jscpd": "0.6.17",
-    "semantic-release": "10.0.1",
+    "semantic-release": "11.0.0",
     "tslint": "5.8.0",
     "tslint-consistent-codestyle": "1.10.1",
     "tslint-immutable": "4.4.0",
