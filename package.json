@@ -26,7 +26,8 @@
   },
   "release": {
     "verifyConditions": [
-      "@semantic-release/github"
+      "@semantic-release/github",
+      "@semantic-release/npm"
     ]
   },
   "config": {
