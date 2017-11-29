@@ -70,7 +70,7 @@
     "jscpd": "0.6.17",
     "semantic-release": "11.0.0",
     "tslint": "5.8.0",
-    "tslint-consistent-codestyle": "1.10.1",
+    "tslint-consistent-codestyle": "1.10.2",
     "tslint-immutable": "4.4.0",
     "typescript": "2.6.2"
   }
