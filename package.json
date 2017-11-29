@@ -55,7 +55,8 @@
     "xapi-statements": "^2.2.3"
   },
   "devDependencies": {
-    "@semantic-release/npm": "semantic-release/npm#userconfig",
+    "@semantic-release/github": "2.0.0",
+    "@semantic-release/npm": "2.1.0",
     "@types/dotenv": "4.0.2",
     "@types/express": "4.0.39",
     "@types/lodash": "4.14.86",
