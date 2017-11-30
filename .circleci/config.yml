@@ -57,7 +57,7 @@ jobs:
           name: Semantic Release
           command: |
             if [ "${CIRCLE_BRANCH}" == "master" ]; then
-               npm run semantic-release || true;
+               yarn semantic-release || true;
             fi
       - deploy:
           name: Docker Push
