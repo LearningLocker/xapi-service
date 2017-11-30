@@ -3091,6 +3091,13 @@ sax@>=0.6.0:
   version "1.2.4"
   resolved "https://registry.yarnpkg.com/sax/-/sax-1.2.4.tgz#2816234e2378bddc4e5354fab5caa895df7100d9"
 
+semantic-release-docker@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/semantic-release-docker/-/semantic-release-docker-2.0.0.tgz#777adb64fa49d33684711b3ecfb258d4f5e2e327"
+  dependencies:
+    "@semantic-release/error" "^2.1.0"
+    execa "^0.8.0"
+
 semantic-release@11.0.1:
   version "11.0.1"
   resolved "https://registry.yarnpkg.com/semantic-release/-/semantic-release-11.0.1.tgz#9103a9d43968db864cf9f725c2a3b4d8ab0cdc47"

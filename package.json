@@ -26,8 +26,17 @@
   },
   "release": {
     "verifyConditions": [
+      "semantic-release-docker",
       "@semantic-release/github",
       "@semantic-release/npm"
+    ],
+    "publish": [
+      "@semantic-release/github",
+      "@semantic-release/npm",
+      {
+        "path": "semantic-release-docker",
+        "name": "learninglocker/xapi-service"
+      }
     ]
   },
   "config": {
@@ -69,6 +78,7 @@
     "cz-conventional-changelog": "2.1.0",
     "jscpd": "0.6.17",
     "semantic-release": "11.0.1",
+    "semantic-release-docker": "^2.0.0",
     "tslint": "5.8.0",
     "tslint-consistent-codestyle": "1.10.2",
     "tslint-immutable": "4.4.0",
