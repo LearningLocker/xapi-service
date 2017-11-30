@@ -53,7 +53,7 @@ jobs:
             mv /tmp/docker/* /usr/bin
       - run:
           name: Docker Build
-          command: docker build -t "$DOCKER_REPO_SLUG:$DOCKER_TAG" .
+          command: docker build -t "$DOCKER_REPO_SLUG" .
       - deploy:
           name: Semantic Release
           command: |
