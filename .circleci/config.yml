@@ -64,5 +64,5 @@ jobs:
           name: Docker Push
           command: |
             docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
-            docker tag "$DOCKER_REPO_SLUG:latest" "$DOCKER_REPO_SLUG:$CIRCLE_BRANCH"
-            docker push "$DOCKER_REPO_SLUG:$CIRCLE_BRANCH"
+            docker tag "$DOCKER_REPO_SLUG:latest" "$DOCKER_REPO_SLUG:${CIRCLE_BRANCH//\//-}"
+            docker push "$DOCKER_REPO_SLUG:${CIRCLE_BRANCH//\//-}"
