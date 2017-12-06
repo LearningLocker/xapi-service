@@ -68,7 +68,7 @@
     "@semantic-release/npm": "2.3.0",
     "@types/dotenv": "4.0.2",
     "@types/express": "4.0.39",
-    "@types/lodash": "4.14.87",
+    "@types/lodash": "4.14.88",
     "@types/mongodb": "2.2.16",
     "@types/node": "8.0.55",
     "@types/redis": "2.8.1",
