@@ -92,6 +92,10 @@
   dependencies:
     "@types/node" "*"
 
+"@types/events@*":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@types/events/-/events-1.1.0.tgz#93b1be91f63c184450385272c47b6496fd028e02"
+
 "@types/express-serve-static-core@*":
   version "4.0.57"
   resolved "https://registry.yarnpkg.com/@types/express-serve-static-core/-/express-serve-static-core-4.0.57.tgz#3cd8ab4b11d5ecd70393bada7fc1c480491537dd"
@@ -125,10 +129,11 @@
   version "8.0.57"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-8.0.57.tgz#e5d8b4dc112763e35cfc51988f4f38da3c486d99"
 
-"@types/redis@2.8.1":
-  version "2.8.1"
-  resolved "https://registry.yarnpkg.com/@types/redis/-/redis-2.8.1.tgz#fa156200fe294542409c3da86855d57afe655432"
+"@types/redis@2.8.2":
+  version "2.8.2"
+  resolved "https://registry.yarnpkg.com/@types/redis/-/redis-2.8.2.tgz#a5943a6dfbaeb59fe96bb044b31d4f7c5e961ce6"
   dependencies:
+    "@types/events" "*"
     "@types/node" "*"
 
 "@types/serve-static@*":
