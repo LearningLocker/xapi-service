@@ -71,7 +71,7 @@
     "@types/lodash": "4.14.88",
     "@types/mongodb": "2.2.17",
     "@types/node": "8.5.0",
-    "@types/redis": "2.8.2",
+    "@types/redis": "2.8.3",
     "@types/source-map-support": "0.4.0",
     "@types/winston": "2.3.7",
     "commitizen": "2.9.6",
