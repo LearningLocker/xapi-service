@@ -130,9 +130,9 @@
     "@types/events" "*"
     "@types/node" "*"
 
-"@types/node@*", "@types/node@8.0.58":
-  version "8.0.58"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-8.0.58.tgz#5b3881c0be3a646874803fee3197ea7f1ed6df90"
+"@types/node@*", "@types/node@8.5.0":
+  version "8.5.0"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-8.5.0.tgz#c5be22ffc84b221466fc8dfc0d6b1f88060808ef"
 
 "@types/redis@2.8.2":
   version "2.8.2"
@@ -331,8 +331,8 @@ atob@^2.0.3:
   resolved "https://registry.yarnpkg.com/atob/-/atob-2.0.3.tgz#19c7a760473774468f20b2d2d03372ad7d4cbf5d"
 
 aws-sdk@^2.58.0, aws-sdk@^2.74.0, aws-sdk@^2.80.0, aws-sdk@^2.97.0:
-  version "2.168.0"
-  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.168.0.tgz#561e0a231b8f70a2bee56ff5e508b6efff604fe3"
+  version "2.169.0"
+  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.169.0.tgz#c2d72737a30afb9a64f7ceb88ff1d5367f8eeb69"
   dependencies:
     buffer "4.9.1"
     crypto-browserify "1.0.9"
@@ -1330,14 +1330,6 @@ fs-extra@^1.0.0:
     graceful-fs "^4.1.2"
     jsonfile "^2.1.0"
     klaw "^1.0.0"
-
-fs-extra@^4.0.2:
-  version "4.0.3"
-  resolved "https://registry.yarnpkg.com/fs-extra/-/fs-extra-4.0.3.tgz#0d852122e5bc5beb453fb028e9c0c9bf36340c94"
-  dependencies:
-    graceful-fs "^4.1.2"
-    jsonfile "^4.0.0"
-    universalify "^0.1.0"
 
 fs-extra@^5.0.0:
   version "5.0.0"
@@ -2397,8 +2389,8 @@ nerf-dart@^1.0.0:
   resolved "https://registry.yarnpkg.com/nerf-dart/-/nerf-dart-1.0.0.tgz#e6dab7febf5ad816ea81cf5c629c5a0ebde72c1a"
 
 newrelic@^2.3.1:
-  version "2.4.1"
-  resolved "https://registry.yarnpkg.com/newrelic/-/newrelic-2.4.1.tgz#b4600045f3722f421336d6da33a2791a663a8979"
+  version "2.4.2"
+  resolved "https://registry.yarnpkg.com/newrelic/-/newrelic-2.4.2.tgz#ce63238b989f8fa27dae60ea24fe3c2fad969e5c"
   dependencies:
     async "^2.1.4"
     concat-stream "^1.5.0"
@@ -3768,8 +3760,8 @@ xapi-state@^3.0.1:
     xapi-validation "^2.1.0"
 
 xapi-statements@^5.0.3:
-  version "5.0.3"
-  resolved "https://registry.yarnpkg.com/xapi-statements/-/xapi-statements-5.0.3.tgz#66af63bd44653c64b70bbf8f9027808325201e80"
+  version "5.0.4"
+  resolved "https://registry.yarnpkg.com/xapi-statements/-/xapi-statements-5.0.4.tgz#6ba8c9a2711944dce3f574cfcbacc872269ca4c3"
   dependencies:
     accept-language-parser "^1.4.1"
     atob "^2.0.3"
@@ -3782,7 +3774,7 @@ xapi-statements@^5.0.3:
     dotenv "^4.0.0"
     express "^4.14.1"
     file-stream-rotator "^0.2.0"
-    fs-extra "^4.0.2"
+    fs-extra "^5.0.0"
     helmet "^3.5.0"
     jscommons "^2.1.0"
     jsonwebtoken "^8.0.1"
