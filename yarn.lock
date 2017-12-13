@@ -19,13 +19,13 @@
     lodash "^4.17.4"
 
 "@semantic-release/condition-travis@^7.0.0":
-  version "7.1.1"
-  resolved "https://registry.yarnpkg.com/@semantic-release/condition-travis/-/condition-travis-7.1.1.tgz#65bffe9775cddda340e50bcd3e46acc8f5b45896"
+  version "7.1.2"
+  resolved "https://registry.yarnpkg.com/@semantic-release/condition-travis/-/condition-travis-7.1.2.tgz#07f8f83b41004a9f4bc308af0384ebe3cad94a90"
   dependencies:
     "@semantic-release/error" "^2.0.0"
     github "^13.0.1"
     parse-github-url "^1.0.1"
-    travis-deploy-once "^3.1.0"
+    travis-deploy-once "^3.1.2"
 
 "@semantic-release/error@^2.0.0", "@semantic-release/error@^2.1.0":
   version "2.1.0"
@@ -114,9 +114,9 @@
     "@types/express-serve-static-core" "*"
     "@types/serve-static" "*"
 
-"@types/lodash@4.14.88":
-  version "4.14.88"
-  resolved "https://registry.yarnpkg.com/@types/lodash/-/lodash-4.14.88.tgz#97eaf2dc668f33ed8e511a5b627035f4ea20b0f5"
+"@types/lodash@4.14.89":
+  version "4.14.89"
+  resolved "https://registry.yarnpkg.com/@types/lodash/-/lodash-4.14.89.tgz#dd2114403d653a45c3d2f0cae1599949b99a5a3a"
 
 "@types/mime@*":
   version "2.0.0"
@@ -130,7 +130,11 @@
     "@types/events" "*"
     "@types/node" "*"
 
-"@types/node@*", "@types/node@8.5.0":
+"@types/node@*":
+  version "7.0.50"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-7.0.50.tgz#432428edab1073d478924d80a58a250b390c7b1b"
+
+"@types/node@8.5.0":
   version "8.5.0"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-8.5.0.tgz#c5be22ffc84b221466fc8dfc0d6b1f88060808ef"
 
@@ -3449,14 +3453,15 @@ traverse@~0.6.6:
   version "0.6.6"
   resolved "https://registry.yarnpkg.com/traverse/-/traverse-0.6.6.tgz#cbdf560fd7b9af632502fed40f918c157ea97137"
 
-travis-deploy-once@^3.1.0:
-  version "3.1.1"
-  resolved "https://registry.yarnpkg.com/travis-deploy-once/-/travis-deploy-once-3.1.1.tgz#ece89ccc044888565e2569b500246fd0cef6d003"
+travis-deploy-once@^3.1.2:
+  version "3.1.2"
+  resolved "https://registry.yarnpkg.com/travis-deploy-once/-/travis-deploy-once-3.1.2.tgz#568fe69d6d7bae9250fd5f58f8af78e30a32396f"
   dependencies:
     chalk "^2.1.0"
     got "^8.0.1"
     p-retry "^1.0.0"
     semver "^5.4.1"
+    url-join "^2.0.2"
 
 trim-newlines@^1.0.0:
   version "1.0.0"
@@ -3556,6 +3561,10 @@ universalify@^0.1.0:
 unpipe@1.0.0, unpipe@~1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/unpipe/-/unpipe-1.0.0.tgz#b2bf4ee8514aae6165b4817829d21b2ef49904ec"
+
+url-join@^2.0.2:
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/url-join/-/url-join-2.0.2.tgz#c072756967ad24b8b59e5741551caac78f50b8b7"
 
 url-parse-lax@^3.0.0:
   version "3.0.0"
