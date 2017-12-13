@@ -61,7 +61,7 @@
     "xapi-activities": "^3.0.2",
     "xapi-agents": "^3.0.1",
     "xapi-state": "^3.0.1",
-    "xapi-statements": "^2.2.3"
+    "xapi-statements": "^5.0.3"
   },
   "devDependencies": {
     "@semantic-release/github": "2.2.1",
