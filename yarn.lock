@@ -130,13 +130,9 @@
     "@types/events" "*"
     "@types/node" "*"
 
-"@types/node@*":
-  version "7.0.50"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-7.0.50.tgz#432428edab1073d478924d80a58a250b390c7b1b"
-
-"@types/node@8.5.0":
-  version "8.5.0"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-8.5.0.tgz#c5be22ffc84b221466fc8dfc0d6b1f88060808ef"
+"@types/node@*", "@types/node@8.5.1":
+  version "8.5.1"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-8.5.1.tgz#4ec3020bcdfe2abffeef9ba3fbf26fca097514b5"
 
 "@types/redis@2.8.3":
   version "2.8.3"
