@@ -114,9 +114,9 @@
     "@types/express-serve-static-core" "*"
     "@types/serve-static" "*"
 
-"@types/lodash@4.14.90":
-  version "4.14.90"
-  resolved "https://registry.yarnpkg.com/@types/lodash/-/lodash-4.14.90.tgz#c853f6747080215372aca5a3770fc62d65a05186"
+"@types/lodash@4.14.91":
+  version "4.14.91"
+  resolved "https://registry.yarnpkg.com/@types/lodash/-/lodash-4.14.91.tgz#794611b28056d16b5436059c6d800b39d573cd3a"
 
 "@types/mime@*":
   version "2.0.0"
@@ -331,8 +331,8 @@ atob@^2.0.3:
   resolved "https://registry.yarnpkg.com/atob/-/atob-2.0.3.tgz#19c7a760473774468f20b2d2d03372ad7d4cbf5d"
 
 aws-sdk@^2.58.0, aws-sdk@^2.74.0, aws-sdk@^2.80.0, aws-sdk@^2.97.0:
-  version "2.169.0"
-  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.169.0.tgz#c2d72737a30afb9a64f7ceb88ff1d5367f8eeb69"
+  version "2.170.0"
+  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.170.0.tgz#4f9cfd26a268ef6a2969d3475ed8134bb3899525"
   dependencies:
     buffer "4.9.1"
     crypto-browserify "1.0.9"
