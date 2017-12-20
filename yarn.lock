@@ -123,9 +123,9 @@
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/@types/mime/-/mime-2.0.0.tgz#5a7306e367c539b9f6543499de8dd519fac37a8b"
 
-"@types/mongodb@2.2.17":
-  version "2.2.17"
-  resolved "https://registry.yarnpkg.com/@types/mongodb/-/mongodb-2.2.17.tgz#cc44e83de8be79989dc5dce6898862cf5c8a0b52"
+"@types/mongodb@2.2.18":
+  version "2.2.18"
+  resolved "https://registry.yarnpkg.com/@types/mongodb/-/mongodb-2.2.18.tgz#6b62056c081c9bba42530c831cffb5da4e74804c"
   dependencies:
     "@types/bson" "*"
     "@types/events" "*"
