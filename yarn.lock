@@ -102,14 +102,14 @@
   resolved "https://registry.yarnpkg.com/@types/events/-/events-1.1.0.tgz#93b1be91f63c184450385272c47b6496fd028e02"
 
 "@types/express-serve-static-core@*":
-  version "4.0.57"
-  resolved "https://registry.yarnpkg.com/@types/express-serve-static-core/-/express-serve-static-core-4.0.57.tgz#3cd8ab4b11d5ecd70393bada7fc1c480491537dd"
+  version "4.11.0"
+  resolved "https://registry.yarnpkg.com/@types/express-serve-static-core/-/express-serve-static-core-4.11.0.tgz#aaaf472777191c3e56ec7aa160034c6b55ebdd59"
   dependencies:
     "@types/node" "*"
 
-"@types/express@*", "@types/express@4.0.39":
-  version "4.0.39"
-  resolved "https://registry.yarnpkg.com/@types/express/-/express-4.0.39.tgz#1441f21d52b33be8d4fa8a865c15a6a91cd0fa09"
+"@types/express@*", "@types/express@4.11.0":
+  version "4.11.0"
+  resolved "https://registry.yarnpkg.com/@types/express/-/express-4.11.0.tgz#234d65280af917cb290634b7a8d6bcac24aecbad"
   dependencies:
     "@types/body-parser" "*"
     "@types/express-serve-static-core" "*"
@@ -131,7 +131,11 @@
     "@types/events" "*"
     "@types/node" "*"
 
-"@types/node@*", "@types/node@8.5.1":
+"@types/node@*":
+  version "8.5.2"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-8.5.2.tgz#83b8103fa9a2c2e83d78f701a9aa7c9539739aa5"
+
+"@types/node@8.5.1":
   version "8.5.1"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-8.5.1.tgz#4ec3020bcdfe2abffeef9ba3fbf26fca097514b5"
 
@@ -608,10 +612,6 @@ clone-response@1.0.2:
   dependencies:
     mimic-response "^1.0.0"
 
-clone@^1.0.2:
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/clone/-/clone-1.0.3.tgz#298d7e2231660f40c003c2ed3140decf3f53085f"
-
 co@^4.6.0:
   version "4.6.0"
   resolved "https://registry.yarnpkg.com/co/-/co-4.6.0.tgz#6ea6bdf3d853ae54ccb8e47bfa0bf3f9031fb184"
@@ -867,7 +867,7 @@ dateformat@^1.0.11:
     get-stdin "^4.0.1"
     meow "^3.3.0"
 
-debug@2, debug@2.6.9, debug@^2.6.8:
+debug@2, debug@2.6.9:
   version "2.6.9"
   resolved "https://registry.yarnpkg.com/debug/-/debug-2.6.9.tgz#5d128515df134ff327e90a4c93f4e077a536341f"
   dependencies:
@@ -900,12 +900,6 @@ dedent@0.6.0:
 deep-extend@~0.4.0:
   version "0.4.2"
   resolved "https://registry.yarnpkg.com/deep-extend/-/deep-extend-0.4.2.tgz#48b699c27e334bf89f10892be432f6e4c7d34a7f"
-
-defaults@^1.0.3:
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/defaults/-/defaults-1.0.3.tgz#c656051e9817d9ff08ed881477f3fe4019f3ef7d"
-  dependencies:
-    clone "^1.0.2"
 
 delayed-stream@~1.0.0:
   version "1.0.0"
@@ -1926,8 +1920,8 @@ jsbn@~0.1.0:
   resolved "https://registry.yarnpkg.com/jsbn/-/jsbn-0.1.1.tgz#a5e654c2e5a2deb5f201d96cefbca80c0ef2f513"
 
 jscommons@^2.0.0, jscommons@^2.1.0:
-  version "2.1.1"
-  resolved "https://registry.yarnpkg.com/jscommons/-/jscommons-2.1.1.tgz#fa2e0592f92ddb2e4eeb573e6d3cdf44fe8d7a59"
+  version "2.1.2"
+  resolved "https://registry.yarnpkg.com/jscommons/-/jscommons-2.1.2.tgz#f959ed6a3a01bccb14533bb39694ce9e6455e2ae"
   dependencies:
     aws-sdk "^2.80.0"
     body-parser "^1.17.2"
@@ -1946,7 +1940,7 @@ jscommons@^2.0.0, jscommons@^2.1.0:
     rulr "^4.0.1"
     uuid "^3.1.0"
     winston "^2.3.1"
-    winston-aws-cloudwatch "^1.5.0"
+    winston-aws-cloudwatch "^2.0.0"
 
 jscpd@0.6.17:
   version "0.6.17"
@@ -2136,10 +2130,6 @@ locate-path@^2.0.0:
 lodash.assign@^4.2.0:
   version "4.2.0"
   resolved "https://registry.yarnpkg.com/lodash.assign/-/lodash.assign-4.2.0.tgz#0d99f3ccd7a6d261d19bdaeb9245005d285808e7"
-
-lodash.find@^4.4.0:
-  version "4.6.0"
-  resolved "https://registry.yarnpkg.com/lodash.find/-/lodash.find-4.6.0.tgz#cb0704d47ab71789ffa0de8b97dd926fb88b13b1"
 
 lodash.includes@^4.3.0:
   version "4.3.0"
@@ -3647,18 +3637,15 @@ window-size@0.1.0:
   version "0.1.0"
   resolved "https://registry.yarnpkg.com/window-size/-/window-size-0.1.0.tgz#5438cd2ea93b202efa3a19fe8887aee7c94f9c9d"
 
-winston-aws-cloudwatch@^1.5.0:
-  version "1.6.0"
-  resolved "https://registry.yarnpkg.com/winston-aws-cloudwatch/-/winston-aws-cloudwatch-1.6.0.tgz#8d84f749b40e5cf381c3d4a62dd4d73b1b20e330"
+winston-aws-cloudwatch@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/winston-aws-cloudwatch/-/winston-aws-cloudwatch-2.0.0.tgz#de35ec4dbba9cab85b2d5dc27aec55ec32f65b81"
   dependencies:
     aws-sdk "^2.58.0"
     babel-runtime "^6.23.0"
     bottleneck "^1.15.1"
-    debug "^2.6.8"
-    defaults "^1.0.3"
-    lodash.find "^4.4.0"
+    debug "^3.1.0"
     lodash.isempty "^4.2.1"
-    winston "^2.3.1"
 
 winston@>=1.0.x, winston@^2.3.1:
   version "2.4.0"
@@ -3770,8 +3757,8 @@ xapi-state@^3.0.1:
     xapi-validation "^2.1.0"
 
 xapi-statements@^5.0.3:
-  version "5.0.4"
-  resolved "https://registry.yarnpkg.com/xapi-statements/-/xapi-statements-5.0.4.tgz#6ba8c9a2711944dce3f574cfcbacc872269ca4c3"
+  version "5.0.5"
+  resolved "https://registry.yarnpkg.com/xapi-statements/-/xapi-statements-5.0.5.tgz#5768328e782b931f0dfb04c293a915672470e675"
   dependencies:
     accept-language-parser "^1.4.1"
     atob "^2.0.3"
@@ -3804,7 +3791,7 @@ xapi-statements@^5.0.3:
     string-to-stream "^1.1.0"
     uuid "^3.0.1"
     winston "^2.3.1"
-    winston-aws-cloudwatch "^1.5.0"
+    winston-aws-cloudwatch "^2.0.0"
     xapi-validation "^2.1.0"
 
 xapi-validation@^2.1.0:
