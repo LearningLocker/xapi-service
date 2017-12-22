@@ -46,11 +46,12 @@
     parse-github-url "^1.0.1"
     url-join "^2.0.2"
 
-"@semantic-release/npm@2.4.1", "@semantic-release/npm@^2.0.0":
-  version "2.4.1"
-  resolved "https://registry.yarnpkg.com/@semantic-release/npm/-/npm-2.4.1.tgz#35fcb8c57bdc6728e60a11fa27aa6c5d24a71d6a"
+"@semantic-release/npm@2.5.0", "@semantic-release/npm@^2.0.0":
+  version "2.5.0"
+  resolved "https://registry.yarnpkg.com/@semantic-release/npm/-/npm-2.5.0.tgz#cd51a4147cb3f6a99119e86caec929752c945bf1"
   dependencies:
     "@semantic-release/error" "^2.1.0"
+    debug "^3.1.0"
     execa "^0.8.0"
     fs-extra "^5.0.0"
     lodash "^4.17.4"
@@ -1010,8 +1011,8 @@ es6-promise@3.2.1:
   resolved "https://registry.yarnpkg.com/es6-promise/-/es6-promise-3.2.1.tgz#ec56233868032909207170c39448e24449dd1fc4"
 
 es6-promise@^4.0.3:
-  version "4.2.1"
-  resolved "https://registry.yarnpkg.com/es6-promise/-/es6-promise-4.2.1.tgz#3b98a6714ba1b9267428b2c00e6265b16dab0205"
+  version "4.2.2"
+  resolved "https://registry.yarnpkg.com/es6-promise/-/es6-promise-4.2.2.tgz#f722d7769af88bd33bc13ec6605e1f92966b82d9"
 
 es6-promisify@^5.0.0:
   version "5.0.0"
@@ -3441,8 +3442,8 @@ traverse@~0.6.6:
   resolved "https://registry.yarnpkg.com/traverse/-/traverse-0.6.6.tgz#cbdf560fd7b9af632502fed40f918c157ea97137"
 
 travis-deploy-once@^3.1.2:
-  version "3.1.2"
-  resolved "https://registry.yarnpkg.com/travis-deploy-once/-/travis-deploy-once-3.1.2.tgz#568fe69d6d7bae9250fd5f58f8af78e30a32396f"
+  version "3.2.0"
+  resolved "https://registry.yarnpkg.com/travis-deploy-once/-/travis-deploy-once-3.2.0.tgz#155cb1beb03b192e44134a99419c9f6c3ea7840b"
   dependencies:
     chalk "^2.1.0"
     got "^8.0.1"
