@@ -46,9 +46,9 @@
     parse-github-url "^1.0.1"
     url-join "^2.0.2"
 
-"@semantic-release/npm@2.4.0", "@semantic-release/npm@^2.0.0":
-  version "2.4.0"
-  resolved "https://registry.yarnpkg.com/@semantic-release/npm/-/npm-2.4.0.tgz#eb72d1b54482474b282a8b938741ec325d18560c"
+"@semantic-release/npm@2.4.1", "@semantic-release/npm@^2.0.0":
+  version "2.4.1"
+  resolved "https://registry.yarnpkg.com/@semantic-release/npm/-/npm-2.4.1.tgz#35fcb8c57bdc6728e60a11fa27aa6c5d24a71d6a"
   dependencies:
     "@semantic-release/error" "^2.1.0"
     execa "^0.8.0"
@@ -332,8 +332,8 @@ atob@^2.0.3:
   resolved "https://registry.yarnpkg.com/atob/-/atob-2.0.3.tgz#19c7a760473774468f20b2d2d03372ad7d4cbf5d"
 
 aws-sdk@^2.58.0, aws-sdk@^2.74.0, aws-sdk@^2.80.0, aws-sdk@^2.97.0:
-  version "2.172.0"
-  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.172.0.tgz#47dfb79907976ebbd538562ea5a25835b5b3f35d"
+  version "2.174.0"
+  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.174.0.tgz#4063b5beb27af34fef054b6b02dc791703395556"
   dependencies:
     buffer "4.9.1"
     crypto-browserify "1.0.9"
@@ -1010,8 +1010,8 @@ es6-promise@3.2.1:
   resolved "https://registry.yarnpkg.com/es6-promise/-/es6-promise-3.2.1.tgz#ec56233868032909207170c39448e24449dd1fc4"
 
 es6-promise@^4.0.3:
-  version "4.1.1"
-  resolved "https://registry.yarnpkg.com/es6-promise/-/es6-promise-4.1.1.tgz#8811e90915d9a0dba36274f0b242dbda78f9c92a"
+  version "4.2.1"
+  resolved "https://registry.yarnpkg.com/es6-promise/-/es6-promise-4.2.1.tgz#3b98a6714ba1b9267428b2c00e6265b16dab0205"
 
 es6-promisify@^5.0.0:
   version "5.0.0"
