@@ -64,7 +64,7 @@
     "xapi-statements": "^5.0.6"
   },
   "devDependencies": {
-    "@semantic-release/github": "2.2.3",
+    "@semantic-release/github": "3.0.0",
     "@semantic-release/npm": "2.5.0",
     "@types/dotenv": "4.0.2",
     "@types/express": "4.11.0",
