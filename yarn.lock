@@ -333,8 +333,8 @@ atob@^2.0.3:
   resolved "https://registry.yarnpkg.com/atob/-/atob-2.0.3.tgz#19c7a760473774468f20b2d2d03372ad7d4cbf5d"
 
 aws-sdk@^2.58.0, aws-sdk@^2.74.0, aws-sdk@^2.80.0, aws-sdk@^2.97.0:
-  version "2.174.0"
-  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.174.0.tgz#4063b5beb27af34fef054b6b02dc791703395556"
+  version "2.175.0"
+  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.175.0.tgz#33346247b3b9ca674f275eea746edfdfb6479e44"
   dependencies:
     buffer "4.9.1"
     crypto-browserify "1.0.9"
@@ -2225,8 +2225,8 @@ marked-terminal@^2.0.0:
     node-emoji "^1.4.1"
 
 marked@^0.3.6:
-  version "0.3.7"
-  resolved "https://registry.yarnpkg.com/marked/-/marked-0.3.7.tgz#80ef3bbf1bd00d1c9cfebe42ba1b8c85da258d0d"
+  version "0.3.9"
+  resolved "https://registry.yarnpkg.com/marked/-/marked-0.3.9.tgz#54ce6a57e720c3ac6098374ec625fcbcc97ff290"
 
 media-typer@0.3.0:
   version "0.3.0"
@@ -2292,8 +2292,8 @@ mime@1.4.1:
   resolved "https://registry.yarnpkg.com/mime/-/mime-1.4.1.tgz#121f9ebc49e3766f311a76e1fa1c8003c4b03aa6"
 
 mime@^2.0.3:
-  version "2.0.3"
-  resolved "https://registry.yarnpkg.com/mime/-/mime-2.0.3.tgz#4353337854747c48ea498330dc034f9f4bbbcc0b"
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/mime/-/mime-2.1.0.tgz#1022a5ada445aa30686e4059abaea83d0b4e8f9c"
 
 mimic-response@^1.0.0:
   version "1.0.0"
@@ -3087,9 +3087,9 @@ sax@>=0.6.0:
   version "1.2.4"
   resolved "https://registry.yarnpkg.com/sax/-/sax-1.2.4.tgz#2816234e2378bddc4e5354fab5caa895df7100d9"
 
-semantic-release-docker@2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/semantic-release-docker/-/semantic-release-docker-2.0.0.tgz#777adb64fa49d33684711b3ecfb258d4f5e2e327"
+semantic-release-docker@2.0.2:
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/semantic-release-docker/-/semantic-release-docker-2.0.2.tgz#5b184438181ee3220b65470366768a73d45856dd"
   dependencies:
     "@semantic-release/error" "^2.1.0"
     execa "^0.8.0"
@@ -3491,8 +3491,8 @@ tslint@5.8.0:
     tsutils "^2.12.1"
 
 tsutils@^2.12.1, tsutils@^2.12.2:
-  version "2.13.1"
-  resolved "https://registry.yarnpkg.com/tsutils/-/tsutils-2.13.1.tgz#d6d1cc0f7c04cf9fb3b28a292973cffb9cfbe09a"
+  version "2.14.0"
+  resolved "https://registry.yarnpkg.com/tsutils/-/tsutils-2.14.0.tgz#bc5291622aa2448c1baffc544bcc14ecfa528fb7"
   dependencies:
     tslib "^1.8.0"
 
