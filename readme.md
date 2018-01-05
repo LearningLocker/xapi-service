@@ -1,5 +1,5 @@
 # xAPI service
-[![NPM Package Version](https://badge.fury.io/js/xapi-service.svg)](https://www.npmjs.com/package/xapi-service)
+
 [![Build Status](https://circleci.com/gh/LearningLocker/xapi-service/tree/master.svg?style=shield&circle-token=b6b0c9f734e6e7d76a59e8dcf9d0e05eb2fef542)](https://circleci.com/gh/LearningLocker/xapi-service)
 [![Renovate badge](https://img.shields.io/badge/Renovate-enabled-brightgreen.svg)](https://renovateapp.com/)
 [![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)

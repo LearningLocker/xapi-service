@@ -1,5 +1,5 @@
 {
-  "name": "xapi-service",
+  "name": "@learninglocker/xapi-service",
   "version": "0.0.0-development",
   "description": "A service for the xAPI",
   "main": "dist/server.js",
@@ -22,22 +22,7 @@
     "clean": "rm -rf dist",
     "lint": "tslint -p ./tsconfig.json",
     "duplication": "jscpd",
-    "semantic-release": "semantic-release"
-  },
-  "release": {
-    "verifyConditions": [
-      "semantic-release-docker",
-      "@semantic-release/github",
-      "@semantic-release/npm"
-    ],
-    "publish": [
-      "@semantic-release/github",
-      "@semantic-release/npm",
-      {
-        "path": "semantic-release-docker",
-        "name": "learninglocker/xapi-service"
-      }
-    ]
+    "semantic-release": "ht2-release-public-circleci-app"
   },
   "config": {
     "commitizen": {
@@ -64,8 +49,7 @@
     "xapi-statements": "^5.0.6"
   },
   "devDependencies": {
-    "@semantic-release/github": "3.0.1",
-    "@semantic-release/npm": "2.6.1",
+    "@ht2-labs/semantic-release": "1.0.21",
     "@types/dotenv": "4.0.2",
     "@types/express": "4.11.0",
     "@types/lodash": "4.14.92",
@@ -77,11 +61,12 @@
     "commitizen": "2.9.6",
     "cz-conventional-changelog": "2.1.0",
     "jscpd": "0.6.17",
-    "semantic-release": "11.0.2",
-    "semantic-release-docker": "2.0.2",
     "tslint": "5.8.0",
     "tslint-consistent-codestyle": "1.11.0",
     "tslint-immutable": "4.5.0",
     "typescript": "2.6.2"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
