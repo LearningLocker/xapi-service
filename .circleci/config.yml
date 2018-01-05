@@ -25,11 +25,8 @@ jobs:
           keys:
             - v1-dependencies-{{ checksum "yarn.lock" }}
       - run:
-          name: Calculating Docker Tag
-          command: echo 'export DOCKER_TAG=$(echo $CIRCLE_BRANCH | sed -e "s/\//-/g")' >> $BASH_ENV
-      - run:
           name: Installing Dependencies
-          command: yarn install
+          command: yarn install --ignore-engines
       - save_cache:
           paths:
             - node_modules
@@ -56,10 +53,7 @@ jobs:
           command: docker build -t "$DOCKER_REPO_SLUG" .
       - deploy:
           name: Semantic Release
-          command: |
-            if [ "${CIRCLE_BRANCH}" == "master" ]; then
-               yarn semantic-release || true;
-            fi
+          command: yarn semantic-release
       - deploy:
           name: Docker Push
           command: |
