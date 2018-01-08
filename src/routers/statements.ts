@@ -1,8 +1,8 @@
 /* tslint:disable:max-file-line-count */
-import presenterFacade from 'xapi-statements/dist/expressPresenter';
-import repoFacade from 'xapi-statements/dist/repo/facade';
-import serviceFacade from 'xapi-statements/dist/service';
-import enTranslator from 'xapi-statements/dist/translatorFactory/en';
+import presenterFacade from '@learninglocker/xapi-statements/dist/expressPresenter';
+import repoFacade from '@learninglocker/xapi-statements/dist/repo/facade';
+import serviceFacade from '@learninglocker/xapi-statements/dist/service';
+import enTranslator from '@learninglocker/xapi-statements/dist/translatorFactory/en';
 import config from '../config';
 import logger from '../logger';
 import tracker from '../tracker';
