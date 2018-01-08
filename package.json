@@ -34,6 +34,10 @@
     "npm": ">3.0.0"
   },
   "dependencies": {
+    "@learninglocker/xapi-activities": "^3.0.7",
+    "@learninglocker/xapi-agents": "^3.0.4",
+    "@learninglocker/xapi-state": "^3.0.4",
+    "@learninglocker/xapi-statements": "^5.0.8",
     "boolean": "^0.1.2",
     "dotenv": "^4.0.0",
     "express": "^4.14.1",
@@ -42,11 +46,7 @@
     "lodash": "^4.17.4",
     "mongodb": "^2.2.26",
     "redis": "^2.8.0",
-    "source-map-support": "^0.5.0",
-    "xapi-activities": "^3.0.2",
-    "xapi-agents": "^3.0.1",
-    "xapi-state": "^3.0.1",
-    "xapi-statements": "^5.0.6"
+    "source-map-support": "^0.5.0"
   },
   "devDependencies": {
     "@ht2-labs/semantic-release": "1.0.21",

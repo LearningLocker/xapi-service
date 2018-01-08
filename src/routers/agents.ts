@@ -1,17 +1,17 @@
 /* tslint:disable:max-file-line-count */
+import expressPresenter from '@learninglocker/xapi-agents/dist/expressPresenter';
+import fetchAuthRepo from '@learninglocker/xapi-agents/dist/fetchAuthRepo';
+import localStorageRepo from '@learninglocker/xapi-agents/dist/localStorageRepo';
+import memoryModelsRepo from '@learninglocker/xapi-agents/dist/memoryModelsRepo';
+import AgentProfile from '@learninglocker/xapi-agents/dist/models/Profile';
+import mongoAuthRepo from '@learninglocker/xapi-agents/dist/mongoAuthRepo';
+import mongoModelsRepo from '@learninglocker/xapi-agents/dist/mongoModelsRepo';
+import s3StorageRepo from '@learninglocker/xapi-agents/dist/s3StorageRepo';
+import service from '@learninglocker/xapi-agents/dist/service';
+import testAuthRepo from '@learninglocker/xapi-agents/dist/testAuthRepo';
+import enTranslator from '@learninglocker/xapi-agents/dist/translatorFactory/en';
 import { S3 } from 'aws-sdk';
 import { MongoClient } from 'mongodb';
-import expressPresenter from 'xapi-agents/dist/expressPresenter';
-import fetchAuthRepo from 'xapi-agents/dist/fetchAuthRepo';
-import localStorageRepo from 'xapi-agents/dist/localStorageRepo';
-import memoryModelsRepo from 'xapi-agents/dist/memoryModelsRepo';
-import AgentProfile from 'xapi-agents/dist/models/Profile';
-import mongoAuthRepo from 'xapi-agents/dist/mongoAuthRepo';
-import mongoModelsRepo from 'xapi-agents/dist/mongoModelsRepo';
-import s3StorageRepo from 'xapi-agents/dist/s3StorageRepo';
-import service from 'xapi-agents/dist/service';
-import testAuthRepo from 'xapi-agents/dist/testAuthRepo';
-import enTranslator from 'xapi-agents/dist/translatorFactory/en';
 import config from '../config';
 import logger from '../logger';
 import tracker from '../tracker';
