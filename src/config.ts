@@ -22,6 +22,7 @@ const newRelicLicenseKey = getStringOption(process.env.NEW_RELIC_LICENSE_KEY, ''
 export default {
   defaultTimeout: getNumberOption(process.env.DEFAULT_TIMEOUT_MS, DEFAULT_TIMEOUT_MS),
   express: {
+    allowUndefinedMethod: getBooleanOption(process.env.EXPRESS_ALLOW_UNDEFINED_METHOD, false),
     bodyParserLimit: getStringOption(process.env.EXPRESS_BODY_PARSER_LIMIT, '5mb'),
     morganDirectory: getStringOption(process.env.EXPRESS_MORGAN_DIRECTORY, accessLogsDir),
     port: expressPort,

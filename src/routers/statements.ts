@@ -73,6 +73,7 @@ const service = serviceFacade({
   tracker,
 });
 const presenter = presenterFacade({
+  allowUndefinedMethod: config.express.allowUndefinedMethod,
   bodyParserLimit: config.express.bodyParserLimit,
   customRoute: 'xAPI/statements/status',
   customRouteText: 'ok',
