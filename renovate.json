@@ -1,8 +1,5 @@
 {
-  "extends": [":library"],
-  "automerge": true,
-  "automergeType": "branch-push",
-  "major": {
-    "automerge": false
-  }
+  "extends": [
+    "@ht2-labs:base"
+  ]
 }
