@@ -13,6 +13,7 @@ const DEFAULT_EXPRESS_PORT = 8081;
 const DEFAULT_TIMEOUT_MS = 300000; // 5 minutes.
 
 const storageDir = `${process.cwd()}/storage`;
+const googleKeyFileName = `${process.cwd()}/google.keyfile.json`;
 const expressPort = getNumberOption(process.env.EXPRESS_PORT, DEFAULT_EXPRESS_PORT);
 const demoAuth = `http://localhost:${expressPort}/auth`;
 const accessLogsDir = `${storageDir}/accessLogs`;
@@ -28,9 +29,14 @@ export default {
     port: expressPort,
     xAPIPrefix: getStringOption(process.env.XAPI_PREFIX, '/data'),
   },
-
   fetchAuthRepo: {
     llClientInfoEndpoint: getStringOption(process.env.LL_CLIENT_INFO_ENDPOINT, demoAuth),
+  },
+  googleStorageRepo: {
+    bucketName: getStringOption(process.env.FS_GOOGLE_CLOUD_BUCKET, 'xapi-server'),
+    keyFileName: getStringOption(process.env.FS_GOOGLE_CLOUD_KEY_FILENAME, googleKeyFileName),
+    projectId: getStringOption(process.env.FS_GOOGLE_CLOUD_PROJECT_ID, 'll'),
+    subFolder: getStringOption(process.env.FS_GOOGLE_CLOUD_BUCKET_SUBFOLDER, 'storage'),
   },
   lang: getStringOption(process.env.LANG, 'en'),
   localStorageRepo: {

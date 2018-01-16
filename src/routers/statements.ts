@@ -47,6 +47,12 @@ const repo = repoFacade({
   },
   storage: {
     facade: config.repoFactory.storageRepoName,
+    google: {
+      bucketName: config.googleStorageRepo.bucketName,
+      keyFileName: config.googleStorageRepo.keyFileName,
+      projectId: config.googleStorageRepo.projectId,
+      subFolder: config.googleStorageRepo.subFolder,
+    },
     local: {
       storageDir: `${config.localStorageRepo.storageDir}/${config.storageSubFolders.statements}`,
     },

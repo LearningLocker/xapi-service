@@ -1,8 +1,9 @@
 .DS_STORE
-node_modules
-npm-debug.log
-notes.md
-.env
-storage
-dist
-.nyc_output
+*.keyfile.json
+/.env
+/.nyc_output
+/dist
+/node_modules
+/notes.md
+/npm-debug.log
+/storage
