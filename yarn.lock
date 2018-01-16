@@ -63,6 +63,15 @@
     semver "5.4.1"
     simple-git "1.85.0"
 
+"@ht2-labs/typescript-project@1.0.5":
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/@ht2-labs/typescript-project/-/typescript-project-1.0.5.tgz#f002f44dc3ef733da442704b1b0291b3db993c16"
+  dependencies:
+    tslint "5.9.1"
+    tslint-consistent-codestyle "1.11.0"
+    tslint-immutable "4.5.0"
+    typescript "2.6.2"
+
 "@learninglocker/xapi-activities@^3.1.0":
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/@learninglocker/xapi-activities/-/xapi-activities-3.1.0.tgz#5559770f9aeabc2b2aab0102d5a66708651de5e4"
@@ -3157,29 +3166,6 @@ jsbn@~0.1.0:
   version "0.1.1"
   resolved "https://registry.yarnpkg.com/jsbn/-/jsbn-0.1.1.tgz#a5e654c2e5a2deb5f201d96cefbca80c0ef2f513"
 
-jscommons@^2.0.0:
-  version "2.1.3"
-  resolved "https://registry.yarnpkg.com/jscommons/-/jscommons-2.1.3.tgz#c82596dfac12a3f070f99fe5a33e8bf08f0df99e"
-  dependencies:
-    aws-sdk "^2.80.0"
-    body-parser "^1.17.2"
-    boolean "^0.1.3"
-    cors "^2.8.3"
-    express "^4.15.3"
-    file-stream-rotator "^0.2.0"
-    fs-extra "^5.0.0"
-    helmet "^3.6.1"
-    knex "^0.14.0"
-    lodash "^4.17.4"
-    moment "^2.18.1"
-    mongodb "^2.2.29"
-    morgan "^1.8.2"
-    newrelic "^2.3.1"
-    rulr "^4.0.1"
-    uuid "^3.1.0"
-    winston "^2.3.1"
-    winston-aws-cloudwatch "^2.0.0"
-
 jscommons@^2.1.5:
   version "2.1.5"
   resolved "https://registry.yarnpkg.com/jscommons/-/jscommons-2.1.5.tgz#dbc7f9a0329a05011e5a0bc22baa043fb2e7d638"
@@ -3724,7 +3710,7 @@ mongodb-core@3.0.1:
     bson "~1.0.4"
     require_optional "^1.0.1"
 
-mongodb@^2.2.26, mongodb@^2.2.29:
+mongodb@^2.2.26:
   version "2.2.34"
   resolved "https://registry.yarnpkg.com/mongodb/-/mongodb-2.2.34.tgz#a34f59bbeb61754aec432de72c3fe21526a44c1a"
   dependencies:
