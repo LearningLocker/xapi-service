@@ -1,7 +1,9 @@
 /* tslint:disable:max-file-line-count */
+import * as Storage from '@google-cloud/storage';
 import mongoAuthRepo from '@learninglocker/xapi-agents/dist/mongoAuthRepo';
 import expressPresenter from '@learninglocker/xapi-state/dist/expressPresenter';
 import fetchAuthRepo from '@learninglocker/xapi-state/dist/fetchAuthRepo';
+import googleStorageRepo from '@learninglocker/xapi-state/dist/googleStorageRepo';
 import localStorageRepo from '@learninglocker/xapi-state/dist/localStorageRepo';
 import memoryModelsRepo from '@learninglocker/xapi-state/dist/memoryModelsRepo';
 import mongoModelsRepo from '@learninglocker/xapi-state/dist/mongoModelsRepo';
@@ -50,6 +52,15 @@ const getStorageRepo = () => {
         bucketName: config.s3StorageRepo.bucketName,
         client: new S3(config.s3StorageRepo.awsConfig),
         subFolder: config.storageSubFolders.statements,
+      });
+    case 'google':
+      return googleStorageRepo({
+        bucketName: config.googleStorageRepo.bucketName,
+        storage: Storage({
+          keyFilename: config.googleStorageRepo.keyFileName,
+          projectId: config.googleStorageRepo.projectId,
+        }),
+        subFolder: config.googleStorageRepo.subFolder.replace(/^\//, ''),
       });
     default:
     case 'local': {
