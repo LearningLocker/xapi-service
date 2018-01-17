@@ -37,7 +37,7 @@
     "@learninglocker/xapi-activities": "^3.1.0",
     "@learninglocker/xapi-agents": "^3.1.0",
     "@learninglocker/xapi-state": "^3.1.0",
-    "@learninglocker/xapi-statements": "^5.1.0",
+    "@learninglocker/xapi-statements": "^5.1.1",
     "boolean": "^0.1.2",
     "dotenv": "^4.0.0",
     "express": "^4.14.1",
