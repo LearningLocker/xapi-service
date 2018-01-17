@@ -79,6 +79,7 @@ const service = serviceFacade({
   tracker,
 });
 const presenter = presenterFacade({
+  allowFormBody: config.express.allowFormBody,
   allowUndefinedMethod: config.express.allowUndefinedMethod,
   bodyParserLimit: config.express.bodyParserLimit,
   customRoute: 'xAPI/statements/status',
