@@ -65,7 +65,7 @@
     "jscpd": "0.6.17",
     "tslint": "5.9.1",
     "tslint-consistent-codestyle": "1.11.0",
-    "tslint-immutable": "4.5.0",
+    "tslint-immutable": "4.5.1",
     "typescript": "2.6.2"
   },
   "publishConfig": {
