@@ -72,12 +72,12 @@
     tslint-immutable "4.5.1"
     typescript "2.6.2"
 
-"@learninglocker/xapi-activities@^3.1.0":
-  version "3.1.0"
-  resolved "https://registry.yarnpkg.com/@learninglocker/xapi-activities/-/xapi-activities-3.1.0.tgz#5559770f9aeabc2b2aab0102d5a66708651de5e4"
+"@learninglocker/xapi-activities@^3.1.1":
+  version "3.1.1"
+  resolved "https://registry.yarnpkg.com/@learninglocker/xapi-activities/-/xapi-activities-3.1.1.tgz#c2c19728b96c6a0e202b5c982f72f060a577c036"
   dependencies:
     "@google-cloud/storage" "^1.5.2"
-    "@learninglocker/xapi-validation" "^2.1.9"
+    "@learninglocker/xapi-validation" "^2.1.10"
     atob "^2.0.3"
     aws-sdk "^2.74.0"
     bluebird "^3.5.0"
@@ -99,12 +99,12 @@
     string-to-stream "^1.1.0"
     uuid "^3.0.1"
 
-"@learninglocker/xapi-agents@^3.1.0":
-  version "3.1.0"
-  resolved "https://registry.yarnpkg.com/@learninglocker/xapi-agents/-/xapi-agents-3.1.0.tgz#0bd7cbe590078967f970fe31f97303b32513da50"
+"@learninglocker/xapi-agents@^3.1.1":
+  version "3.1.1"
+  resolved "https://registry.yarnpkg.com/@learninglocker/xapi-agents/-/xapi-agents-3.1.1.tgz#60b8d9199bbbaf12aa1dc69a74ce4143f5cc45b9"
   dependencies:
     "@google-cloud/storage" "^1.5.2"
-    "@learninglocker/xapi-validation" "^2.1.9"
+    "@learninglocker/xapi-validation" "^2.1.10"
     atob "^2.0.3"
     aws-sdk "^2.74.0"
     bluebird "^3.5.0"
@@ -126,12 +126,12 @@
     string-to-stream "^1.1.0"
     uuid "^3.0.1"
 
-"@learninglocker/xapi-state@^3.1.0":
-  version "3.1.0"
-  resolved "https://registry.yarnpkg.com/@learninglocker/xapi-state/-/xapi-state-3.1.0.tgz#d65ce73497bbe02ffaf0b417864ef10597250865"
+"@learninglocker/xapi-state@^3.1.1":
+  version "3.1.1"
+  resolved "https://registry.yarnpkg.com/@learninglocker/xapi-state/-/xapi-state-3.1.1.tgz#927ae09cf0ae4f151ccd10202ab7b4317a481165"
   dependencies:
     "@google-cloud/storage" "^1.5.2"
-    "@learninglocker/xapi-validation" "^2.1.9"
+    "@learninglocker/xapi-validation" "^2.1.10"
     atob "^2.0.3"
     aws-sdk "^2.74.0"
     bluebird "^3.5.0"
@@ -153,12 +153,12 @@
     string-to-stream "^1.1.0"
     uuid "^3.0.1"
 
-"@learninglocker/xapi-statements@^5.1.1":
-  version "5.1.1"
-  resolved "https://registry.yarnpkg.com/@learninglocker/xapi-statements/-/xapi-statements-5.1.1.tgz#d06ae63e3ba02199e4fcd6162e18904616cd3f3a"
+"@learninglocker/xapi-statements@^5.1.2":
+  version "5.1.2"
+  resolved "https://registry.yarnpkg.com/@learninglocker/xapi-statements/-/xapi-statements-5.1.2.tgz#3d5e8accecabc6b8238eefcf47edfaecf4c78131"
   dependencies:
     "@google-cloud/storage" "^1.5.2"
-    "@learninglocker/xapi-validation" "^2.1.9"
+    "@learninglocker/xapi-validation" "^2.1.10"
     accept-language-parser "^1.4.1"
     atob "^2.0.3"
     aws-sdk "^2.97.0"
@@ -192,9 +192,9 @@
     winston "^2.3.1"
     winston-aws-cloudwatch "^2.0.0"
 
-"@learninglocker/xapi-validation@^2.1.9":
-  version "2.1.9"
-  resolved "https://registry.yarnpkg.com/@learninglocker/xapi-validation/-/xapi-validation-2.1.9.tgz#39682ce1c5d3a60079b28166bdd3662b6885498a"
+"@learninglocker/xapi-validation@^2.1.10":
+  version "2.1.10"
+  resolved "https://registry.yarnpkg.com/@learninglocker/xapi-validation/-/xapi-validation-2.1.10.tgz#ae5c6953b5d4dd2bd4a65005ce46f1e8e8bd2bd2"
   dependencies:
     lodash "^4.17.4"
     rulr "^4.0.1"
