@@ -49,19 +49,19 @@
     string-format-obj "^1.0.0"
     through2 "^2.0.0"
 
-"@ht2-labs/semantic-release@1.0.21":
-  version "1.0.21"
-  resolved "https://registry.yarnpkg.com/@ht2-labs/semantic-release/-/semantic-release-1.0.21.tgz#f869ae947344cb274aa5b212e1e2d6cdc019c5e2"
+"@ht2-labs/semantic-release@1.0.26":
+  version "1.0.26"
+  resolved "https://registry.yarnpkg.com/@ht2-labs/semantic-release/-/semantic-release-1.0.26.tgz#4b81c1276c06e7a5347cc90d00d2a726059527f1"
   dependencies:
-    "@semantic-release/condition-travis" "7.1.4"
-    "@semantic-release/git" "2.0.1"
-    "@semantic-release/github" "3.0.1"
-    "@semantic-release/npm" "2.6.1"
-    condition-circle "2.0.1"
-    semantic-release "11.0.2"
-    semantic-release-docker "2.0.2"
-    semver "5.4.1"
-    simple-git "1.85.0"
+    "@semantic-release/condition-travis" "^7.1.4"
+    "@semantic-release/git" "^2.0.2"
+    "@semantic-release/github" "^3.0.1"
+    "@semantic-release/npm" "^2.6.4"
+    condition-circle "^2.0.1"
+    semantic-release "^11.2.0"
+    semantic-release-docker "^2.0.2"
+    semver "^5.4.1"
+    simple-git "^1.85.0"
 
 "@ht2-labs/typescript-project@1.0.6":
   version "1.0.6"
@@ -215,7 +215,7 @@
     import-from "^2.1.0"
     lodash "^4.17.4"
 
-"@semantic-release/condition-travis@7.1.4", "@semantic-release/condition-travis@^7.0.0":
+"@semantic-release/condition-travis@^7.0.0", "@semantic-release/condition-travis@^7.1.4":
   version "7.1.4"
   resolved "https://registry.yarnpkg.com/@semantic-release/condition-travis/-/condition-travis-7.1.4.tgz#8251fb3d5a6c2e2711f4948450d8622d53e083c0"
   dependencies:
@@ -228,14 +228,14 @@
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/@semantic-release/error/-/error-2.1.0.tgz#44771f676f5b148da309111285a97901aa95a6e0"
 
-"@semantic-release/git@2.0.1":
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/@semantic-release/git/-/git-2.0.1.tgz#19a1877617675d2c781d0c73ef5758e3db1f4cd0"
+"@semantic-release/git@^2.0.2":
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/@semantic-release/git/-/git-2.0.2.tgz#00f82f338999820cf54beb8e9e3acdd5b160f571"
   dependencies:
     "@semantic-release/error" "^2.1.0"
     debug "^3.1.0"
     dir-glob "^2.0.0"
-    execa "^0.8.0"
+    execa "^0.9.0"
     fs-extra "^5.0.0"
     git-url-parse "^7.0.1"
     lodash "^4.17.4"
@@ -244,9 +244,9 @@
     p-reduce "^1.0.0"
     semver "^5.4.1"
 
-"@semantic-release/github@3.0.1":
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/@semantic-release/github/-/github-3.0.1.tgz#e1fe6128562dcd1d9acd9a4143ecb4ed8be6ace0"
+"@semantic-release/github@^3.0.0", "@semantic-release/github@^3.0.1":
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/@semantic-release/github/-/github-3.0.2.tgz#753ae3d6a225877d50928a5240cf1f1009a0482b"
   dependencies:
     "@semantic-release/error" "^2.1.0"
     debug "^3.1.0"
@@ -257,39 +257,9 @@
     mime "^2.0.3"
     p-reduce "^1.0.0"
     parse-github-url "^1.0.1"
-    url-join "^2.0.2"
+    url-join "^3.0.0"
 
-"@semantic-release/github@^2.0.0":
-  version "2.2.3"
-  resolved "https://registry.yarnpkg.com/@semantic-release/github/-/github-2.2.3.tgz#2323d6c9f6ba602fea1eda4f7efdc8ec96333ac0"
-  dependencies:
-    "@semantic-release/error" "^2.1.0"
-    debug "^3.1.0"
-    fs-extra "^5.0.0"
-    github "^13.0.0"
-    globby "^7.1.1"
-    lodash "^4.17.4"
-    mime "^2.0.3"
-    p-reduce "^1.0.0"
-    parse-github-url "^1.0.1"
-    url-join "^2.0.2"
-
-"@semantic-release/npm@2.6.1":
-  version "2.6.1"
-  resolved "https://registry.yarnpkg.com/@semantic-release/npm/-/npm-2.6.1.tgz#bb1b7d73922222477898acca42d035d9722c0e9e"
-  dependencies:
-    "@semantic-release/error" "^2.1.0"
-    debug "^3.1.0"
-    execa "^0.8.0"
-    fs-extra "^5.0.0"
-    lodash "^4.17.4"
-    nerf-dart "^1.0.0"
-    npm-conf "^1.1.3"
-    npm-registry-client "^8.5.0"
-    read-pkg "^3.0.0"
-    registry-auth-token "^3.3.1"
-
-"@semantic-release/npm@^2.0.0":
+"@semantic-release/npm@^2.0.0", "@semantic-release/npm@^2.6.4":
   version "2.6.4"
   resolved "https://registry.yarnpkg.com/@semantic-release/npm/-/npm-2.6.4.tgz#0343816d94f3d1d6539c216c2886391647e3f9b7"
   dependencies:
@@ -609,8 +579,8 @@ atob@^2.0.0, atob@^2.0.3:
   resolved "https://registry.yarnpkg.com/atob/-/atob-2.0.3.tgz#19c7a760473774468f20b2d2d03372ad7d4cbf5d"
 
 aws-sdk@^2.58.0, aws-sdk@^2.74.0, aws-sdk@^2.80.0, aws-sdk@^2.97.0:
-  version "2.183.0"
-  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.183.0.tgz#d60f478624543266f15ca3305de728bc72cb7b0c"
+  version "2.184.0"
+  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.184.0.tgz#6a379bdce5d930483626c43939086a23386e44ad"
   dependencies:
     buffer "4.9.1"
     events "^1.1.1"
@@ -1523,7 +1493,7 @@ concat-stream@^1.4.7, concat-stream@^1.5.0, concat-stream@^1.5.2, concat-stream@
     readable-stream "^2.2.2"
     typedarray "^0.0.6"
 
-condition-circle@2.0.1:
+condition-circle@^2.0.1:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/condition-circle/-/condition-circle-2.0.1.tgz#39cfd9eaa37985b5d7c5b5c538bf872f016b743c"
   dependencies:
@@ -1886,15 +1856,9 @@ ee-first@1.1.1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/ee-first/-/ee-first-1.1.1.tgz#590c61156b0ae2f4f0255732a158b266bc56b21d"
 
-electron-releases@^2.1.0:
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/electron-releases/-/electron-releases-2.1.0.tgz#c5614bf811f176ce3c836e368a0625782341fd4e"
-
 electron-to-chromium@^1.3.30:
-  version "1.3.30"
-  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.30.tgz#9666f532a64586651fc56a72513692e820d06a80"
-  dependencies:
-    electron-releases "^2.1.0"
+  version "1.3.31"
+  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.31.tgz#00d832cba9fe2358652b0c48a8816c8e3a037e9f"
 
 encodeurl@~1.0.1:
   version "1.0.1"
@@ -3163,8 +3127,8 @@ jsbn@~0.1.0:
   resolved "https://registry.yarnpkg.com/jsbn/-/jsbn-0.1.1.tgz#a5e654c2e5a2deb5f201d96cefbca80c0ef2f513"
 
 jscommons@^2.1.5:
-  version "2.1.5"
-  resolved "https://registry.yarnpkg.com/jscommons/-/jscommons-2.1.5.tgz#dbc7f9a0329a05011e5a0bc22baa043fb2e7d638"
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/jscommons/-/jscommons-2.2.0.tgz#13219732a067378e1351783f805cd99cb0e2a5a6"
   dependencies:
     aws-sdk "^2.80.0"
     body-parser "^1.17.2"
@@ -4249,8 +4213,8 @@ pump@^2.0.0:
     once "^1.3.1"
 
 pumpify@^1.3.3:
-  version "1.3.6"
-  resolved "https://registry.yarnpkg.com/pumpify/-/pumpify-1.3.6.tgz#00d40e5ded0a3bf1e0788b1c0cf426a42882ab64"
+  version "1.4.0"
+  resolved "https://registry.yarnpkg.com/pumpify/-/pumpify-1.4.0.tgz#80b7c5df7e24153d03f0e7ac8a05a5d068bd07fb"
   dependencies:
     duplexify "^3.5.3"
     inherits "^2.0.3"
@@ -4552,6 +4516,10 @@ resolve-from@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/resolve-from/-/resolve-from-3.0.0.tgz#b22c7af7d9d6881bc8b6e653335eebcb0a188748"
 
+resolve-from@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/resolve-from/-/resolve-from-4.0.0.tgz#4abcd852ad32dd7baabfe9b40e00a36db5f392e6"
+
 resolve-url@^0.2.1:
   version "0.2.1"
   resolved "https://registry.yarnpkg.com/resolve-url/-/resolve-url-0.2.1.tgz#2c637fe77c893afd2a663fe21aa9080068e2052a"
@@ -4628,21 +4596,21 @@ sax@>=0.6.0:
   version "1.2.4"
   resolved "https://registry.yarnpkg.com/sax/-/sax-1.2.4.tgz#2816234e2378bddc4e5354fab5caa895df7100d9"
 
-semantic-release-docker@2.0.2:
+semantic-release-docker@^2.0.2:
   version "2.0.2"
   resolved "https://registry.yarnpkg.com/semantic-release-docker/-/semantic-release-docker-2.0.2.tgz#5b184438181ee3220b65470366768a73d45856dd"
   dependencies:
     "@semantic-release/error" "^2.1.0"
     execa "^0.8.0"
 
-semantic-release@11.0.2:
-  version "11.0.2"
-  resolved "https://registry.yarnpkg.com/semantic-release/-/semantic-release-11.0.2.tgz#2a09baa33a0e41926ac3290c8b110d22a5ba2a48"
+semantic-release@^11.2.0:
+  version "11.2.0"
+  resolved "https://registry.yarnpkg.com/semantic-release/-/semantic-release-11.2.0.tgz#d607a821a0b31dfaf60f7af4fef169334653da43"
   dependencies:
     "@semantic-release/commit-analyzer" "^5.0.0"
     "@semantic-release/condition-travis" "^7.0.0"
     "@semantic-release/error" "^2.1.0"
-    "@semantic-release/github" "^2.0.0"
+    "@semantic-release/github" "^3.0.0"
     "@semantic-release/npm" "^2.0.0"
     "@semantic-release/release-notes-generator" "^6.0.0"
     chalk "^2.3.0"
@@ -4652,12 +4620,12 @@ semantic-release@11.0.2:
     execa "^0.8.0"
     get-stream "^3.0.0"
     git-log-parser "^1.2.0"
-    import-from "^2.1.0"
     lodash "^4.0.0"
     marked "^0.3.6"
     marked-terminal "^2.0.0"
     p-reduce "^1.0.0"
     read-pkg-up "^3.0.0"
+    resolve-from "^4.0.0"
     semver "^5.4.1"
 
 semver-diff@^2.0.0:
@@ -4669,10 +4637,6 @@ semver-diff@^2.0.0:
 "semver@2 >=2.2.1 || 3.x || 4 || 5", "semver@2 || 3 || 4 || 5", semver@^5.0.1, semver@^5.0.3, semver@^5.1.0, semver@^5.3.0, semver@^5.4.1:
   version "5.5.0"
   resolved "https://registry.yarnpkg.com/semver/-/semver-5.5.0.tgz#dc4bbc7a6ca9d916dee5d43516f0092b58f7b8ab"
-
-semver@5.4.1:
-  version "5.4.1"
-  resolved "https://registry.yarnpkg.com/semver/-/semver-5.4.1.tgz#e059c09d8571f0540823733433505d3a2f00b18e"
 
 send@0.16.1:
   version "0.16.1"
@@ -4774,7 +4738,7 @@ signal-exit@^3.0.0, signal-exit@^3.0.2:
   version "3.0.2"
   resolved "https://registry.yarnpkg.com/signal-exit/-/signal-exit-3.0.2.tgz#b5fdc08f1287ea1178628e415e25132b73646c6d"
 
-simple-git@1.85.0:
+simple-git@^1.85.0:
   version "1.85.0"
   resolved "https://registry.yarnpkg.com/simple-git/-/simple-git-1.85.0.tgz#563ad291efc8a127735e8fbcd796967377614cd4"
   dependencies:
@@ -5156,8 +5120,8 @@ traverse@~0.6.6:
   resolved "https://registry.yarnpkg.com/traverse/-/traverse-0.6.6.tgz#cbdf560fd7b9af632502fed40f918c157ea97137"
 
 travis-deploy-once@^4.0.0:
-  version "4.3.1"
-  resolved "https://registry.yarnpkg.com/travis-deploy-once/-/travis-deploy-once-4.3.1.tgz#94fd3d3325acecc176798f35ee655bcd53f02fbb"
+  version "4.3.2"
+  resolved "https://registry.yarnpkg.com/travis-deploy-once/-/travis-deploy-once-4.3.2.tgz#b7bd309fd6a7eb63fe86d622f7a4ba8c706538ce"
   dependencies:
     babel-polyfill "^6.26.0"
     babel-preset-env "^1.6.1"
@@ -5168,7 +5132,7 @@ travis-deploy-once@^4.0.0:
     p-retry "^1.0.0"
     semver "^5.4.1"
     update-notifier "^2.3.0"
-    url-join "^2.0.2"
+    url-join "^3.0.0"
     yargs "^10.0.3"
 
 trim-newlines@^1.0.0:
@@ -5216,8 +5180,8 @@ tslint@5.9.1:
     tsutils "^2.12.1"
 
 tsutils@^2.12.1, tsutils@^2.12.2:
-  version "2.19.0"
-  resolved "https://registry.yarnpkg.com/tsutils/-/tsutils-2.19.0.tgz#170a267c1df5ae046e902568ca3444a1a4dfcb3a"
+  version "2.19.1"
+  resolved "https://registry.yarnpkg.com/tsutils/-/tsutils-2.19.1.tgz#76d7ebdea9d7a7bf4a05f50ead3701b0168708d7"
   dependencies:
     tslib "^1.8.1"
 
@@ -5319,9 +5283,9 @@ urix@^0.1.0:
   version "0.1.0"
   resolved "https://registry.yarnpkg.com/urix/-/urix-0.1.0.tgz#da937f7a62e21fec1fd18d49b35c2935067a6c72"
 
-url-join@^2.0.2:
-  version "2.0.5"
-  resolved "https://registry.yarnpkg.com/url-join/-/url-join-2.0.5.tgz#5af22f18c052a000a48d7b82c5e9c2e2feeda728"
+url-join@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/url-join/-/url-join-3.0.0.tgz#26e8113ace195ea30d0fc38186e45400f9cea672"
 
 url-parse-lax@^1.0.0:
   version "1.0.0"
