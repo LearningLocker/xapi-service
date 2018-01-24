@@ -370,9 +370,9 @@
   version "9.3.0"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-9.3.0.tgz#3a129cda7c4e5df2409702626892cb4b96546dd5"
 
-"@types/redis@2.8.4":
-  version "2.8.4"
-  resolved "https://registry.yarnpkg.com/@types/redis/-/redis-2.8.4.tgz#9f9e78e4dce90ad032aef23a32bceafaadb3dce6"
+"@types/redis@2.8.5":
+  version "2.8.5"
+  resolved "https://registry.yarnpkg.com/@types/redis/-/redis-2.8.5.tgz#c4a31a63e95434202eb84908290528ad8510b149"
   dependencies:
     "@types/events" "*"
     "@types/node" "*"
