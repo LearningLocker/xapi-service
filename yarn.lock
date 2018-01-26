@@ -73,13 +73,13 @@
     typescript "2.6.2"
 
 "@learninglocker/xapi-activities@^3.1.1":
-  version "3.1.1"
-  resolved "https://registry.yarnpkg.com/@learninglocker/xapi-activities/-/xapi-activities-3.1.1.tgz#c2c19728b96c6a0e202b5c982f72f060a577c036"
+  version "3.1.2"
+  resolved "https://registry.yarnpkg.com/@learninglocker/xapi-activities/-/xapi-activities-3.1.2.tgz#ea389bc692ba717788271294a06912fa65583bc0"
   dependencies:
     "@google-cloud/storage" "^1.5.2"
     "@learninglocker/xapi-validation" "^2.1.10"
     atob "^2.0.3"
-    aws-sdk "^2.74.0"
+    aws-sdk "^2.0.1"
     bluebird "^3.5.0"
     boolean "^0.1.2"
     btoa "^1.1.2"
@@ -154,14 +154,14 @@
     uuid "^3.0.1"
 
 "@learninglocker/xapi-statements@^5.1.2":
-  version "5.1.2"
-  resolved "https://registry.yarnpkg.com/@learninglocker/xapi-statements/-/xapi-statements-5.1.2.tgz#3d5e8accecabc6b8238eefcf47edfaecf4c78131"
+  version "5.1.4"
+  resolved "https://registry.yarnpkg.com/@learninglocker/xapi-statements/-/xapi-statements-5.1.4.tgz#4f89e89611d1ea7a017fdf7309837fa05594911c"
   dependencies:
     "@google-cloud/storage" "^1.5.2"
     "@learninglocker/xapi-validation" "^2.1.10"
     accept-language-parser "^1.4.1"
     atob "^2.0.3"
-    aws-sdk "^2.97.0"
+    aws-sdk "^2.0.1"
     bluebird "^3.5.0"
     body-parser "^1.17.1"
     boolean "^0.1.2"
@@ -242,15 +242,15 @@
   resolved "https://registry.yarnpkg.com/@semantic-release/error/-/error-2.1.0.tgz#44771f676f5b148da309111285a97901aa95a6e0"
 
 "@semantic-release/git@^2.0.2":
-  version "2.0.2"
-  resolved "https://registry.yarnpkg.com/@semantic-release/git/-/git-2.0.2.tgz#00f82f338999820cf54beb8e9e3acdd5b160f571"
+  version "2.0.3"
+  resolved "https://registry.yarnpkg.com/@semantic-release/git/-/git-2.0.3.tgz#4348a525ec6dfeb9c43ab4ee8d06813583d05644"
   dependencies:
     "@semantic-release/error" "^2.1.0"
     debug "^3.1.0"
     dir-glob "^2.0.0"
     execa "^0.9.0"
     fs-extra "^5.0.0"
-    git-url-parse "^7.0.1"
+    git-url-parse "^8.0.0"
     lodash "^4.17.4"
     micromatch "^3.1.4"
     p-locate "^2.0.0"
@@ -289,15 +289,15 @@
     registry-auth-token "^3.3.1"
 
 "@semantic-release/release-notes-generator@^6.0.0":
-  version "6.0.3"
-  resolved "https://registry.yarnpkg.com/@semantic-release/release-notes-generator/-/release-notes-generator-6.0.3.tgz#c52bea12479a648bcb585d95940b4d72e57c5b71"
+  version "6.0.4"
+  resolved "https://registry.yarnpkg.com/@semantic-release/release-notes-generator/-/release-notes-generator-6.0.4.tgz#babf4bfb8374b73b8f2a27b04cc14f564f53aed7"
   dependencies:
     conventional-changelog-angular "^1.4.0"
     conventional-changelog-writer "^2.0.1"
     conventional-commits-parser "^2.0.0"
     debug "^3.1.0"
     get-stream "^3.0.0"
-    git-url-parse "^7.0.1"
+    git-url-parse "^8.0.0"
     import-from "^2.1.0"
     into-stream "^3.1.0"
     lodash "^4.17.4"
@@ -366,9 +366,9 @@
     "@types/events" "*"
     "@types/node" "*"
 
-"@types/node@*", "@types/node@9.3.0":
-  version "9.3.0"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-9.3.0.tgz#3a129cda7c4e5df2409702626892cb4b96546dd5"
+"@types/node@*", "@types/node@9.4.0":
+  version "9.4.0"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-9.4.0.tgz#b85a0bcf1e1cc84eb4901b7e96966aedc6f078d1"
 
 "@types/redis@2.8.5":
   version "2.8.5"
@@ -592,9 +592,9 @@ atob@^2.0.0, atob@^2.0.3:
   version "2.0.3"
   resolved "https://registry.yarnpkg.com/atob/-/atob-2.0.3.tgz#19c7a760473774468f20b2d2d03372ad7d4cbf5d"
 
-aws-sdk@^2.58.0, aws-sdk@^2.74.0, aws-sdk@^2.80.0, aws-sdk@^2.97.0:
-  version "2.186.0"
-  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.186.0.tgz#64eccea5bf0449810323c313d9cb41c2a4a2850d"
+aws-sdk@^2.0.1, aws-sdk@^2.58.0, aws-sdk@^2.74.0, aws-sdk@^2.80.0:
+  version "2.187.0"
+  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.187.0.tgz#04cb9a333d39c09753bf3ff63ec065b32b00db18"
   dependencies:
     buffer "4.9.1"
     events "^1.1.1"
@@ -2384,9 +2384,9 @@ git-up@^2.0.0:
     is-ssh "^1.3.0"
     parse-url "^1.3.0"
 
-git-url-parse@^7.0.1:
-  version "7.0.2"
-  resolved "https://registry.yarnpkg.com/git-url-parse/-/git-url-parse-7.0.2.tgz#75fc7ae08e5daa90edc59043cdfa8da57c5a8715"
+git-url-parse@^8.0.0:
+  version "8.0.0"
+  resolved "https://registry.yarnpkg.com/git-url-parse/-/git-url-parse-8.0.0.tgz#249430c84e6b11ebae630136f50d7993eb03e211"
   dependencies:
     git-up "^2.0.0"
 
@@ -4427,8 +4427,8 @@ regexpu-core@^2.0.0:
     regjsparser "^0.1.4"
 
 registry-auth-token@^3.0.1, registry-auth-token@^3.3.1:
-  version "3.3.1"
-  resolved "https://registry.yarnpkg.com/registry-auth-token/-/registry-auth-token-3.3.1.tgz#fb0d3289ee0d9ada2cbb52af5dfe66cb070d3006"
+  version "3.3.2"
+  resolved "https://registry.yarnpkg.com/registry-auth-token/-/registry-auth-token-3.3.2.tgz#851fd49038eecb586911115af845260eec983f20"
   dependencies:
     rc "^1.1.6"
     safe-buffer "^5.0.1"
@@ -4824,8 +4824,8 @@ source-map-support@^0.4.15:
     source-map "^0.5.6"
 
 source-map-support@^0.5.0:
-  version "0.5.2"
-  resolved "https://registry.yarnpkg.com/source-map-support/-/source-map-support-0.5.2.tgz#1a6297fd5b2e762b39688c7fc91233b60984f0a5"
+  version "0.5.3"
+  resolved "https://registry.yarnpkg.com/source-map-support/-/source-map-support-0.5.3.tgz#2b3d5fff298cfa4d1afd7d4352d569e9a0158e76"
   dependencies:
     source-map "^0.6.0"
 
