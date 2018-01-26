@@ -100,13 +100,13 @@
     uuid "^3.0.1"
 
 "@learninglocker/xapi-agents@^3.1.1":
-  version "3.1.1"
-  resolved "https://registry.yarnpkg.com/@learninglocker/xapi-agents/-/xapi-agents-3.1.1.tgz#60b8d9199bbbaf12aa1dc69a74ce4143f5cc45b9"
+  version "3.1.2"
+  resolved "https://registry.yarnpkg.com/@learninglocker/xapi-agents/-/xapi-agents-3.1.2.tgz#d19bec789409e59f22a4323624cb030d098ef82b"
   dependencies:
     "@google-cloud/storage" "^1.5.2"
     "@learninglocker/xapi-validation" "^2.1.10"
     atob "^2.0.3"
-    aws-sdk "^2.74.0"
+    aws-sdk "^2.0.1"
     bluebird "^3.5.0"
     boolean "^0.1.2"
     btoa "^1.1.2"
@@ -350,9 +350,9 @@
   dependencies:
     "@types/node" "*"
 
-"@types/lodash@4.14.96":
-  version "4.14.96"
-  resolved "https://registry.yarnpkg.com/@types/lodash/-/lodash-4.14.96.tgz#49a402bb6984af7dd9a48cea3781744a3774bff1"
+"@types/lodash@4.14.97":
+  version "4.14.97"
+  resolved "https://registry.yarnpkg.com/@types/lodash/-/lodash-4.14.97.tgz#7262d6d5fc5e87cdb3f68eb33accd4024f2b211e"
 
 "@types/mime@*":
   version "2.0.0"
