@@ -153,15 +153,15 @@
     string-to-stream "^1.1.0"
     uuid "^3.0.1"
 
-"@learninglocker/xapi-statements@^5.1.2":
-  version "5.1.2"
-  resolved "https://registry.yarnpkg.com/@learninglocker/xapi-statements/-/xapi-statements-5.1.2.tgz#3d5e8accecabc6b8238eefcf47edfaecf4c78131"
+"@learninglocker/xapi-statements@^5.1.4":
+  version "5.1.4"
+  resolved "https://registry.yarnpkg.com/@learninglocker/xapi-statements/-/xapi-statements-5.1.4.tgz#4f89e89611d1ea7a017fdf7309837fa05594911c"
   dependencies:
     "@google-cloud/storage" "^1.5.2"
     "@learninglocker/xapi-validation" "^2.1.10"
     accept-language-parser "^1.4.1"
     atob "^2.0.3"
-    aws-sdk "^2.97.0"
+    aws-sdk "^2.0.1"
     bluebird "^3.5.0"
     body-parser "^1.17.1"
     boolean "^0.1.2"
@@ -592,7 +592,21 @@ atob@^2.0.0, atob@^2.0.3:
   version "2.0.3"
   resolved "https://registry.yarnpkg.com/atob/-/atob-2.0.3.tgz#19c7a760473774468f20b2d2d03372ad7d4cbf5d"
 
-aws-sdk@^2.58.0, aws-sdk@^2.74.0, aws-sdk@^2.80.0, aws-sdk@^2.97.0:
+aws-sdk@^2.0.1:
+  version "2.187.0"
+  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.187.0.tgz#04cb9a333d39c09753bf3ff63ec065b32b00db18"
+  dependencies:
+    buffer "4.9.1"
+    events "^1.1.1"
+    jmespath "0.15.0"
+    querystring "0.2.0"
+    sax "1.2.1"
+    url "0.10.3"
+    uuid "3.1.0"
+    xml2js "0.4.17"
+    xmlbuilder "4.2.1"
+
+aws-sdk@^2.58.0, aws-sdk@^2.74.0, aws-sdk@^2.80.0:
   version "2.186.0"
   resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.186.0.tgz#64eccea5bf0449810323c313d9cb41c2a4a2850d"
   dependencies:
