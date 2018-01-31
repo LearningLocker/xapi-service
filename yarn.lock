@@ -63,14 +63,14 @@
     semver "^5.4.1"
     simple-git "^1.85.0"
 
-"@ht2-labs/typescript-project@1.0.6":
-  version "1.0.6"
-  resolved "https://registry.yarnpkg.com/@ht2-labs/typescript-project/-/typescript-project-1.0.6.tgz#67d104bf0fb9f7c2df4ed3409b5bdfeb57abb596"
+"@ht2-labs/typescript-project@1.0.7":
+  version "1.0.7"
+  resolved "https://registry.yarnpkg.com/@ht2-labs/typescript-project/-/typescript-project-1.0.7.tgz#f84b9d25f30f25dac3a31fa7922f5e9390a631bd"
   dependencies:
     tslint "5.9.1"
     tslint-consistent-codestyle "1.11.0"
     tslint-immutable "4.5.1"
-    typescript "2.6.2"
+    typescript "2.7.1"
 
 "@learninglocker/xapi-activities@^3.1.1":
   version "3.1.2"
@@ -206,8 +206,8 @@
     nan "^2.4.0"
 
 "@octokit/rest@^14.0.3":
-  version "14.0.7"
-  resolved "https://registry.yarnpkg.com/@octokit/rest/-/rest-14.0.7.tgz#fef887a79c59c9add0ce66491ab8a990f2462681"
+  version "14.0.8"
+  resolved "https://registry.yarnpkg.com/@octokit/rest/-/rest-14.0.8.tgz#594292f9c30eb86a832f99f7d464ee7c9c8114c5"
   dependencies:
     before-after-hook "^1.1.0"
     debug "^3.1.0"
@@ -4290,8 +4290,8 @@ raw-body@2.3.2:
     unpipe "1.0.0"
 
 rc@^1.0.1, rc@^1.1.6:
-  version "1.2.4"
-  resolved "https://registry.yarnpkg.com/rc/-/rc-1.2.4.tgz#a0f606caae2a3b862bbd0ef85482c0125b315fa3"
+  version "1.2.5"
+  resolved "https://registry.yarnpkg.com/rc/-/rc-1.2.5.tgz#275cd687f6e3b36cc756baa26dfee80a790301fd"
   dependencies:
     deep-extend "~0.4.0"
     ini "~1.3.0"
@@ -5226,6 +5226,10 @@ typedarray@^0.0.6:
 typescript@2.6.2:
   version "2.6.2"
   resolved "https://registry.yarnpkg.com/typescript/-/typescript-2.6.2.tgz#3c5b6fd7f6de0914269027f03c0946758f7673a4"
+
+typescript@2.7.1:
+  version "2.7.1"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-2.7.1.tgz#bb3682c2c791ac90e7c6210b26478a8da085c359"
 
 uglify-js@^2.6:
   version "2.8.29"
