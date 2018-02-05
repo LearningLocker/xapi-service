@@ -63,12 +63,12 @@
     semver "^5.4.1"
     simple-git "^1.85.0"
 
-"@ht2-labs/typescript-project@1.0.7":
-  version "1.0.7"
-  resolved "https://registry.yarnpkg.com/@ht2-labs/typescript-project/-/typescript-project-1.0.7.tgz#f84b9d25f30f25dac3a31fa7922f5e9390a631bd"
+"@ht2-labs/typescript-project@1.0.8":
+  version "1.0.8"
+  resolved "https://registry.yarnpkg.com/@ht2-labs/typescript-project/-/typescript-project-1.0.8.tgz#30fed368469425eb9c8a9088f7d589f8eacb0414"
   dependencies:
     tslint "5.9.1"
-    tslint-consistent-codestyle "1.11.0"
+    tslint-consistent-codestyle "1.11.1"
     tslint-immutable "4.5.1"
     typescript "2.7.1"
 
@@ -5168,13 +5168,6 @@ tslib@^1.7.1, tslib@^1.8.0, tslib@^1.8.1:
   version "1.9.0"
   resolved "https://registry.yarnpkg.com/tslib/-/tslib-1.9.0.tgz#e37a86fda8cbbaf23a057f473c9f4dc64e5fc2e8"
 
-tslint-consistent-codestyle@1.11.0:
-  version "1.11.0"
-  resolved "https://registry.yarnpkg.com/tslint-consistent-codestyle/-/tslint-consistent-codestyle-1.11.0.tgz#051493eeb3536a74e98d14b66f38028a785f8c2b"
-  dependencies:
-    tslib "^1.7.1"
-    tsutils "^2.12.2"
-
 tslint-consistent-codestyle@1.11.1:
   version "1.11.1"
   resolved "https://registry.yarnpkg.com/tslint-consistent-codestyle/-/tslint-consistent-codestyle-1.11.1.tgz#fa39ff5f5f8a25c537bd1e1f50de6190a2f4d70d"
@@ -5203,7 +5196,7 @@ tslint@5.9.1:
     tslib "^1.8.0"
     tsutils "^2.12.1"
 
-tsutils@^2.12.1, tsutils@^2.12.2, tsutils@^2.21.0:
+tsutils@^2.12.1, tsutils@^2.21.0:
   version "2.21.0"
   resolved "https://registry.yarnpkg.com/tsutils/-/tsutils-2.21.0.tgz#43466a2283a0abce64e2209bc732ad72f8a04fab"
   dependencies:
