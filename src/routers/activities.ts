@@ -13,10 +13,10 @@ import testAuthRepo from '@learninglocker/xapi-activities/dist/testAuthRepo';
 import enTranslator from '@learninglocker/xapi-activities/dist/translatorFactory/en';
 import mongoAuthRepo from '@learninglocker/xapi-agents/dist/mongoAuthRepo';
 import { S3 } from 'aws-sdk';
-import { MongoClient } from 'mongodb';
 import config from '../config';
 import logger from '../logger';
 import tracker from '../tracker';
+import connectToMongoDb from '../utils/connectToMongoDb';
 
 const getAuthRepo = () => {
   switch (config.repoFactory.authRepoName) {
@@ -28,7 +28,7 @@ const getAuthRepo = () => {
       });
     default: case 'mongo':
       return mongoAuthRepo({
-        db: MongoClient.connect(config.mongoModelsRepo.url),
+        db: connectToMongoDb(),
       });
   }
 };
@@ -37,7 +37,7 @@ const getModelsRepo = () => {
   switch (config.repoFactory.modelsRepoName) {
     case 'mongo':
       return mongoModelsRepo({
-        db: MongoClient.connect(config.mongoModelsRepo.url),
+        db: connectToMongoDb(),
       });
     default: case 'memory':
       return memoryModelsRepo({
