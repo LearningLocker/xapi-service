@@ -153,9 +153,9 @@
     string-to-stream "^1.1.0"
     uuid "^3.0.1"
 
-"@learninglocker/xapi-statements@^6.0.0":
-  version "6.0.0"
-  resolved "https://registry.yarnpkg.com/@learninglocker/xapi-statements/-/xapi-statements-6.0.0.tgz#8ca318a771d1a92c824945cacfc223d3f73b5a0c"
+"@learninglocker/xapi-statements@^6.0.1":
+  version "6.0.1"
+  resolved "https://registry.yarnpkg.com/@learninglocker/xapi-statements/-/xapi-statements-6.0.1.tgz#88aaf71784d33446572c92b117009d5d4d645922"
   dependencies:
     "@google-cloud/storage" "^1.5.2"
     "@learninglocker/xapi-validation" "^2.1.10"
