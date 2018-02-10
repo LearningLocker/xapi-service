@@ -59,7 +59,7 @@
     "@types/node": "9.4.5",
     "@types/redis": "2.8.5",
     "@types/source-map-support": "0.4.0",
-    "@types/winston": "2.3.7",
+    "@types/winston": "2.3.8",
     "commitizen": "2.9.6",
     "cz-conventional-changelog": "2.1.0",
     "jscpd": "0.6.17",
