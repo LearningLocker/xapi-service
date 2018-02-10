@@ -152,9 +152,9 @@
     string-to-stream "^1.1.0"
     uuid "^3.0.1"
 
-"@learninglocker/xapi-statements@^5.1.4":
-  version "5.1.4"
-  resolved "https://registry.yarnpkg.com/@learninglocker/xapi-statements/-/xapi-statements-5.1.4.tgz#4f89e89611d1ea7a017fdf7309837fa05594911c"
+"@learninglocker/xapi-statements@^6.0.0":
+  version "6.0.1"
+  resolved "https://registry.yarnpkg.com/@learninglocker/xapi-statements/-/xapi-statements-6.0.1.tgz#88aaf71784d33446572c92b117009d5d4d645922"
   dependencies:
     "@google-cloud/storage" "^1.5.2"
     "@learninglocker/xapi-validation" "^2.1.10"
@@ -171,12 +171,12 @@
     file-stream-rotator "^0.2.0"
     fs-extra "^5.0.0"
     helmet "^3.5.0"
-    jscommons "^2.1.5"
+    jscommons "^2.3.0"
     jsonwebtoken "^8.0.1"
     lodash "^4.17.4"
     mime-types "^2.1.17"
     moment "^2.18.0"
-    mongodb "^2.2.26"
+    mongodb "^3.0.1"
     morgan "^1.8.1"
     node-fetch "^1.6.3"
     object-hash "1.2.0"
@@ -2880,7 +2880,7 @@ jsbn@~0.1.0:
   version "0.1.1"
   resolved "https://registry.yarnpkg.com/jsbn/-/jsbn-0.1.1.tgz#a5e654c2e5a2deb5f201d96cefbca80c0ef2f513"
 
-jscommons@^2.1.5:
+jscommons@^2.1.5, jscommons@^2.3.0:
   version "2.3.0"
   resolved "https://registry.yarnpkg.com/jscommons/-/jscommons-2.3.0.tgz#9565f140545892fab2939cf810915a0080de16eb"
   dependencies:
