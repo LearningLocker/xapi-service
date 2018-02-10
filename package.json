@@ -35,7 +35,7 @@
   },
   "dependencies": {
     "@learninglocker/xapi-activities": "^3.1.1",
-    "@learninglocker/xapi-agents": "^3.1.1",
+    "@learninglocker/xapi-agents": "^4.0.0",
     "@learninglocker/xapi-state": "^3.1.1",
     "@learninglocker/xapi-statements": "^5.1.4",
     "boolean": "^0.1.2",
