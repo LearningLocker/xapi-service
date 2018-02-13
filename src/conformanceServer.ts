@@ -1,7 +1,7 @@
 // tslint:disable:no-console
 import './server'; // tslint:disable-line:no-import-side-effect
-import { MongoClient, ObjectID } from 'mongodb'; // tslint:disable-line:ordered-imports
-import config from './config';
+import { ObjectID } from 'mongodb'; // tslint:disable-line:ordered-imports
+import connectToMongoDb from './utils/connectToMongoDb';
 
 const testClient = {
   api: {
@@ -23,8 +23,8 @@ const testClient = {
 };
 
 (async () => {
-  const db = MongoClient.connect(config.mongoModelsRepo.url);
-  const collection = (await db).collection('client');
+  const db = connectToMongoDb();
+  const collection = (await db()).collection('client');
   console.log('Removing clients for ADL conformance tests.');
   await collection.deleteMany({});
   console.log('Inserting test client for ADL conformance tests.');

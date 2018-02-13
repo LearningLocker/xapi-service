@@ -6,6 +6,7 @@ import enTranslator from '@learninglocker/xapi-statements/dist/translatorFactory
 import config from '../config';
 import logger from '../logger';
 import tracker from '../tracker';
+import connectToMongoDb from '../utils/connectToMongoDb';
 
 const getTranslatorFacade = () => {
   switch (config.lang) {
@@ -23,7 +24,7 @@ const repo = repoFacade({
       llClientInfoEndpoint: config.fetchAuthRepo.llClientInfoEndpoint,
     },
     mongo: {
-      url: config.mongoModelsRepo.url,
+      db: connectToMongoDb(),
     },
   },
   events: {
@@ -42,7 +43,7 @@ const repo = repoFacade({
       },
     },
     mongo: {
-      url: config.mongoModelsRepo.url,
+      db: connectToMongoDb(),
     },
   },
   storage: {

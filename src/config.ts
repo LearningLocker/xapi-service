@@ -6,6 +6,7 @@ import { S3 } from 'aws-sdk';
 import getBooleanOption from 'jscommons/dist/config/getBooleanOption';
 import getNumberOption from 'jscommons/dist/config/getNumberOption';
 import getStringOption from 'jscommons/dist/config/getStringOption';
+import getDbFromUrl from 'jscommons/dist/mongoRepo/utils/getDbFromUrl';
 import { defaultTo } from 'lodash';
 import * as os from 'os';
 
@@ -19,6 +20,8 @@ const demoAuth = `http://localhost:${expressPort}/auth`;
 const accessLogsDir = `${storageDir}/accessLogs`;
 const newRelicLogsDir = `${storageDir}/newrelic-agent.log`;
 const newRelicLicenseKey = getStringOption(process.env.NEW_RELIC_LICENSE_KEY, '');
+const defaultMongoUrl = 'mongodb://localhost:27017/learninglocker_v2';
+const mongoUrl = getStringOption(process.env.MONGO_URL, defaultMongoUrl);
 
 export default {
   defaultTimeout: getNumberOption(process.env.DEFAULT_TIMEOUT_MS, DEFAULT_TIMEOUT_MS),
@@ -44,7 +47,8 @@ export default {
     storageDir: getStringOption(process.env.FS_LOCAL_STORAGE_DIR, storageDir),
   },
   mongoModelsRepo: {
-    url: getStringOption(process.env.MONGO_URL, 'mongodb://localhost:27017/learninglocker_v2'),
+    dbName: getStringOption(process.env.MONGO_DB, getDbFromUrl(mongoUrl)),
+    url: mongoUrl,
   },
   redis: {
     prefix: getStringOption(process.env.REDIS_PREFIX, 'LEARNINGLOCKER'),
@@ -105,7 +109,7 @@ export default {
       },
       enabled: getBooleanOption(process.env.WINSTON_CLOUDWATCH_ENABLED, false),
       level: getStringOption(process.env.WINSTON_CLOUDWATCH_LEVEL, 'info'),
-      logGroupName: getStringOption(process.env.WINSTON_CLOUDWATCH_LOG_GROUP_NAME, 'xapi-state'),
+      logGroupName: getStringOption(process.env.WINSTON_CLOUDWATCH_LOG_GROUP_NAME, 'xapi-service'),
       logStreamName: getStringOption(process.env.WINSTON_CLOUDWATCH_LOG_STREAM_NAME, os.hostname()),
     },
     console: {
