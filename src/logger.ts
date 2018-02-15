@@ -1,7 +1,8 @@
 import commonWinston from 'jscommons/dist/winston';
+import { LoggerInstance } from 'winston';
 import config from './config';
 
-export default commonWinston({
+const logger: LoggerInstance = commonWinston({
   cloudWatch: {
     awsConfig: {
       accessKeyId: config.winston.cloudWatch.awsConfig.accessKeyId,
@@ -17,3 +18,5 @@ export default commonWinston({
     level: config.winston.console.level,
   },
 });
+
+export default logger;

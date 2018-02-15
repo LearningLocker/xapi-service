@@ -2,10 +2,11 @@
 import presenterFactory from '@learninglocker/xapi-agents/dist/expressPresenter';
 import serviceFactory from '@learninglocker/xapi-agents/dist/service';
 import enTranslator from '@learninglocker/xapi-agents/dist/translatorFactory/en';
+import { Router } from 'express';
 import AppConfig from './AppConfig';
 import repoFactory from './repo/factory';
 
-export default (appConfig: AppConfig) => {
+export default (appConfig: AppConfig): Router => {
   const translator = enTranslator;
   const repo = repoFactory({
     auth: {

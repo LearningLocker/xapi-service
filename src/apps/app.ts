@@ -5,7 +5,7 @@ import AppConfig from './AppConfig';
 import statementsApp from './statements/app';
 import statesApp from './states/app';
 
-export default (appConfig: AppConfig) => {
+export default (appConfig: AppConfig): Router => {
   const router = Router();
   const activitiesRouter = activitiesApp({
     logger: appConfig.logger,

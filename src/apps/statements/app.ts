@@ -1,11 +1,11 @@
 /* tslint:disable:max-file-line-count */
-import presenterFactory from '@learninglocker/xapi-statements/dist/expressPresenter';
+import presenterFactory, { Result } from '@learninglocker/xapi-statements/dist/expressPresenter';
 import repoFactory from '@learninglocker/xapi-statements/dist/repo/facade';
 import serviceFactory from '@learninglocker/xapi-statements/dist/service';
 import enTranslator from '@learninglocker/xapi-statements/dist/translatorFactory/en';
 import AppConfig from './AppConfig';
 
-export default (appConfig: AppConfig) => {
+export default (appConfig: AppConfig): Result => {
   const translator = enTranslator;
   const repo = repoFactory({
     auth: {
