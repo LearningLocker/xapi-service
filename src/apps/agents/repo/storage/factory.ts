@@ -1,11 +1,12 @@
 import * as Storage from '@google-cloud/storage';
 import googleStorageRepo from '@learninglocker/xapi-agents/dist/googleStorageRepo';
 import localStorageRepo from '@learninglocker/xapi-agents/dist/localStorageRepo';
+import Repo from '@learninglocker/xapi-agents/dist/repoFactory/StorageRepo';
 import s3StorageRepo from '@learninglocker/xapi-agents/dist/s3StorageRepo';
 import { S3 } from 'aws-sdk';
 import FactoryConfig from './FactoryConfig';
 
-export default (factoryConfig: FactoryConfig) => {
+export default (factoryConfig: FactoryConfig): Repo => {
   switch (factoryConfig.factoryName) {
     case 's3':
       return s3StorageRepo({
