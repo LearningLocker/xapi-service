@@ -71,7 +71,7 @@
     tslint-immutable "^4.5.1"
     typescript "^2.7.1"
 
-"@learninglocker/xapi-activities@^4.0.0":
+"@learninglocker/xapi-activities@^4.0.2":
   version "4.0.2"
   resolved "https://registry.yarnpkg.com/@learninglocker/xapi-activities/-/xapi-activities-4.0.2.tgz#2219f4a3baa53fe7114538f578f330c8f6992ad8"
   dependencies:
@@ -98,9 +98,9 @@
     string-to-stream "^1.1.0"
     uuid "^3.0.1"
 
-"@learninglocker/xapi-agents@^4.0.0":
-  version "4.0.2"
-  resolved "https://registry.yarnpkg.com/@learninglocker/xapi-agents/-/xapi-agents-4.0.2.tgz#ee17a5ca5dce0cfbc98b8b2623ba8906bfcca387"
+"@learninglocker/xapi-agents@^4.0.3":
+  version "4.0.3"
+  resolved "https://registry.yarnpkg.com/@learninglocker/xapi-agents/-/xapi-agents-4.0.3.tgz#9c38842c29a87ac128502f007c403f906ebfa6cf"
   dependencies:
     "@google-cloud/storage" "^1.5.2"
     "@learninglocker/xapi-validation" "^2.1.10"
@@ -125,7 +125,7 @@
     string-to-stream "^1.1.0"
     uuid "^3.0.1"
 
-"@learninglocker/xapi-state@^4.0.0":
+"@learninglocker/xapi-state@^4.0.2":
   version "4.0.2"
   resolved "https://registry.yarnpkg.com/@learninglocker/xapi-state/-/xapi-state-4.0.2.tgz#79b7f5252b7fee3b48fd13342cbae55194143e12"
   dependencies:
@@ -152,9 +152,9 @@
     string-to-stream "^1.1.0"
     uuid "^3.0.1"
 
-"@learninglocker/xapi-statements@^6.0.1":
-  version "6.0.3"
-  resolved "https://registry.yarnpkg.com/@learninglocker/xapi-statements/-/xapi-statements-6.0.3.tgz#eb137aebc550376c1158185ee574c593d767f6a1"
+"@learninglocker/xapi-statements@^6.0.4":
+  version "6.0.4"
+  resolved "https://registry.yarnpkg.com/@learninglocker/xapi-statements/-/xapi-statements-6.0.4.tgz#5750d3e21a307e6ecfb1669749ade5c6cd0cd4eb"
   dependencies:
     "@google-cloud/storage" "^1.5.2"
     "@learninglocker/xapi-validation" "^2.1.10"
