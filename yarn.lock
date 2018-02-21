@@ -49,13 +49,13 @@
     string-format-obj "^1.0.0"
     through2 "^2.0.0"
 
-"@ht2-labs/semantic-release@1.0.29":
-  version "1.0.29"
-  resolved "https://registry.yarnpkg.com/@ht2-labs/semantic-release/-/semantic-release-1.0.29.tgz#656cf3517bd84af8a7a77de9b9bb390ce2b7e711"
+"@ht2-labs/semantic-release@1.0.31":
+  version "1.0.31"
+  resolved "https://registry.yarnpkg.com/@ht2-labs/semantic-release/-/semantic-release-1.0.31.tgz#83cf809fcc10218b2251d805ddc24495cefc04b8"
   dependencies:
     "@semantic-release/condition-travis" "^7.1.4"
     "@semantic-release/github" "^4.0.2"
-    "@semantic-release/npm" "^3.0.1"
+    "@semantic-release/npm" "^3.2.0"
     condition-circle "^2.0.1"
     semantic-release "^15.0.0"
     semantic-release-docker "^2.0.2"
@@ -294,19 +294,6 @@
     p-reduce "^1.0.0"
     parse-github-url "^1.0.1"
     url-join "^4.0.0"
-
-"@semantic-release/npm@^3.0.1":
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/@semantic-release/npm/-/npm-3.0.1.tgz#ac452a7ce1dd37f5c83c226021c871853b389f4c"
-  dependencies:
-    "@semantic-release/error" "^2.1.0"
-    execa "^0.9.0"
-    fs-extra "^5.0.0"
-    lodash "^4.17.4"
-    nerf-dart "^1.0.0"
-    normalize-url "^2.0.1"
-    read-pkg "^3.0.0"
-    registry-auth-token "^3.3.1"
 
 "@semantic-release/npm@^3.2.0":
   version "3.2.0"
