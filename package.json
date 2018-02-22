@@ -42,7 +42,7 @@
     "dotenv": "^5.0.0",
     "express": "^4.14.1",
     "install": "^0.10.1",
-    "jscommons": "^2.3.0",
+    "jscommons": "^2.3.3",
     "lodash": "^4.17.4",
     "mongodb": "^3.0.2",
     "redis": "^2.8.0",

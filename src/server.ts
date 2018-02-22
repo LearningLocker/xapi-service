@@ -1,13 +1,12 @@
 import * as sourceMapSupport from 'source-map-support'; // tslint:disable-line:ordered-imports
-import './tracker'; // tslint:disable-line:no-import-side-effect
 sourceMapSupport.install();
 
-import * as express from 'express';
+import tracker from './tracker';
+import * as express from 'express'; // tslint:disable-line:ordered-imports
 import handleListen from 'jscommons/dist/expressPresenter/utils/handleListen';
 import app from './apps/app';
 import config from './config';
 import logger from './logger';
-import tracker from './tracker';
 import connectToMongoDb from './utils/connectToMongoDb';
 
 const expressApp = express();
