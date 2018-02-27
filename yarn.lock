@@ -3232,6 +3232,30 @@ jscommons@^2.3.0:
     winston "^2.3.1"
     winston-aws-cloudwatch "^2.0.0"
 
+jscommons@^2.3.3:
+  version "2.3.3"
+  resolved "https://registry.yarnpkg.com/jscommons/-/jscommons-2.3.3.tgz#27f86508d095c649da8489d30112eddcd0728089"
+  dependencies:
+    aws-sdk "^2.80.0"
+    bluebird "^3.5.1"
+    body-parser "^1.17.2"
+    boolean "^0.1.3"
+    cors "^2.8.3"
+    express "^4.15.3"
+    file-stream-rotator "^0.2.0"
+    fs-extra "^5.0.0"
+    helmet "^3.6.1"
+    knex "^0.14.0"
+    lodash "^4.17.4"
+    moment "^2.18.1"
+    mongodb "^3.0.1"
+    morgan "^1.8.2"
+    newrelic "^2.8.0"
+    rulr "^4.0.1"
+    uuid "^3.1.0"
+    winston "^2.3.1"
+    winston-aws-cloudwatch "^2.0.0"
+
 jscpd@0.6.17:
   version "0.6.17"
   resolved "https://registry.yarnpkg.com/jscpd/-/jscpd-0.6.17.tgz#37972661ec9512446b0ffc777f6eb88911262b02"
@@ -3810,6 +3834,19 @@ nerf-dart@^1.0.0:
 newrelic@^2.3.1:
   version "2.7.0"
   resolved "https://registry.yarnpkg.com/newrelic/-/newrelic-2.7.0.tgz#0e24c5c1051f0cddc2b852dd0fa63d42356eb74b"
+  dependencies:
+    async "^2.1.4"
+    concat-stream "^1.5.0"
+    https-proxy-agent "^0.3.6"
+    json-stringify-safe "^5.0.0"
+    readable-stream "^2.1.4"
+    semver "^5.3.0"
+  optionalDependencies:
+    "@newrelic/native-metrics" "^2.1.0"
+
+newrelic@^2.8.0:
+  version "2.8.0"
+  resolved "https://registry.yarnpkg.com/newrelic/-/newrelic-2.8.0.tgz#4b72d1fdd5644092b2c923ef5de4536e207bd53f"
   dependencies:
     async "^2.1.4"
     concat-stream "^1.5.0"
@@ -5156,7 +5193,11 @@ tslint-consistent-codestyle@1.11.1, tslint-consistent-codestyle@^1.11.1:
     tslib "^1.7.1"
     tsutils "^2.21.0"
 
-tslint-immutable@4.5.1, tslint-immutable@^4.5.1:
+tslint-immutable@4.5.2:
+  version "4.5.2"
+  resolved "https://registry.yarnpkg.com/tslint-immutable/-/tslint-immutable-4.5.2.tgz#caa6fffb60467004635b71587d9683cc26a07ca8"
+
+tslint-immutable@^4.5.1:
   version "4.5.1"
   resolved "https://registry.yarnpkg.com/tslint-immutable/-/tslint-immutable-4.5.1.tgz#85cf4366ae60acb341ebdd3e1ea8b670d6cf2a11"
 
