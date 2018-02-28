@@ -18,8 +18,12 @@ export default (appConfig: AppConfig): Result => {
     events: {
       facade: appConfig.repo.factory.eventsRepoName,
       redis: {
+        client: appConfig.repo.redis.client,
         prefix: appConfig.repo.redis.prefix,
-        url: appConfig.repo.redis.url,
+      },
+      sentinel: {
+        client: appConfig.repo.sentinel.client,
+        prefix: appConfig.repo.sentinel.prefix,
       },
     },
     models: {
