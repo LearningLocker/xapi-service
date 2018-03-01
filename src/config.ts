@@ -73,7 +73,9 @@ export default {
     bucketName: getStringOption(process.env.FS_S3_BUCKET, 'xapi-service'),
   },
   sentinel: {
+    db: getNumberOption(process.env.SENTINEL_DB, 0),
     name: getStringOption(process.env.SENTINEL_NAME, 'mymaster'),
+    password: getStringOption(process.env.SENTINEL_PASSWORD),
     prefix: getStringOption(process.env.SENTINEL_PREFIX, 'LEARNINGLOCKER'),
     sentinels: (
       getStringOption(process.env.SENTINEL_CONNECTIONS, '127.0.0.1:6379').split(' ').map((conn) => {

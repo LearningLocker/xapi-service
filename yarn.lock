@@ -152,9 +152,9 @@
     string-to-stream "^1.1.0"
     uuid "^3.0.1"
 
-"@learninglocker/xapi-statements@^7.0.0":
-  version "7.0.0"
-  resolved "https://registry.yarnpkg.com/@learninglocker/xapi-statements/-/xapi-statements-7.0.0.tgz#08fd8f02561d7f20921c4faf85b2493bb7ca78de"
+"@learninglocker/xapi-statements@^7.0.2":
+  version "7.0.2"
+  resolved "https://registry.yarnpkg.com/@learninglocker/xapi-statements/-/xapi-statements-7.0.2.tgz#17d15c53f6e9e04693a0a34fbe3b62280a6b264f"
   dependencies:
     "@google-cloud/storage" "^1.5.2"
     "@learninglocker/xapi-validation" "^2.1.10"
@@ -183,7 +183,6 @@
     object-hash "1.2.0"
     promise-retry "^1.1.1"
     query-string "^5.0.1"
-    redis "^2.8.0"
     rulr "^4.0.0"
     source-map-support "^0.5.0"
     stream-to-string "^1.1.0"
