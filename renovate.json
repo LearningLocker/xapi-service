@@ -1,5 +1,11 @@
 {
   "extends": [
     "@ht2-labs:base"
-  ]
+  ],
+  "lockFileMaintenance": {
+    "enabled": true,
+    "schedule": [
+      "before 5am on monday"
+    ]
+  }
 }
