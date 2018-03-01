@@ -1,4 +1,5 @@
 import * as S3 from 'aws-sdk/clients/s3';
+import { Redis } from 'ioredis';
 import Tracker from 'jscommons/dist/tracker/Tracker';
 import { Db } from 'mongodb';
 import { LoggerInstance } from 'winston';
@@ -51,7 +52,11 @@ export default interface AppConfig {
     };
     readonly redis: {
       readonly prefix: string;
-      readonly url: string;
+      readonly client: () => Promise<Redis>;
+    };
+    readonly sentinel: {
+      readonly prefix: string;
+      readonly client: () => Promise<Redis>;
     };
   };
 }
