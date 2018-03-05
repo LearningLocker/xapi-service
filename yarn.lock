@@ -379,9 +379,9 @@
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/@types/mime/-/mime-2.0.0.tgz#5a7306e367c539b9f6543499de8dd519fac37a8b"
 
-"@types/mongodb@3.0.5":
-  version "3.0.5"
-  resolved "https://registry.yarnpkg.com/@types/mongodb/-/mongodb-3.0.5.tgz#0143e0838a8260c7312773457f4d2ea1465ccada"
+"@types/mongodb@3.0.6":
+  version "3.0.6"
+  resolved "https://registry.yarnpkg.com/@types/mongodb/-/mongodb-3.0.6.tgz#c702d3b7984a8b5e9ee7780bf61a7db0ec39c8ac"
   dependencies:
     "@types/bson" "*"
     "@types/events" "*"
