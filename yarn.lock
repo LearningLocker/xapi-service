@@ -73,36 +73,9 @@
     tslint-immutable "^4.5.1"
     typescript "^2.7.1"
 
-"@learninglocker/xapi-activities@^4.0.2":
-  version "4.0.2"
-  resolved "https://registry.yarnpkg.com/@learninglocker/xapi-activities/-/xapi-activities-4.0.2.tgz#2219f4a3baa53fe7114538f578f330c8f6992ad8"
-  dependencies:
-    "@google-cloud/storage" "^1.5.2"
-    "@learninglocker/xapi-validation" "^2.1.10"
-    atob "^2.0.3"
-    aws-sdk "^2.0.1"
-    bluebird "^3.5.0"
-    boolean "^0.1.2"
-    btoa "^1.1.2"
-    dotenv "^5.0.0"
-    express "^4.14.1"
-    fs-extra "^5.0.0"
-    jscommons "^2.3.0"
-    lodash "^4.17.4"
-    mime-types "^2.1.17"
-    mongodb "^3.0.1"
-    node-fetch "^2.0.0"
-    query-string "^5.0.1"
-    rulr "^4.0.1"
-    sha1 "^1.1.1"
-    source-map-support "^0.5.0"
-    stream-to-string "^1.1.0"
-    string-to-stream "^1.1.0"
-    uuid "^3.0.1"
-
-"@learninglocker/xapi-agents@^4.0.3":
+"@learninglocker/xapi-activities@^4.0.3":
   version "4.0.3"
-  resolved "https://registry.yarnpkg.com/@learninglocker/xapi-agents/-/xapi-agents-4.0.3.tgz#9c38842c29a87ac128502f007c403f906ebfa6cf"
+  resolved "https://registry.yarnpkg.com/@learninglocker/xapi-activities/-/xapi-activities-4.0.3.tgz#1631a2d1cfa6b09cd08ce3a1f11db747c7470d38"
   dependencies:
     "@google-cloud/storage" "^1.5.2"
     "@learninglocker/xapi-validation" "^2.1.10"
@@ -127,14 +100,41 @@
     string-to-stream "^1.1.0"
     uuid "^3.0.1"
 
-"@learninglocker/xapi-state@^4.0.2":
-  version "4.0.2"
-  resolved "https://registry.yarnpkg.com/@learninglocker/xapi-state/-/xapi-state-4.0.2.tgz#79b7f5252b7fee3b48fd13342cbae55194143e12"
+"@learninglocker/xapi-agents@^4.0.4":
+  version "4.0.4"
+  resolved "https://registry.yarnpkg.com/@learninglocker/xapi-agents/-/xapi-agents-4.0.4.tgz#352caff2f94806d161b798f26604b3ec31298878"
   dependencies:
     "@google-cloud/storage" "^1.5.2"
     "@learninglocker/xapi-validation" "^2.1.10"
     atob "^2.0.3"
-    aws-sdk "^2.74.0"
+    aws-sdk "^2.205.0"
+    bluebird "^3.5.0"
+    boolean "^0.1.2"
+    btoa "^1.1.2"
+    dotenv "^5.0.0"
+    express "^4.14.1"
+    fs-extra "^5.0.0"
+    jscommons "^2.3.0"
+    lodash "^4.17.4"
+    mime-types "^2.1.17"
+    mongodb "^3.0.1"
+    node-fetch "^2.0.0"
+    query-string "^5.0.1"
+    rulr "^4.0.1"
+    sha1 "^1.1.1"
+    source-map-support "^0.5.0"
+    stream-to-string "^1.1.0"
+    string-to-stream "^1.1.0"
+    uuid "^3.0.1"
+
+"@learninglocker/xapi-state@^4.0.3":
+  version "4.0.3"
+  resolved "https://registry.yarnpkg.com/@learninglocker/xapi-state/-/xapi-state-4.0.3.tgz#9167ec6f111a30179a95b473ba46fb3108b4ba0b"
+  dependencies:
+    "@google-cloud/storage" "^1.5.2"
+    "@learninglocker/xapi-validation" "^2.1.10"
+    atob "^2.0.3"
+    aws-sdk "^2.205.0"
     bluebird "^3.5.0"
     boolean "^0.1.2"
     btoa "^1.1.2"
@@ -609,7 +609,7 @@ atob@^2.0.0, atob@^2.0.3:
   version "2.0.3"
   resolved "https://registry.yarnpkg.com/atob/-/atob-2.0.3.tgz#19c7a760473774468f20b2d2d03372ad7d4cbf5d"
 
-aws-sdk@^2.0.1, aws-sdk@^2.58.0, aws-sdk@^2.74.0, aws-sdk@^2.80.0:
+aws-sdk@^2.0.1, aws-sdk@^2.205.0, aws-sdk@^2.58.0, aws-sdk@^2.80.0:
   version "2.205.0"
   resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.205.0.tgz#1a93730253e2be027a4bd3af9248cbda0573de80"
   dependencies:
