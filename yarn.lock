@@ -367,9 +367,9 @@
   dependencies:
     "@types/node" "*"
 
-"@types/ioredis@3.2.5":
-  version "3.2.5"
-  resolved "https://registry.yarnpkg.com/@types/ioredis/-/ioredis-3.2.5.tgz#81889bed41ccaf175a46fb788ab7eee688bab1c6"
+"@types/ioredis@3.2.6":
+  version "3.2.6"
+  resolved "https://registry.yarnpkg.com/@types/ioredis/-/ioredis-3.2.6.tgz#c7b8407234f96e2f9b0db16e412b6f7b253513c1"
   dependencies:
     "@types/bluebird" "*"
     "@types/node" "*"
