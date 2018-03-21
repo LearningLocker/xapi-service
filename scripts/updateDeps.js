@@ -4,9 +4,9 @@ const { promisify } = require('util');
 const shelljs = require('shelljs');
 const colors = require('colors');
 const { join } = require('path');
-const package = require(join(process.cwd(), 'package.json'));
 
 const getCommitMessage = () => {
+  const package = require(join(process.cwd(), 'package.json'));
   const getDepMessage = (dep) => {
     const versionRange = package.dependencies[`@learninglocker/xapi-${dep}`];
     const version = versionRange.replace('^', 'v');
@@ -38,7 +38,7 @@ const main = async () => {
   await git.fetch();
   await git.checkout('master');
   await git.pull();
-  await git.deleteLocalBranch('xapi-deps');
+  await exec('git branch -D xapi-deps');
   await git.checkoutLocalBranch('xapi-deps');
   await promisify(rimraf)(join(process.cwd(), 'node_modules'));
   await exec('yarn install --ignore-engines');
