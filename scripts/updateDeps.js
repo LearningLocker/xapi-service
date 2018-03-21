@@ -61,3 +61,4 @@ main().then(() => {
   console.error(colors.red(err));
   console.log(colors.red('Completed unsuccessfully'));
 });
+// node scripts/updateDeps.js "fix: message"
