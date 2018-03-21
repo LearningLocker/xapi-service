@@ -19,36 +19,37 @@ const getCommitMessage = () => {
   return `${semverMessage} Includes ${depsMessage}`;
 };
 
-const main = async () => {
-  const exec = (command) => {
-    return new Promise((resolve, reject) => {
-      console.log(colors.cyan(`Starting: ${command}`));
-      const child = shelljs.exec(command, { async: true }, (code) => {
-        if (code !== 0) {
-          console.log(colors.cyan(`Completed unsuccessfully: ${command}`));
-          reject(new Error());
-          return;
-        }
-        console.log(colors.cyan(`Completed successfully: ${command}`));
-        resolve();
-      });
+const exec = (command) => {
+  return new Promise((resolve, reject) => {
+    console.log(colors.cyan(`Starting: ${command}`));
+    const child = shelljs.exec(command, { async: true }, (code) => {
+      if (code !== 0) {
+        console.log(colors.cyan(`Completed unsuccessfully: ${command}`));
+        reject(new Error());
+        return;
+      }
+      console.log(colors.cyan(`Completed successfully: ${command}`));
+      resolve();
     });
-  };
-  // await git.fetch();
-  // await git.checkout('master');
-  // await git.pull();
-  // await git.deleteLocalBranch('xapi-deps');
-  // await git.checkoutLocalBranch('xapi-deps');
-  // await promisify(rimraf)(join(process.cwd(), 'node_modules'));
-  // await exec('yarn install --ignore-engines');
-  // await exec('npm i @learninglocker/xapi-activities@latest');
-  // await exec('npm i @learninglocker/xapi-agents@latest');
-  // await exec('npm i @learninglocker/xapi-state@latest');
-  // await exec('npm i @learninglocker/xapi-statements@latest');
-  // await exec('yarn add --ignore-engines @learninglocker/xapi-activities@latest');
-  // await exec('yarn add --ignore-engines @learninglocker/xapi-agents@latest');
-  // await exec('yarn add --ignore-engines @learninglocker/xapi-state@latest');
-  // await exec('yarn add --ignore-engines @learninglocker/xapi-statements@latest');
+  });
+};
+
+const main = async () => {
+  await git.fetch();
+  await git.checkout('master');
+  await git.pull();
+  await git.deleteLocalBranch('xapi-deps');
+  await git.checkoutLocalBranch('xapi-deps');
+  await promisify(rimraf)(join(process.cwd(), 'node_modules'));
+  await exec('yarn install --ignore-engines');
+  await exec('npm i @learninglocker/xapi-activities@latest');
+  await exec('npm i @learninglocker/xapi-agents@latest');
+  await exec('npm i @learninglocker/xapi-state@latest');
+  await exec('npm i @learninglocker/xapi-statements@latest');
+  await exec('yarn add --ignore-engines @learninglocker/xapi-activities@latest');
+  await exec('yarn add --ignore-engines @learninglocker/xapi-agents@latest');
+  await exec('yarn add --ignore-engines @learninglocker/xapi-state@latest');
+  await exec('yarn add --ignore-engines @learninglocker/xapi-statements@latest');
   await git.add('./*');
   await git.commit(getCommitMessage());
   await git.push('origin', 'xapi-deps');
