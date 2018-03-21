@@ -11,12 +11,12 @@ const getCommitMessage = () => {
     const versionRange = package.dependencies[`@learninglocker/xapi-${dep}`];
     const version = versionRange.replace('^', 'v');
     const releaseLink = `https://github.com/LearningLocker/xapi-${dep}/releases/tag/${version}`;
-    return `[${dep} ${versionRange}](${releaseLink})`;
+    return `[${dep} ${version}](${releaseLink})`;
   };
   const semverMessage = process.argv[2];
   const deps = ['activities', 'agents', 'state', 'statements'];
   const depsMessage = deps.map(getDepMessage).join(', ');
-  return `${semverMessage} Includes ${depsMessage}`;
+  return `${semverMessage} Includes ${depsMessage}.`;
 };
 
 const exec = (command) => {
