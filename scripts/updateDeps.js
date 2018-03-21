@@ -4,9 +4,9 @@ const { promisify } = require('util');
 const shelljs = require('shelljs');
 const colors = require('colors');
 const { join } = require('path');
-const package = require(join(process.cwd(), 'package.json'));
 
 const getCommitMessage = () => {
+  const package = require(join(process.cwd(), 'package.json'));
   const getDepMessage = (dep) => {
     const versionRange = package.dependencies[`@learninglocker/xapi-${dep}`];
     const version = versionRange.replace('^', 'v');
