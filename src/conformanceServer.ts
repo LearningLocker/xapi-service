@@ -42,7 +42,7 @@ const testClient = {
   console.log('Dropping database for ADL conformance tests.');
   await db.dropDatabase();
   console.log('Seeding database for ADL conformance tests.');
-  await db.collection('organisation').insertOne(testOrg);
+  await db.collection('organisations').insertOne(testOrg);
   await db.collection('lrs').insertOne(testStore);
   await db.collection('client').insertOne(testClient);
 })().then(() => {
