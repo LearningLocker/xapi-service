@@ -97,9 +97,9 @@
     tslint-immutable "^4.5.1"
     typescript "^2.7.1"
 
-"@learninglocker/xapi-activities@^4.1.1":
-  version "4.1.1"
-  resolved "https://registry.yarnpkg.com/@learninglocker/xapi-activities/-/xapi-activities-4.1.1.tgz#3bc9ab872b25435255bb928dfe55d5acb15a3654"
+"@learninglocker/xapi-activities@^4.1.2":
+  version "4.1.2"
+  resolved "https://registry.yarnpkg.com/@learninglocker/xapi-activities/-/xapi-activities-4.1.2.tgz#8fe442b425b5700df2182f0e679926d8f19e2186"
   dependencies:
     "@google-cloud/storage" "^1.5.2"
     "@learninglocker/xapi-validation" "^2.1.10"
@@ -125,9 +125,9 @@
     string-to-stream "^1.1.0"
     uuid "^3.0.1"
 
-"@learninglocker/xapi-agents@^4.1.1":
-  version "4.1.1"
-  resolved "https://registry.yarnpkg.com/@learninglocker/xapi-agents/-/xapi-agents-4.1.1.tgz#6a91089b6011624f1f8c513310eae1c552c6261f"
+"@learninglocker/xapi-agents@^4.1.2":
+  version "4.1.2"
+  resolved "https://registry.yarnpkg.com/@learninglocker/xapi-agents/-/xapi-agents-4.1.2.tgz#07c3c03c1a7b8f6d983147e67cf1bbb286b66dbc"
   dependencies:
     "@google-cloud/storage" "^1.5.2"
     "@learninglocker/xapi-validation" "^2.1.10"
@@ -153,9 +153,9 @@
     string-to-stream "^1.1.0"
     uuid "^3.0.1"
 
-"@learninglocker/xapi-state@^4.1.1":
-  version "4.1.1"
-  resolved "https://registry.yarnpkg.com/@learninglocker/xapi-state/-/xapi-state-4.1.1.tgz#9e5a8623f7cd9880bed509873f31be8dfdf97360"
+"@learninglocker/xapi-state@^4.1.2":
+  version "4.1.2"
+  resolved "https://registry.yarnpkg.com/@learninglocker/xapi-state/-/xapi-state-4.1.2.tgz#b3dbade62d341ddb2f501f6fecdc4240682de39e"
   dependencies:
     "@google-cloud/storage" "^1.5.2"
     "@learninglocker/xapi-validation" "^2.1.10"
@@ -181,9 +181,9 @@
     string-to-stream "^1.1.0"
     uuid "^3.0.1"
 
-"@learninglocker/xapi-statements@^7.1.1":
-  version "7.1.1"
-  resolved "https://registry.yarnpkg.com/@learninglocker/xapi-statements/-/xapi-statements-7.1.1.tgz#486dc65db8aa2008216a3b232eeb0381f9b21f56"
+"@learninglocker/xapi-statements@^7.1.2":
+  version "7.1.2"
+  resolved "https://registry.yarnpkg.com/@learninglocker/xapi-statements/-/xapi-statements-7.1.2.tgz#188beb0e2f8408931a17af48640c12f442c5b313"
   dependencies:
     "@google-cloud/storage" "^1.5.2"
     "@learninglocker/xapi-validation" "^2.1.10"
