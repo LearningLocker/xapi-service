@@ -70,7 +70,7 @@
     "simple-git": "1.92.0",
     "tslint": "5.9.1",
     "tslint-consistent-codestyle": "1.13.0",
-    "tslint-immutable": "4.5.2",
+    "tslint-immutable": "4.5.3",
     "typescript": "2.7.2"
   },
   "publishConfig": {
