@@ -57,7 +57,7 @@
     "@types/ioredis": "3.2.7",
     "@types/lodash": "4.14.106",
     "@types/mongodb": "3.0.12",
-    "@types/node": "9.6.2",
+    "@types/node": "9.6.3",
     "@types/redis": "2.8.6",
     "@types/source-map-support": "0.4.0",
     "@types/winston": "2.3.9",
