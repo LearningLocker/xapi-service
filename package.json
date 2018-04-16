@@ -34,10 +34,10 @@
     "npm": ">3.0.0"
   },
   "dependencies": {
-    "@learninglocker/xapi-activities": "^4.1.2",
-    "@learninglocker/xapi-agents": "^4.1.2",
-    "@learninglocker/xapi-state": "^4.1.2",
-    "@learninglocker/xapi-statements": "^7.1.2",
+    "@learninglocker/xapi-activities": "^4.1.3",
+    "@learninglocker/xapi-agents": "^4.1.3",
+    "@learninglocker/xapi-state": "^4.1.3",
+    "@learninglocker/xapi-statements": "^7.1.3",
     "boolean": "^0.1.2",
     "dotenv": "^5.0.0",
     "express": "^4.14.1",
