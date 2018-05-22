@@ -4978,7 +4978,13 @@ signal-exit@^3.0.0, signal-exit@^3.0.2:
   version "3.0.2"
   resolved "https://registry.yarnpkg.com/signal-exit/-/signal-exit-3.0.2.tgz#b5fdc08f1287ea1178628e415e25132b73646c6d"
 
-simple-git@1.92.0, simple-git@^1.85.0:
+simple-git@1.95.0:
+  version "1.95.0"
+  resolved "https://registry.yarnpkg.com/simple-git/-/simple-git-1.95.0.tgz#29f4f21b5841d0b6bd7174afe60f583ac736f902"
+  dependencies:
+    debug "^3.1.0"
+
+simple-git@^1.85.0:
   version "1.92.0"
   resolved "https://registry.yarnpkg.com/simple-git/-/simple-git-1.92.0.tgz#6061468eb7d19f0141078fc742e62457e910f547"
   dependencies:
