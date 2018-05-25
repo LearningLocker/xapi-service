@@ -1528,9 +1528,9 @@ code-point-at@^1.0.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/code-point-at/-/code-point-at-1.1.0.tgz#0d070b4d043a5bea33a2f1a40e2edb3d9a4ccf77"
 
-codemirror@5.31.0:
-  version "5.31.0"
-  resolved "https://registry.yarnpkg.com/codemirror/-/codemirror-5.31.0.tgz#ecf3d057eb74174147066bfc7c5f37b4c4e07df2"
+codemirror@5.37.0:
+  version "5.37.0"
+  resolved "https://registry.yarnpkg.com/codemirror/-/codemirror-5.37.0.tgz#c349b584e158f590277f26d37c2469a6bc538036"
 
 collection-visit@^1.0.0:
   version "1.0.0"
@@ -3419,20 +3419,20 @@ jscommons@^2.3.0, jscommons@^2.3.3:
     winston "^2.3.1"
     winston-aws-cloudwatch "^2.0.0"
 
-jscpd@0.6.17:
-  version "0.6.17"
-  resolved "https://registry.yarnpkg.com/jscpd/-/jscpd-0.6.17.tgz#37972661ec9512446b0ffc777f6eb88911262b02"
+jscpd@0.6.18:
+  version "0.6.18"
+  resolved "https://registry.yarnpkg.com/jscpd/-/jscpd-0.6.18.tgz#7ab153d56529b5b32be16b4306cb2bf935ff2928"
   dependencies:
     blamer "^0.1.9"
     bluebird "^3.0.5"
     cli ">=0.10.x"
     cli-table "^0.3.1"
-    codemirror "5.31.0"
+    codemirror "5.37.0"
     colors "^1.1.2"
     glob ">=5.0.x"
     js-yaml ">=3.4.x"
     minimatch "^3.0.4"
-    shelljs "^0.7.8"
+    shelljs "^0.8.0"
     underscore ">=1.8.x"
     winston ">=1.0.x"
 
@@ -5057,17 +5057,9 @@ shelljs@0.7.6:
     interpret "^1.0.0"
     rechoir "^0.6.2"
 
-shelljs@0.8.2:
+shelljs@0.8.2, shelljs@^0.8.0:
   version "0.8.2"
   resolved "https://registry.yarnpkg.com/shelljs/-/shelljs-0.8.2.tgz#345b7df7763f4c2340d584abb532c5f752ca9e35"
-  dependencies:
-    glob "^7.0.0"
-    interpret "^1.0.0"
-    rechoir "^0.6.2"
-
-shelljs@^0.7.8:
-  version "0.7.8"
-  resolved "https://registry.yarnpkg.com/shelljs/-/shelljs-0.7.8.tgz#decbcf874b0d1e5fb72e14b164a9683048e9acb3"
   dependencies:
     glob "^7.0.0"
     interpret "^1.0.0"
