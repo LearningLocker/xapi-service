@@ -67,16 +67,16 @@
     through2 "^2.0.0"
     xdg-basedir "^3.0.0"
 
-"@ht2-labs/semantic-release@1.0.35":
-  version "1.0.35"
-  resolved "https://registry.yarnpkg.com/@ht2-labs/semantic-release/-/semantic-release-1.0.35.tgz#0e1de2d2518c10dce8d572a948b596039b766713"
+"@ht2-labs/semantic-release@1.0.36":
+  version "1.0.36"
+  resolved "https://registry.yarnpkg.com/@ht2-labs/semantic-release/-/semantic-release-1.0.36.tgz#f09a868ca5365aa2ea240870fe4b67b71d1a8409"
   dependencies:
     "@semantic-release/condition-travis" "7.1.4"
     "@semantic-release/github" "4.2.16"
     "@semantic-release/npm" "3.3.1"
     condition-circle "2.0.1"
     semantic-release "15.5.0"
-    semantic-release-docker "2.0.2"
+    semantic-release-docker "2.1.0"
     semver "5.5.0"
     simple-git "1.91.0"
 
@@ -2074,18 +2074,6 @@ execa@^0.10.0:
 execa@^0.7.0:
   version "0.7.0"
   resolved "https://registry.yarnpkg.com/execa/-/execa-0.7.0.tgz#944becd34cc41ee32a63a9faf27ad5a65fc59777"
-  dependencies:
-    cross-spawn "^5.0.1"
-    get-stream "^3.0.0"
-    is-stream "^1.1.0"
-    npm-run-path "^2.0.0"
-    p-finally "^1.0.0"
-    signal-exit "^3.0.0"
-    strip-eof "^1.0.0"
-
-execa@^0.8.0:
-  version "0.8.0"
-  resolved "https://registry.yarnpkg.com/execa/-/execa-0.8.0.tgz#d8d76bbc1b55217ed190fd6dd49d3c774ecfc8da"
   dependencies:
     cross-spawn "^5.0.1"
     get-stream "^3.0.0"
@@ -4924,12 +4912,12 @@ sax@>=0.6.0:
   version "1.2.4"
   resolved "https://registry.yarnpkg.com/sax/-/sax-1.2.4.tgz#2816234e2378bddc4e5354fab5caa895df7100d9"
 
-semantic-release-docker@2.0.2:
-  version "2.0.2"
-  resolved "https://registry.yarnpkg.com/semantic-release-docker/-/semantic-release-docker-2.0.2.tgz#5b184438181ee3220b65470366768a73d45856dd"
+semantic-release-docker@2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/semantic-release-docker/-/semantic-release-docker-2.1.0.tgz#d9d4c90479d73d8788ad2a2d89a646312d1a85b8"
   dependencies:
     "@semantic-release/error" "^2.1.0"
-    execa "^0.8.0"
+    execa "^0.10.0"
 
 semantic-release@15.5.0:
   version "15.5.0"
