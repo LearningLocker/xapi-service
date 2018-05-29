@@ -67,12 +67,12 @@
     through2 "^2.0.0"
     xdg-basedir "^3.0.0"
 
-"@ht2-labs/semantic-release@1.0.37":
-  version "1.0.37"
-  resolved "https://registry.yarnpkg.com/@ht2-labs/semantic-release/-/semantic-release-1.0.37.tgz#6fff7cd481d6c12b423a85131cfa2916df3939c8"
+"@ht2-labs/semantic-release@1.0.38":
+  version "1.0.38"
+  resolved "https://registry.yarnpkg.com/@ht2-labs/semantic-release/-/semantic-release-1.0.38.tgz#154698d5a5b6ae48f13df6648e680fdd6946e810"
   dependencies:
     "@semantic-release/condition-travis" "7.1.4"
-    "@semantic-release/github" "4.2.16"
+    "@semantic-release/github" "4.2.17"
     "@semantic-release/npm" "3.3.1"
     condition-circle "2.0.1"
     semantic-release "15.5.0"
@@ -277,7 +277,26 @@
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/@semantic-release/error/-/error-2.2.0.tgz#ee9d5a09c9969eade1ec864776aeda5c5cddbbf0"
 
-"@semantic-release/github@4.2.16", "@semantic-release/github@^4.1.0":
+"@semantic-release/github@4.2.17":
+  version "4.2.17"
+  resolved "https://registry.yarnpkg.com/@semantic-release/github/-/github-4.2.17.tgz#1d3f465b4bdbc57ecfcb55aefdc554804a8cbc76"
+  dependencies:
+    "@octokit/rest" "^15.2.0"
+    "@semantic-release/error" "^2.2.0"
+    aggregate-error "^1.0.0"
+    bottleneck "^2.0.1"
+    debug "^3.1.0"
+    fs-extra "^6.0.0"
+    globby "^8.0.0"
+    issue-parser "^2.0.0"
+    lodash "^4.17.4"
+    mime "^2.0.3"
+    p-filter "^1.0.0"
+    p-retry "^2.0.0"
+    parse-github-url "^1.0.1"
+    url-join "^4.0.0"
+
+"@semantic-release/github@^4.1.0":
   version "4.2.16"
   resolved "https://registry.yarnpkg.com/@semantic-release/github/-/github-4.2.16.tgz#4a6458198ebd3dcdb344e220e3d68af94d585cca"
   dependencies:
