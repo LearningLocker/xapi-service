@@ -42,14 +42,8 @@ const main = async () => {
   await git.checkoutLocalBranch('xapi-deps');
   await promisify(rimraf)(join(process.cwd(), 'node_modules'));
   await exec('yarn install --ignore-engines');
-  await exec('npm i @learninglocker/xapi-activities@latest');
-  await exec('npm i @learninglocker/xapi-agents@latest');
-  await exec('npm i @learninglocker/xapi-state@latest');
-  await exec('npm i @learninglocker/xapi-statements@latest');
-  await exec('yarn add --ignore-engines @learninglocker/xapi-activities@latest');
-  await exec('yarn add --ignore-engines @learninglocker/xapi-agents@latest');
-  await exec('yarn add --ignore-engines @learninglocker/xapi-state@latest');
-  await exec('yarn add --ignore-engines @learninglocker/xapi-statements@latest');
+  await exec('npm i @learninglocker/xapi-activities@latest @learninglocker/xapi-agents@latest @learninglocker/xapi-state@latest @learninglocker/xapi-statements@latest');
+  await exec('yarn add --ignore-engines @learninglocker/xapi-activities@latest @learninglocker/xapi-agents@latest @learninglocker/xapi-state@latest @learninglocker/xapi-statements@latest');
   await git.add('./*');
   await git.commit(getCommitMessage());
   await git.push('origin', 'xapi-deps');
