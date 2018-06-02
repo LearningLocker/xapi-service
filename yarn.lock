@@ -5083,6 +5083,12 @@ simple-git@1.95.0:
   dependencies:
     debug "^3.1.0"
 
+simple-git@1.95.1:
+  version "1.95.1"
+  resolved "https://registry.yarnpkg.com/simple-git/-/simple-git-1.95.1.tgz#8f23b998f0d9e877b12e0291200ce115e004878c"
+  dependencies:
+    debug "^3.1.0"
+
 slash@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/slash/-/slash-1.0.0.tgz#c41f2f6c39fc16d1cd17ad4b5d896114ae470d55"
