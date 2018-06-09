@@ -68,9 +68,9 @@
     through2 "^2.0.0"
     xdg-basedir "^3.0.0"
 
-"@ht2-labs/semantic-release@1.0.40":
-  version "1.0.40"
-  resolved "https://registry.yarnpkg.com/@ht2-labs/semantic-release/-/semantic-release-1.0.40.tgz#51ed43a9e25c2f4cf1a497cd17def0431b985374"
+"@ht2-labs/semantic-release@1.0.41":
+  version "1.0.41"
+  resolved "https://registry.yarnpkg.com/@ht2-labs/semantic-release/-/semantic-release-1.0.41.tgz#20ebfa6a4bf87749e147a7ceeb4cd67a956ff9f3"
   dependencies:
     "@semantic-release/condition-travis" "7.1.4"
     "@semantic-release/github" "4.2.17"
@@ -79,7 +79,7 @@
     semantic-release "15.5.1"
     semantic-release-docker "2.1.0"
     semver "5.5.0"
-    simple-git "1.95.1"
+    simple-git "1.96.0"
 
 "@ht2-labs/typescript-project@1.0.18":
   version "1.0.18"
@@ -5144,12 +5144,6 @@ shelljs@0.8.2, shelljs@^0.8.0:
 signal-exit@^3.0.0, signal-exit@^3.0.2:
   version "3.0.2"
   resolved "https://registry.yarnpkg.com/signal-exit/-/signal-exit-3.0.2.tgz#b5fdc08f1287ea1178628e415e25132b73646c6d"
-
-simple-git@1.95.1:
-  version "1.95.1"
-  resolved "https://registry.yarnpkg.com/simple-git/-/simple-git-1.95.1.tgz#8f23b998f0d9e877b12e0291200ce115e004878c"
-  dependencies:
-    debug "^3.1.0"
 
 simple-git@1.96.0:
   version "1.96.0"
