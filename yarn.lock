@@ -81,13 +81,13 @@
     semver "5.5.0"
     simple-git "1.96.0"
 
-"@ht2-labs/typescript-project@1.0.18":
-  version "1.0.18"
-  resolved "https://registry.yarnpkg.com/@ht2-labs/typescript-project/-/typescript-project-1.0.18.tgz#bf81241973c3b7641279785dcb4c40c0e311f084"
+"@ht2-labs/typescript-project@1.0.19":
+  version "1.0.19"
+  resolved "https://registry.yarnpkg.com/@ht2-labs/typescript-project/-/typescript-project-1.0.19.tgz#de4e3437dbd6d954eb971afdd9d15ea4ba4d826b"
   dependencies:
     tslint "5.10.0"
     tslint-consistent-codestyle "1.13.1"
-    tslint-immutable "4.5.4"
+    tslint-immutable "4.6.0"
     typescript "2.9.1"
 
 "@learninglocker/xapi-activities@^4.1.3":
@@ -5569,10 +5569,6 @@ tslint-consistent-codestyle@1.13.1:
     "@fimbul/bifrost" "^0.9.0"
     tslib "^1.7.1"
     tsutils "^2.27.0"
-
-tslint-immutable@4.5.4:
-  version "4.5.4"
-  resolved "https://registry.yarnpkg.com/tslint-immutable/-/tslint-immutable-4.5.4.tgz#17b0d825c1067fa6d125a8010d9b22feb12e5d32"
 
 tslint-immutable@4.6.0:
   version "4.6.0"
