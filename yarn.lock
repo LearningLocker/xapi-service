@@ -3463,9 +3463,9 @@ jscommons@^2.3.0, jscommons@^2.3.3:
     winston "^2.4.2"
     winston-aws-cloudwatch "^2.0.0"
 
-jscpd@0.6.19:
-  version "0.6.19"
-  resolved "https://registry.yarnpkg.com/jscpd/-/jscpd-0.6.19.tgz#c2ef022db2e06c41768cc3b4fbd7ec97e7117e8c"
+jscpd@0.6.21:
+  version "0.6.21"
+  resolved "https://registry.yarnpkg.com/jscpd/-/jscpd-0.6.21.tgz#bf4f0be95526146412738657aa96c9d03930fa4b"
   dependencies:
     blamer "^0.1.9"
     bluebird "^3.0.5"
