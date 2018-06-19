@@ -402,9 +402,9 @@
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/@types/mime/-/mime-2.0.0.tgz#5a7306e367c539b9f6543499de8dd519fac37a8b"
 
-"@types/mongodb@3.0.19":
-  version "3.0.19"
-  resolved "https://registry.yarnpkg.com/@types/mongodb/-/mongodb-3.0.19.tgz#09b1f3f6abce5aea879dfc9832aad27cd6fa81c6"
+"@types/mongodb@3.0.21":
+  version "3.0.21"
+  resolved "https://registry.yarnpkg.com/@types/mongodb/-/mongodb-3.0.21.tgz#f2a7838d2870ed1e9cf0eb9933c786a23e6b7a68"
   dependencies:
     "@types/bson" "*"
     "@types/events" "*"
