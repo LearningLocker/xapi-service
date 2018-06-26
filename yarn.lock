@@ -404,9 +404,9 @@
   dependencies:
     "@types/node" "*"
 
-"@types/ioredis@3.2.9":
-  version "3.2.9"
-  resolved "https://registry.yarnpkg.com/@types/ioredis/-/ioredis-3.2.9.tgz#ef93519f1ae15ac597fd19b8b0d44cdab725f97a"
+"@types/ioredis@3.2.10":
+  version "3.2.10"
+  resolved "https://registry.yarnpkg.com/@types/ioredis/-/ioredis-3.2.10.tgz#1ecbe5a0305c6aa8bffc2883e96d18d60a161c92"
   dependencies:
     "@types/bluebird" "*"
     "@types/node" "*"
