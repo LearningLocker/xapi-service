@@ -82,12 +82,12 @@
     semver "5.5.0"
     simple-git "1.96.0"
 
-"@ht2-labs/typescript-project@1.0.22":
-  version "1.0.22"
-  resolved "https://registry.yarnpkg.com/@ht2-labs/typescript-project/-/typescript-project-1.0.22.tgz#84f7ad0c779b9d5d8ca57993ec09d3e353339904"
+"@ht2-labs/typescript-project@1.0.23":
+  version "1.0.23"
+  resolved "https://registry.yarnpkg.com/@ht2-labs/typescript-project/-/typescript-project-1.0.23.tgz#a77639768752245a6f02a3e1a34c2ad59f95a7a2"
   dependencies:
     tslint "5.11.0"
-    tslint-consistent-codestyle "1.13.2"
+    tslint-consistent-codestyle "1.13.3"
     tslint-immutable "4.6.0"
     typescript "2.9.2"
 
@@ -5572,14 +5572,6 @@ trim-right@^1.0.1:
 tslib@^1.7.1, tslib@^1.8.0, tslib@^1.8.1:
   version "1.9.3"
   resolved "https://registry.yarnpkg.com/tslib/-/tslib-1.9.3.tgz#d7e4dd79245d85428c4d7e4822a79917954ca286"
-
-tslint-consistent-codestyle@1.13.2:
-  version "1.13.2"
-  resolved "https://registry.yarnpkg.com/tslint-consistent-codestyle/-/tslint-consistent-codestyle-1.13.2.tgz#c60662f08a83d62797e47e5d74737470b5e17714"
-  dependencies:
-    "@fimbul/bifrost" "^0.11.0"
-    tslib "^1.7.1"
-    tsutils "^2.27.0"
 
 tslint-consistent-codestyle@1.13.3:
   version "1.13.3"
