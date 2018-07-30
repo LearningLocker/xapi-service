@@ -68,16 +68,16 @@
     through2 "^2.0.0"
     xdg-basedir "^3.0.0"
 
-"@ht2-labs/semantic-release@1.1.4":
-  version "1.1.4"
-  resolved "https://registry.yarnpkg.com/@ht2-labs/semantic-release/-/semantic-release-1.1.4.tgz#73ae2c1eb6de24b0e39328e2fd72e6a158354d96"
+"@ht2-labs/semantic-release@1.1.5":
+  version "1.1.5"
+  resolved "https://registry.yarnpkg.com/@ht2-labs/semantic-release/-/semantic-release-1.1.5.tgz#7b52520ae70151eba61c39bef4077514a221a9cc"
   dependencies:
     "@semantic-release/condition-travis" "7.1.4"
     "@semantic-release/github" "5.0.1"
     "@semantic-release/npm" "3.4.1"
     condition-circle "2.0.1"
     fs-extra "^7.0.0"
-    semantic-release "15.9.1"
+    semantic-release "15.9.2"
     semantic-release-docker "2.1.0"
     semver "5.5.0"
     simple-git "1.96.0"
@@ -5036,9 +5036,9 @@ semantic-release-docker@2.1.0:
     "@semantic-release/error" "^2.1.0"
     execa "^0.10.0"
 
-semantic-release@15.9.1:
-  version "15.9.1"
-  resolved "https://registry.yarnpkg.com/semantic-release/-/semantic-release-15.9.1.tgz#78fe3d69bb2e06f49fb3eb89926ea89118b197e5"
+semantic-release@15.9.2:
+  version "15.9.2"
+  resolved "https://registry.yarnpkg.com/semantic-release/-/semantic-release-15.9.2.tgz#0c56c1fedbb7b99bc5aa06aac7b9edf92bdf8380"
   dependencies:
     "@semantic-release/commit-analyzer" "^6.0.0"
     "@semantic-release/error" "^2.2.0"
