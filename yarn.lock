@@ -6743,6 +6743,10 @@ tslint-immutable@4.6.0:
   version "4.6.0"
   resolved "https://registry.yarnpkg.com/tslint-immutable/-/tslint-immutable-4.6.0.tgz#b93f50961c499e331d919084140f5034b84e80af"
 
+tslint-immutable@4.7.0:
+  version "4.7.0"
+  resolved "https://registry.yarnpkg.com/tslint-immutable/-/tslint-immutable-4.7.0.tgz#086dfabfb5bc4c508128bc5f4e8e2d3fb1494f23"
+
 tslint@5.11.0:
   version "5.11.0"
   resolved "https://registry.yarnpkg.com/tslint/-/tslint-5.11.0.tgz#98f30c02eae3cde7006201e4c33cb08b48581eed"
