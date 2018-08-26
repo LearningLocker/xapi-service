@@ -75,13 +75,13 @@
     through2 "^2.0.0"
     xdg-basedir "^3.0.0"
 
-"@ht2-labs/semantic-release@1.1.14":
-  version "1.1.14"
-  resolved "https://registry.yarnpkg.com/@ht2-labs/semantic-release/-/semantic-release-1.1.14.tgz#9e756dffbd041388f31fe8935d903237ae638838"
+"@ht2-labs/semantic-release@1.1.15":
+  version "1.1.15"
+  resolved "https://registry.yarnpkg.com/@ht2-labs/semantic-release/-/semantic-release-1.1.15.tgz#f8af5c476b73991c6938b364db0979cf5a1849c6"
   dependencies:
     "@semantic-release/condition-travis" "7.1.4"
     "@semantic-release/github" "5.0.2"
-    "@semantic-release/npm" "5.0.2"
+    "@semantic-release/npm" "5.0.4"
     condition-circle "2.0.1"
     fs-extra "^7.0.0"
     semantic-release "15.9.9"
@@ -316,7 +316,26 @@
     parse-github-url "^1.0.1"
     url-join "^4.0.0"
 
-"@semantic-release/npm@5.0.2", "@semantic-release/npm@^5.0.1":
+"@semantic-release/npm@5.0.4":
+  version "5.0.4"
+  resolved "https://registry.yarnpkg.com/@semantic-release/npm/-/npm-5.0.4.tgz#bef4ff31c9a70cc6db7583e08d2d29741b32d2f8"
+  dependencies:
+    "@semantic-release/error" "^2.2.0"
+    aggregate-error "^1.0.0"
+    detect-indent "^5.0.0"
+    detect-newline "^2.1.0"
+    execa "^1.0.0"
+    fs-extra "^7.0.0"
+    lodash "^4.17.4"
+    nerf-dart "^1.0.0"
+    normalize-url "^3.0.0"
+    npm "^6.3.0"
+    parse-json "^4.0.0"
+    rc "^1.2.8"
+    read-pkg "^4.0.0"
+    registry-auth-token "^3.3.1"
+
+"@semantic-release/npm@^5.0.1":
   version "5.0.2"
   resolved "https://registry.yarnpkg.com/@semantic-release/npm/-/npm-5.0.2.tgz#0d85deefd859d58e003abc1c5610e2fa5c25a4ae"
   dependencies:
@@ -2361,6 +2380,18 @@ execa@^0.7.0:
   dependencies:
     cross-spawn "^5.0.1"
     get-stream "^3.0.0"
+    is-stream "^1.1.0"
+    npm-run-path "^2.0.0"
+    p-finally "^1.0.0"
+    signal-exit "^3.0.0"
+    strip-eof "^1.0.0"
+
+execa@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/execa/-/execa-1.0.0.tgz#c6236a5bb4df6d6f15e88e7f017798216749ddd8"
+  dependencies:
+    cross-spawn "^6.0.0"
+    get-stream "^4.0.0"
     is-stream "^1.1.0"
     npm-run-path "^2.0.0"
     p-finally "^1.0.0"
