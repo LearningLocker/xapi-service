@@ -75,12 +75,12 @@
     through2 "^2.0.0"
     xdg-basedir "^3.0.0"
 
-"@ht2-labs/semantic-release@1.1.18":
-  version "1.1.18"
-  resolved "https://registry.yarnpkg.com/@ht2-labs/semantic-release/-/semantic-release-1.1.18.tgz#a601b1b231ba8451b9070f202c2e029611a3e9bc"
+"@ht2-labs/semantic-release@1.1.19":
+  version "1.1.19"
+  resolved "https://registry.yarnpkg.com/@ht2-labs/semantic-release/-/semantic-release-1.1.19.tgz#773793f2ce410dbb6627d66be323453ef1a390a2"
   dependencies:
     "@semantic-release/condition-travis" "7.1.4"
-    "@semantic-release/github" "5.0.3"
+    "@semantic-release/github" "5.0.4"
     "@semantic-release/npm" "5.0.4"
     condition-circle "2.0.1"
     fs-extra "^7.0.0"
@@ -294,7 +294,29 @@
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/@semantic-release/error/-/error-2.2.0.tgz#ee9d5a09c9969eade1ec864776aeda5c5cddbbf0"
 
-"@semantic-release/github@5.0.3", "@semantic-release/github@^5.0.0":
+"@semantic-release/github@5.0.4":
+  version "5.0.4"
+  resolved "https://registry.yarnpkg.com/@semantic-release/github/-/github-5.0.4.tgz#09a870e3fb7ccd1a3eedc4d72a7f0a33c1dce794"
+  dependencies:
+    "@octokit/rest" "^15.2.0"
+    "@semantic-release/error" "^2.2.0"
+    aggregate-error "^1.0.0"
+    bottleneck "^2.0.1"
+    debug "^3.1.0"
+    dir-glob "^2.0.0"
+    fs-extra "^7.0.0"
+    globby "^8.0.0"
+    http-proxy-agent "^2.1.0"
+    https-proxy-agent "^2.2.1"
+    issue-parser "^3.0.0"
+    lodash "^4.17.4"
+    mime "^2.0.3"
+    p-filter "^1.0.0"
+    p-retry "^2.0.0"
+    parse-github-url "^1.0.1"
+    url-join "^4.0.0"
+
+"@semantic-release/github@^5.0.0":
   version "5.0.3"
   resolved "https://registry.yarnpkg.com/@semantic-release/github/-/github-5.0.3.tgz#aa81ce120236ffbcaa6e73f4ab4fc1b2af76bda5"
   dependencies:
@@ -3838,6 +3860,16 @@ issue-parser@^2.2.0:
     lodash.isplainobject "^4.0.6"
     lodash.isstring "^4.0.1"
 
+issue-parser@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/issue-parser/-/issue-parser-3.0.0.tgz#729d3fd5d6b86379cb0f513acc33b62f47ebd681"
+  dependencies:
+    lodash.capitalize "^4.2.1"
+    lodash.escaperegexp "^4.1.2"
+    lodash.isplainobject "^4.0.6"
+    lodash.isstring "^4.0.1"
+    lodash.uniqby "^4.7.0"
+
 isurl@^1.0.0-alpha5:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/isurl/-/isurl-1.0.0.tgz#b27f4f49f3cdaa3ea44a0a5b7f3462e6edc39d67"
@@ -4317,6 +4349,10 @@ lodash.union@~4.6.0:
 lodash.uniq@~4.5.0:
   version "4.5.0"
   resolved "https://registry.yarnpkg.com/lodash.uniq/-/lodash.uniq-4.5.0.tgz#d0225373aeb652adc1bc82e4945339a842754773"
+
+lodash.uniqby@^4.7.0:
+  version "4.7.0"
+  resolved "https://registry.yarnpkg.com/lodash.uniqby/-/lodash.uniqby-4.7.0.tgz#d99c07a669e9e6d24e1362dfe266c67616af1302"
 
 lodash.values@^4.3.0:
   version "4.3.0"
