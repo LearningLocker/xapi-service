@@ -67,7 +67,7 @@
     "jscpd": "0.6.23",
     "rimraf": "2.6.2",
     "shelljs": "0.8.2",
-    "simple-git": "1.96.0",
+    "simple-git": "1.100.0",
     "tslint": "5.11.0",
     "tslint-consistent-codestyle": "1.13.3",
     "tslint-immutable": "4.7.0",
