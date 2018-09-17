@@ -68,9 +68,9 @@
     through2 "^2.0.0"
     xdg-basedir "^3.0.0"
 
-"@ht2-labs/semantic-release@1.1.22":
-  version "1.1.22"
-  resolved "https://registry.yarnpkg.com/@ht2-labs/semantic-release/-/semantic-release-1.1.22.tgz#df1e7ee91ca0e49f6796a382b19fbd4dceba2912"
+"@ht2-labs/semantic-release@1.1.23":
+  version "1.1.23"
+  resolved "https://registry.yarnpkg.com/@ht2-labs/semantic-release/-/semantic-release-1.1.23.tgz#41f52e720b0bd411bbd28d274511fddfe3b9148a"
   dependencies:
     "@semantic-release/condition-travis" "7.1.4"
     "@semantic-release/github" "5.0.5"
@@ -80,7 +80,7 @@
     semantic-release "15.9.15"
     semantic-release-docker "2.1.0"
     semver "5.5.1"
-    simple-git "1.96.0"
+    simple-git "1.100.0"
 
 "@ht2-labs/typescript-project@1.0.28":
   version "1.0.28"
@@ -6319,12 +6319,6 @@ simple-git@1.100.0:
   resolved "https://registry.yarnpkg.com/simple-git/-/simple-git-1.100.0.tgz#6e781885fcde0e7751cabec0746b2b943ae4cce7"
   dependencies:
     debug "^4.0.1"
-
-simple-git@1.96.0:
-  version "1.96.0"
-  resolved "https://registry.yarnpkg.com/simple-git/-/simple-git-1.96.0.tgz#d0279b771ed89a2d1e7d9e15f9abd7f26e319d7c"
-  dependencies:
-    debug "^3.1.0"
 
 simple-swizzle@^0.2.2:
   version "0.2.2"
