@@ -68,16 +68,16 @@
     through2 "^2.0.0"
     xdg-basedir "^3.0.0"
 
-"@ht2-labs/semantic-release@1.1.23":
-  version "1.1.23"
-  resolved "https://registry.yarnpkg.com/@ht2-labs/semantic-release/-/semantic-release-1.1.23.tgz#41f52e720b0bd411bbd28d274511fddfe3b9148a"
+"@ht2-labs/semantic-release@1.1.24":
+  version "1.1.24"
+  resolved "https://registry.yarnpkg.com/@ht2-labs/semantic-release/-/semantic-release-1.1.24.tgz#ffdedab45521f76b85db8ff7e94d2d06ebe06fc1"
   dependencies:
     "@semantic-release/condition-travis" "7.1.4"
     "@semantic-release/github" "5.0.5"
     "@semantic-release/npm" "5.0.4"
     condition-circle "2.0.1"
     fs-extra "^7.0.0"
-    semantic-release "15.9.15"
+    semantic-release "15.9.16"
     semantic-release-docker "2.1.0"
     semver "5.5.1"
     simple-git "1.100.0"
@@ -2306,9 +2306,9 @@ ent@^2.2.0:
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/ent/-/ent-2.2.0.tgz#e964219325a21d05f44466a2f686ed6ce5f5dd1d"
 
-env-ci@^2.4.0:
-  version "2.4.0"
-  resolved "https://registry.yarnpkg.com/env-ci/-/env-ci-2.4.0.tgz#1ceacee17a6860fffa04436cea586d15534b4c4d"
+env-ci@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/env-ci/-/env-ci-3.0.0.tgz#16f022753562dee387e0bdca3dd629a497ed67b5"
   dependencies:
     execa "^1.0.0"
     java-properties "^0.2.9"
@@ -6155,9 +6155,9 @@ semantic-release-docker@2.1.0:
     "@semantic-release/error" "^2.1.0"
     execa "^0.10.0"
 
-semantic-release@15.9.15:
-  version "15.9.15"
-  resolved "https://registry.yarnpkg.com/semantic-release/-/semantic-release-15.9.15.tgz#e423dc5468f7e5bf601d5ca8bf4ae6d4ada5eadf"
+semantic-release@15.9.16:
+  version "15.9.16"
+  resolved "https://registry.yarnpkg.com/semantic-release/-/semantic-release-15.9.16.tgz#70391ef6a9246253f54061ecd06634994e305b1e"
   dependencies:
     "@semantic-release/commit-analyzer" "^6.0.0"
     "@semantic-release/error" "^2.2.0"
@@ -6167,7 +6167,7 @@ semantic-release@15.9.15:
     aggregate-error "^1.0.0"
     cosmiconfig "^5.0.1"
     debug "^4.0.0"
-    env-ci "^2.4.0"
+    env-ci "^3.0.0"
     execa "^1.0.0"
     figures "^2.0.0"
     find-versions "^2.0.0"
