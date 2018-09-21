@@ -82,9 +82,9 @@
     semver "5.5.1"
     simple-git "1.100.0"
 
-"@ht2-labs/typescript-project@1.0.28":
-  version "1.0.28"
-  resolved "https://registry.yarnpkg.com/@ht2-labs/typescript-project/-/typescript-project-1.0.28.tgz#2d440dafa79054e9fcc41090a22f573c73113d40"
+"@ht2-labs/typescript-project@1.0.29":
+  version "1.0.29"
+  resolved "https://registry.yarnpkg.com/@ht2-labs/typescript-project/-/typescript-project-1.0.29.tgz#341c8446c843a7ea644b0cd7a45abccaa6717054"
   dependencies:
     tslint "5.11.0"
     tslint-consistent-codestyle "1.13.3"
