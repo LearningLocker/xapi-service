@@ -6914,13 +6914,13 @@ tslint-consistent-codestyle@1.13.3:
     tslib "^1.7.1"
     tsutils "^2.27.0"
 
-tslint-consistent-codestyle@1.14.0:
-  version "1.14.0"
-  resolved "https://registry.yarnpkg.com/tslint-consistent-codestyle/-/tslint-consistent-codestyle-1.14.0.tgz#a822083676aeed97a7de744fb9a1fbd9215c322b"
+tslint-consistent-codestyle@1.14.1:
+  version "1.14.1"
+  resolved "https://registry.yarnpkg.com/tslint-consistent-codestyle/-/tslint-consistent-codestyle-1.14.1.tgz#8555f1b05ccbf093166a73347f41eb101731a522"
   dependencies:
     "@fimbul/bifrost" "^0.15.0"
     tslib "^1.7.1"
-    tsutils "^2.27.2"
+    tsutils "^2.29.0"
 
 tslint-immutable@4.7.0:
   version "4.7.0"
@@ -6947,7 +6947,7 @@ tslint@5.11.0:
     tslib "^1.8.0"
     tsutils "^2.27.2"
 
-tsutils@^2.24.0, tsutils@^2.27.0, tsutils@^2.27.2:
+tsutils@^2.24.0, tsutils@^2.27.0, tsutils@^2.27.2, tsutils@^2.29.0:
   version "2.29.0"
   resolved "https://registry.yarnpkg.com/tsutils/-/tsutils-2.29.0.tgz#32b488501467acbedd4b85498673a0812aca0b99"
   dependencies:
