@@ -49,7 +49,7 @@
     "source-map-support": "^0.5.0"
   },
   "devDependencies": {
-    "@ht2-labs/semantic-release": "1.1.44",
+    "@ht2-labs/semantic-release": "1.1.45",
     "@ht2-labs/typescript-project": "1.1.0",
     "@types/dotenv": "4.0.3",
     "@types/express": "4.16.0",
