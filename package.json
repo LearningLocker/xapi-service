@@ -54,7 +54,7 @@
     "@types/dotenv": "4.0.3",
     "@types/express": "4.16.0",
     "@types/google-cloud__storage": "1.7.0",
-    "@types/ioredis": "3.2.17",
+    "@types/ioredis": "4.0.4",
     "@types/lodash": "4.14.119",
     "@types/mongodb": "3.1.10",
     "@types/node": "9.6.40",

@@ -415,10 +415,6 @@
   version "0.7.0"
   resolved "https://registry.yarnpkg.com/@sindresorhus/is/-/is-0.7.0.tgz#9a06f4f137ee84d7df0460c1fdb1135ffa6c50fd"
 
-"@types/bluebird@*":
-  version "3.5.24"
-  resolved "https://registry.yarnpkg.com/@types/bluebird/-/bluebird-3.5.24.tgz#11f76812531c14f793b8ecbf1de96f672905de8a"
-
 "@types/body-parser@*":
   version "1.17.0"
   resolved "https://registry.yarnpkg.com/@types/body-parser/-/body-parser-1.17.0.tgz#9f5c9d9bd04bb54be32d5eb9fc0d8c974e6cf58c"
@@ -481,11 +477,10 @@
     "@types/node" "*"
     "@types/request" "*"
 
-"@types/ioredis@3.2.17":
-  version "3.2.17"
-  resolved "https://registry.yarnpkg.com/@types/ioredis/-/ioredis-3.2.17.tgz#c0037731eeee9d9669bdc7a9b9dcc014e14139ab"
+"@types/ioredis@4.0.4":
+  version "4.0.4"
+  resolved "https://registry.yarnpkg.com/@types/ioredis/-/ioredis-4.0.4.tgz#c0a809064c05e4c2663803128d46042e73c92558"
   dependencies:
-    "@types/bluebird" "*"
     "@types/node" "*"
 
 "@types/lodash@4.14.119":
