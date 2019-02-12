@@ -200,8 +200,8 @@
     uuid "^3.0.1"
 
 "@learninglocker/xapi-statements@^7.3.1":
-  version "7.3.1"
-  resolved "https://registry.yarnpkg.com/@learninglocker/xapi-statements/-/xapi-statements-7.3.1.tgz#fe607abae847ef85643ee48fbf28551e7378b7e5"
+  version "7.4.0"
+  resolved "https://registry.yarnpkg.com/@learninglocker/xapi-statements/-/xapi-statements-7.4.0.tgz#5a11bfa6c96ed804a9a5e3942c7e4cafc3119170"
   dependencies:
     "@google-cloud/storage" "^1.5.2"
     "@learninglocker/xapi-validation" "^2.1.10"
@@ -496,9 +496,9 @@
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/@types/mime/-/mime-2.0.0.tgz#5a7306e367c539b9f6543499de8dd519fac37a8b"
 
-"@types/mongodb@3.1.10":
-  version "3.1.10"
-  resolved "https://registry.yarnpkg.com/@types/mongodb/-/mongodb-3.1.10.tgz#c97ecc061c276e87a5b819b992cd8ab2afb54d77"
+"@types/mongodb@3.1.17":
+  version "3.1.17"
+  resolved "https://registry.yarnpkg.com/@types/mongodb/-/mongodb-3.1.17.tgz#11351b147b68e7674cff9055ea82072521bc6fe3"
   dependencies:
     "@types/bson" "*"
     "@types/node" "*"
