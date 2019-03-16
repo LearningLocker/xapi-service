@@ -11,12 +11,16 @@ import { defaultTo } from 'lodash';
 import * as os from 'os';
 
 const DEFAULT_REDIS_PORT = 6379;
-const DEFAULT_EXPRESS_PORT = 8081;
+const DEFAULT_EXPRESS_PORT = '8081';
 const DEFAULT_TIMEOUT_MS = 300000; // 5 minutes.
 
 const storageDir = `${process.cwd()}/storage`;
 const googleKeyFileName = `${process.cwd()}/google.keyfile.json`;
-const expressPort = getNumberOption(process.env.EXPRESS_PORT, DEFAULT_EXPRESS_PORT);
+const expressPort = getNumberOption(
+  process.env.EXPRESS_PORT,
+  parseInt(process.env.PORT || DEFAULT_EXPRESS_PORT),
+);
+
 const demoAuth = `http://localhost:${expressPort}/auth`;
 const accessLogsDir = `${storageDir}/accessLogs`;
 const newRelicLogsDir = `${storageDir}/newrelic-agent.log`;
