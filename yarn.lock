@@ -529,9 +529,9 @@
     "@types/node" "*"
     "@types/request" "*"
 
-"@types/ioredis@3.2.17":
-  version "3.2.17"
-  resolved "https://registry.yarnpkg.com/@types/ioredis/-/ioredis-3.2.17.tgz#c0037731eeee9d9669bdc7a9b9dcc014e14139ab"
+"@types/ioredis@3.2.19":
+  version "3.2.19"
+  resolved "https://registry.yarnpkg.com/@types/ioredis/-/ioredis-3.2.19.tgz#703169f75d70353fa8a5c6bc5851416198d7eb3e"
   dependencies:
     "@types/bluebird" "*"
     "@types/node" "*"
