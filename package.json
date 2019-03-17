@@ -52,7 +52,7 @@
     "@ht2-labs/semantic-release": "1.1.59",
     "@ht2-labs/typescript-project": "1.1.0",
     "@types/dotenv": "4.0.3",
-    "@types/express": "4.16.0",
+    "@types/express": "4.16.1",
     "@types/google-cloud__storage": "1.7.0",
     "@types/ioredis": "3.2.17",
     "@types/lodash": "4.14.119",
