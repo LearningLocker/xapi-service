@@ -65,7 +65,7 @@
     "commitizen": "2.10.1",
     "cz-conventional-changelog": "2.1.0",
     "jscpd": "0.6.25",
-    "rimraf": "2.6.2",
+    "rimraf": "2.6.3",
     "shelljs": "0.8.3",
     "simple-git": "1.107.0",
     "tslint": "5.11.0",
