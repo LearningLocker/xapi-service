@@ -92,9 +92,9 @@
     through2 "^2.0.0"
     xdg-basedir "^3.0.0"
 
-"@ht2-labs/semantic-release@1.1.59":
-  version "1.1.59"
-  resolved "https://registry.yarnpkg.com/@ht2-labs/semantic-release/-/semantic-release-1.1.59.tgz#a19a742e2f05299813181684fa0df1aef4cf8d04"
+"@ht2-labs/semantic-release@1.1.60":
+  version "1.1.60"
+  resolved "https://registry.yarnpkg.com/@ht2-labs/semantic-release/-/semantic-release-1.1.60.tgz#b4a4199b750c7c6b8668c43d079737a2fdc5a8d2"
   dependencies:
     "@semantic-release/condition-travis" "7.1.4"
     "@semantic-release/github" "5.2.10"
@@ -102,7 +102,7 @@
     condition-circle "2.0.2"
     fs-extra "^7.0.0"
     semantic-release "15.13.3"
-    semantic-release-docker "2.1.0"
+    semantic-release-docker "2.2.0"
     semver "5.6.0"
     simple-git "1.107.0"
 
@@ -508,9 +508,9 @@
     "@types/node" "*"
     "@types/range-parser" "*"
 
-"@types/express@4.16.0":
-  version "4.16.0"
-  resolved "https://registry.yarnpkg.com/@types/express/-/express-4.16.0.tgz#6d8bc42ccaa6f35cf29a2b7c3333cb47b5a32a19"
+"@types/express@4.16.1":
+  version "4.16.1"
+  resolved "https://registry.yarnpkg.com/@types/express/-/express-4.16.1.tgz#d756bd1a85c34d87eaf44c888bad27ba8a4b7cf0"
   dependencies:
     "@types/body-parser" "*"
     "@types/express-serve-static-core" "*"
@@ -529,16 +529,16 @@
     "@types/node" "*"
     "@types/request" "*"
 
-"@types/ioredis@3.2.17":
-  version "3.2.17"
-  resolved "https://registry.yarnpkg.com/@types/ioredis/-/ioredis-3.2.17.tgz#c0037731eeee9d9669bdc7a9b9dcc014e14139ab"
+"@types/ioredis@3.2.19":
+  version "3.2.19"
+  resolved "https://registry.yarnpkg.com/@types/ioredis/-/ioredis-3.2.19.tgz#703169f75d70353fa8a5c6bc5851416198d7eb3e"
   dependencies:
     "@types/bluebird" "*"
     "@types/node" "*"
 
-"@types/lodash@4.14.119":
-  version "4.14.119"
-  resolved "https://registry.yarnpkg.com/@types/lodash/-/lodash-4.14.119.tgz#be847e5f4bc3e35e46d041c394ead8b603ad8b39"
+"@types/lodash@4.14.123":
+  version "4.14.123"
+  resolved "https://registry.yarnpkg.com/@types/lodash/-/lodash-4.14.123.tgz#39be5d211478c8dd3bdae98ee75bb7efe4abfe4d"
 
 "@types/mime@*":
   version "2.0.0"
@@ -6436,9 +6436,9 @@ sax@>=0.6.0:
   version "1.2.4"
   resolved "https://registry.yarnpkg.com/sax/-/sax-1.2.4.tgz#2816234e2378bddc4e5354fab5caa895df7100d9"
 
-semantic-release-docker@2.1.0:
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/semantic-release-docker/-/semantic-release-docker-2.1.0.tgz#d9d4c90479d73d8788ad2a2d89a646312d1a85b8"
+semantic-release-docker@2.2.0:
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/semantic-release-docker/-/semantic-release-docker-2.2.0.tgz#9a5e1c8b4fe2b85063e1dc64e15550e7bf26c26f"
   dependencies:
     "@semantic-release/error" "^2.1.0"
     execa "^0.10.0"
