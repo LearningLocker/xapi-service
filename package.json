@@ -69,7 +69,7 @@
     "shelljs": "0.8.3",
     "simple-git": "1.107.0",
     "tslint": "5.14.0",
-    "tslint-consistent-codestyle": "1.14.1",
+    "tslint-consistent-codestyle": "1.15.1",
     "tslint-immutable": "4.9.1",
     "typescript": "3.2.2"
   },
