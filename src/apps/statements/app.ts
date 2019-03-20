@@ -40,6 +40,11 @@ export default (appConfig: AppConfig): Result => {
     },
     storage: {
       facade: appConfig.repo.factory.storageRepoName,
+      azure: {
+        account: config.storage.azure.account,
+        accountKey: config.storage.azure.accountKey,
+        containerName: config.storage.azure.containerName,
+      },
       google: {
         bucketName: appConfig.repo.google.bucketName,
         keyFileName: appConfig.repo.google.keyFileName,
