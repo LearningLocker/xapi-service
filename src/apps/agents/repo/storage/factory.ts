@@ -31,12 +31,18 @@ export default (factoryConfig: FactoryConfig): Repo => {
         subFolder: factoryConfig.google.subFolder.replace(/^\//, ''),
       });
     case 'azure':
-      const credential = new SharedKeyCredential(config.azure.account, config.azure.accountKey);
+      const credential = new SharedKeyCredential(
+        factoryConfig.azure.account,
+        factoryConfig.azure.accountKey,
+      );
       const pipeline = StorageURL.newPipeline(credential);
       const serviceURL = new ServiceURL(
-        `https://${config.azure.account}.blob.core.windows.net`, pipeline,
+        `https://${factoryConfig.azure.account}.blob.core.windows.net`, pipeline,
       );
-      const containerUrl = ContainerURL.fromServiceURL(serviceURL, config.azure.containerName);
+      const containerUrl = ContainerURL.fromServiceURL(
+        serviceURL,
+        factoryConfig.azure.containerName,
+      );
 
        return azureStorageRepo({
         containerUrl,

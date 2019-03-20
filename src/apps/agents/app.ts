@@ -29,6 +29,11 @@ export default (appConfig: AppConfig): Router => {
     },
     storage: {
       factoryName: appConfig.repo.factory.storageRepoName,
+      azure: {
+        account: appConfig.repo.azure.account,
+        accountKey: appConfig.repo.azure.accountKey,
+        containerName: appConfig.repo.azure.containerName,
+      },
       google: {
         bucketName: appConfig.repo.google.bucketName,
         keyFileName: appConfig.repo.google.keyFileName,

@@ -14,6 +14,11 @@ export default interface AppConfig {
   };
   readonly repo: {
     readonly storageSubFolder: string;
+    readonly azure: {
+      readonly account: string;
+      readonly accountKey: string;
+      readonly containerName: string;
+    };
     readonly factory: {
       readonly authRepoName: string;
       readonly modelsRepoName: string;
