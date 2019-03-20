@@ -5,7 +5,7 @@ import {
   StorageURL,
 } from '@azure/storage-blob';
 import * as Storage from '@google-cloud/storage';
-import azureStorageRepo from '@learninglocker/xapi-activities/dist/azureStorageRepo';
+import azureStorageRepo from '@learninglocker/xapi-agents/dist/azureStorageRepo';
 import googleStorageRepo from '@learninglocker/xapi-agents/dist/googleStorageRepo';
 import localStorageRepo from '@learninglocker/xapi-agents/dist/localStorageRepo';
 import Repo from '@learninglocker/xapi-agents/dist/repoFactory/StorageRepo';
@@ -44,7 +44,7 @@ export default (factoryConfig: FactoryConfig): Repo => {
         factoryConfig.azure.containerName,
       );
 
-       return azureStorageRepo({
+      return azureStorageRepo({
         containerUrl,
       });
     default:
