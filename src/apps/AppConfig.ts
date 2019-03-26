@@ -22,6 +22,7 @@ export default interface AppConfig {
       readonly account: string;
       readonly accountKey: string;
       readonly containerName: string;
+      readonly subFolder: string;
     };
     readonly google: {
       readonly bucketName: string;

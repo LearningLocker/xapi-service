@@ -44,8 +44,9 @@ export default (factoryConfig: FactoryConfig): Repo => {
         factoryConfig.azure.containerName,
       );
 
-       return azureStorageRepo({
+      return azureStorageRepo({
         containerUrl,
+        subFolder: factoryConfig.azure.subFolder.replace(/^\//, ''),
       });
     default:
     case 'local': {

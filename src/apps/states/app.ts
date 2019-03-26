@@ -33,6 +33,7 @@ export default (appConfig: AppConfig): Router => {
         account: appConfig.repo.azure.account,
         accountKey: appConfig.repo.azure.accountKey,
         containerName: appConfig.repo.azure.containerName,
+        subFolder: appConfig.repo.storageSubFolder,
       },
       google: {
         bucketName: appConfig.repo.google.bucketName,

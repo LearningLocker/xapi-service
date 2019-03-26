@@ -6,6 +6,7 @@ export default interface FactoryConfig {
     readonly account: string;
     readonly accountKey: string;
     readonly containerName: string;
+    readonly subFolder: string;
   };
   readonly google: {
     readonly bucketName: string;
