@@ -17,7 +17,7 @@ const DEFAULT_TIMEOUT_MS = 300000; // 5 minutes.
 const storageDir = `${process.cwd()}/storage`;
 const googleKeyFileName = `${process.cwd()}/google.keyfile.json`;
 const expressPort = getNumberOption(
-  process.env.EXPRESS_PORT,
+  defaultTo(process.env.EXPRESS_PORT, process.env.PORT),
   parseInt(process.env.PORT || DEFAULT_EXPRESS_PORT),
 );
 
