@@ -17,6 +17,7 @@ export default (appConfig: AppConfig): Router => {
     },
     repo: {
       factory: appConfig.repo.repoFactory,
+      azure: appConfig.repo.azure,
       google: appConfig.repo.google,
       local: appConfig.repo.local,
       mongo: appConfig.repo.mongo,
@@ -35,6 +36,7 @@ export default (appConfig: AppConfig): Router => {
     },
     repo: {
       factory: appConfig.repo.repoFactory,
+      azure: appConfig.repo.azure,
       google: appConfig.repo.google,
       local: appConfig.repo.local,
       mongo: appConfig.repo.mongo,
@@ -53,6 +55,7 @@ export default (appConfig: AppConfig): Router => {
     },
     repo: {
       factory: appConfig.repo.repoFactory,
+      azure: appConfig.repo.azure,
       google: appConfig.repo.google,
       local: appConfig.repo.local,
       mongo: appConfig.repo.mongo,
@@ -73,6 +76,7 @@ export default (appConfig: AppConfig): Router => {
     },
     repo: {
       factory: appConfig.repo.repoFactory,
+      azure: appConfig.repo.azure,
       google: appConfig.repo.google,
       local: appConfig.repo.local,
       mongo: appConfig.repo.mongo,
@@ -93,4 +97,5 @@ export default (appConfig: AppConfig): Router => {
   router.use(`${xAPIPrefix}/xAPI/activities`, statementsRouter.fullActivitiesRouter);
   router.use(`${xAPIPrefix}/xAPI/statements`, statementsRouter.statementsRouter);
   return router;
+  // tslint:disable-next-line:max-file-line-count
 };

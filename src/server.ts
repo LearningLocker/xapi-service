@@ -19,6 +19,7 @@ expressApp.use(app({
     express: config.express,
   },
   repo: {
+    azure: config.azureStorageRepo,
     google: config.googleStorageRepo,
     local: config.localStorageRepo,
     mongo: { db: connectToMongoDb() },
