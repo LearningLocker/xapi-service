@@ -18,6 +18,12 @@ export default interface AppConfig {
       readonly state: string;
       readonly statements: string;
     };
+    readonly azure: {
+      readonly account: string;
+      readonly accountKey: string;
+      readonly containerName: string;
+      readonly subFolder: string;
+    };
     readonly google: {
       readonly bucketName: string;
       readonly keyFileName: string;

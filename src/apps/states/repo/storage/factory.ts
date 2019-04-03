@@ -1,4 +1,11 @@
+import {
+  ContainerURL,
+  ServiceURL,
+  SharedKeyCredential,
+  StorageURL,
+} from '@azure/storage-blob';
 import * as Storage from '@google-cloud/storage';
+import azureStorageRepo from '@learninglocker/xapi-state/dist/azureStorageRepo';
 import googleStorageRepo from '@learninglocker/xapi-state/dist/googleStorageRepo';
 import localStorageRepo from '@learninglocker/xapi-state/dist/localStorageRepo';
 import Repo from '@learninglocker/xapi-state/dist/repoFactory/StorageRepo';
@@ -22,6 +29,24 @@ export default (factoryConfig: FactoryConfig): Repo => {
           projectId: factoryConfig.google.projectId,
         }),
         subFolder: factoryConfig.google.subFolder.replace(/^\//, ''),
+      });
+    case 'azure':
+      const credential = new SharedKeyCredential(
+        factoryConfig.azure.account,
+        factoryConfig.azure.accountKey,
+      );
+      const pipeline = StorageURL.newPipeline(credential);
+      const serviceURL = new ServiceURL(
+        `https://${factoryConfig.azure.account}.blob.core.windows.net`, pipeline,
+      );
+      const containerUrl = ContainerURL.fromServiceURL(
+        serviceURL,
+        factoryConfig.azure.containerName,
+      );
+
+      return azureStorageRepo({
+        containerUrl,
+        subFolder: factoryConfig.azure.subFolder.replace(/^\//, ''),
       });
     default:
     case 'local': {

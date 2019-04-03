@@ -35,6 +35,11 @@ export default interface AppConfig {
       readonly modelsRepoName: string;
       readonly storageRepoName: string;
     };
+    readonly azure: {
+      readonly account: string;
+      readonly accountKey: string;
+      readonly containerName: string;
+    };
     readonly google: {
       readonly bucketName: string;
       readonly keyFileName: string;
