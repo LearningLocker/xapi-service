@@ -39,7 +39,7 @@
     "@learninglocker/xapi-state": "^4.4.0",
     "@learninglocker/xapi-statements": "7.7.0",
     "boolean": "^0.2.0",
-    "dotenv": "^5.0.0",
+    "dotenv": "^7.0.0",
     "express": "^4.14.1",
     "install": "^0.12.0",
     "jscommons": "^2.3.3",
