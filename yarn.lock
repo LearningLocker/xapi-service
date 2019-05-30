@@ -148,9 +148,9 @@
     tslint-immutable "4.7.0"
     typescript "3.0.3"
 
-"@learninglocker/xapi-activities@4.4.0":
-  version "4.4.0"
-  resolved "https://registry.yarnpkg.com/@learninglocker/xapi-activities/-/xapi-activities-4.4.0.tgz#eb669e28626b59e11cfc0e0bdd50ea181e467bed"
+"@learninglocker/xapi-activities@4.4.1":
+  version "4.4.1"
+  resolved "https://registry.yarnpkg.com/@learninglocker/xapi-activities/-/xapi-activities-4.4.1.tgz#58914709255a5f8080cf4e7cd47c9bb000100c86"
   dependencies:
     "@azure/storage-blob" "^10.3.0"
     "@google-cloud/storage" "^1.5.2"
