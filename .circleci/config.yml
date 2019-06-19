@@ -6,7 +6,7 @@ machine:
 jobs:
   build:
     docker:
-      - image: node:8.16.0@sha256:d5ad3f5dfcb5682356f3422e84be2ac3d83b03b82df84e4f1292fea21927c8b2
+      - image: node:8.16.0@sha256:06adec3330444f71d8fd873600c20d6cec1aed6c26c714c881eebd03391814f2
       - image: mongo:3.7.9@sha256:736eec20a17eafaa988d299902fcaab521cb0ca56af4400f782576afc878d6bc
       - image: redis:3.2.12@sha256:7b0a40301bc1567205e6461c5bf94c38e1e1ad0169709e49132cafc47f6b51f3
     environment:
