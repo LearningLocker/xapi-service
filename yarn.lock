@@ -517,9 +517,9 @@
     "@types/node" "*"
     "@types/request" "*"
 
-"@types/ioredis@3.2.20":
-  version "3.2.20"
-  resolved "https://registry.yarnpkg.com/@types/ioredis/-/ioredis-3.2.20.tgz#873bfc32287d88b79385965af7e4df6d5d566a2a"
+"@types/ioredis@3.2.21":
+  version "3.2.21"
+  resolved "https://registry.yarnpkg.com/@types/ioredis/-/ioredis-3.2.21.tgz#7e2f4a125457ab5a743212b3bd72d881f07577ee"
   dependencies:
     "@types/bluebird" "*"
     "@types/node" "*"
