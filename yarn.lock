@@ -170,9 +170,9 @@
     string-to-stream "^1.1.0"
     uuid "^3.0.1"
 
-"@learninglocker/xapi-agents@4.4.2":
-  version "4.4.2"
-  resolved "https://registry.yarnpkg.com/@learninglocker/xapi-agents/-/xapi-agents-4.4.2.tgz#6aa83448176e8b6601c0ad496652ba4119da6fd6"
+"@learninglocker/xapi-agents@4.4.3":
+  version "4.4.3"
+  resolved "https://registry.yarnpkg.com/@learninglocker/xapi-agents/-/xapi-agents-4.4.3.tgz#f03e2b0abe3b6011dd4ea6876a149846d8ac616d"
   dependencies:
     "@azure/storage-blob" "^10.3.0"
     "@google-cloud/storage" "^1.5.2"
