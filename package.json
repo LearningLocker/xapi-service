@@ -34,7 +34,7 @@
     "npm": ">3.0.0"
   },
   "dependencies": {
-    "@learninglocker/xapi-activities": "4.4.3",
+    "@learninglocker/xapi-activities": "4.4.4",
     "@learninglocker/xapi-agents": "4.4.3",
     "@learninglocker/xapi-state": "^4.4.0",
     "@learninglocker/xapi-statements": "7.7.4",
