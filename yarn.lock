@@ -6725,6 +6725,12 @@ simple-git@1.122.0:
   dependencies:
     debug "^4.0.1"
 
+simple-git@1.123.0:
+  version "1.123.0"
+  resolved "https://registry.yarnpkg.com/simple-git/-/simple-git-1.123.0.tgz#5b1ab2673181ca6e3dcc5cc99ad82a75a49cd41a"
+  dependencies:
+    debug "^4.0.1"
+
 simple-swizzle@^0.2.2:
   version "0.2.2"
   resolved "https://registry.yarnpkg.com/simple-swizzle/-/simple-swizzle-0.2.2.tgz#a4da6b635ffcccca33f70d17cb92592de95e557a"
