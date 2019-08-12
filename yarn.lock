@@ -364,8 +364,8 @@
     url-template "^2.0.8"
 
 "@semantic-release/commit-analyzer@^6.1.0":
-  version "6.2.0"
-  resolved "https://registry.yarnpkg.com/@semantic-release/commit-analyzer/-/commit-analyzer-6.2.0.tgz#5cd25ce67ba9ba5b46e47457505e63629e186695"
+  version "6.3.0"
+  resolved "https://registry.yarnpkg.com/@semantic-release/commit-analyzer/-/commit-analyzer-6.3.0.tgz#e0fb2f6af7be2321ad9401d8ae25be0cc1005d83"
   dependencies:
     conventional-changelog-angular "^5.0.0"
     conventional-commits-filter "^2.0.0"
@@ -430,8 +430,8 @@
     registry-auth-token "^4.0.0"
 
 "@semantic-release/release-notes-generator@^7.1.2":
-  version "7.2.1"
-  resolved "https://registry.yarnpkg.com/@semantic-release/release-notes-generator/-/release-notes-generator-7.2.1.tgz#2c0c340e7be2a3d27c28cb869b6737a70f2862fe"
+  version "7.3.0"
+  resolved "https://registry.yarnpkg.com/@semantic-release/release-notes-generator/-/release-notes-generator-7.3.0.tgz#b94f3d84d7071eb8e921b53a9729ca48722e7c0f"
   dependencies:
     conventional-changelog-angular "^5.0.0"
     conventional-changelog-writer "^4.0.0"
@@ -548,8 +548,8 @@
     "@types/node" "*"
 
 "@types/node@*":
-  version "12.6.9"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-12.6.9.tgz#ffeee23afdc19ab16e979338e7b536fdebbbaeaf"
+  version "12.7.1"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-12.7.1.tgz#3b5c3a26393c19b400844ac422bd0f631a94d69d"
 
 "@types/node@9.6.50":
   version "9.6.50"
@@ -854,8 +854,8 @@ atob@^2.0.3, atob@^2.1.1:
   resolved "https://registry.yarnpkg.com/atob/-/atob-2.1.2.tgz#6d9517eb9e030d2436666651e86bd9f6f13533c9"
 
 aws-sdk@^2.0.1, aws-sdk@^2.205.0, aws-sdk@^2.249.1, aws-sdk@^2.58.0:
-  version "2.503.0"
-  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.503.0.tgz#983b8c03aa919060a81127cb9d94fbb1667f4cf2"
+  version "2.507.0"
+  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.507.0.tgz#afb30dd2a0a5166aa7c2f808064f2d03e4dc3619"
   dependencies:
     buffer "4.9.1"
     events "1.1.1"
@@ -1361,8 +1361,8 @@ balanced-match@^1.0.0:
   resolved "https://registry.yarnpkg.com/balanced-match/-/balanced-match-1.0.0.tgz#89b4d199ab2bee49de164ea02b89ce462d71b767"
 
 base64-js@^1.0.2:
-  version "1.3.0"
-  resolved "https://registry.yarnpkg.com/base64-js/-/base64-js-1.3.0.tgz#cab1e6118f051095e58b5281aea8c1cd22bfc0e3"
+  version "1.3.1"
+  resolved "https://registry.yarnpkg.com/base64-js/-/base64-js-1.3.1.tgz#58ece8cb75dd07e71ed08c736abc5fac4dbf8df1"
 
 base@^0.11.1:
   version "0.11.2"
@@ -1644,8 +1644,8 @@ camelize@1.0.0:
   resolved "https://registry.yarnpkg.com/camelize/-/camelize-1.0.0.tgz#164a5483e630fa4321e5af07020e531831b2609b"
 
 caniuse-lite@^1.0.30000844:
-  version "1.0.30000988"
-  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30000988.tgz#742f35ec1b8b75b9628d705d7652eea1fef983db"
+  version "1.0.30000989"
+  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30000989.tgz#b9193e293ccf7e4426c5245134b8f2a56c0ac4b9"
 
 capture-stack-trace@^1.0.0:
   version "1.0.1"
@@ -2412,8 +2412,8 @@ ee-first@1.1.1:
   resolved "https://registry.yarnpkg.com/ee-first/-/ee-first-1.1.1.tgz#590c61156b0ae2f4f0255732a158b266bc56b21d"
 
 electron-to-chromium@^1.3.47:
-  version "1.3.214"
-  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.214.tgz#8b5b9a0415fd41b69c61f694007597cb8c8eb7e8"
+  version "1.3.223"
+  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.223.tgz#3472d5260096cfc9be8b7350252a4c577f68f80a"
 
 emoji-regex@^7.0.1:
   version "7.0.3"
@@ -3494,9 +3494,9 @@ hook-std@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/hook-std/-/hook-std-2.0.0.tgz#ff9aafdebb6a989a354f729bb6445cf4a3a7077c"
 
-hosted-git-info@^2.1.4, hosted-git-info@^2.6.0, hosted-git-info@^2.7.1:
-  version "2.8.0"
-  resolved "https://registry.yarnpkg.com/hosted-git-info/-/hosted-git-info-2.8.0.tgz#50cd993ca316f339317744f4a5883643c2204a50"
+hosted-git-info@^2.1.4, hosted-git-info@^2.6.0, hosted-git-info@^2.7.1, hosted-git-info@^2.8.2:
+  version "2.8.2"
+  resolved "https://registry.yarnpkg.com/hosted-git-info/-/hosted-git-info-2.8.2.tgz#a35c3f355ac1249f1093c0c2a542ace8818c171a"
   dependencies:
     lru-cache "^5.1.1"
 
@@ -5320,8 +5320,8 @@ npm-user-validate@~1.0.0:
   resolved "https://registry.yarnpkg.com/npm-user-validate/-/npm-user-validate-1.0.0.tgz#8ceca0f5cea04d4e93519ef72d0557a75122e951"
 
 npm@^6.8.0:
-  version "6.10.2"
-  resolved "https://registry.yarnpkg.com/npm/-/npm-6.10.2.tgz#62cd56f9bc39e26a5eae411a20236bb0c2026d85"
+  version "6.10.3"
+  resolved "https://registry.yarnpkg.com/npm/-/npm-6.10.3.tgz#83195598f8930a40ee480567883863321626666e"
   dependencies:
     JSONStream "^1.3.5"
     abbrev "~1.1.1"
@@ -5354,7 +5354,7 @@ npm@^6.8.0:
     glob "^7.1.4"
     graceful-fs "^4.2.0"
     has-unicode "~2.0.1"
-    hosted-git-info "^2.7.1"
+    hosted-git-info "^2.8.2"
     iferr "^1.0.2"
     imurmurhash "*"
     infer-owner "^1.0.4"
@@ -5412,7 +5412,7 @@ npm@^6.8.0:
     path-is-inside "~1.0.2"
     promise-inflight "~1.0.1"
     qrcode-terminal "^0.12.0"
-    query-string "^6.8.1"
+    query-string "^6.8.2"
     qw "~1.0.1"
     read "~1.0.7"
     read-cmd-shim "~1.0.1"
@@ -6045,7 +6045,7 @@ query-string@^5.0.1:
     object-assign "^4.1.0"
     strict-uri-encode "^1.0.0"
 
-query-string@^6.8.1:
+query-string@^6.8.2:
   version "6.8.2"
   resolved "https://registry.yarnpkg.com/query-string/-/query-string-6.8.2.tgz#36cb7e452ae11a4b5e9efee83375e0954407b2f6"
   dependencies:
@@ -6514,7 +6514,7 @@ safe-buffer@5.1.2, safe-buffer@~5.1.0, safe-buffer@~5.1.1:
   version "5.1.2"
   resolved "https://registry.yarnpkg.com/safe-buffer/-/safe-buffer-5.1.2.tgz#991ec69d296e0313747d59bdfd2b745c35f8828d"
 
-safe-buffer@^5.0.1, safe-buffer@^5.1.0, safe-buffer@^5.1.1, safe-buffer@^5.1.2:
+safe-buffer@^5.0.1, safe-buffer@^5.1.0, safe-buffer@^5.1.1, safe-buffer@^5.1.2, safe-buffer@~5.2.0:
   version "5.2.0"
   resolved "https://registry.yarnpkg.com/safe-buffer/-/safe-buffer-5.2.0.tgz#b74daec49b1148f88c64b68d49b1e815c1f2f519"
 
@@ -7021,10 +7021,10 @@ string-width@^3.0.0, string-width@^3.1.0:
     strip-ansi "^5.1.0"
 
 string_decoder@^1.1.1:
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/string_decoder/-/string_decoder-1.2.0.tgz#fe86e738b19544afe70469243b2a1ee9240eae8d"
+  version "1.3.0"
+  resolved "https://registry.yarnpkg.com/string_decoder/-/string_decoder-1.3.0.tgz#42f114594a46cf1a8e30b0a84f56c78c3edac21e"
   dependencies:
-    safe-buffer "~5.1.0"
+    safe-buffer "~5.2.0"
 
 string_decoder@~0.10.x:
   version "0.10.31"
@@ -7327,8 +7327,8 @@ tsutils@^2.24.0, tsutils@^2.27.0, tsutils@^2.27.2, tsutils@^2.29.0:
     tslib "^1.8.1"
 
 tsutils@^3.5.0:
-  version "3.15.0"
-  resolved "https://registry.yarnpkg.com/tsutils/-/tsutils-3.15.0.tgz#3efabbf2c18a5d7c7496a878be0609eb90897ed6"
+  version "3.17.1"
+  resolved "https://registry.yarnpkg.com/tsutils/-/tsutils-3.17.1.tgz#ed719917f11ca0dee586272b2ac49e015a2dd759"
   dependencies:
     tslib "^1.8.1"
 
