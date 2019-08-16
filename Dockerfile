@@ -1,4 +1,4 @@
-FROM node:8@sha256:2f614cda37edd3cfea0ae2d733c5c58ce4d5bc433b6115cb6ea06f0ead3c623f
+FROM node:8@sha256:ee05e35226b0eabc15c64189bc78ff767d1c379b7d7cdb01337d269ded60da79
 ENV NPM_CONFIG_LOGLEVEL warn
 WORKDIR /usr/src/app
 
