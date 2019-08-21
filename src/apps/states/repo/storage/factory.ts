@@ -4,7 +4,7 @@ import {
   SharedKeyCredential,
   StorageURL,
 } from '@azure/storage-blob';
-import * as Storage from '@google-cloud/storage';
+import Storage from '@google-cloud/storage';
 import azureStorageRepo from '@learninglocker/xapi-state/dist/azureStorageRepo';
 import googleStorageRepo from '@learninglocker/xapi-state/dist/googleStorageRepo';
 import localStorageRepo from '@learninglocker/xapi-state/dist/localStorageRepo';

@@ -1,4 +1,4 @@
-import * as S3 from 'aws-sdk/clients/s3';
+import S3 from 'aws-sdk/clients/s3';
 import Tracker from 'jscommons/dist/tracker/Tracker';
 import { Db } from 'mongodb';
 import { LoggerInstance } from 'winston';

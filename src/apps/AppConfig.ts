@@ -52,6 +52,7 @@ export default interface AppConfig {
   readonly service: {
     readonly statements: {
       readonly awaitUpdates: boolean;
+      readonly enableActorLowerCasing: boolean;
       readonly enableActivityUpdates: boolean;
       readonly enableAttachmentCreation: boolean;
       readonly enableAttachmentValidation: boolean;

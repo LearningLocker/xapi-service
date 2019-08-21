@@ -99,6 +99,7 @@ export default {
       process.env.SERVICE_AWAIT_UPDATES,
       process.env.SERVICE_AWAIT_UODATES,
     ), false),
+    enableActorLowerCasing: getBooleanOption(process.env.STATEMENTS_SERVICE_LOWERCASE_ACTORS),
     enableActivityUpdates: getBooleanOption(process.env.STATEMENTS_SERVICE_UPDATE_ACTIVITIES),
     enableAttachmentCreation: getBooleanOption(process.env.STATEMENTS_SERVICE_CREATE_ATTACHMENTS),
     enableAttachmentValidation: getBooleanOption(process.env.STATEMENTS_SERVICE_CHECK_ATTACHMENTS),

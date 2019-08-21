@@ -6,6 +6,7 @@
     "linebreak-style": [
       false,
       "LF"
-    ]
+    ],
+    "import-spacing": false
   }
 }
