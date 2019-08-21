@@ -1,4 +1,4 @@
-import * as S3 from 'aws-sdk/clients/s3';
+import S3 from 'aws-sdk/clients/s3';
 import { Redis } from 'ioredis';
 import Tracker from 'jscommons/dist/tracker/Tracker';
 import { Db } from 'mongodb';
@@ -17,6 +17,7 @@ export default interface AppConfig {
   };
   readonly service: {
     readonly awaitUpdates: boolean;
+    readonly enableActorLowerCasing: boolean;
     readonly enableActivityUpdates: boolean;
     readonly enableAttachmentCreation: boolean;
     readonly enableAttachmentValidation: boolean;

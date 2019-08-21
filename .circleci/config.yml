@@ -35,11 +35,14 @@ jobs:
           name: Compiling Code
           command: yarn build
       - run:
+          name: Linting Code
+          command: yarn lint -- -c tslint.ci.json -q
+      - run:
+          name: Mocha Tests
+          command: yarn cover-ci
+      - run:
           name: Conformance Tests
           command: sh test.sh
-      - run:
-          name: Linting Code
-          command: yarn lint -- -c tslint.ci.json
       - run:
           name: Docker Install
           command: |

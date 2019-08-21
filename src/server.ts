@@ -2,7 +2,7 @@ import * as sourceMapSupport from 'source-map-support'; // tslint:disable-line:o
 sourceMapSupport.install();
 
 import tracker from './tracker';
-import * as express from 'express'; // tslint:disable-line:ordered-imports
+import express from 'express'; // tslint:disable-line:ordered-imports
 import handleListen from 'jscommons/dist/expressPresenter/utils/handleListen';
 import app from './apps/app';
 import config from './config';

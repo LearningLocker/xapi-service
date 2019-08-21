@@ -1,4 +1,4 @@
-import * as Ioredis from 'ioredis';
+import Ioredis from 'ioredis';
 import { defaultTo, once } from 'lodash';
 import config from '../config';
 import logger from '../logger';

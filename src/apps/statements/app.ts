@@ -1,9 +1,9 @@
 /* tslint:disable:max-file-line-count */
-import presenterFactory, { Result } from '@learninglocker/xapi-statements/dist/expressPresenter';
-import repoFactory from '@learninglocker/xapi-statements/dist/repo/facade';
-import serviceFactory from '@learninglocker/xapi-statements/dist/service';
-import enTranslator from '@learninglocker/xapi-statements/dist/translatorFactory/en';
 import AppConfig from './AppConfig';
+import presenterFactory, { Result } from './expressPresenter';
+import repoFactory from './repo/facade';
+import serviceFactory from './service';
+import enTranslator from './translatorFactory/en';
 
 export default (appConfig: AppConfig): Result => {
   const translator = enTranslator;
@@ -64,6 +64,7 @@ export default (appConfig: AppConfig): Result => {
   });
   const service = serviceFactory({
     awaitUpdates: appConfig.service.awaitUpdates,
+    enableActorLowerCasing: appConfig.service.enableActorLowerCasing,
     enableActivityUpdates: appConfig.service.enableActivityUpdates,
     enableAttachmentCreation: appConfig.service.enableAttachmentCreation,
     enableAttachmentValidation: appConfig.service.enableAttachmentValidation,
