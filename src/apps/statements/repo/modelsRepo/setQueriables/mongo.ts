@@ -30,8 +30,7 @@ export default (config: FacadeConfig): Signature => {
         registrations: { $each: registrations },
       },
     };
-    const options = { multi: false };
 
-    await collection.update(query, update, options);
+    await collection.updateOne(query, update);
   };
 };

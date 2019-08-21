@@ -13,8 +13,7 @@ export default (config: FacadeConfig): Signature => {
       ...matchesClientOption(client),
     };
     const update = { $set: { voided: true } };
-    const options = { multi: true };
 
-    await collection.update(query, update, options);
+    await collection.updateMany(query, update);
   };
 };
