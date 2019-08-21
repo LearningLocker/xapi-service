@@ -2,7 +2,7 @@ import NoModel from 'jscommons/dist/errors/NoModel';
 import ChangedStatementRef from '../../../errors/ChangedStatementRef';
 import FacadeConfig from '../utils/memoryModels/FacadeConfig';
 import matchesClientOption from '../utils/memoryModels/matchesClientOption';
-import Signature, { Opts } from './Signature';
+import Signature from './Signature';
 
 export default (config: FacadeConfig): Signature => {
   return async ({ client, id }) => {

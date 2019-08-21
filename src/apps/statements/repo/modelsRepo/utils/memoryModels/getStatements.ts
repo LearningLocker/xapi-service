@@ -4,10 +4,10 @@ import FacadeConfig from './FacadeConfig';
 import matchesClientOption from './matchesClientOption';
 
 export interface Options<Result> {
-  config: FacadeConfig;
-  query: (model: Statement) => boolean;
-  project: (model: Statement) => Result;
-  client: ClientModel;
+  readonly config: FacadeConfig;
+  readonly query: (model: Statement) => boolean;
+  readonly project: (model: Statement) => Result;
+  readonly client: ClientModel;
 }
 
 export default async <Result>({ config, query, project, client }: Options<Result>) => {

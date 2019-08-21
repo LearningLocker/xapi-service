@@ -3,7 +3,7 @@ import Statement from '../../../models/Statement';
 import voidVerbId from '../../../utils/voidVerbId';
 import FacadeConfig from '../utils/memoryModels/FacadeConfig';
 import getStatements from '../utils/memoryModels/getStatements';
-import Signature, { Opts } from './Signature';
+import Signature from './Signature';
 
 export default (config: FacadeConfig): Signature => {
   return async ({ client, ids }) => {

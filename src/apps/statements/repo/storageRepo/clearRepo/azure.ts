@@ -7,6 +7,7 @@ import FacadeConfig from '../utils/azureStorage/FacadeConfig';
 
 export default (config: FacadeConfig) => {
   return async (): Promise<void> => {
+    // tslint:disable-next-line:no-let
     let marker;
     do {
       const listBlobsResponse: Models.ContainerListBlobFlatSegmentResponse =

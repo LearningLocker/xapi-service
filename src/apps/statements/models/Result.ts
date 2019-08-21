@@ -1,8 +1,8 @@
 import Extensions from './Extensions';
 
 interface Result {
-  duration?: string;
-  extensions?: Extensions;
+  readonly duration?: string;
+  readonly extensions?: Extensions;
 }
 
 export default Result;

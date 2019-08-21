@@ -1,5 +1,5 @@
 interface IdFormattedVerb {
-  id: string;
+  readonly id: string;
 }
 
 export default IdFormattedVerb;

@@ -3,8 +3,8 @@ import ClientModel from '../../../models/ClientModel';
 import StatementHash from '../../../models/StatementHash';
 
 export interface Opts {
-  ids: string[];
-  client: ClientModel;
+  readonly ids: string[];
+  readonly client: ClientModel;
 }
 
 type Signature = Member<Opts, StatementHash[]>;

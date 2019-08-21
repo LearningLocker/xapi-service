@@ -1,5 +1,5 @@
 import { State } from './FacadeConfig';
 
 export default interface FactoryConfig {
-  state?: Partial<State>;
+  readonly state?: Partial<State>;
 }

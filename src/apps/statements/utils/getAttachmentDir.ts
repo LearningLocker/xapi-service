@@ -1,6 +1,6 @@
 export interface GetAttachementDirOptions {
-  subFolder?: string;
-  lrs_id: string;
+  readonly subFolder?: string;
+  readonly lrs_id: string;
 }
 
 export default (opts: GetAttachementDirOptions) => (

@@ -3,10 +3,10 @@ import { STATEMENTS_COLLECTION_NAME } from '../utils/mongoModels/constants';
 import FacadeConfig from '../utils/mongoModels/FacadeConfig';
 import matchesClientOption from '../utils/mongoModels/matchesClientOption';
 import { decodeDotsInStatement } from '../utils/mongoModels/replaceDotsInStatement';
-import Signature, { Opts } from './Signature';
+import Signature from './Signature';
 
 interface Result {
-  statement: Statement;
+  readonly statement: Statement;
 }
 
 export default (config: FacadeConfig): Signature => {

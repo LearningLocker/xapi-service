@@ -4,19 +4,19 @@ import FilterAgent from '../../../models/FilterAgent';
 import StoredStatementModel from '../../../models/StoredStatementModel';
 
 export interface Opts {
-  agent?: FilterAgent;
-  activity?: string;
-  verb?: string;
-  related_agents?: boolean;
-  related_activities?: boolean;
-  registration?: string;
-  since?: string;
-  until?: string;
-  ascending: boolean;
-  limit: number;
-  skip?: number;
-  client: ClientModel;
-  cursor?: string;
+  readonly agent?: FilterAgent;
+  readonly activity?: string;
+  readonly verb?: string;
+  readonly related_agents?: boolean;
+  readonly related_activities?: boolean;
+  readonly registration?: string;
+  readonly since?: string;
+  readonly until?: string;
+  readonly ascending: boolean;
+  readonly limit: number;
+  readonly skip?: number;
+  readonly client: ClientModel;
+  readonly cursor?: string;
 }
 
 type Signature = Member<Opts, StoredStatementModel[]>;

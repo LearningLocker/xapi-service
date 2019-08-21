@@ -1,10 +1,9 @@
 import { includes } from 'lodash';
 import ChangedStatementRef from '../../../errors/ChangedStatementRef';
 import StoredStatementModel from '../../../models/StoredStatementModel';
-import UpRef from '../../../models/UpRef';
 import FacadeConfig from '../utils/memoryModels/FacadeConfig';
 import matchesClientOption from '../utils/memoryModels/matchesClientOption';
-import Signature, { Opts } from './Signature';
+import Signature from './Signature';
 
 const getTargetId = (model: StoredStatementModel) => {
   if (model.statement.object.objectType === 'StatementRef') {

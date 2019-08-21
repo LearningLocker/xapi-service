@@ -4,7 +4,7 @@ import { FULL_ACTIVITIES_COLLECTION_NAME } from '../utils/mongoModels/constants'
 import FacadeConfig from '../utils/mongoModels/FacadeConfig';
 import matchesFullActivity from '../utils/mongoModels/matchesFullActivity';
 import { replaceDotsInExtensions } from '../utils/mongoModels/replaceDotsInStatement';
-import Signature, { Opts } from './Signature';
+import Signature from './Signature';
 
 const getPatchUpdate = <T>(patch: Dictionary<T>, parentKeys: string[]) => {
   return mapKeys<T>(patch as any, (_value: T, key: number) => {

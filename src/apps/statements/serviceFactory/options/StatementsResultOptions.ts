@@ -1,10 +1,10 @@
 import ClientModel from '../../models/ClientModel';
 
 interface StatementsResultOptions {
-  format?: string;
-  attachments?: boolean;
-  langs?: string[];
-  client: ClientModel;
+  readonly format?: string;
+  readonly attachments?: boolean;
+  readonly langs?: string[];
+  readonly client: ClientModel;
 }
 
 export default StatementsResultOptions;

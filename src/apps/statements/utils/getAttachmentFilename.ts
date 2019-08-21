@@ -1,8 +1,8 @@
 import getFileExtension from './getFileExtension';
 
 export interface GetAttachementFilenameOptions {
-  hash: string;
-  contentType: string;
+  readonly hash: string;
+  readonly contentType: string;
 }
 
 export default (opts: GetAttachementFilenameOptions) => {

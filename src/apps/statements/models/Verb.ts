@@ -1,8 +1,8 @@
 import LanguageMap from './LanguageMap';
 
 interface Verb {
-  id: string;
-  display?: LanguageMap;
+  readonly id: string;
+  readonly display?: LanguageMap;
 }
 
 export default Verb;

@@ -1,6 +1,6 @@
 interface Account {
-  name: string;
-  homePage: string;
+  readonly name: string;
+  readonly homePage: string;
 }
 
 export default Account;

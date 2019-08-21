@@ -1,13 +1,12 @@
-import StatementHash from '../../../models/StatementHash';
 import { STATEMENTS_COLLECTION_NAME } from '../utils/mongoModels/constants';
 import FacadeConfig from '../utils/mongoModels/FacadeConfig';
 import matchesClientOption from '../utils/mongoModels/matchesClientOption';
-import Signature, { Opts } from './Signature';
+import Signature from './Signature';
 
 interface Result {
-  hash: string;
-  statement: {
-    id: string;
+  readonly hash: string;
+  readonly statement: {
+    readonly id: string;
   };
 }
 

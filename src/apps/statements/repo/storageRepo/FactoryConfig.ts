@@ -1,4 +1,3 @@
-import S3 from 'aws-sdk/clients/s3';
 import AzureFactoryConfig from './utils/azureStorage/FactoryConfig';
 import GoogleFactoryConfig from './utils/googleStorage/FactoryConfig';
 import LocalFactoryConfig from './utils/localStorage/FactoryConfig';

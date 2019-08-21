@@ -6,12 +6,12 @@ import IdFormattedVerb from './IdFormattedVerb';
 import Result from './Result';
 
 interface IdFormattedStatementBase {
-  actor: IdFormattedActor;
-  object: IdFormattedStatementObject;
-  verb: IdFormattedVerb;
-  context?: IdFormattedContext;
-  result?: Result;
-  attachments?: Attachment[];
+  readonly actor: IdFormattedActor;
+  readonly object: IdFormattedStatementObject;
+  readonly verb: IdFormattedVerb;
+  readonly context?: IdFormattedContext;
+  readonly result?: Result;
+  readonly attachments?: Attachment[];
 }
 
 export default IdFormattedStatementBase;

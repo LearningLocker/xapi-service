@@ -1,5 +1,4 @@
 import assert from 'assert';
-import setupService from 'jscommons/dist/tests/utils/setupService';
 import config from '../../../../config';
 import logger from '../../../../logger';
 import tracker from '../../../../tracker';

@@ -16,7 +16,7 @@ import Statement from '../../../models/Statement';
 const decodeToken = (token: string, path: string[]): any => {
   try {
     return jwt.decode(token, { json: true, complete: true });
-  } catch (err) {
+  } catch {
     throw new JsonSyntaxError(path);
   }
 };
@@ -79,7 +79,7 @@ export default async (
 
       try {
         jwt.verify(token, publicKey);
-      } catch (err) {
+      } catch {
         throw new InvalidJws(originalStatement.id);
       }
     }

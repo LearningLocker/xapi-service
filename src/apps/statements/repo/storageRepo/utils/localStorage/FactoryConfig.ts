@@ -1,3 +1,3 @@
 export default interface Config {
-  storageDir?: string;
+  readonly storageDir?: string;
 }

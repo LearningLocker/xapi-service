@@ -1,7 +1,7 @@
 import { trimStart } from 'lodash';
 
 interface Headers {
-  [header: string]: string;
+  readonly [header: string]: string;
 }
 
 const trimmedChars = `\r\n\s`;

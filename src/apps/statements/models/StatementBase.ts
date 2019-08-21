@@ -6,12 +6,12 @@ import StatementObject from './StatementObject';
 import Verb from './Verb';
 
 interface StatementBase {
-  actor: Actor;
-  object: StatementObject;
-  verb: Verb;
-  context?: Context;
-  result?: Result;
-  attachments?: Attachment[];
+  readonly actor: Actor;
+  readonly object: StatementObject;
+  readonly verb: Verb;
+  readonly context?: Context;
+  readonly result?: Result;
+  readonly attachments?: Attachment[];
 }
 
 export default StatementBase;

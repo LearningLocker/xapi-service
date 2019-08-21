@@ -1,10 +1,10 @@
 import Account from './Account';
 
 interface FilterAgent {
-  mbox?: string;
-  openid?: string;
-  mbox_sha1sum?: string;
-  account?: Account;
+  readonly mbox?: string;
+  readonly openid?: string;
+  readonly mbox_sha1sum?: string;
+  readonly account?: Account;
 }
 
 export default FilterAgent;

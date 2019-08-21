@@ -1,7 +1,5 @@
 import { get, has, union } from 'lodash';
-import { sha1 } from 'object-hash';
 import Actor from '../../../models/Actor';
-import Agent from '../../../models/Agent';
 import Group from '../../../models/Group';
 import Statement from '../../../models/Statement';
 import StatementBase from '../../../models/StatementBase';

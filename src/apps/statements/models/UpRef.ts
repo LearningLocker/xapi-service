@@ -1,6 +1,6 @@
 interface UpRef {
-  sourceId: string;
-  targetId: string;
+  readonly sourceId: string;
+  readonly targetId: string;
 }
 
 export default UpRef;

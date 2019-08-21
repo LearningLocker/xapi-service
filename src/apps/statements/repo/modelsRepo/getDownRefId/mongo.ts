@@ -2,12 +2,12 @@ import NoModel from 'jscommons/dist/errors/NoModel';
 import { STATEMENTS_COLLECTION_NAME } from '../utils/mongoModels//constants';
 import FacadeConfig from '../utils/mongoModels/FacadeConfig';
 import matchesClientOption from '../utils/mongoModels/matchesClientOption';
-import Signature, { Opts } from './Signature';
+import Signature from './Signature';
 
 interface Result {
-  statement: {
-    object: {
-      id: string;
+  readonly statement: {
+    readonly object: {
+      readonly id: string;
     };
   };
 }
@@ -27,7 +27,7 @@ export default (config: FacadeConfig): Signature => {
         'statement.object.id': 1,
       },
     };
-    const result = await collection.findOne(query, queryOptions);
+    const result = await collection.findOne<Result>(query, queryOptions);
 
     if (result === null) {
       throw new NoModel('Statement');

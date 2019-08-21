@@ -1,9 +1,9 @@
 import getAttachmentFilename from './getAttachmentFilename';
 
 export interface GetAttachementPathOptions {
-  dir: string;
-  hash: string;
-  contentType: string;
+  readonly dir: string;
+  readonly hash: string;
+  readonly contentType: string;
 }
 
 export default (opts: GetAttachementPathOptions) => {

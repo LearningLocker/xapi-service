@@ -1,4 +1,4 @@
-import matchesModel, { ModelMatcher } from './matchesModel';
+import matchesModel from './matchesModel';
 
 const matcher = (verb: string): Object => {
   return {

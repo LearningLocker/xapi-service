@@ -1,8 +1,8 @@
 interface AttachmentModel {
-  stream: NodeJS.ReadableStream;
-  hash: string;
-  contentLength?: number;
-  contentType: string;
+  readonly stream: NodeJS.ReadableStream;
+  readonly hash: string;
+  readonly contentLength?: number;
+  readonly contentType: string;
 }
 
 export default AttachmentModel;

@@ -4,12 +4,12 @@ import Service from '../serviceFactory/Service';
 import Translator from '../translatorFactory/Translator';
 
 interface Config extends CommonExpressConfig {
-  llClientInfoEndpoint: string;
-  service: Service;
-  translator: Translator;
-  tracker: Promise<Tracker>;
-  allowUndefinedMethod: boolean;
-  allowFormBody: boolean;
+  readonly llClientInfoEndpoint: string;
+  readonly service: Service;
+  readonly translator: Translator;
+  readonly tracker: Promise<Tracker>;
+  readonly allowUndefinedMethod: boolean;
+  readonly allowFormBody: boolean;
 }
 
 export default Config;

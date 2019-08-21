@@ -2,14 +2,14 @@ import Actor from '../../../models/Actor';
 import IdFormattedActor from '../../../models/IdFormattedActor';
 
 export interface ActorWithId {
-  account?: any;
-  mbox?: any;
-  mbox_sha1sum?: any;
-  openid?: any;
+  readonly account?: any;
+  readonly mbox?: any;
+  readonly mbox_sha1sum?: any;
+  readonly openid?: any;
 }
 
 export interface ActorWithMembers {
-  member?: any[];
+  readonly member?: any[];
 }
 
 const getActorWithId = (actor: Actor): ActorWithId => {

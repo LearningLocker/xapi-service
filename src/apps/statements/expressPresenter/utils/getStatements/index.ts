@@ -7,12 +7,12 @@ import getMultipleStatements from './getMultipleStatements';
 import getSingleStatement from './getSingleStatement';
 
 export interface Options {
-  config: Config;
-  res: Response;
-  client: ClientModel;
-  queryParams: any;
-  urlPath: string;
-  acceptedLangs: string;
+  readonly config: Config;
+  readonly res: Response;
+  readonly client: ClientModel;
+  readonly queryParams: any;
+  readonly urlPath: string;
+  readonly acceptedLangs: string;
 }
 
 const getAcceptedLanguages = (acceptedLangs: string) => {

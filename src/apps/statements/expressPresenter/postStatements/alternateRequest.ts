@@ -16,10 +16,10 @@ import validateVersionHeader from '../utils/validateHeaderVersion';
 import storeStatements from './storeStatements';
 
 export interface Options {
-  config: Config;
-  method?: string;
-  req: Request;
-  res: Response;
+  readonly config: Config;
+  readonly method?: string;
+  readonly req: Request;
+  readonly res: Response;
 }
 
 const checkContentType = (bodyParams: any) => {

@@ -4,6 +4,7 @@ import { Readable as ReadableStream } from 'stream';
 const trimmedChars = `\r\n\s`;
 
 export default async (stream: ReadableStream): Promise<string> => {
+  // tslint:disable-next-line:no-let
   let data = '';
 
   await new Promise((resolve, reject) => {

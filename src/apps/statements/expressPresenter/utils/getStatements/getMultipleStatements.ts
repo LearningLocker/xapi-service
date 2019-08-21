@@ -9,12 +9,12 @@ import getStatementsResultOptions from './getStatementsResultOptions';
 import sendMultipartResult from './sendMultipartResult';
 
 export interface Options {
-  config: Config;
-  res: Response;
-  queryParams: any;
-  client: ClientModel;
-  urlPath: string;
-  langs: string[];
+  readonly config: Config;
+  readonly res: Response;
+  readonly queryParams: any;
+  readonly client: ClientModel;
+  readonly urlPath: string;
+  readonly langs: string[];
 }
 
 export default async (opts: Options) => {

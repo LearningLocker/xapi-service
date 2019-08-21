@@ -1,9 +1,9 @@
 import Definition from './Definition';
 
 interface Activity {
-  objectType: 'Activity';
-  id: string;
-  definition?: Definition;
+  readonly objectType: 'Activity';
+  readonly id: string;
+  readonly definition?: Definition;
 }
 
 export default Activity;

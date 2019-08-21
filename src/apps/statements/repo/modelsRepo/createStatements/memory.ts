@@ -1,7 +1,6 @@
 import { v1 as uuid } from 'uuid';
-import UnstoredStatementModel from '../../../models/UnstoredStatementModel';
 import FacadeConfig from '../utils/memoryModels/FacadeConfig';
-import Signature, { Opts } from './Signature';
+import Signature from './Signature';
 
 export default (config: FacadeConfig): Signature => {
   return async ({ models }) => {

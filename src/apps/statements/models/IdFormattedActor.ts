@@ -1,12 +1,12 @@
 import Account from './Account';
 
 interface IdFormattedActor {
-  objectType?: 'Agent'|'Group';
-  mbox?: string;
-  openid?: string;
-  mbox_sha1sum?: string;
-  account?: Account;
-  member?: IdFormattedActor[];
+  readonly objectType?: 'Agent'|'Group';
+  readonly mbox?: string;
+  readonly openid?: string;
+  readonly mbox_sha1sum?: string;
+  readonly account?: Account;
+  readonly member?: IdFormattedActor[];
 }
 
 export default IdFormattedActor;

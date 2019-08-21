@@ -1,6 +1,6 @@
 import FacadeConfig from '../utils/memoryModels/FacadeConfig';
 import matchesFullActivity from '../utils/memoryModels/matchesFullActivity';
-import Signature, { Opts, Result } from './Signature';
+import Signature from './Signature';
 
 export default (config: FacadeConfig): Signature => {
   return async ({ activityId, client }) => {

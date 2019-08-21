@@ -1,5 +1,5 @@
 export type Modifier = (data: any) => any;
-export interface Schema { [key: string]: Modifier; }
+export interface Schema { readonly [key: string]: Modifier; }
 
 export const defaultValue = (value: () => any): Modifier => {
   return (data) => {

@@ -7,9 +7,7 @@ import Group from '../../../models/Group';
 import Statement from '../../../models/Statement';
 import SubStatement from '../../../models/SubStatement';
 import {
-  getActorIdents,
   getAgentsFromStatement,
-  getGroupIdents,
   getRelatedAgentsFromStatement,
 } from '../../../service/storeStatements/queriables/getAgentsFromStatement';
 

@@ -1,7 +1,7 @@
 import { ObjectID } from 'mongodb';
 import { LRS_COLLECTION_NAME } from '../utils/mongoModels/constants';
 import FacadeConfig from '../utils/mongoModels/FacadeConfig';
-import Signature, { Opts } from './Signature';
+import Signature from './Signature';
 
 export default (config: FacadeConfig): Signature => {
   return async ({ client, count }) => {

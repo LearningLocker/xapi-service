@@ -4,11 +4,11 @@ import IdFormattedActivity from './IdFormattedActivity';
 import IdFormattedActor from './IdFormattedActor';
 
 interface Context {
-  contextActivities?: FormattedContextActivities<IdFormattedActivity>;
-  team?: IdFormattedActor;
-  instructor?: IdFormattedActor;
-  registration?: string;
-  extensions?: Extensions;
+  readonly contextActivities?: FormattedContextActivities<IdFormattedActivity>;
+  readonly team?: IdFormattedActor;
+  readonly instructor?: IdFormattedActor;
+  readonly registration?: string;
+  readonly extensions?: Extensions;
 }
 
 export default Context;

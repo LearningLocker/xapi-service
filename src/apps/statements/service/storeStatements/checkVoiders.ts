@@ -7,9 +7,9 @@ import voidVerbId from '../../utils/voidVerbId';
 import Config from '../Config';
 
 interface VoidResult {
-  voiderIds: string[];
-  voidedObjectIds: string[];
-  voidingModels: UnstoredStatementModel[];
+  readonly voiderIds: string[];
+  readonly voidedObjectIds: string[];
+  readonly voidingModels: UnstoredStatementModel[];
 }
 
 const isVoiding = (model: UnstoredStatementModel): boolean => {

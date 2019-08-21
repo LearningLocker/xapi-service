@@ -1,7 +1,7 @@
 import UnstoredStatementModel from './UnstoredStatementModel';
 
 interface StoredStatementModel extends UnstoredStatementModel {
-  _id: string;
+  readonly _id: string;
 }
 
 export default StoredStatementModel;

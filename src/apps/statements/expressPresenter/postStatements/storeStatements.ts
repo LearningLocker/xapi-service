@@ -5,11 +5,11 @@ import { xapiHeaderVersion } from '../../utils/constants';
 import Config from '../Config';
 
 export interface Options {
-  config: Config;
-  client: ClientModel;
-  body: any;
-  attachments: any[];
-  res: Response;
+  readonly config: Config;
+  readonly client: ClientModel;
+  readonly body: any;
+  readonly attachments: any[];
+  readonly res: Response;
 }
 
 export default async ({ config, client, body, attachments, res }: Options) => {

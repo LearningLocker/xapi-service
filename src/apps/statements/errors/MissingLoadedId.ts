@@ -1,3 +1,4 @@
+// tslint:disable:no-class
 import BaseError from 'jscommons/dist/errors/BaseError';
 
 /* istanbul ignore next */

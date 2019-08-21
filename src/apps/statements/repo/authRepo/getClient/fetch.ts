@@ -3,7 +3,7 @@ import fetch from 'node-fetch';
 import Actor from '../../../models/Actor';
 import ClientModel from '../../../models/ClientModel';
 import FacadeConfig from '../utils/fetchAuth/FacadeConfig';
-import Signature, { Opts, Result } from './Signature';
+import Signature from './Signature';
 
 const OK_HTTP_CODE = 200;
 const NO_MODEL_HTTP_CODE = 404;

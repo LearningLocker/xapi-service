@@ -2,9 +2,9 @@ import ClientModel from '../../models/ClientModel';
 import StatementsResultOptions from './StatementsResultOptions';
 
 interface GetStatementOptions extends StatementsResultOptions {
-  id: string;
-  voided: boolean;
-  client: ClientModel;
+  readonly id: string;
+  readonly voided: boolean;
+  readonly client: ClientModel;
 }
 
 export default GetStatementOptions;

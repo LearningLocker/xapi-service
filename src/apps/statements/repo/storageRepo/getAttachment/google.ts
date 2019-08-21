@@ -1,8 +1,7 @@
-import * as fs from 'fs-extra';
 import getAttachmentDir from '../../../utils/getAttachmentDir';
 import getAttachmentPath from '../../../utils/getAttachmentPath';
 import FacadeConfig from '../utils/googleStorage/FacadeConfig';
-import Signature, { Opts, Result } from './Signature';
+import Signature from './Signature';
 
 export default (config: FacadeConfig): Signature => {
   return async ({ contentType, hash, lrs_id }) => {

@@ -3,7 +3,7 @@ import { FULL_ACTIVITIES_COLLECTION_NAME } from '../utils/mongoModels/constants'
 import FacadeConfig from '../utils/mongoModels/FacadeConfig';
 import matchesFullActivity from '../utils/mongoModels/matchesFullActivity';
 import { replaceDotsInExtensions } from '../utils/mongoModels/replaceDotsInStatement';
-import Signature, { Opts, Result } from './Signature';
+import Signature from './Signature';
 
 export default (config: FacadeConfig): Signature => {
   return async ({ activityId, client }) => {

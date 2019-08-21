@@ -12,7 +12,7 @@ import {
   TEST_VALID_SCOPE_TOKEN,
 } from '../../../utils/testValues';
 import FacadeConfig from '../utils/fakeAuth/FacadeConfig';
-import Signature, { Opts, Result } from './Signature';
+import Signature from './Signature';
 
 export default (_config: FacadeConfig): Signature => {
   return async ({ authToken }) => {

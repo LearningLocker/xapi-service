@@ -1,6 +1,6 @@
 interface Part {
-  stream: NodeJS.ReadableStream;
-  headers: object;
+  readonly stream: NodeJS.ReadableStream;
+  readonly headers: object;
 }
 
 export default Part;

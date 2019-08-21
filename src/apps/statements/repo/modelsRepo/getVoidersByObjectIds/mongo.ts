@@ -1,9 +1,9 @@
 import FacadeConfig from '../utils/mongoModels/FacadeConfig';
 import getStatements from '../utils/mongoModels/getStatements';
 import voidQuery from '../utils/mongoModels/voidQuery';
-import Signature, { Opts } from './Signature';
+import Signature from './Signature';
 
-interface Result { statement: { object: { id: string } }; }
+interface Result { readonly statement: { readonly object: { readonly id: string } }; }
 
 export default (config: FacadeConfig): Signature => {
   return async ({ client, ids }) => {

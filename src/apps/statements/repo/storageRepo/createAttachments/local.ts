@@ -3,7 +3,7 @@ import streamToString from 'stream-to-string';
 import getAttachmentDir from '../../../utils/getAttachmentDir';
 import getAttachmentPath from '../../../utils/getAttachmentPath';
 import FacadeConfig from '../utils/localStorage/FacadeConfig';
-import Signature, { Opts } from './Signature';
+import Signature from './Signature';
 
 export default (config: FacadeConfig): Signature => {
   return async ({ lrs_id, models }) => {

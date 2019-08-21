@@ -35,7 +35,7 @@ const getTestParts = async (stream: ReadableStream, boundary: string) => {
   return testParts;
 };
 
-const headersToString = (headers: { [key: string]: string }): string => {
+const headersToString = (headers: { readonly [key: string]: string }): string => {
   const headerStrings = map(headers, (headerValue: string, headerKey: string) => {
     return `${headerKey}:${headerValue}`;
   });

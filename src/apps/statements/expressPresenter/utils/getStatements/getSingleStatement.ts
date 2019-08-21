@@ -7,13 +7,13 @@ import getStatementsResultOptions from './getStatementsResultOptions';
 import sendMultipartResult from './sendMultipartResult';
 
 export interface Options {
-  config: Config;
-  res: Response;
-  queryParams: any;
-  id: string;
-  voided: boolean;
-  client: ClientModel;
-  langs: string[];
+  readonly config: Config;
+  readonly res: Response;
+  readonly queryParams: any;
+  readonly id: string;
+  readonly voided: boolean;
+  readonly client: ClientModel;
+  readonly langs: string[];
 }
 
 export default async (opts: Options) => {

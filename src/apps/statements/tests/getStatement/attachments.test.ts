@@ -1,4 +1,3 @@
-import Service from '../../serviceFactory/Service';
 import assertStatementsResult from '../utils/assertStatementsResult';
 import attachmentsTest, { StatementCreator } from '../utils/attachmentsTest';
 import createAttachmentStatement from '../utils/createAttachmentStatement';

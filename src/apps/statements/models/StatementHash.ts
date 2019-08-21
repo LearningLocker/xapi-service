@@ -1,6 +1,6 @@
 interface StatementHash {
-  statementId: string;
-  hash: string;
+  readonly statementId: string;
+  readonly hash: string;
 }
 
 export default StatementHash;

@@ -3,9 +3,9 @@ import ClientModel from '../../../models/ClientModel';
 import StoredStatementModel from '../../../models/StoredStatementModel';
 
 export interface Opts {
-  id: string;
-  voided?: boolean;
-  client: ClientModel;
+  readonly id: string;
+  readonly voided?: boolean;
+  readonly client: ClientModel;
 }
 
 type Signature = Member<Opts, StoredStatementModel>;

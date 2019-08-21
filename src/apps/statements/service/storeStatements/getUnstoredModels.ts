@@ -6,8 +6,14 @@ import StatementHash from '../../models/StatementHash';
 import UnstoredStatementModel from '../../models/UnstoredStatementModel';
 import Config from '../Config';
 
-interface ModelsMap { [statementId: string]: UnstoredStatementModel; }
-interface ConflictRes { modelsMap: ModelsMap; generatedIdModels: UnstoredStatementModel[]; }
+interface ModelsMap {
+  readonly [statementId: string]: UnstoredStatementModel;
+}
+
+interface ConflictRes {
+  readonly modelsMap: ModelsMap;
+  readonly generatedIdModels: UnstoredStatementModel[];
+}
 
 const modelsConflicts = (models: UnstoredStatementModel[]): ConflictRes => {
   return models.reduce<ConflictRes>(({ modelsMap, generatedIdModels }, model) => {

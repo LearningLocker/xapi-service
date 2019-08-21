@@ -6,9 +6,9 @@ import getMultipartStatements from '../utils/getMultipartStatements';
 import storeStatements from './storeStatements';
 
 export interface Options {
-  config: Config;
-  req: Request;
-  res: Response;
+  readonly config: Config;
+  readonly req: Request;
+  readonly res: Response;
 }
 
 export default async ({ config, req, res }: Options) => {

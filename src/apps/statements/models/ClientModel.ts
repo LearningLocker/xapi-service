@@ -1,13 +1,13 @@
 import Actor from './Actor';
 
 interface ClientModel {
-  _id: string;
-  title: string;
-  organisation: string;
-  lrs_id: string;
-  authority: Actor;
-  isTrusted: boolean;
-  scopes: string[];
+  readonly _id: string;
+  readonly title: string;
+  readonly organisation: string;
+  readonly lrs_id: string;
+  readonly authority: Actor;
+  readonly isTrusted: boolean;
+  readonly scopes: string[];
 }
 
 export default ClientModel;

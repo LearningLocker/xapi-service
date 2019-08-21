@@ -5,10 +5,10 @@ import StatementsResultOptions from '../../../serviceFactory/options/StatementsR
 import pickDefined from '../pickDefined';
 
 export interface MoreLinkOptions {
-  results: StatementsResult;
-  statementsOpts: Partial<GetStatementsOptions>;
-  resultOpts: StatementsResultOptions;
-  urlPath: string;
+  readonly results: StatementsResult;
+  readonly statementsOpts: Partial<GetStatementsOptions>;
+  readonly resultOpts: StatementsResultOptions;
+  readonly urlPath: string;
 }
 
 const encodeOpt = (opt: any) => {

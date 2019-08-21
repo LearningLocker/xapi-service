@@ -1,5 +1,5 @@
 import FacadeConfig from '../utils/redisEvents/FacadeConfig';
-import Signature, { Opts } from './Signature';
+import Signature from './Signature';
 
 const EVENT_NAME = 'statement.new';
 const CHANNEL_NAME = 'statement.notify';

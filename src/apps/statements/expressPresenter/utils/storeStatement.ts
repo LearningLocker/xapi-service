@@ -7,12 +7,12 @@ import { xapiHeaderVersion } from '../../utils/constants';
 import Config from '../Config';
 
 export interface Options {
-  config: Config;
-  body: any;
-  attachments: AttachmentModel[];
-  client: ClientModel;
-  queryParams: any;
-  res: Response;
+  readonly config: Config;
+  readonly body: any;
+  readonly attachments: AttachmentModel[];
+  readonly client: ClientModel;
+  readonly queryParams: any;
+  readonly res: Response;
 }
 
 export default async ({ config, body, attachments, client, queryParams, res }: Options) => {

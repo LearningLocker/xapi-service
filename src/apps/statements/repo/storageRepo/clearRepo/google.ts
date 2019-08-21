@@ -1,4 +1,3 @@
-import S3 from 'aws-sdk/clients/s3';
 import FacadeConfig from '../utils/googleStorage/FacadeConfig';
 
 export default (config: FacadeConfig) => {

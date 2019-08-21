@@ -1,7 +1,7 @@
 import { STATEMENTS_COLLECTION_NAME } from '../utils/mongoModels/constants';
 import FacadeConfig from '../utils/mongoModels/FacadeConfig';
 import matchesClientOption from '../utils/mongoModels/matchesClientOption';
-import Signature, { Opts } from './Signature';
+import Signature from './Signature';
 
 export default (config: FacadeConfig): Signature => {
   return async ({
