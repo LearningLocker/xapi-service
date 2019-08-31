@@ -105,9 +105,9 @@
     through2 "^2.0.0"
     xdg-basedir "^3.0.0"
 
-"@ht2-labs/semantic-release@1.1.89":
-  version "1.1.89"
-  resolved "https://registry.yarnpkg.com/@ht2-labs/semantic-release/-/semantic-release-1.1.89.tgz#60f1fef7a1d8506f751e2f233a5ff03a084967c9"
+"@ht2-labs/semantic-release@1.1.90":
+  version "1.1.90"
+  resolved "https://registry.yarnpkg.com/@ht2-labs/semantic-release/-/semantic-release-1.1.90.tgz#f9fb134957ce81f10ce6ab56a453cb234f9e25c9"
   dependencies:
     "@semantic-release/condition-travis" "7.1.4"
     "@semantic-release/github" "5.4.3"
@@ -117,7 +117,7 @@
     semantic-release "15.13.24"
     semantic-release-docker "2.2.0"
     semver "5.7.1"
-    simple-git "1.125.0"
+    simple-git "1.126.0"
 
 "@ht2-labs/typescript-project@2.0.41":
   version "2.0.41"
@@ -6638,12 +6638,6 @@ signale@^1.2.1:
     chalk "^2.3.2"
     figures "^2.0.0"
     pkg-conf "^2.1.0"
-
-simple-git@1.125.0:
-  version "1.125.0"
-  resolved "https://registry.yarnpkg.com/simple-git/-/simple-git-1.125.0.tgz#a5977c554d98b1c54f896ec3e5578055b0d84185"
-  dependencies:
-    debug "^4.0.1"
 
 simple-git@1.126.0:
   version "1.126.0"
