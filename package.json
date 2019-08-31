@@ -85,7 +85,7 @@
     "nyc": "11.9.0",
     "rimraf": "2.7.1",
     "shelljs": "0.8.3",
-    "simple-git": "1.125.0",
+    "simple-git": "1.126.0",
     "tslint": "5.19.0",
     "tslint-consistent-codestyle": "1.15.1",
     "tslint-immutable": "4.9.1",
