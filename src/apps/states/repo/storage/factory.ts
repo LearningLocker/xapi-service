@@ -5,12 +5,12 @@ import {
   StorageURL,
 } from '@azure/storage-blob';
 import Storage from '@google-cloud/storage';
-import azureStorageRepo from '@learninglocker/xapi-state/dist/azureStorageRepo';
-import googleStorageRepo from '@learninglocker/xapi-state/dist/googleStorageRepo';
-import localStorageRepo from '@learninglocker/xapi-state/dist/localStorageRepo';
-import Repo from '@learninglocker/xapi-state/dist/repoFactory/StorageRepo';
-import s3StorageRepo from '@learninglocker/xapi-state/dist/s3StorageRepo';
 import { S3 } from 'aws-sdk';
+import azureStorageRepo from '../../azureStorageRepo';
+import googleStorageRepo from '../../googleStorageRepo';
+import localStorageRepo from '../../localStorageRepo';
+import Repo from '../../repoFactory/StorageRepo';
+import s3StorageRepo from '../../s3StorageRepo';
 import FactoryConfig from './FactoryConfig';
 
 export default (factoryConfig: FactoryConfig): Repo => {

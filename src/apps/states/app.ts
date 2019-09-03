@@ -1,10 +1,10 @@
 /* tslint:disable:max-file-line-count */
-import presenterFactory from '@learninglocker/xapi-state/dist/expressPresenter';
-import serviceFactory from '@learninglocker/xapi-state/dist/service';
-import enTranslator from '@learninglocker/xapi-state/dist/translatorFactory/en';
 import { Router } from 'express';
 import AppConfig from './AppConfig';
+import presenterFactory from './expressPresenter';
 import repoFactory from './repo/factory';
+import serviceFactory from './service';
+import enTranslator from './translatorFactory/en';
 
 export default (appConfig: AppConfig): Router => {
   const translator = enTranslator;
