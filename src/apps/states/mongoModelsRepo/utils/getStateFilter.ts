@@ -1,4 +1,3 @@
-import { ObjectID } from 'mongodb'; /* tslint:disable-line:no-unused */
 import Agent from '../../models/Agent';
 import ClientModel from '../../models/ClientModel';
 import getStatesFilter from './getStatesFilter';
