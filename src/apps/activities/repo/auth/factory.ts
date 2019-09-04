@@ -1,6 +1,6 @@
-import Repo from '@learninglocker/xapi-activities/dist/repoFactory/AuthRepo';
-import testAuthRepo from '@learninglocker/xapi-activities/dist/testAuthRepo';
-import mongoAuthRepo from '@learninglocker/xapi-agents/dist/mongoAuthRepo';
+import mongoAuthRepo from '../../mongoAuthRepo';
+import Repo from '../../repoFactory/AuthRepo';
+import testAuthRepo from '../../testAuthRepo';
 import FactoryConfig from './FactoryConfig';
 
 export default (factoryConfig: FactoryConfig): Repo => {

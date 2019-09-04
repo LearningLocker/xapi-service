@@ -1,5 +1,5 @@
-import ActivityProfile from '@learninglocker/xapi-activities/dist/models/Profile';
 import { Db } from 'mongodb';
+import ActivityProfile from '../../models/Profile';
 
 export default interface FactoryConfig {
   readonly factoryName: string;
