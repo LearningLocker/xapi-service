@@ -1,4 +1,4 @@
-import Repo from '@learninglocker/xapi-activities/dist/repoFactory/Repo';
+import Repo from '../repoFactory/Repo';
 import authFactory from './auth/factory';
 import FactoryConfig from './FactoryConfig';
 import modelsFactory from './models/factory';
