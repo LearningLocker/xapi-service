@@ -18,8 +18,8 @@
     xml2js "^0.4.19"
 
 "@azure/storage-blob@^10.3.0":
-  version "10.4.0"
-  resolved "https://registry.yarnpkg.com/@azure/storage-blob/-/storage-blob-10.4.0.tgz#b4997de3bf53d9a55d233e0e4f0b6e10347e6124"
+  version "10.4.1"
+  resolved "https://registry.yarnpkg.com/@azure/storage-blob/-/storage-blob-10.4.1.tgz#3979aa6fbc938d4f6d3b60e54f63d85bd7c077b2"
   dependencies:
     "@azure/ms-rest-js" "^2.0.0"
     events "^3.0.0"
@@ -127,64 +127,6 @@
     tslint-consistent-codestyle "1.15.1"
     tslint-immutable "4.9.1"
     typescript "3.6.2"
-
-"@learninglocker/xapi-activities@4.4.4":
-  version "4.4.4"
-  resolved "https://registry.yarnpkg.com/@learninglocker/xapi-activities/-/xapi-activities-4.4.4.tgz#541ad771d4e945fe7181f45d7fc41fcbafecf19b"
-  dependencies:
-    "@azure/storage-blob" "^10.3.0"
-    "@google-cloud/storage" "^1.5.2"
-    "@learninglocker/xapi-validation" "^2.1.10"
-    atob "^2.0.3"
-    aws-sdk "^2.0.1"
-    bluebird "^3.5.0"
-    boolean "^0.2.0"
-    btoa "^1.1.2"
-    dotenv "^5.0.0"
-    express "^4.14.1"
-    fs-extra "^5.0.0"
-    http-status-codes "^1.3.0"
-    jscommons "^2.3.0"
-    lodash "^4.17.4"
-    mime-types "^2.1.17"
-    mongodb "^3.0.1"
-    node-fetch "^2.0.0"
-    query-string "^5.0.1"
-    rulr "^4.0.1"
-    sha1 "^1.1.1"
-    source-map-support "^0.5.0"
-    stream-to-string "^1.1.0"
-    string-to-stream "^1.1.0"
-    uuid "^3.0.1"
-
-"@learninglocker/xapi-agents@4.4.3":
-  version "4.4.3"
-  resolved "https://registry.yarnpkg.com/@learninglocker/xapi-agents/-/xapi-agents-4.4.3.tgz#f03e2b0abe3b6011dd4ea6876a149846d8ac616d"
-  dependencies:
-    "@azure/storage-blob" "^10.3.0"
-    "@google-cloud/storage" "^1.5.2"
-    "@learninglocker/xapi-validation" "^2.1.10"
-    atob "^2.0.3"
-    aws-sdk "^2.205.0"
-    bluebird "^3.5.0"
-    boolean "^0.2.0"
-    btoa "^1.1.2"
-    dotenv "^5.0.0"
-    express "^4.14.1"
-    fs-extra "^5.0.0"
-    http-status-codes "^1.3.0"
-    jscommons "^2.3.0"
-    lodash "^4.17.4"
-    mime-types "^2.1.17"
-    mongodb "^3.0.1"
-    node-fetch "^2.0.0"
-    query-string "^5.0.1"
-    rulr "^4.0.1"
-    sha1 "^1.1.1"
-    source-map-support "^0.5.0"
-    stream-to-string "^1.1.0"
-    string-to-stream "^1.1.0"
-    uuid "^3.0.1"
 
 "@learninglocker/xapi-validation@^2.1.10":
   version "2.1.10"
@@ -492,7 +434,7 @@
     "@types/bson" "*"
     "@types/node" "*"
 
-"@types/node-fetch@^2.3.7":
+"@types/node-fetch@2.5.0", "@types/node-fetch@^2.3.7":
   version "2.5.0"
   resolved "https://registry.yarnpkg.com/@types/node-fetch/-/node-fetch-2.5.0.tgz#1c55616a4591bdd15a389fbd0da4a55b9502add5"
   dependencies:
@@ -835,7 +777,21 @@ atob@^2.0.3, atob@^2.1.1:
   version "2.1.2"
   resolved "https://registry.yarnpkg.com/atob/-/atob-2.1.2.tgz#6d9517eb9e030d2436666651e86bd9f6f13533c9"
 
-aws-sdk@^2.0.1, aws-sdk@^2.205.0, aws-sdk@^2.249.1, aws-sdk@^2.58.0:
+aws-sdk@^2.205.0:
+  version "2.522.0"
+  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.522.0.tgz#f3419800fad29c03c9344d433c0782c4ad7cf0bb"
+  dependencies:
+    buffer "4.9.1"
+    events "1.1.1"
+    ieee754 "1.1.8"
+    jmespath "0.15.0"
+    querystring "0.2.0"
+    sax "1.2.1"
+    url "0.10.3"
+    uuid "3.3.2"
+    xml2js "0.4.19"
+
+aws-sdk@^2.249.1, aws-sdk@^2.58.0:
   version "2.517.0"
   resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.517.0.tgz#415e6732d46c478a4f1867920d25af57651063b1"
   dependencies:
@@ -1383,7 +1339,11 @@ blamer@^0.1.9:
     bluebird "~2.3.x"
     xml2js "~0.4.x"
 
-bluebird@^3.0.5, bluebird@^3.5.0, bluebird@^3.5.1, bluebird@^3.5.3, bluebird@^3.5.5:
+bluebird@3.5.0:
+  version "3.5.0"
+  resolved "https://registry.yarnpkg.com/bluebird/-/bluebird-3.5.0.tgz#791420d7f551eea2897453a8a77653f96606d67c"
+
+bluebird@^3.0.5, bluebird@^3.5.1, bluebird@^3.5.3, bluebird@^3.5.5:
   version "3.5.5"
   resolved "https://registry.yarnpkg.com/bluebird/-/bluebird-3.5.5.tgz#a8d0afd73251effbbd5fe384a77d73003c17a71f"
 
@@ -2690,9 +2650,9 @@ figures@^3.0.0:
   dependencies:
     escape-string-regexp "^1.0.5"
 
-file-stream-rotator@^0.4.0:
-  version "0.4.1"
-  resolved "https://registry.yarnpkg.com/file-stream-rotator/-/file-stream-rotator-0.4.1.tgz#09f67b86d6ea589d20b7852c51c59de55d916d6d"
+file-stream-rotator@^0.5.0:
+  version "0.5.0"
+  resolved "https://registry.yarnpkg.com/file-stream-rotator/-/file-stream-rotator-0.5.0.tgz#a50959f8c9cb22b8f634ca75d907ba355c1bcb46"
   dependencies:
     moment "^2.11.2"
 
@@ -4048,9 +4008,9 @@ jsbn@~0.1.0:
   version "0.1.1"
   resolved "https://registry.yarnpkg.com/jsbn/-/jsbn-0.1.1.tgz#a5e654c2e5a2deb5f201d96cefbca80c0ef2f513"
 
-jscommons@^2.3.0, jscommons@^2.3.3:
-  version "2.4.12"
-  resolved "https://registry.yarnpkg.com/jscommons/-/jscommons-2.4.12.tgz#8a0e3e5eab6388f0f5c93621721ad54c23f80280"
+jscommons@^2.3.0:
+  version "2.4.13"
+  resolved "https://registry.yarnpkg.com/jscommons/-/jscommons-2.4.13.tgz#4dc5a99a58fb0e5d464cba3fa648aae3d8a9cfbb"
   dependencies:
     aws-sdk "^2.249.1"
     bluebird "^3.5.1"
@@ -4058,7 +4018,7 @@ jscommons@^2.3.0, jscommons@^2.3.3:
     boolean "^0.1.3"
     cors "^2.8.4"
     express "^4.16.3"
-    file-stream-rotator "^0.4.0"
+    file-stream-rotator "^0.5.0"
     fs-extra "^5.0.0"
     helmet "^3.12.1"
     knex "^0.19.0"
@@ -4783,11 +4743,25 @@ micromatch@^4.0.2:
     braces "^3.0.1"
     picomatch "^2.0.5"
 
-mime-db@1.40.0, "mime-db@>= 1.40.0 < 2":
+mime-db@1.40.0:
   version "1.40.0"
   resolved "https://registry.yarnpkg.com/mime-db/-/mime-db-1.40.0.tgz#a65057e998db090f732a68f6c276d387d4126c32"
 
-mime-types@^2.0.8, mime-types@^2.1.12, mime-types@^2.1.17, mime-types@~2.1.19, mime-types@~2.1.24:
+"mime-db@>= 1.40.0 < 2":
+  version "1.41.0"
+  resolved "https://registry.yarnpkg.com/mime-db/-/mime-db-1.41.0.tgz#9110408e1f6aa1b34aef51f2c9df3caddf46b6a0"
+
+mime-db@~1.30.0:
+  version "1.30.0"
+  resolved "https://registry.yarnpkg.com/mime-db/-/mime-db-1.30.0.tgz#74c643da2dd9d6a45399963465b26d5ca7d71f01"
+
+mime-types@2.1.17:
+  version "2.1.17"
+  resolved "https://registry.yarnpkg.com/mime-types/-/mime-types-2.1.17.tgz#09d7a393f03e995a79f8af857b70a9e0ab16557a"
+  dependencies:
+    mime-db "~1.30.0"
+
+mime-types@^2.0.8, mime-types@^2.1.12, mime-types@~2.1.19, mime-types@~2.1.24:
   version "2.1.24"
   resolved "https://registry.yarnpkg.com/mime-types/-/mime-types-2.1.24.tgz#b6f8d0b3e951efb77dedeca194cff6d16f676f81"
   dependencies:
@@ -4919,7 +4893,7 @@ moment@^2.11.2, moment@^2.22.1:
   version "2.24.0"
   resolved "https://registry.yarnpkg.com/moment/-/moment-2.24.0.tgz#0d055d53f5052aa653c9f6eb68bb5d12bf5c2b5b"
 
-mongodb@^3.0.1, mongodb@^3.0.2, mongodb@^3.0.8:
+mongodb@^3.0.2, mongodb@^3.0.8:
   version "3.3.1"
   resolved "https://registry.yarnpkg.com/mongodb/-/mongodb-3.3.1.tgz#31947e3050872d325415694f89119f37d2107a91"
   dependencies:
@@ -5913,9 +5887,13 @@ pseudomap@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/pseudomap/-/pseudomap-1.0.2.tgz#f052a28da70e618917ef0a8ac34c1ae5a68286b3"
 
-psl@^1.1.24, psl@^1.1.28:
+psl@^1.1.24:
   version "1.3.0"
   resolved "https://registry.yarnpkg.com/psl/-/psl-1.3.0.tgz#e1ebf6a3b5564fa8376f3da2275da76d875ca1bd"
+
+psl@^1.1.28:
+  version "1.3.1"
+  resolved "https://registry.yarnpkg.com/psl/-/psl-1.3.1.tgz#d5aa3873a35ec450bc7db9012ad5a7246f6fc8bd"
 
 pump@^2.0.0:
   version "2.0.1"
@@ -6124,7 +6102,7 @@ read@1, read@~1.0.1, read@~1.0.7:
   dependencies:
     mute-stream "~0.0.4"
 
-"readable-stream@1 || 2", readable-stream@^2.0.0, readable-stream@^2.0.2, readable-stream@^2.0.6, readable-stream@^2.1.0, readable-stream@^2.1.4, readable-stream@^2.1.5, readable-stream@^2.2.2, readable-stream@^2.3.5, readable-stream@^2.3.6, readable-stream@~2.3.6:
+"readable-stream@1 || 2", readable-stream@^2.0.0, readable-stream@^2.0.2, readable-stream@^2.0.6, readable-stream@^2.1.4, readable-stream@^2.1.5, readable-stream@^2.2.2, readable-stream@^2.3.5, readable-stream@^2.3.6, readable-stream@~2.3.6:
   version "2.3.6"
   resolved "https://registry.yarnpkg.com/readable-stream/-/readable-stream-2.3.6.tgz#b11c27d88b8ff1fbe070643cf94b0c79ae1b0aaf"
   dependencies:
@@ -6420,7 +6398,7 @@ rimraf@2, rimraf@2.7.1, rimraf@^2.5.2, rimraf@^2.5.4, rimraf@^2.6.1, rimraf@^2.6
   dependencies:
     glob "^7.1.3"
 
-rulr@^4.0.1, rulr@^4.0.2:
+rulr@^4.0.0, rulr@^4.0.1, rulr@^4.0.2:
   version "4.0.2"
   resolved "https://registry.yarnpkg.com/rulr/-/rulr-4.0.2.tgz#4d1b89fe884ac36693ffeaae03b70f75305a89b8"
 
@@ -6884,7 +6862,7 @@ stream-shift@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/stream-shift/-/stream-shift-1.0.0.tgz#d5c752825e5367e786f78e18e445ea223a155952"
 
-stream-to-string@^1.1.0:
+stream-to-string@^1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/stream-to-string/-/stream-to-string-1.2.0.tgz#3ca506a097ecbf78b0e0aee0b6fa5c4565412a15"
   dependencies:
@@ -6901,13 +6879,6 @@ strict-uri-encode@^2.0.0:
 string-format-obj@^1.1.0:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/string-format-obj/-/string-format-obj-1.1.1.tgz#c7612ca4e2ad923812a81db192dc291850aa1f65"
-
-string-to-stream@^1.1.0:
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/string-to-stream/-/string-to-stream-1.1.1.tgz#aba78f73e70661b130ee3e1c0192be4fef6cb599"
-  dependencies:
-    inherits "^2.0.1"
-    readable-stream "^2.1.0"
 
 string-to-stream@^2.0.0:
   version "2.0.0"
@@ -7450,6 +7421,13 @@ util-promisify@^2.1.0:
   dependencies:
     object.getownpropertydescriptors "^2.0.3"
 
+util.promisify@~1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/util.promisify/-/util.promisify-1.0.0.tgz#440f7165a459c9a16dc145eb8e72f35687097030"
+  dependencies:
+    define-properties "^1.1.2"
+    object.getownpropertydescriptors "^2.0.3"
+
 utils-merge@1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/utils-merge/-/utils-merge-1.0.1.tgz#9f95710f50a267947b2ccc124741c1028427e713"
@@ -7633,12 +7611,24 @@ xdg-basedir@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/xdg-basedir/-/xdg-basedir-3.0.0.tgz#496b2cc109eca8dbacfe2dc72b603c17c5870ad4"
 
-xml2js@0.4.19, xml2js@^0.4.19, xml2js@~0.4.x:
+xml2js@0.4.19, xml2js@~0.4.x:
   version "0.4.19"
   resolved "https://registry.yarnpkg.com/xml2js/-/xml2js-0.4.19.tgz#686c20f213209e94abf0d1bcf1efaa291c7827a7"
   dependencies:
     sax ">=0.6.0"
     xmlbuilder "~9.0.1"
+
+xml2js@^0.4.19:
+  version "0.4.22"
+  resolved "https://registry.yarnpkg.com/xml2js/-/xml2js-0.4.22.tgz#4fa2d846ec803237de86f30aa9b5f70b6600de02"
+  dependencies:
+    sax ">=0.6.0"
+    util.promisify "~1.0.0"
+    xmlbuilder "~11.0.0"
+
+xmlbuilder@~11.0.0:
+  version "11.0.1"
+  resolved "https://registry.yarnpkg.com/xmlbuilder/-/xmlbuilder-11.0.1.tgz#be9bae1c8a046e76b31127726347d0ad7002beb3"
 
 xmlbuilder@~9.0.1:
   version "9.0.7"

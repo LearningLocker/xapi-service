@@ -20,6 +20,6 @@ export default (config: FacadeConfig) => {
         },
       );
       await Promise.all(deletePromises);
-    } while (marker !== undefined);
+    } while (marker !== '');
   };
 };
