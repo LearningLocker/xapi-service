@@ -1,5 +1,5 @@
-import AgentProfile from '@learninglocker/xapi-agents/dist/models/Profile';
 import { Db } from 'mongodb';
+import AgentProfile from '../../models/Profile';
 
 export default interface FactoryConfig {
   readonly factoryName: string;

@@ -68,7 +68,7 @@ const getStorageRepo = (): StorageRepo => {
     case 's3':
       return s3StorageRepo({
         bucketName: config.s3StorageRepo.bucketName,
-        client: new S3(config.s3StorageRepo.awsConfig),
+        client: new S3(config.s3StorageRepo.awsConfig) as any,
         subFolder: config.storageSubFolders.activities,
       });
     case 'google':

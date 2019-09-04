@@ -5,7 +5,7 @@ import {
   StorageURL,
 } from '@azure/storage-blob';
 import Storage from '@google-cloud/storage';
-import { S3 } from 'aws-sdk';
+import S3 from 'aws-sdk/clients/s3';
 import azureStorageRepo from '../../azureStorageRepo';
 import googleStorageRepo from '../../googleStorageRepo';
 import localStorageRepo from '../../localStorageRepo';
@@ -18,7 +18,7 @@ export default (factoryConfig: FactoryConfig): Repo => {
     case 's3':
       return s3StorageRepo({
         bucketName: factoryConfig.s3.bucketName,
-        client: new S3(factoryConfig.s3.awsConfig),
+        client: new S3(factoryConfig.s3.awsConfig) as any,
         subFolder: factoryConfig.s3.subFolder,
       });
     case 'google':
