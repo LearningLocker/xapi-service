@@ -1,6 +1,6 @@
-import memoryModelsRepo from '@learninglocker/xapi-state/dist/memoryModelsRepo';
-import mongoModelsRepo from '@learninglocker/xapi-state/dist/mongoModelsRepo';
-import Repo from '@learninglocker/xapi-state/dist/repoFactory/ModelsRepo';
+import memoryModelsRepo from '../../memoryModelsRepo';
+import mongoModelsRepo from '../../mongoModelsRepo';
+import Repo from '../../repoFactory/ModelsRepo';
 import FactoryConfig from './FactoryConfig';
 
 export default (factoryConfig: FactoryConfig): Repo => {
