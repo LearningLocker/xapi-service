@@ -431,7 +431,13 @@
     "@types/bson" "*"
     "@types/node" "*"
 
-"@types/node-fetch@2.5.1", "@types/node-fetch@^2.3.7":
+"@types/node-fetch@2.5.2":
+  version "2.5.2"
+  resolved "https://registry.yarnpkg.com/@types/node-fetch/-/node-fetch-2.5.2.tgz#76906dea5b3d6901e50e63e15249c9bcd6e9676e"
+  dependencies:
+    "@types/node" "*"
+
+"@types/node-fetch@^2.3.7":
   version "2.5.1"
   resolved "https://registry.yarnpkg.com/@types/node-fetch/-/node-fetch-2.5.1.tgz#9e4daffa983eb098d25c2cb410c949678f3aee78"
   dependencies:
