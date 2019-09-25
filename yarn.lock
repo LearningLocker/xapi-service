@@ -48,9 +48,26 @@
     tslib "^1.8.1"
     tsutils "^3.5.0"
 
+"@fimbul/bifrost@^0.21.0":
+  version "0.21.0"
+  resolved "https://registry.yarnpkg.com/@fimbul/bifrost/-/bifrost-0.21.0.tgz#d0fafa25938fda475657a6a1e407a21bbe02c74e"
+  dependencies:
+    "@fimbul/ymir" "^0.21.0"
+    get-caller-file "^2.0.0"
+    tslib "^1.8.1"
+    tsutils "^3.5.0"
+
 "@fimbul/ymir@^0.17.0":
   version "0.17.0"
   resolved "https://registry.yarnpkg.com/@fimbul/ymir/-/ymir-0.17.0.tgz#4f28389b9f804d1cd202e11983af1743488b7815"
+  dependencies:
+    inversify "^5.0.0"
+    reflect-metadata "^0.1.12"
+    tslib "^1.8.1"
+
+"@fimbul/ymir@^0.21.0":
+  version "0.21.0"
+  resolved "https://registry.yarnpkg.com/@fimbul/ymir/-/ymir-0.21.0.tgz#8525726787aceeafd4e199472c0d795160b5d4a1"
   dependencies:
     inversify "^5.0.0"
     reflect-metadata "^0.1.12"
@@ -7218,6 +7235,14 @@ tslint-consistent-codestyle@1.15.1:
   resolved "https://registry.yarnpkg.com/tslint-consistent-codestyle/-/tslint-consistent-codestyle-1.15.1.tgz#a0c5cd5a5860d40b659c490d8013c5732e02af8c"
   dependencies:
     "@fimbul/bifrost" "^0.17.0"
+    tslib "^1.7.1"
+    tsutils "^2.29.0"
+
+tslint-consistent-codestyle@1.16.0:
+  version "1.16.0"
+  resolved "https://registry.yarnpkg.com/tslint-consistent-codestyle/-/tslint-consistent-codestyle-1.16.0.tgz#52348ea899a7e025b37cc6545751c6a566a19077"
+  dependencies:
+    "@fimbul/bifrost" "^0.21.0"
     tslib "^1.7.1"
     tsutils "^2.29.0"
 
