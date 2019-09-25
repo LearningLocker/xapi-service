@@ -102,7 +102,7 @@
     "simple-git": "1.126.0",
     "supertest": "3.4.2",
     "tslint": "5.20.0",
-    "tslint-consistent-codestyle": "1.15.1",
+    "tslint-consistent-codestyle": "1.16.0",
     "tslint-immutable": "4.9.1",
     "typescript": "3.6.3"
   },
