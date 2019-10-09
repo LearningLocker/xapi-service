@@ -71,7 +71,7 @@
   },
   "devDependencies": {
     "@ht2-labs/semantic-release": "1.1.94",
-    "@ht2-labs/typescript-project": "2.0.44",
+    "@ht2-labs/typescript-project": "2.0.45",
     "@types/accept-language-parser": "1.5.1",
     "@types/atob": "2.1.2",
     "@types/btoa": "1.2.3",
