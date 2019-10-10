@@ -14,6 +14,9 @@ interface Result {
 
 export default (config: FacadeConfig): Signature => {
   return async ({ client, targetIds }) => {
+    if (targetIds.length === 0) {
+      return [];
+    }
     const collection = (await config.db()).collection(STATEMENTS_COLLECTION_NAME);
 
     const query = {

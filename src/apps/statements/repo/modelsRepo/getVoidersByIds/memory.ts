@@ -7,6 +7,9 @@ import Signature from './Signature';
 
 export default (config: FacadeConfig): Signature => {
   return async ({ client, ids }) => {
+    if (ids.length === 0) {
+      return [];
+    }
     const query = (statement: Statement) => {
       return (
         statement.verb.id === voidVerbId &&
