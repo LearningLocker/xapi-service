@@ -5,6 +5,9 @@ import Signature from './Signature';
 
 export default (config: FacadeConfig): Signature => {
   return async ({ client, ids }) => {
+    if (ids.length === 0) {
+      return [];
+    }
     const filteredModels = config.state.statements.filter((model) => {
       return (
         includes(ids, model.statement.id) &&

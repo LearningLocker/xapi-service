@@ -7,6 +7,9 @@ interface Result { readonly statement: { readonly object: { readonly id: string 
 
 export default (config: FacadeConfig): Signature => {
   return async ({ client, ids }) => {
+    if (ids.length === 0) {
+      return [];
+    }
     const query = {
       'statement.object.id': { $in: ids },
       ...voidQuery,

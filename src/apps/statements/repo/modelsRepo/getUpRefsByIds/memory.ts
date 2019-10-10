@@ -16,6 +16,9 @@ const getTargetId = (model: StoredStatementModel) => {
 
 export default (config: FacadeConfig): Signature => {
   return async ({ client, targetIds }) => {
+    if (targetIds.length === 0) {
+      return [];
+    }
     const filteredModels = config.state.statements.filter((model) => {
       return (
         model.statement.object.objectType === 'StatementRef' &&
