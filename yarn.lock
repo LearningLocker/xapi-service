@@ -105,16 +105,16 @@
     through2 "^2.0.0"
     xdg-basedir "^3.0.0"
 
-"@ht2-labs/semantic-release@1.1.94":
-  version "1.1.94"
-  resolved "https://registry.yarnpkg.com/@ht2-labs/semantic-release/-/semantic-release-1.1.94.tgz#45f3f3d68106a4c56a93a8da9ea20a89334e605b"
+"@ht2-labs/semantic-release@1.1.95":
+  version "1.1.95"
+  resolved "https://registry.yarnpkg.com/@ht2-labs/semantic-release/-/semantic-release-1.1.95.tgz#9c78003907bbdc4d4176c4bbf6d50d01a6dc27a1"
   dependencies:
     "@semantic-release/condition-travis" "7.1.4"
-    "@semantic-release/github" "5.5.3"
+    "@semantic-release/github" "5.5.4"
     "@semantic-release/npm" "5.2.0"
     condition-circle "2.0.2"
     fs-extra "^7.0.0"
-    semantic-release "15.13.24"
+    semantic-release "15.13.27"
     semantic-release-docker "2.2.0"
     semver "5.7.1"
     simple-git "1.126.0"
@@ -243,7 +243,28 @@
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/@semantic-release/error/-/error-2.2.0.tgz#ee9d5a09c9969eade1ec864776aeda5c5cddbbf0"
 
-"@semantic-release/github@5.5.3", "@semantic-release/github@^5.1.0":
+"@semantic-release/github@5.5.4":
+  version "5.5.4"
+  resolved "https://registry.yarnpkg.com/@semantic-release/github/-/github-5.5.4.tgz#eae2a9f90c50be5cb8ddb0350607ce651c9a2fe3"
+  dependencies:
+    "@octokit/rest" "^16.27.0"
+    "@semantic-release/error" "^2.2.0"
+    aggregate-error "^3.0.0"
+    bottleneck "^2.18.1"
+    debug "^4.0.0"
+    dir-glob "^3.0.0"
+    fs-extra "^8.0.0"
+    globby "^10.0.0"
+    http-proxy-agent "^2.1.0"
+    https-proxy-agent "^3.0.0"
+    issue-parser "^5.0.0"
+    lodash "^4.17.4"
+    mime "^2.4.3"
+    p-filter "^2.0.0"
+    p-retry "^4.0.0"
+    url-join "^4.0.0"
+
+"@semantic-release/github@^5.1.0":
   version "5.5.3"
   resolved "https://registry.yarnpkg.com/@semantic-release/github/-/github-5.5.3.tgz#280f5c3d1cbcd469005b0858867d8ceb41c7bc8f"
   dependencies:
@@ -2727,7 +2748,7 @@ find-up@^2.0.0, find-up@^2.1.0:
   dependencies:
     locate-path "^2.0.0"
 
-find-up@^4.0.0:
+find-up@^4.0.0, find-up@^4.1.0:
   version "4.1.0"
   resolved "https://registry.yarnpkg.com/find-up/-/find-up-4.1.0.tgz#97afe7d6cdc0bc5928584b7c8d7b16e8a9aa5d19"
   dependencies:
@@ -6090,6 +6111,14 @@ read-pkg-up@^6.0.0:
     read-pkg "^5.1.1"
     type-fest "^0.5.0"
 
+read-pkg-up@^7.0.0:
+  version "7.0.0"
+  resolved "https://registry.yarnpkg.com/read-pkg-up/-/read-pkg-up-7.0.0.tgz#3f3e53858ec5ae5e6fe14bc479da0a7c98f85ff3"
+  dependencies:
+    find-up "^4.1.0"
+    read-pkg "^5.2.0"
+    type-fest "^0.8.1"
+
 read-pkg@^1.0.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/read-pkg/-/read-pkg-1.1.0.tgz#f5ffaa5ecd29cb31c0474bca7d756b6bb29e3f28"
@@ -6106,7 +6135,7 @@ read-pkg@^3.0.0:
     normalize-package-data "^2.3.2"
     path-type "^3.0.0"
 
-read-pkg@^5.0.0, read-pkg@^5.1.1:
+read-pkg@^5.0.0, read-pkg@^5.1.1, read-pkg@^5.2.0:
   version "5.2.0"
   resolved "https://registry.yarnpkg.com/read-pkg/-/read-pkg-5.2.0.tgz#7bf295438ca5a33e56cd30e053b34ee7250c93cc"
   dependencies:
@@ -6470,9 +6499,9 @@ semantic-release-docker@2.2.0:
     "@semantic-release/error" "^2.1.0"
     execa "^0.10.0"
 
-semantic-release@15.13.24:
-  version "15.13.24"
-  resolved "https://registry.yarnpkg.com/semantic-release/-/semantic-release-15.13.24.tgz#f0b9544427d059ba5e3c89ac1545234130796be7"
+semantic-release@15.13.27:
+  version "15.13.27"
+  resolved "https://registry.yarnpkg.com/semantic-release/-/semantic-release-15.13.27.tgz#214be952fdff5b9ba8490e49c5be13e4d0108ead"
   dependencies:
     "@semantic-release/commit-analyzer" "^6.1.0"
     "@semantic-release/error" "^2.2.0"
@@ -6495,7 +6524,7 @@ semantic-release@15.13.24:
     marked-terminal "^3.2.0"
     p-locate "^4.0.0"
     p-reduce "^2.0.0"
-    read-pkg-up "^6.0.0"
+    read-pkg-up "^7.0.0"
     resolve-from "^5.0.0"
     semver "^6.0.0"
     signale "^1.2.1"
@@ -7299,6 +7328,10 @@ type-fest@^0.5.0:
 type-fest@^0.6.0:
   version "0.6.0"
   resolved "https://registry.yarnpkg.com/type-fest/-/type-fest-0.6.0.tgz#8d2a2370d3df886eb5c90ada1c5bf6188acf838b"
+
+type-fest@^0.8.1:
+  version "0.8.1"
+  resolved "https://registry.yarnpkg.com/type-fest/-/type-fest-0.8.1.tgz#09e249ebde851d3b1e48d27c105444667f17b83d"
 
 type-is@~1.6.17, type-is@~1.6.18:
   version "1.6.18"
