@@ -91,7 +91,7 @@
     "@types/redis": "2.8.6",
     "@types/source-map-support": "0.5.0",
     "@types/supertest": "2.0.8",
-    "@types/uuid": "3.4.5",
+    "@types/uuid": "3.4.6",
     "@types/winston": "2.4.4",
     "colors": "1.4.0",
     "jscpd": "0.6.25",
