@@ -111,13 +111,13 @@
     through2 "^2.0.0"
     xdg-basedir "^3.0.0"
 
-"@ht2-labs/semantic-release@1.1.105":
-  version "1.1.105"
-  resolved "https://registry.yarnpkg.com/@ht2-labs/semantic-release/-/semantic-release-1.1.105.tgz#22ffc6181e6d12ca8197a47c3cf111f7dfaa4328"
+"@ht2-labs/semantic-release@1.1.106":
+  version "1.1.106"
+  resolved "https://registry.yarnpkg.com/@ht2-labs/semantic-release/-/semantic-release-1.1.106.tgz#ce7d18ea805e7237cb5e3f6b029e41e54736754f"
   dependencies:
     "@semantic-release/condition-travis" "7.1.4"
     "@semantic-release/github" "5.5.5"
-    "@semantic-release/npm" "5.3.4"
+    "@semantic-release/npm" "5.3.5"
     condition-circle "2.0.2"
     fs-extra "^7.0.0"
     semantic-release "15.14.0"
@@ -279,7 +279,24 @@
     p-retry "^4.0.0"
     url-join "^4.0.0"
 
-"@semantic-release/npm@5.3.4", "@semantic-release/npm@^5.0.5":
+"@semantic-release/npm@5.3.5":
+  version "5.3.5"
+  resolved "https://registry.yarnpkg.com/@semantic-release/npm/-/npm-5.3.5.tgz#4a83952056d32e1401e1078c3910a159afc0cba8"
+  dependencies:
+    "@semantic-release/error" "^2.2.0"
+    aggregate-error "^3.0.0"
+    execa "^3.2.0"
+    fs-extra "^8.0.0"
+    lodash "^4.17.15"
+    nerf-dart "^1.0.0"
+    normalize-url "^4.0.0"
+    npm "^6.10.3"
+    rc "^1.2.8"
+    read-pkg "^5.0.0"
+    registry-auth-token "^4.0.0"
+    tempy "^0.3.0"
+
+"@semantic-release/npm@^5.0.5":
   version "5.3.4"
   resolved "https://registry.yarnpkg.com/@semantic-release/npm/-/npm-5.3.4.tgz#2998cd9455aaedf278334d4a5b56f8e0b715919d"
   dependencies:
