@@ -1,6 +1,7 @@
 {
   "extends": "./node_modules/@ht2-labs/typescript-project/configs/tsconfig.json",
   "compilerOptions": {
+    "baseUrl": ".",
     "rootDir": "src",
     "outDir": "dist",
     "lib": [

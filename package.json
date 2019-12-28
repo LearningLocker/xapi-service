@@ -16,6 +16,7 @@
   ],
   "scripts": {
     "start": "node dist/server.js",
+    "start:dev": "nodemon",
     "build": "tsc",
     "test": "SERVICE_AWAIT_UPDATES=true AUTH_REPO=test mocha $(find dist -name '*.test.js') --timeout 6000 --exit",
     "test-s3": "MODELS_REPO=memory STORAGE_REPO=s3 npm run test",
@@ -101,6 +102,8 @@
     "shelljs": "0.8.3",
     "simple-git": "1.129.0",
     "supertest": "3.4.2",
+    "ts-node": "^8.5.4",
+    "tsconfig-paths": "^3.9.0",
     "tslint": "5.20.1",
     "tslint-consistent-codestyle": "1.16.0",
     "tslint-immutable": "4.9.1",
