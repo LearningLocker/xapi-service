@@ -31,6 +31,7 @@
     "cover-all": "nyc --lines 100 --check-coverage --exclude '(dist/**/*fetch*|dist/**/*fake*|dist/config.js|dist/**/factory.js|dist/**/facade.js)' npm run test-all",
     "clean": "rm -rf dist",
     "lint": "tslint -p ./tsconfig.json",
+    "lint-ci": "yarn lint -- -c tslint.ci.json -q",
     "duplication": "jscpd",
     "semantic-release": "ht2-release-public-circleci-app"
   },
