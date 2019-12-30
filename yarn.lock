@@ -208,8 +208,8 @@
     universal-user-agent "^4.0.0"
 
 "@octokit/rest@^16.27.0":
-  version "16.35.2"
-  resolved "https://registry.yarnpkg.com/@octokit/rest/-/rest-16.35.2.tgz#0098c9e2a895d4afb0fa6578479283553543143c"
+  version "16.36.0"
+  resolved "https://registry.yarnpkg.com/@octokit/rest/-/rest-16.36.0.tgz#99892c57ba632c2a7b21845584004387b56c2cb7"
   dependencies:
     "@octokit/request" "^5.2.0"
     "@octokit/request-error" "^1.0.2"
@@ -279,26 +279,9 @@
     p-retry "^4.0.0"
     url-join "^4.0.0"
 
-"@semantic-release/npm@5.3.5":
+"@semantic-release/npm@5.3.5", "@semantic-release/npm@^5.0.5":
   version "5.3.5"
   resolved "https://registry.yarnpkg.com/@semantic-release/npm/-/npm-5.3.5.tgz#4a83952056d32e1401e1078c3910a159afc0cba8"
-  dependencies:
-    "@semantic-release/error" "^2.2.0"
-    aggregate-error "^3.0.0"
-    execa "^3.2.0"
-    fs-extra "^8.0.0"
-    lodash "^4.17.15"
-    nerf-dart "^1.0.0"
-    normalize-url "^4.0.0"
-    npm "^6.10.3"
-    rc "^1.2.8"
-    read-pkg "^5.0.0"
-    registry-auth-token "^4.0.0"
-    tempy "^0.3.0"
-
-"@semantic-release/npm@^5.0.5":
-  version "5.3.4"
-  resolved "https://registry.yarnpkg.com/@semantic-release/npm/-/npm-5.3.4.tgz#2998cd9455aaedf278334d4a5b56f8e0b715919d"
   dependencies:
     "@semantic-release/error" "^2.2.0"
     aggregate-error "^3.0.0"
@@ -480,8 +463,8 @@
     "@types/node" "*"
 
 "@types/node@*", "@types/node@>= 8":
-  version "12.12.21"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-12.12.21.tgz#aa44a6363291c7037111c47e4661ad210aded23f"
+  version "13.1.1"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-13.1.1.tgz#6d11a8c2d58405b3db9388ab740106cbfa64c3c9"
 
 "@types/node@9.6.55":
   version "9.6.55"
@@ -823,13 +806,13 @@ atob-lite@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/atob-lite/-/atob-lite-2.0.0.tgz#0fef5ad46f1bd7a8502c65727f0367d5ee43d696"
 
-atob@^2.0.3, atob@^2.1.1:
+atob@^2.0.3, atob@^2.1.2:
   version "2.1.2"
   resolved "https://registry.yarnpkg.com/atob/-/atob-2.1.2.tgz#6d9517eb9e030d2436666651e86bd9f6f13533c9"
 
 aws-sdk@^2.205.0, aws-sdk@^2.249.1, aws-sdk@^2.58.0:
-  version "2.595.0"
-  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.595.0.tgz#eb9f198716547d34a615e4bc32ce21056ee40959"
+  version "2.596.0"
+  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.596.0.tgz#1a4af0609e174a50ffb8ed8981981e6d77a614fb"
   dependencies:
     buffer "4.9.1"
     events "1.1.1"
@@ -1359,8 +1342,8 @@ before-after-hook@^2.0.0:
   resolved "https://registry.yarnpkg.com/before-after-hook/-/before-after-hook-2.1.0.tgz#b6c03487f44e24200dd30ca5e6a1979c5d2fb635"
 
 bin-links@^1.1.2, bin-links@^1.1.6:
-  version "1.1.6"
-  resolved "https://registry.yarnpkg.com/bin-links/-/bin-links-1.1.6.tgz#30d33e810829305e5e61b90cfcb9a3a4f65eb516"
+  version "1.1.7"
+  resolved "https://registry.yarnpkg.com/bin-links/-/bin-links-1.1.7.tgz#34b79ea9d0e575d7308afeff0c6b2fc24c793359"
   dependencies:
     bluebird "^3.5.3"
     cmd-shim "^3.0.0"
@@ -1416,8 +1399,8 @@ bottleneck@^2.18.1:
   resolved "https://registry.yarnpkg.com/bottleneck/-/bottleneck-2.19.5.tgz#5df0b90f59fd47656ebe63c78a98419205cadd91"
 
 bowser@^2.7.0:
-  version "2.7.0"
-  resolved "https://registry.yarnpkg.com/bowser/-/bowser-2.7.0.tgz#96eab1fa07fab08c1ec4c75977a7c8ddf8e0fe1f"
+  version "2.8.1"
+  resolved "https://registry.yarnpkg.com/bowser/-/bowser-2.8.1.tgz#35b74165e17b80ba8af6aa4736c2861b001fc09e"
 
 boxen@^1.2.1:
   version "1.3.0"
@@ -1609,8 +1592,8 @@ camelize@1.0.0:
   resolved "https://registry.yarnpkg.com/camelize/-/camelize-1.0.0.tgz#164a5483e630fa4321e5af07020e531831b2609b"
 
 caniuse-lite@^1.0.30000844:
-  version "1.0.30001016"
-  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001016.tgz#16ea48d7d6e8caf3cad3295c2d746fe38c4e7f66"
+  version "1.0.30001017"
+  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001017.tgz#d3ad6ec18148b9bd991829958d9d7e562bb78cd6"
 
 capture-stack-trace@^1.0.0:
   version "1.0.1"
@@ -5983,8 +5966,8 @@ pseudomap@^1.0.2:
   resolved "https://registry.yarnpkg.com/pseudomap/-/pseudomap-1.0.2.tgz#f052a28da70e618917ef0a8ac34c1ae5a68286b3"
 
 psl@^1.1.24, psl@^1.1.28:
-  version "1.6.0"
-  resolved "https://registry.yarnpkg.com/psl/-/psl-1.6.0.tgz#60557582ee23b6c43719d9890fb4170ecd91e110"
+  version "1.7.0"
+  resolved "https://registry.yarnpkg.com/psl/-/psl-1.7.0.tgz#f1c4c47a8ef97167dea5d6bbf4816d736e884a3c"
 
 pump@^2.0.0:
   version "2.0.1"
@@ -6785,10 +6768,10 @@ sorted-union-stream@~2.1.3:
     stream-iterate "^1.1.0"
 
 source-map-resolve@^0.5.0:
-  version "0.5.2"
-  resolved "https://registry.yarnpkg.com/source-map-resolve/-/source-map-resolve-0.5.2.tgz#72e2cc34095543e43b2c62b2c4c10d4a9054f259"
+  version "0.5.3"
+  resolved "https://registry.yarnpkg.com/source-map-resolve/-/source-map-resolve-0.5.3.tgz#190866bece7553e1f8f267a2ee82c606b5509a1a"
   dependencies:
-    atob "^2.1.1"
+    atob "^2.1.2"
     decode-uri-component "^0.2.0"
     resolve-url "^0.2.1"
     source-map-url "^0.4.0"
@@ -7426,8 +7409,8 @@ typescript@3.7.4:
   resolved "https://registry.yarnpkg.com/typescript/-/typescript-3.7.4.tgz#1743a5ec5fef6a1fa9f3e4708e33c81c73876c19"
 
 uglify-js@^3.1.4:
-  version "3.7.2"
-  resolved "https://registry.yarnpkg.com/uglify-js/-/uglify-js-3.7.2.tgz#cb1a601e67536e9ed094a92dd1e333459643d3f9"
+  version "3.7.3"
+  resolved "https://registry.yarnpkg.com/uglify-js/-/uglify-js-3.7.3.tgz#f918fce9182f466d5140f24bb0ff35c2d32dcc6a"
   dependencies:
     commander "~2.20.3"
     source-map "~0.6.1"
