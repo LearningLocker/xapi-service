@@ -1,5 +1,4 @@
 import * as assert from 'assert';
-import { assign } from 'lodash';
 
 import { getDurationMetadata } from '../../../../service/storeStatements/queriables/getMetadataFromStatement/getDurationMetadata';
 import { statementDefaults } from './fixtures/statements.fixture';
@@ -10,27 +9,29 @@ describe(
     it(
       'should return result duration statement',
       () => {
-        assert
-          .equal(
-            getDurationMetadata(
-              assign(
-                {},
-                statementDefaults,
-                {
-                  result: {},
-                },
-              ),
-            ),
-            false,
-          );
+        const expectedEmptyMetadata = false;
 
-        assert
-          .deepEqual(
-            getDurationMetadata(statementDefaults),
-            {
-              'https://learninglocker&46;net/result-duration': { seconds: 37080306 },
+        // ----------------------------------------------------------------------------------------
+
+        const actualEmptyMetadataFromEmptyResult = getDurationMetadata(
+          {
+            ...statementDefaults,
+            ...{
+              result: {},
             },
-          );
+          },
+        );
+
+        assert.equal(actualEmptyMetadataFromEmptyResult, expectedEmptyMetadata);
+
+        // ----------------------------------------------------------------------------------------
+
+        const actualCorrectMetadata = getDurationMetadata(statementDefaults);
+        const expectedCorrectMetadata = {
+          'https://learninglocker&46;net/result-duration': { seconds: 37080306 },
+        };
+
+        assert.deepEqual(actualCorrectMetadata, expectedCorrectMetadata);
       },
     );
   },
