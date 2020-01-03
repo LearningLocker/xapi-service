@@ -33,6 +33,7 @@ const statementDefaults: Statement = {
 };
 
 const interactionActivityStatementBase: Statement = merge(
+  {},
   statementDefaults,
   {
     object: {

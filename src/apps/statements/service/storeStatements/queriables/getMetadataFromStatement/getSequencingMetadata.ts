@@ -36,10 +36,6 @@ export const getSequencingMetadata = (statement: Statement)
     )
     .filter((interactionComponent: ActivityInteractionComponent) => interactionComponent);
 
-  if (sequence.length === 0) {
-    return false;
-  }
-
   return {
     'https://learninglocker&46;net/sequencing-response': { sequence },
   };

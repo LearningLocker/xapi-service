@@ -1,7 +1,8 @@
 import * as assert from 'assert';
+import { assign } from 'lodash';
 
 import { getSequencingMetadata } from '../../../../service/storeStatements/queriables/getMetadataFromStatement/getSequencingMetadata';
-import { interactionActivityStatement } from './fixtures/statements.fixture';
+import { interactionActivityStatement, statementDefaults } from './fixtures/statements.fixture';
 
 describe(
   'Retrieve duration metadata from statement',
@@ -9,6 +10,38 @@ describe(
     it(
       'should return choices with proper order(sequence)',
       () => {
+        assert
+          .equal(
+            getSequencingMetadata(
+              assign(
+                {},
+                interactionActivityStatement,
+                {
+                  result: {},
+                },
+              ),
+            ),
+            false,
+          );
+
+        assert
+          .equal(getSequencingMetadata(statementDefaults), false);
+
+        assert
+          .deepEqual(
+            getSequencingMetadata(
+              assign(
+                {},
+                interactionActivityStatement,
+                {
+                  result: {
+                    response: 'tim',
+                  },
+                },
+              ),
+            ),
+            false,
+          );
 
         assert.deepEqual(
           getSequencingMetadata(interactionActivityStatement),
