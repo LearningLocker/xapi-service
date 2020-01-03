@@ -17,14 +17,7 @@ describe('Retrieve metadata from statement', () => {
 
     const actualSequencingMetadata = getMetadataFromStatement(interactionActivityStatement);
     const expectedSequencingMetadata = {
-      'https://learninglocker&46;net/sequencing-response': {
-        sequence: [
-          { id: 'tim', description: { 'en-US': 'Tim' } },
-          { id: 'mike', description: { 'en-US': 'Mike' } },
-          { id: 'ells', description: { 'en-US': 'Ells' } },
-          { id: 'ben', description: { 'en-US': 'Ben' } },
-        ],
-      },
+      'https://learninglocker&46;net/sequencing-response': ['tim', 'mike', 'ells', 'ben'],
     };
 
     assert.deepEqual(actualSequencingMetadata, expectedSequencingMetadata);

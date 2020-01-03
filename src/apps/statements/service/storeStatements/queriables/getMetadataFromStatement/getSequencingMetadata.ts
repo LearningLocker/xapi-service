@@ -1,6 +1,5 @@
 import { get, has, head } from 'lodash';
 
-import ActivityInteractionComponent from '../../../../models/ActivityInteractionComponent';
 import Statement from '../../../../models/Statement';
 
 export const getSequencingMetadata = (statement: Statement)
@@ -8,7 +7,6 @@ export const getSequencingMetadata = (statement: Statement)
   if (
     !(
       get(statement.object, ['definition', 'interactionType']) === 'sequencing'
-      && has(statement.object, ['definition', 'choices'])
       && has(statement, ['result', 'response'])
     )
   ) {
@@ -26,17 +24,5 @@ export const getSequencingMetadata = (statement: Statement)
     return false;
   }
 
-  const sequence = choices
-    .map(
-      (choice: string) => get(statement.object, ['definition', 'choices'])
-        .find(
-          (interactionComponent: ActivityInteractionComponent) =>
-            interactionComponent.id === choice,
-        ),
-    )
-    .filter((interactionComponent: ActivityInteractionComponent) => interactionComponent);
-
-  return {
-    'https://learninglocker&46;net/sequencing-response': { sequence },
-  };
+  return { 'https://learninglocker&46;net/sequencing-response': choices };
 };
