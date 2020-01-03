@@ -1,6 +1,6 @@
 import ActivityInteractionComponent from './ActivityInteractionComponent';
-import ActivityInteractionType      from './ActivityInteractionType';
-import Definition                   from './Definition';
+import ActivityInteractionType from './ActivityInteractionType';
+import Definition from './Definition';
 
 interface InteractionActivityDefinition extends Definition {
   readonly interactionType: ActivityInteractionType;
