@@ -2,7 +2,7 @@ import * as assert from 'assert';
 
 import getMetadataFromStatement
   from '../../../../service/storeStatements/queriables/getMetadataFromStatement';
-import { interactionActivityStatement, statementDefaults } from './fixtures/statements.fixture';
+import { sequencingInteractionActivityStatement, statementDefaults } from './fixtures/statements.fixture';
 
 describe('Retrieve metadata from statement', () => {
   it('should retrieve metadata from statement', () => {
@@ -15,7 +15,9 @@ describe('Retrieve metadata from statement', () => {
 
     // ----------------------------------------------------------------------------------------
 
-    const actualSequencingMetadata = getMetadataFromStatement(interactionActivityStatement);
+    const actualSequencingMetadata = getMetadataFromStatement(
+      sequencingInteractionActivityStatement,
+    );
     const expectedSequencingMetadata = {
       'https://learninglocker&46;net/sequencing-response': ['tim', 'mike', 'ells', 'ben'],
     };

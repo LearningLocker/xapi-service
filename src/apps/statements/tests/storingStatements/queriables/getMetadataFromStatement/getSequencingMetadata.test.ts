@@ -2,7 +2,7 @@ import * as assert from 'assert';
 
 import Statement from 'src/apps/statements/models/Statement';
 import { getSequencingMetadata } from '../../../../service/storeStatements/queriables/getMetadataFromStatement/getSequencingMetadata';
-import { interactionActivityStatement, statementDefaults } from './fixtures/statements.fixture';
+import { sequencingInteractionActivityStatement, statementDefaults } from './fixtures/statements.fixture';
 
 describe('Retrieve sequencing metadata from statement', () => {
   it('should return choices with proper order(sequence)', () => {
@@ -11,7 +11,7 @@ describe('Retrieve sequencing metadata from statement', () => {
     // ----------------------------------------------------------------------------------------
     const actualEmptyMetadataFromEmptyResult = getSequencingMetadata(
       {
-        ...interactionActivityStatement,
+        ...sequencingInteractionActivityStatement,
         ...{
           result: {},
         },
@@ -30,7 +30,7 @@ describe('Retrieve sequencing metadata from statement', () => {
 
     const actualMetadataFromIncorrectResponseValue = getSequencingMetadata(
       {
-        ...interactionActivityStatement,
+        ...sequencingInteractionActivityStatement,
         ...{
           result: {
             response: 'tim',
@@ -43,7 +43,7 @@ describe('Retrieve sequencing metadata from statement', () => {
 
     // ----------------------------------------------------------------------------------------
 
-    const actualCorrectMetadata = getSequencingMetadata(interactionActivityStatement);
+    const actualCorrectMetadata = getSequencingMetadata(sequencingInteractionActivityStatement);
     const expectedCorrectMetadata = {
       'https://learninglocker&46;net/sequencing-response': ['tim', 'mike', 'ells', 'ben'],
     };

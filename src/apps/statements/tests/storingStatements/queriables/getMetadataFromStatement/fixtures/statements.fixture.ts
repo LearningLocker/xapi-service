@@ -1,5 +1,5 @@
-import { assign, merge } from 'lodash';
 import Activity from '../../../../../models/Activity';
+import ActivityInteractionType from '../../../../../models/ActivityInteractionType';
 import Agent from '../../../../../models/Agent';
 import InteractionActivityDefinition from '../../../../../models/InteractionActivityDefinition';
 import Statement from '../../../../../models/Statement';
@@ -32,16 +32,18 @@ const statementDefaults: Statement = {
   },
 };
 
-const interactionActivityStatementBase: Statement = merge(
-  {},
-  statementDefaults,
-  {
+const sequencingInteractionActivityStatement: Statement = {
+  ...statementDefaults,
+  ...{
+    result: {
+      response: 'tim[,]mike[,]ells[,]ben',
+    },
     object: {
       definition: {
         name: { 'en-US': 'Question 6' },
         description: { 'en-US': 'Order players by their pong ladder position:' },
         type: 'http://adlnet.gov/expapi/activities/cmi.interaction',
-        interactionType: 'sequencing',
+        interactionType: ActivityInteractionType.SEQUENCING,
         correctResponsesPattern: ['tim[,]mike[,]ells[,]ben'],
         choices: [
           { id: 'tim', description: { 'en-US': 'Tim' } },
@@ -52,18 +54,9 @@ const interactionActivityStatementBase: Statement = merge(
       } as Partial<InteractionActivityDefinition>,
     } as SubStatementObject,
   } as Partial<Statement>,
-);
-
-const interactionActivityStatement: Statement = assign(
-  interactionActivityStatementBase,
-  {
-    result: {
-      response: 'tim[,]mike[,]ells[,]ben',
-    },
-  },
-);
+};
 
 export {
   statementDefaults,
-  interactionActivityStatement,
+  sequencingInteractionActivityStatement,
 };
