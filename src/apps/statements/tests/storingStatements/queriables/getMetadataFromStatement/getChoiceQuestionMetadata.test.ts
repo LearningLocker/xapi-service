@@ -1,0 +1,45 @@
+import * as assert from 'assert';
+
+import { getChoiceQuestionMetadata } from '../../../../service/storeStatements/queriables/getMetadataFromStatement/getChoiceQuestionMetadata';
+import { multipleChoices, singleChoice } from './fixtures/choice-interaction.fixture';
+
+describe('Retrieve choices metadata from statement', () => {
+  it('should return choices metadata from statement', () => {
+    const expectedEmptyMetadata = false;
+
+    // ----------------------------------------------------------------------------------------
+
+    const actualEmptyMetadataFromEmptyResult = getChoiceQuestionMetadata(
+      {
+        ...singleChoice,
+        ...{
+          result: {},
+        },
+      },
+    );
+
+    assert.equal(actualEmptyMetadataFromEmptyResult, expectedEmptyMetadata);
+
+    // ----------------------------------------------------------------------------------------
+
+    const actualSingleChoiceMetadata = getChoiceQuestionMetadata(singleChoice);
+    const expectedSingleChoiceMetadata = {
+      'https://learninglocker&46;net/choice-response': ['golf'],
+    };
+
+    assert.deepEqual(actualSingleChoiceMetadata, expectedSingleChoiceMetadata);
+
+    // ----------------------------------------------------------------------------------------
+
+    const actualMultipleChoicesMetadata = getChoiceQuestionMetadata(multipleChoices);
+    const expectedMultipleChoicesMetadata = {
+      'https://learninglocker&46;net/choice-response': ['golf', 'tetris'],
+    };
+
+    assert
+      .deepEqual(
+        actualMultipleChoicesMetadata,
+        expectedMultipleChoicesMetadata,
+      );
+  });
+});

@@ -1,8 +1,11 @@
 import * as assert from 'assert';
 
-import Statement from 'src/apps/statements/models/Statement';
 import { getSequencingMetadata } from '../../../../service/storeStatements/queriables/getMetadataFromStatement/getSequencingMetadata';
-import { sequencingInteractionActivityStatement, statementDefaults } from './fixtures/statements.fixture';
+import {
+  multipleItemsSequence,
+  singleItemSequence,
+} from './fixtures/sequencing-interaction.fixture';
+import { statementDefaults } from './fixtures/statements.fixture';
 
 describe('Retrieve sequencing metadata from statement', () => {
   it('should return choices with proper order(sequence)', () => {
@@ -11,7 +14,7 @@ describe('Retrieve sequencing metadata from statement', () => {
     // ----------------------------------------------------------------------------------------
     const actualEmptyMetadataFromEmptyResult = getSequencingMetadata(
       {
-        ...sequencingInteractionActivityStatement,
+        ...multipleItemsSequence,
         ...{
           result: {},
         },
@@ -28,26 +31,17 @@ describe('Retrieve sequencing metadata from statement', () => {
 
     // ----------------------------------------------------------------------------------------
 
-    const actualMetadataFromIncorrectResponseValue = getSequencingMetadata(
-      {
-        ...sequencingInteractionActivityStatement,
-        ...{
-          result: {
-            response: 'tim',
-          },
-        } as Partial<Statement>,
-      },
-    );
+    const actualSingleItemSequenceMetadata = getSequencingMetadata(singleItemSequence);
 
-    assert.deepEqual(actualMetadataFromIncorrectResponseValue, expectedEmptyMetadata);
+    assert.deepEqual(actualSingleItemSequenceMetadata, expectedEmptyMetadata);
 
     // ----------------------------------------------------------------------------------------
 
-    const actualCorrectMetadata = getSequencingMetadata(sequencingInteractionActivityStatement);
-    const expectedCorrectMetadata = {
+    const actualMultipleItemsSequenceMetadata = getSequencingMetadata(multipleItemsSequence);
+    const expectedMultipleItemsSequenceMetadata = {
       'https://learninglocker&46;net/sequencing-response': ['tim', 'mike', 'ells', 'ben'],
     };
 
-    assert.deepEqual(actualCorrectMetadata, expectedCorrectMetadata);
+    assert.deepEqual(actualMultipleItemsSequenceMetadata, expectedMultipleItemsSequenceMetadata);
   });
 });
