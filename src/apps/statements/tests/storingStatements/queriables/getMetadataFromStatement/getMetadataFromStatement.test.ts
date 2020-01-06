@@ -29,6 +29,7 @@ describe('Retrieve metadata from statement', () => {
     const actualChoiceMetadata = getMetadataFromStatement(multipleChoices);
     const expectedChoiceMetadata = {
       'https://learninglocker&46;net/choice-response': ['golf', 'tetris'],
+      'https://learninglocker&46;net/result-duration': { seconds: 3 },
     };
 
     assert.deepEqual(actualChoiceMetadata, expectedChoiceMetadata);
