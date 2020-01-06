@@ -3,6 +3,7 @@ import * as assert from 'assert';
 import getMetadataFromStatement
   from '../../../../service/storeStatements/queriables/getMetadataFromStatement';
 import { multipleChoices } from './fixtures/choice-interaction.fixture';
+import { multipleMatchingQuestions } from './fixtures/matching-interaction.fixture';
 import { multipleItemsSequence } from './fixtures/sequencing-interaction.fixture';
 import { statementDefaults } from './fixtures/statements.fixture';
 
@@ -33,5 +34,19 @@ describe('Retrieve metadata from statement', () => {
     };
 
     assert.deepEqual(actualChoiceMetadata, expectedChoiceMetadata);
+
+    // ----------------------------------------------------------------------------------------
+
+    const actualMatchingQuestionsMetadata = getMetadataFromStatement(multipleMatchingQuestions);
+    const expectedMatchingQuestionsMetadata = {
+      'https://learninglocker&46;net/matching-response': [
+        ['ben', '3'],
+        ['chris', '2'],
+        ['troy', '4'],
+        ['freddie', '1'],
+      ],
+    };
+
+    assert.deepEqual(actualMatchingQuestionsMetadata, expectedMatchingQuestionsMetadata);
   });
 });
