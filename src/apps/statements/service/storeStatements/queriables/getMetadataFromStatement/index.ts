@@ -4,16 +4,10 @@ import { getSequencingMetadata } from './getSequencingMetadata';
 
 export default (statement: Statement): {readonly [key: string]: any} => {
   const durationMetadata = getDurationMetadata(statement);
-
-  if (durationMetadata) {
-    return durationMetadata;
-  }
-
   const sequencingMetadata = getSequencingMetadata(statement);
 
-  if (sequencingMetadata) {
-    return sequencingMetadata;
-  }
-
-  return {};
+  return {
+    ...(durationMetadata ? durationMetadata : {}),
+    ...(sequencingMetadata ? sequencingMetadata : {}),
+  };
 };
