@@ -29,7 +29,7 @@ describe('Retrieve metadata from statement', () => {
     assert.deepEqual(actualSequencingMetadata, expectedSequencingMetadata);
   });
 
-  it('should return duration ans sequencing metadata from one statement', () => {
+  it('should return duration and sequencing metadata from one statement', () => {
     const statementWithDurationAndSequencing = merge(
       {},
       sequencingInteractionActivityStatement,
