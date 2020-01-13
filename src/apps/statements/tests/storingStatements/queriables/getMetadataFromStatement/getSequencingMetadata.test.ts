@@ -8,7 +8,6 @@ describe('Retrieve sequencing metadata from statement', () => {
   it('should return empty metadata from empty result', () => {
     const expectedEmptyMetadata = false;
 
-    // ----------------------------------------------------------------------------------------
     const actualEmptyMetadataFromEmptyResult = getSequencingMetadata(
       {
         ...sequencingInteractionActivityStatement,
