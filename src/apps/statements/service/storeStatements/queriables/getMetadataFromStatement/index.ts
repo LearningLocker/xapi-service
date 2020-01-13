@@ -9,8 +9,8 @@ export default (statement: Statement): {readonly [key: string]: any} => {
   const choicesMetadata = getChoiceQuestionMetadata(statement);
 
   return {
-    ...(durationMetadata ? durationMetadata : {}),
-    ...(sequencingMetadata ? sequencingMetadata : {}),
-    ...(choicesMetadata ? choicesMetadata : {}),
+    ...durationMetadata,
+    ...sequencingMetadata,
+    ...choicesMetadata,
   };
 };

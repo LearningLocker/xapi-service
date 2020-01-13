@@ -4,7 +4,7 @@ import ActivityInteractionType from '../../../../models/ActivityInteractionType'
 import Statement from '../../../../models/Statement';
 
 export const getSequencingMetadata = (statement: Statement)
-  : {readonly [key: string]: any} | false => {
+  : {readonly [key: string]: any} => {
   if (
     !(
       get(
@@ -14,7 +14,7 @@ export const getSequencingMetadata = (statement: Statement)
       && has(statement, ['result', 'response'])
     )
   ) {
-    return false;
+    return {};
   }
 
   const choicesString = get(statement, ['result', 'response']);
@@ -25,7 +25,7 @@ export const getSequencingMetadata = (statement: Statement)
    * And sequencing implies that we should have at least two items
    */
   if (head(choices) === get(statement, ['result', 'response'])) {
-    return false;
+    return {};
   }
 
   return { 'https://learninglocker&46;net/sequencing-response': choices };
