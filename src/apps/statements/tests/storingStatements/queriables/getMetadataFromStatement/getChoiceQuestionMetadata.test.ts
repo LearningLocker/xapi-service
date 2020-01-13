@@ -5,7 +5,7 @@ import { multipleChoices, singleChoice } from './fixtures/choice-interaction.fix
 
 describe('Retrieve choices metadata from statement', () => {
   it('should return choices metadata from statement', () => {
-    const expectedEmptyMetadata = false;
+    const expectedEmptyMetadata = {};
 
     const actualEmptyMetadataFromEmptyResult = getChoiceQuestionMetadata(
       {
@@ -16,7 +16,7 @@ describe('Retrieve choices metadata from statement', () => {
       },
     );
 
-    assert.equal(actualEmptyMetadataFromEmptyResult, expectedEmptyMetadata);
+    assert.deepEqual(actualEmptyMetadataFromEmptyResult, expectedEmptyMetadata);
   });
 
   it('should retrieve metadata from statement with one choice', () => {
