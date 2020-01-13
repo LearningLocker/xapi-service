@@ -6,11 +6,9 @@ import {
   singleMatchingQuestion,
 } from './fixtures/matching-interaction.fixture';
 
-describe('Retrieve choices metadata from statement', () => {
-  it('should return choices metadata from statement', () => {
-    const expectedEmptyMetadata = false;
-
-    // ----------------------------------------------------------------------------------------
+describe('Retrieve matching questions metadata from statement', () => {
+  it('should return matching questions metadata from statement', () => {
+    const expectedEmptyMetadata = {};
 
     const actualEmptyMetadataFromEmptyResult = getMatchingQuestionsMetadata(
       {
@@ -21,10 +19,10 @@ describe('Retrieve choices metadata from statement', () => {
       },
     );
 
-    assert.equal(actualEmptyMetadataFromEmptyResult, expectedEmptyMetadata);
+    assert.deepEqual(actualEmptyMetadataFromEmptyResult, expectedEmptyMetadata);
+  });
 
-    // ----------------------------------------------------------------------------------------
-
+  it('should return metadata from single matching question', () => {
     const actualSingleMatchingQuestionMetadata = getMatchingQuestionsMetadata(
       singleMatchingQuestion,
     );
@@ -35,9 +33,9 @@ describe('Retrieve choices metadata from statement', () => {
     };
 
     assert.deepEqual(actualSingleMatchingQuestionMetadata, expectedSingleMatchingQuestionMetadata);
+  });
 
-    // ----------------------------------------------------------------------------------------
-
+  it('should return metadata from multiple matching questions', () => {
     const actualMultipleMatchingQuestionsMetadata = getMatchingQuestionsMetadata(
       multipleMatchingQuestions,
     );

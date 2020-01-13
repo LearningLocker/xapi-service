@@ -4,7 +4,7 @@ import ActivityInteractionType from '../../../../models/ActivityInteractionType'
 import Statement from '../../../../models/Statement';
 
 export const getMatchingQuestionsMetadata = (statement: Statement)
-  : {readonly [key: string]: any} | false => {
+  : {readonly [key: string]: any} => {
   if (
     !(
       get(
@@ -14,7 +14,7 @@ export const getMatchingQuestionsMetadata = (statement: Statement)
       && has(statement, ['result', 'response'])
     )
   ) {
-    return false;
+    return {};
   }
 
   const matchingQuestionsString = get(statement, ['result', 'response']);
