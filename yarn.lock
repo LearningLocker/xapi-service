@@ -417,9 +417,9 @@
     "@types/bluebird" "*"
     "@types/node" "*"
 
-"@types/jsonwebtoken@8.3.5":
-  version "8.3.5"
-  resolved "https://registry.yarnpkg.com/@types/jsonwebtoken/-/jsonwebtoken-8.3.5.tgz#ff9be1151a844095df1ff5f723651298c2c07659"
+"@types/jsonwebtoken@8.3.6":
+  version "8.3.6"
+  resolved "https://registry.yarnpkg.com/@types/jsonwebtoken/-/jsonwebtoken-8.3.6.tgz#e6515e8d857572ac8ed594baabf4e17571a20f0b"
   dependencies:
     "@types/node" "*"
 
