@@ -4,13 +4,13 @@ import { getDurationMetadata } from './getDurationMetadata';
 import { getSequencingMetadata } from './getSequencingMetadata';
 
 export default (statement: Statement): {readonly [key: string]: any} => {
+  const durationMetadata = getDurationMetadata(statement);
   const sequencingMetadata = getSequencingMetadata(statement);
   const choicesMetadata = getChoiceQuestionMetadata(statement);
-  const durationMetadata = getDurationMetadata(statement);
 
   return {
+    ...(durationMetadata ? durationMetadata : {}),
     ...(sequencingMetadata ? sequencingMetadata : {}),
     ...(choicesMetadata ? choicesMetadata : {}),
-    ...(durationMetadata ? durationMetadata : {}),
   };
 };
