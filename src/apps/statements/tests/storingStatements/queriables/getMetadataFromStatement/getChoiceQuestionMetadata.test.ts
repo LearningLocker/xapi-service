@@ -7,8 +7,6 @@ describe('Retrieve choices metadata from statement', () => {
   it('should return choices metadata from statement', () => {
     const expectedEmptyMetadata = false;
 
-    // ----------------------------------------------------------------------------------------
-
     const actualEmptyMetadataFromEmptyResult = getChoiceQuestionMetadata(
       {
         ...singleChoice,
@@ -19,18 +17,18 @@ describe('Retrieve choices metadata from statement', () => {
     );
 
     assert.equal(actualEmptyMetadataFromEmptyResult, expectedEmptyMetadata);
+  });
 
-    // ----------------------------------------------------------------------------------------
-
+  it('should retrieve metadata from statement with one choice', () => {
     const actualSingleChoiceMetadata = getChoiceQuestionMetadata(singleChoice);
     const expectedSingleChoiceMetadata = {
       'https://learninglocker&46;net/choice-response': ['golf'],
     };
 
     assert.deepEqual(actualSingleChoiceMetadata, expectedSingleChoiceMetadata);
+  });
 
-    // ----------------------------------------------------------------------------------------
-
+  it('should retrieve metadata from statement with multiple choices', () => {
     const actualMultipleChoicesMetadata = getChoiceQuestionMetadata(multipleChoices);
     const expectedMultipleChoicesMetadata = {
       'https://learninglocker&46;net/choice-response': ['golf', 'tetris'],
