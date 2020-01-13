@@ -5,15 +5,15 @@ import { getMatchingQuestionsMetadata } from './getMatchingQuestionsMetadata';
 import { getSequencingMetadata } from './getSequencingMetadata';
 
 export default (statement: Statement): {readonly [key: string]: any} => {
+  const durationMetadata = getDurationMetadata(statement);
   const sequencingMetadata = getSequencingMetadata(statement);
   const choicesMetadata = getChoiceQuestionMetadata(statement);
-  const durationMetadata = getDurationMetadata(statement);
   const matchingMetadata = getMatchingQuestionsMetadata(statement);
 
   return {
-    ...(sequencingMetadata ? sequencingMetadata : {}),
-    ...(choicesMetadata ? choicesMetadata : {}),
-    ...(durationMetadata ? durationMetadata : {}),
-    ...(matchingMetadata ? matchingMetadata : {}),
+    ...durationMetadata,
+    ...sequencingMetadata,
+    ...choicesMetadata,
+    ...matchingMetadata,
   };
 };

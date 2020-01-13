@@ -5,14 +5,14 @@ import ActivityInteractionType from '../../../../models/ActivityInteractionType'
 import Statement from '../../../../models/Statement';
 
 export const getChoiceQuestionMetadata = (statement: Statement)
-  : {readonly [key: string]: any} | false => {
+  : {readonly [key: string]: any} => {
   if (
     !(
       get(statement.object, ['definition', 'interactionType']) === ActivityInteractionType.CHOICE
       && has(statement, ['result', 'response'])
     )
   ) {
-    return false;
+    return {};
   }
 
   const choicesString = get(statement, ['result', 'response']);
