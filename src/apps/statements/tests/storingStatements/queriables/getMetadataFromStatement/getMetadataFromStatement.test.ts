@@ -46,6 +46,24 @@ describe('Retrieve metadata from statement', () => {
     assert.deepEqual(actualMetadata, expectedMetadata);
   });
 
+  it('should return choices metadata from statement', () => {
+    const actualMetadata = getMetadataFromStatement(
+      {
+        ...multipleChoices,
+        ...{
+          result: {
+            response: multipleChoices.result?.response,
+          },
+        },
+      },
+    );
+    const expectedMetadata = {
+      'https://learninglocker&46;net/choice-response': ['golf', 'tetris'],
+    };
+
+    assert.deepEqual(actualMetadata, expectedMetadata);
+  });
+
   it('should return matching questions metadata', () => {
     const actualMatchingQuestionsMetadata = getMetadataFromStatement(multipleMatchingQuestions);
     const expectedMatchingQuestionsMetadata = {
