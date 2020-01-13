@@ -7,7 +7,7 @@ export default (statement: Statement): {readonly [key: string]: any} => {
   const sequencingMetadata = getSequencingMetadata(statement);
 
   return {
-    ...(durationMetadata ? durationMetadata : {}),
-    ...(sequencingMetadata ? sequencingMetadata : {}),
+    ...durationMetadata,
+    ...sequencingMetadata,
   };
 };

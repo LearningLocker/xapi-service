@@ -6,7 +6,7 @@ import { sequencingInteractionActivityStatement, statementDefaults } from './fix
 
 describe('Retrieve sequencing metadata from statement', () => {
   it('should return empty metadata from empty result', () => {
-    const expectedEmptyMetadata = false;
+    const expectedEmptyMetadata = {};
 
     const actualEmptyMetadataFromEmptyResult = getSequencingMetadata(
       {
@@ -17,14 +17,14 @@ describe('Retrieve sequencing metadata from statement', () => {
       },
     );
 
-    assert.equal(actualEmptyMetadataFromEmptyResult, expectedEmptyMetadata);
+    assert.deepEqual(actualEmptyMetadataFromEmptyResult, expectedEmptyMetadata);
   });
 
   it('should return empty metadata from invalid result', () => {
     const actualEmptyMetadataFromInvalidResult = getSequencingMetadata(statementDefaults);
-    const expectedEmptyMetadata = false;
+    const expectedEmptyMetadata = {};
 
-    assert.equal(actualEmptyMetadataFromInvalidResult, expectedEmptyMetadata);
+    assert.deepEqual(actualEmptyMetadataFromInvalidResult, expectedEmptyMetadata);
 
     const actualMetadataFromIncorrectResponseValue = getSequencingMetadata(
       {
@@ -43,7 +43,7 @@ describe('Retrieve sequencing metadata from statement', () => {
   it(
     'should return empty metadata when there is only one item provided in result',
     () => {
-      const expectedEmptyMetadata = false;
+      const expectedEmptyMetadata = {};
       const actualMetadataFromIncorrectResponseValue = getSequencingMetadata(
         {
           ...sequencingInteractionActivityStatement,
