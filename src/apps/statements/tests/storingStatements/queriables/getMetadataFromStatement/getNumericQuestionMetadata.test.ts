@@ -20,7 +20,9 @@ describe('Retrieve numeric question metadata from statement', () => {
   });
 
   it('should return numeric question for correct result', () => {
-    const actualCorrectMetadata = getNumericQuestionMetadata(numericQuestionInteractionActivityStatement);
+    const actualCorrectMetadata = getNumericQuestionMetadata(
+      numericQuestionInteractionActivityStatement,
+    );
     const expectedCorrectMetadata = {
       'https://learninglocker.net/numeric-response': 4,
     };
