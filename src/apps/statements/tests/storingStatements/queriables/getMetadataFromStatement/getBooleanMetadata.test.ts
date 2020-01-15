@@ -20,7 +20,7 @@ describe('Retrieve sequencing metadata from statement', () => {
     assert.deepEqual(actualEmptyMetadataFromEmptyResult, expectedEmptyMetadata);
   });
 
-  it('should return false data from false result', () => {
+  it('should return false metadata when `false` provided in the result', () => {
     const actualCorrectMetadata = getBooleanMetadata(
       {
         ...booleanInteractionActivityStatement,
@@ -39,7 +39,7 @@ describe('Retrieve sequencing metadata from statement', () => {
     assert.deepEqual(actualCorrectMetadata, expectedCorrectMetadata);
   });
 
-  it('should return false data from true result', () => {
+  it('should return true metadata when `true` provided in the result', () => {
     const actualCorrectMetadata = getBooleanMetadata(booleanInteractionActivityStatement);
 
     const expectedCorrectMetadata = {
