@@ -125,14 +125,14 @@
     semver "5.7.1"
     simple-git "1.129.0"
 
-"@ht2-labs/typescript-project@2.0.49":
-  version "2.0.49"
-  resolved "https://registry.yarnpkg.com/@ht2-labs/typescript-project/-/typescript-project-2.0.49.tgz#236a816ea53e43e707fe4cfcb3748dfd1f75cf55"
+"@ht2-labs/typescript-project@2.0.50":
+  version "2.0.50"
+  resolved "https://registry.yarnpkg.com/@ht2-labs/typescript-project/-/typescript-project-2.0.50.tgz#bebe7cc80b94db8e28d4cc492a55a951173ec822"
   dependencies:
     tslint "5.20.1"
     tslint-consistent-codestyle "1.16.0"
     tslint-immutable "4.9.1"
-    typescript "3.7.4"
+    typescript "3.7.5"
 
 "@learninglocker/xapi-validation@^2.1.10":
   version "2.1.10"
@@ -7414,10 +7414,6 @@ type-is@~1.6.17, type-is@~1.6.18:
 typedarray@^0.0.6:
   version "0.0.6"
   resolved "https://registry.yarnpkg.com/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
-
-typescript@3.7.4:
-  version "3.7.4"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-3.7.4.tgz#1743a5ec5fef6a1fa9f3e4708e33c81c73876c19"
 
 typescript@3.7.5:
   version "3.7.5"
