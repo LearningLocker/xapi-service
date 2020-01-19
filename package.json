@@ -99,7 +99,7 @@
     "nyc": "11.9.0",
     "rimraf": "2.7.1",
     "shelljs": "0.8.3",
-    "simple-git": "1.129.0",
+    "simple-git": "1.130.0",
     "supertest": "3.4.2",
     "tslint": "5.20.1",
     "tslint-consistent-codestyle": "1.16.0",
