@@ -17,7 +17,7 @@ export const getLikertMetadata = (statement: Statement)
       return {};
     }
 
-  const likert = get(statement, ['result', 'response']);
-
-  return { 'https://learninglocker&46;net/likert-response': { likert } };
+  return {
+    'https://learninglocker&46;net/likert-response': get(statement, ['result', 'response']),
+  };
 };
