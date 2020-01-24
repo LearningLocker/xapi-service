@@ -18,7 +18,16 @@ export const getNumericQuestionMetadata = (statement: Statement)
   }
 
   const numericQuestionString = get(statement, ['result', 'response']);
-  const numericQuestion = parseFloat(numericQuestionString);
 
-  return { 'https://learninglocker.net/numeric-response': numericQuestion };
+  if (!numericQuestionString.includes('[:]')) {
+    return {'https://learninglocker.net/numeric-response': parseFloat(numericQuestionString)};
+  }
+
+  const [min, max] = numericQuestionString.split('[:]');
+  return {
+    'https://learninglocker.net/numeric-response': {
+      min,
+      max,
+    },
+  };
 };

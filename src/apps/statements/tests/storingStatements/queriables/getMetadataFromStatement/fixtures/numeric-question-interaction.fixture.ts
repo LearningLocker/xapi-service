@@ -22,6 +22,25 @@ const numericQuestionInteractionActivityStatement: Statement = {
   } as Partial<Statement>,
 };
 
+const numericQuestionWithMinAndMaxInteractionActivityStatement: Statement = {
+  ...statementDefaults,
+  ...{
+    result: {
+      response: '4[:]5',
+    },
+    object: {
+      definition: {
+        name: {'en-US': 'Question 7'},
+        description: {'en-US': 'How many jokes is Chris the butt of each day?'},
+        type: 'http://adlnet.gov/expapi/activities/cmi.interaction',
+        interactionType: ActivityInteractionType.NUMERIC,
+        correctResponsesPattern: ['4[:]5'],
+      } as Partial<InteractionActivityDefinition>,
+    } as SubStatementObject,
+  } as Partial<Statement>,
+};
+
 export {
   numericQuestionInteractionActivityStatement,
+  numericQuestionWithMinAndMaxInteractionActivityStatement,
 };
