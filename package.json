@@ -72,7 +72,7 @@
     "uuid": "^3.0.1"
   },
   "devDependencies": {
-    "@ht2-labs/semantic-release": "1.1.108",
+    "@ht2-labs/semantic-release": "1.1.109",
     "@ht2-labs/typescript-project": "2.0.50",
     "@types/accept-language-parser": "1.5.1",
     "@types/atob": "2.1.2",
@@ -82,7 +82,7 @@
     "@types/fs-extra": "8.0.1",
     "@types/google-cloud__storage": "1.7.0",
     "@types/ioredis": "3.2.23",
-    "@types/jsonwebtoken": "8.3.6",
+    "@types/jsonwebtoken": "8.3.7",
     "@types/lodash": "4.14.149",
     "@types/mime-types": "2.1.0",
     "@types/mocha": "5.2.7",
@@ -102,7 +102,7 @@
     "nyc": "11.9.0",
     "rimraf": "2.7.1",
     "shelljs": "0.8.3",
-    "simple-git": "1.130.0",
+    "simple-git": "1.131.0",
     "supertest": "3.4.2",
     "ts-node": "8.5.4",
     "tsconfig-paths": "3.9.0",
