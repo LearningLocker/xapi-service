@@ -4,9 +4,9 @@ import * as moment from 'moment';
 import Statement from '../../../../models/Statement';
 
 export const getDurationMetadata = (statement: Statement)
-  : {readonly [key: string]: any} | false => {
+  : {readonly [key: string]: any} => {
   if (!has(statement, ['result', 'duration'])) {
-    return false;
+    return {};
   }
 
   const duration = get(statement, ['result', 'duration']);

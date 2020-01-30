@@ -4,29 +4,26 @@ import { getDurationMetadata } from '../../../../service/storeStatements/queriab
 import { statementDefaults } from './fixtures/statements.fixture';
 
 describe('Retrieve duration metadata from statement', () => {
-  it('should return result duration statement', () => {
-      const expectedEmptyMetadata = false;
-
-      // ----------------------------------------------------------------------------------------
-
-      const actualEmptyMetadataFromEmptyResult = getDurationMetadata(
-        {
-          ...statementDefaults,
-          ...{
-            result: {},
-          },
+  it('should return empty metadata from empty result', () => {
+    const expectedEmptyMetadata = {};
+    const actualEmptyMetadataFromEmptyResult = getDurationMetadata(
+      {
+        ...statementDefaults,
+        ...{
+          result: {},
         },
-      );
+      },
+    );
 
-      assert.equal(actualEmptyMetadataFromEmptyResult, expectedEmptyMetadata);
+    assert.deepEqual(actualEmptyMetadataFromEmptyResult, expectedEmptyMetadata);
+  });
 
-      // ----------------------------------------------------------------------------------------
+  it('should retrieve metadata when duration is provided in the result', () => {
+    const actualCorrectMetadata = getDurationMetadata(statementDefaults);
+    const expectedCorrectMetadata = {
+      'https://learninglocker&46;net/result-duration': { seconds: 37080306 },
+    };
 
-      const actualCorrectMetadata = getDurationMetadata(statementDefaults);
-      const expectedCorrectMetadata = {
-        'https://learninglocker&46;net/result-duration': { seconds: 37080306 },
-      };
-
-      assert.deepEqual(actualCorrectMetadata, expectedCorrectMetadata);
-    });
+    assert.deepEqual(actualCorrectMetadata, expectedCorrectMetadata);
+  });
 });
