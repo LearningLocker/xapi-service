@@ -239,8 +239,8 @@
     universal-user-agent "^4.0.0"
 
 "@octokit/rest@^16.27.0":
-  version "16.41.2"
-  resolved "https://registry.yarnpkg.com/@octokit/rest/-/rest-16.41.2.tgz#e35eb17c24f8c8327c5918e02909997f196b8ccd"
+  version "16.42.2"
+  resolved "https://registry.yarnpkg.com/@octokit/rest/-/rest-16.42.2.tgz#fb233f46a4eaec313f885a64abcfbe16510d84f4"
   dependencies:
     "@octokit/auth-token" "^2.4.0"
     "@octokit/plugin-paginate-rest" "^1.1.1"
