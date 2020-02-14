@@ -49,7 +49,7 @@ describe('Retrieve metadata from statement', () => {
     assert.deepEqual(actualMetadata, expectedMetadata);
   });
 
-  it('should retrieve metadata when likert is provided in the result', () => {
+  it('should retrieve likert metadata from statement', () => {
     const actualLikertMetadata = getMetadataFromStatement(likertStatement);
     const expectedLikertMetadata = {
       'https://learninglocker&46;net/likert-response': 'likert_3',
