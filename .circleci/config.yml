@@ -36,7 +36,7 @@ jobs:
           command: yarn build
       - run:
           name: Linting Code
-          command: yarn lint -- -c tslint.ci.json -q
+          command: yarn lint-ci
       - run:
           name: Mocha Tests
           command: yarn cover-ci

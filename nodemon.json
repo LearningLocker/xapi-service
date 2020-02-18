@@ -1,0 +1,9 @@
+{
+  "watch": ["src"],
+  "ext": "ts",
+  "ignore": ["src/**/*.test.ts"],
+  "exec": "ts-node -r tsconfig-paths/register -r dotenv/config src/server.ts",
+  "env": {
+    "NODE_ENV": "development"
+  }
+}
