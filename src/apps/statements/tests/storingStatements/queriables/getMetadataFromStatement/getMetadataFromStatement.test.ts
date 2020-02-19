@@ -3,10 +3,11 @@ import { merge } from 'lodash';
 
 import getMetadataFromStatement
   from '../../../../service/storeStatements/queriables/getMetadataFromStatement';
-import { multipleChoices } from './fixtures/choice-interaction.fixture';
 import { multipleMatchingQuestions } from './fixtures/matching-interaction.fixture';
-import { multipleItemsSequence } from './fixtures/sequencing-interaction.fixture';
-import { statementDefaults } from './fixtures/statements.fixture';
+import {
+  sequencingInteractionActivityStatement,
+  statementDefaults,
+} from './fixtures/statements.fixture';
 
 describe('Retrieve metadata from statement', () => {
   it('should retrieve duration metadata from statement', () => {
@@ -19,7 +20,9 @@ describe('Retrieve metadata from statement', () => {
   });
 
   it('should return sequencing metadata from statement', () => {
-    const actualSequencingMetadata = getMetadataFromStatement(multipleItemsSequence);
+    const actualSequencingMetadata = getMetadataFromStatement(
+      sequencingInteractionActivityStatement,
+    );
     const expectedSequencingMetadata = {
       'https://learninglocker&46;net/sequencing-response': ['tim', 'mike', 'ells', 'ben'],
     };
@@ -30,7 +33,7 @@ describe('Retrieve metadata from statement', () => {
   it('should return duration and sequencing metadata from one statement', () => {
     const statementWithDurationAndSequencing = merge(
       {},
-      multipleItemsSequence,
+      sequencingInteractionActivityStatement,
       {
         result: {
           duration: 'P1Y2M3DT4H5M6S',
@@ -41,24 +44,6 @@ describe('Retrieve metadata from statement', () => {
     const expectedMetadata = {
       'https://learninglocker&46;net/result-duration': { seconds: 37080306 },
       'https://learninglocker&46;net/sequencing-response': ['tim', 'mike', 'ells', 'ben'],
-    };
-
-    assert.deepEqual(actualMetadata, expectedMetadata);
-  });
-
-  it('should return choices metadata from statement', () => {
-    const actualMetadata = getMetadataFromStatement(
-      {
-        ...multipleChoices,
-        ...{
-          result: {
-            response: multipleChoices.result?.response,
-          },
-        },
-      },
-    );
-    const expectedMetadata = {
-      'https://learninglocker&46;net/choice-response': ['golf', 'tetris'],
     };
 
     assert.deepEqual(actualMetadata, expectedMetadata);
