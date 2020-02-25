@@ -18,6 +18,6 @@ export const getBooleanMetadata = (statement: Statement)
   }
 
   return {
-    'https://learninglocker.net/true-false-response': get(statement, ['result', 'response']),
+    'https://learninglocker&46;net/true-false-response': get(statement, ['result', 'response']),
   };
 };

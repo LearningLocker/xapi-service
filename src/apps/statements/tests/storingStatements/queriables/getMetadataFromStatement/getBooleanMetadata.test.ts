@@ -33,7 +33,7 @@ describe('Retrieve sequencing metadata from statement', () => {
     );
 
     const expectedCorrectMetadata = {
-      'https://learninglocker.net/true-false-response': 'false',
+      'https://learninglocker&46;net/true-false-response': 'false',
     };
 
     assert.deepEqual(actualCorrectMetadata, expectedCorrectMetadata);
@@ -43,7 +43,7 @@ describe('Retrieve sequencing metadata from statement', () => {
     const actualCorrectMetadata = getBooleanMetadata(booleanInteractionActivityStatement);
 
     const expectedCorrectMetadata = {
-      'https://learninglocker.net/true-false-response': 'true',
+      'https://learninglocker&46;net/true-false-response': 'true',
     };
 
     assert.deepEqual(actualCorrectMetadata, expectedCorrectMetadata);
