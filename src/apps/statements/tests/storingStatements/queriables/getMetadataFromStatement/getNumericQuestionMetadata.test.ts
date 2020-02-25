@@ -27,7 +27,7 @@ describe('Retrieve numeric question metadata from statement', () => {
       statementFixture,
     );
     const expectedCorrectMetadata = {
-      'https://learninglocker.net/numeric-response': 4,
+      'https://learninglocker&46;net/numeric-response': 4,
     };
 
     assert.deepEqual(actualCorrectMetadata, expectedCorrectMetadata);
@@ -38,7 +38,7 @@ describe('Retrieve numeric question metadata from statement', () => {
       statementWithMinAndMaxFixture,
     );
     const expectedCorrectMetadata = {
-      'https://learninglocker.net/numeric-response': {
+      'https://learninglocker&46;net/numeric-response': {
         min: 4,
         max: 5,
       },
