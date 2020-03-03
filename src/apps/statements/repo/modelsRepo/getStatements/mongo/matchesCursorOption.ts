@@ -1,16 +1,22 @@
 import { ObjectID } from 'mongodb';
 import { Opts } from '../Signature';
 
-export default (opts: Opts): object => {
-  if (opts.cursor === undefined) {
+export default (options: Opts): object => {
+  if (options.cursor === undefined) {
     return {};
   }
 
+  const [_id, stored] = options.cursor.split('_');
+  const storedDate = new Date(stored);
+  const oid = new ObjectID(_id);
+
   return {
-    _id: (
-      opts.ascending
-        ? { $gt: new ObjectID(opts.cursor) }
-        : { $lt: new ObjectID(opts.cursor) }
-    ),
+    $or: [
+      { stored: { [options.ascending ? '$gte' : '$lte']: storedDate } },
+      {
+        _id: { [options.ascending ? '$gt' : '$lt']: oid },
+        stored: storedDate,
+      },
+    ],
   };
 };

@@ -12,7 +12,7 @@ export const assertStatementsPageResultsAndOrder = async (
     limit = 2,
     cursor,
     isNextPageCheckEnabled = true,
-    ascending = true,
+    ascending = false,
     /* Should start from 1 */
     pageNumber= null,
   }: {
