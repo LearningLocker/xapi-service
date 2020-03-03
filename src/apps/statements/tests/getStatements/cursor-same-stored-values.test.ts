@@ -1,3 +1,4 @@
+import connectToMongoDb from '../../repo/utils/connectToMongoDb';
 import createClientModel from '../utils/createClientModel';
 import createStatement from '../utils/createStatement';
 import setup from '../utils/setup';
@@ -12,8 +13,9 @@ const TEST_ID_5 = '3418987e-fc23-497f-9e3c-cb00d2783255';
 
 const TEST_CLIENT = createClientModel();
 
-describe('get statements with the same stored value using cursor', () => {
+describe('get statements with the same stored value using cursor', async () => {
   const service = setup();
+  const db = await connectToMongoDb()();
   const storeStatements = storeStatementsInService(service);
 
   const statement1 = createStatement({ id: TEST_ID_1 });
@@ -21,6 +23,10 @@ describe('get statements with the same stored value using cursor', () => {
   const statement3 = createStatement({ id: TEST_ID_3 });
   const statement4 = createStatement({ id: TEST_ID_4 });
   const statement5 = createStatement({ id: TEST_ID_5 });
+
+  beforeEach(async () => {
+    await db.dropDatabase();
+  });
 
   it('should return correct statements when ascending', async () => {
     await storeStatements([statement1, statement2, statement3, statement4, statement5]);

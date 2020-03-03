@@ -14,8 +14,9 @@ const TEST_ID_5 = '3418987e-fc23-497f-9e3c-cb00d2783255';
 
 const TEST_CLIENT = createClientModel();
 
-describe('get statements with different stored value using cursor', () => {
+describe('get statements with different stored value using cursor', async () => {
   const service = setup();
+  const db = await connectToMongoDb()();
 
   const statement1: Partial<StoredStatementModel> = {
     _id: new ObjectID('5bae31b42e18c3081e40db5a') as any as string,
@@ -88,8 +89,11 @@ describe('get statements with different stored value using cursor', () => {
     }),
   };
 
+  beforeEach(async () => {
+    await db.dropDatabase();
+  });
+
   it('should return correct statements when ascending', async () => {
-    const db = await connectToMongoDb()();
     await db
       .collection('statements')
       .insertMany([statement1, statement2, statement3, statement4, statement5]);
@@ -123,7 +127,6 @@ describe('get statements with different stored value using cursor', () => {
   });
 
   it('should return correct statements when descending cursor', async () => {
-    const db = await connectToMongoDb()();
     await db
       .collection('statements')
       .insertMany([statement1, statement2, statement3, statement4, statement5]);
