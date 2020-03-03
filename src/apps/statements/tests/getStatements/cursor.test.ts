@@ -1,4 +1,3 @@
-import { delay } from 'bluebird';
 import { ObjectID } from 'mongodb';
 import StoredStatementModel from '../../models/StoredStatementModel';
 import connectToMongoDb from '../../repo/utils/connectToMongoDb';

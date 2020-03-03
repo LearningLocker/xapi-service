@@ -14,7 +14,7 @@ export const assertStatementsPageResultsAndOrder = async (
     isNextPageCheckEnabled = true,
     ascending = false,
     /* Should start from 1 */
-    pageNumber= null,
+    pageNumber= 0,
   }: {
     readonly service: Service;
     readonly client: ClientModel;
@@ -22,7 +22,7 @@ export const assertStatementsPageResultsAndOrder = async (
     readonly limit?: number;
     readonly isNextPageCheckEnabled?: boolean;
     readonly ascending?: boolean;
-    readonly pageNumber?: null | number;
+    readonly pageNumber?: number;
     readonly cursor?: string;
   },
 ) => {
@@ -33,7 +33,7 @@ export const assertStatementsPageResultsAndOrder = async (
     cursor,
   });
 
-  const pageNumberStringPartial = pageNumber ? ` #${pageNumber + 1}` : '';
+  const pageNumberStringPartial = pageNumber > 0 ? ` #${pageNumber + 1}` : '';
 
   if (isNextPageCheckEnabled) {
     assert.equal(
