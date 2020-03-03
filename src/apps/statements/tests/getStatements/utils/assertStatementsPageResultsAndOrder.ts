@@ -36,12 +36,14 @@ export const assertStatementsPageResultsAndOrder = async (
   const pageNumberStringPartial = pageNumber > 0 ? ` #${pageNumber + 1}` : '';
 
   if (isNextPageCheckEnabled) {
+    /* istanbul ignore next */
     assert.equal(
       isString(pageResults.cursor),
       true,
       `Expected string cursor to page${pageNumberStringPartial}`,
     );
   } else {
+    /* istanbul ignore next */
     assert.equal(
       pageResults.cursor,
       undefined,
@@ -49,10 +51,12 @@ export const assertStatementsPageResultsAndOrder = async (
     );
   }
 
+  /* istanbul ignore next */
   assert(isArray(pageResults.statements), `Expected an array of statements for page${pageNumberStringPartial}`);
 
   const pageActualStatementIds = pageResults.statements.map((s) => s.id);
 
+  /* istanbul ignore next */
   assert.deepEqual(pageActualStatementIds, expectedPageStatementIds);
 
   return pageResults;

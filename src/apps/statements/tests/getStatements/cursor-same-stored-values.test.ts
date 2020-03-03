@@ -60,8 +60,10 @@ describe('get statements with the same stored value using cursor', async () => {
   });
 
   it('should return correct statements when descending cursor', async () => {
+    /* istanbul ignore next */
     await storeStatements([statement1, statement2, statement3, statement4, statement5]);
 
+    /* istanbul ignore next */
     const page1Results = await assertStatementsPageResultsAndOrder({
       service,
       client: TEST_CLIENT,
@@ -69,6 +71,7 @@ describe('get statements with the same stored value using cursor', async () => {
       pageNumber: 1,
     });
 
+    /* istanbul ignore next */
     const page2Results = await assertStatementsPageResultsAndOrder({
       service,
       client: TEST_CLIENT,
@@ -77,6 +80,7 @@ describe('get statements with the same stored value using cursor', async () => {
       pageNumber: 2,
     });
 
+    /* istanbul ignore next */
     await assertStatementsPageResultsAndOrder({
       service,
       client: TEST_CLIENT,

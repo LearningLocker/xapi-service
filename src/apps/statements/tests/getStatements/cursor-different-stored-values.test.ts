@@ -131,6 +131,7 @@ describe('get statements with different stored value using cursor', async () => 
       .collection('statements')
       .insertMany([statement1, statement2, statement3, statement4, statement5]);
 
+    /* istanbul ignore next */
     const page1Results = await assertStatementsPageResultsAndOrder({
       service,
       client: TEST_CLIENT,
@@ -138,6 +139,7 @@ describe('get statements with different stored value using cursor', async () => 
       pageNumber: 1,
     });
 
+    /* istanbul ignore next */
     const page2Results = await assertStatementsPageResultsAndOrder({
       service,
       client: TEST_CLIENT,
@@ -146,6 +148,7 @@ describe('get statements with different stored value using cursor', async () => 
       pageNumber: 2,
     });
 
+    /* istanbul ignore next */
     await assertStatementsPageResultsAndOrder({
       service,
       client: TEST_CLIENT,
