@@ -14,7 +14,7 @@ const TEST_ID_5 = '3418987e-fc23-497f-9e3c-cb00d2783255';
 
 const TEST_CLIENT = createClientModel();
 
-describe('get statements with cursors', () => {
+describe('get statements with different stored value using cursor', () => {
   const service = setup();
 
   const statement1: Partial<StoredStatementModel> = {
@@ -88,26 +88,17 @@ describe('get statements with cursors', () => {
     }),
   };
 
-  it('should return correct statements when ascending cursor is used', async () => {
+  it('should return correct statements when ascending', async () => {
     const db = await connectToMongoDb()();
     await db
       .collection('statements')
-      .insertMany([
-        statement1,
-        statement2,
-        statement3,
-        statement4,
-        statement5,
-      ]);
+      .insertMany([statement1, statement2, statement3, statement4, statement5]);
 
     const page1Results = await assertStatementsPageResultsAndOrder({
       service,
       client: TEST_CLIENT,
       ascending: true,
-      expectedPageStatementIds: [
-        TEST_ID_1,
-        TEST_ID_2,
-      ],
+      expectedPageStatementIds: [TEST_ID_1, TEST_ID_2],
       pageNumber: 1,
     });
 
@@ -116,10 +107,7 @@ describe('get statements with cursors', () => {
       client: TEST_CLIENT,
       ascending: true,
       cursor: page1Results.cursor,
-      expectedPageStatementIds: [
-        TEST_ID_3,
-        TEST_ID_4,
-      ],
+      expectedPageStatementIds: [TEST_ID_3, TEST_ID_4],
       pageNumber: 2,
     });
 
@@ -128,33 +116,22 @@ describe('get statements with cursors', () => {
       client: TEST_CLIENT,
       ascending: true,
       cursor: page2Results.cursor,
-      expectedPageStatementIds: [
-        TEST_ID_5,
-      ],
+      expectedPageStatementIds: [TEST_ID_5],
       isNextPageCheckEnabled: false,
       pageNumber: 3,
     });
   });
 
-  it('should return correct statements when descending cursor is used', async () => {
+  it('should return correct statements when descending cursor', async () => {
     const db = await connectToMongoDb()();
     await db
       .collection('statements')
-      .insertMany([
-        statement1,
-        statement2,
-        statement3,
-        statement4,
-        statement5,
-      ]);
+      .insertMany([statement1, statement2, statement3, statement4, statement5]);
 
     const page1Results = await assertStatementsPageResultsAndOrder({
       service,
       client: TEST_CLIENT,
-      expectedPageStatementIds: [
-        TEST_ID_5,
-        TEST_ID_4,
-      ],
+      expectedPageStatementIds: [TEST_ID_5, TEST_ID_4],
       pageNumber: 1,
     });
 
@@ -162,10 +139,7 @@ describe('get statements with cursors', () => {
       service,
       client: TEST_CLIENT,
       cursor: page1Results.cursor,
-      expectedPageStatementIds: [
-        TEST_ID_3,
-        TEST_ID_2,
-      ],
+      expectedPageStatementIds: [TEST_ID_3, TEST_ID_2],
       pageNumber: 2,
     });
 
@@ -173,9 +147,7 @@ describe('get statements with cursors', () => {
       service,
       client: TEST_CLIENT,
       cursor: page2Results.cursor,
-      expectedPageStatementIds: [
-        TEST_ID_1,
-      ],
+      expectedPageStatementIds: [TEST_ID_1],
       isNextPageCheckEnabled: false,
       pageNumber: 3,
     });

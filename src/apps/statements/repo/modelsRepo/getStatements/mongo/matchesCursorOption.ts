@@ -12,11 +12,11 @@ export default (options: Opts): object => {
 
   return {
     $or: [
-      { stored: { [options.ascending ? '$gte' : '$lte']: storedDate } },
       {
-        _id: { [options.ascending ? '$gt' : '$lt']: oid },
+        _id: { [options.ascending ? '$gte' : '$lte']: oid },
         stored: storedDate,
       },
+      { stored: { [options.ascending ? '$gt' : '$lt']: storedDate } },
     ],
   };
 };
