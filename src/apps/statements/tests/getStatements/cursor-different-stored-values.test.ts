@@ -17,81 +17,29 @@ const TEST_CLIENT = createClientModel();
 describe('get statements with different stored value using cursor', async () => {
   const service = setup();
   const db = await connectToMongoDb()();
-
-  const statement1: Partial<StoredStatementModel> = {
-    _id: new ObjectID('5bae31b42e18c3081e40db5a') as any as string,
+  const createStatementPartial = (documentId: string, statementId: string, stored: string)
+    : Partial<StoredStatementModel> => ({
+    _id: new ObjectID(documentId) as any as string,
     person: null,
     active: true,
     voided: false,
     client: new ObjectID(TEST_CLIENT._id) as any as string,
     lrs_id: new ObjectID(TEST_CLIENT.lrs_id) as any as string,
     organisation: new ObjectID(TEST_CLIENT.organisation) as any as string,
-    stored: new Date('2018-09-28T13:50:44.041Z'),
+    stored: new Date(stored),
     statement: createStatement({
-      id: TEST_ID_1,
-      stored: '2018-09-28T13:50:44.041Z',
+      id: statementId,
+      stored,
     }),
-  };
-  const statement2: Partial<StoredStatementModel> = {
-    _id: new ObjectID('5bae3248e07a8007f0b27deb') as any as string,
-    person: null,
-    active: true,
-    voided: false,
-    client: new ObjectID(TEST_CLIENT._id) as any as string,
-    lrs_id: new ObjectID(TEST_CLIENT.lrs_id) as any as string,
-    organisation: new ObjectID(TEST_CLIENT.organisation) as any as string,
-    stored: new Date('2018-09-28T13:53:12.874Z'),
-    statement: createStatement({
-      id: TEST_ID_2,
-      stored: '2018-09-28T13:53:12.874Z',
-    }),
-  };
-  const statement3: Partial<StoredStatementModel> = {
-    _id: new ObjectID('5bae32485e331207f3d8e005') as any as string,
-    person: null,
-    active: true,
-    voided: false,
-    client: new ObjectID(TEST_CLIENT._id) as any as string,
-    lrs_id: new ObjectID(TEST_CLIENT.lrs_id) as any as string,
-    organisation: new ObjectID(TEST_CLIENT.organisation) as any as string,
-    stored: new Date('2018-09-28T13:53:12.882Z'),
-    statement: createStatement({
-      id: TEST_ID_3,
-      stored: '2018-09-28T13:53:12.882Z',
-    }),
-  };
-  const statement4: Partial<StoredStatementModel> = {
-    _id: new ObjectID('5bae324821a3b907e9b13992') as any as string,
-    person: null,
-    active: true,
-    voided: false,
-    client: new ObjectID(TEST_CLIENT._id) as any as string,
-    lrs_id: new ObjectID(TEST_CLIENT.lrs_id) as any as string,
-    organisation: new ObjectID(TEST_CLIENT.organisation) as any as string,
-    stored: new Date('2018-09-28T13:53:12.943Z'),
-    statement: createStatement({
-      id: TEST_ID_4,
-      stored: '2018-09-28T13:53:12.943Z',
-    }),
-  };
-  const statement5: Partial<StoredStatementModel> = {
-    _id: new ObjectID('5bae32482e18c3081e40db63') as any as string,
-    person: null,
-    active: true,
-    voided: false,
-    client: new ObjectID(TEST_CLIENT._id) as any as string,
-    lrs_id: new ObjectID(TEST_CLIENT.lrs_id) as any as string,
-    organisation: new ObjectID(TEST_CLIENT.organisation) as any as string,
-    stored: new Date('2018-09-28T13:53:12.994Z'),
-    statement: createStatement({
-      id: TEST_ID_5,
-      stored: '2018-09-28T13:53:12.994Z',
-    }),
-  };
-
-  beforeEach(async () => {
-    await db.dropDatabase();
   });
+
+  const statement1 = createStatementPartial('5bae31b42e18c3081e40db5a', TEST_ID_1, '2018-09-28T13:50:44.041Z');
+  const statement2 = createStatementPartial('5bae3248e07a8007f0b27deb', TEST_ID_2, '2018-09-28T13:53:12.874Z');
+  const statement3 = createStatementPartial('5bae32485e331207f3d8e005', TEST_ID_3, '2018-09-28T13:53:12.882Z');
+  const statement4 = createStatementPartial('5bae324821a3b907e9b13992', TEST_ID_4, '2018-09-28T13:53:12.943Z');
+  const statement5 = createStatementPartial('5bae32482e18c3081e40db63', TEST_ID_5, '2018-09-28T13:53:12.994Z');
+
+  beforeEach(async () => await db.dropDatabase());
 
   it('should return correct statements when ascending', async () => {
     await db
@@ -99,16 +47,13 @@ describe('get statements with different stored value using cursor', async () => 
       .insertMany([statement1, statement2, statement3, statement4, statement5]);
 
     const page1Results = await assertStatementsPageResultsAndOrder({
-      service,
-      client: TEST_CLIENT,
+      service, client: TEST_CLIENT,
       ascending: true,
       expectedPageStatementIds: [TEST_ID_1, TEST_ID_2],
       pageNumber: 1,
     });
-
     const page2Results = await assertStatementsPageResultsAndOrder({
-      service,
-      client: TEST_CLIENT,
+      service, client: TEST_CLIENT,
       ascending: true,
       cursor: page1Results.cursor,
       expectedPageStatementIds: [TEST_ID_3, TEST_ID_4],
@@ -116,8 +61,7 @@ describe('get statements with different stored value using cursor', async () => 
     });
 
     await assertStatementsPageResultsAndOrder({
-      service,
-      client: TEST_CLIENT,
+      service, client: TEST_CLIENT,
       ascending: true,
       cursor: page2Results.cursor,
       expectedPageStatementIds: [TEST_ID_5],
@@ -131,32 +75,24 @@ describe('get statements with different stored value using cursor', async () => 
       .collection('statements')
       .insertMany([statement1, statement2, statement3, statement4, statement5]);
 
-    /* istanbul ignore next */
     const page1Results = await assertStatementsPageResultsAndOrder({
-      service,
-      client: TEST_CLIENT,
+      service, client: TEST_CLIENT,
       expectedPageStatementIds: [TEST_ID_5, TEST_ID_4],
       pageNumber: 1,
     });
-
-    /* istanbul ignore next */
     const page2Results = await assertStatementsPageResultsAndOrder({
-      service,
-      client: TEST_CLIENT,
+      service, client: TEST_CLIENT,
       cursor: page1Results.cursor,
       expectedPageStatementIds: [TEST_ID_3, TEST_ID_2],
       pageNumber: 2,
     });
 
-    /* istanbul ignore next */
     await assertStatementsPageResultsAndOrder({
-      service,
-      client: TEST_CLIENT,
+      service, client: TEST_CLIENT,
       cursor: page2Results.cursor,
       expectedPageStatementIds: [TEST_ID_1],
       isNextPageCheckEnabled: false,
       pageNumber: 3,
     });
   });
-// tslint:disable-next-line:max-file-line-count
 });
