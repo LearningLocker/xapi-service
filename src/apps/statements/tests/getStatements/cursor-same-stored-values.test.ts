@@ -13,6 +13,7 @@ const TEST_ID_5 = '3418987e-fc23-497f-9e3c-cb00d2783255';
 
 const TEST_CLIENT = createClientModel();
 
+/* istanbul ignore next */
 describe('get statements with the same stored value using cursor', async () => {
   const service = setup();
   const db = await connectToMongoDb()();
