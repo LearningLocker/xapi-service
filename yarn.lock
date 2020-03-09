@@ -4161,9 +4161,10 @@ jsbn@~0.1.0:
   version "0.1.1"
   resolved "https://registry.yarnpkg.com/jsbn/-/jsbn-0.1.1.tgz#a5e654c2e5a2deb5f201d96cefbca80c0ef2f513"
 
-jscommons@^2.3.0:
-  version "2.4.13"
-  resolved "https://registry.yarnpkg.com/jscommons/-/jscommons-2.4.13.tgz#4dc5a99a58fb0e5d464cba3fa648aae3d8a9cfbb"
+jscommons@^2.4.14:
+  version "2.4.14"
+  resolved "https://registry.yarnpkg.com/jscommons/-/jscommons-2.4.14.tgz#15c1a3c71202b5d167527b2cd6d0cc7ca2a336cc"
+  integrity sha512-Elu7FivCOgCdSW1KMxkaNy5cZT51DHgR6QLyDfzVln5mXJAGP4mBYF4TlTG4hdT5X915301MwE3dmfkUC5R2Dg==
   dependencies:
     aws-sdk "^2.249.1"
     bluebird "^3.5.1"
