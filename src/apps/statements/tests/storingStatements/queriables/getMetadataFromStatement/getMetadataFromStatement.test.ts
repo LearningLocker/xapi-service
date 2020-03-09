@@ -3,6 +3,7 @@ import { merge } from 'lodash';
 
 import getMetadataFromStatement
   from '../../../../service/storeStatements/queriables/getMetadataFromStatement';
+import { multipleMatchingQuestions } from './fixtures/matching-interaction.fixture';
 import {
   sequencingInteractionActivityStatement,
   statementDefaults,
@@ -46,5 +47,19 @@ describe('Retrieve metadata from statement', () => {
     };
 
     assert.deepEqual(actualMetadata, expectedMetadata);
+  });
+
+  it('should return matching questions metadata', () => {
+    const actualMatchingQuestionsMetadata = getMetadataFromStatement(multipleMatchingQuestions);
+    const expectedMatchingQuestionsMetadata = {
+      'https://learninglocker&46;net/matching-response': [
+        ['ben', '3'],
+        ['chris', '2'],
+        ['troy', '4'],
+        ['freddie', '1'],
+      ],
+    };
+
+    assert.deepEqual(actualMatchingQuestionsMetadata, expectedMatchingQuestionsMetadata);
   });
 });
