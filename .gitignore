@@ -9,3 +9,4 @@ yarn-error.log
 /npm-debug.log
 /storage
 .idea
+package-lock.json
