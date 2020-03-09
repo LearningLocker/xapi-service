@@ -4,6 +4,7 @@ import { merge } from 'lodash';
 import getMetadataFromStatement
   from '../../../../service/storeStatements/queriables/getMetadataFromStatement';
 import { multipleChoices } from './fixtures/choice-interaction.fixture';
+import { likertStatement } from './fixtures/likert.fixture';
 import { multipleMatchingQuestions } from './fixtures/matching-interaction.fixture';
 import {
   sequencingInteractionActivityStatement,
@@ -48,6 +49,15 @@ describe('Retrieve metadata from statement', () => {
     };
 
     assert.deepEqual(actualMetadata, expectedMetadata);
+  });
+
+  it('should retrieve likert metadata from statement', () => {
+    const actualLikertMetadata = getMetadataFromStatement(likertStatement);
+    const expectedLikertMetadata = {
+      'https://learninglocker&46;net/likert-response': 'likert_3',
+    };
+
+    assert.deepEqual(actualLikertMetadata, expectedLikertMetadata);
   });
 
   it('should return choices metadata from statement', () => {
