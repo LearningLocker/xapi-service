@@ -4,7 +4,6 @@ import { isArray, isString } from 'lodash';
 import ClientModel from '../../../models/ClientModel';
 import Service from '../../../serviceFactory/Service';
 
-/* istanbul ignore next */
 export const assertStatementsPageResultsAndOrder = async (
   {
     service,
