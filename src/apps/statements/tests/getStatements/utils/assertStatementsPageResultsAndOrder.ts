@@ -4,7 +4,6 @@ import { isArray, isString } from 'lodash';
 import ClientModel from '../../../models/ClientModel';
 import Service from '../../../serviceFactory/Service';
 
-/* istanbul ignore next */
 export const assertStatementsPageResultsAndOrder = async (
   {
     service,
@@ -15,7 +14,7 @@ export const assertStatementsPageResultsAndOrder = async (
     isNextPageCheckEnabled = true,
     ascending = false,
     /* Should start from 1 */
-    pageNumber= 0,
+    pageNumber = 0,
   }: {
     readonly service: Service;
     readonly client: ClientModel;
