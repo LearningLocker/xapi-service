@@ -11,8 +11,6 @@ import azureStorageRepo from '../azureStorageRepo';
 import fetchAuthRepo from '../fetchAuthRepo';
 import googleStorageRepo from '../googleStorageRepo';
 import localStorageRepo from '../localStorageRepo';
-import memoryModelsRepo from '../memoryModelsRepo';
-import Profile from '../models/Profile';
 import mongoAuthRepo from '../mongoAuthRepo';
 import mongoModelsRepo from '../mongoModelsRepo';
 import s3StorageRepo from '../s3StorageRepo';
@@ -45,19 +43,13 @@ const getAuthRepo = (): AuthRepo => {
 /* istanbul ignore next */
 const getModelsRepo = (): ModelsRepo => {
   switch (config.repoFactory.modelsRepoName) {
-    case 'mongo':
+    default: case 'mongo':
       return mongoModelsRepo({
         db: connectToDb({
           dbName: config.mongoModelsRepo.dbName,
           logger,
           url: config.mongoModelsRepo.url,
         }),
-      });
-    default: case 'memory':
-      return memoryModelsRepo({
-        state: {
-          activityProfiles: [] as Profile[],
-        },
       });
   }
 };
