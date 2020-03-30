@@ -18,11 +18,6 @@ export default (appConfig: AppConfig): Router => {
     },
     models: {
       factoryName: appConfig.repo.factory.modelsRepoName,
-      memory: {
-        state: {
-          activityProfiles: [],
-        },
-      },
       mongo: {
         db: appConfig.repo.mongo.db,
       },

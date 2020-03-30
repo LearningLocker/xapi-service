@@ -38,7 +38,12 @@ export default (config: Config) => {
     });
 
     const hasMoreModels = models.length > limit;
-    const cursor = hasMoreModels ? models[models.length - 2]._id : undefined;
+
+    const cursorModel = models[models.length - 1];
+    const cursor = hasMoreModels
+      ? `${cursorModel._id}_${cursorModel.stored.toISOString()}`
+      : undefined;
+
     const resultModels = hasMoreModels ? models.slice(0, models.length - 1) : models;
     const result = await getStatementsResult(config, opts, resultModels);
 

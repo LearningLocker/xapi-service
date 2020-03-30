@@ -23,7 +23,7 @@ export default (config: Config) => {
 
     const deletedStates = stateDocuments.map((state: any) => {
       return {
-        content: state.content,
+        content: state.content === null ? undefined : state.content,
         extension: state.extension,
         id: state._id.toString(),
       };

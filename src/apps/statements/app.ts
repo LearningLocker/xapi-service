@@ -28,12 +28,6 @@ export default (appConfig: AppConfig): Result => {
     },
     models: {
       facade: appConfig.repo.factory.modelsRepoName,
-      memory: {
-        state: {
-          fullActivities: [],
-          statements: [],
-        },
-      },
       mongo: {
         db: appConfig.repo.mongo.db,
       },

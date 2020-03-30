@@ -1,6 +1,4 @@
 import config from '../../../config';
-import FullActivityModel from '../models/FullActivityModel';
-import StoredStatementModel from '../models/StoredStatementModel';
 import factory from './factory';
 import Repo from './Repo';
 import connectToMongoDb from './utils/connectToMongoDb';
@@ -31,12 +29,6 @@ const repo: Repo = factory({
   },
   models: {
     facade: config.repoFactory.modelsRepoName,
-    memory: {
-      state: {
-        fullActivities: [] as FullActivityModel[],
-        statements: [] as StoredStatementModel[],
-      },
-    },
     mongo: {
       db: connectToMongoDb(),
     },

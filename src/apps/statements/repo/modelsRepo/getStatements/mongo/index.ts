@@ -32,7 +32,7 @@ const filterModels = (opts: Opts): Object => {
 const sortModels = (ascending: boolean) => {
   return {
     stored: ascending ? 1 : -1,
-    _id: -1,
+    _id: ascending ? 1 : -1,
   };
 };
 
