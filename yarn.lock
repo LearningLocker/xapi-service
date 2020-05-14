@@ -480,10 +480,10 @@
   dependencies:
     "@types/node" "*"
 
-"@types/google-cloud__storage@1.7.0":
-  version "1.7.0"
-  resolved "https://registry.yarnpkg.com/@types/google-cloud__storage/-/google-cloud__storage-1.7.0.tgz#60abb5669f78ed07abb625f556d1f396ee84724e"
-  integrity sha512-zVIcUSnLbKNQclvsFbjPdlg97tNhjUru3Tt6p+p6moB/trzZhwqUtC3OqoGOF4cq7ha8Gp/rhC3GVe6gCcgbeg==
+"@types/google-cloud__storage@1.7.2":
+  version "1.7.2"
+  resolved "https://registry.yarnpkg.com/@types/google-cloud__storage/-/google-cloud__storage-1.7.2.tgz#28593a90c861299609344e30c9ee5a8895948901"
+  integrity sha512-RaQJ7+Ht20MRYJu7mgKBpbVNZIPneztKIl/DUKacRC6A8mXRsJfgDdPA7indHmJGIgm+hzUTj44+A3RyuuYZhg==
   dependencies:
     "@types/node" "*"
     "@types/request" "*"
