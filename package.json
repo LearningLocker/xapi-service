@@ -95,7 +95,7 @@
     "@types/uuid": "3.4.8",
     "@types/winston": "2.4.4",
     "colors": "1.4.0",
-    "husky": "^4.2.3",
+    "husky": "4.2.3",
     "jscpd": "0.6.25",
     "mocha": "6.2.2",
     "nodemon": "2.0.2",
