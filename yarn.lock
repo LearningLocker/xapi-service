@@ -6950,10 +6950,15 @@ rimraf@2.7.1, rimraf@^2.5.2, rimraf@^2.5.4, rimraf@^2.6.1, rimraf@^2.6.2, rimraf
   dependencies:
     glob "^7.1.3"
 
-rulr@^4.0.0, rulr@^4.0.1, rulr@^4.0.2:
+rulr@^4.0.1, rulr@^4.0.2:
   version "4.0.2"
   resolved "https://registry.yarnpkg.com/rulr/-/rulr-4.0.2.tgz#4d1b89fe884ac36693ffeaae03b70f75305a89b8"
   integrity sha512-wjybeHVcEnxdmHMNktzewzAgMKiwI9op2NzSas5XuaVSYoxRGnUPN8VT/i6PHuBGKqsp//rcKIHCazGTwcVOvA==
+
+rulr@^5.0.0:
+  version "5.0.1"
+  resolved "https://registry.yarnpkg.com/rulr/-/rulr-5.0.1.tgz#9f795f25bbd3cd423d697712bac21c3aeb81ee5d"
+  integrity sha512-fYpcOKVgJ3iTyhbKMMj3fhlNF616GTGih58tzXGaloa3C4PP667ySlUPIoCTrizNmWzackfkuMgh8/NRpHj9Nw==
 
 run-parallel@^1.1.9:
   version "1.1.9"
