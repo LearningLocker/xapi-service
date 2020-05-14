@@ -108,7 +108,7 @@
     "tsconfig-paths": "3.9.0",
     "tslint": "5.20.1",
     "tslint-consistent-codestyle": "1.16.0",
-    "tslint-immutable": "4.9.1",
+    "tslint-immutable": "6.0.1",
     "typescript": "3.7.5"
   },
   "publishConfig": {
