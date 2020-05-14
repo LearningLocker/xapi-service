@@ -39,7 +39,7 @@
     "npm": ">3.0.0"
   },
   "dependencies": {
-    "@azure/storage-blob": "^10.3.0",
+    "@azure/storage-blob": "^12.0.0",
     "@google-cloud/storage": "^1.5.2",
     "@learninglocker/xapi-validation": "^2.1.10",
     "accept-language-parser": "^1.5.0",
