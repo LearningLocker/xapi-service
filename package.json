@@ -67,7 +67,7 @@
     "sha1": "^1.1.1",
     "source-map-support": "^0.5.0",
     "stream-to-string": "^1.2.0",
-    "string-to-stream": "^2.0.0",
+    "string-to-stream": "^3.0.0",
     "uuid": "^3.0.1"
   },
   "devDependencies": {
