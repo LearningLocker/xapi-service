@@ -62,7 +62,7 @@
     "node-fetch": "^2.0.0",
     "object-hash": "^2.0.0",
     "query-string": "^6.8.2",
-    "redis": "^2.8.0",
+    "redis": "^3.0.0",
     "rulr": "^4.0.0",
     "sha1": "^1.1.1",
     "source-map-support": "^0.5.0",
