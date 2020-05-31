@@ -120,15 +120,15 @@
     through2 "^2.0.0"
     xdg-basedir "^3.0.0"
 
-"@ht2-labs/semantic-release@2.0.2":
-  version "2.0.2"
-  resolved "https://registry.yarnpkg.com/@ht2-labs/semantic-release/-/semantic-release-2.0.2.tgz#e755828383a9e95da9128a4a00cdddf7312b945b"
-  integrity sha512-a+X9fTi+j+imBN2AmMyDZQNSLltK5p7wiodNYRUQp8YTkEkAebblxJUWbcgn6bfLBboXvG7Bg8SbBDkuJJdcaA==
+"@ht2-labs/semantic-release@2.0.5":
+  version "2.0.5"
+  resolved "https://registry.yarnpkg.com/@ht2-labs/semantic-release/-/semantic-release-2.0.5.tgz#0a11ab035dd60477991b75ee8457f42836df6538"
+  integrity sha512-Uv/6QouXLLZVWeocG9PG+VJMYbttMzXjIhTWTwB/3yhH2EVinUj2scaIZECNG2sg/Gn7R9aaeDeTfyI7xNIF+w==
   dependencies:
-    "@semantic-release/github" "7.0.5"
+    "@semantic-release/github" "7.0.7"
     "@semantic-release/npm" "7.0.5"
     fs-extra "^7.0.0"
-    semantic-release "17.0.7"
+    semantic-release "17.0.8"
     semantic-release-docker "2.2.0"
     semver "5.7.1"
     simple-git "1.132.0"
@@ -325,7 +325,29 @@
   resolved "https://registry.yarnpkg.com/@semantic-release/error/-/error-2.2.0.tgz#ee9d5a09c9969eade1ec864776aeda5c5cddbbf0"
   integrity sha512-9Tj/qn+y2j+sjCI3Jd+qseGtHjOAeg7dU2/lVcqIQ9TV3QDaDXDYXcoOHU+7o2Hwh8L8ymL4gfuO7KxDs3q2zg==
 
-"@semantic-release/github@7.0.5", "@semantic-release/github@^7.0.0":
+"@semantic-release/github@7.0.7":
+  version "7.0.7"
+  resolved "https://registry.yarnpkg.com/@semantic-release/github/-/github-7.0.7.tgz#e3999b06433d08871acd68ecec2b4e212c05d09f"
+  integrity sha512-Sai2UucYQ+5rJzKVEVJ4eiZNDdoo0/CzfpValBdeU5h97uJE7t4CoBTmUWkiXlPOx46CSw1+JhI+PHC1PUxVZw==
+  dependencies:
+    "@octokit/rest" "^17.0.0"
+    "@semantic-release/error" "^2.2.0"
+    aggregate-error "^3.0.0"
+    bottleneck "^2.18.1"
+    debug "^4.0.0"
+    dir-glob "^3.0.0"
+    fs-extra "^9.0.0"
+    globby "^11.0.0"
+    http-proxy-agent "^4.0.0"
+    https-proxy-agent "^5.0.0"
+    issue-parser "^6.0.0"
+    lodash "^4.17.4"
+    mime "^2.4.3"
+    p-filter "^2.0.0"
+    p-retry "^4.0.0"
+    url-join "^4.0.0"
+
+"@semantic-release/github@^7.0.0":
   version "7.0.5"
   resolved "https://registry.yarnpkg.com/@semantic-release/github/-/github-7.0.5.tgz#042b515cbae8695aa60bc4ed17722c34512a5b89"
   integrity sha512-1nJCMeomspRIXKiFO3VXtkUMbIBEreYLFNBdWoLjvlUNcEK0/pEbupEZJA3XHfJuSzv43u3OLpPhF/JBrMuv+A==
@@ -7014,10 +7036,10 @@ semantic-release-docker@2.2.0:
     "@semantic-release/error" "^2.1.0"
     execa "^0.10.0"
 
-semantic-release@17.0.7:
-  version "17.0.7"
-  resolved "https://registry.yarnpkg.com/semantic-release/-/semantic-release-17.0.7.tgz#03792bf6e1a9ad2353dfd0da6a5d5511fa672b06"
-  integrity sha512-F6FzJI1yiGavzCTXir4yPthK/iozZPJ4myUYndiHhSHbmOcCSJ2m7V+P6sFwVpDpQKQp1Q31M68sTJ/Q/27Bow==
+semantic-release@17.0.8:
+  version "17.0.8"
+  resolved "https://registry.yarnpkg.com/semantic-release/-/semantic-release-17.0.8.tgz#68b80461fdd8eb445228ae23fd9e85857a50ae3f"
+  integrity sha512-9KcdidiJ4xchrJXxPdaDQVlybgX0xTeKyVjRySYk5u9GpjibXD7E5F8cB0BvFLMDmMyrkCwcem0kFiaLD2VNPg==
   dependencies:
     "@semantic-release/commit-analyzer" "^8.0.0"
     "@semantic-release/error" "^2.2.0"
