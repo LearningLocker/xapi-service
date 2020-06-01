@@ -511,10 +511,10 @@
     "@types/node" "*"
     "@types/request" "*"
 
-"@types/ioredis@3.2.23":
-  version "3.2.23"
-  resolved "https://registry.yarnpkg.com/@types/ioredis/-/ioredis-3.2.23.tgz#c5ef1972da46dc477fb719389ee54cb2de9d6466"
-  integrity sha512-KZQHgEQ10LK8o/gHn4ZTsa7Ni9oaTizAw3MN15asNO7bzIeRbb7PjRDSGSBe+2jCYBUNAIbxin1jmqu5npxOLA==
+"@types/ioredis@3.2.24":
+  version "3.2.24"
+  resolved "https://registry.yarnpkg.com/@types/ioredis/-/ioredis-3.2.24.tgz#98a149f913808627e61e7e641a58685c86885019"
+  integrity sha512-bHEdc/lIA9XTtFVENYl1tAuUfbn5T2waUDQODVNm2gMsr2nGOWj/cfeNqqsOhz/dmwvgPwYsfdDNeXAf5U+xmw==
   dependencies:
     "@types/bluebird" "*"
     "@types/node" "*"
