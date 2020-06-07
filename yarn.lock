@@ -5107,6 +5107,11 @@ make-error@^1.1.1:
   resolved "https://registry.yarnpkg.com/make-error/-/make-error-1.3.5.tgz#efe4e81f6db28cadd605c70f29c831b58ef776c8"
   integrity sha512-c3sIjNUow0+8swNwVpqoH4YCShKNFkMaw6oH1mNS2haDZQqkeZFlHS3dhoeEbKKmJB4vXpJucU6oH75aDYeE9g==
 
+make-error@^1.3.6:
+  version "1.3.6"
+  resolved "https://registry.yarnpkg.com/make-error/-/make-error-1.3.6.tgz#2eb2e37ea9b67c4891f684a1394799af484cf7a2"
+  integrity sha512-s8UhlNe7vPKomQhC1qFelMokr/Sc3AgNbso3n74mVPA5LTZwkB9NlXf4XPamLxJE8h0gh73rM94xvwRT2CVInw==
+
 make-fetch-happen@^5.0.0:
   version "5.0.2"
   resolved "https://registry.yarnpkg.com/make-fetch-happen/-/make-fetch-happen-5.0.2.tgz#aa8387104f2687edca01c8687ee45013d02d19bd"
@@ -7246,10 +7251,18 @@ rimraf@2.7.1, rimraf@^2.5.2, rimraf@^2.5.4, rimraf@^2.6.1, rimraf@^2.6.2, rimraf
   dependencies:
     glob "^7.1.3"
 
-rulr@^4.0.0, rulr@^4.0.1, rulr@^4.0.2:
+rulr@^4.0.1, rulr@^4.0.2:
   version "4.0.2"
   resolved "https://registry.yarnpkg.com/rulr/-/rulr-4.0.2.tgz#4d1b89fe884ac36693ffeaae03b70f75305a89b8"
   integrity sha512-wjybeHVcEnxdmHMNktzewzAgMKiwI9op2NzSas5XuaVSYoxRGnUPN8VT/i6PHuBGKqsp//rcKIHCazGTwcVOvA==
+
+rulr@^6.0.0:
+  version "6.2.0"
+  resolved "https://registry.yarnpkg.com/rulr/-/rulr-6.2.0.tgz#d28c981818841fe8d9f32b6c30c75ebfabe25814"
+  integrity sha512-N5Xxuii0jTkJIE4z3AlyDppnEw5DdxaLkMNOdYYcQeUBQW09olpwMBVuE/Q/jGsu2ICdMfVfncU2zajzgJAzVw==
+  dependencies:
+    make-error "^1.3.6"
+    validator "^13.0.0"
 
 run-parallel@^1.1.9:
   version "1.1.9"
@@ -8611,6 +8624,11 @@ validate-npm-package-name@^3.0.0, validate-npm-package-name@~3.0.0:
   integrity sha1-X6kS2B630MdK/BQN5zF/DKffQ34=
   dependencies:
     builtins "^1.0.3"
+
+validator@^13.0.0:
+  version "13.0.0"
+  resolved "https://registry.yarnpkg.com/validator/-/validator-13.0.0.tgz#0fb6c6bb5218ea23d368a8347e6d0f5a70e3bcab"
+  integrity sha512-anYx5fURbgF04lQV18nEQWZ/3wHGnxiKdG4aL8J+jEDsm98n/sU/bey+tYk6tnGJzm7ioh5FoqrAiQ6m03IgaA==
 
 vary@^1, vary@~1.1.2:
   version "1.1.2"
