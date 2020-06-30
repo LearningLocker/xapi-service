@@ -84,7 +84,7 @@
     "@types/jsonwebtoken": "8.5.0",
     "@types/lodash": "4.14.156",
     "@types/mime-types": "2.1.0",
-    "@types/mocha": "5.2.7",
+    "@types/mocha": "7.0.2",
     "@types/mongodb": "3.5.24",
     "@types/node": "9.6.56",
     "@types/node-fetch": "2.5.7",
