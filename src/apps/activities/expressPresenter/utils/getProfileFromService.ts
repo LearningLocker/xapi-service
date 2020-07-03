@@ -25,7 +25,7 @@ export default async ({ query, config, headers, res }: Options) => {
   const getProfileResult = await config.service.getProfile({ activityId, client, profileId });
 
   res.status(OK);
-  res.setHeader('cache-control', 'no-cache');
+  res.setHeader('cache-control', 'no-store');
   res.setHeader('ETag', `"${getProfileResult.etag}"`);
   res.setHeader('Last-Modified', getProfileResult.updatedAt.toISOString());
   res.setHeader('X-Experience-API-Version', xapiHeaderVersion);
