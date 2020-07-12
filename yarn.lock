@@ -120,18 +120,18 @@
     through2 "^2.0.0"
     xdg-basedir "^3.0.0"
 
-"@ht2-labs/semantic-release@2.0.9":
-  version "2.0.9"
-  resolved "https://registry.yarnpkg.com/@ht2-labs/semantic-release/-/semantic-release-2.0.9.tgz#86a22b8b0656bcb854c1270fbcf0f864988c918a"
-  integrity sha512-XCC5PxTJ40BLdhbGyqN30NiJlR0JlnArZQ4d+UVDOAaJ1FIqt+C6sqMDhzpoAWtv0uaTmIjE4jhpEdddv37y7A==
+"@ht2-labs/semantic-release@2.0.12":
+  version "2.0.12"
+  resolved "https://registry.yarnpkg.com/@ht2-labs/semantic-release/-/semantic-release-2.0.12.tgz#55e4985d926d75a17859fe3da8cc9deee01488f7"
+  integrity sha512-6i/Fwvn/Uft1Q++gYS74WbcOfk/Hm9YMGX36nc3RcFWk8XC0TkAIukJsh297wZ6grohUyhKXciaUd7N9/+h6eA==
   dependencies:
     "@semantic-release/github" "7.0.7"
     "@semantic-release/npm" "7.0.5"
     fs-extra "^9.0.0"
-    semantic-release "17.1.0"
+    semantic-release "17.1.1"
     semantic-release-docker "2.2.0"
     semver "7.3.2"
-    simple-git "2.10.0"
+    simple-git "2.12.0"
 
 "@ht2-labs/typescript-project@2.0.50":
   version "2.0.50"
@@ -158,6 +158,11 @@
   integrity sha512-m9/5YGR18lIwxSFDwfE3oA7bWuq9kdau6ugN4H2rJeyhFQZcG9AgSHkQtSD15a8WvTgfz9aikZMrKPHvbpqFiw==
   dependencies:
     debug "^4.1.1"
+
+"@kwsites/promise-deferred@^1.0.1":
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/@kwsites/promise-deferred/-/promise-deferred-1.1.1.tgz#8ace5259254426ccef57f3175bc64ed7095ed919"
+  integrity sha512-GaHYm+c0O9MjZRu0ongGBRbinu8gVAMd2UZjji6jVmqKtZluZnptXGWhz1E8j8D2HJ3f/yMxKAUC0b+57wncIw==
 
 "@learninglocker/xapi-validation@^2.1.10":
   version "2.1.10"
@@ -7308,10 +7313,10 @@ semantic-release-docker@2.2.0:
     "@semantic-release/error" "^2.1.0"
     execa "^0.10.0"
 
-semantic-release@17.1.0:
-  version "17.1.0"
-  resolved "https://registry.yarnpkg.com/semantic-release/-/semantic-release-17.1.0.tgz#f22d9418d62a5c04e99c92c2162ae3b19f844e22"
-  integrity sha512-17Ja/BIs3kyVbERj2QOUcEvU/RNro+rZoRgIsbfzrMFECX7cuo9MkYiw4xT7k6MIjuvG4X6unEvVDUJdUZInvg==
+semantic-release@17.1.1:
+  version "17.1.1"
+  resolved "https://registry.yarnpkg.com/semantic-release/-/semantic-release-17.1.1.tgz#d9775968e841b2b7c5020559e4481aea8520ca75"
+  integrity sha512-9H+207eynBJElrQBHySZm+sIEoJeUhPA2zU4cdlY1QSInd2lnE8GRD2ALry9EassE22c9WW+aCREwBhro5AIIg==
   dependencies:
     "@semantic-release/commit-analyzer" "^8.0.0"
     "@semantic-release/error" "^2.2.0"
@@ -7499,12 +7504,13 @@ simple-git@1.132.0:
   dependencies:
     debug "^4.0.1"
 
-simple-git@2.10.0:
-  version "2.10.0"
-  resolved "https://registry.yarnpkg.com/simple-git/-/simple-git-2.10.0.tgz#9b9b6af5c7660b8ede5636296cc78774f85ac636"
-  integrity sha512-/lqaK+C7FwGe3du9E9gIIMjpRSPif71Ct80cYqpevdLGSU9LJXL+CBf2tT6bxXgmp/i3NsOj37jP43KjhlEZIA==
+simple-git@2.12.0:
+  version "2.12.0"
+  resolved "https://registry.yarnpkg.com/simple-git/-/simple-git-2.12.0.tgz#b5978ec12cd56883185ef1475ec62e9207c1e1dc"
+  integrity sha512-64YrHYqHskWDumxM4thMGCkAd7rek4FEnxcugnpKzJZH6vCkietblsp7TUNdt9qU0pHAnJAanAmjyyQLE46k/Q==
   dependencies:
     "@kwsites/file-exists" "^1.1.1"
+    "@kwsites/promise-deferred" "^1.0.1"
     debug "^4.1.1"
 
 simple-swizzle@^0.2.2:
