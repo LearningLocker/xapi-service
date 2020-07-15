@@ -5,11 +5,9 @@ import UnstoredStatementModel from '../../models/UnstoredStatementModel';
 import Config from '../Config';
 
 const getContextActivities = (statement: StatementBase) => {
-  if (
-    statement.context !== undefined &&
-    statement.context.contextActivities !== undefined
-  ) {
+  if (statement.context?.contextActivities !== undefined) {
     const contextActivities = statement.context.contextActivities;
+
     return [
       ...(contextActivities.category === undefined ? [] : contextActivities.category),
       ...(contextActivities.grouping === undefined ? [] : contextActivities.grouping),
@@ -17,22 +15,19 @@ const getContextActivities = (statement: StatementBase) => {
       ...(contextActivities.parent === undefined ? [] : contextActivities.parent),
     ];
   }
+
   return [];
 };
 
-const getObjectActivity = (statement: StatementBase) => {
-  if (statement.object.objectType === 'Activity') {
-    return [statement.object];
-  }
-  return [];
-};
+const getObjectActivity = (statement: StatementBase) =>
+  statement.object.objectType === 'Activity'
+    ? [statement.object]
+    : [];
 
-const getStatementActivities = (statement: StatementBase) => {
-  return [
-    ...getObjectActivity(statement),
-    ...getContextActivities(statement),
-  ];
-};
+const getStatementActivities = (statement: StatementBase) => [
+  ...getObjectActivity(statement),
+  ...getContextActivities(statement),
+];
 
 export interface Opts {
   readonly config: Config;
@@ -44,67 +39,48 @@ export default async ({ config, models, client }: Opts): Promise<void> => {
   if (!config.enableActivityUpdates) { return; }
 
   // Gets the activities from the statements.
-  const activities = flatMap(models, (model) => {
-    return [
-      ...getStatementActivities(model.statement),
-      ...(
-        model.statement.object.objectType === 'SubStatement' ?
-          getStatementActivities(model.statement.object) :
-          []
-      ),
-    ];
-  });
+  const activities = flatMap(models, (model) => [
+    ...getStatementActivities(model.statement),
+    ...(
+      model.statement.object.objectType === 'SubStatement'
+        ? getStatementActivities(model.statement.object)
+        : []
+    ),
+  ]);
 
   // Filters out activities that don't contain used keys in the definition.
-  const definedActivities = activities.filter((activity) => {
-    return activity.definition !== undefined && (
+  const definedActivities = activities.filter((activity) =>
+    activity.definition !== undefined && (
       activity.definition.name !== undefined ||
       activity.definition.description !== undefined ||
       activity.definition.extensions !== undefined ||
       activity.definition.moreInfo !== undefined ||
       activity.definition.type !== undefined
-    );
-  });
+    ));
 
   // Merges the activity definitions to reduce the number of updates.
-  const groupedActivities = groupBy(definedActivities, (activity) => {
-    return activity.id;
-  });
+  const groupedActivities = groupBy(
+    definedActivities,
+    (activity) => activity.id
+  );
+
   const updates = map(groupedActivities, (matchingActivities, activityId) => {
-    const names = matchingActivities.map((matchingActivity) => {
-      return (
-        matchingActivity.definition !== undefined &&
-        matchingActivity.definition.name !== undefined
-      ) ? matchingActivity.definition.name : {};
-    });
-    const descriptions = matchingActivities.map((matchingActivity) => {
-      return (
-        matchingActivity.definition !== undefined &&
-        matchingActivity.definition.description !== undefined
-      ) ? matchingActivity.definition.description : {};
-    });
-    const extensions = matchingActivities.map((matchingActivity) => {
-      return (
-        matchingActivity.definition !== undefined &&
-        matchingActivity.definition.extensions !== undefined
-      ) ? matchingActivity.definition.extensions : {};
-    });
-    const types = matchingActivities.map((matchingActivity) => {
-      return (
-        matchingActivity.definition !== undefined &&
-        matchingActivity.definition.type !== undefined
-      ) ? matchingActivity.definition.type : undefined;
-    }).filter((value) => {
-      return value !== undefined;
-    });
-    const moreInfos = matchingActivities.map((matchingActivity) => {
-      return (
-        matchingActivity.definition !== undefined &&
-        matchingActivity.definition.moreInfo !== undefined
-      ) ? matchingActivity.definition.moreInfo : undefined;
-    }).filter((value) => {
-      return value !== undefined;
-    });
+    const names = matchingActivities
+      .map((matchingActivity) => matchingActivity.definition?.name);
+
+    const descriptions = matchingActivities
+      .map((matchingActivity) => matchingActivity.definition?.description);
+
+    const extensions = matchingActivities
+      .map((matchingActivity) => matchingActivity.definition?.extensions);
+
+    const types = matchingActivities
+      .map((matchingActivity) => matchingActivity.definition?.type)
+      .filter((value) => value !== undefined);
+
+    const moreInfos = matchingActivities
+      .map((matchingActivity) => matchingActivity.definition?.moreInfo)
+      .filter((value) => value !== undefined);
 
     return {
       activityId,
