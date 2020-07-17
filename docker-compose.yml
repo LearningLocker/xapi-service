@@ -1,0 +1,23 @@
+version: '3.6'
+services:
+  mongo:
+    container_name: ll_mongo
+    image: mongo:4.0
+    ports:
+    - 27017:27017
+    volumes:
+    - mongo-config:/data/configdb:rw
+    - mongo-data:/data/db:rw
+  redis:
+    # activate persistency
+    command: redis-server --appendonly yes
+    container_name: ll_redis
+    image: redis:4.0
+    ports:
+    - 6379:6379
+    volumes:
+    - redis-data:/data:rw
+volumes:
+  mongo-config: {}
+  mongo-data: {}
+  redis-data: {}

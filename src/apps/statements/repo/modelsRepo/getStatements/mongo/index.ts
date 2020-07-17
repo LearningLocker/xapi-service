@@ -1,4 +1,5 @@
 import { defaultTo } from 'lodash';
+import Timeout from '../../../../errors/Timeout';
 import StoredStatementModel from '../../../../models/StoredStatementModel';
 import { STATEMENTS_COLLECTION_NAME } from '../../utils/mongoModels/constants';
 import FacadeConfig from '../../utils/mongoModels/FacadeConfig';
@@ -44,18 +45,26 @@ export default (config: FacadeConfig): Signature => {
     const skip = defaultTo(opts.skip, 0);
     const limit = opts.limit;
 
-    const models = await collection
-      .find(query)
-      .sort(sort)
-      .skip(skip)
-      .limit(limit)
-      .toArray() as StoredStatementModel[];
+    try {
+      const models = await collection
+        .find(query)
+        .sort(sort)
+        .skip(skip)
+        .limit(limit)
+        .maxTimeMS(config.maxTimeMs)
+        .toArray() as StoredStatementModel[];
 
-    const decodedModels = models.map((model) => {
-      const statement = decodeDotsInStatement(model.statement);
-      return { ...model, statement };
-    });
+      const decodedModels = models.map((model) => {
+        const statement = decodeDotsInStatement(model.statement);
+        return { ...model, statement };
+      });
 
-    return decodedModels;
+      return decodedModels;
+    } catch (err) {
+      if (err?.code === 50) {
+        throw new Timeout(config.maxTimeMs);
+      }
+      throw err;
+    }
   };
 };

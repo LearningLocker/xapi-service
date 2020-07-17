@@ -22,6 +22,7 @@ import MissingLoadedId from '../errors/MissingLoadedId';
 import MissingStatementId from '../errors/MissingStatementId';
 import NoStatements from '../errors/NoStatements';
 import QueryIds from '../errors/QueryIds';
+import Timeout from '../errors/Timeout';
 import UnequalStatementId from '../errors/UnequalStatementId';
 import UnknownParams from '../errors/UnknownParams';
 import UntrustedClientError from '../errors/UntrustedClientError';
@@ -51,6 +52,7 @@ interface Translator extends CommonTranslator {
   readonly missingStatementIdError: (err: MissingStatementId) => string;
   readonly noStatementsError: (err: NoStatements) => string;
   readonly queryIdsError: (err: QueryIds) => string;
+  readonly timeoutError: (err: Timeout) => string;
   readonly unequalStatementIdError: (err: UnequalStatementId) => string;
   readonly unknownParamsError: (err: UnknownParams) => string;
   readonly untrustedClientError: (err: UntrustedClientError) => string;
