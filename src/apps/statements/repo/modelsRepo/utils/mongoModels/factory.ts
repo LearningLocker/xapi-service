@@ -20,10 +20,9 @@ import FactoryConfig from './FactoryConfig';
 
 export default (factoryConfig?: FactoryConfig): Facade => {
   const facadeConfig: FacadeConfig = (
-    factoryConfig !== undefined
-      ? factoryConfig
-      : { db: connectToMongoDb() }
+    factoryConfig !== undefined ? factoryConfig : { db: connectToMongoDb() }
   );
+
   return {
     clearRepo: async () => {
       await (await facadeConfig.db()).dropDatabase();

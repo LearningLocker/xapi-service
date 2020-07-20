@@ -52,13 +52,16 @@ const repoConflicts = async (
   }), 'statementId');
   return values(modelsMap).filter((model: UnstoredStatementModel) => {
     const statementId = model.statement.id;
-    if (has(hashesMap, statementId)) {
-      if (model.hash !== hashesMap[statementId][0].hash) {
-        throw new Conflict(statementId);
-      }
-      return false;
+
+    if (!has(hashesMap, statementId)) {
+      return true;
     }
-    return true;
+
+    if (model.hash !== hashesMap[statementId][0].hash) {
+      throw new Conflict(statementId);
+    }
+
+    return false;
   });
 };
 
