@@ -55,6 +55,7 @@ export default interface AppConfig {
     };
     readonly mongo: {
       readonly db: () => Promise<Db>;
+      readonly maxTimeMs: number;
     };
     readonly redis: {
       readonly prefix: string;

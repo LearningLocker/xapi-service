@@ -48,6 +48,9 @@ const translator: Translator = {
   invalidSignatureAlgorithmError: (err) => {
     return `Invalid JWS algorithm for '${err.statementId}'`;
   },
+  timeoutError: (err) => {
+    return `Request was timed out after ${err.timeoutMs}ms`;
+  },
   untrustedClientError: () => 'Your client has been disabled',
   ...commonTranslator,
 };

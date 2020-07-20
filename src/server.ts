@@ -22,7 +22,10 @@ expressApp.use(app({
     azure: config.azureStorageRepo,
     google: config.googleStorageRepo,
     local: config.localStorageRepo,
-    mongo: { db: connectToMongoDb() },
+    mongo: {
+      db: connectToMongoDb(),
+      maxTimeMs: config.defaultTimeout,
+    },
     redis: {
       client: connectToRedis(),
       prefix: config.redis.prefix,
