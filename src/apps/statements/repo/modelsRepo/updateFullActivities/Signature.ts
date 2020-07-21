@@ -1,5 +1,5 @@
 import Member from 'jscommons/dist/utils/Member';
-import FullActivityModel from "../../../models/FullActivityModel";
+import FullActivityModel from '../../../models/FullActivityModel';
 
 export interface Opts {
   readonly fullActivities: FullActivityModel[];

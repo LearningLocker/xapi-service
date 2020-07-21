@@ -1,6 +1,6 @@
+import ContextActivities from './ContextActivities';
 import Extensions from './Extensions';
 import LanguageMap from './LanguageMap';
-import ContextActivities from "./ContextActivities";
 
 interface FullActivityModel {
   readonly activityId: string;
