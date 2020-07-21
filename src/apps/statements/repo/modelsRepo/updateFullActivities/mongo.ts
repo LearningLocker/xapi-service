@@ -9,7 +9,7 @@ import Signature from './Signature';
 const getPatchUpdate = <T>(patch: Dictionary<T>, parentKeys: string[]) =>
   mapKeys<T>(
     patch as any,
-    (_value: T, key: number) => `${parentKeys.join('.')}.${key}`
+    (_value: T, key: number) => `${parentKeys.join('.')}.${key}`,
   );
 
 export default (config: FacadeConfig): Signature =>
@@ -22,14 +22,40 @@ export default (config: FacadeConfig): Signature =>
       const lrsId = new ObjectID(fullActivity.lrsId);
       const organisationId = new ObjectID(fullActivity.organisationId);
       const mongoQuery = matchesFullActivity({ activityId, lrsId, organisationId });
-      const extensions = replaceDotsInExtensions(/\./g, '&46;')(fullActivity.extensions);
+      const extensions = fullActivity.extensions
+        ? replaceDotsInExtensions(/\./g, '&46;')(fullActivity.extensions)
+        : undefined;
       const mongoSet = {
-        ...getPatchUpdate(fullActivity.name, ['name']),
-        ...getPatchUpdate(fullActivity.description, ['description']),
-        ...getPatchUpdate(extensions, ['extensions']),
-        ...(fullActivity.contextActivities !== undefined ? { contextActivities: fullActivity.contextActivities } : {}),
-        ...(fullActivity.moreInfo !== undefined ? { moreInfo: fullActivity.moreInfo } : {}),
-        ...(fullActivity.type !== undefined ? { type: fullActivity.type } : {}),
+        ...(
+          fullActivity.name !== undefined
+            ? getPatchUpdate(fullActivity.name, ['name'])
+            : {}
+        ),
+        ...(
+          fullActivity.description !== undefined
+            ? getPatchUpdate(fullActivity.description, ['description'])
+            : {}
+        ),
+        ...(
+          extensions
+            ? getPatchUpdate(extensions, ['extensions'])
+            : undefined
+        ),
+        ...(
+          fullActivity.contextActivities !== undefined
+            ? { contextActivities: fullActivity.contextActivities }
+            : {}
+        ),
+        ...(
+          fullActivity.moreInfo !== undefined
+            ? { moreInfo: fullActivity.moreInfo }
+            : {}
+        ),
+        ...(
+          fullActivity.type !== undefined
+            ? { type: fullActivity.type }
+            : {}
+        ),
       };
 
       if (Object.keys(mongoSet).length === 0) {

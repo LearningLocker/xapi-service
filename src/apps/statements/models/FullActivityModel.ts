@@ -6,11 +6,11 @@ interface FullActivityModel {
   readonly activityId: string;
   readonly organisationId: string;
   readonly lrsId: string;
-  readonly name: LanguageMap;
-  readonly description: LanguageMap;
+  readonly name?: LanguageMap;
+  readonly description?: LanguageMap;
   readonly moreInfo?: string;
   readonly type?: string;
-  readonly extensions: Extensions;
+  readonly extensions?: Extensions;
   readonly contextActivities?: ContextActivities;
 }
 
