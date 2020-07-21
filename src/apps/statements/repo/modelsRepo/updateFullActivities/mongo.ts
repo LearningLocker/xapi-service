@@ -6,42 +6,41 @@ import matchesFullActivity from '../utils/mongoModels/matchesFullActivity';
 import { replaceDotsInExtensions } from '../utils/mongoModels/replaceDotsInStatement';
 import Signature from './Signature';
 
-const getPatchUpdate = <T>(patch: Dictionary<T>, parentKeys: string[]) => {
-  return mapKeys<T>(patch as any, (_value: T, key: number) => {
-    const parentPath = parentKeys.join('.');
-    return `${parentPath}.${key}`;
-  });
-};
+const getPatchUpdate = <T>(patch: Dictionary<T>, parentKeys: string[]) =>
+  mapKeys<T>(
+    patch as any,
+    (_value: T, key: number) => `${parentKeys.join('.')}.${key}`
+  );
 
-export default (config: FacadeConfig): Signature => {
-  return async ({ client, updates }) => {
+export default (config: FacadeConfig): Signature =>
+  async ({ fullActivities }) => {
     const collection = (await config.db()).collection(FULL_ACTIVITIES_COLLECTION_NAME);
-    const lrsId = new ObjectID(client.lrs_id);
-    const organisationId = new ObjectID(client.organisation);
     const batch = collection.initializeUnorderedBulkOp();
 
-    updates.forEach((update) => {
-      const activityId = update.activityId;
-      const extensions = replaceDotsInExtensions(/\./g, '&46;')(update.extensions);
+    fullActivities.forEach((fullActivity) => {
+      const activityId = fullActivity.activityId;
+      const lrsId = new ObjectID(fullActivity.lrsId);
+      const organisationId = new ObjectID(fullActivity.organisationId);
       const mongoQuery = matchesFullActivity({ activityId, lrsId, organisationId });
+      const extensions = replaceDotsInExtensions(/\./g, '&46;')(fullActivity.extensions);
       const mongoSet = {
-        ...getPatchUpdate(update.name, ['name']),
-        ...getPatchUpdate(update.description, ['description']),
+        ...getPatchUpdate(fullActivity.name, ['name']),
+        ...getPatchUpdate(fullActivity.description, ['description']),
         ...getPatchUpdate(extensions, ['extensions']),
-        ...(update.moreInfo !== undefined ? { moreInfo: update.moreInfo } : {}),
-        ...(update.type !== undefined ? { type: update.type } : {}),
+        ...(fullActivity.contextActivities !== undefined ? { contextActivities: fullActivity.contextActivities } : {}),
+        ...(fullActivity.moreInfo !== undefined ? { moreInfo: fullActivity.moreInfo } : {}),
+        ...(fullActivity.type !== undefined ? { type: fullActivity.type } : {}),
       };
+
       if (Object.keys(mongoSet).length === 0) {
         /* istanbul ignore next */
         return;
       }
-      const mongoUpdate = { $set: mongoSet };
 
-      batch.find(mongoQuery).upsert().updateOne(mongoUpdate);
+      batch.find(mongoQuery).upsert().updateOne({ $set: mongoSet });
     });
 
-    if (updates.length > 0) {
+    if (fullActivities.length > 0) {
       await batch.execute();
     }
   };
-};

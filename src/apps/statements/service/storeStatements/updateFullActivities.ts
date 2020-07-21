@@ -1,32 +1,51 @@
-import { flatMap, groupBy, map } from 'lodash';
+import { flatMap, groupBy, map, last } from 'lodash';
 import ClientModel from '../../models/ClientModel';
 import StatementBase from '../../models/StatementBase';
 import UnstoredStatementModel from '../../models/UnstoredStatementModel';
 import Config from '../Config';
+import FullActivityModel from "../../models/FullActivityModel";
+import Activity from "../../models/Activity";
+import ContextActivities from "../../models/ContextActivities";
 
-const getContextActivities = (statement: StatementBase) => {
+const convertToFullActivities = (
+  activities: Activity[],
+  client: ClientModel,
+  contextActivities: ContextActivities
+): FullActivityModel[] =>
+  map(activities, (activity: Activity) => ({
+    activityId: activity.id,
+    lrsId: client.lrs_id,
+    organisationId: client.organisation,
+    name: {},
+    description: {},
+    extensions: {},
+    ...activity.definition,
+    contextActivities,
+  }));
+
+const getContextActivities = (statement: StatementBase, client: ClientModel) => {
   if (statement.context?.contextActivities !== undefined) {
     const contextActivities = statement.context.contextActivities;
 
     return [
-      ...(contextActivities.category === undefined ? [] : contextActivities.category),
-      ...(contextActivities.grouping === undefined ? [] : contextActivities.grouping),
-      ...(contextActivities.other === undefined ? [] : contextActivities.other),
-      ...(contextActivities.parent === undefined ? [] : contextActivities.parent),
+      ...(contextActivities.category === undefined ? [] : convertToFullActivities(contextActivities.category, client, {})),
+      ...(contextActivities.grouping === undefined ? [] : convertToFullActivities(contextActivities.grouping, client, {})),
+      ...(contextActivities.other === undefined ? [] : convertToFullActivities(contextActivities.other, client, {})),
+      ...(contextActivities.parent === undefined ? [] : convertToFullActivities(contextActivities.parent, client, {})),
     ];
   }
 
   return [];
 };
 
-const getObjectActivity = (statement: StatementBase) =>
+const getObjectActivity = (statement: StatementBase, client: ClientModel) =>
   statement.object.objectType === 'Activity'
-    ? [statement.object]
+    ? convertToFullActivities([statement.object], client, statement.context?.contextActivities ?? {})
     : [];
 
-const getStatementActivities = (statement: StatementBase) => [
-  ...getObjectActivity(statement),
-  ...getContextActivities(statement),
+const getStatementActivities = (statement: StatementBase, client: ClientModel) => [
+  ...getObjectActivity(statement, client),
+  ...getContextActivities(statement, client),
 ];
 
 export interface Opts {
@@ -40,58 +59,66 @@ export default async ({ config, models, client }: Opts): Promise<void> => {
 
   // Gets the activities from the statements.
   const activities = flatMap(models, (model) => [
-    ...getStatementActivities(model.statement),
+    ...getStatementActivities(model.statement, client),
     ...(
       model.statement.object.objectType === 'SubStatement'
-        ? getStatementActivities(model.statement.object)
+        ? getStatementActivities(model.statement.object, client)
         : []
     ),
   ]);
 
   // Filters out activities that don't contain used keys in the definition.
   const definedActivities = activities.filter((activity) =>
-    activity.definition !== undefined && (
-      activity.definition.name !== undefined ||
-      activity.definition.description !== undefined ||
-      activity.definition.extensions !== undefined ||
-      activity.definition.moreInfo !== undefined ||
-      activity.definition.type !== undefined
-    ));
+      activity.contextActivities !== undefined ||
+      activity.name !== undefined ||
+      activity.description !== undefined ||
+      activity.extensions !== undefined ||
+      activity.moreInfo !== undefined ||
+      activity.type !== undefined
+    );
 
   // Merges the activity definitions to reduce the number of updates.
   const groupedActivities = groupBy(
     definedActivities,
-    (activity) => activity.id
+    (activity) => activity.activityId
   );
 
-  const updates = map(groupedActivities, (matchingActivities, activityId) => {
-    const names = matchingActivities
-      .map((matchingActivity) => matchingActivity.definition?.name);
+  const fullActivities = map(groupedActivities, (matchingActivities, activityId): FullActivityModel => {
+    const names = matchingActivities.map((matchingActivity) => matchingActivity.name);
+    const descriptions = matchingActivities.map((matchingActivity) => matchingActivity.description);
+    const extensions = matchingActivities.map((matchingActivity) => matchingActivity.extensions);
 
-    const descriptions = matchingActivities
-      .map((matchingActivity) => matchingActivity.definition?.description);
+    const contextActivities = last(
+      matchingActivities
+      .map((matchingActivity) => matchingActivity.contextActivities)
+      .filter((value) => value !== undefined)
+    );
 
-    const extensions = matchingActivities
-      .map((matchingActivity) => matchingActivity.definition?.extensions);
+    const type = last(
+      matchingActivities
+      .map((matchingActivity) => matchingActivity.type)
+      .filter((value) => value !== undefined)
+    );
 
-    const types = matchingActivities
-      .map((matchingActivity) => matchingActivity.definition?.type)
-      .filter((value) => value !== undefined);
-
-    const moreInfos = matchingActivities
-      .map((matchingActivity) => matchingActivity.definition?.moreInfo)
-      .filter((value) => value !== undefined);
+    const moreInfo = last(
+      matchingActivities
+      .map((matchingActivity) => matchingActivity.moreInfo)
+      .filter((value) => value !== undefined)
+    );
 
     return {
       activityId,
+      lrsId: client.lrs_id,
+      organisationId: client.organisation,
       name: Object.assign({}, ...names),
       description: Object.assign({}, ...descriptions),
       extensions: Object.assign({}, ...extensions),
-      ...(types.length > 0 ? { type: types[types.length - 1] } : {}),
-      ...(moreInfos.length > 0 ? { moreInfo: moreInfos[moreInfos.length - 1] } : {}),
+      ...(contextActivities !== undefined ? { contextActivities } : {}),
+      ...(type !== undefined ? { type } : {}),
+      ...(moreInfo !== undefined ? { moreInfo } : {}),
     };
   });
 
-  await config.repo.updateFullActivities({ updates, client });
+  await config.repo.updateFullActivities({ fullActivities });
   // tslint:disable-next-line:max-file-line-count
 };
