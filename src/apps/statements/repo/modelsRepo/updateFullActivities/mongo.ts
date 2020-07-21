@@ -37,9 +37,9 @@ export default (config: FacadeConfig): Signature =>
             : {}
         ),
         ...(
-          extensions
+          extensions !== undefined
             ? getPatchUpdate(extensions, ['extensions'])
-            : undefined
+            : {}
         ),
         ...(
           fullActivity.contextActivities !== undefined
