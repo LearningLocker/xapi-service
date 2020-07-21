@@ -22,7 +22,7 @@ export default (config: FacadeConfig): Signature =>
       const lrsId = new ObjectID(fullActivity.lrsId);
       const organisationId = new ObjectID(fullActivity.organisationId);
       const mongoQuery = matchesFullActivity({ activityId, lrsId, organisationId });
-      const extensions = fullActivity.extensions
+      const extensions = fullActivity.extensions !== undefined
         ? replaceDotsInExtensions(/\./g, '&46;')(fullActivity.extensions)
         : undefined;
       const mongoSet = {
