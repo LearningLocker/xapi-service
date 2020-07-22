@@ -1,4 +1,4 @@
-import { flatMap, groupBy, last, map } from 'lodash';
+import { flatMap, groupBy, isEmpty, last, map } from 'lodash';
 import Activity from '../../models/Activity';
 import ClientModel from '../../models/ClientModel';
 import ContextActivities from '../../models/ContextActivities';
@@ -10,7 +10,7 @@ import Config from '../Config';
 const convertToFullActivities = (
   activities: Activity[],
   client: ClientModel,
-  contextActivities: ContextActivities,
+  contextActivities: ContextActivities = {},
 ): FullActivityModel[] =>
   map(activities, (activity: Activity) => ({
     activityId: activity.id,
@@ -31,22 +31,22 @@ const getContextActivities = (statement: StatementBase, client: ClientModel) => 
       ...(
         contextActivities.category === undefined
           ? []
-          : convertToFullActivities(contextActivities.category, client, {})
+          : convertToFullActivities(contextActivities.category, client)
       ),
       ...(
         contextActivities.grouping === undefined
           ? []
-          : convertToFullActivities(contextActivities.grouping, client, {})
+          : convertToFullActivities(contextActivities.grouping, client)
       ),
       ...(
         contextActivities.other === undefined
           ? []
-          : convertToFullActivities(contextActivities.other, client, {})
+          : convertToFullActivities(contextActivities.other, client)
       ),
       ...(
         contextActivities.parent === undefined
           ? []
-          : convertToFullActivities(contextActivities.parent, client, {})
+          : convertToFullActivities(contextActivities.parent, client)
       ),
     ];
   }
@@ -89,10 +89,10 @@ export default async ({ config, models, client }: Opts): Promise<void> => {
 
   // Filters out activities that don't contain used keys in the definition.
   const definedActivities = activities.filter((activity) =>
-      activity.contextActivities !== undefined ||
-      activity.name !== undefined ||
-      activity.description !== undefined ||
-      activity.extensions !== undefined ||
+      !isEmpty(activity.contextActivities) ||
+      !isEmpty(activity.name) ||
+      !isEmpty(activity.description) ||
+      !isEmpty(activity.extensions) ||
       activity.moreInfo !== undefined ||
       activity.type !== undefined,
   );
