@@ -22,25 +22,11 @@ export default (config: FacadeConfig): Signature =>
       const lrsId = new ObjectID(fullActivity.lrsId);
       const organisationId = new ObjectID(fullActivity.organisationId);
       const mongoQuery = matchesFullActivity({ activityId, lrsId, organisationId });
-      const extensions = fullActivity.extensions !== undefined
-        ? replaceDotsInExtensions(/\./g, '&46;')(fullActivity.extensions)
-        : undefined;
+      const extensions = replaceDotsInExtensions(/\./g, '&46;')(fullActivity.extensions);
       const mongoSet = {
-        ...(
-          fullActivity.name !== undefined
-            ? getPatchUpdate(fullActivity.name, ['name'])
-            : {}
-        ),
-        ...(
-          fullActivity.description !== undefined
-            ? getPatchUpdate(fullActivity.description, ['description'])
-            : {}
-        ),
-        ...(
-          extensions !== undefined
-            ? getPatchUpdate(extensions, ['extensions'])
-            : {}
-        ),
+        ...getPatchUpdate(fullActivity.name, ['name']),
+        ...getPatchUpdate(fullActivity.description, ['description']),
+        ...getPatchUpdate(extensions, ['extensions']),
         ...(
           fullActivity.contextActivities !== undefined
             ? { contextActivities: fullActivity.contextActivities }
