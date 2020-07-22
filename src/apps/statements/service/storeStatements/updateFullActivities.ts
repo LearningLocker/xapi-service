@@ -106,23 +106,17 @@ export default async ({ config, models, client }: Opts): Promise<void> => {
   const fullActivities = map(
     groupedActivities,
     (matchingActivities, activityId): FullActivityModel => {
-      const name = last(
-        matchingActivities
-          .map((matchingActivity) => matchingActivity.name)
-          .filter((value) => value !== undefined),
+      const names = matchingActivities.map(
+        (matchingActivity) => matchingActivity.name,
       );
 
-      const description = last(
-        matchingActivities
-          .map((matchingActivity) => matchingActivity.description)
-          .filter((value) => value !== undefined),
+      const descriptions = matchingActivities.map(
+        (matchingActivity) => matchingActivity.description,
       );
 
-      const extensions = last(
-        matchingActivities
-          .map((matchingActivity) => matchingActivity.extensions)
-          .filter((value) => value !== undefined),
-        );
+      const extensions = matchingActivities.map(
+        (matchingActivity) => matchingActivity.extensions,
+      );
 
       const contextActivities = last(
         matchingActivities
@@ -146,9 +140,9 @@ export default async ({ config, models, client }: Opts): Promise<void> => {
         activityId,
         lrsId: client.lrs_id,
         organisationId: client.organisation,
-        ...(name !== undefined ? { name } : {}),
-        ...(description !== undefined ? { description } : {}),
-        ...(extensions !== undefined ? { extensions } : {}),
+        name: Object.assign({}, ...names),
+        description: Object.assign({}, ...descriptions),
+        extensions: Object.assign({}, ...extensions),
         ...(contextActivities !== undefined ? { contextActivities } : {}),
         ...(type !== undefined ? { type } : {}),
         ...(moreInfo !== undefined ? { moreInfo } : {}),
