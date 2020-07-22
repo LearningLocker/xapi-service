@@ -18,11 +18,14 @@ import voidStatements from '../../voidStatements/mongo';
 import FacadeConfig from './FacadeConfig';
 import FactoryConfig from './FactoryConfig';
 
+const defaultMaxTimeMs = 300000; // 5 minutes.
+
 export default (factoryConfig?: FactoryConfig): Facade => {
   const facadeConfig: FacadeConfig = (
-    factoryConfig !== undefined ? factoryConfig : { db: connectToMongoDb() }
+    factoryConfig !== undefined
+      ? factoryConfig
+      : { db: connectToMongoDb(), maxTimeMs: defaultMaxTimeMs }
   );
-
   return {
     clearRepo: async () => {
       await (await facadeConfig.db()).dropDatabase();

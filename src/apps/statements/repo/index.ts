@@ -31,6 +31,7 @@ const repo: Repo = factory({
     facade: config.repoFactory.modelsRepoName,
     mongo: {
       db: connectToMongoDb(),
+      maxTimeMs: config.defaultTimeout,
     },
   },
   storage: {

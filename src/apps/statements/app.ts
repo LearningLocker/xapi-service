@@ -30,6 +30,7 @@ export default (appConfig: AppConfig): Result => {
       facade: appConfig.repo.factory.modelsRepoName,
       mongo: {
         db: appConfig.repo.mongo.db,
+        maxTimeMs: appConfig.repo.mongo.maxTimeMs,
       },
     },
     storage: {

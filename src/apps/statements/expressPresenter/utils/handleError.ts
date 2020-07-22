@@ -27,6 +27,7 @@ import MissingLoadedId from '../../errors/MissingLoadedId';
 import MissingStatementId from '../../errors/MissingStatementId';
 import NoStatements from '../../errors/NoStatements';
 import QueryIds from '../../errors/QueryIds';
+import Timeout from '../../errors/Timeout';
 import UnequalStatementId from '../../errors/UnequalStatementId';
 import UnknownParams from '../../errors/UnknownParams';
 import UntrustedClientError from '../../errors/UntrustedClientError';
@@ -208,6 +209,11 @@ export default ({ config, errorId, res, err }: Options): Response => {
   if (err instanceof UntrustedClientError) {
     const code = FORBIDDEN;
     const message = translator.untrustedClientError(err);
+    return sendMessage({ res, code, errorId, message });
+  }
+  if (err instanceof Timeout) {
+    const code = BAD_REQUEST;
+    const message = translator.timeoutError(err);
     return sendMessage({ res, code, errorId, message });
   }
   return commonErrorHandler({ config, errorId, res, err });
