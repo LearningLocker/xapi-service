@@ -1,4 +1,4 @@
-import { Dictionary, mapKeys } from 'lodash';
+import { Dictionary, isEmpty, mapKeys } from 'lodash';
 import { ObjectID } from 'mongodb';
 import { FULL_ACTIVITIES_COLLECTION_NAME } from '../utils/mongoModels/constants';
 import FacadeConfig from '../utils/mongoModels/FacadeConfig';
@@ -28,7 +28,7 @@ export default (config: FacadeConfig): Signature =>
         ...getPatchUpdate(fullActivity.description, ['description']),
         ...getPatchUpdate(extensions, ['extensions']),
         ...(
-          fullActivity.contextActivities !== undefined
+          !isEmpty(fullActivity.contextActivities)
             ? { contextActivities: fullActivity.contextActivities }
             : {}
         ),

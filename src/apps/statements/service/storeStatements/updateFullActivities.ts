@@ -118,10 +118,8 @@ export default async ({ config, models, client }: Opts): Promise<void> => {
         (matchingActivity) => matchingActivity.extensions,
       );
 
-      const contextActivities = last(
-        matchingActivities
-        .map((matchingActivity) => matchingActivity.contextActivities)
-        .filter((value) => value !== undefined),
+      const contextActivities = matchingActivities.map(
+        (matchingActivity) => matchingActivity.contextActivities,
       );
 
       const type = last(
@@ -143,7 +141,7 @@ export default async ({ config, models, client }: Opts): Promise<void> => {
         name: Object.assign({}, ...names),
         description: Object.assign({}, ...descriptions),
         extensions: Object.assign({}, ...extensions),
-        ...(contextActivities !== undefined ? { contextActivities } : {}),
+        contextActivities: Object.assign({}, ...contextActivities),
         ...(type !== undefined ? { type } : {}),
         ...(moreInfo !== undefined ? { moreInfo } : {}),
       };
