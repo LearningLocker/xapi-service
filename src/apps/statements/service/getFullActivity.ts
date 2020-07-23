@@ -16,15 +16,20 @@ export default (config: Config) => {
         extensions: fullActivityResult.extensions,
         ...(
           fullActivityResult.moreInfo !== undefined
-          ? { moreInfo: fullActivityResult.moreInfo }
-          : {}
+            ? { moreInfo: fullActivityResult.moreInfo }
+            : {}
         ),
         ...(
           fullActivityResult.type !== undefined
-          ? { type: fullActivityResult.type }
-          : {}
+            ? { type: fullActivityResult.type }
+            : {}
         ),
       },
+      ...(
+        fullActivityResult.contextActivities !== undefined
+          ? { contextActivities: fullActivityResult.contextActivities }
+          : {}
+      ),
     };
   };
 };
