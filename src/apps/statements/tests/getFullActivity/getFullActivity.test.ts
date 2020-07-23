@@ -4,8 +4,10 @@ import setup from '../utils/setup';
 import {
   TEST_ACTIVITY,
   TEST_ACTIVITY_ID,
+  TEST_ACTIVITY_WITH_CONTEXT_ACTIVITIES,
   TEST_BASE_ACTIVITY,
   TEST_CLIENT,
+  TEST_CONTEXT_ACTIVITIES,
   TEST_IMMUTABLE_ACTIVITY,
   TEST_MERGE_ACTIVITY,
   TEST_MERGED_ACTIVITY,
@@ -91,4 +93,27 @@ describe('getFullActivity', () => {
     });
     assert.deepEqual(fullActivity, TEST_MERGED_ACTIVITY);
   });
+
+  it(
+    'should return the definition and contextActivities when getting a existing activity',
+    async () => {
+      const statement = createStatement({
+        object: TEST_ACTIVITY,
+        context: {
+          ...TEST_CONTEXT_ACTIVITIES,
+        },
+      });
+      await service.storeStatements({
+        models: [statement],
+        attachments: [],
+        client: TEST_CLIENT,
+      });
+      const fullActivity = await service.getFullActivity({
+        activityId: TEST_ACTIVITY_ID,
+        client: TEST_CLIENT,
+      });
+      assert.deepEqual(fullActivity, TEST_ACTIVITY_WITH_CONTEXT_ACTIVITIES);
+    },
+  );
+// tslint:disable-next-line:max-file-line-count
 });

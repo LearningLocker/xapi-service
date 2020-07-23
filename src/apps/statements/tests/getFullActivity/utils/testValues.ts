@@ -82,3 +82,15 @@ export const TEST_MERGED_ACTIVITY = {
     type: 'http://www.example.org/mergedType',
   },
 };
+export const TEST_CONTEXT_ACTIVITIES = {
+  contextActivities: {
+    category: [TEST_ACTIVITY],
+    grouping: [TEST_ACTIVITY],
+    parent: [TEST_ACTIVITY],
+    other: [TEST_ACTIVITY],
+  },
+};
+export const TEST_ACTIVITY_WITH_CONTEXT_ACTIVITIES = {
+  ...TEST_ACTIVITY,
+  ...TEST_CONTEXT_ACTIVITIES,
+};
