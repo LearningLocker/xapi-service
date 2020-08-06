@@ -70,7 +70,10 @@ const getStatementActivities = (statement: StatementBase, client: ClientModel) =
   ...getContextActivities(statement, client),
 ];
 
-const getFullActivitiesFromStatements = (statements: UnstoredStatementModel[], client: ClientModel) =>
+const getFullActivitiesFromStatements = (
+  statements: UnstoredStatementModel[],
+  client: ClientModel,
+) =>
   flatMap(statements, (statement) => [
     ...getStatementActivities(statement.statement, client),
     ...(
