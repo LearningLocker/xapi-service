@@ -12,7 +12,7 @@ import * as os from 'os';
 
 const DEFAULT_REDIS_PORT = 6379;
 const DEFAULT_EXPRESS_PORT = 8081;
-const DEFAULT_TIMEOUT_MS = 300000; // 5 minutes.
+const DEFAULT_TIMEOUT_MS = 55000; // 55 seconds.
 
 const storageDir = `${process.cwd()}/storage`;
 const googleKeyFileName = `${process.cwd()}/google.keyfile.json`;
