@@ -13,11 +13,11 @@ const getPatchUpdate = <T>(patch: Dictionary<T>, parentKeys: string[]) =>
   );
 
 export default (config: FacadeConfig): Signature =>
-  async ({ fullActivitiesForStoring }) => {
+  async ({ fullActivities }) => {
     const collection = (await config.db()).collection(FULL_ACTIVITIES_COLLECTION_NAME);
     const batch = collection.initializeUnorderedBulkOp();
 
-    fullActivitiesForStoring.forEach((fullActivity) => {
+    fullActivities.forEach((fullActivity) => {
       const activityId = fullActivity.activityId;
       const lrsId = new ObjectID(fullActivity.lrsId);
       const organisationId = new ObjectID(fullActivity.organisationId);
@@ -52,7 +52,7 @@ export default (config: FacadeConfig): Signature =>
       batch.find(mongoQuery).upsert().updateOne({ $set: mongoSet });
     });
 
-    if (fullActivitiesForStoring.length > 0) {
+    if (fullActivities.length > 0) {
       await batch.execute();
     }
   };

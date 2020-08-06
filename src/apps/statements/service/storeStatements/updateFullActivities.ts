@@ -14,7 +14,7 @@ const convertToFullActivities = (
   client: ClientModel,
   contextActivities: ContextActivities = {},
 ): FullActivityClient[] =>
-  map(activities, (activity: Activity) => ({
+  map(activities, (activity) => ({
     activityId: activity.id,
     lrsId: client.lrs_id,
     organisationId: client.organisation,
@@ -92,10 +92,9 @@ export interface Opts {
 export default async ({ config, models, client }: Opts): Promise<void> => {
   if (!config.enableActivityUpdates) { return; }
 
-  // Gets the activities from the statements.
-  const fullActivities = getFullActivitiesFromStatements(models, client);
+  const clientFullActivities = getFullActivitiesFromStatements(models, client);
 
-  const definedActivities = fullActivities.filter((fullActivity) =>
+  const definedActivities = clientFullActivities.filter((fullActivity) =>
       !isEmpty(fullActivity.context) ||
       !isEmpty(fullActivity.name) ||
       !isEmpty(fullActivity.description) ||
@@ -110,7 +109,7 @@ export default async ({ config, models, client }: Opts): Promise<void> => {
     (activity) => activity.activityId,
   );
 
-  const fullActivitiesForStoring = map(
+  const fullActivities = map(
     groupedActivities,
     (matchingActivities, activityId): FullActivityDatabase => {
       const names = matchingActivities.map(
@@ -170,6 +169,6 @@ export default async ({ config, models, client }: Opts): Promise<void> => {
     },
   );
 
-  await config.repo.updateFullActivities({ fullActivitiesForStoring });
+  await config.repo.updateFullActivities({ fullActivities });
 // tslint:disable-next-line:max-file-line-count
 };
