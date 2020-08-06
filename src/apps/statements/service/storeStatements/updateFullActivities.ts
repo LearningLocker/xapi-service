@@ -1,8 +1,10 @@
-import { flatMap, groupBy, isEmpty, last, map } from 'lodash';
+import { flatMap, groupBy, isArray, isEmpty, last, map, mapValues, mergeWith, uniq } from 'lodash';
 import Activity from '../../models/Activity';
 import ClientModel from '../../models/ClientModel';
 import ContextActivities from '../../models/ContextActivities';
-import FullActivityModel from '../../models/FullActivityModel';
+import FullActivityClient from '../../models/FullActivityClient';
+import FullActivityContextActivities from '../../models/FullActivityContextActivities';
+import FullActivityDatabase from '../../models/FullActivityDatabase';
 import StatementBase from '../../models/StatementBase';
 import UnstoredStatementModel from '../../models/UnstoredStatementModel';
 import Config from '../Config';
@@ -11,7 +13,7 @@ const convertToFullActivities = (
   activities: Activity[],
   client: ClientModel,
   contextActivities: ContextActivities = {},
-): FullActivityModel[] =>
+): FullActivityClient[] =>
   map(activities, (activity: Activity) => ({
     activityId: activity.id,
     lrsId: client.lrs_id,
@@ -20,7 +22,7 @@ const convertToFullActivities = (
     description: {},
     extensions: {},
     ...activity.definition,
-    contextActivities,
+    ...(isEmpty(contextActivities) ? {} : { context: { contextActivities } }),
   }));
 
 const getContextActivities = (statement: StatementBase, client: ClientModel) => {
@@ -68,6 +70,16 @@ const getStatementActivities = (statement: StatementBase, client: ClientModel) =
   ...getContextActivities(statement, client),
 ];
 
+const getFullActivitiesFromStatements = (statements: UnstoredStatementModel[], client: ClientModel) =>
+  flatMap(statements, (statement) => [
+    ...getStatementActivities(statement.statement, client),
+    ...(
+      statement.statement.object.objectType === 'SubStatement'
+        ? getStatementActivities(statement.statement.object, client)
+        : []
+    ),
+  ]);
+
 export interface Opts {
   readonly config: Config;
   readonly models: UnstoredStatementModel[];
@@ -78,23 +90,15 @@ export default async ({ config, models, client }: Opts): Promise<void> => {
   if (!config.enableActivityUpdates) { return; }
 
   // Gets the activities from the statements.
-  const activities = flatMap(models, (model) => [
-    ...getStatementActivities(model.statement, client),
-    ...(
-      model.statement.object.objectType === 'SubStatement'
-        ? getStatementActivities(model.statement.object, client)
-        : []
-    ),
-  ]);
+  const fullActivities = getFullActivitiesFromStatements(models, client);
 
-  // Filters out activities that don't contain used keys in the definition.
-  const definedActivities = activities.filter((activity) =>
-      !isEmpty(activity.contextActivities) ||
-      !isEmpty(activity.name) ||
-      !isEmpty(activity.description) ||
-      !isEmpty(activity.extensions) ||
-      activity.moreInfo !== undefined ||
-      activity.type !== undefined,
+  const definedActivities = fullActivities.filter((fullActivity) =>
+      !isEmpty(fullActivity.context) ||
+      !isEmpty(fullActivity.name) ||
+      !isEmpty(fullActivity.description) ||
+      !isEmpty(fullActivity.extensions) ||
+      fullActivity.moreInfo !== undefined ||
+      fullActivity.type !== undefined,
   );
 
   // Merges the activity definitions to reduce the number of updates.
@@ -103,9 +107,9 @@ export default async ({ config, models, client }: Opts): Promise<void> => {
     (activity) => activity.activityId,
   );
 
-  const fullActivities = map(
+  const fullActivitiesForStoring = map(
     groupedActivities,
-    (matchingActivities, activityId): FullActivityModel => {
+    (matchingActivities, activityId): FullActivityDatabase => {
       const names = matchingActivities.map(
         (matchingActivity) => matchingActivity.name,
       );
@@ -118,8 +122,21 @@ export default async ({ config, models, client }: Opts): Promise<void> => {
         (matchingActivity) => matchingActivity.extensions,
       );
 
-      const contextActivities = matchingActivities.map(
-        (matchingActivity) => matchingActivity.contextActivities,
+      const contextActivitiesForFullActivity: FullActivityContextActivities[] =
+        matchingActivities.map((matchingActivity) =>
+          mapValues(matchingActivity.context?.contextActivities, (matchingContextActivities) =>
+            matchingContextActivities !== undefined
+              // tslint:disable-next-line:max-line-length
+              ? matchingContextActivities.map((matchingContextActivity) => matchingContextActivity.id)
+              : matchingContextActivities,
+          ));
+
+      const mergedContextActivities = contextActivitiesForFullActivity.reduce(
+        (acc, contextActivity) => {
+
+          return mergeWith(acc, contextActivity, (objValue, srcValue) =>
+            isArray(objValue) ? uniq(objValue.concat(srcValue)) : objValue);
+        },
       );
 
       const type = last(
@@ -141,13 +158,15 @@ export default async ({ config, models, client }: Opts): Promise<void> => {
         name: Object.assign({}, ...names),
         description: Object.assign({}, ...descriptions),
         extensions: Object.assign({}, ...extensions),
-        contextActivities: Object.assign({}, ...contextActivities),
+        ...(isEmpty(mergedContextActivities)
+          ? {}
+          : { context: { contextActivities: mergedContextActivities } }),
         ...(type !== undefined ? { type } : {}),
         ...(moreInfo !== undefined ? { moreInfo } : {}),
       };
     },
   );
 
-  await config.repo.updateFullActivities({ fullActivities });
+  await config.repo.updateFullActivities({ fullActivitiesForStoring });
 // tslint:disable-next-line:max-file-line-count
 };

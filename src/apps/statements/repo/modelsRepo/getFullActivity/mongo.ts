@@ -19,7 +19,7 @@ export default (config: FacadeConfig): Signature => {
       extensions: 1,
       moreInfo: 1,
       type: 1,
-      contextActivities: 1,
+      context: 1,
     };
 
     const result = await collection.findOne(query, { fields });
@@ -41,9 +41,9 @@ export default (config: FacadeConfig): Signature => {
       ...(result.type === undefined ? {} : { type: result.type }),
       ...(result.moreInfo === undefined ? {} : { moreInfo: result.moreInfo }),
       ...(
-        result.contextActivities === undefined
+        result.context === undefined
           ? {}
-          : { contextActivities: result.contextActivities }
+          : { context: result.context }
       ),
     };
   };

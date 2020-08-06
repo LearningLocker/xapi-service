@@ -1,8 +1,7 @@
-import ContextActivities from './ContextActivities';
 import Extensions from './Extensions';
 import LanguageMap from './LanguageMap';
 
-interface FullActivityModel {
+interface FullActivity {
   readonly activityId: string;
   readonly organisationId: string;
   readonly lrsId: string;
@@ -11,7 +10,6 @@ interface FullActivityModel {
   readonly moreInfo?: string;
   readonly type?: string;
   readonly extensions: Extensions;
-  readonly contextActivities?: ContextActivities;
 }
 
-export default FullActivityModel;
+export default FullActivity;

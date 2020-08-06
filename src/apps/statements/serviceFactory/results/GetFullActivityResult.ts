@@ -1,11 +1,11 @@
-import ContextActivities from '../../models/ContextActivities';
+import Context from '../../models/Context';
 import Definition from '../../models/Definition';
 
 interface GetFullActivityResult {
   readonly objectType: 'Activity';
   readonly id: string;
   readonly definition?: Definition;
-  readonly contextActivities?: ContextActivities;
+  readonly context?: Context;
 }
 
 export default GetFullActivityResult;

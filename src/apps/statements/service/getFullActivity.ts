@@ -26,8 +26,8 @@ export default (config: Config) => {
         ),
       },
       ...(
-        fullActivityResult.contextActivities !== undefined
-          ? { contextActivities: fullActivityResult.contextActivities }
+        fullActivityResult.context !== undefined
+          ? { context: fullActivityResult.context }
           : {}
       ),
     };

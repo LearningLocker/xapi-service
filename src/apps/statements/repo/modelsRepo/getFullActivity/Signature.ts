@@ -1,6 +1,6 @@
 import Member from 'jscommons/dist/utils/Member';
 import ClientModel from '../../../models/ClientModel';
-import ContextActivities from '../../../models/ContextActivities';
+import Context from '../../../models/Context';
 import Extensions from '../../../models/Extensions';
 import LanguageMap from '../../../models/LanguageMap';
 
@@ -16,7 +16,7 @@ export interface Result {
   readonly extensions: Extensions;
   readonly type?: string;
   readonly moreInfo?: string;
-  readonly contextActivities?: ContextActivities;
+  readonly context?: Context;
 }
 
 type Signature = Member<Opts, Result>;
