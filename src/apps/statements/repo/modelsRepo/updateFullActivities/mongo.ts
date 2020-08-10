@@ -80,8 +80,10 @@ const createMongoQuery = (fullActivity: FullActivityDatabase) => {
 
 const creatBatchQuery = (batch: UnorderedBulkOperation) => (fullActivity: FullActivityDatabase) => {
   const mongoQuery = createMongoQuery(fullActivity);
+  // tslint:disable:no-inferred-empty-object-type
   const mongoSet = createMongoSet(fullActivity);
   const mongoAddToSet = createMongoAddToSet(fullActivity);
+  // tslint:enable:no-inferred-empty-object-type
 
   if (Object.keys(mongoSet).length === 0 && Object.keys(mongoAddToSet).length === 0) {
     return;
