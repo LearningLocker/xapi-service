@@ -75,6 +75,9 @@ jobs:
           name: Docker Build
           command: docker build -t "$DOCKER_REPO_SLUG" .
       - run:
+          name: Docker Tag
+          command: docker tag $DOCKER_REPO_SLUG $DOCKER_REPO_SLUG:$CIRCLE_BRANCH
+      - run:
           name: Docker Push
           command: docker push $DOCKER_REPO_SLUG:$CIRCLE_BRANCH
       - deploy:
