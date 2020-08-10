@@ -52,6 +52,7 @@ jobs:
       - DOCKER_REPO_SLUG: learninglocker/xapi-service
       - DOCKER_USERNAME: ryansmith94
       - DOCKER_EMAIL: 0ryansmith1994@gmail.com
+    working_directory: ~/repo
     steps:
       - checkout
       - setup_remote_docker:
