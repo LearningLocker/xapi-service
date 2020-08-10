@@ -81,6 +81,9 @@ jobs:
           name: Semantic Release
           command: yarn semantic-release
       - run:
+          name: Docker Login
+          command: docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD"
+      - run:
           name: Docker Push
           command: docker push $DOCKER_REPO_SLUG:$CIRCLE_BRANCH
 
