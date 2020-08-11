@@ -1,4 +1,5 @@
 import { Dictionary, mapKeys } from 'lodash';
+import { isEmpty } from 'lodash';
 import { ObjectID, UnorderedBulkOperation } from 'mongodb';
 import FullActivityDatabase from '../../../models/FullActivityDatabase';
 import { FULL_ACTIVITIES_COLLECTION_NAME } from '../utils/mongoModels/constants';
@@ -89,12 +90,10 @@ const creatBatchQuery = (batch: UnorderedBulkOperation) => (fullActivity: FullAc
     return;
   }
 
-  batch.find(mongoQuery).upsert().updateOne(
-    {
-      $set: mongoSet,
-      $addToSet: mongoAddToSet,
-    },
-  );
+  batch.find(mongoQuery).upsert().updateOne({
+    ...(!isEmpty(mongoSet) ? { $set: mongoSet } : {}),
+    ...(!isEmpty(mongoAddToSet) ? { $addToSet: mongoAddToSet } : {}),
+  });
 };
 
 export default (config: FacadeConfig): Signature =>
