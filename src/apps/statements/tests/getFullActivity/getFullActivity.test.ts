@@ -186,11 +186,11 @@ describe('getFullActivity', () => {
     async () => {
       const initialStatement = createStatement({
         object: TEST_ACTIVITY,
-        ...ANOTHER_TEST_CONTEXT_ACTIVITIES,
+        ...TEST_CONTEXT_ACTIVITIES,
       });
       const mergeStatement = createStatement({
         object: TEST_ACTIVITY,
-        ...TEST_CONTEXT_ACTIVITIES,
+        ...ANOTHER_TEST_CONTEXT_ACTIVITIES,
       });
       await service.storeStatements({
         models: [initialStatement],
@@ -206,7 +206,7 @@ describe('getFullActivity', () => {
         activityId: TEST_ACTIVITY_ID,
         client: TEST_CLIENT,
       });
-      assert.deepEqual(fullActivity, TEST_ACTIVITY_WITH_CONTEXT_ACTIVITIES);
+      assert.deepEqual(fullActivity, TEST_ACTIVITY_WITH_MERGED_CONTEXT_ACTIVITIES);
     },
   );
 // tslint:disable-next-line:max-file-line-count
