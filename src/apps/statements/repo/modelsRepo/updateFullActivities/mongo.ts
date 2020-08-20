@@ -86,10 +86,6 @@ const creatBatchQuery = (batch: UnorderedBulkOperation) => (fullActivity: FullAc
   const mongoAddToSet = createMongoAddToSet(fullActivity);
   // tslint:enable:no-inferred-empty-object-type
 
-  if (Object.keys(mongoSet).length === 0 && Object.keys(mongoAddToSet).length === 0) {
-    return;
-  }
-
   batch.find(mongoQuery).upsert().updateOne({
     ...(!isEmpty(mongoSet) ? { $set: mongoSet } : {}),
     ...(!isEmpty(mongoAddToSet) ? { $addToSet: mongoAddToSet } : {}),
