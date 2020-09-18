@@ -7,7 +7,7 @@ import patchStateWithService from './utils/patchStateWithService';
 export default (config: Config) => {
   return catchErrors(config, async (req: Request, res: Response): Promise<void> => {
     const query = req.query;
-    const method = query.method;
+    const method = query.method as string;
 
     if (method !== undefined) {
       return alternateStateRequest({ config, method, req, res });
