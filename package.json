@@ -54,7 +54,7 @@
     "http-status-codes": "^1.3.0",
     "install": "^0.13.0",
     "ioredis": "^4.14.0",
-    "jscommons": "^2.4.14",
+    "jscommons": "^3.0.0",
     "jsonwebtoken": "^8.5.1",
     "lodash": "^4.17.4",
     "mime-types": "2.1.27",
