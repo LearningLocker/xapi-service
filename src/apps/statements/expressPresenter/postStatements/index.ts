@@ -29,7 +29,7 @@ const parseJsonBody = async (config: Config, req: Request) => {
 export default (config: Config) => {
   return catchErrors(config, async (req: Request, res: Response): Promise<void> => {
 
-    const method = req.query.method as string;
+    const method = req.query.method as string | undefined;
     const contentType = defaultTo(req.header('Content-Type'), '');
 
     if (method === undefined && multipartContentTypePattern.test(contentType)) {

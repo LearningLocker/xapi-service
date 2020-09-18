@@ -7,7 +7,7 @@ import patchProfileWithService from './utils/patchProfileWithService';
 export default (config: Config) => {
   return catchErrors(config, async (req: Request, res: Response): Promise<void> => {
     const query = req.query;
-    const method = query.method as string;
+    const method = query.method as string | undefined;
 
     if (method !== undefined) {
       return alternateProfileRequest({ config, method, req, res });
