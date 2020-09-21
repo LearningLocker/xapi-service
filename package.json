@@ -103,7 +103,7 @@
     "rimraf": "2.7.1",
     "shelljs": "0.8.4",
     "simple-git": "1.132.0",
-    "supertest": "3.4.2",
+    "supertest": "4.0.2",
     "ts-node": "8.10.2",
     "tsconfig-paths": "3.9.0",
     "tslint": "5.20.1",
