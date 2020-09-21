@@ -9,7 +9,7 @@ import validateHeaderVersion from './utils/validateHeaderVersion';
 export default (config: Config) => {
   return catchErrors(config, async (req: Request, res: Response): Promise<void> => {
     const client = await getClient(config, req.header('Authorization'));
-    const activityId = getActivityId(req.query.activityId);
+    const activityId = getActivityId(req.query.activityId as string | undefined);
 
     validateHeaderVersion(req.header('X-Experience-API-Version'));
 
