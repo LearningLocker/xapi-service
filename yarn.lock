@@ -142,18 +142,18 @@
     lodash.camelcase "^4.3.0"
     protobufjs "^6.8.6"
 
-"@ht2-labs/semantic-release@2.0.12":
-  version "2.0.12"
-  resolved "https://registry.yarnpkg.com/@ht2-labs/semantic-release/-/semantic-release-2.0.12.tgz#55e4985d926d75a17859fe3da8cc9deee01488f7"
-  integrity sha512-6i/Fwvn/Uft1Q++gYS74WbcOfk/Hm9YMGX36nc3RcFWk8XC0TkAIukJsh297wZ6grohUyhKXciaUd7N9/+h6eA==
+"@ht2-labs/semantic-release@2.0.26":
+  version "2.0.26"
+  resolved "https://registry.yarnpkg.com/@ht2-labs/semantic-release/-/semantic-release-2.0.26.tgz#0461072b7582eb04e7697758f5c895371900359c"
+  integrity sha512-JFhjaGn30mt72fDMWLVPPnBCFPWTY0RFC94HYkHHA7XnTNvvLPkNQWMHLW94Mt0vKCtDs4Q+cRGPA+eQZ3b0Xg==
   dependencies:
-    "@semantic-release/github" "7.0.7"
-    "@semantic-release/npm" "7.0.5"
+    "@semantic-release/github" "7.1.1"
+    "@semantic-release/npm" "7.0.6"
     fs-extra "^9.0.0"
-    semantic-release "17.1.1"
+    semantic-release "17.1.2"
     semantic-release-docker "2.2.0"
     semver "7.3.2"
-    simple-git "2.12.0"
+    simple-git "2.20.1"
 
 "@ht2-labs/typescript-project@2.0.50":
   version "2.0.50"
@@ -181,7 +181,7 @@
   dependencies:
     debug "^4.1.1"
 
-"@kwsites/promise-deferred@^1.0.1":
+"@kwsites/promise-deferred@^1.1.1":
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/@kwsites/promise-deferred/-/promise-deferred-1.1.1.tgz#8ace5259254426ccef57f3175bc64ed7095ed919"
   integrity sha512-GaHYm+c0O9MjZRu0ongGBRbinu8gVAMd2UZjji6jVmqKtZluZnptXGWhz1E8j8D2HJ3f/yMxKAUC0b+57wncIw==
@@ -417,29 +417,7 @@
   resolved "https://registry.yarnpkg.com/@semantic-release/error/-/error-2.2.0.tgz#ee9d5a09c9969eade1ec864776aeda5c5cddbbf0"
   integrity sha512-9Tj/qn+y2j+sjCI3Jd+qseGtHjOAeg7dU2/lVcqIQ9TV3QDaDXDYXcoOHU+7o2Hwh8L8ymL4gfuO7KxDs3q2zg==
 
-"@semantic-release/github@7.0.7":
-  version "7.0.7"
-  resolved "https://registry.yarnpkg.com/@semantic-release/github/-/github-7.0.7.tgz#e3999b06433d08871acd68ecec2b4e212c05d09f"
-  integrity sha512-Sai2UucYQ+5rJzKVEVJ4eiZNDdoo0/CzfpValBdeU5h97uJE7t4CoBTmUWkiXlPOx46CSw1+JhI+PHC1PUxVZw==
-  dependencies:
-    "@octokit/rest" "^17.0.0"
-    "@semantic-release/error" "^2.2.0"
-    aggregate-error "^3.0.0"
-    bottleneck "^2.18.1"
-    debug "^4.0.0"
-    dir-glob "^3.0.0"
-    fs-extra "^9.0.0"
-    globby "^11.0.0"
-    http-proxy-agent "^4.0.0"
-    https-proxy-agent "^5.0.0"
-    issue-parser "^6.0.0"
-    lodash "^4.17.4"
-    mime "^2.4.3"
-    p-filter "^2.0.0"
-    p-retry "^4.0.0"
-    url-join "^4.0.0"
-
-"@semantic-release/github@^7.0.0":
+"@semantic-release/github@7.1.1", "@semantic-release/github@^7.0.0":
   version "7.1.1"
   resolved "https://registry.yarnpkg.com/@semantic-release/github/-/github-7.1.1.tgz#e998aa9a9cd770838d9f27c64f060c2b686b9d95"
   integrity sha512-w8CLCvGVKNe2FPOYQ68OFxFVNNha7YRzptnwTZYdjXYtgTDKw0XVfnMSd9NlJeQPYGfQmIhIVPNBU/cA6zUY0A==
@@ -461,26 +439,7 @@
     p-retry "^4.0.0"
     url-join "^4.0.0"
 
-"@semantic-release/npm@7.0.5":
-  version "7.0.5"
-  resolved "https://registry.yarnpkg.com/@semantic-release/npm/-/npm-7.0.5.tgz#61c45691abb863f6939cca6aac958d3c22508632"
-  integrity sha512-D+oEmsx9aHE1q806NFQwSC9KdBO8ri/VO99eEz0wWbX2jyLqVyWr7t0IjKC8aSnkkQswg/4KN/ZjfF6iz1XOpw==
-  dependencies:
-    "@semantic-release/error" "^2.2.0"
-    aggregate-error "^3.0.0"
-    execa "^4.0.0"
-    fs-extra "^9.0.0"
-    lodash "^4.17.15"
-    nerf-dart "^1.0.0"
-    normalize-url "^5.0.0"
-    npm "^6.10.3"
-    rc "^1.2.8"
-    read-pkg "^5.0.0"
-    registry-auth-token "^4.0.0"
-    semver "^7.1.2"
-    tempy "^0.5.0"
-
-"@semantic-release/npm@^7.0.0":
+"@semantic-release/npm@7.0.6", "@semantic-release/npm@^7.0.0":
   version "7.0.6"
   resolved "https://registry.yarnpkg.com/@semantic-release/npm/-/npm-7.0.6.tgz#1301bd57d246eae048d7104a735467bb0829f3d8"
   integrity sha512-F4judxdeLe8f7+vDva1TkqNc5Tb2tcltZYW0tLtvP2Xt7CD/gGiz7UxAWEOPsXBvIqAP+uTidvGLPl9U3/uRoQ==
@@ -5946,7 +5905,7 @@ npm-user-validate@~1.0.0:
   resolved "https://registry.yarnpkg.com/npm-user-validate/-/npm-user-validate-1.0.0.tgz#8ceca0f5cea04d4e93519ef72d0557a75122e951"
   integrity sha1-jOyg9c6gTU6TUZ73LQVXp1Ei6VE=
 
-npm@^6.10.3, npm@^6.13.0:
+npm@^6.13.0:
   version "6.14.8"
   resolved "https://registry.yarnpkg.com/npm/-/npm-6.14.8.tgz#64ef754345639bc035982ec3f609353c8539033c"
   integrity sha512-HBZVBMYs5blsj94GTeQZel7s9odVuuSUHy1+AlZh7rPVux1os2ashvEGLy/STNK7vUjbrCg5Kq9/GXisJgdf6A==
@@ -7384,10 +7343,10 @@ semantic-release-docker@2.2.0:
     "@semantic-release/error" "^2.1.0"
     execa "^0.10.0"
 
-semantic-release@17.1.1:
-  version "17.1.1"
-  resolved "https://registry.yarnpkg.com/semantic-release/-/semantic-release-17.1.1.tgz#d9775968e841b2b7c5020559e4481aea8520ca75"
-  integrity sha512-9H+207eynBJElrQBHySZm+sIEoJeUhPA2zU4cdlY1QSInd2lnE8GRD2ALry9EassE22c9WW+aCREwBhro5AIIg==
+semantic-release@17.1.2:
+  version "17.1.2"
+  resolved "https://registry.yarnpkg.com/semantic-release/-/semantic-release-17.1.2.tgz#7d77555185722012b34e3ca74e4d13f813daf3cd"
+  integrity sha512-szYBXm10QjQO5Tb1S2PSkvOBW3MajWJat5EWtx+MzaVT/jquuxf9o+Zn8FC1j157xvJ5p9r1d/MZGslgs7oQQg==
   dependencies:
     "@semantic-release/commit-analyzer" "^8.0.0"
     "@semantic-release/error" "^2.2.0"
@@ -7575,13 +7534,13 @@ simple-git@1.132.0:
   dependencies:
     debug "^4.0.1"
 
-simple-git@2.12.0:
-  version "2.12.0"
-  resolved "https://registry.yarnpkg.com/simple-git/-/simple-git-2.12.0.tgz#b5978ec12cd56883185ef1475ec62e9207c1e1dc"
-  integrity sha512-64YrHYqHskWDumxM4thMGCkAd7rek4FEnxcugnpKzJZH6vCkietblsp7TUNdt9qU0pHAnJAanAmjyyQLE46k/Q==
+simple-git@2.20.1:
+  version "2.20.1"
+  resolved "https://registry.yarnpkg.com/simple-git/-/simple-git-2.20.1.tgz#bab3f4d083ed6e1655a7c62ab8e8920eecae86f6"
+  integrity sha512-aa9s2ZLjXlHCVGbDXQLInMLvLkxKEclqMU9X5HMXi3tLWLxbWObz1UgtyZha6ocHarQtFp0OjQW9KHVR1g6wbA==
   dependencies:
     "@kwsites/file-exists" "^1.1.1"
-    "@kwsites/promise-deferred" "^1.0.1"
+    "@kwsites/promise-deferred" "^1.1.1"
     debug "^4.1.1"
 
 simple-swizzle@^0.2.2:
