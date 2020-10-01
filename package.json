@@ -82,7 +82,7 @@
     "@types/google-cloud__storage": "1.7.0",
     "@types/ioredis": "3.2.24",
     "@types/jsonwebtoken": "8.5.0",
-    "@types/lodash": "4.14.157",
+    "@types/lodash": "4.14.161",
     "@types/mime-types": "2.1.0",
     "@types/mocha": "5.2.7",
     "@types/mongodb": "3.5.25",
