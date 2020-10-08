@@ -142,10 +142,10 @@
     lodash.camelcase "^4.3.0"
     protobufjs "^6.8.6"
 
-"@ht2-labs/semantic-release@2.0.26":
-  version "2.0.26"
-  resolved "https://registry.yarnpkg.com/@ht2-labs/semantic-release/-/semantic-release-2.0.26.tgz#0461072b7582eb04e7697758f5c895371900359c"
-  integrity sha512-JFhjaGn30mt72fDMWLVPPnBCFPWTY0RFC94HYkHHA7XnTNvvLPkNQWMHLW94Mt0vKCtDs4Q+cRGPA+eQZ3b0Xg==
+"@ht2-labs/semantic-release@2.0.27":
+  version "2.0.27"
+  resolved "https://registry.yarnpkg.com/@ht2-labs/semantic-release/-/semantic-release-2.0.27.tgz#934c6607e60f9a34ed840c0e70e3ca0cfa45e6ec"
+  integrity sha512-0DI3sZqiH2O12PYfo/tlqdta9mmX9mraGUsYi4lCfcKWz7HBySSau6BumKUEwD57C1g5H6leOd0jQaQmkb/TBA==
   dependencies:
     "@semantic-release/github" "7.1.1"
     "@semantic-release/npm" "7.0.6"
@@ -153,7 +153,7 @@
     semantic-release "17.1.2"
     semantic-release-docker "2.2.0"
     semver "7.3.2"
-    simple-git "2.20.1"
+    simple-git "2.21.0"
 
 "@ht2-labs/typescript-project@2.0.50":
   version "2.0.50"
@@ -7534,10 +7534,10 @@ simple-git@1.132.0:
   dependencies:
     debug "^4.0.1"
 
-simple-git@2.20.1:
-  version "2.20.1"
-  resolved "https://registry.yarnpkg.com/simple-git/-/simple-git-2.20.1.tgz#bab3f4d083ed6e1655a7c62ab8e8920eecae86f6"
-  integrity sha512-aa9s2ZLjXlHCVGbDXQLInMLvLkxKEclqMU9X5HMXi3tLWLxbWObz1UgtyZha6ocHarQtFp0OjQW9KHVR1g6wbA==
+simple-git@2.21.0:
+  version "2.21.0"
+  resolved "https://registry.yarnpkg.com/simple-git/-/simple-git-2.21.0.tgz#d25d3fdc6a139cd7f80f197541a6f9f6e9d4cbc8"
+  integrity sha512-rohCHmEjD/ESXFLxF4bVeqgdb4Awc65ZyyuCKl3f7BvgMbZOBa/Ye3HN/GFnvruiUOAWWNupxhz3Rz5/3vJLTg==
   dependencies:
     "@kwsites/file-exists" "^1.1.1"
     "@kwsites/promise-deferred" "^1.1.1"
