@@ -142,15 +142,15 @@
     lodash.camelcase "^4.3.0"
     protobufjs "^6.8.6"
 
-"@ht2-labs/semantic-release@2.0.27":
-  version "2.0.27"
-  resolved "https://registry.yarnpkg.com/@ht2-labs/semantic-release/-/semantic-release-2.0.27.tgz#934c6607e60f9a34ed840c0e70e3ca0cfa45e6ec"
-  integrity sha512-0DI3sZqiH2O12PYfo/tlqdta9mmX9mraGUsYi4lCfcKWz7HBySSau6BumKUEwD57C1g5H6leOd0jQaQmkb/TBA==
+"@ht2-labs/semantic-release@2.0.29":
+  version "2.0.29"
+  resolved "https://registry.yarnpkg.com/@ht2-labs/semantic-release/-/semantic-release-2.0.29.tgz#97dafba483da349766847e5b39418942ae4297d2"
+  integrity sha512-4zYKFMBGLvHCNynV7iJLFJZKD/8yKx6AfMJ6mGyJMHT+FKq1+NVreHY0vgqBOgzSYYRjbGPXRrhYvpVmA0ghJQ==
   dependencies:
     "@semantic-release/github" "7.1.1"
     "@semantic-release/npm" "7.0.6"
     fs-extra "^9.0.0"
-    semantic-release "17.1.2"
+    semantic-release "17.2.1"
     semantic-release-docker "2.2.0"
     semver "7.3.2"
     simple-git "2.21.0"
@@ -7343,10 +7343,10 @@ semantic-release-docker@2.2.0:
     "@semantic-release/error" "^2.1.0"
     execa "^0.10.0"
 
-semantic-release@17.1.2:
-  version "17.1.2"
-  resolved "https://registry.yarnpkg.com/semantic-release/-/semantic-release-17.1.2.tgz#7d77555185722012b34e3ca74e4d13f813daf3cd"
-  integrity sha512-szYBXm10QjQO5Tb1S2PSkvOBW3MajWJat5EWtx+MzaVT/jquuxf9o+Zn8FC1j157xvJ5p9r1d/MZGslgs7oQQg==
+semantic-release@17.2.1:
+  version "17.2.1"
+  resolved "https://registry.yarnpkg.com/semantic-release/-/semantic-release-17.2.1.tgz#739bad395219110cc30d1ef7029fa2e03e3b4b72"
+  integrity sha512-+xbLWsT9NoibeMMJw4te0pbY4q/Z1gt/vzhB0z9RRNGVyqCgQiK5NUJ11eW6etSyPZ9QFeAMnqO2dzscWUTy2w==
   dependencies:
     "@semantic-release/commit-analyzer" "^8.0.0"
     "@semantic-release/error" "^2.2.0"
