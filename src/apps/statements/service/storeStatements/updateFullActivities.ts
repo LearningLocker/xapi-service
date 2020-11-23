@@ -59,10 +59,10 @@ const getContextActivities = (statement: StatementBase, client: ClientModel) => 
 const getObjectActivity = (statement: StatementBase, client: ClientModel) =>
   statement.object.objectType === 'Activity'
     ? convertToFullActivities(
-      [statement.object],
-      client,
-      statement.context?.contextActivities ?? {},
-    )
+        [statement.object],
+        client,
+        statement.context?.contextActivities ?? {},
+      )
     : [];
 
 const getStatementActivities = (statement: StatementBase, client: ClientModel) => [
@@ -131,13 +131,17 @@ export default async ({ config, models, client }: Opts): Promise<void> => {
               // tslint:disable-next-line:max-line-length
               ? matchingContextActivities.map((matchingContextActivity) => matchingContextActivity.id)
               : matchingContextActivities,
-          ));
+          ),
+        );
 
       const mergedContextActivities = contextActivitiesForFullActivity.reduce(
         (acc, contextActivity) => {
 
           return mergeWith(acc, contextActivity, (objValue, srcValue) =>
-            isArray(objValue) ? uniq(objValue.concat(srcValue)) : objValue);
+            isArray(objValue)
+              ? uniq(objValue.concat(srcValue))
+              : objValue,
+          );
         },
       );
 

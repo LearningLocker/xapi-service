@@ -116,22 +116,23 @@ describe('getFullActivity', () => {
     },
   );
 
-  it('should return the contextActivities when getting a existing activity', async () => {
-    const statement = createStatement({
-      object: TEST_ACTIVITY,
-      ...TEST_CONTEXT_ACTIVITIES,
+  it('should return the contextActivities when getting a existing activity',
+    async () => {
+      const statement = createStatement({
+        object: TEST_ACTIVITY,
+        ...TEST_CONTEXT_ACTIVITIES,
+      });
+      await service.storeStatements({
+        models: [statement],
+        attachments: [],
+        client: TEST_CLIENT,
+      });
+      const fullActivity = await service.getFullActivity({
+        activityId: TEST_ACTIVITY_ID,
+        client: TEST_CLIENT,
+      });
+      assert.deepEqual(fullActivity, TEST_ACTIVITY_WITH_CONTEXT_ACTIVITIES);
     });
-    await service.storeStatements({
-      models: [statement],
-      attachments: [],
-      client: TEST_CLIENT,
-    });
-    const fullActivity = await service.getFullActivity({
-      activityId: TEST_ACTIVITY_ID,
-      client: TEST_CLIENT,
-    });
-    assert.deepEqual(fullActivity, TEST_ACTIVITY_WITH_CONTEXT_ACTIVITIES);
-  });
 
   it(
     'should merge the contextActivities when storing two contextActivities in one batch',
