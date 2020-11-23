@@ -1,4 +1,4 @@
-version: 2
+version: 2.1
 machine:
   services:
     - docker
@@ -7,11 +7,19 @@ jobs:
   build:
     docker:
       - image: node:10
+        auth:
+          username: $DOCKERHUB_USERNAME
+          password: $DOCKERHUB_PASSWORD
       - image: mongo:3.7.9@sha256:fbc5b316430a970543d2e1668164c764977e777a74ffb05c873d0e5df499b6fb
+        auth:
+          username: $DOCKERHUB_USERNAME
+          password: $DOCKERHUB_PASSWORD
       - image: redis:3.2.12@sha256:562e944371527d6e11d396fe43fde17c30e28c25c23561b2322db3905cbc71dd
+        auth:
+          username: $DOCKERHUB_USERNAME
+          password: $DOCKERHUB_PASSWORD
     environment:
       - DOCKER_REPO_SLUG: learninglocker/xapi-service
-      - DOCKER_USERNAME: ryansmith94
       - DOCKER_EMAIL: 0ryansmith1994@gmail.com
       - NPM_CONFIG_LOGLEVEL: warn
       - WINSTON_CONSOLE_LEVEL: none
@@ -19,14 +27,12 @@ jobs:
     working_directory: ~/repo
     steps:
       - checkout
-      - setup_remote_docker:
-          docker_layer_caching: true
       - restore_cache:
           keys:
             - v1-dependencies-{{ checksum "yarn.lock" }}
       - run:
           name: Installing Dependencies
-          command: yarn install --ignore-engines
+          command: yarn install --ignore-engines --frozen-lockfile
       - save_cache:
           paths:
             - node_modules
@@ -43,17 +49,67 @@ jobs:
       - run:
           name: Conformance Tests
           command: sh test.sh
+      - save_cache:
+          paths:
+            - dist
+          key: dist-{{ .Branch }}-{{ .Revision }}
+  release:
+    docker:
+      - image: node:10
+        auth:
+          username: $DOCKERHUB_USERNAME
+          password: $DOCKERHUB_PASSWORD
+    environment:
+      - DOCKER_REPO_SLUG: learninglocker/xapi-service
+      - DOCKER_EMAIL: 0ryansmith1994@gmail.com
+    working_directory: ~/repo
+    steps:
+      - checkout
+      - setup_remote_docker:
+          docker_layer_caching: true
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "yarn.lock" }}
+      - restore_cache:
+          keys:
+            - dist-{{ .Branch }}-{{ .Revision }}
       - run:
           name: Docker Install
           command: |
             set -x
-            DOCKER_VERSION="17.03.0-ce"
-            curl -L -o /tmp/docker-$DOCKER_VERSION.tgz https://get.docker.com/builds/Linux/x86_64/docker-$DOCKER_VERSION.tgz
+            DOCKER_VERSION="19.03.12"
+            curl -L -o /tmp/docker-$DOCKER_VERSION.tgz https://download.docker.com/linux/static/stable/x86_64/docker-$DOCKER_VERSION.tgz
             tar -xz -C /tmp -f /tmp/docker-$DOCKER_VERSION.tgz
             mv /tmp/docker/* /usr/bin
       - run:
           name: Docker Build
           command: docker build -t "$DOCKER_REPO_SLUG" .
+      - run:
+          name: Docker Tag
+          command: docker tag $DOCKER_REPO_SLUG $DOCKER_REPO_SLUG:$CIRCLE_BRANCH
       - deploy:
           name: Semantic Release
           command: yarn semantic-release
+      - run:
+          name: Docker Login
+          command: docker login -u "$DOCKERHUB_USERNAME" -p "$DOCKERHUB_PASSWORD"
+      - run:
+          name: Docker Push
+          command: docker push $DOCKER_REPO_SLUG:$CIRCLE_BRANCH
+
+workflows:
+  build:
+    jobs:
+      - build:
+          context:
+            - docker-hub-creds
+      - release:
+          context:
+            - docker-hub-creds
+          requires:
+            - build
+          filters:
+            branches:
+              ignore:
+                - /^dependabot\/.*/
+                - /^renovate\/.*/
