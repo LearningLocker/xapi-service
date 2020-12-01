@@ -10,17 +10,36 @@
 ### Installation
 To install all of Learning Locker, see the [installation documentation](http://docs.learninglocker.net/guides-installing/). To install just the xAPI service, you can follow the instructions below.
 
-1. Clone the repository `git clone git@github.com:LearningLocker/xapi-service.git`.
-1. Install dependencies `npm install`.
-1. Build the code `npm run build`.
-1. Start the server `npm start`.
+1. Clone the repository with `git clone git@github.com:LearningLocker/xapi-service.git`.
+1. Switch to the repository directory with `cd xapi-service`.
+1. Install dependencies with `yarn`.
+1. Build the code with `yarn build`.
+1. Start the server with `yarn start`.
 
-### Development
-1. Follow [the installation procedure](#installation).
-1. Make your changes to the "src" directory.
-1. Build the code `npm run build`.
-1. Test the code `npm run test-all`.
-1. Run the server `npm start`.
+### Development: Installation
+
+1. [Install the latest version of Git for version control.](https://git-scm.com/downloads)
+1. [Install the latest version of N for managing Node and NPM versions.](https://github.com/tj/n#third-party-installers)
+1. [Install the latest version of Docker.](https://docs.docker.com/get-docker/)
+1. Install the latest version of yarn for dependency management with `npm i -g yarn`.
+1. Clone the repository with `git clone git@github.com:LearningLocker/xapi-service.git`.
+1. Switch to the repository directory with `cd xapi-service`.
+1. Install dependencies with `yarn`.
+1. Copy the ".env.example" file in the repository into a new ".env" file.
+1. Build the code `yarn build` or `yarn build --watch` if you want to make changes.
+1. Start Mongo and Redis with `docker-compose up -d`. If you've followed the [Enterprise setup instructions](https://github.com/LearningLocker/enterprise/blob/master/README.md) already you won't need to do this.
+1. Run the server with `yarn start`.
+
+### Development: Testing
+
+Before you follow these instructions you may want to exit your `yarn start` command above with Ctrl + C. This ensures that the running app doesn't interfere with your testing by using Mongo and Redis.
+
+1. Install dependencies with `yarn`.
+1. Start Mongo and Redis with `docker-compose up -d`. If you've followed the [Enterprise setup instructions](https://github.com/LearningLocker/enterprise/blob/master/README.md) already you won't need to do this.
+1. Lint the code with `yarn lint`.
+1. Build the code with `yarn build`.
+1. Test the code with `yarn cover-ci`.
+1. Stop the Mongo and Redis with `docker-compose down`. Use `-v` at the end to delete data.
 
 ### Docker
 You can use the steps below to install and run the xAPI service.
