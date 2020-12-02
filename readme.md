@@ -13,6 +13,7 @@
 1. [Install the latest version of N for managing Node and NPM versions.](https://github.com/tj/n#third-party-installers)
 1. [Install the latest version of Docker.](https://docs.docker.com/get-docker/)
 1. Install the latest version of yarn for dependency management with `npm i -g yarn`.
+1. Change to your Documents directory (or whichever directory you want to contain the repository) with `cd ~/Documents`.
 1. Clone the repository with `git clone git@github.com:LearningLocker/xapi-service.git`.
 1. Switch to the repository directory with `cd xapi-service`.
 1. Install dependencies with `yarn`.
