@@ -19,7 +19,7 @@
 1. Copy the ".env.example" file in the repository into a new ".env" file.
 1. Build the code `yarn build` or `yarn build --watch` if you want to make changes.
 1. Start Mongo and Redis with `docker-compose up -d`. If you've followed the [Enterprise setup instructions](https://github.com/LearningLocker/enterprise/blob/master/README.md) already you won't need to do this.
-1. Run the server with `yarn start`.
+1. Run the server with `yarn start` or `yarn start:dev` if you want to make changes.
 
 ### Development: Testing
 
