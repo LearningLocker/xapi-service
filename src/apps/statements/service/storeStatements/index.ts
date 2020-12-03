@@ -55,12 +55,10 @@ export default (config: Config) => {
     });
 
     const unstoredStatementProperties = unstoredModels.map(
-      (unstoredModel) => (
-        JSON.stringify({
-          statementId: unstoredModel.statement.id,
-          organisationId: unstoredModel.organisation,
-        })
-      ),
+      (unstoredModel) => JSON.stringify({
+        statementId: unstoredModel.statement.id,
+        organisationId: unstoredModel.organisation,
+      }),
     );
 
     // Completes actions that do not need to be awaited.
@@ -79,6 +77,7 @@ export default (config: Config) => {
     if (unstoredStatementProperties.length !== 0) {
       config.repo.emitNewStatements({ statementProperties: unstoredStatementProperties })
         .catch((err) => {
+          /* istanbul ignore next */
           console.error(err); // tslint:disable-line:no-console
         });
     }
