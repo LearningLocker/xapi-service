@@ -54,9 +54,12 @@ export default (config: Config) => {
       return postValidatedModel.statement.id;
     });
 
-    const unstoredStatementIds = unstoredModels.map((unstoredModel) => {
-      return unstoredModel.statement.id;
-    });
+    const unstoredStatementProperties = unstoredModels.map(
+      (unstoredModel) => JSON.stringify({
+        statementId: unstoredModel.statement.id,
+        organisationId: unstoredModel.organisation,
+      }),
+    );
 
     // Completes actions that do not need to be awaited.
     const unawaitedUpdates: Promise<any> = Promise.all([
@@ -71,11 +74,12 @@ export default (config: Config) => {
     });
 
     await awaitUpdates(config, unawaitedUpdates);
-    if (unstoredStatementIds.length !== 0) {
-      config.repo.emitNewStatements({ ids: unstoredStatementIds }).catch((err) => {
-        /* istanbul ignore next */
-        console.error(err); // tslint:disable-line:no-console
-      });
+    if (unstoredStatementProperties.length !== 0) {
+      config.repo.emitNewStatements({ statementProperties: unstoredStatementProperties })
+        .catch((err) => {
+          /* istanbul ignore next */
+          console.error(err); // tslint:disable-line:no-console
+        });
     }
 
     const tracker = await config.tracker;
