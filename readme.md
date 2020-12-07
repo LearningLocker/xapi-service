@@ -9,10 +9,10 @@
 
 ### Development: Installation
 
-1. [Install the latest version of Git for version control.](https://git-scm.com/downloads)
-1. [Install the latest version of N for managing Node and NPM versions.](https://github.com/tj/n#third-party-installers)
-1. [Install the latest version of Docker.](https://docs.docker.com/get-docker/)
-1. Install the latest version of yarn for dependency management with `npm i -g yarn`.
+Do not use sudo for any of these installations or commands. If you're working on Learning Locker Enterprise, please make sure you've followed the [Enterprise Development Setup](https://github.com/LearningLocker/enterprise/blob/master/README.md#development-setup) first.
+
+#### Setup Repository
+
 1. Change to your Documents directory (or whichever directory you want to contain the repository) with `cd ~/Documents`.
 1. Clone the repository with `git clone git@github.com:LearningLocker/xapi-service.git`.
 1. Switch to the repository directory with `cd xapi-service`.
