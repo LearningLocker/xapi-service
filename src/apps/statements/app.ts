@@ -73,7 +73,8 @@ export default (appConfig: AppConfig): Result => {
     repo,
     tracker: appConfig.tracker,
   });
-  const presenter = presenterFactory({
+
+  return presenterFactory({
     allowFormBody: appConfig.presenter.express.allowFormBody,
     allowUndefinedMethod: appConfig.presenter.express.allowUndefinedMethod,
     bodyParserLimit: appConfig.presenter.express.bodyParserLimit,
@@ -86,5 +87,4 @@ export default (appConfig: AppConfig): Result => {
     tracker: appConfig.tracker,
     translator,
   });
-  return presenter;
 };

@@ -11,7 +11,7 @@ export default (config: Config, models: any[]): any[] => {
       lowerCaseActors(config),
       wrapContextActivitiesInArrays,
     ]);
-    const setupModel = setup(model);
-    return setupModel;
+
+    return setup(model);
   });
 };

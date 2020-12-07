@@ -76,6 +76,5 @@ export default async (
     },
   );
 
-  const unstoredModels = await Promise.all(unstoredModelPromises);
-  return unstoredModels;
+  return await Promise.all(unstoredModelPromises);
 };

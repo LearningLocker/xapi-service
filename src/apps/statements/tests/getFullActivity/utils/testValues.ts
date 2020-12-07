@@ -17,6 +17,7 @@ export const TEST_OUTSIDE_STORE_CLIENT: ClientModel = createClientModel({
 });
 
 export const TEST_ACTIVITY_ID = 'http://www.example.org/fullActivityTest';
+export const ANOTHER_TEST_ACTIVITY_ID = 'http://www.example.org/anotherFullActivityTest';
 export const TEST_IMMUTABLE_ACTIVITY_ID = 'http://www.example.org/fullActivityTest/immutable';
 export const TEST_BASE_ACTIVITY = {
   objectType: 'Activity',
@@ -82,3 +83,57 @@ export const TEST_MERGED_ACTIVITY = {
     type: 'http://www.example.org/mergedType',
   },
 };
+export const TEST_CONTEXT_ACTIVITIES = {
+  context : {
+    contextActivities: {
+      category: [TEST_ACTIVITY],
+      grouping: [TEST_ACTIVITY],
+      parent: [TEST_ACTIVITY],
+      other: [TEST_ACTIVITY],
+    },
+  },
+};
+
+export const ANOTHER_TEST_CONTEXT_ACTIVITIES = {
+  context : {
+    contextActivities: {
+      category: [{ ...TEST_ACTIVITY, id: ANOTHER_TEST_ACTIVITY_ID }],
+      grouping: [{ ...TEST_ACTIVITY, id: ANOTHER_TEST_ACTIVITY_ID }],
+      parent: [{ ...TEST_ACTIVITY, id: ANOTHER_TEST_ACTIVITY_ID }],
+      other: [{ ...TEST_ACTIVITY, id: ANOTHER_TEST_ACTIVITY_ID }],
+    },
+  },
+};
+
+export const TEST_CONTEXT_ACTIVITIES_RESULT = {
+  context : {
+    contextActivities: {
+      category: [TEST_ACTIVITY_ID],
+      grouping: [TEST_ACTIVITY_ID],
+      parent: [TEST_ACTIVITY_ID],
+      other: [TEST_ACTIVITY_ID],
+    },
+  },
+};
+
+export const TEST_MERGED_CONTEXT_ACTIVITIES_RESULT = {
+  context : {
+    contextActivities: {
+      category: [TEST_ACTIVITY_ID, ANOTHER_TEST_ACTIVITY_ID],
+      grouping: [TEST_ACTIVITY_ID, ANOTHER_TEST_ACTIVITY_ID],
+      parent: [TEST_ACTIVITY_ID, ANOTHER_TEST_ACTIVITY_ID],
+      other: [TEST_ACTIVITY_ID, ANOTHER_TEST_ACTIVITY_ID],
+    },
+  },
+};
+
+export const TEST_ACTIVITY_WITH_CONTEXT_ACTIVITIES = {
+  ...TEST_ACTIVITY,
+  ...TEST_CONTEXT_ACTIVITIES_RESULT,
+};
+
+export const TEST_ACTIVITY_WITH_MERGED_CONTEXT_ACTIVITIES = {
+  ...TEST_ACTIVITY,
+  ...TEST_MERGED_CONTEXT_ACTIVITIES_RESULT,
+};
+// tslint:disable-next-line:max-file-line-count
