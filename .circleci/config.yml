@@ -6,7 +6,7 @@ machine:
 jobs:
   build:
     docker:
-      - image: node:10
+      - image: node:12
         auth:
           username: $DOCKERHUB_USERNAME
           password: $DOCKERHUB_PASSWORD
@@ -55,7 +55,7 @@ jobs:
           key: dist-{{ .Branch }}-{{ .Revision }}
   release:
     docker:
-      - image: node:10
+      - image: node:12
         auth:
           username: $DOCKERHUB_USERNAME
           password: $DOCKERHUB_PASSWORD
