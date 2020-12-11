@@ -67,6 +67,7 @@ jobs:
       - checkout
       - setup_remote_docker:
           docker_layer_caching: true
+          version: 19.03.13
       - restore_cache:
           keys:
             - v1-dependencies-{{ checksum "yarn.lock" }}
