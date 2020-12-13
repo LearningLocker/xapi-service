@@ -1,11 +1,11 @@
 import express from 'express';
-import { getFileStorageConfig } from 'src/apps/activities/_functions/deleteActivityProfile/utils/getFileStorageConfig/getFileStorageConfig';
-import { getRecordStorageConfig } from 'src/apps/activities/_functions/deleteActivityProfile/utils/getRecordStorageConfig/getRecordStorageConfig';
-import { getTrackingConfig } from 'src/apps/activities/_functions/deleteActivityProfile/utils/getTrackingConfig/getTrackingConfig';
 import supertest from 'supertest';
 import config from '../../../../../config';
 import logger from '../../../../../logger';
 import tracker from '../../../../../tracker';
+import { getFileStorageConfig } from '../../../_functions/deleteActivityProfile/utils/getFileStorageConfig/getFileStorageConfig';
+import { getRecordStorageConfig } from '../../../_functions/deleteActivityProfile/utils/getRecordStorageConfig/getRecordStorageConfig';
+import { getTrackingConfig } from '../../../_functions/deleteActivityProfile/utils/getTrackingConfig/getTrackingConfig';
 import translatorFactory from '../../../translatorFactory';
 import { route } from '../../../utils/constants';
 import service from '../../../utils/testService';
