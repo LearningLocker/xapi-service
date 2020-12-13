@@ -54,6 +54,7 @@ export async function getClientFromMongo(config: MongoRecordStorageConfig, authT
     useUnifiedTopology: true,
   });
   try {
+    await mongoClient.connect();
     const db = mongoClient.db(config.mongoDbName);
     const clientDoc = await findClientWithAuth(db, authToken);
 
