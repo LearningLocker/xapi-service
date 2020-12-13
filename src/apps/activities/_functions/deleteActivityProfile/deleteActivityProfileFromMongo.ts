@@ -1,11 +1,11 @@
 import NoModel from 'jscommons/dist/errors/NoModel';
 import { MongoClient, ObjectID } from 'mongodb';
 import IfMatch from '../../errors/IfMatch';
+import { MongoRecordStorageConfig } from './utils/getRecordStorageConfig/RecordStorageConfig';
 import {
   MongoActivityProfileDoc,
   mongoActivityProfilesCollectionName,
 } from './utils/mongoDocInterfaces/MongoActivityProfileDoc';
-import { MongoRecordStorageConfig } from './utils/getRecordStorageConfig/RecordStorageConfig';
 
 interface DeleteActivityProfileRecordOptions {
   readonly lrs_id: string;

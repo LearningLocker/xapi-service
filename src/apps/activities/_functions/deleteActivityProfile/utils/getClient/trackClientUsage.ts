@@ -1,5 +1,5 @@
-import { trackInNewRelic } from './trackClientUsageInNewRelic';
 import { TrackingConfig, TrackingProvider } from '../getTrackingConfig/TrackingConfig';
+import { trackInNewRelic } from './trackClientUsageInNewRelic';
 
 export interface TrackingOptions {
   readonly organisationId: string;

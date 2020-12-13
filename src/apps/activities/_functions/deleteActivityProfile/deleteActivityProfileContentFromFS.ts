@@ -1,7 +1,7 @@
 import { unlink } from 'fs-extra';
 import getStorageDir from '../../utils/getStorageDir';
 import { DeleteActivityProfileContentOptions } from './deleteActivityProfileContent';
-import { LocalFileStorageConfig } from "./utils/getFileStorageConfig/FileStorageConfig";
+import { LocalFileStorageConfig } from './utils/getFileStorageConfig/FileStorageConfig';
 
 export async function deleteActivityProfileContentFromFS(
   config: LocalFileStorageConfig,

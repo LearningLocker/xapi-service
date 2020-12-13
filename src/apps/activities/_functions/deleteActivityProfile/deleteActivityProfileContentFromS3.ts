@@ -1,7 +1,7 @@
 import { S3 } from 'aws-sdk';
 import getStorageDir from '../../utils/getStorageDir';
 import { DeleteActivityProfileContentOptions } from './deleteActivityProfileContent';
-import { S3FileStorageConfig } from "./utils/getFileStorageConfig/FileStorageConfig";
+import { S3FileStorageConfig } from './utils/getFileStorageConfig/FileStorageConfig';
 
 export async function deleteActivityProfileContentFromS3(
   config: S3FileStorageConfig,

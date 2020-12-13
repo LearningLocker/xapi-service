@@ -21,7 +21,9 @@ export function getFileStorageConfig(): FileStorageConfig {
       fileStorageProvider: FileStorageProvider.S3,
       s3BucketName: config.s3StorageRepo.bucketName,
       s3SubFolder: config.storageSubFolders.activities,
+      // tslint:disable-next-line: deprecation
       awsAccessKeyId: config.s3StorageRepo.awsConfig.accessKeyId as string,
+      // tslint:disable-next-line: deprecation
       awsSecretAccessKey: config.s3StorageRepo.awsConfig.secretAccessKey as string,
       awsRegion: config.s3StorageRepo.awsConfig.region as string,
     };

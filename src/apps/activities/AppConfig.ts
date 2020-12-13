@@ -3,8 +3,8 @@ import Tracker from 'jscommons/dist/tracker/Tracker';
 import { Db } from 'mongodb';
 import { LoggerInstance } from 'winston';
 import { FileStorageConfig } from './_functions/deleteActivityProfile/utils/getFileStorageConfig/FileStorageConfig';
-import { TrackingConfig } from './_functions/deleteActivityProfile/utils/getTrackingConfig/TrackingConfig';
 import { MongoRecordStorageConfig } from './_functions/deleteActivityProfile/utils/getRecordStorageConfig/RecordStorageConfig';
+import { TrackingConfig } from './_functions/deleteActivityProfile/utils/getTrackingConfig/TrackingConfig';
 
 export default interface AppConfig {
   readonly logger: LoggerInstance;
