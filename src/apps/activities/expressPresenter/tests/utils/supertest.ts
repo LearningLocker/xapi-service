@@ -1,4 +1,7 @@
 import express from 'express';
+import { getFileStorageConfig } from 'src/apps/activities/_functions/deleteActivityProfile/utils/getFileStorageConfig/getFileStorageConfig';
+import { getRecordStorageConfig } from 'src/apps/activities/_functions/deleteActivityProfile/utils/getRecordStorageConfig/getRecordStorageConfig';
+import { getTrackingConfig } from 'src/apps/activities/_functions/deleteActivityProfile/utils/getTrackingConfig/getTrackingConfig';
 import supertest from 'supertest';
 import config from '../../../../../config';
 import logger from '../../../../../logger';
@@ -19,6 +22,9 @@ const presenter = presenterFacade({
   service,
   tracker,
   translator,
+  fileStorageConfig: getFileStorageConfig(),
+  recordStorageConfig: getRecordStorageConfig(),
+  trackingConfig: getTrackingConfig(),
 });
 
 app.use(route, presenter);

@@ -1,6 +1,6 @@
 import { BAD_REQUEST, NO_CONTENT } from 'http-status-codes';
+import setup from '../../../expressPresenter/tests/utils/setup';
 import { TEST_INVALID_ACTIVITY_ID } from '../../../utils/testValues';
-import setup from '../utils/setup';
 import deleteProfile from './utils/deleteProfile';
 
 describe('expressPresenter.deleteProfile with non-existing state', () => {

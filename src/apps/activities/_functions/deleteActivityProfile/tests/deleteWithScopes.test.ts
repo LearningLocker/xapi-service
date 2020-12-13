@@ -1,6 +1,6 @@
 import { FORBIDDEN, NO_CONTENT } from 'http-status-codes';
+import setup from '../../../expressPresenter/tests/utils/setup';
 import { TEST_EXPIRED_ORG_TOKEN, TEST_UNTRUSTED_TOKEN } from '../../../utils/testValues';
-import setup from '../utils/setup';
 import deleteProfile from './utils/deleteProfile';
 
 describe('expressPresenter.deleteProfile with scopes', () => {

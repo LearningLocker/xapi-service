@@ -1,8 +1,8 @@
 import { NO_CONTENT } from 'http-status-codes';
+import setup from '../../../expressPresenter/tests/utils/setup';
 import assertDeleted from '../../../utils/assertDeleted';
 import createJsonProfile from '../../../utils/createJsonProfile';
 import createTextProfile from '../../../utils/createTextProfile';
-import setup from '../utils/setup';
 import deleteProfile from './utils/deleteProfile';
 
 describe('expressPresenter.deleteProfile with existing profile', () => {

@@ -1,4 +1,5 @@
 import { NO_CONTENT } from 'http-status-codes';
+import setup from '../../../expressPresenter/tests/utils/setup';
 import assertDeleted from '../../../utils/assertDeleted';
 import { route, xapiHeaderVersion } from '../../../utils/constants';
 import createTextProfile from '../../../utils/createTextProfile';
@@ -7,7 +8,6 @@ import {
   TEST_ACTIVITY_ID,
   TEST_PROFILE_ID,
 } from '../../../utils/testValues';
-import setup from '../utils/setup';
 
 describe('expressPresenter.deleteProfile using the alternate request syntax', () => {
   const { supertest } = setup();

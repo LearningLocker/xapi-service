@@ -1,7 +1,7 @@
+import setup from '../../../expressPresenter/tests/utils/setup';
 import overwriteProfileOutsideClient from '../../../utils/overwriteProfileOutsideClient';
 import patchProfileOutsideClient from '../../../utils/patchProfileOutsideClient';
 import { TEST_CLIENT_OUTSIDE_ORG } from '../../../utils/testValues';
-import setup from '../utils/setup';
 import assertOutsideClient from './utils/assertOutsideClient';
 
 describe('expressPresenter.deleteProfile outside the organisation', () => {

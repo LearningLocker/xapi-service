@@ -1,7 +1,7 @@
 import { NO_CONTENT, PRECONDITION_FAILED } from 'http-status-codes';
+import setup from '../../../expressPresenter/tests/utils/setup';
 import createTextProfile from '../../../utils/createTextProfile';
 import getTestProfile from '../../../utils/getTestProfile';
-import setup from '../utils/setup';
 import deleteProfile from './utils/deleteProfile';
 
 describe('expressPresenter.deleteProfile with etags', () => {
