@@ -1,5 +1,5 @@
 import { ObjectID } from 'mongodb';
-import Actor from 'src/apps/statements/models/Actor';
+import Actor from '../../../../../statements/models/Actor';
 
 export interface MongoClientDoc {
   readonly _id: ObjectID;

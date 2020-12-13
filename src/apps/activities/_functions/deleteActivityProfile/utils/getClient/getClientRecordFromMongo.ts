@@ -3,7 +3,8 @@ import NoModel from 'jscommons/dist/errors/NoModel';
 import { Db, MongoClient } from 'mongodb';
 import ExpiredClientError from '../../../../errors/ExpiredClientError';
 import UntrustedClientError from '../../../../errors/UntrustedClientError';
-import { MongoRecordStorageConfig } from '../getRecordStorageConfig/RecordStorageConfig';
+import ClientModel from '../../../../models/ClientModel';
+import { MongoAuthConfig } from '../getAuthConfig/AuthConfig';
 import { mongoClientCollectionName, MongoClientDoc } from '../mongoDocInterfaces/MongoClientDoc';
 import { mongoLrsCollectionName, MongoLrsDoc } from '../mongoDocInterfaces/MongoLrsDoc';
 import { mongoOAuthTokenCollectionName, MongoOAuthTokenDoc } from '../mongoDocInterfaces/MongoOAuthTokenDoc';
@@ -48,7 +49,10 @@ async function findClientWithAuth(db: Db, authToken: string) {
   }
 }
 
-export async function getClientFromMongo(config: MongoRecordStorageConfig, authToken: string) {
+export async function getClientRecordFromMongo(
+  config: MongoAuthConfig,
+  authToken: string,
+): Promise<ClientModel> {
   const mongoClient = new MongoClient(config.mongoUri, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
@@ -95,4 +99,5 @@ export async function getClientFromMongo(config: MongoRecordStorageConfig, authT
     await mongoClient.close();
     throw err;
   }
+  // tslint:disable-next-line: max-file-line-count
 }

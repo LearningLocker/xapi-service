@@ -21,7 +21,7 @@ interface DeleteActivityProfileRecordResult {
   readonly extension: string;
 }
 
-export async function deleteActivityProfileFromMongo(
+export async function deleteActivityProfileRecordFromMongo(
   config: MongoRecordStorageConfig,
   opts: DeleteActivityProfileRecordOptions,
 ): Promise<DeleteActivityProfileRecordResult> {

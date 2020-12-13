@@ -1,18 +1,18 @@
 import NoModel from 'jscommons/dist/errors/NoModel';
 import Unauthorised from 'jscommons/dist/errors/Unauthorised';
-import { MongoRecordStorageConfig } from '../getRecordStorageConfig/RecordStorageConfig';
+import { AuthConfig } from '../getAuthConfig/AuthConfig';
 import { TrackingConfig } from '../getTrackingConfig/TrackingConfig';
-import { getClientFromMongo } from './getClientFromMongo';
+import { getClientRecord } from './getClientRecord';
 import { track } from './trackClientUsage';
 
 interface GetClientConfig {
-  readonly recordStorageConfig: MongoRecordStorageConfig;
+  readonly authConfig: AuthConfig;
   readonly trackingConfig: TrackingConfig;
 }
 
 export async function getClient(config: GetClientConfig, authToken = '') {
   try {
-    const client = await getClientFromMongo(config.recordStorageConfig, authToken);
+    const client = await getClientRecord(config.authConfig, authToken);
     await track(config.trackingConfig, {
       organisationId: client.organisation,
       lrsId: client.lrs_id,

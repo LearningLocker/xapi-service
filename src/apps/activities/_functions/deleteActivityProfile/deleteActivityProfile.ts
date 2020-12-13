@@ -1,10 +1,10 @@
 import NoModel from 'jscommons/dist/errors/NoModel';
-import ClientModel from '../../../statements/models/ClientModel';
+import ClientModel from '../../models/ClientModel';
 import checkProfileWriteScopes from '../../service/utils/checkProfileWriteScopes';
 import validateActivityId from '../../service/utils/validateActivityId';
 import { jsonContentType } from '../../utils/constants';
 import { deleteActivityProfileContent } from './deleteActivityProfileContent';
-import { deleteActivityProfileFromMongo } from './deleteActivityProfileFromMongo';
+import { deleteActivityProfileRecordFromMongo } from './deleteActivityProfileRecordFromMongo';
 import { FileStorageConfig } from './utils/getFileStorageConfig/FileStorageConfig';
 import { MongoRecordStorageConfig } from './utils/getRecordStorageConfig/RecordStorageConfig';
 
@@ -29,7 +29,7 @@ export async function deleteActivityProfile(
   validateActivityId(opts.activityId);
 
   try {
-    const deleteResult = await deleteActivityProfileFromMongo(config.recordStorageConfig, {
+    const deleteResult = await deleteActivityProfileRecordFromMongo(config.recordStorageConfig, {
       activityId: opts.activityId,
       lrs_id: opts.client.lrs_id,
       organisation: opts.client.organisation,

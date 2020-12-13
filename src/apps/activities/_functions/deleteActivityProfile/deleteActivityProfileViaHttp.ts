@@ -5,6 +5,7 @@ import getProfileId from '../../expressPresenter/utils/getProfileId';
 import validateVersionHeader from '../../expressPresenter/utils/validateVersionHeader';
 import { xapiHeaderVersion } from '../../utils/constants';
 import { deleteActivityProfile } from './deleteActivityProfile';
+import { AuthConfig } from './utils/getAuthConfig/AuthConfig';
 import { getClient } from './utils/getClient/getClient';
 import { FileStorageConfig } from './utils/getFileStorageConfig/FileStorageConfig';
 import { MongoRecordStorageConfig } from './utils/getRecordStorageConfig/RecordStorageConfig';
@@ -12,6 +13,7 @@ import { TrackingConfig } from './utils/getTrackingConfig/TrackingConfig';
 import { HttpRequest, HttpResponse } from './utils/HttpInterfaces';
 
 export interface DeleteActivityProfileViaHttpConfig {
+  readonly authConfig: AuthConfig;
   readonly recordStorageConfig: MongoRecordStorageConfig;
   readonly fileStorageConfig: FileStorageConfig;
   readonly trackingConfig: TrackingConfig;

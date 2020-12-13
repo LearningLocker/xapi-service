@@ -1,6 +1,6 @@
 import * as assert from 'assert';
 
-import Statement from 'src/apps/statements/models/Statement';
+import Statement from '../../../../models/Statement';
 import { getSequencingMetadata } from '../../../../service/storeStatements/queriables/getMetadataFromStatement/getSequencingMetadata';
 import { sequencingInteractionActivityStatement, statementDefaults } from './fixtures/statements.fixture';
 

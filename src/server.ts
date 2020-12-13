@@ -1,15 +1,16 @@
 import * as sourceMapSupport from 'source-map-support'; // tslint:disable-line:ordered-imports
 sourceMapSupport.install();
 
-import tracker from './tracker';
 import express from 'express'; // tslint:disable-line:ordered-imports
 import handleListen from 'jscommons/dist/expressPresenter/utils/handleListen';
+import { getAuthConfig } from './apps/activities/_functions/deleteActivityProfile/utils/getAuthConfig/getAuthConfig';
 import { getFileStorageConfig } from './apps/activities/_functions/deleteActivityProfile/utils/getFileStorageConfig/getFileStorageConfig';
 import { getRecordStorageConfig } from './apps/activities/_functions/deleteActivityProfile/utils/getRecordStorageConfig/getRecordStorageConfig';
 import { getTrackingConfig } from './apps/activities/_functions/deleteActivityProfile/utils/getTrackingConfig/getTrackingConfig';
 import app from './apps/app';
 import config from './config';
 import logger from './logger';
+import tracker from './tracker';
 import connectToMongoDb from './utils/connectToMongoDb';
 import connectToRedis from './utils/connectToRedis';
 import connectToSentinel from './utils/connectToSentinel';
@@ -45,6 +46,7 @@ expressApp.use(app({
     statements: config.statementsService,
   },
   tracker,
+  authConfig: getAuthConfig(),
   fileStorageConfig: getFileStorageConfig(),
   recordStorageConfig: getRecordStorageConfig(),
   trackingConfig: getTrackingConfig(),
