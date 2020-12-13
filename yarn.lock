@@ -649,6 +649,11 @@
     "@types/bson" "*"
     "@types/node" "*"
 
+"@types/newrelic@6.13.0":
+  version "6.13.0"
+  resolved "https://registry.yarnpkg.com/@types/newrelic/-/newrelic-6.13.0.tgz#6964b69b87ce83c545ddb364a61af62d0fbd6f0b"
+  integrity sha512-C2sf+FVOpN+RQVizKDd78KA7383DtAH8jOqdqI+9FP3dozyH8V8ZLH1nLMtRx/y/80hSbVfg1P0AM20jOaioOw==
+
 "@types/node-fetch@2.5.7", "@types/node-fetch@^2.3.7":
   version "2.5.7"
   resolved "https://registry.yarnpkg.com/@types/node-fetch/-/node-fetch-2.5.7.tgz#20a2afffa882ab04d44ca786449a276f9f6bbf3c"

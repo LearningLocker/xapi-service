@@ -25,6 +25,9 @@ export default (appConfig: AppConfig): Router => {
       storageSubFolder: appConfig.repo.storageSubFolders.activities,
     },
     tracker: appConfig.tracker,
+    fileStorageConfig: appConfig.fileStorageConfig,
+    recordStorageConfig: appConfig.recordStorageConfig,
+    trackingConfig: appConfig.trackingConfig,
   });
   const agentsRouter = agentsApp({
     logger: appConfig.logger,

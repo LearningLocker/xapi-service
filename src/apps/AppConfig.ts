@@ -3,6 +3,9 @@ import { Redis } from 'ioredis';
 import Tracker from 'jscommons/dist/tracker/Tracker';
 import { Db } from 'mongodb';
 import { LoggerInstance } from 'winston';
+import { FileStorageConfig } from './activities/_functions/deleteActivityProfile/utils/getFileStorageConfig/FileStorageConfig';
+import { MongoRecordStorageConfig } from './activities/_functions/deleteActivityProfile/utils/getRecordStorageConfig/RecordStorageConfig';
+import { TrackingConfig } from './activities/_functions/deleteActivityProfile/utils/getTrackingConfig/TrackingConfig';
 
 export default interface AppConfig {
   readonly repo: {
@@ -77,4 +80,7 @@ export default interface AppConfig {
   };
   readonly tracker: Promise<Tracker>;
   readonly logger: LoggerInstance;
+  readonly fileStorageConfig: FileStorageConfig;
+  readonly recordStorageConfig: MongoRecordStorageConfig;
+  readonly trackingConfig: TrackingConfig;
 }
