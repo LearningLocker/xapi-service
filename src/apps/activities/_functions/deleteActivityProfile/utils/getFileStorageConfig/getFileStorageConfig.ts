@@ -8,14 +8,14 @@ export function getFileStorageConfig(): FileStorageConfig {
       azureAccount: config.azureStorageRepo.account,
       azureAccountKey: config.azureStorageRepo.accountKey,
       azureContainerName: config.azureStorageRepo.containerName,
-      azureSubFolder: config.storageSubFolders.activities,
+      azureSubFolder: config.azureStorageRepo.subFolder.replace(/^\//, ''),
     };
     case FileStorageProvider.Google: return {
       fileStorageProvider: FileStorageProvider.Google,
       googleBucketName: config.googleStorageRepo.bucketName,
       googleKeyFileName: config.googleStorageRepo.keyFileName,
       googleProjectId: config.googleStorageRepo.projectId,
-      googleSubFolder: config.storageSubFolders.activities,
+      googleSubFolder: config.googleStorageRepo.subFolder.replace(/^\//, ''),
     };
     case FileStorageProvider.S3: return {
       fileStorageProvider: FileStorageProvider.S3,
@@ -29,7 +29,7 @@ export function getFileStorageConfig(): FileStorageConfig {
     };
     default: case FileStorageProvider.Local: return {
       fileStorageProvider: FileStorageProvider.Local,
-      localStorageDir: `${config.localStorageRepo.storageDir}/${config.storageSubFolders.activities}`,
+      localStorageDir: config.localStorageRepo.storageDir,
     };
   }
 }

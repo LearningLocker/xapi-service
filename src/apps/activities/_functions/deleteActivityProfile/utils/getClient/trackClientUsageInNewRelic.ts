@@ -1,5 +1,6 @@
 import { TrackingOptions } from './trackClientUsage';
 
+/* istanbul ignore next */
 export async function trackInNewRelic(opts: TrackingOptions) {
   const newrelic = await import('newrelic');
   newrelic.addCustomAttribute('org_id', opts.organisationId);

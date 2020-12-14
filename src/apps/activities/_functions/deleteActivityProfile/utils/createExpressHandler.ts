@@ -1,7 +1,8 @@
 import express from 'express';
 import { INTERNAL_SERVER_ERROR } from 'http-status-codes';
 import { v4 as createV4UUID } from 'uuid';
-import { HttpHandler, HttpHeaders, HttpQueryParams } from './HttpInterfaces';
+import { handleErrorViaHttp } from './handleErrorViaHttp';
+import { HttpHandler, HttpHeaders, HttpQueryParams, HttpRequest } from './HttpInterfaces';
 
 function getExpressRequestHeaders(req: express.Request) {
   return Object.keys(req.headers).reduce<HttpHeaders>((result, header) => {
@@ -41,7 +42,10 @@ export function createExpressHandler<Config>(handler: HttpHandler<Config>) {
         const body = req;
         const headers = getExpressRequestHeaders(req);
         const query = getExpressRequestQuery(req);
-        const response = await handler(config, { requestId, query, body, headers });
+        const request: HttpRequest = { requestId, query, body, headers };
+        const response = await handler(config, request).catch((err) => {
+          return handleErrorViaHttp(request, err);
+        });
         res.writeHead(response.statusCode, response.headers);
         if (response.body !== undefined) {
           response.body.pipe(res);
