@@ -37,10 +37,10 @@ export function createExpressHandler<Config>(handler: HttpHandler<Config>) {
   return (config: Config) => {
     return async (req: express.Request, res: express.Response) => {
       const requestId = createV4UUID();
-      const headers = getExpressRequestHeaders(req);
-      const query = getExpressRequestQuery(req);
       try {
         const body = req;
+        const headers = getExpressRequestHeaders(req);
+        const query = getExpressRequestQuery(req);
         const response = await handler(config, { requestId, query, body, headers });
         res.writeHead(response.statusCode, response.headers);
         if (response.body !== undefined) {
@@ -49,12 +49,7 @@ export function createExpressHandler<Config>(handler: HttpHandler<Config>) {
         res.end();
       } catch (err) {
         // tslint:disable-next-line: no-console
-        console.error({
-          requestId,
-          errorMessage: err?.message,
-          requestHeaders: headers,
-          errorStack: err?.stack,
-        });
+        console.error(requestId, err);
         res.status(INTERNAL_SERVER_ERROR);
         res.send(`Internal Server Error ${requestId}`);
       }

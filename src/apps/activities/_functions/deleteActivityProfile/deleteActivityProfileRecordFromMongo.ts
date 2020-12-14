@@ -54,8 +54,8 @@ export async function deleteActivityProfileRecordFromMongo(
   });
 
   // Returns the result of the deletion if the document was deleted.
-  if (opResult.value !== undefined) {
-    const deletedDoc = opResult.value;
+  const deletedDoc = opResult.value as MongoActivityProfileDoc | null;
+  if (deletedDoc !== null) {
     await client.close();
     return {
       contentType: deletedDoc.contentType,
