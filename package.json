@@ -101,7 +101,7 @@
     "mocha": "6.2.3",
     "nodemon": "2.0.4",
     "nyc": "11.9.0",
-    "rimraf": "2.7.1",
+    "rimraf": "3.0.2",
     "shelljs": "0.8.4",
     "simple-git": "1.132.0",
     "supertest": "6.0.1",
