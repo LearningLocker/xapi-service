@@ -8045,12 +8045,11 @@ string-format-obj@^1.1.0:
   resolved "https://registry.yarnpkg.com/string-format-obj/-/string-format-obj-1.1.1.tgz#c7612ca4e2ad923812a81db192dc291850aa1f65"
   integrity sha512-Mm+sROy+pHJmx0P/0Bs1uxIX6UhGJGj6xDGQZ5zh9v/SZRmLGevp+p0VJxV7lirrkAmQ2mvva/gHKpnF/pTb+Q==
 
-string-to-stream@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/string-to-stream/-/string-to-stream-2.0.0.tgz#8a361d3ccc2a9b734b901cc92d2f6d6f71311ba5"
-  integrity sha512-rbppTZSfwkwj0yFiYI1ZeDzJ45qeALfFWeS0XfreEh812/pbzL3PPEjGKnZlySw8iWk9ypZFnrbm9l1Twd/CWQ==
+string-to-stream@^3.0.0:
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/string-to-stream/-/string-to-stream-3.0.1.tgz#480e6fb4d5476d31cb2221f75307a5dcb6638a42"
+  integrity sha512-Hl092MV3USJuUCC6mfl9sPzGloA3K5VwdIeJjYIkXY/8K+mUvaeEabWJgArp+xXrsWxCajeT2pc4axbVhIZJyg==
   dependencies:
-    inherits "^2.0.1"
     readable-stream "^3.4.0"
 
 string-width@^1.0.1:
