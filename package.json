@@ -97,7 +97,7 @@
     "@types/winston": "2.4.4",
     "colors": "1.4.0",
     "husky": "4.2.5",
-    "jscpd": "0.6.25",
+    "jscpd": "3.3.23",
     "mocha": "6.2.3",
     "nodemon": "2.0.4",
     "nyc": "11.9.0",
