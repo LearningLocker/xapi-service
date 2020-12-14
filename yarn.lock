@@ -500,11 +500,6 @@
   resolved "https://registry.yarnpkg.com/@types/atob/-/atob-2.1.2.tgz#157eb0cc46264a8c55f2273a836c7a1a644fb820"
   integrity sha512-8GAYQ1jDRUQkSpHzJUqXwAkYFOxuWAOGLhIR4aPd/Y/yL12Q/9m7LsKpHKlfKdNE/362Hc9wPI1Yh6opDfxVJg==
 
-"@types/bluebird@*":
-  version "3.5.32"
-  resolved "https://registry.yarnpkg.com/@types/bluebird/-/bluebird-3.5.32.tgz#381e7b59e39f010d20bbf7e044e48f5caf1ab620"
-  integrity sha512-dIOxFfI0C+jz89g6lQ+TqhGgPQ0MxSnh/E4xuC0blhFtyW269+mPG5QeLgbdwst/LvdP8o1y0o/Gz5EHXLec/g==
-
 "@types/body-parser@*":
   version "1.19.0"
   resolved "https://registry.yarnpkg.com/@types/body-parser/-/body-parser-1.19.0.tgz#0685b3c47eb3006ffed117cdd55164b61f80538f"
@@ -585,12 +580,11 @@
     "@types/node" "*"
     "@types/request" "*"
 
-"@types/ioredis@3.2.24":
-  version "3.2.24"
-  resolved "https://registry.yarnpkg.com/@types/ioredis/-/ioredis-3.2.24.tgz#98a149f913808627e61e7e641a58685c86885019"
-  integrity sha512-bHEdc/lIA9XTtFVENYl1tAuUfbn5T2waUDQODVNm2gMsr2nGOWj/cfeNqqsOhz/dmwvgPwYsfdDNeXAf5U+xmw==
+"@types/ioredis@4.17.8":
+  version "4.17.8"
+  resolved "https://registry.yarnpkg.com/@types/ioredis/-/ioredis-4.17.8.tgz#a761c9adac03a9f0413157691fdae247262eb523"
+  integrity sha512-13WwLG9jMvzjabpBydDXKSPdvAnKI8pZOKk9rEFp3QizyJS8riyNyVRV5ATvU1DCKsz31KM9g90etnTGgMFh3g==
   dependencies:
-    "@types/bluebird" "*"
     "@types/node" "*"
 
 "@types/json5@^0.0.29":
