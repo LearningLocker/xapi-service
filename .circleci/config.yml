@@ -10,20 +10,8 @@ jobs:
         auth:
           username: $DOCKERHUB_USERNAME
           password: $DOCKERHUB_PASSWORD
-      - image: mongo:3.7.9@sha256:fbc5b316430a970543d2e1668164c764977e777a74ffb05c873d0e5df499b6fb
-        auth:
-          username: $DOCKERHUB_USERNAME
-          password: $DOCKERHUB_PASSWORD
-      - image: redis:3.2.12@sha256:562e944371527d6e11d396fe43fde17c30e28c25c23561b2322db3905cbc71dd
-        auth:
-          username: $DOCKERHUB_USERNAME
-          password: $DOCKERHUB_PASSWORD
     environment:
-      - DOCKER_REPO_SLUG: learninglocker/xapi-service
-      - DOCKER_EMAIL: 0ryansmith1994@gmail.com
       - NPM_CONFIG_LOGLEVEL: warn
-      - WINSTON_CONSOLE_LEVEL: none
-      - EXPRESS_PORT: 1337
     working_directory: ~/repo
     steps:
       - checkout
@@ -43,16 +31,42 @@ jobs:
       - run:
           name: Linting Code
           command: yarn lint-ci
+      - save_cache:
+          paths:
+            - dist
+          key: dist-{{ .Branch }}-{{ .Revision }}
+  test-local:
+    docker:
+      - image: node:12
+        auth:
+          username: $DOCKERHUB_USERNAME
+          password: $DOCKERHUB_PASSWORD
+      - image: mongo:3.7.9@sha256:fbc5b316430a970543d2e1668164c764977e777a74ffb05c873d0e5df499b6fb
+        auth:
+          username: $DOCKERHUB_USERNAME
+          password: $DOCKERHUB_PASSWORD
+      - image: redis:3.2.12@sha256:562e944371527d6e11d396fe43fde17c30e28c25c23561b2322db3905cbc71dd
+        auth:
+          username: $DOCKERHUB_USERNAME
+          password: $DOCKERHUB_PASSWORD
+    environment:
+      - WINSTON_CONSOLE_LEVEL: none
+      - EXPRESS_PORT: 1337
+    working_directory: ~/repo
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "yarn.lock" }}
+      - restore_cache:
+          keys:
+            - dist-{{ .Branch }}-{{ .Revision }}
       - run:
           name: Mocha Tests
           command: yarn cover-ci
       - run:
           name: Conformance Tests
           command: sh test.sh
-      - save_cache:
-          paths:
-            - dist
-          key: dist-{{ .Branch }}-{{ .Revision }}
   release:
     docker:
       - image: node:12
@@ -61,7 +75,6 @@ jobs:
           password: $DOCKERHUB_PASSWORD
     environment:
       - DOCKER_REPO_SLUG: learninglocker/xapi-service
-      - DOCKER_EMAIL: 0ryansmith1994@gmail.com
     working_directory: ~/repo
     steps:
       - checkout
@@ -104,11 +117,16 @@ workflows:
       - build:
           context:
             - docker-hub-creds
-      - release:
+      - test-local:
           context:
             - docker-hub-creds
           requires:
             - build
+      - release:
+          context:
+            - docker-hub-creds
+          requires:
+            - test-local
           filters:
             branches:
               ignore:
