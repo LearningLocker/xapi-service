@@ -247,6 +247,11 @@ workflows:
             - docker-hub-creds
           requires:
             - build
+      - test-google:
+          context:
+            - docker-hub-creds
+          requires:
+            - build
       - release:
           context:
             - docker-hub-creds
