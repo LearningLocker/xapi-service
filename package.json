@@ -19,7 +19,7 @@
     "start:dev": "nodemon",
     "build": "tsc",
     "test": "SERVICE_AWAIT_UPDATES=true AUTH_REPO=test mocha $(find dist -name '*.test.js') --timeout 6000 --exit",
-    "test-s3": "MODELS_REPO=mongo STORAGE_REPO=s3 npm run test",
+    "test-s3": "STORAGE_REPO=s3 npm run test",
     "test-google": "MODELS_REPO=mongo STORAGE_REPO=google npm run test",
     "test-azure": "MODELS_REPO=mongo STORAGE_REPO=azure npm run test",
     "test-mongo": "MODELS_REPO=mongo STORAGE_REPO=local npm run test",
