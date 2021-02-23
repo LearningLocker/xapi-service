@@ -175,7 +175,7 @@ jobs:
             - dist-{{ .Branch }}-{{ .Revision }}
       - run:
           name: Setup Google Key File
-          command: echo '$GCLOUD_SERVICE_KEY' > ./google.keyfile.json
+          command: echo "$GCLOUD_SERVICE_KEY" > ./google.keyfile.json
       - run:
           name: Mocha Tests
           command: yarn test-google
