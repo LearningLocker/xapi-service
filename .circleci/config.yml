@@ -182,6 +182,39 @@ jobs:
       - run:
           name: Conformance Tests
           command: sh test.sh
+  test-sentinel:
+    docker:
+      - image: node:12
+        auth:
+          username: $DOCKERHUB_USERNAME
+          password: $DOCKERHUB_PASSWORD
+      - image: mongo:3.7.9@sha256:fbc5b316430a970543d2e1668164c764977e777a74ffb05c873d0e5df499b6fb
+        auth:
+          username: $DOCKERHUB_USERNAME
+          password: $DOCKERHUB_PASSWORD
+      - image: redis:3.2.12@sha256:562e944371527d6e11d396fe43fde17c30e28c25c23561b2322db3905cbc71dd
+        auth:
+          username: $DOCKERHUB_USERNAME
+          password: $DOCKERHUB_PASSWORD
+    environment:
+      - WINSTON_CONSOLE_LEVEL: none
+      - EXPRESS_PORT: 1337
+      - EVENTS_REPO: sentinel
+    working_directory: ~/repo
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "yarn.lock" }}
+      - restore_cache:
+          keys:
+            - dist-{{ .Branch }}-{{ .Revision }}
+      - run:
+          name: Mocha Tests
+          command: yarn test-sentinel
+      - run:
+          name: Conformance Tests
+          command: sh test.sh
   release:
     docker:
       - image: node:12
@@ -252,6 +285,11 @@ workflows:
             - docker-hub-creds
           requires:
             - build
+      - test-sentinel:
+          context:
+            - docker-hub-creds
+          requires:
+            - build
       - release:
           context:
             - docker-hub-creds
@@ -260,6 +298,7 @@ workflows:
             - test-s3
             - test-azure
             - test-google
+            - test-sentinel
           filters:
             branches:
               ignore:
