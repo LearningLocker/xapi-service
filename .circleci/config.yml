@@ -275,21 +275,25 @@ workflows:
             - docker-hub-creds
           requires:
             - build
+            - test-local
       - test-azure:
           context:
             - docker-hub-creds
           requires:
             - build
+            - test-local
       - test-google:
           context:
             - docker-hub-creds
           requires:
             - build
+            - test-local
       - test-sentinel:
           context:
             - docker-hub-creds
           requires:
             - build
+            - test-local
       - release:
           context:
             - docker-hub-creds
