@@ -21,10 +21,6 @@ export default (appConfig: AppConfig): Result => {
         client: appConfig.repo.redis.client,
         prefix: appConfig.repo.redis.prefix,
       },
-      sentinel: {
-        client: appConfig.repo.sentinel.client,
-        prefix: appConfig.repo.sentinel.prefix,
-      },
     },
     models: {
       facade: appConfig.repo.factory.modelsRepoName,

@@ -3,7 +3,6 @@ import factory from './factory';
 import Repo from './Repo';
 import connectToMongoDb from './utils/connectToMongoDb';
 import connectToRedis from './utils/connectToRedis';
-import connectToSentinel from './utils/connectToSentinel';
 
 const repo: Repo = factory({
   auth: {
@@ -21,10 +20,6 @@ const repo: Repo = factory({
     redis: {
       client: connectToRedis(),
       prefix: config.redis.prefix,
-    },
-    sentinel: {
-      client: connectToSentinel(),
-      prefix: config.sentinel.prefix,
     },
   },
   models: {

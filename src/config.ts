@@ -10,7 +10,6 @@ import getDbFromUrl from 'jscommons/dist/mongoRepo/utils/getDbFromUrl';
 import { defaultTo } from 'lodash';
 import * as os from 'os';
 
-const DEFAULT_REDIS_PORT = 6379;
 const DEFAULT_EXPRESS_PORT = 8081;
 const DEFAULT_TIMEOUT_MS = 55000; // 55 seconds.
 
@@ -81,18 +80,6 @@ export default {
       sslEnabled: true,
     } as S3.ClientConfiguration,
     bucketName: getStringOption(process.env.FS_S3_BUCKET, 'xapi-service'),
-  },
-  sentinel: {
-    db: getNumberOption(process.env.SENTINEL_DB, 0),
-    name: getStringOption(process.env.SENTINEL_NAME, 'mymaster'),
-    password: getStringOption(process.env.SENTINEL_PASSWORD),
-    prefix: getStringOption(process.env.SENTINEL_PREFIX, 'LEARNINGLOCKER'),
-    sentinels: (
-      getStringOption(process.env.SENTINEL_CONNECTIONS, '127.0.0.1:6379').split(' ').map((conn) => {
-        const [host, port] = conn.split(':');
-        return { host, port: getNumberOption(port, DEFAULT_REDIS_PORT) };
-      })
-    ),
   },
   statementsService: {
     awaitUpdates: getBooleanOption(defaultTo<any>(
