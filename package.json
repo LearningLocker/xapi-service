@@ -31,7 +31,8 @@
     "lint": "tslint -p ./tsconfig.json",
     "lint-ci": "yarn lint -- -c tslint.ci.json -q",
     "duplication": "jscpd",
-    "semantic-release": "ht2-release-public-circleci-app"
+    "semantic-release": "ht2-release-public-circleci-app",
+    "codecov": "codecov"
   },
   "engines": {
     "node": ">6.0.0",
@@ -94,6 +95,7 @@
     "@types/supertest": "2.0.10",
     "@types/uuid": "3.4.9",
     "@types/winston": "2.4.4",
+    "codecov": "3.8.1",
     "colors": "1.4.0",
     "husky": "4.2.5",
     "jscpd": "0.6.25",
