@@ -3,13 +3,17 @@ import Config from './Config';
 
 export default (config: Config) => {
   return async (): Promise<void> => {
+    const debug = Math.random();
     // Gets all of the objects to be deleted.
-    console.debug('101'); // tslint:disable-line: no-console - 2021-02-25 flaky CI
+    console.debug('101', debug); // tslint:disable-line: no-console - 2021-02-25 flaky CI
     const listObjectsOutput = await config.client.listObjects({
       Bucket: config.bucketName,
       Prefix: config.subFolder,
-    }).promise();
-    console.debug('102'); // tslint:disable-line: no-console - 2021-02-25 flaky CI
+    }).promise().catch((err) => {
+      console.debug('501', debug, err); // tslint:disable-line: no-console - 2021-02-25 flaky client
+      throw err;
+    });
+    console.debug('102', debug); // tslint:disable-line: no-console - 2021-02-25 flaky CI
     const objects = listObjectsOutput.Contents !== undefined ? listObjectsOutput.Contents : [];
     const identifierList: S3.ObjectIdentifierList = objects.reduce(
       (identifiers, { Key }) => {
@@ -25,11 +29,11 @@ export default (config: Config) => {
     if (identifierList.length === 0) {
       return;
     }
-    console.debug('103'); // tslint:disable-line: no-console - 2021-02-25 flaky CI
+    console.debug('103', debug); // tslint:disable-line: no-console - 2021-02-25 flaky CI
     await config.client.deleteObjects({
       Bucket: config.bucketName,
       Delete: { Objects: identifierList },
     }).promise();
-    console.debug('104'); // tslint:disable-line: no-console - 2021-02-25 flaky CI
+    console.debug('104', debug); // tslint:disable-line: no-console - 2021-02-25 flaky CI
   };
 };
