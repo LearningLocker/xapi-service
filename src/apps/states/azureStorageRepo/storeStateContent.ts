@@ -40,6 +40,7 @@ export default (config: Config) => {
           MAX_BUFFERS,
         );
       } catch (err) {
+        /* istanbul ignore next - Difficult to test */
         reject(err);
       }
       resolve();
