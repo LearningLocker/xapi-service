@@ -18,12 +18,12 @@
     "start": "node dist/server.js",
     "start:dev": "nodemon",
     "build": "tsc",
-    "test": "SERVICE_AWAIT_UPDATES=true AUTH_REPO=test mocha $(find dist -name '*.test.js') --timeout 6000 --exit",
+    "test": "SERVICE_AWAIT_UPDATES=true AUTH_REPO=test mocha $(find dist -name '*.test.js') --timeout 10000 --exit",
     "test-s3": "STORAGE_REPO=s3 npm run test",
     "test-google": "STORAGE_REPO=google npm run test",
     "test-azure": "STORAGE_REPO=azure npm run test",
-    "test-mongo": "STORAGE_REPO=local npm run test",
-    "test-ci": "npm run test-mongo",
+    "test-local": "STORAGE_REPO=local nyc npm run test",
+    "test-ci": "npm run test-local",
     "test-all": "npm run test-ci && npm run test-s3 && npm run test-google && npm run test-azure",
     "cover-ci": "nyc --lines 100 --check-coverage --exclude '(dist/**/*google*|dist/**/*azure*|dist/**/*s3*|dist/**/*fetch*|dist/**/*fake*|dist/config.js|dist/**/factory.js|dist/**/facade.js)' npm run test-ci",
     "cover-all": "nyc --lines 100 --check-coverage --exclude '(dist/**/*fetch*|dist/**/*fake*|dist/config.js|dist/**/factory.js|dist/**/facade.js)' npm run test-all",
@@ -32,7 +32,7 @@
     "lint-ci": "yarn lint -- -c tslint.ci.json -q",
     "duplication": "jscpd",
     "semantic-release": "ht2-release-public-circleci-app",
-    "codecov": "codecov"
+    "codecov": "nyc report --reporter=text-lcov > coverage.lcov && codecov"
   },
   "engines": {
     "node": ">6.0.0",
