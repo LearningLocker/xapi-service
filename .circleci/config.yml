@@ -64,7 +64,7 @@ jobs:
             - dist-{{ .Branch }}-{{ .Revision }}
       - run:
           name: Mocha Tests
-          command: yarn cover-ci
+          command: yarn cover-local
       - run:
           name: Conformance Tests
           command: sh test.sh
@@ -106,10 +106,11 @@ jobs:
             source $BASH_ENV
       - run:
           name: Mocha Tests
-          command: yarn test-s3
+          command: yarn cover-s3
       - run:
           name: Conformance Tests
           command: sh test.sh
+      - run: yarn codecov
   test-azure:
     docker:
       - image: node:12
@@ -144,10 +145,11 @@ jobs:
             source $BASH_ENV
       - run:
           name: Mocha Tests
-          command: yarn test-azure
+          command: yarn cover-azure
       - run:
           name: Conformance Tests
           command: sh test.sh
+      - run: yarn codecov
   test-google:
     docker:
       - image: node:12
@@ -180,10 +182,11 @@ jobs:
           command: echo ${GCLOUD_SERVICE_KEY} > ./google.keyfile.json
       - run:
           name: Mocha Tests
-          command: yarn test-google
+          command: yarn cover-google
       - run:
           name: Conformance Tests
           command: sh test.sh
+      - run: yarn codecov
   release:
     docker:
       - image: node:12
