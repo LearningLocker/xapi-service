@@ -8,9 +8,6 @@ const repo: Repo = factory({
   auth: {
     facade: config.repoFactory.authRepoName,
     fake: {},
-    fetch: {
-      llClientInfoEndpoint: config.fetchAuthRepo.llClientInfoEndpoint,
-    },
     mongo: {
       db: connectToMongoDb(),
     },

@@ -1,11 +1,9 @@
 import stringToStream from 'string-to-stream';
-import OverwriteProfileOptions from '../serviceFactory/options/OverwriteProfileOptions';
 import createJsonProfile from './createJsonProfile';
 import { TEST_OBJECT_CONTENT } from './testValues';
 
-export default async (optsOverrides: Partial<OverwriteProfileOptions> = {}) => {
+export default async () => {
   await createJsonProfile({
     content: stringToStream(TEST_OBJECT_CONTENT),
-    ...optsOverrides,
   });
 };

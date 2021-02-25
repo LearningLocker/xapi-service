@@ -6,6 +6,7 @@ export interface GetStorageDirOptions {
 }
 
 export default (opts: GetStorageDirOptions) => join(
+  /* istanbul ignore next - Just being cautious. */
   ...(opts.subfolder !== undefined ? [opts.subfolder] : []),
    opts.lrs_id,
    'agentProfiles',

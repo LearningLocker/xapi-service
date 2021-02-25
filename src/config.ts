@@ -20,7 +20,6 @@ const expressPort = getNumberOption(
   DEFAULT_EXPRESS_PORT,
 );
 
-const demoAuth = `http://localhost:${expressPort}/auth`;
 const accessLogsDir = `${storageDir}/accessLogs`;
 const newRelicLogsDir = `${storageDir}/newrelic-agent.log`;
 const newRelicLicenseKey = getStringOption(process.env.NEW_RELIC_LICENSE_KEY, '');
@@ -36,9 +35,6 @@ export default {
     morganDirectory: getStringOption(process.env.EXPRESS_MORGAN_DIRECTORY, accessLogsDir),
     port: expressPort,
     xAPIPrefix: getStringOption(process.env.XAPI_PREFIX, '/data'),
-  },
-  fetchAuthRepo: {
-    llClientInfoEndpoint: getStringOption(process.env.LL_CLIENT_INFO_ENDPOINT, demoAuth),
   },
   azureStorageRepo: {
     account: getStringOption(process.env.FS_AZURE_ACCOUNT),

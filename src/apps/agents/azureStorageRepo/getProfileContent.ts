@@ -9,8 +9,10 @@ import Config from './Config';
     const profileDir = getStorageDir({ subfolder: config.subFolder, lrs_id: opts.lrs_id });
     const filePath = `${profileDir}/${opts.key}`;
 
-     const blobUrl = BlobURL.fromContainerURL(config.containerUrl, filePath);
+    const blobUrl = BlobURL.fromContainerURL(config.containerUrl, filePath);
     const content = (await blobUrl.download(Aborter.none, 0)).readableStreamBody;
+
+    /* istanbul ignore if - Difficult to test */
     if (content === undefined) {
       throw new Error('Blob not found');
     }

@@ -8,7 +8,6 @@ import connectToDb from 'jscommons/dist/mongoRepo/utils/connectToDb';
 import config from '../../../config';
 import logger from '../../../logger';
 import azureStorageRepo from '../azureStorageRepo';
-import fetchAuthRepo from '../fetchAuthRepo';
 import googleStorageRepo from '../googleStorageRepo';
 import localStorageRepo from '../localStorageRepo';
 import mongoAuthRepo from '../mongoAuthRepo';
@@ -25,10 +24,6 @@ const getAuthRepo = (): AuthRepo => {
   switch (config.repoFactory.authRepoName) {
     case 'test':
       return testAuthRepo({});
-    case 'fetch':
-      return fetchAuthRepo({
-        llClientInfoEndpoint: config.fetchAuthRepo.llClientInfoEndpoint,
-      });
     default: case 'mongo':
       return mongoAuthRepo({
         db: connectToDb({

@@ -7,7 +7,7 @@ export default (data: string, path: string[]) => {
     if (err instanceof SyntaxError) {
       throw new JsonSyntaxError(path);
     }
-    /* istanbul ignore next */
+    /* istanbul ignore next - Not expecting other errors. */
     throw err;
   }
 };

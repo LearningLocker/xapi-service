@@ -9,7 +9,7 @@ export default (config: Config) => {
   return async (): Promise<void> => {
     // tslint:disable-next-line:no-let
     let marker;
-    do {
+    while (marker !== '') {
       const listBlobsResponse: Models.ContainerListBlobFlatSegmentResponse =
         await config.containerUrl.listBlobFlatSegment(Aborter.none, marker);
       marker = listBlobsResponse.nextMarker;
@@ -22,6 +22,6 @@ export default (config: Config) => {
         },
       );
       await Promise.all(deletePromises);
-    } while (marker !== '');
+    }
   };
 };

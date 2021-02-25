@@ -7,6 +7,7 @@ export interface GetStorageDirOptions {
 
 export default (opts: GetStorageDirOptions) => {
   return join(
+    /* istanbul ignore next - Just being cautious. */
     ...(opts.subfolder !== undefined ? [opts.subfolder] : []),
     opts.lrs_id,
     'activityProfiles',
