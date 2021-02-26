@@ -15,6 +15,7 @@
     "package-lock.json"
   ],
   "scripts": {
+    "postinstall": "patch-package",
     "start": "node dist/server.js",
     "start:dev": "nodemon",
     "build": "tsc",
@@ -102,6 +103,7 @@
     "mocha": "8.2.1",
     "nodemon": "2.0.4",
     "nyc": "11.9.0",
+    "patch-package": "6.2.2",
     "rimraf": "3.0.2",
     "shelljs": "0.8.4",
     "simple-git": "2.27.0",
