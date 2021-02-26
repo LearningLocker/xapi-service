@@ -241,12 +241,12 @@ workflows:
           context:
             - docker-hub-creds
           requires:
-            - test-s3
+            - build
       - test-s3:
           context:
             - docker-hub-creds
           requires:
-            - build
+            - test-local
       - test-azure:
           context:
             - docker-hub-creds

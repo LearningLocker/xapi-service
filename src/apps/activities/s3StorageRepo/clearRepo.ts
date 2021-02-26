@@ -9,15 +9,13 @@ export default (config: Config) => {
       Prefix: config.subFolder,
     }).promise();
     const objects = listObjectsOutput.Contents !== undefined ? listObjectsOutput.Contents : [];
-    const identifierList: S3.ObjectIdentifierList = objects.reduce(
-      (identifiers, { Key }) => {
-        if (Key !== undefined) {
-          return [...identifiers, { Key }];
-        }
+    const identifierList: S3.ObjectIdentifierList = objects.reduce((identifiers, { Key }) => {
+      /* istanbul ignore if - Difficult to test */
+      if (Key === undefined) {
         return identifiers;
-      },
-      [] as S3.ObjectIdentifierList,
-    );
+      }
+      return [...identifiers, { Key }];
+    }, [] as S3.ObjectIdentifierList);
 
     // Deletes the objects.
     if (identifierList.length === 0) {

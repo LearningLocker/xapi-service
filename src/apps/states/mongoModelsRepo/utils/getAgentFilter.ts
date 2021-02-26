@@ -10,6 +10,7 @@ export default (agent: Agent) => {
   if (agent.openid !== undefined) {
     return { 'agent.openid': agent.openid };
   }
+  /* istanbul ignore else - Not expecting other scenarios */
   if (agent.account !== undefined) {
     return {
       'agent.account.homePage': agent.account.homePage,

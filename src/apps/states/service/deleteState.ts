@@ -32,6 +32,7 @@ export default (config: Config) => {
         lrs_id: client.lrs_id,
       });
     } catch (err) {
+      /* istanbul ignore if */
       if (err instanceof NoModel) {
         return;
       }

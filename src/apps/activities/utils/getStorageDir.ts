@@ -5,10 +5,17 @@ export interface GetStorageDirOptions {
   readonly lrs_id: string;
 }
 
+const getSubFolderPath = (subfolder?: string) => {
+  /* istanbul ignore if - Just being cautious. */
+  if (subfolder === undefined) {
+    return [];
+  }
+  return [subfolder];
+};
+
 export default (opts: GetStorageDirOptions) => {
   return join(
-    /* istanbul ignore next - Just being cautious. */
-    ...(opts.subfolder !== undefined ? [opts.subfolder] : []),
+    ...getSubFolderPath(opts.subfolder),
     opts.lrs_id,
     'activityProfiles',
   );

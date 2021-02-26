@@ -16,7 +16,7 @@ export default (config: Config) => {
       const deletePromises = listBlobsResponse.segment.blobItems.map(
         async (blobItem: Models.BlobItem) => {
           const blobUrl = BlobURL.fromContainerURL(config.containerUrl, blobItem.name);
-          /* istanbul ignore else - Unnecessary to test */
+          /* istanbul ignore if - Unnecessary to test */
           if (blobItem.name.startsWith(config.subFolder)) {
             await blobUrl.delete(Aborter.none);
           }
