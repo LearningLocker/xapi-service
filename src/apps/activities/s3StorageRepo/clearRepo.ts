@@ -27,15 +27,16 @@ export default (config: Config) => {
       );
 
       // Deletes the objects.
+      console.debug('103', debug); // tslint:disable-line: no-console - 2021-02-25 flaky CI
       if (identifierList.length === 0) {
+        console.debug('104a', debug); // tslint:disable-line: no-console - 2021-02-25 flaky CI
         return;
       }
-      console.debug('103', debug); // tslint:disable-line: no-console - 2021-02-25 flaky CI
       await config.client.deleteObjects({
         Bucket: config.bucketName,
         Delete: { Objects: identifierList },
       }).promise();
-      console.debug('104', debug); // tslint:disable-line: no-console - 2021-02-25 flaky CI
+      console.debug('104b', debug); // tslint:disable-line: no-console - 2021-02-25 flaky CI
     } catch (err) {
       console.debug('502', debug, err); // tslint:disable-line: no-console - 2021-02-25 flaky CI
       throw err;
