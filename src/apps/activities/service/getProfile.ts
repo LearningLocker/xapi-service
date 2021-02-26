@@ -24,12 +24,10 @@ export default (config: Config) => {
       };
     }
 
-    console.debug('801'); // tslint:disable-line: no-console - 2021-02-25 flaky CI
     const profileContentResult = await config.repo.getProfileContent({
       key: `${profile.id}.${profile.extension}`,
       lrs_id: opts.client.lrs_id,
     });
-    console.debug('802'); // tslint:disable-line: no-console - 2021-02-25 flaky CI
     return {
       content: profileContentResult.content,
       contentType: profile.contentType,
