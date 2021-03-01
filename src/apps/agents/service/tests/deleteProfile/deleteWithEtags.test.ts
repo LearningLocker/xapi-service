@@ -10,6 +10,8 @@ describe('deleteProfile with etags', () => {
 
   it('should allow deletion when using a correct etag', async () => {
     await createTextProfile();
+    // tslint:disable-next-line: no-console
+    console.debug('2021-03-01 flaky-test 1');
     const getProfileResult = await getTestProfile();
     await deleteProfile({ ifMatch: getProfileResult.etag });
   });
