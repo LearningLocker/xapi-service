@@ -26,7 +26,7 @@ Do not use sudo for any of these installations or commands. If you're working on
 
 Before you follow these instructions you may want to exit your `yarn start` command above with Ctrl + C. This ensures that the running app doesn't interfere with your testing by using Mongo and Redis.
 
-1. Install dependencies with `yarn`.
+1. Install dependencies with `yarn --frozen-lockfile`.
 1. Start Mongo and Redis with `docker-compose up -d`. If you've followed the [Enterprise setup instructions](https://github.com/LearningLocker/enterprise/blob/master/README.md) already you won't need to do this.
 1. Lint the code with `yarn lint`.
 1. Build the code with `yarn build`.
@@ -39,7 +39,7 @@ To install all of Learning Locker, see the [installation documentation](http://d
 
 1. Clone the repository with `git clone git@github.com:LearningLocker/xapi-service.git`.
 1. Switch to the repository directory with `cd xapi-service`.
-1. Install dependencies with `yarn`.
+1. Install dependencies with `yarn --frozen-lockfile`.
 1. Build the code with `yarn build`.
 1. Start the server with `yarn start`.
 
