@@ -22,5 +22,7 @@ exitCode=$?
 log "Stopping the server."
 ps aux | grep [n]ode\ dist\/conformanceServer | awk '{print $2}' | xargs kill
 
+cat /root/conformance/logs/*
+
 log "Completed conformance tests."
 exit $exitCode
