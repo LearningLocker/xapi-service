@@ -8,6 +8,10 @@ import {
 } from './testValues';
 
 export default (optsOverrides: Partial<GetProfileOptions> = {}): Promise<GetProfileResult> => {
+  // tslint:disable-next-line: no-console
+  console.debug('2021-03-01 flaky-test 2', {
+    activityId: TEST_ACTIVITY_ID,
+  });
   return service.getProfile({
     activityId: TEST_ACTIVITY_ID,
     client: TEST_CLIENT,

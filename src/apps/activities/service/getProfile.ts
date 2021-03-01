@@ -24,6 +24,11 @@ export default (config: Config) => {
       };
     }
 
+    // tslint:disable-next-line: no-console
+    console.debug('2021-03-01 flaky-test 3', {
+      activityId: opts.activityId,
+      activityProfileId: profile.id,
+    });
     const profileContentResult = await config.repo.getProfileContent({
       key: `${profile.id}.${profile.extension}`,
       lrs_id: opts.client.lrs_id,
