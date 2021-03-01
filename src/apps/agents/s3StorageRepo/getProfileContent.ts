@@ -7,10 +7,6 @@ export default (config: Config) => {
   return async (opts: GetProfileContentOptions): Promise<GetProfileContentResult> => {
     const profileDir = getStorageDir({ subfolder: config.subFolder, lrs_id: opts.lrs_id });
     const filePath = `${profileDir}/${opts.key}`;
-    // tslint:disable-next-line: no-console
-    console.debug('2021-03-01 flaky-test 4', {
-      key: opts.key,
-    });
     await config.client.headObject({
       Bucket: config.bucketName,
       Key: filePath,
