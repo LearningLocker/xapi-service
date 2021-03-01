@@ -19,7 +19,7 @@
     "start": "node dist/server.js",
     "start:dev": "nodemon",
     "build": "tsc",
-    "test": "SERVICE_AWAIT_UPDATES=true AUTH_REPO=test mocha $(find dist -name '*.test.js') --timeout 10000 --exit --bail",
+    "test": "SERVICE_AWAIT_UPDATES=true AUTH_REPO=test mocha $(find dist -name '*.test.js') --timeout 20000 --exit --bail",
     "test-local": "STORAGE_REPO=local nyc npm run test",
     "test-s3": "STORAGE_REPO=s3 npm run test",
     "test-azure": "STORAGE_REPO=azure npm run test",
