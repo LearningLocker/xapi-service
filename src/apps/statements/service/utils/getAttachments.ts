@@ -35,6 +35,8 @@ export default async (
       } catch (err) {
         if (potentialAttachment.fileUrl === undefined) {
           /* istanbul ignore next - only happens if a file incorrectly goes missing */
+          console.error('attachment has gone missing', err);
+          /* istanbul ignore next - only happens if a file incorrectly goes missing */
           throw err;
         }
         return false;

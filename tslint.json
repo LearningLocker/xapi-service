@@ -7,6 +7,10 @@
       false,
       "LF"
     ],
+    "no-console": [
+      true,
+      "log"
+    ],
     "import-spacing": false
   }
 }
