@@ -9,7 +9,7 @@ log "Starting the server on port $EXPRESS_PORT."
 SERVICE_AWAIT_UPDATES=true node dist/conformanceServer.js &
 
 log "Cloning the ADL conformance test suite."
-git clone -b patch-1 https://github.com/ryansmith94/lrs-conformance-test-suite ../conformance
+git clone -b master https://github.com/adlnet/lrs-conformance-test-suite ../conformance
 cd ../conformance
 
 log "Installing dependencies for the ADL conformance test suite."
