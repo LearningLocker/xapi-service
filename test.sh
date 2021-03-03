@@ -13,7 +13,7 @@ git clone -b master https://github.com/adlnet/lrs-conformance-test-suite ../conf
 cd ../conformance
 
 log "Installing dependencies for the ADL conformance test suite."
-npm install
+npm ci
 
 log "Running the ADL conformance test suite."
 node bin/console_runner.js -e "http://localhost:$EXPRESS_PORT/data/xAPI" -a -u "AAA" -p "BBB" -b
