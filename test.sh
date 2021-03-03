@@ -6,7 +6,7 @@ log () {
 log "Running conformance tests."
 
 log "Starting the server on port $EXPRESS_PORT."
-node dist/conformanceServer.js &
+SERVICE_AWAIT_UPDATES=true node dist/conformanceServer.js &
 
 log "Cloning the ADL conformance test suite."
 git clone -b patch-1 https://github.com/ryansmith94/lrs-conformance-test-suite ../conformance
