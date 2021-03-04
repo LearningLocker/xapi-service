@@ -1,4 +1,4 @@
-import Storage from '@google-cloud/storage';
+import { Storage } from '@google-cloud/storage';
 import { defaultTo } from 'lodash';
 import clearRepo from '../../clearRepo/google';
 import createAttachments from '../../createAttachments/google';
@@ -10,7 +10,7 @@ import FactoryConfig from './FactoryConfig';
 export default (factoryConfig: FactoryConfig = {}): Facade => {
   const facadeConfig: FacadeConfig = {
     bucketName: defaultTo(factoryConfig.bucketName, 'xapi-server'),
-    storage: Storage({
+    storage: new Storage({
       projectId: defaultTo(factoryConfig.projectId, 'll'),
       keyFilename: defaultTo(factoryConfig.keyFileName, 'google.keyfile.json'),
     }),

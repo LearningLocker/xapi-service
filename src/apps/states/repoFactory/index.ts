@@ -2,7 +2,7 @@
 import {
   ContainerURL, ServiceURL, SharedKeyCredential, StorageURL,
 } from '@azure/storage-blob';
-import Storage from '@google-cloud/storage';
+import { Storage } from '@google-cloud/storage';
 import S3 from 'aws-sdk/clients/s3';
 import connectToDb from 'jscommons/dist/mongoRepo/utils/connectToDb';
 import config from '../../../config';
@@ -60,7 +60,7 @@ const getStorageRepo = (): StorageRepo => {
     case 'google':
       return googleStorageRepo({
         bucketName: config.googleStorageRepo.bucketName,
-        storage: Storage({
+        storage: new Storage({
           keyFilename: config.googleStorageRepo.keyFileName,
           projectId: config.googleStorageRepo.projectId,
         }),
