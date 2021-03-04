@@ -11,7 +11,7 @@ export default (config: FacadeConfig): Signature => {
     const file = config.storage.bucket(config.bucketName).file(filePath);
     const stream = file.createReadStream();
     const [metadata] = await file.getMetadata();
-    const contentLength = (metadata as any).size;
+    const contentLength = metadata.size;
 
     return { stream, contentLength };
   };
