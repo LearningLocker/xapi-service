@@ -1,4 +1,4 @@
-import { NO_CONTENT, PRECONDITION_FAILED } from 'http-status-codes';
+import { StatusCodes } from 'http-status-codes';
 import createTextProfile from '../../../utils/createTextProfile';
 import getTestProfile from '../../../utils/getTestProfile';
 import setup from '../utils/setup';
@@ -12,18 +12,18 @@ describe('expressPresenter.deleteProfile with etags', () => {
     const getProfileResult = await getTestProfile();
     await deleteProfile()
       .set('If-Match', `"${getProfileResult.etag}"`)
-      .expect(NO_CONTENT);
+      .expect(StatusCodes.NO_CONTENT);
   });
 
   it('should throw precondition error when using an incorrect ifMatch', async () => {
     await createTextProfile();
     await deleteProfile()
       .set('If-Match', `"incorrect_etag"`)
-      .expect(PRECONDITION_FAILED);
+      .expect(StatusCodes.PRECONDITION_FAILED);
   });
 
   it('should allow deletion when not using an IfMatch', async () => {
     await createTextProfile();
-    await deleteProfile().expect(NO_CONTENT);
+    await deleteProfile().expect(StatusCodes.NO_CONTENT);
   });
 });

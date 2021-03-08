@@ -1,6 +1,6 @@
-import { OK } from 'http-status-codes';
+import { StatusCodes } from 'http-status-codes';
 import getStates from './getStates';
 
 export default async () => {
-  await getStates().expect(OK, []);
+  await getStates().expect(StatusCodes.OK, []);
 };
