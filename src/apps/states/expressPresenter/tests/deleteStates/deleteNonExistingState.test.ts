@@ -1,4 +1,4 @@
-import { BAD_REQUEST, NO_CONTENT } from 'http-status-codes';
+import { StatusCodes } from 'http-status-codes';
 import {
   TEST_INVALID_ACTIVITY_ID,
   TEST_INVALID_AGENT,
@@ -11,32 +11,32 @@ describe('expressPresenter.deleteStates with non-existing state', () => {
   setup();
 
   it('should not error when deleting', async () => {
-    await deleteStates().expect(NO_CONTENT);
+    await deleteStates().expect(StatusCodes.NO_CONTENT);
   });
 
   it('should throw warnings when using an invalid activity id', async () => {
     await deleteStates({
       activityId: TEST_INVALID_ACTIVITY_ID,
-    }).expect(BAD_REQUEST);
+    }).expect(StatusCodes.BAD_REQUEST);
   });
 
   it('should throw warnings when using an invalid agent', async () => {
     await deleteStates({
       agent: JSON.stringify(TEST_INVALID_AGENT),
-    }).expect(BAD_REQUEST);
+    }).expect(StatusCodes.BAD_REQUEST);
   });
 
   it('should throw warnings when using an invalid registration', async () => {
     await deleteStates({
       registration: TEST_INVALID_REGISTRATION,
-    }).expect(BAD_REQUEST);
+    }).expect(StatusCodes.BAD_REQUEST);
   });
 
   it('should throw warnings when missing the activity id', async () => {
-    await deleteStates({ activityId: undefined }).expect(BAD_REQUEST);
+    await deleteStates({ activityId: undefined }).expect(StatusCodes.BAD_REQUEST);
   });
 
   it('should throw warnings when missing the agent', async () => {
-    await deleteStates({ agent: undefined }).expect(BAD_REQUEST);
+    await deleteStates({ agent: undefined }).expect(StatusCodes.BAD_REQUEST);
   });
 });

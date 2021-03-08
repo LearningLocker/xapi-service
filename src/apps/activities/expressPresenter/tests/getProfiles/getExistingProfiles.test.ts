@@ -1,4 +1,4 @@
-import { OK } from 'http-status-codes';
+import { StatusCodes } from 'http-status-codes';
 import createTextProfile from '../../../utils/createTextProfile';
 import { TEST_PROFILE_ID } from '../../../utils/testValues';
 import setup from '../utils/setup';
@@ -9,6 +9,6 @@ describe('expressPresenter.getProfiles with existing model', () => {
 
   it('should return profile ids when getting a existing model', async () => {
     await createTextProfile();
-    await getProfiles().expect(OK, [TEST_PROFILE_ID]);
+    await getProfiles().expect(StatusCodes.OK, [TEST_PROFILE_ID]);
   });
 });

@@ -1,4 +1,4 @@
-import { OK } from 'http-status-codes';
+import { StatusCodes } from 'http-status-codes';
 import { route, xapiHeaderVersion } from '../../../utils/constants';
 import {
   ALTERNATE_CONTENT_TYPE,
@@ -16,6 +16,6 @@ describe('expressPresenter.getProfiles using the alternate request syntax', () =
       .set('X-Experience-API-Version', xapiHeaderVersion)
       .query({ method: 'GET' })
       .send({ agent: JSON.stringify(TEST_MBOX_AGENT) })
-      .expect(OK, []);
+      .expect(StatusCodes.OK, []);
   });
 });

@@ -1,5 +1,5 @@
 import { Response } from 'express';
-import { NO_CONTENT } from 'http-status-codes';
+import { StatusCodes } from 'http-status-codes';
 import { get } from 'lodash';
 import { xapiHeaderVersion } from '../../utils/constants';
 import Config from '../Config';
@@ -24,6 +24,6 @@ export default async ({ config, res, query, headers }: Options) => {
   const registration = get(query, 'registration') as string | undefined;
 
   await config.service.deleteStates({ activityId, agent, client, registration });
-  res.status(NO_CONTENT).setHeader('x-experience-api-version', xapiHeaderVersion);
+  res.status(StatusCodes.NO_CONTENT).setHeader('x-experience-api-version', xapiHeaderVersion);
   res.send();
 };

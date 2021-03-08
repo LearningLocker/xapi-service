@@ -1,6 +1,6 @@
 // tslint:disable:max-file-line-count
 import { Response } from 'express';
-import { BAD_REQUEST, CONFLICT, FORBIDDEN, PRECONDITION_FAILED } from 'http-status-codes';
+import { StatusCodes } from 'http-status-codes';
 import commonErrorHandler from 'jscommons/dist/expressPresenter/utils/handleError';
 import { Options as CommonOptions } from 'jscommons/dist/expressPresenter/utils/handleError';
 import sendMessage from 'jscommons/dist/expressPresenter/utils/sendMessage';
@@ -33,43 +33,43 @@ export default ({ config, errorId, res, err }: Options): Response => {
   res.setHeader('X-Experience-API-Version', xapiHeaderVersion);
 
   if (err instanceof JsonSyntaxError) {
-    const code = BAD_REQUEST;
+    const code = StatusCodes.BAD_REQUEST;
     const message = translator.jsonSyntaxError(err);
     logError(message);
     return sendMessage({ res, code, errorId, message });
   }
   if (err instanceof MissingEtags) {
-    const code = BAD_REQUEST;
+    const code = StatusCodes.BAD_REQUEST;
     const message = translator.missingEtagsError(err);
     logError(message);
     return sendMessage({ res, code, errorId, message });
   }
   if (err instanceof MaxEtags) {
-    const code = BAD_REQUEST;
+    const code = StatusCodes.BAD_REQUEST;
     const message = translator.maxEtagsError(err);
     logError(message);
     return sendMessage({ res, code, errorId, message });
   }
   if (err instanceof Conflict) {
-    const code = CONFLICT;
+    const code = StatusCodes.CONFLICT;
     const message = translator.conflictError(err);
     logError(message);
     return sendMessage({ res, code, errorId, message });
   }
   if (err instanceof IfMatch) {
-    const code = PRECONDITION_FAILED;
+    const code = StatusCodes.PRECONDITION_FAILED;
     const message = translator.ifMatchError(err);
     logError(message);
     return sendMessage({ res, code, errorId, message });
   }
   if (err instanceof IfNoneMatch) {
-    const code = PRECONDITION_FAILED;
+    const code = StatusCodes.PRECONDITION_FAILED;
     const message = translator.ifNoneMatchError(err);
     logError(message);
     return sendMessage({ res, code, errorId, message });
   }
   if (err instanceof NonJsonObject) {
-    const code = BAD_REQUEST;
+    const code = StatusCodes.BAD_REQUEST;
     const message = translator.nonJsonObjectError(err);
     logError(message);
     return sendMessage({ res, code, errorId, message });
@@ -85,19 +85,19 @@ export default ({ config, errorId, res, err }: Options): Response => {
     return sendObject({ res, code, errorId, obj });
   }
   if (err instanceof InvalidMethod) {
-    const code = BAD_REQUEST;
+    const code = StatusCodes.BAD_REQUEST;
     const message = translator.invalidMethodError(err);
     logError(message);
     return sendMessage({ res, code, errorId, message });
   }
   if (err instanceof ExpiredClientError) {
-    const code = FORBIDDEN;
+    const code = StatusCodes.FORBIDDEN;
     const message = translator.expiredClientError(err);
     logError(message);
     return sendMessage({ res, code, errorId, message });
   }
   if (err instanceof UntrustedClientError) {
-    const code = FORBIDDEN;
+    const code = StatusCodes.FORBIDDEN;
     const message = translator.untrustedClientError(err);
     logError(message);
     return sendMessage({ res, code, errorId, message });

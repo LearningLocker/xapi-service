@@ -1,4 +1,4 @@
-import { NO_CONTENT } from 'http-status-codes';
+import { StatusCodes } from 'http-status-codes';
 import getTestProfile from '../../../../utils/getTestProfile';
 import { TEST_OBJECT_CONTENT } from '../../../../utils/testValues';
 import patchProfile from './patchProfile';
@@ -10,5 +10,5 @@ export default async (
   const getProfileResult = await getTestProfile({ activityId });
   await patchProfile({ activityId }, content)
     .set('If-Match', getProfileResult.etag)
-    .expect(NO_CONTENT);
+    .expect(StatusCodes.NO_CONTENT);
 };

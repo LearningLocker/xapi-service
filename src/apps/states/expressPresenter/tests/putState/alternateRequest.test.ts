@@ -1,4 +1,4 @@
-import { BAD_REQUEST, NO_CONTENT } from 'http-status-codes';
+import { StatusCodes } from 'http-status-codes';
 import assertState from '../../../utils/assertState';
 import { route, xapiHeaderVersion } from '../../../utils/constants';
 import {
@@ -30,7 +30,7 @@ describe('expressPresenter.putState using the alternate request syntax', () => {
         registration: TEST_REGISTRATION,
         stateId: TEST_STATE_ID,
       })
-      .expect(BAD_REQUEST);
+      .expect(StatusCodes.BAD_REQUEST);
   });
 
   it('should create when using valid activity id', async () => {
@@ -49,7 +49,7 @@ describe('expressPresenter.putState using the alternate request syntax', () => {
         registration: TEST_REGISTRATION,
         stateId: TEST_STATE_ID,
       })
-      .expect(NO_CONTENT);
+      .expect(StatusCodes.NO_CONTENT);
     await assertState(TEST_CONTENT);
   });
 });

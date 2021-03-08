@@ -1,4 +1,4 @@
-import { BAD_REQUEST } from 'http-status-codes';
+import { StatusCodes } from 'http-status-codes';
 import createTextState from '../../../utils/createTextState';
 import {
   JSON_CONTENT_TYPE,
@@ -15,16 +15,16 @@ describe('expressPresenter.postState with existing text content', () => {
 
   it('should error when patching with text content', async () => {
     await createTextState();
-    await patchContent(TEST_CONTENT, TEXT_CONTENT_TYPE).expect(BAD_REQUEST);
+    await patchContent(TEST_CONTENT, TEXT_CONTENT_TYPE).expect(StatusCodes.BAD_REQUEST);
   });
 
   it('should error when patching with JSON content', async () => {
     await createTextState();
-    await patchContent(TEST_JSON_CONTENT, JSON_CONTENT_TYPE).expect(BAD_REQUEST);
+    await patchContent(TEST_JSON_CONTENT, JSON_CONTENT_TYPE).expect(StatusCodes.BAD_REQUEST);
   });
 
   it('should error when patching with object content', async () => {
     await createTextState();
-    await patchContent(TEST_OBJECT_CONTENT, JSON_CONTENT_TYPE).expect(BAD_REQUEST);
+    await patchContent(TEST_OBJECT_CONTENT, JSON_CONTENT_TYPE).expect(StatusCodes.BAD_REQUEST);
   });
 });

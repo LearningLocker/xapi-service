@@ -1,5 +1,5 @@
 import { delay } from 'bluebird';
-import { OK } from 'http-status-codes';
+import { StatusCodes } from 'http-status-codes';
 import createTextState from '../../../utils/createTextState';
 import { TEST_STATE_ID } from '../../../utils/testValues';
 import setup from '../utils/setup';
@@ -14,13 +14,13 @@ describe('expressPresenter.getStates with since', () => {
     await createTextState();
     await Promise.resolve(delay(TEST_DELAY_MS));
     const timestamp = new Date();
-    await getStates({ since: timestamp.toISOString() }).expect(OK, []);
+    await getStates({ since: timestamp.toISOString() }).expect(StatusCodes.OK, []);
   });
 
   it('should return the state id when updated after since', async () => {
     const timestamp = new Date();
     await Promise.resolve(delay(TEST_DELAY_MS));
     await createTextState();
-    await getStates({ since: timestamp.toISOString() }).expect(OK, [TEST_STATE_ID]);
+    await getStates({ since: timestamp.toISOString() }).expect(StatusCodes.OK, [TEST_STATE_ID]);
   });
 });

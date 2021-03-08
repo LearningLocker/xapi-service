@@ -1,4 +1,4 @@
-import { BAD_REQUEST, OK } from 'http-status-codes';
+import { StatusCodes } from 'http-status-codes';
 import Account from '../../../models/Account';
 import GetFullAgentResult from '../../../serviceFactory/results/GetFullAgentResult';
 import { route, xapiHeaderVersion } from '../../../utils/constants';
@@ -26,7 +26,7 @@ describe('expressPresenter.getFullAgent with non-existing model', () => {
       openid: [],
       ...resultOverrides,
     };
-    await getFullAgent(agent).expect(OK, expectedResult);
+    await getFullAgent(agent).expect(StatusCodes.OK, expectedResult);
   };
 
   it('should return the agent when using mbox', async () => {
@@ -54,7 +54,7 @@ describe('expressPresenter.getFullAgent with non-existing model', () => {
   });
 
   it('should throw warnings when using an invalid agent', async () => {
-    await getFullAgent(TEST_INVALID_AGENT).expect(BAD_REQUEST);
+    await getFullAgent(TEST_INVALID_AGENT).expect(StatusCodes.BAD_REQUEST);
   });
 
   it('should throw warnings when using invalid json in agent', async () => {
@@ -64,6 +64,6 @@ describe('expressPresenter.getFullAgent with non-existing model', () => {
       .query({
         agent: TEST_INVALID_JSON_CONTENT,
       })
-      .expect(BAD_REQUEST);
+      .expect(StatusCodes.BAD_REQUEST);
   });
 });

@@ -1,4 +1,4 @@
-import { NO_CONTENT } from 'http-status-codes';
+import { StatusCodes } from 'http-status-codes';
 import assertProfile from '../../../utils/assertProfile';
 import { route, xapiHeaderVersion } from '../../../utils/constants';
 import {
@@ -24,7 +24,7 @@ describe(__filename, () => {
         profileId: TEST_PROFILE_ID,
       })
       .send(TEST_OBJECT_CONTENT)
-      .expect(NO_CONTENT);
+      .expect(StatusCodes.NO_CONTENT);
     await assertProfile(TEST_OBJECT_CONTENT);
   });
 });
