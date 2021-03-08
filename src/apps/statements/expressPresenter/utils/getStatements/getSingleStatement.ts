@@ -28,7 +28,7 @@ export default async (opts: Options) => {
     'attachments',
   ]);
 
-  const results = await config.service.getStatement({ client, id, voided, langs, ...resultOpts });
+  const results = await config.service.getStatement({ id, voided, langs, ...resultOpts });
   res.setHeader('X-Experience-API-Consistent-Through', timestamp);
   res.setHeader('X-Experience-API-Version', xapiHeaderVersion);
   res.setHeader('Last-Modified', results.statements[0].stored);

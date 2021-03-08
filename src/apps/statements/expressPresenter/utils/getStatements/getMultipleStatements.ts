@@ -41,7 +41,6 @@ export default async (opts: Options) => {
   ]);
 
   const results = await config.service.getStatements({
-    client,
     langs,
     ...statementsOpts,
     ...resultOpts,
