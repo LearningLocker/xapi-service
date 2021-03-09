@@ -1,7 +1,7 @@
 import { ObjectID } from 'mongodb';
 import { Opts } from '../Signature';
 
-export default (options: Opts): object => {
+export default (options: Opts) => {
   if (options.cursor === undefined) {
     return {};
   }

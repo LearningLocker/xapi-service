@@ -1,8 +1,8 @@
 
+import { PassThrough } from 'stream';
 import * as jwt from 'jsonwebtoken';
 import { Dictionary, includes, isArray } from 'lodash';
 import { sha1 } from 'object-hash';
-import { PassThrough } from 'stream';
 import streamToString from 'stream-to-string';
 import InvalidJws from '../../../errors/InvalidJws';
 import InvalidSignatureAlgorithm from '../../../errors/InvalidSignatureAlgorithm';
@@ -41,12 +41,8 @@ export default async (
   });
   const originalStatement = {
     ...statement,
-    attachments: nonSignaturedAttachments,
+    ...(nonSignaturedAttachments.length === 0 ? {} : { attachments: nonSignaturedAttachments }),
   };
-
-  if (originalStatement.attachments.length === 0) {
-    delete originalStatement.attachments;
-  }
 
   const originalStatementHash = sha1(originalStatement);
   const attachmentChecks = signaturedAttachments.map(async (signaturedAttachment) => {

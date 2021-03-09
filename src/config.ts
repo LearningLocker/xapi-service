@@ -1,14 +1,13 @@
-// tslint:disable:max-file-line-count
-import { config } from 'dotenv';
-config();
-
+import * as os from 'os';
 import { S3 } from 'aws-sdk';
+import { config } from 'dotenv';
 import getBooleanOption from 'jscommons/dist/config/getBooleanOption';
 import getNumberOption from 'jscommons/dist/config/getNumberOption';
 import getStringOption from 'jscommons/dist/config/getStringOption';
 import getDbFromUrl from 'jscommons/dist/mongoRepo/utils/getDbFromUrl';
 import { defaultTo } from 'lodash';
-import * as os from 'os';
+
+config();
 
 const DEFAULT_REDIS_PORT = 6379;
 const DEFAULT_EXPRESS_PORT = 8081;

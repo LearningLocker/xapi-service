@@ -113,5 +113,4 @@ describe(__filename, () => {
       ...EXPECTED_TEST_STATEMENT,
     });
   });
-  // tslint:disable-next-line:max-file-line-count
 });

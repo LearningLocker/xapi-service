@@ -1,7 +1,7 @@
 import { Opts } from '../Signature';
 import matchesModel from './matchesModel';
 
-const matcher = (activity: string, opts: Opts): Object => {
+const matcher = (activity: string, opts: Opts) => {
   if (opts.related_activities === true) {
     return { relatedActivities: activity };
   }

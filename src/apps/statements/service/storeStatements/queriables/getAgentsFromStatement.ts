@@ -19,7 +19,7 @@ const getGroupMemberIdents = (group: Group): string[] => {
     return [];
   }
 
-  // tslint:disable-next-line:no-use-before-declare
+  // eslint-disable-next-line no-use-before-define
   return union(...group.member.map(getAgentsFromObject));
 };
 
@@ -61,7 +61,7 @@ const getAgentsFromInstructor = (statement: StatementBase): string[] => {
 
 const getRelatedAgentsFromStatementBase = (statement: StatementBase): string[] => {
   return [
-    // tslint:disable-next-line:no-use-before-declare
+    // eslint-disable-next-line no-use-before-define
     ...getAgentsFromStatement(statement),
     ...getAgentsFromTeam(statement),
     ...getAgentsFromInstructor(statement),

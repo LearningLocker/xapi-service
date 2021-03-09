@@ -136,4 +136,3 @@ export const TEST_ACTIVITY_WITH_MERGED_CONTEXT_ACTIVITIES = {
   ...TEST_ACTIVITY,
   ...TEST_MERGED_CONTEXT_ACTIVITIES_RESULT,
 };
-// tslint:disable-next-line:max-file-line-count

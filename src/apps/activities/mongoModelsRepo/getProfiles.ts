@@ -1,4 +1,3 @@
-/* tslint:disable:deprecation - find isn't really deprecated */
 import { ObjectID } from 'mongodb';
 import GetProfilesOptions from '../repoFactory/options/GetProfilesOptions';
 import GetProfilesResult from '../repoFactory/results/GetProfilesResult';
