@@ -1,4 +1,3 @@
-// tslint:disable:max-file-line-count
 import {
   ContainerURL, ServiceURL, SharedKeyCredential, StorageURL,
 } from '@azure/storage-blob';
@@ -72,7 +71,7 @@ const getStorageRepo = (): StorageRepo => {
         }),
         subFolder: config.googleStorageRepo.subFolder.replace(/^\//, ''),
       });
-    case 'azure':
+    case 'azure': {
       const credential = new SharedKeyCredential(
         config.azureStorageRepo.account,
         config.azureStorageRepo.accountKey,
@@ -90,6 +89,7 @@ const getStorageRepo = (): StorageRepo => {
         containerUrl,
         subFolder: config.azureStorageRepo.subFolder.replace(/^\//, ''),
       });
+    }
     default:
     case 'local':
       return localStorageRepo(config.localStorageRepo);

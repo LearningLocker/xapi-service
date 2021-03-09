@@ -1,4 +1,3 @@
-// tslint:disable:max-file-line-count
 import * as assert from 'assert';
 import btoa from 'btoa';
 import NoModel from 'jscommons/dist/errors/NoModel';

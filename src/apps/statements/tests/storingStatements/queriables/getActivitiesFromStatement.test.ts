@@ -109,5 +109,4 @@ describe('create array of queriable activities', () => {
     const activities = getRelatedActivitiesFromStatement(agentObjectModel);
     assert.deepEqual(activities, []);
   });
-  // tslint:disable-next-line:max-file-line-count
 });

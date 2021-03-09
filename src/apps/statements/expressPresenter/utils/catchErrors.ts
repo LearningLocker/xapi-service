@@ -6,6 +6,7 @@ import Config from '../Config';
 import handleError from '../utils/handleError';
 
 export default (config: Config, handler: CommonHandler) => {
+  // eslint-disable-next-line functional/no-return-void
   return (req: Request, res: Response): void => {
     handler(req, res).catch(async (err: any | Error | BaseError) => {
       const tracker = await config.tracker;

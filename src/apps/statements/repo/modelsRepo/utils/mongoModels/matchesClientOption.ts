@@ -11,7 +11,7 @@ const READ_ALL_SCOPES = [
   scopes.XAPI_STATEMENTS_READ,
 ];
 
-export default (client: ClientModel, enableReadMine = false): Object => {
+export default (client: ClientModel, enableReadMine = false): Record<string, unknown> => {
   const canOnlyReadMine = (
     enableReadMine &&
     intersection(READ_ALL_SCOPES, client.scopes).length === 0 &&

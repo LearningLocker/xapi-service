@@ -38,7 +38,6 @@ describe('getProfile with existing profile', () => {
   });
 
   it('should get when agent properties are in a different order', async () => {
-    // tslint:disable:object-literal-sort-keys
     const creationAgent = {
       objectType: 'Agent',
       account: {
@@ -53,7 +52,6 @@ describe('getProfile with existing profile', () => {
         name: 'steely.eyed',
       },
     };
-    // tslint:enable:object-literal-sort-keys
     await createTextProfile({ agent: creationAgent });
     const agentProfileResult = await getTestProfile({ agent: retrievalAgent });
     await assertGetProfile(agentProfileResult, TEST_CONTENT, TEXT_CONTENT_TYPE);

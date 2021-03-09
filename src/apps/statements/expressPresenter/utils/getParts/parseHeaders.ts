@@ -4,8 +4,8 @@ interface Headers {
   readonly [header: string]: string;
 }
 
-const trimmedChars = `\r\n\s`;
-const headerKeyBoundary = /\:\s*/;
+const trimmedChars = `\r\n `;
+const headerKeyBoundary = /:\s*/;
 
 export default (data: string) => {
   const trimmedHeaders = trimStart(data, trimmedChars);

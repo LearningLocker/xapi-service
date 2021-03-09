@@ -21,7 +21,6 @@ describe('expressPresenter.getProfile with existing state', () => {
   });
 
   it('should get when agent properties are in a different order', async () => {
-    // tslint:disable:object-literal-sort-keys
     const creationAgent = {
       objectType: 'Agent',
       account: {
@@ -36,7 +35,6 @@ describe('expressPresenter.getProfile with existing state', () => {
         name: 'steely.eyed',
       },
     });
-    // tslint:enable:object-literal-sort-keys
     await createTextProfile({ agent: creationAgent });
     await getProfile({ agent: retrievalAgent }).expect(StatusCodes.OK, TEST_CONTENT);
   });

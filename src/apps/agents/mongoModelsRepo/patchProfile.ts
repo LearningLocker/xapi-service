@@ -1,4 +1,3 @@
-/* tslint:disable:max-file-line-count */
 import { mapKeys } from 'lodash';
 import IfMatch from '../errors/IfMatch';
 import IfNoneMatch from '../errors/IfNoneMatch';

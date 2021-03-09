@@ -11,7 +11,7 @@ import {
 import supertest from '../../utils/supertest';
 
 export default (
-  optsOverrides: object = {},
+  optsOverrides: Record<string, unknown> = {},
   content: string = TEST_CONTENT,
   contentType: string = TEXT_CONTENT_TYPE,
   sendVersion = true,

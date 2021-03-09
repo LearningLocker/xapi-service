@@ -1,5 +1,5 @@
 import { get, has } from 'lodash';
-import * as moment from 'moment';
+import { duration } from 'moment';
 
 import Statement from '../../../../models/Statement';
 
@@ -9,8 +9,8 @@ export const getDurationMetadata = (statement: Statement)
     return {};
   }
 
-  const duration = get(statement, ['result', 'duration']);
-  const seconds = moment.duration(duration).as('seconds');
+  const resultDuration = get(statement, ['result', 'duration']);
+  const seconds = duration(resultDuration).as('seconds');
 
   return { 'https://learninglocker&46;net/result-duration': { seconds } };
 };

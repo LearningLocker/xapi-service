@@ -33,7 +33,7 @@ describe('get statements by sorting', () => {
         createStatement({ id: TEST_ID_4 }),
       ],
     );
-    await Promise.resolve(delay(100));
+    await Promise.resolve(delay(100)); // eslint-disable-line no-magic-numbers
     await storeStatements(
       [
         createStatement({ id: TEST_ID_5 }),
@@ -43,7 +43,7 @@ describe('get statements by sorting', () => {
     const sortedStatements = await getStatements(opts);
 
     assert(isArray(sortedStatements));
-    assert.equal(sortedStatements.length, 6);
+    assert.equal(sortedStatements.length, 6); // eslint-disable-line no-magic-numbers
 
     return sortedStatements;
   };

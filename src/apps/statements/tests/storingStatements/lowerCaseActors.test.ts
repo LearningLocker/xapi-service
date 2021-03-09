@@ -179,5 +179,4 @@ describe(__filename, () => {
       ...expectedStatement,
     });
   });
-  // tslint:disable-next-line:max-file-line-count
 });

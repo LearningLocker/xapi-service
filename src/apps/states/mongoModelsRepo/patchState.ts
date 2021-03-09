@@ -1,4 +1,3 @@
-/* tslint:disable:max-file-line-count */
 import { mapKeys } from 'lodash';
 import NonJsonObject from '../errors/NonJsonObject';
 import PatchStateOptions from '../repoFactory/options/PatchStateOptions';

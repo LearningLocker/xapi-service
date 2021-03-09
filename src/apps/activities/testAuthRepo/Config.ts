@@ -1,3 +1,3 @@
-type Config = object;
+type Config = Record<string, never>;
 
 export default Config;

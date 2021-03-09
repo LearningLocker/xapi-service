@@ -2,7 +2,6 @@ import assert from 'assert';
 import Activity from '../../../models/Activity';
 import Agent from '../../../models/Agent';
 import Statement from '../../../models/Statement';
-// tslint:disable-next-line:import-spacing
 import getRegistrationsFromStatement
   from '../../../service/storeStatements/queriables/getRegistrationsFromStatement';
 

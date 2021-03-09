@@ -1,8 +1,8 @@
-import * as sourceMapSupport from 'source-map-support'; // tslint:disable-line:ordered-imports
+import * as sourceMapSupport from 'source-map-support';
 sourceMapSupport.install();
 
-import tracker from './tracker';
-import express from 'express'; // tslint:disable-line:ordered-imports
+import tracker from './tracker'; // eslint-disable-line import/order
+import express from 'express';
 import handleListen from 'jscommons/dist/expressPresenter/utils/handleListen';
 import app from './apps/app';
 import config from './config';

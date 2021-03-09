@@ -1,4 +1,3 @@
-// tslint:disable:max-file-line-count
 import { Response } from 'express';
 import { StatusCodes } from 'http-status-codes';
 import commonErrorHandler from 'jscommons/dist/expressPresenter/utils/handleError';

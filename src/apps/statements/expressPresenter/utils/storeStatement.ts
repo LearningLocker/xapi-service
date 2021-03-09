@@ -1,4 +1,5 @@
 import { Response } from 'express';
+import { StatusCodes } from 'http-status-codes';
 import MissingStatementId from '../../errors/MissingStatementId';
 import UnequalStatementId from '../../errors/UnequalStatementId';
 import AttachmentModel from '../../models/AttachmentModel';
@@ -29,6 +30,6 @@ export default async ({ config, body, attachments, client, queryParams, res }: O
   }];
   await config.service.storeStatements({ models, attachments, client });
   res.setHeader('X-Experience-API-Version', xapiHeaderVersion);
-  res.status(204);
+  res.status(StatusCodes.NO_CONTENT);
   res.send();
 };

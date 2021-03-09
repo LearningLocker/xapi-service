@@ -1,4 +1,3 @@
-// tslint:disable:max-file-line-count
 import * as assert from 'assert';
 import NoModel from 'jscommons/dist/errors/NoModel';
 import assertError from 'jscommons/dist/tests/utils/assertError';
@@ -37,7 +36,6 @@ describe('getState with existing state', () => {
   });
 
   it('should get when agent properties are in a different order', async () => {
-    // tslint:disable:object-literal-sort-keys
     const creationAgent = {
       objectType: 'Agent',
       account: {
@@ -52,7 +50,6 @@ describe('getState with existing state', () => {
         name: 'steely.eyed',
       },
     };
-    // tslint:enable:object-literal-sort-keys
     await createTextState({ agent: creationAgent });
     const agentStateResult = await getTestState({ agent: retrievalAgent });
     await assertGetState(agentStateResult, TEST_CONTENT, TEXT_CONTENT_TYPE);

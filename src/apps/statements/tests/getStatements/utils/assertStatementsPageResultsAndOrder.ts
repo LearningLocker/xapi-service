@@ -9,7 +9,7 @@ export const assertStatementsPageResultsAndOrder = async (
     service,
     client,
     expectedPageStatementIds,
-    limit = 2,
+    limit = 2, // eslint-disable-line no-magic-numbers
     cursor,
     isNextPageCheckEnabled = true,
     ascending = false,

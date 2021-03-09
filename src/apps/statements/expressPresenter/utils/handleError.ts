@@ -39,7 +39,7 @@ export interface Options extends CommonOptions {
   readonly config: Config;
 }
 
-// tslint:disable-next-line:cyclomatic-complexity
+// eslint-disable-next-line complexity
 export default ({ config, errorId, res, err }: Options): Response => {
   const { logger, translator } = config;
   const logError = (msg: string, meta?: any) => {
@@ -217,5 +217,4 @@ export default ({ config, errorId, res, err }: Options): Response => {
     return sendMessage({ res, code, errorId, message });
   }
   return commonErrorHandler({ config, errorId, res, err });
-  // tslint:disable-next-line:max-file-line-count
 };

@@ -3,7 +3,7 @@ import { jsonContentType, textContentType } from '../../utils/constants';
 import { jsonContentTypePattern } from '../../utils/contentTypePatterns';
 import parseJson from '../../utils/parseJSON';
 
-const jsonStartPattern = /^(\{|\[|\".*\"$|[0-9]+$|true$|false$)/i;
+const jsonStartPattern = /^(\{|\[|".*"$|[0-9]+$|true$|false$)/i;
 
 export interface Opts {
   readonly stream: NodeJS.ReadableStream;

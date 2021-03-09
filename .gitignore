@@ -8,5 +8,6 @@ yarn-error.log
 /notes.md
 /npm-debug.log
 /storage
+/.eslintcache
 .idea
 package-lock.json
