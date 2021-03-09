@@ -16,8 +16,9 @@ export default (config: FacadeConfig): Signature => {
       });
       const content = await streamToString(model.stream);
       const file = config.storage.bucket(config.bucketName).file(filePath);
-      await file.save(content, { metadata: { contentEncoding: 'binary' } });
       console.debug('writing file to Google', config.bucketName, filePath);
+      await file.save(content, { metadata: { contentEncoding: 'binary' } });
+      console.debug('wrote file to Google', config.bucketName, filePath);
     });
 
     await Promise.all(promises);
