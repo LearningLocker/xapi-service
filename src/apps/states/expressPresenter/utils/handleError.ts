@@ -1,5 +1,5 @@
 import { Response } from 'express';
-import { BAD_REQUEST, FORBIDDEN } from 'http-status-codes';
+import { StatusCodes } from 'http-status-codes';
 import { Options as CommonOptions } from 'jscommons/dist/expressPresenter/utils/handleError';
 import commonErrorHandler from 'jscommons/dist/expressPresenter/utils/handleError';
 import sendMessage from 'jscommons/dist/expressPresenter/utils/sendMessage';
@@ -27,13 +27,13 @@ export default ({ config, errorId, res, err }: Options): Response => {
   res.setHeader('X-Experience-API-Version', xapiHeaderVersion);
 
   if (err instanceof JsonSyntaxError) {
-    const code = BAD_REQUEST;
+    const code = StatusCodes.BAD_REQUEST;
     const message = translator.jsonSyntaxError(err);
     logError(message);
     return sendMessage({ res, code, errorId, message });
   }
   if (err instanceof NonJsonObject) {
-    const code = BAD_REQUEST;
+    const code = StatusCodes.BAD_REQUEST;
     const message = translator.nonJsonObjectError(err);
     logError(message);
     return sendMessage({ res, code, errorId, message });
@@ -49,18 +49,18 @@ export default ({ config, errorId, res, err }: Options): Response => {
     return sendObject({ res, code, errorId, obj });
   }
   if (err instanceof InvalidMethod) {
-    const code = BAD_REQUEST;
+    const code = StatusCodes.BAD_REQUEST;
     const message = translator.invalidMethodError(err);
     logError(message);
     return sendMessage({ res, code, errorId, message });
   }
   if (err instanceof ExpiredClientError) {
-    const code = FORBIDDEN;
+    const code = StatusCodes.FORBIDDEN;
     const message = translator.expiredClientError(err);
     return sendMessage({ res, code, errorId, message });
   }
   if (err instanceof UntrustedClientError) {
-    const code = FORBIDDEN;
+    const code = StatusCodes.FORBIDDEN;
     const message = translator.untrustedClientError(err);
     return sendMessage({ res, code, errorId, message });
   }

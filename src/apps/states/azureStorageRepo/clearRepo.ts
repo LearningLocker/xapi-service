@@ -7,8 +7,9 @@ import Config from './Config';
 
 export default (config: Config) => {
   return async (): Promise<void> => {
-    // tslint:disable-next-line:no-let
+    // eslint-disable-next-line functional/no-let
     let marker;
+    // eslint-disable-next-line functional/no-loop-statement
     while (marker !== '') {
       const listBlobsResponse: Models.ContainerListBlobFlatSegmentResponse =
         await config.containerUrl.listBlobFlatSegment(Aborter.none, marker);

@@ -1,6 +1,6 @@
 import BaseError from 'jscommons/dist/errors/BaseError';
 
-// tslint:disable-next-line:no-class
+// eslint-disable-next-line functional/no-class
 export default class extends BaseError {
   constructor() {
     super();

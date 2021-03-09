@@ -1,5 +1,5 @@
 import { Response } from 'express';
-import { OK } from 'http-status-codes';
+import { StatusCodes } from 'http-status-codes';
 import { get } from 'lodash';
 import { xapiHeaderVersion } from '../../utils/constants';
 import Config from '../Config';
@@ -24,7 +24,7 @@ export default async ({ query, config, headers, res }: Options) => {
 
   const getProfileResult = await config.service.getProfile({ agent, client, profileId });
 
-  res.status(OK);
+  res.status(StatusCodes.OK);
   res.setHeader('ETag', `"${getProfileResult.etag}"`);
   res.setHeader('Last-Modified', getProfileResult.updatedAt.toISOString());
   res.setHeader('X-Experience-API-Version', xapiHeaderVersion);

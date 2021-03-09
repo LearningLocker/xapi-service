@@ -1,4 +1,4 @@
-import { FORBIDDEN, OK } from 'http-status-codes';
+import { StatusCodes } from 'http-status-codes';
 import {
   TEST_EXPIRED_ORG_TOKEN,
   TEST_INVALID_SCOPE_TOKEN,
@@ -14,24 +14,24 @@ describe('expressPresenter.getStates with scopes', () => {
   it('should throw forbidden error when using invalid scope', async () => {
     await getStates()
       .set('Authorization', TEST_INVALID_SCOPE_TOKEN)
-      .expect(FORBIDDEN);
+      .expect(StatusCodes.FORBIDDEN);
   });
 
   it('should throw forbidden error when using expired client', async () => {
     await getStates()
       .set('Authorization', TEST_EXPIRED_ORG_TOKEN)
-      .expect(FORBIDDEN);
+      .expect(StatusCodes.FORBIDDEN);
   });
 
   it('should throw forbidden error when using untrusted client', async () => {
     await getStates()
       .set('Authorization', TEST_UNTRUSTED_TOKEN)
-      .expect(FORBIDDEN);
+      .expect(StatusCodes.FORBIDDEN);
   });
 
   it('should return no models when using valid scopes', async () => {
     await getStates()
       .set('Authorization', TEST_VALID_SCOPE_TOKEN)
-      .expect(OK, []);
+      .expect(StatusCodes.OK, []);
   });
 });

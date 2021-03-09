@@ -1,4 +1,3 @@
-/* tslint:disable:max-file-line-count */
 import { isPlainObject } from 'lodash';
 import { ObjectID } from 'mongodb';
 import IfMatch from '../errors/IfMatch';

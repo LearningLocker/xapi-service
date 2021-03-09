@@ -1,9 +1,9 @@
 import BaseError from 'jscommons/dist/errors/BaseError';
 import Statement from '../models/Statement';
 
-// tslint:disable-next-line:no-class
+// eslint-disable-next-line functional/no-class
 export default class extends BaseError {
-  constructor(public originalStatement: Statement, public decodedStatement: unknown) {
+  constructor(public readonly originalStatement: Statement, public readonly decodedStatement: unknown) {
     super();
   }
 }

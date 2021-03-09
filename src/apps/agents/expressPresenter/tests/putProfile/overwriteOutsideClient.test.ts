@@ -1,4 +1,4 @@
-import { NO_CONTENT } from 'http-status-codes';
+import { StatusCodes } from 'http-status-codes';
 import assertProfile from '../../../utils/assertProfile';
 import {
   TEST_CONTENT,
@@ -14,17 +14,17 @@ describe('expressPresenter.putProfile when outside client', () => {
   const overwriteOutsideProfile = async (token: string) => {
     await overwriteProfile({}, 'unused_content')
       .set('Authorization', token)
-      .expect(NO_CONTENT);
+      .expect(StatusCodes.NO_CONTENT);
   };
 
   it('should not overwrite existing model when using a different organisation', async () => {
-    await overwriteProfile().expect(NO_CONTENT);
+    await overwriteProfile().expect(StatusCodes.NO_CONTENT);
     await overwriteOutsideProfile(TEST_OUTSIDE_ORG_TOKEN);
     await assertProfile(TEST_CONTENT);
   });
 
   it('should not overwrite existing model when using a different store', async () => {
-    await overwriteProfile().expect(NO_CONTENT);
+    await overwriteProfile().expect(StatusCodes.NO_CONTENT);
     await overwriteOutsideProfile(TEST_OUTSIDE_STORE_TOKEN);
     await assertProfile(TEST_CONTENT);
   });

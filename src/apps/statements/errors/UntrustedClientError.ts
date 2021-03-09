@@ -1,4 +1,4 @@
-// tslint:disable:no-class
+/* eslint-disable functional/no-class */
 import BaseError from 'jscommons/dist/errors/BaseError';
 
 /* istanbul ignore next */

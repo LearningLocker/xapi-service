@@ -17,11 +17,14 @@ import alternateRequest from './alternateRequest';
 import storeStatements from './storeStatements';
 import storeWithAttachments from './storeWithAttachments';
 
+const contentParam = 'content';
+const contentParamStart = `${contentParam}=`;
+
 const parseJsonBody = async (config: Config, req: Request) => {
   const body = await streamToString(req);
-  if (config.allowFormBody && body.slice(0, 8) === 'content=') {
+  if (config.allowFormBody && body.slice(0, contentParamStart.length) === contentParamStart) {
     const formData = parseQueryString(body);
-    return parseJson(formData.content as string, ['body', 'content']);
+    return parseJson(formData.content as string, ['body', contentParam]);
   }
   return parseJson(body, ['body']);
 };

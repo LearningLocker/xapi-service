@@ -1,4 +1,4 @@
-import { NO_CONTENT } from 'http-status-codes';
+import { StatusCodes } from 'http-status-codes';
 import assertDeleted from '../../../utils/assertDeleted';
 import { route, xapiHeaderVersion } from '../../../utils/constants';
 import createTextState from '../../../utils/createTextState';
@@ -25,7 +25,7 @@ describe('expressPresenter.deleteStates using the alternate request syntax', () 
         agent: JSON.stringify(TEST_MBOX_AGENT),
         registration: TEST_REGISTRATION,
       })
-      .expect(NO_CONTENT);
+      .expect(StatusCodes.NO_CONTENT);
     await assertDeleted();
   });
 });

@@ -1,5 +1,5 @@
-import checkScopes from 'jscommons/dist/service/utils/checkScopes';
 import { PassThrough } from 'stream';
+import checkScopes from 'jscommons/dist/service/utils/checkScopes';
 import AttachmentModel from '../../models/AttachmentModel';
 import StoreStatementsOptions from '../../serviceFactory/options/StoreStatementsOptions';
 import { STATEMENT_WRITE_SCOPES } from '../../utils/scopes';
@@ -78,7 +78,7 @@ export default (config: Config) => {
       config.repo.emitNewStatements({ statementProperties: unstoredStatementProperties })
         .catch((err) => {
           /* istanbul ignore next */
-          console.error(err); // tslint:disable-line:no-console
+          console.error(err);
         });
     }
 

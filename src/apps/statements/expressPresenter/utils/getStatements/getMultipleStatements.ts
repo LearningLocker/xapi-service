@@ -1,4 +1,5 @@
 import { Response } from 'express';
+import { StatusCodes } from 'http-status-codes';
 import ClientModel from '../../../models/ClientModel';
 import { xapiHeaderVersion } from '../../../utils/constants';
 import Config from '../../Config';
@@ -41,7 +42,6 @@ export default async (opts: Options) => {
   ]);
 
   const results = await config.service.getStatements({
-    client,
     langs,
     ...statementsOpts,
     ...resultOpts,
@@ -58,5 +58,5 @@ export default async (opts: Options) => {
     return sendMultipartResult(jsonResponse, results.attachments, res);
   }
 
-  res.status(200).json(jsonResponse);
+  res.status(StatusCodes.OK).json(jsonResponse);
 };

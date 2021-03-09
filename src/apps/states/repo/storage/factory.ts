@@ -30,7 +30,7 @@ export default (factoryConfig: FactoryConfig): Repo => {
         }),
         subFolder: factoryConfig.google.subFolder.replace(/^\//, ''),
       });
-    case 'azure':
+    case 'azure': {
       const credential = new SharedKeyCredential(
         factoryConfig.azure.account,
         factoryConfig.azure.accountKey,
@@ -48,6 +48,7 @@ export default (factoryConfig: FactoryConfig): Repo => {
         containerUrl,
         subFolder: factoryConfig.azure.subFolder.replace(/^\//, ''),
       });
+    }
     default:
     case 'local': {
       return localStorageRepo({

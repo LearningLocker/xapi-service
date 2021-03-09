@@ -1,4 +1,3 @@
-/* tslint:disable:deprecation - find isn't really deprecated */
 import DeleteStatesOptions from '../repoFactory/options/DeleteStatesOptions';
 import DeleteStatesResult from '../repoFactory/results/DeleteStatesResult';
 import Config from './Config';

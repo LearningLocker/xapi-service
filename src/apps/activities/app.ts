@@ -1,4 +1,3 @@
-/* tslint:disable:max-file-line-count */
 import { Router } from 'express';
 import AppConfig from './AppConfig';
 import presenterFactory from './expressPresenter';

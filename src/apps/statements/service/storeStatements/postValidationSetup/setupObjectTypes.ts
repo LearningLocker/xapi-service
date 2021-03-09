@@ -7,7 +7,7 @@ const obj = (defaultObjectType: string) => {
 };
 
 const members: modr.Modifier = modr.modifySchema({
-  // tslint:disable-next-line:no-use-before-declare
+  // eslint-disable-next-line no-use-before-define
   member: modr.modifyCollection(() => actor),
 });
 
@@ -35,7 +35,7 @@ const context = modr.modifySchema({
 const subStatement: modr.Modifier = modr.modifyType(Object, (data) => {
   return (
     data.objectType === 'SubStatement' ?
-      // tslint:disable-next-line:no-use-before-declare
+      // eslint-disable-next-line no-use-before-define
       statementBase(data) :
       data
   );

@@ -14,7 +14,7 @@ import matchesSinceOption from './matchesSinceOption';
 import matchesUntilOption from './matchesUntilOption';
 import matchesVerbOption from './matchesVerbOption';
 
-const filterModels = (opts: Opts): Object => {
+const filterModels = (opts: Opts) => {
   return {
     $and: [
       { voided: false },
@@ -36,6 +36,8 @@ const sortModels = (ascending: boolean) => {
     _id: ascending ? 1 : -1,
   };
 };
+
+const timeoutErrorCode = 50;
 
 export default (config: FacadeConfig): Signature => {
   return async (opts) => {
@@ -62,7 +64,7 @@ export default (config: FacadeConfig): Signature => {
       return decodedModels;
     } catch (err) {
       /* istanbul ignore next - Couldn't test without an unacceptable test duration. */
-      if (err?.code === 50) {
+      if (err?.code === timeoutErrorCode) {
         throw new Timeout(config.maxTimeMs);
       }
       /* istanbul ignore next - Unexpected error. */

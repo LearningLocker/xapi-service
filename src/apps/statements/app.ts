@@ -1,4 +1,3 @@
-/* tslint:disable:max-file-line-count */
 import AppConfig from './AppConfig';
 import presenterFactory, { Result } from './expressPresenter';
 import repoFactory from './repo/facade';

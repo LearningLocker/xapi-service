@@ -1,10 +1,10 @@
+import { Readable } from 'stream';
 import {
   Aborter,
   BlobURL,
   BlockBlobURL,
   uploadStreamToBlockBlob,
 } from '@azure/storage-blob';
-import { Readable } from 'stream';
 import StoreStateContentOptions from '../repoFactory/options/StoreStateContentOptions';
 import getStorageDir from '../utils/getStorageDir';
 import Config from './Config';

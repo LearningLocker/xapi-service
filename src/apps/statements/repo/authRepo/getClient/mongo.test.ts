@@ -159,5 +159,4 @@ describe(__filename, () => {
     const promise = authRepo.getClient({ authToken: `Test ${TEST_ACCESS_TOKEN}` });
     await assertError(NoModel, promise);
   });
-  // tslint:disable-next-line:max-file-line-count
 });

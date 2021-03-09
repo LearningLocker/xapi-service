@@ -1,4 +1,4 @@
-import { NO_CONTENT } from 'http-status-codes';
+import { StatusCodes } from 'http-status-codes';
 import assertProfile from '../../../utils/assertProfile';
 import { route, xapiHeaderVersion } from '../../../utils/constants';
 import createObjectProfile from '../../../utils/createObjectProfile';
@@ -33,7 +33,7 @@ describe('expressPresenter.postProfile using the alternate request syntax', () =
         content: TEST_OBJECT_PATCH_CONTENT,
         profileId: TEST_PROFILE_ID,
       })
-      .expect(NO_CONTENT);
+      .expect(StatusCodes.NO_CONTENT);
     await assertProfile(TEST_OBJECT_MERGED_CONTENT);
   });
 });

@@ -1,10 +1,11 @@
+// eslint-disable-next-line import/order
 import * as sourceMapSupport from 'source-map-support';
 sourceMapSupport.install();
 
 import assert from 'assert';
-import { map } from 'lodash';
-import 'mocha'; // tslint:disable-line:no-import-side-effect
 import { Readable as ReadableStream } from 'stream';
+import { map } from 'lodash';
+import 'mocha'; // eslint-disable-line import/no-unassigned-import
 import streamToString from 'stream-to-string';
 import Part from '../../models/Part';
 import getParts from '../utils/getParts';
@@ -200,5 +201,4 @@ describe('expressPresenter/utils/getParts', () => {
       // Do nothing.
     }
   });
-  // tslint:disable-next-line:max-file-line-count
 });

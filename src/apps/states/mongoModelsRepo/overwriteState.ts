@@ -1,4 +1,3 @@
-/* tslint:disable:max-file-line-count */
 import { isPlainObject } from 'lodash';
 import OverwriteStateOptions from '../repoFactory/options/OverwriteStateOptions';
 import OverwriteStateResult from '../repoFactory/results/OverwriteStateResult';

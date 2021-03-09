@@ -1,4 +1,4 @@
-import { NO_CONTENT } from 'http-status-codes';
+import { StatusCodes } from 'http-status-codes';
 import assertDeleted from '../../../utils/assertDeleted';
 import { route, xapiHeaderVersion } from '../../../utils/constants';
 import createTextProfile from '../../../utils/createTextProfile';
@@ -23,7 +23,7 @@ describe('expressPresenter.deleteProfile using the alternate request syntax', ()
         activityId: TEST_ACTIVITY_ID,
         profileId: TEST_PROFILE_ID,
       })
-      .expect(NO_CONTENT);
+      .expect(StatusCodes.NO_CONTENT);
     await assertDeleted();
   });
 });

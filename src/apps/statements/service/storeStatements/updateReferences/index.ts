@@ -10,8 +10,6 @@ import {
   getAgentsFromStatement,
   getRelatedAgentsFromStatement,
 } from '../queriables/getAgentsFromStatement';
-import eagerLoadDownRefs from './eagerLoadDownRefs';
-import eagerLoadUpRefs from './eagerLoadUpRefs';
 
 import {
   getActivitiesFromStatement,
@@ -20,6 +18,8 @@ import {
 
 import getRegistrationsFromStatement from '../queriables/getRegistrationsFromStatement';
 import getVerbsFromStatement from '../queriables/getVerbsFromStatement';
+import eagerLoadUpRefs from './eagerLoadUpRefs';
+import eagerLoadDownRefs from './eagerLoadDownRefs';
 
 const shortId = (id: string) => {
   return id[id.length - 1];
@@ -101,13 +101,13 @@ export default async (config: Config, models: UnstoredStatementModel[], client: 
       const downRefId = await getDownRefId(modelId);
       return (
         includes(newVisitedIds, downRefId) ?
-          // tslint:disable-next-line:no-use-before-declare
+          // eslint-disable-next-line no-use-before-define
           traverseUp([], newVisitedIds, downRefId) :
           traverseDown(downRefId, newVisitedIds)
       );
     } catch (err) {
       if (err.constructor === NoModel) {
-        // tslint:disable-next-line:no-use-before-declare
+        // eslint-disable-next-line no-use-before-define
         return traverseUp([], [], modelId);
       }
       /* istanbul ignore next */
@@ -127,7 +127,7 @@ export default async (config: Config, models: UnstoredStatementModel[], client: 
     const newVisitedIds = stack(modelId, visitedIds);
     const newRefIds = stack(modelId, refIds);
     const upRefIds = await getUpRefIds(modelId);
-    // tslint:disable-next-line:no-use-before-declare
+    // eslint-disable-next-line no-use-before-define
     return traverseUpRefs(newVisitedIds, newRefIds, upRefIds);
   };
 
@@ -158,5 +158,4 @@ export default async (config: Config, models: UnstoredStatementModel[], client: 
       return union(visitedIds, traversedIds);
     }
   }, Promise.resolve([]) as Promise<string[]>);
-  // tslint:disable-next-line:max-file-line-count
 };

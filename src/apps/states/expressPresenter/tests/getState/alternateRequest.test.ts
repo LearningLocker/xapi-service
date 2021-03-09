@@ -1,4 +1,4 @@
-import { BAD_REQUEST, OK } from 'http-status-codes';
+import { StatusCodes } from 'http-status-codes';
 import { route, xapiHeaderVersion } from '../../../utils/constants';
 import createTextState from '../../../utils/createTextState';
 import {
@@ -26,7 +26,7 @@ describe('expressPresenter.getState', () => {
         registration: TEST_REGISTRATION,
         stateId: TEST_STATE_ID,
       })
-      .expect(BAD_REQUEST);
+      .expect(StatusCodes.BAD_REQUEST);
   });
 
   it('should get when getting text', async () => {
@@ -42,6 +42,6 @@ describe('expressPresenter.getState', () => {
         registration: TEST_REGISTRATION,
         stateId: TEST_STATE_ID,
       })
-      .expect(OK, TEST_CONTENT);
+      .expect(StatusCodes.OK, TEST_CONTENT);
   });
 });

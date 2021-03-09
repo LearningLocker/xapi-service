@@ -1,4 +1,5 @@
 import { Request, Response } from 'express';
+import { StatusCodes } from 'http-status-codes';
 import { xapiHeaderVersion } from '../utils/constants';
 import Config from './Config';
 import catchErrors from './utils/catchErrors';
@@ -14,7 +15,7 @@ export default (config: Config) => {
     validateHeaderVersion(req.header('X-Experience-API-Version'));
 
     const result = await config.service.getFullActivity({ client, activityId });
-    res.status(200);
+    res.status(StatusCodes.OK);
     res.setHeader('X-Experience-API-Version', xapiHeaderVersion);
     res.json(result);
   });

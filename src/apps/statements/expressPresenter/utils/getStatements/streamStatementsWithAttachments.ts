@@ -4,7 +4,7 @@ import AttachmentModel from '../../../models/AttachmentModel';
 export const boundary = 'zzzlearninglockerzzz';
 
 export default async (
-  jsonResponse: Object,
+  jsonResponse: any,
   attachments: AttachmentModel[],
   stream: NodeJS.WritableStream,
 ) => {

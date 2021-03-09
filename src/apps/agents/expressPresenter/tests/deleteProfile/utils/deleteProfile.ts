@@ -8,7 +8,7 @@ const options = {
   profileId: TEST_PROFILE_ID,
 };
 
-export default (optsOverrides: object = {}): Test => {
+export default (optsOverrides: Record<string, unknown> = {}): Test => {
   return supertest
     .delete(`${route}/profile`)
     .set('X-Experience-API-Version', xapiHeaderVersion)

@@ -1,8 +1,8 @@
 
+import { PassThrough } from 'stream';
 import * as jwt from 'jsonwebtoken';
 import { Dictionary, includes, isArray } from 'lodash';
 import { sha1 } from 'object-hash';
-import { PassThrough } from 'stream';
 import streamToString from 'stream-to-string';
 import InvalidJws from '../../../errors/InvalidJws';
 import InvalidSignatureAlgorithm from '../../../errors/InvalidSignatureAlgorithm';
@@ -25,10 +25,11 @@ export default async (
   statement: Statement,
   uniqueHashAttachmentDictionary: Dictionary<AttachmentModel>,
 ): Promise<void> => {
-  const attachments = (
-    statement.attachments !== undefined ? statement.attachments : []
+  const { attachments, ...statementWithoutAttachments } = statement;
+  const statementAttachments = (
+    attachments !== undefined ? attachments : []
   );
-  const signaturedAttachments = attachments.filter((attachment) => {
+  const signaturedAttachments = statementAttachments.filter((attachment) => {
     return attachment.usageType === 'http://adlnet.gov/expapi/attachments/signature';
   });
 
@@ -36,17 +37,13 @@ export default async (
     return;
   }
 
-  const nonSignaturedAttachments = attachments.filter((attachment) => {
+  const nonSignaturedAttachments = statementAttachments.filter((attachment) => {
     return attachment.usageType !== 'http://adlnet.gov/expapi/attachments/signature';
   });
-  const originalStatement = {
-    ...statement,
-    attachments: nonSignaturedAttachments,
+  const originalStatement: Statement = {
+    ...statementWithoutAttachments,
+    ...(nonSignaturedAttachments.length === 0 ? {} : { attachments: nonSignaturedAttachments }),
   };
-
-  if (originalStatement.attachments.length === 0) {
-    delete originalStatement.attachments;
-  }
 
   const originalStatementHash = sha1(originalStatement);
   const attachmentChecks = signaturedAttachments.map(async (signaturedAttachment) => {

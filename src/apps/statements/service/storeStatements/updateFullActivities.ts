@@ -128,8 +128,7 @@ export default async ({ config, models, client }: Opts): Promise<void> => {
         matchingActivities.map((matchingActivity) =>
           mapValues(matchingActivity.context?.contextActivities, (matchingContextActivities) =>
             matchingContextActivities !== undefined
-              // tslint:disable-next-line:max-line-length
-              ? matchingContextActivities.map((matchingContextActivity) => matchingContextActivity.id)
+                            ? matchingContextActivities.map((matchingContextActivity) => matchingContextActivity.id)
               : matchingContextActivities,
           ),
         );
@@ -174,5 +173,4 @@ export default async ({ config, models, client }: Opts): Promise<void> => {
   );
 
   await config.repo.updateFullActivities({ fullActivities });
-// tslint:disable-next-line:max-file-line-count
 };

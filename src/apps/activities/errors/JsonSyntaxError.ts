@@ -1,8 +1,8 @@
-/* tslint:disable:no-class */
+/* eslint-disable functional/no-class */
 import BaseError from 'jscommons/dist/errors/BaseError';
 
 export default class extends BaseError {
-  constructor(public path: string[]) {
+  constructor(public readonly path: string[]) {
     super();
   }
 }

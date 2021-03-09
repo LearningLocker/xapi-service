@@ -210,5 +210,4 @@ describe('getFullActivity', () => {
       assert.deepEqual(fullActivity, TEST_ACTIVITY_WITH_MERGED_CONTEXT_ACTIVITIES);
     },
   );
-// tslint:disable-next-line:max-file-line-count
 });

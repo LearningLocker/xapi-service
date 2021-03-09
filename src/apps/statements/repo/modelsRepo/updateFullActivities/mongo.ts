@@ -81,10 +81,8 @@ const createMongoQuery = (fullActivity: FullActivityDatabase) => {
 
 const creatBatchQuery = (batch: UnorderedBulkOperation) => (fullActivity: FullActivityDatabase) => {
   const mongoQuery = createMongoQuery(fullActivity);
-  // tslint:disable:no-inferred-empty-object-type
   const mongoSet = createMongoSet(fullActivity);
   const mongoAddToSet = createMongoAddToSet(fullActivity);
-  // tslint:enable:no-inferred-empty-object-type
 
   batch.find(mongoQuery).upsert().updateOne({
     ...(!isEmpty(mongoSet) ? { $set: mongoSet } : {}),
@@ -103,5 +101,4 @@ export default (config: FacadeConfig): Signature =>
 
     fullActivities.forEach(creatBatchQuery(batch));
     await batch.execute();
-    // tslint:disable-next-line:max-file-line-count
   };

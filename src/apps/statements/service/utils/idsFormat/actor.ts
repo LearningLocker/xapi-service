@@ -23,7 +23,7 @@ const getActorWithId = (actor: Actor): ActorWithId => {
 const getActorWithMembers = (actor: Actor): ActorWithMembers => {
   return (
     (actor.objectType === 'Group' && actor.member !== undefined) ?
-      // tslint:disable-next-line:no-use-before-declare
+      // eslint-disable-next-line no-use-before-define
       { member: actor.member.map(formatActor) } :
       {}
   );

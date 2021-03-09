@@ -1,4 +1,3 @@
-/* tslint:disable:no-magic-numbers */
 import { Request, Response } from 'express';
 import { get, mapKeys } from 'lodash';
 import { parse as parseQueryString } from 'query-string';

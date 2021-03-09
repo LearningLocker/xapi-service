@@ -1,4 +1,4 @@
-import { NO_CONTENT } from 'http-status-codes';
+import { StatusCodes } from 'http-status-codes';
 import assertState from '../../../utils/assertState';
 import { route, xapiHeaderVersion } from '../../../utils/constants';
 import {
@@ -27,7 +27,7 @@ describe(__filename, () => {
         stateId: TEST_STATE_ID,
       })
       .send(TEST_OBJECT_CONTENT)
-      .expect(NO_CONTENT);
+      .expect(StatusCodes.NO_CONTENT);
     await assertState(TEST_OBJECT_CONTENT);
   });
 });
