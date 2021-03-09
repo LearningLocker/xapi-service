@@ -13,10 +13,8 @@ export default async (
   const uniqueAttachments = removeDuplicates(attachments, (attachment) => {
     return attachment.hash;
   });
-  console.debug('creating attachments');
   await config.repo.createAttachments({
     models: uniqueAttachments,
     lrs_id: lrsId,
   });
-  console.debug('created attachments');
 };

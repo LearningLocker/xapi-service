@@ -21,8 +21,6 @@ export default (config: FacadeConfig): Signature => {
       console.debug('wrote file to Google', config.bucketName, filePath);
     });
 
-    console.debug('waiting for promises');
     await Promise.all(promises);
-    console.debug('waited for promises');
   };
 };
