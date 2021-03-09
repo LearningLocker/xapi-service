@@ -237,37 +237,36 @@ workflows:
       - build:
           context:
             - docker-hub-creds
-      # - test-local:
-      #     context:
-      #       - docker-hub-creds
-      #     requires:
-      #       - build
-      # - test-s3:
-      #     context:
-      #       - docker-hub-creds
-      #     requires:
-      #       - test-local
-      # - test-azure:
-      #     context:
-      #       - docker-hub-creds
-      #     requires:
-      #       - test-local
-      - test-google:
+      - test-local:
           context:
             - docker-hub-creds
           requires:
             - build
-            # - test-local
-      # - release:
-      #     context:
-      #       - docker-hub-creds
-      #     requires:
-      #       - test-local
-      #       - test-s3
-      #       - test-azure
-      #       - test-google
-      #     filters:
-      #       branches:
-      #         ignore:
-      #           - /^dependabot\/.*/
-      #           - /^renovate\/.*/
+      - test-s3:
+          context:
+            - docker-hub-creds
+          requires:
+            - test-local
+      - test-azure:
+          context:
+            - docker-hub-creds
+          requires:
+            - test-local
+      - test-google:
+          context:
+            - docker-hub-creds
+          requires:
+            - test-local
+      - release:
+          context:
+            - docker-hub-creds
+          requires:
+            - test-local
+            - test-s3
+            - test-azure
+            - test-google
+          filters:
+            branches:
+              ignore:
+                - /^dependabot\/.*/
+                - /^renovate\/.*/
