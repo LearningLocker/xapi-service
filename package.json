@@ -29,7 +29,7 @@
     "cover-ci": "nyc --lines 100 --check-coverage --exclude '(dist/**/*google*|dist/**/*azure*|dist/**/*s3*|dist/**/*fetch*|dist/**/*fake*|dist/config.js|dist/**/factory.js|dist/**/facade.js|dist/**/connectToSentinel.js)' npm run test-ci",
     "cover-all": "nyc --lines 100 --check-coverage --exclude '(dist/**/*fetch*|dist/**/*fake*|dist/config.js|dist/**/factory.js|dist/**/facade.js)' npm run test-all",
     "clean": "rm -rf dist",
-    "lint": "eslint --cache --fix src",
+    "lint": "eslint --cache --quiet --fix src",
     "lint-ci": "eslint --quiet src",
     "duplication": "jscpd",
     "semantic-release": "ht2-release-public-circleci-app"
@@ -121,7 +121,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-push": "yarn lint-ci"
+      "pre-push": "yarn lint"
     }
   },
   "eslintConfig": {
