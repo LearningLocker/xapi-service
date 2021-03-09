@@ -73,7 +73,9 @@ export default (config: Config) => {
       config.logger.error('Error in unawaited updates', err);
     });
 
+    console.debug('awaiting updates');
     await awaitUpdates(config, unawaitedUpdates);
+    console.debug('awaited updates');
     if (unstoredStatementProperties.length !== 0) {
       config.repo.emitNewStatements({ statementProperties: unstoredStatementProperties })
         .catch((err) => {
