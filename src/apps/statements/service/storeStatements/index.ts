@@ -19,9 +19,7 @@ import voidStatements from './voidStatements';
 /* istanbul ignore next */
 const awaitUpdates = async (config: Config, updates: Promise<any>) => {
   if (config.awaitUpdates) {
-    console.debug('awaiting updates');
     await updates;
-    console.debug('awaited updates');
   }
 };
 
@@ -72,8 +70,7 @@ export default (config: Config) => {
       config.repo.incrementStoreCount({ client: opts.client, count: unstoredModels.length }),
     ]).catch((err) => {
       /* istanbul ignore next */
-      console.debug('error in unawaited updated', err);
-      // config.logger.error('Error in unawaited updates', err);
+      config.logger.error('Error in unawaited updates', err);
     });
 
     await awaitUpdates(config, unawaitedUpdates);

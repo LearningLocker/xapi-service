@@ -9,10 +9,8 @@ export default (config: FacadeConfig): Signature => {
     const filePath = getAttachmentPath({ dir, hash, contentType });
 
     const file = config.storage.bucket(config.bucketName).file(filePath);
-    console.debug('reading metadata from Google', config.bucketName, filePath);
     const [metadata] = await file.getMetadata();
     const contentLength = metadata.size;
-    console.debug('reading file from Google', config.bucketName, filePath);
     const stream = file.createReadStream();
 
     return { stream, contentLength };
