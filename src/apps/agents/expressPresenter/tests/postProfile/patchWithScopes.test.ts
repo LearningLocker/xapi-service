@@ -1,4 +1,4 @@
-import { FORBIDDEN, NO_CONTENT } from 'http-status-codes';
+import { StatusCodes } from 'http-status-codes';
 import {
   TEST_EXPIRED_ORG_TOKEN,
   TEST_INVALID_SCOPE_TOKEN,
@@ -12,18 +12,26 @@ describe('expressPresenter.postProfile with scopes', () => {
   setup();
 
   it('should throw forbidden error when using invalid scope', async () => {
-    await patchProfile().set('Authorization', TEST_INVALID_SCOPE_TOKEN).expect(FORBIDDEN);
+    await patchProfile()
+      .set('Authorization', TEST_INVALID_SCOPE_TOKEN)
+      .expect(StatusCodes.FORBIDDEN);
   });
 
   it('should throw forbidden error when using expired client', async () => {
-    await patchProfile().set('Authorization', TEST_EXPIRED_ORG_TOKEN).expect(FORBIDDEN);
+    await patchProfile()
+      .set('Authorization', TEST_EXPIRED_ORG_TOKEN)
+      .expect(StatusCodes.FORBIDDEN);
   });
 
   it('should throw forbidden error when using untrusted client', async () => {
-    await patchProfile().set('Authorization', TEST_UNTRUSTED_TOKEN).expect(FORBIDDEN);
+    await patchProfile()
+      .set('Authorization', TEST_UNTRUSTED_TOKEN)
+      .expect(StatusCodes.FORBIDDEN);
   });
 
   it('should not throw an error when using valid scopes', async () => {
-    await patchProfile().set('Authorization', TEST_VALID_SCOPE_TOKEN).expect(NO_CONTENT);
+    await patchProfile()
+      .set('Authorization', TEST_VALID_SCOPE_TOKEN)
+      .expect(StatusCodes.NO_CONTENT);
   });
 });

@@ -9,15 +9,15 @@ import parseJson from '../../utils/parseJson';
 import { jsonContentTypePattern } from '../utils/contentTypePatterns';
 import getParts from '../utils/getParts';
 
-// tslint:disable-next-line:max-line-length
-const BOUNDARY_REGEXP = /boundary\=((?:\"(?:[A-Za-z\d\'\(\)\+\_\,\-\.\/\:\=\?]+)\")|(?:[A-Za-z\d\-]+))/;
+const BOUNDARY_REGEXP = /boundary=((?:"(?:[A-Za-z\d'()+_,\-./:=?]+)")|(?:[A-Za-z\d-]+))/;
 
 const getBoundaryFromContentType = (contentType: string): string => {
   const result = BOUNDARY_REGEXP.exec(contentType);
+  // eslint-disable-next-line no-magic-numbers
   if (result === null || result.length < 1 || result.length > 2) {
     throw new InvalidBoundary(contentType);
   }
-  return result[1].replace(/\"/g, '');
+  return result[1].replace(/"/g, '');
 };
 
 export default async (req: Request) => {

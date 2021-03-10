@@ -1,4 +1,4 @@
-import { BAD_REQUEST } from 'http-status-codes';
+import { StatusCodes } from 'http-status-codes';
 import assertImmutableProfile from '../../../utils/assertImmutableProfile';
 import assertProfile from '../../../utils/assertProfile';
 import createImmutableProfile from '../../../utils/createImmutableProfile';
@@ -21,12 +21,12 @@ describe('expressPresenter.postProfile with existing object content', () => {
 
   it('should error when patching with text content', async () => {
     await createObjectProfile();
-    await patchContent(TEST_CONTENT, TEXT_CONTENT_TYPE).expect(BAD_REQUEST);
+    await patchContent(TEST_CONTENT, TEXT_CONTENT_TYPE).expect(StatusCodes.BAD_REQUEST);
   });
 
   it('should error when patching with JSON content', async () => {
     await createObjectProfile();
-    await patchContent(TEST_JSON_CONTENT, JSON_CONTENT_TYPE).expect(BAD_REQUEST);
+    await patchContent(TEST_JSON_CONTENT, JSON_CONTENT_TYPE).expect(StatusCodes.BAD_REQUEST);
   });
 
   it('should merge when patching with object content', async () => {

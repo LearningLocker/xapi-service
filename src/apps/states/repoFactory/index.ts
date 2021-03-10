@@ -1,14 +1,12 @@
-// tslint:disable:max-file-line-count
 import {
   ContainerURL, ServiceURL, SharedKeyCredential, StorageURL,
 } from '@azure/storage-blob';
-import Storage from '@google-cloud/storage';
+import { Storage } from '@google-cloud/storage';
 import S3 from 'aws-sdk/clients/s3';
 import connectToDb from 'jscommons/dist/mongoRepo/utils/connectToDb';
 import config from '../../../config';
 import logger from '../../../logger';
 import azureStorageRepo from '../azureStorageRepo';
-import fetchAuthRepo from '../fetchAuthRepo';
 import googleStorageRepo from '../googleStorageRepo';
 import localStorageRepo from '../localStorageRepo';
 import mongoAuthRepo from '../mongoAuthRepo';
@@ -25,10 +23,6 @@ const getAuthRepo = (): AuthRepo => {
   switch (config.repoFactory.authRepoName) {
     case 'test':
       return testAuthRepo({});
-    case 'fetch':
-      return fetchAuthRepo({
-        llClientInfoEndpoint: config.fetchAuthRepo.llClientInfoEndpoint,
-      });
     default: case 'mongo':
       return mongoAuthRepo({
         db: connectToDb({
@@ -65,13 +59,13 @@ const getStorageRepo = (): StorageRepo => {
     case 'google':
       return googleStorageRepo({
         bucketName: config.googleStorageRepo.bucketName,
-        storage: Storage({
+        storage: new Storage({
           keyFilename: config.googleStorageRepo.keyFileName,
           projectId: config.googleStorageRepo.projectId,
         }),
         subFolder: config.googleStorageRepo.subFolder.replace(/^\//, ''),
       });
-    case 'azure':
+    case 'azure': {
       const credential = new SharedKeyCredential(
         config.azureStorageRepo.account,
         config.azureStorageRepo.accountKey,
@@ -90,6 +84,7 @@ const getStorageRepo = (): StorageRepo => {
         containerUrl,
         subFolder: config.azureStorageRepo.subFolder.replace(/^\//, ''),
       });
+    }
     default:
     case 'local':
       return localStorageRepo(config.localStorageRepo);

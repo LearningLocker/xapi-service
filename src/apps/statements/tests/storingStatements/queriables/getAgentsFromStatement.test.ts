@@ -143,5 +143,4 @@ describe('create array of queriable agents', () => {
       ssinstructor.mbox,
     ]);
   });
-  // tslint:disable-next-line:max-file-line-count
 });

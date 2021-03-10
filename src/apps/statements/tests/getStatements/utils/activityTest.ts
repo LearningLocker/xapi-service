@@ -106,5 +106,4 @@ export default (assertFilteredStatements: FilteredStatementsAsserter) => {
       }, true);
     },
   );
-  // tslint:disable-next-line:max-file-line-count
 };

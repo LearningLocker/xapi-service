@@ -1,4 +1,4 @@
-import { OK } from 'http-status-codes';
+import { StatusCodes } from 'http-status-codes';
 import createJsonProfile from '../../../utils/createJsonProfile';
 import createTextProfile from '../../../utils/createTextProfile';
 import {
@@ -13,11 +13,11 @@ describe('expressPresenter.getProfile with existing state', () => {
 
   it('should get when getting text', async () => {
     await createTextProfile();
-    await getProfile().expect(OK, TEST_CONTENT);
+    await getProfile().expect(StatusCodes.OK, TEST_CONTENT);
   });
 
   it('should get when getting json', async () => {
     await createJsonProfile();
-    await getProfile().expect(OK, JSON.parse(TEST_JSON_CONTENT));
+    await getProfile().expect(StatusCodes.OK, JSON.parse(TEST_JSON_CONTENT));
   });
 });

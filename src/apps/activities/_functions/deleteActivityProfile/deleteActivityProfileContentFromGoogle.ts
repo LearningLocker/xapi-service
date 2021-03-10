@@ -1,4 +1,4 @@
-import Storage from '@google-cloud/storage';
+import { Storage } from '@google-cloud/storage';
 import getStorageDir from '../../utils/getStorageDir';
 import { DeleteActivityProfileContentOptions } from './deleteActivityProfileContent';
 import { GoogleFileStorageConfig } from './utils/getFileStorageConfig/FileStorageConfig';
@@ -7,7 +7,7 @@ export async function deleteActivityProfileContentFromGoogle(
   config: GoogleFileStorageConfig,
   opts: DeleteActivityProfileContentOptions,
 ): Promise<void> {
-  const storage = Storage({
+  const storage = new Storage({
     keyFilename: config.googleKeyFileName,
     projectId: config.googleProjectId,
   });

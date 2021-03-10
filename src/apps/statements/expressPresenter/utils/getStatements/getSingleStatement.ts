@@ -1,4 +1,5 @@
 import { Response } from 'express';
+import { StatusCodes } from 'http-status-codes';
 import ClientModel from '../../../models/ClientModel';
 import { xapiHeaderVersion } from '../../../utils/constants';
 import Config from '../../Config';
@@ -28,7 +29,7 @@ export default async (opts: Options) => {
     'attachments',
   ]);
 
-  const results = await config.service.getStatement({ client, id, voided, langs, ...resultOpts });
+  const results = await config.service.getStatement({ id, voided, langs, ...resultOpts });
   res.setHeader('X-Experience-API-Consistent-Through', timestamp);
   res.setHeader('X-Experience-API-Version', xapiHeaderVersion);
   res.setHeader('Last-Modified', results.statements[0].stored);
@@ -39,6 +40,6 @@ export default async (opts: Options) => {
     return sendMultipartResult(jsonResponse, results.attachments, res);
   }
 
-  res.status(200);
+  res.status(StatusCodes.OK);
   res.json(jsonResponse);
 };

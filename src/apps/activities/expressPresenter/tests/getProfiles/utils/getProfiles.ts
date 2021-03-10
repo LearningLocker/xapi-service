@@ -3,7 +3,7 @@ import { route, xapiHeaderVersion } from '../../../../utils/constants';
 import { TEST_ACTIVITY_ID } from '../../../../utils/testValues';
 import supertest from '../../utils/supertest';
 
-export default (optsOverrides: object = {}): Test => {
+export default (optsOverrides: Record<string, unknown> = {}): Test => {
   return supertest
     .get(route)
     .set('X-Experience-API-Version', xapiHeaderVersion)

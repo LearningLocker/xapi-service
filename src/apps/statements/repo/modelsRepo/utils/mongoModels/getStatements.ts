@@ -5,8 +5,8 @@ import matchesClientOption from './matchesClientOption';
 
 export interface Options {
   readonly config: FacadeConfig;
-  readonly query: Object;
-  readonly project: Object;
+  readonly query: Record<string, unknown>;
+  readonly project: Record<string, unknown>;
   readonly client: ClientModel;
 }
 

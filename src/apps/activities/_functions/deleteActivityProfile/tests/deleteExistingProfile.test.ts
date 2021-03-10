@@ -1,4 +1,4 @@
-import { NO_CONTENT } from 'http-status-codes';
+import { StatusCodes } from 'http-status-codes';
 import setup from '../../../expressPresenter/tests/utils/setup';
 import assertDeleted from '../../../utils/assertDeleted';
 import createJsonProfile from '../../../utils/createJsonProfile';
@@ -10,13 +10,13 @@ describe('expressPresenter.deleteProfile with existing profile', () => {
 
   it('should delete when deleting text', async () => {
     await createTextProfile();
-    await deleteProfile().expect(NO_CONTENT);
+    await deleteProfile().expect(StatusCodes.NO_CONTENT);
     await assertDeleted();
   });
 
   it('should delete when deleting json', async () => {
     await createJsonProfile();
-    await deleteProfile().expect(NO_CONTENT);
+    await deleteProfile().expect(StatusCodes.NO_CONTENT);
     await assertDeleted();
   });
 });

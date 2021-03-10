@@ -1,4 +1,5 @@
 import { Response } from 'express';
+import { StatusCodes } from 'http-status-codes';
 import { isArray } from 'lodash';
 import ClientModel from '../../models/ClientModel';
 import { xapiHeaderVersion } from '../../utils/constants';
@@ -16,6 +17,6 @@ export default async ({ config, client, body, attachments, res }: Options) => {
   const models = isArray(body) ? body : [body];
   const ids = await config.service.storeStatements({ models, attachments, client });
   res.setHeader('X-Experience-API-Version', xapiHeaderVersion);
-  res.status(200);
+  res.status(StatusCodes.OK);
   res.json(ids);
 };

@@ -43,7 +43,7 @@ describe('get statements by slicing', () => {
       limit: 0,
       client: TEST_CLIENT,
     });
-    assert.equal(statements.length, 3);
+    assert.equal(statements.length, 3); // eslint-disable-line no-magic-numbers
   });
 
   it('should return statements when they are not skipped', async () => {

@@ -1,4 +1,4 @@
-import { NO_CONTENT } from 'http-status-codes';
+import { StatusCodes } from 'http-status-codes';
 import assertDeleted from '../../../utils/assertDeleted';
 import { route, xapiHeaderVersion } from '../../../utils/constants';
 import createTextState from '../../../utils/createTextState';
@@ -27,7 +27,7 @@ describe('expressPresenter.deleteState using the alternate request syntax', () =
         registration: TEST_REGISTRATION,
         stateId: TEST_STATE_ID,
       })
-      .expect(NO_CONTENT);
+      .expect(StatusCodes.NO_CONTENT);
     await assertDeleted();
   });
 });

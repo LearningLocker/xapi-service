@@ -1,16 +1,15 @@
 import * as assert from 'assert';
 import NoModel from 'jscommons/dist/errors/NoModel';
 import assertError from 'jscommons/dist/tests/utils/assertError';
-import GetProfilesOptions from '../serviceFactory/options/GetProfilesOptions';
 import getTestProfile from './getTestProfile';
 import getTestProfiles from './getTestProfiles';
 
-export default async (optsOverrides: Partial<GetProfilesOptions> = {}) => {
+export default async () => {
   // Asserts that the agent has no profiles.
-  const getProfilesResult = await getTestProfiles(optsOverrides);
+  const getProfilesResult = await getTestProfiles();
   assert.deepEqual([], getProfilesResult.profileIds);
 
   // Asserts that the profile does not exist.
-  const getProfilePromise = getTestProfile(optsOverrides);
+  const getProfilePromise = getTestProfile();
   await assertError(NoModel, getProfilePromise);
 };

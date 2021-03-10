@@ -1,6 +1,6 @@
 import matchesModel from './matchesModel';
 
-const matcher = (verb: string): Object => {
+const matcher = (verb: string) => {
   return {
     verbs: verb,
   };

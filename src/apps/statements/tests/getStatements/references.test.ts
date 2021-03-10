@@ -148,5 +148,4 @@ describe('get statements by references', () => {
       [TEST_ID_A],
     );
   });
-  // tslint:disable-next-line:max-file-line-count
 });

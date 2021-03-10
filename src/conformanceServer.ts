@@ -1,6 +1,5 @@
-// tslint:disable:no-console
-import './server'; // tslint:disable-line:no-import-side-effect
-import { ObjectID } from 'mongodb'; // tslint:disable-line:ordered-imports
+import './server'; // eslint-disable-line import/no-unassigned-import
+import { ObjectID } from 'mongodb';
 import connectToMongoDb from './utils/connectToMongoDb';
 
 const testOrg = {
@@ -39,14 +38,14 @@ const testClient = {
 
 (async () => {
   const db = await connectToMongoDb()();
-  console.log('Dropping database for ADL conformance tests.');
+  console.info('Dropping database for ADL conformance tests.');
   await db.dropDatabase();
-  console.log('Seeding database for ADL conformance tests.');
+  console.info('Seeding database for ADL conformance tests.');
   await db.collection('organisations').insertOne(testOrg);
   await db.collection('lrs').insertOne(testStore);
   await db.collection('client').insertOne(testClient);
 })().then(() => {
-  console.log('Completed seeding for ADL conformance tests.');
+  console.info('Completed seeding for ADL conformance tests.');
 }).catch((err) => {
   console.error(err);
   process.exit(1);

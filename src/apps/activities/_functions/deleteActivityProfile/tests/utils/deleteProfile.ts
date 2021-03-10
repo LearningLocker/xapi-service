@@ -3,7 +3,7 @@ import supertest from '../../../../expressPresenter/tests/utils/supertest';
 import { route, xapiHeaderVersion } from '../../../../utils/constants';
 import { TEST_ACTIVITY_ID, TEST_PROFILE_ID } from '../../../../utils/testValues';
 
-export default (optsOverrides: object = {}): Test => {
+export default (optsOverrides: Record<string, unknown> = {}): Test => {
   return supertest
     .delete(route)
     .set('X-Experience-API-Version', xapiHeaderVersion)

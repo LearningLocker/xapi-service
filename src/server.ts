@@ -1,7 +1,8 @@
-import * as sourceMapSupport from 'source-map-support'; // tslint:disable-line:ordered-imports
+import * as sourceMapSupport from 'source-map-support';
 sourceMapSupport.install();
 
-import express from 'express'; // tslint:disable-line:ordered-imports
+import tracker from './tracker'; // eslint-disable-line import/order
+import express from 'express';
 import handleListen from 'jscommons/dist/expressPresenter/utils/handleListen';
 import { getAuthConfig } from './apps/activities/_functions/deleteActivityProfile/utils/getAuthConfig/getAuthConfig';
 import { getFileStorageConfig } from './apps/activities/_functions/deleteActivityProfile/utils/getFileStorageConfig/getFileStorageConfig';
@@ -10,10 +11,8 @@ import { getTrackingConfig } from './apps/activities/_functions/deleteActivityPr
 import app from './apps/app';
 import config from './config';
 import logger from './logger';
-import tracker from './tracker';
 import connectToMongoDb from './utils/connectToMongoDb';
 import connectToRedis from './utils/connectToRedis';
-import connectToSentinel from './utils/connectToSentinel';
 
 const expressApp = express();
 
@@ -36,10 +35,6 @@ expressApp.use(app({
     },
     repoFactory: config.repoFactory,
     s3: config.s3StorageRepo,
-    sentinel: {
-      client: connectToSentinel(),
-      prefix: config.redis.prefix,
-    },
     storageSubFolders: config.storageSubFolders,
   },
   service: {
@@ -55,7 +50,7 @@ expressApp.use(app({
 expressApp.listen(config.express.port, () => {
   const port80 = 80;
   if (config.express.port === port80) {
-    logger.warning('Express port set to 80; this will not work on non-root Node processes');
+    logger.warn('Express port set to 80; this will not work on non-root Node processes');
   }
   logger.info(`Listening on port ${config.express.port}`);
   handleListen(logger);

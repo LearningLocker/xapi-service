@@ -1,4 +1,4 @@
-import { OK } from 'http-status-codes';
+import { StatusCodes } from 'http-status-codes';
 import { route, xapiHeaderVersion } from '../../../utils/constants';
 import createTextProfile from '../../../utils/createTextProfile';
 import {
@@ -23,6 +23,6 @@ describe('expressPresenter.getProfile using the alternate request syntax', () =>
         agent: JSON.stringify(TEST_MBOX_AGENT),
         profileId: TEST_PROFILE_ID,
       })
-      .expect(OK, TEST_CONTENT);
+      .expect(StatusCodes.OK, TEST_CONTENT);
   });
 });

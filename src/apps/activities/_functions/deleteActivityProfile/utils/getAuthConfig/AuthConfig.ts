@@ -1,7 +1,3 @@
-export type AuthConfig = (
-  MongoAuthConfig | TestAuthConfig
-);
-
 export enum AuthProvider {
   Test = 'test',
   Mongo = 'mongo',
@@ -16,3 +12,7 @@ export interface MongoAuthConfig {
 export interface TestAuthConfig {
   readonly authProvider: AuthProvider.Test;
 }
+
+export type AuthConfig = (
+  MongoAuthConfig | TestAuthConfig
+);

@@ -4,7 +4,7 @@ import {
   SharedKeyCredential,
   StorageURL,
 } from '@azure/storage-blob';
-import Storage from '@google-cloud/storage';
+import { Storage } from '@google-cloud/storage';
 import S3 from 'aws-sdk/clients/s3';
 import azureStorageRepo from '../../azureStorageRepo';
 import googleStorageRepo from '../../googleStorageRepo';
@@ -24,13 +24,13 @@ export default (factoryConfig: FactoryConfig): Repo => {
     case 'google':
       return googleStorageRepo({
         bucketName: factoryConfig.google.bucketName,
-        storage: Storage({
+        storage: new Storage({
           keyFilename: factoryConfig.google.keyFileName,
           projectId: factoryConfig.google.projectId,
         }),
         subFolder: factoryConfig.google.subFolder.replace(/^\//, ''),
       });
-    case 'azure':
+    case 'azure': {
       const credential = new SharedKeyCredential(
         factoryConfig.azure.account,
         factoryConfig.azure.accountKey,
@@ -48,7 +48,7 @@ export default (factoryConfig: FactoryConfig): Repo => {
         containerUrl,
         subFolder: factoryConfig.azure.subFolder.replace(/^\//, ''),
       });
-    default:
+    } default:
     case 'local': {
       return localStorageRepo({
         storageDir: factoryConfig.local.storageDir,

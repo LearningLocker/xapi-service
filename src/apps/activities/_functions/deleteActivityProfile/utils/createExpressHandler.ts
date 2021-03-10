@@ -1,5 +1,5 @@
 import express from 'express';
-import { INTERNAL_SERVER_ERROR } from 'http-status-codes';
+import { StatusCodes } from 'http-status-codes';
 import { v4 as createV4UUID } from 'uuid';
 import { handleErrorViaHttp } from './handleErrorViaHttp';
 import { HttpHandler, HttpHeaders, HttpQueryParams, HttpRequest } from './HttpInterfaces';
@@ -54,7 +54,7 @@ export function createExpressHandler<Config>(handler: HttpHandler<Config>) {
       } catch (err) {
         // tslint:disable-next-line: no-console
         console.error(requestId, err);
-        res.status(INTERNAL_SERVER_ERROR);
+        res.status(StatusCodes.INTERNAL_SERVER_ERROR);
         res.send(`Internal Server Error ${requestId}`);
       }
     };

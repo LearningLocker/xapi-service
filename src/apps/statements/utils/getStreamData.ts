@@ -1,13 +1,13 @@
-import { trim } from 'lodash';
 import { Readable as ReadableStream } from 'stream';
+import { trim } from 'lodash';
 
-const trimmedChars = `\r\n\s`;
+const trimmedChars = `\r\n `;
 
 export default async (stream: ReadableStream): Promise<string> => {
-  // tslint:disable-next-line:no-let
+  // eslint-disable-next-line functional/no-let
   let data = '';
 
-  await new Promise((resolve, reject) => {
+  await new Promise<void>((resolve, reject) => {
     stream.on('data', (chunk: Buffer) => {
       data += chunk.toString('binary');
     });

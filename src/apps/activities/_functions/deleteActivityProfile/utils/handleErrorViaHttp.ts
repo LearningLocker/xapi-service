@@ -1,11 +1,4 @@
-import {
-  BAD_REQUEST,
-  FORBIDDEN,
-  INTERNAL_SERVER_ERROR,
-  NOT_FOUND,
-  PRECONDITION_FAILED,
-  UNAUTHORIZED,
-} from 'http-status-codes';
+import { StatusCodes } from 'http-status-codes';
 import Forbidden from 'jscommons/dist/errors/Forbidden';
 import NoModel from 'jscommons/dist/errors/NoModel';
 import Unauthorised from 'jscommons/dist/errors/Unauthorised';
@@ -19,7 +12,7 @@ import { jsonContentType, xapiHeaderVersion } from '../../../utils/constants';
 import { HttpRequest, HttpResponse } from './HttpInterfaces';
 import { translateWarning } from './translateWarning';
 
-function createErrorResponse(statusCode: number, jsonBody: object): HttpResponse {
+function createErrorResponse(statusCode: number, jsonBody: Record<string, unknown>): HttpResponse {
   return {
     statusCode,
     headers: {
@@ -33,56 +26,56 @@ function createErrorResponse(statusCode: number, jsonBody: object): HttpResponse
 // tslint:disable-next-line: no-any
 export function handleErrorViaHttp(req: HttpRequest, err?: any) {
   if (err instanceof Unauthorised) {
-    return createErrorResponse(UNAUTHORIZED, {
+    return createErrorResponse(StatusCodes.UNAUTHORIZED, {
       message: 'Unauthorized',
       requestId: req.requestId,
     });
   }
   if (err instanceof NoModel) {
-    return createErrorResponse(NOT_FOUND, {
+    return createErrorResponse(StatusCodes.NOT_FOUND, {
       message: `No ${err.modelName} found`,
       requestId: req.requestId,
     });
   }
   if (err instanceof Warnings) {
-    return createErrorResponse(BAD_REQUEST, {
+    return createErrorResponse(StatusCodes.BAD_REQUEST, {
       warnings: err.warnings.map(translateWarning),
       requestId: req.requestId,
     });
   }
   if (err instanceof IfMatch) {
-    return createErrorResponse(PRECONDITION_FAILED, {
+    return createErrorResponse(StatusCodes.PRECONDITION_FAILED, {
       message: 'IfMatch does not match Etag because a modification has been made since it was retrieved',
       requestId: req.requestId,
     });
   }
   if (err instanceof IfNoneMatch) {
-    return createErrorResponse(PRECONDITION_FAILED, {
+    return createErrorResponse(StatusCodes.PRECONDITION_FAILED, {
       message: 'IfNoneMatch was used to detect that the resource was already present',
       requestId: req.requestId,
     });
   }
   if (err instanceof Forbidden) {
-    return createErrorResponse(FORBIDDEN, {
+    return createErrorResponse(StatusCodes.FORBIDDEN, {
       message: 'Forbidden',
       requestId: req.requestId,
     });
   }
   if (err instanceof ExpiredClientError) {
-    return createErrorResponse(FORBIDDEN, {
+    return createErrorResponse(StatusCodes.FORBIDDEN, {
       message: 'Your organisation has expired',
       requestId: req.requestId,
     });
   }
   if (err instanceof UntrustedClientError) {
-    return createErrorResponse(FORBIDDEN, {
+    return createErrorResponse(StatusCodes.FORBIDDEN, {
       message: 'Your client has been disabled',
       requestId: req.requestId,
     });
   }
   // tslint:disable-next-line: no-console
   console.error(req.requestId, err);
-  return createErrorResponse(INTERNAL_SERVER_ERROR, {
+  return createErrorResponse(StatusCodes.INTERNAL_SERVER_ERROR, {
     message: 'A server error occurred',
     requestId: req.requestId,
   });

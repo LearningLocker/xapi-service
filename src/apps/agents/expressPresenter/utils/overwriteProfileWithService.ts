@@ -1,5 +1,5 @@
 import { Response } from 'express';
-import { NO_CONTENT } from 'http-status-codes';
+import { StatusCodes } from 'http-status-codes';
 import { get } from 'lodash';
 import { xapiHeaderVersion } from '../../utils/constants';
 import Config from '../Config';
@@ -38,7 +38,7 @@ export default async ({ query, config, headers, res, content }: Options) => {
     profileId,
   });
 
-  res.status(NO_CONTENT);
+  res.status(StatusCodes.NO_CONTENT);
   res.setHeader('X-Experience-API-Version', xapiHeaderVersion);
   res.send();
 };

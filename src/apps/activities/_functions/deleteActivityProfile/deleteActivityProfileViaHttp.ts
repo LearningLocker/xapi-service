@@ -1,4 +1,4 @@
-import { NO_CONTENT } from 'http-status-codes';
+import { StatusCodes } from 'http-status-codes';
 import getActivityId from '../../expressPresenter/utils/getActivityId';
 import getEtag from '../../expressPresenter/utils/getEtag';
 import getProfileId from '../../expressPresenter/utils/getProfileId';
@@ -32,7 +32,7 @@ export async function deleteActivityProfileViaHttp(
 
   await deleteActivityProfile(config, { activityId, client, profileId, ifMatch });
   return {
-    statusCode: NO_CONTENT,
+    statusCode: StatusCodes.NO_CONTENT,
     headers: {
       'X-Experience-API-Version': xapiHeaderVersion,
     },

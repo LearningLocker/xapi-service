@@ -1,7 +1,3 @@
-export type FileStorageConfig = (
-  S3FileStorageConfig | GoogleFileStorageConfig | AzureFileStorageConfig | LocalFileStorageConfig
-);
-
 export enum FileStorageProvider {
   Azure = 'azure',
   Google = 'google',
@@ -38,3 +34,7 @@ export interface S3FileStorageConfig {
   readonly awsSecretAccessKey: string;
   readonly awsRegion: string;
 }
+
+export type FileStorageConfig = (
+  S3FileStorageConfig | GoogleFileStorageConfig | AzureFileStorageConfig | LocalFileStorageConfig
+);
