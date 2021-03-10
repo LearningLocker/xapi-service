@@ -1,8 +1,8 @@
 import { StatusCodes } from 'http-status-codes';
 import streamToString from 'stream-to-string';
+import setup from '../../../expressPresenter/tests/utils/setup';
 import createTextProfile from '../../../utils/createTextProfile';
 import getTestProfile from '../../../utils/getTestProfile';
-import setup from '../utils/setup';
 import deleteProfile from './utils/deleteProfile';
 
 describe('expressPresenter.deleteProfile with etags', () => {

@@ -2,6 +2,10 @@ import S3 from 'aws-sdk/clients/s3';
 import Tracker from 'jscommons/dist/tracker/Tracker';
 import { Db } from 'mongodb';
 import { LoggerInstance } from 'winston';
+import { AuthConfig } from './_functions/deleteActivityProfile/utils/getAuthConfig/AuthConfig';
+import { FileStorageConfig } from './_functions/deleteActivityProfile/utils/getFileStorageConfig/FileStorageConfig';
+import { MongoRecordStorageConfig } from './_functions/deleteActivityProfile/utils/getRecordStorageConfig/RecordStorageConfig';
+import { TrackingConfig } from './_functions/deleteActivityProfile/utils/getTrackingConfig/TrackingConfig';
 
 export default interface AppConfig {
   readonly logger: LoggerInstance;
@@ -40,4 +44,8 @@ export default interface AppConfig {
       readonly db: () => Promise<Db>;
     };
   };
+  readonly authConfig: AuthConfig;
+  readonly fileStorageConfig: FileStorageConfig;
+  readonly recordStorageConfig: MongoRecordStorageConfig;
+  readonly trackingConfig: TrackingConfig;
 }

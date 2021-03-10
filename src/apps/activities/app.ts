@@ -55,6 +55,10 @@ export default (appConfig: AppConfig): Router => {
     service,
     tracker: appConfig.tracker,
     translator,
+    authConfig: appConfig.authConfig,
+    fileStorageConfig: appConfig.fileStorageConfig,
+    recordStorageConfig: appConfig.recordStorageConfig,
+    trackingConfig: appConfig.trackingConfig,
   });
   return presenter;
 };

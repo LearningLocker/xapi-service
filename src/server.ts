@@ -4,6 +4,10 @@ sourceMapSupport.install();
 import tracker from './tracker'; // eslint-disable-line import/order
 import express from 'express';
 import handleListen from 'jscommons/dist/expressPresenter/utils/handleListen';
+import { getAuthConfig } from './apps/activities/_functions/deleteActivityProfile/utils/getAuthConfig/getAuthConfig';
+import { getFileStorageConfig } from './apps/activities/_functions/deleteActivityProfile/utils/getFileStorageConfig/getFileStorageConfig';
+import { getRecordStorageConfig } from './apps/activities/_functions/deleteActivityProfile/utils/getRecordStorageConfig/getRecordStorageConfig';
+import { getTrackingConfig } from './apps/activities/_functions/deleteActivityProfile/utils/getTrackingConfig/getTrackingConfig';
 import app from './apps/app';
 import config from './config';
 import logger from './logger';
@@ -37,6 +41,10 @@ expressApp.use(app({
     statements: config.statementsService,
   },
   tracker,
+  authConfig: getAuthConfig(),
+  fileStorageConfig: getFileStorageConfig(),
+  recordStorageConfig: getRecordStorageConfig(),
+  trackingConfig: getTrackingConfig(),
 }));
 
 expressApp.listen(config.express.port, () => {
