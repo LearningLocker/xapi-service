@@ -7,7 +7,7 @@ interface Result { readonly statement: { readonly id: string }; }
 
 export default (config: FacadeConfig): Signature => {
   return async ({ client, ids }) => {
-    // istanbul ignore next - this is checked higher in the code.
+    /* istanbul ignore next - this is checked higher in the code. */
     if (ids.length === 0) {
       return [];
     }

@@ -7,7 +7,7 @@ import {
 } from '../../../../utils/testValues';
 
 export default async (
-  optsOverrides: Partial<GetFullAgentOptions> = {},
+  optsOverrides: Partial<GetFullAgentOptions>,
 ): Promise<GetFullAgentResult> => {
   return service.getFullAgent({
     agent: TEST_MBOX_AGENT,

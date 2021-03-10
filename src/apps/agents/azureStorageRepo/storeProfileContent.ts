@@ -19,30 +19,30 @@ const MAX_BUFFERS = 20;
 
 export default (config: Config) => {
   return async (opts: StoreProfileContentOptions): Promise<void> => {
-    return new Promise<void>(async (resolve, reject) => {
-      const profileDir = getStorageDir({
-        subfolder: config.subFolder,
-        lrs_id: opts.lrs_id,
-      });
-      const filePath = `${profileDir}/${opts.key}`;
-
-      const blobUrl = BlobURL.fromContainerURL(config.containerUrl, filePath);
-      const blockBlobUrl = BlockBlobURL.fromBlobURL(blobUrl);
-
-      opts.content.on('error', reject);
-
-      try {
-        await uploadStreamToBlockBlob(
-          Aborter.none,
-          opts.content as Readable,
-          blockBlobUrl,
-          BUFFER_SIZE,
-          MAX_BUFFERS,
-        );
-      } catch (err) {
-        reject(err);
-      }
-      resolve();
+    const profileDir = getStorageDir({
+      subfolder: config.subFolder,
+      lrs_id: opts.lrs_id,
     });
+    const filePath = `${profileDir}/${opts.key}`;
+
+    const blobUrl = BlobURL.fromContainerURL(config.containerUrl, filePath);
+    const blockBlobUrl = BlockBlobURL.fromBlobURL(blobUrl);
+
+    const contentStreamPromise = new Promise<void>((resolve, reject) => {
+      opts.content.on('error', reject);
+      opts.content.on('end', resolve);
+      opts.content.on('close', resolve);
+      opts.content.on('finish', resolve);
+    });
+
+    await uploadStreamToBlockBlob(
+      Aborter.none,
+      opts.content as Readable,
+      blockBlobUrl,
+      BUFFER_SIZE,
+      MAX_BUFFERS,
+    );
+
+    await contentStreamPromise;
   };
 };

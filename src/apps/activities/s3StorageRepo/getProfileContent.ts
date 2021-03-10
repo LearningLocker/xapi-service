@@ -7,7 +7,7 @@ export default (config: Config) => {
   return async (opts: GetProfileContentOptions): Promise<GetProfileContentResult> => {
     const profileDir = getStorageDir({ subfolder: config.subFolder, lrs_id: opts.lrs_id });
     const filePath = `${profileDir}/${opts.key}`;
-    await config.client.getObject({
+    await config.client.headObject({
       Bucket: config.bucketName,
       Key: filePath,
     }).promise();

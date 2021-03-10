@@ -9,7 +9,6 @@ import { defaultTo } from 'lodash';
 
 config();
 
-const DEFAULT_REDIS_PORT = 6379;
 const DEFAULT_EXPRESS_PORT = 8081;
 const DEFAULT_TIMEOUT_MS = 55000; // 55 seconds.
 
@@ -20,7 +19,6 @@ const expressPort = getNumberOption(
   DEFAULT_EXPRESS_PORT,
 );
 
-const demoAuth = `http://localhost:${expressPort}/auth`;
 const accessLogsDir = `${storageDir}/accessLogs`;
 const newRelicLogsDir = `${storageDir}/newrelic-agent.log`;
 const newRelicLicenseKey = getStringOption(process.env.NEW_RELIC_LICENSE_KEY, '');
@@ -36,9 +34,6 @@ export default {
     morganDirectory: getStringOption(process.env.EXPRESS_MORGAN_DIRECTORY, accessLogsDir),
     port: expressPort,
     xAPIPrefix: getStringOption(process.env.XAPI_PREFIX, '/data'),
-  },
-  fetchAuthRepo: {
-    llClientInfoEndpoint: getStringOption(process.env.LL_CLIENT_INFO_ENDPOINT, demoAuth),
   },
   azureStorageRepo: {
     account: getStringOption(process.env.FS_AZURE_ACCOUNT),
@@ -80,18 +75,6 @@ export default {
       sslEnabled: true,
     } as S3.ClientConfiguration,
     bucketName: getStringOption(process.env.FS_S3_BUCKET, 'xapi-service'),
-  },
-  sentinel: {
-    db: getNumberOption(process.env.SENTINEL_DB, 0),
-    name: getStringOption(process.env.SENTINEL_NAME, 'mymaster'),
-    password: getStringOption(process.env.SENTINEL_PASSWORD),
-    prefix: getStringOption(process.env.SENTINEL_PREFIX, 'LEARNINGLOCKER'),
-    sentinels: (
-      getStringOption(process.env.SENTINEL_CONNECTIONS, '127.0.0.1:6379').split(' ').map((conn) => {
-        const [host, port] = conn.split(':');
-        return { host, port: getNumberOption(port, DEFAULT_REDIS_PORT) };
-      })
-    ),
   },
   statementsService: {
     awaitUpdates: getBooleanOption(defaultTo<any>(

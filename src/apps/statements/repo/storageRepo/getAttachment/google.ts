@@ -9,9 +9,9 @@ export default (config: FacadeConfig): Signature => {
     const filePath = getAttachmentPath({ dir, hash, contentType });
 
     const file = config.storage.bucket(config.bucketName).file(filePath);
-    const stream = file.createReadStream();
     const [metadata] = await file.getMetadata();
-    const contentLength = (metadata as any).size;
+    const contentLength = metadata.size;
+    const stream = file.createReadStream();
 
     return { stream, contentLength };
   };

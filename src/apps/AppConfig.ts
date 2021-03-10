@@ -45,10 +45,6 @@ export default interface AppConfig {
       readonly prefix: string;
       readonly client: () => Promise<Redis>;
     };
-    readonly sentinel: {
-      readonly prefix: string;
-      readonly client: () => Promise<Redis>;
-    };
   };
   readonly service: {
     readonly statements: {

@@ -1,4 +1,5 @@
 import { StatusCodes } from 'http-status-codes';
+import streamToString from 'stream-to-string';
 import createTextProfile from '../../../utils/createTextProfile';
 import getTestProfile from '../../../utils/getTestProfile';
 import setup from '../utils/setup';
@@ -10,6 +11,10 @@ describe('expressPresenter.deleteProfile with etags', () => {
   it('should allow deletion when using a correct etag', async () => {
     await createTextProfile();
     const getProfileResult = await getTestProfile();
+    // The getTestProfile starts a stream.
+    // Without consuming the stream we delete the content mid-stream.
+    // This causes flaky errors in our tests.
+    await streamToString(getProfileResult.content);
     await deleteProfile()
       .set('If-Match', `"${getProfileResult.etag}"`)
       .expect(StatusCodes.NO_CONTENT);

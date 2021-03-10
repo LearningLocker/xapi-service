@@ -63,11 +63,11 @@ export default (config: FacadeConfig): Signature => {
 
       return decodedModels;
     } catch (err) {
-      // istanbul ignore next - Couldn't test without an unacceptable test duration.
+      /* istanbul ignore next - Couldn't test without an unacceptable test duration. */
       if (err?.code === timeoutErrorCode) {
         throw new Timeout(config.maxTimeMs);
       }
-      // istanbul ignore next - Unexpected error.
+      /* istanbul ignore next - Unexpected error. */
       throw err;
     }
   };
