@@ -3,4 +3,4 @@ export interface MongoOrgDoc {
   readonly _id: ObjectID;
   readonly expiration: Date | null;
 }
-export const mongoOrgCollectionName = 'organisation';
+export const mongoOrgCollectionName = 'organisations';
