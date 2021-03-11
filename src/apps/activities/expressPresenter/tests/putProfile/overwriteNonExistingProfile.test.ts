@@ -1,9 +1,6 @@
 import { StatusCodes } from 'http-status-codes';
 import assertProfile from '../../../utils/assertProfile';
-import {
-  TEST_CONTENT,
-  TEST_INVALID_ACTIVITY_ID,
-} from '../../../utils/testValues';
+import { TEST_CONTENT, TEST_INVALID_ACTIVITY_ID } from '../../../utils/testValues';
 import setup from '../utils/setup';
 import overwriteProfile from './utils/overwriteProfile';
 

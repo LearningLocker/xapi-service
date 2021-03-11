@@ -6,14 +6,12 @@ import { likertStatement } from './fixtures/likert.fixture';
 describe('Retrieve likert metadata from statement', () => {
   it('should return empty metadata from empty result', () => {
     const expectedEmptyMetadata = {};
-    const actualEmptyMetadataFromEmptyResult = getLikertMetadata(
-      {
-        ...likertStatement,
-        ...{
-          result: {},
-        },
+    const actualEmptyMetadataFromEmptyResult = getLikertMetadata({
+      ...likertStatement,
+      ...{
+        result: {},
       },
-    );
+    });
 
     assert.deepEqual(actualEmptyMetadataFromEmptyResult, expectedEmptyMetadata);
   });

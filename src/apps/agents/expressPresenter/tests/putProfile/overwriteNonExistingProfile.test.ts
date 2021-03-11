@@ -38,7 +38,8 @@ describe('expressPresenter.putProfile with non-existing model', () => {
   });
 
   it('should throw warnings when using an invalid json content', async () => {
-    await overwriteProfile({}, TEST_INVALID_JSON_CONTENT, JSON_CONTENT_TYPE)
-      .expect(StatusCodes.BAD_REQUEST);
+    await overwriteProfile({}, TEST_INVALID_JSON_CONTENT, JSON_CONTENT_TYPE).expect(
+      StatusCodes.BAD_REQUEST,
+    );
   });
 });

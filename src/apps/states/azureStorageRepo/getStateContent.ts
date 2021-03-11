@@ -4,12 +4,12 @@ import GetProfileContentResult from '../repoFactory/results/GetStateContentResul
 import getStorageDir from '../utils/getStorageDir';
 import Config from './Config';
 
- export default (config: Config) => {
+export default (config: Config) => {
   return async (opts: GetProfileContentOptions): Promise<GetProfileContentResult> => {
     const profileDir = getStorageDir({ subfolder: config.subFolder, lrs_id: opts.lrs_id });
     const filePath = `${profileDir}/${opts.key}`;
 
-     const blobUrl = BlobURL.fromContainerURL(config.containerUrl, filePath);
+    const blobUrl = BlobURL.fromContainerURL(config.containerUrl, filePath);
     const content = (await blobUrl.download(Aborter.none, 0)).readableStreamBody;
 
     /* istanbul ignore if - Difficult to test */
@@ -17,6 +17,6 @@ import Config from './Config';
       throw new Error('Blob not found');
     }
 
-     return { content };
+    return { content };
   };
 };

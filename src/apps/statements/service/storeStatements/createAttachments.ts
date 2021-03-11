@@ -7,8 +7,10 @@ export default async (
   attachments: AttachmentModel[],
   lrsId: string,
 ): Promise<void> => {
-  /* istanbul ignore next */
-  if (!config.enableAttachmentCreation) { return; }
+  /* istanbul ignore if - Deprecated flag */
+  if (!config.enableAttachmentCreation) {
+    return;
+  }
 
   const uniqueAttachments = removeDuplicates(attachments, (attachment) => {
     return attachment.hash;

@@ -1,10 +1,6 @@
 import { Test } from 'supertest';
 import { route, xapiHeaderVersion } from '../../../../utils/constants';
-import {
-  TEST_ACTIVITY_ID,
-  TEST_MBOX_AGENT,
-  TEST_REGISTRATION,
-} from '../../../../utils/testValues';
+import { TEST_ACTIVITY_ID, TEST_MBOX_AGENT, TEST_REGISTRATION } from '../../../../utils/testValues';
 import supertest from '../../utils/supertest';
 
 const options = {

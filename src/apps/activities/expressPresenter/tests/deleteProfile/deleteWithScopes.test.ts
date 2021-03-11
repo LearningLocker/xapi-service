@@ -14,8 +14,8 @@ describe('expressPresenter.deleteProfile with scopes', () => {
 
   it('should throw forbidden error when using expired client', async () => {
     await deleteProfile()
-    .set('Authorization', TEST_EXPIRED_ORG_TOKEN)
-    .expect(StatusCodes.FORBIDDEN);
+      .set('Authorization', TEST_EXPIRED_ORG_TOKEN)
+      .expect(StatusCodes.FORBIDDEN);
   });
 
   it('should throw forbidden error when using untrusted client', async () => {

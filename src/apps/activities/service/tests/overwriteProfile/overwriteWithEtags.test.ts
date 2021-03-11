@@ -32,7 +32,7 @@ describe('overwriteProfile with etags', () => {
 
   it('should throw conflict error when not using ifMatch or ifNoneMatch', async () => {
     await createTextProfile();
-    const promise = overwriteProfile({ ifNoneMatch: undefined});
+    const promise = overwriteProfile({ ifNoneMatch: undefined });
     await assertError(Conflict, promise);
   });
 

@@ -9,9 +9,12 @@ describe('get ids statement in verb', () => {
 });
 
 describe('get ids statement in sub statement verb', () => {
-  verbFormatTest((verb: any): any => {
-    return createSubStatement({ verb });
-  }, (verb: any): any => {
-    return createIdsSubStatement({ verb });
-  });
+  verbFormatTest(
+    (verb: any): any => {
+      return createSubStatement({ verb });
+    },
+    (verb: any): any => {
+      return createIdsSubStatement({ verb });
+    },
+  );
 });

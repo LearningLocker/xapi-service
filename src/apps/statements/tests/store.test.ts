@@ -31,11 +31,13 @@ describe('get statement', () => {
   });
 
   it('should ensure that we do not make unnecessary database queries for refs', async () => {
-    await storeStatements([{
-      actor: { mbox: 'mailto:test@example.org' },
-      verb: { id: 'https://example.org/verb' },
-      object: { id: 'https://example.org/activity' },
-    }]);
+    await storeStatements([
+      {
+        actor: { mbox: 'mailto:test@example.org' },
+        verb: { id: 'https://example.org/verb' },
+        object: { id: 'https://example.org/activity' },
+      },
+    ]);
   });
 
   it('should throw an error when the store does not match', async () => {

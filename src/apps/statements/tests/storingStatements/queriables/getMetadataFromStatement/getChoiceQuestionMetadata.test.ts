@@ -7,14 +7,12 @@ describe('Retrieve choices metadata from statement', () => {
   it('should return choices metadata from statement', () => {
     const expectedEmptyMetadata = {};
 
-    const actualEmptyMetadataFromEmptyResult = getChoiceQuestionMetadata(
-      {
-        ...singleChoice,
-        ...{
-          result: {},
-        },
+    const actualEmptyMetadataFromEmptyResult = getChoiceQuestionMetadata({
+      ...singleChoice,
+      ...{
+        result: {},
       },
-    );
+    });
 
     assert.deepEqual(actualEmptyMetadataFromEmptyResult, expectedEmptyMetadata);
   });
@@ -34,10 +32,6 @@ describe('Retrieve choices metadata from statement', () => {
       'https://learninglocker&46;net/choice-response': ['golf', 'tetris'],
     };
 
-    assert
-      .deepEqual(
-        actualMultipleChoicesMetadata,
-        expectedMultipleChoicesMetadata,
-      );
+    assert.deepEqual(actualMultipleChoicesMetadata, expectedMultipleChoicesMetadata);
   });
 });

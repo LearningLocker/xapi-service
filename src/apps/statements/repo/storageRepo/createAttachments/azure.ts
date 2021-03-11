@@ -1,10 +1,5 @@
 import { Readable } from 'stream';
-import {
-  Aborter,
-  BlobURL,
-  BlockBlobURL,
-  uploadStreamToBlockBlob,
-} from '@azure/storage-blob';
+import { Aborter, BlobURL, BlockBlobURL, uploadStreamToBlockBlob } from '@azure/storage-blob';
 import getAttachmentDir from '../../../utils/getAttachmentDir';
 import getAttachmentPath from '../../../utils/getAttachmentPath';
 import FacadeConfig from '../utils/azureStorage/FacadeConfig';

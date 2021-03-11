@@ -1,4 +1,4 @@
-export default (etagHeader: string|undefined) => {
+export default (etagHeader: string | undefined) => {
   if (etagHeader === undefined) {
     return undefined;
   }

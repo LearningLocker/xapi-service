@@ -24,10 +24,12 @@ export default async ({ config, body, attachments, client, queryParams, res }: O
   if (body.id !== undefined && body.id !== statementId) {
     throw new UnequalStatementId(statementId);
   }
-  const models = [{
-    ...body,
-    id: statementId, // Ensures the id is set to the given id.
-  }];
+  const models = [
+    {
+      ...body,
+      id: statementId, // Ensures the id is set to the given id.
+    },
+  ];
   await config.service.storeStatements({ models, attachments, client });
   res.setHeader('X-Experience-API-Version', xapiHeaderVersion);
   res.status(StatusCodes.NO_CONTENT);

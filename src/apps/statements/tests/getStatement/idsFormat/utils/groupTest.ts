@@ -14,37 +14,47 @@ export default (
   });
 
   describe('identified group members', () => {
-    agentFormatTest((ifi: any): any => {
-      return {
-        ...ifi,
-        objectType: 'Group',
-      };
-    }, (ifi: any): any => {
-      return {
-        ...ifi,
-        objectType: 'Group',
-        member: [{
-          objectType: 'Agent',
-          mbox: 'mailto:test@example.com',
-        }],
-      };
-    })(createActorStatement, createIdsActorStatement);
+    agentFormatTest(
+      (ifi: any): any => {
+        return {
+          ...ifi,
+          objectType: 'Group',
+        };
+      },
+      (ifi: any): any => {
+        return {
+          ...ifi,
+          objectType: 'Group',
+          member: [
+            {
+              objectType: 'Agent',
+              mbox: 'mailto:test@example.com',
+            },
+          ],
+        };
+      },
+    )(createActorStatement, createIdsActorStatement);
   });
 
   describe('anonymous group members', () => {
-    agentFormatTest((ifi: any): any => {
-      return {
-        objectType: 'Group',
-        member: [ifi],
-      };
-    }, (ifi: any): any => {
-      return {
-        objectType: 'Group',
-        member: [{
-          objectType: 'Agent',
-          ...ifi,
-        }],
-      };
-    })(createActorStatement, createIdsActorStatement);
+    agentFormatTest(
+      (ifi: any): any => {
+        return {
+          objectType: 'Group',
+          member: [ifi],
+        };
+      },
+      (ifi: any): any => {
+        return {
+          objectType: 'Group',
+          member: [
+            {
+              objectType: 'Agent',
+              ...ifi,
+            },
+          ],
+        };
+      },
+    )(createActorStatement, createIdsActorStatement);
   });
 };

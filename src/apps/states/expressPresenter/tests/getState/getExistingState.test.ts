@@ -61,25 +61,30 @@ describe('expressPresenter.getState with existing state', () => {
 
   it('should get when not using mbox', async () => {
     await createTextState({ agent: TEST_MBOX_AGENT });
-    await getState({ agent: JSON.stringify(TEST_MBOX_AGENT) })
-      .expect(StatusCodes.OK, TEST_CONTENT);
+    await getState({ agent: JSON.stringify(TEST_MBOX_AGENT) }).expect(StatusCodes.OK, TEST_CONTENT);
   });
 
   it('should get when not using mbox_sha1sum', async () => {
     await createTextState({ agent: TEST_MBOXSHA1_AGENT });
-    await getState({ agent: JSON.stringify(TEST_MBOXSHA1_AGENT) })
-      .expect(StatusCodes.OK, TEST_CONTENT);
+    await getState({ agent: JSON.stringify(TEST_MBOXSHA1_AGENT) }).expect(
+      StatusCodes.OK,
+      TEST_CONTENT,
+    );
   });
 
   it('should get when not using openid', async () => {
     await createTextState({ agent: TEST_OPENID_AGENT });
-    await getState({ agent: JSON.stringify(TEST_OPENID_AGENT) })
-      .expect(StatusCodes.OK, TEST_CONTENT);
+    await getState({ agent: JSON.stringify(TEST_OPENID_AGENT) }).expect(
+      StatusCodes.OK,
+      TEST_CONTENT,
+    );
   });
 
   it('should get when not using account', async () => {
     await createTextState({ agent: TEST_ACCOUNT_AGENT });
-    await getState({ agent: JSON.stringify(TEST_ACCOUNT_AGENT) })
-      .expect(StatusCodes.OK, TEST_CONTENT);
+    await getState({ agent: JSON.stringify(TEST_ACCOUNT_AGENT) }).expect(
+      StatusCodes.OK,
+      TEST_CONTENT,
+    );
   });
 });

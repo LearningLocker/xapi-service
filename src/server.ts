@@ -12,32 +12,34 @@ import connectToRedis from './utils/connectToRedis';
 
 const expressApp = express();
 
-expressApp.use(app({
-  logger,
-  presenter: {
-    express: config.express,
-  },
-  repo: {
-    azure: config.azureStorageRepo,
-    google: config.googleStorageRepo,
-    local: config.localStorageRepo,
-    mongo: {
-      db: connectToMongoDb(),
-      maxTimeMs: config.defaultTimeout,
+expressApp.use(
+  app({
+    logger,
+    presenter: {
+      express: config.express,
     },
-    redis: {
-      client: connectToRedis(),
-      prefix: config.redis.prefix,
+    repo: {
+      azure: config.azureStorageRepo,
+      google: config.googleStorageRepo,
+      local: config.localStorageRepo,
+      mongo: {
+        db: connectToMongoDb(),
+        maxTimeMs: config.defaultTimeout,
+      },
+      redis: {
+        client: connectToRedis(),
+        prefix: config.redis.prefix,
+      },
+      repoFactory: config.repoFactory,
+      s3: config.s3StorageRepo,
+      storageSubFolders: config.storageSubFolders,
     },
-    repoFactory: config.repoFactory,
-    s3: config.s3StorageRepo,
-    storageSubFolders: config.storageSubFolders,
-  },
-  service: {
-    statements: config.statementsService,
-  },
-  tracker,
-}));
+    service: {
+      statements: config.statementsService,
+    },
+    tracker,
+  }),
+);
 
 expressApp.listen(config.express.port, () => {
   const port80 = 80;

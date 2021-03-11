@@ -16,40 +16,45 @@ interface ConflictRes {
 }
 
 const modelsConflicts = (models: UnstoredStatementModel[]): ConflictRes => {
-  return models.reduce<ConflictRes>(({ modelsMap, generatedIdModels }, model) => {
-    if (model.hasGeneratedId) {
-      // Relies on the DB indexes to ensure that there are no duplicate IDs.
-      return {
-        modelsMap,
-        generatedIdModels: [
-          ...generatedIdModels,
-          model,
-        ],
-      };
-    }
+  return models.reduce<ConflictRes>(
+    ({ modelsMap, generatedIdModels }, model) => {
+      if (model.hasGeneratedId) {
+        // Relies on the DB indexes to ensure that there are no duplicate IDs.
+        return {
+          modelsMap,
+          generatedIdModels: [...generatedIdModels, model],
+        };
+      }
 
-    // Ensures that there are no duplicate ids within the batch (spec requirement).
-    const statementId = model.statement.id;
-    if (has(modelsMap, statementId)) {
-      throw new DuplicateId(statementId);
-    }
-    return {
-      modelsMap: {
-        ...modelsMap,
-        [statementId]: model,
-      },
-      generatedIdModels,
-    };
-  }, { modelsMap: {}, generatedIdModels: [] });
+      // Ensures that there are no duplicate ids within the batch (spec requirement).
+      const statementId = model.statement.id;
+      if (has(modelsMap, statementId)) {
+        throw new DuplicateId(statementId);
+      }
+      return {
+        modelsMap: {
+          ...modelsMap,
+          [statementId]: model,
+        },
+        generatedIdModels,
+      };
+    },
+    { modelsMap: {}, generatedIdModels: [] },
+  );
 };
 
 const repoConflicts = async (
-  config: Config, modelsMap: ModelsMap, client: ClientModel,
+  config: Config,
+  modelsMap: ModelsMap,
+  client: ClientModel,
 ): Promise<UnstoredStatementModel[]> => {
-  const hashesMap: Dictionary<StatementHash[]> = groupBy(await config.repo.getHashes({
-    ids: keys(modelsMap),
-    client,
-  }), 'statementId');
+  const hashesMap: Dictionary<StatementHash[]> = groupBy(
+    await config.repo.getHashes({
+      ids: keys(modelsMap),
+      client,
+    }),
+    'statementId',
+  );
   return values(modelsMap).filter((model: UnstoredStatementModel) => {
     const statementId = model.statement.id;
 
@@ -66,10 +71,14 @@ const repoConflicts = async (
 };
 
 export default async (
-  config: Config, models: UnstoredStatementModel[], client: ClientModel,
+  config: Config,
+  models: UnstoredStatementModel[],
+  client: ClientModel,
 ): Promise<UnstoredStatementModel[]> => {
-  /* istanbul ignore next */
-  if (!config.enableConflictChecks) { return models; }
+  /* istanbul ignore if - Deprecated flag */
+  if (!config.enableConflictChecks) {
+    return models;
+  }
 
   const conflictRes = modelsConflicts(models);
   const ungeneratedIdModels = await repoConflicts(config, conflictRes.modelsMap, client);

@@ -29,11 +29,14 @@ export default (assertFilteredStatements: FilteredStatementsAsserter) => {
       const statement2 = createActorStatement(TEST_MISSING_ID, actor2);
       await storeStatements([statement1], statement1.authority);
       await storeStatements([statement2], statement2.authority);
-      await assertFilteredStatements(service)({
-        agent: actor1,
-        related_agents: relatedAgents,
-        client: TEST_CLIENT,
-      }, [TEST_TARGET_ID]);
+      await assertFilteredStatements(service)(
+        {
+          agent: actor1,
+          related_agents: relatedAgents,
+          client: TEST_CLIENT,
+        },
+        [TEST_TARGET_ID],
+      );
     };
 
     it('should return statements when they match the account name', async () => {

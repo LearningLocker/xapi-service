@@ -1,11 +1,7 @@
 import Forbidden from 'jscommons/dist/errors/Forbidden';
 import assertError from 'jscommons/dist/tests/utils/assertError';
 import setup from '../utils/setup';
-import {
-  TEST_ACTIVITY_ID,
-  TEST_ALLOWED_CLIENT,
-  TEST_FORBIDDEN_CLIENT,
-} from './utils/testValues';
+import { TEST_ACTIVITY_ID, TEST_ALLOWED_CLIENT, TEST_FORBIDDEN_CLIENT } from './utils/testValues';
 
 describe('getFullActivity with scopes', () => {
   const service = setup();

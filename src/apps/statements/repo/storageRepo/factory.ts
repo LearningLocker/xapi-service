@@ -13,7 +13,8 @@ export default (config: FactoryConfig): Facade => {
       return googleFactory(config.google);
     case 'azure':
       return azureFactory(config.azure);
-    case 'local': default:
+    case 'local':
+    default:
       return localFactory(config.local);
   }
 };

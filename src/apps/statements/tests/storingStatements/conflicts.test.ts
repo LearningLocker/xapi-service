@@ -18,34 +18,26 @@ describe('store statement conflicts', () => {
   const service = setup();
   const storeStatements = storeStatementsInService(service);
 
-  it('should store statements when they use an existing id without conflicts in 2 batches',
-    async () => {
-      await storeStatements([TEST_STATEMENT]);
-      const ids: string[] = await storeStatements([TEST_STATEMENT]);
-      assert.equal(isArray(ids), true);
-      assert.deepEqual(ids, [TEST_ID]);
-    },
-  );
+  it('should store statements when they use an existing id without conflicts in 2 batches', async () => {
+    await storeStatements([TEST_STATEMENT]);
+    const ids: string[] = await storeStatements([TEST_STATEMENT]);
+    assert.equal(isArray(ids), true);
+    assert.deepEqual(ids, [TEST_ID]);
+  });
 
-  it('should not store statements when they use an existing id with conflicts in 2 batches',
-    async () => {
-      await storeStatements([TEST_STATEMENT]);
-      const promise = storeStatements([TEST_CONFLICT]);
-      await assertError(Conflict, promise);
-    },
-  );
+  it('should not store statements when they use an existing id with conflicts in 2 batches', async () => {
+    await storeStatements([TEST_STATEMENT]);
+    const promise = storeStatements([TEST_CONFLICT]);
+    await assertError(Conflict, promise);
+  });
 
-  it('should not store statements when they use an existing id without conflicts in 1 batch',
-    async () => {
-      const promise = storeStatements([TEST_STATEMENT, TEST_STATEMENT]);
-      await assertError(DuplicateId, promise);
-    },
-  );
+  it('should not store statements when they use an existing id without conflicts in 1 batch', async () => {
+    const promise = storeStatements([TEST_STATEMENT, TEST_STATEMENT]);
+    await assertError(DuplicateId, promise);
+  });
 
-  it('should not store statements when they use an existing id with conflicts in 1 batch',
-    async () => {
-      const promise = storeStatements([TEST_STATEMENT, TEST_CONFLICT]);
-      await assertError(DuplicateId, promise);
-    },
-  );
+  it('should not store statements when they use an existing id with conflicts in 1 batch', async () => {
+    const promise = storeStatements([TEST_STATEMENT, TEST_CONFLICT]);
+    await assertError(DuplicateId, promise);
+  });
 });

@@ -14,9 +14,11 @@ export default (config: Config) => {
       return { Key: `${dir}/${key}` };
     });
 
-    await config.client.deleteObjects({
-      Bucket: config.bucketName,
-      Delete: { Objects: identifierList },
-    }).promise();
+    await config.client
+      .deleteObjects({
+        Bucket: config.bucketName,
+        Delete: { Objects: identifierList },
+      })
+      .promise();
   };
 };

@@ -44,9 +44,11 @@ const testClient = {
   await db.collection('organisations').insertOne(testOrg);
   await db.collection('lrs').insertOne(testStore);
   await db.collection('client').insertOne(testClient);
-})().then(() => {
-  console.info('Completed seeding for ADL conformance tests.');
-}).catch((err) => {
-  console.error(err);
-  process.exit(1);
-});
+})()
+  .then(() => {
+    console.info('Completed seeding for ADL conformance tests.');
+  })
+  .catch((err) => {
+    console.error(err);
+    process.exit(1);
+  });

@@ -1,7 +1,4 @@
-import {
-  Aborter,
-  BlobURL,
-} from '@azure/storage-blob';
+import { Aborter, BlobURL } from '@azure/storage-blob';
 import DeleteProfileContentOptions from '../repoFactory/options/DeleteProfileContentOptions';
 import getStorageDir from '../utils/getStorageDir';
 import Config from './Config';

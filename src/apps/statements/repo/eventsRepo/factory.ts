@@ -7,7 +7,8 @@ export default (config: FactoryConfig): Facade => {
   switch (config.facade) {
     case 'test':
       return fakeFactory();
-    default: case 'redis':
+    default:
+    case 'redis':
       return redisFactory(config.redis);
   }
 };

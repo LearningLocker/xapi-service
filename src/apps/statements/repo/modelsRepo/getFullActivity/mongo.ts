@@ -38,19 +38,9 @@ export default (config: FacadeConfig): Signature => {
       name: result.name,
       description: result.description,
       extensions: replaceDotsInExtensions(/&46;/g, '.')(result.extensions),
-      ...(
-        result.type === undefined
-          ? {}
-          : { type: result.type }),
-      ...(
-        result.moreInfo === undefined
-          ? {}
-          : { moreInfo: result.moreInfo }),
-      ...(
-        result.context === undefined
-          ? {}
-          : { context: result.context }
-      ),
+      ...(result.type === undefined ? {} : { type: result.type }),
+      ...(result.moreInfo === undefined ? {} : { moreInfo: result.moreInfo }),
+      ...(result.context === undefined ? {} : { context: result.context }),
     };
   };
 };

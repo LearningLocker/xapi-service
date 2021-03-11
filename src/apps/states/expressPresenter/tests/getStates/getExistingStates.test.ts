@@ -28,34 +28,36 @@ describe('expressPresenter.getStates with existing model', () => {
     await getStates({ registration: undefined }).expect(StatusCodes.OK, [TEST_STATE_ID]);
   });
 
-  it('should return no ids when getting existing model without a registration with one',
-    async () => {
-      await createTextState({ registration: undefined });
-      await getStates().expect(StatusCodes.OK, []);
-    },
-  );
+  it('should return no ids when getting existing model without a registration with one', async () => {
+    await createTextState({ registration: undefined });
+    await getStates().expect(StatusCodes.OK, []);
+  });
 
   it('should return state ids when using an mbox', async () => {
     await createTextState({ agent: TEST_MBOX_AGENT });
-    await getStates({ agent: JSON.stringify(TEST_MBOX_AGENT) })
-      .expect(StatusCodes.OK, [TEST_STATE_ID]);
+    await getStates({ agent: JSON.stringify(TEST_MBOX_AGENT) }).expect(StatusCodes.OK, [
+      TEST_STATE_ID,
+    ]);
   });
 
   it('should return state ids when using an mbox_sha1sum', async () => {
     await createTextState({ agent: TEST_MBOXSHA1_AGENT });
-    await getStates({ agent: JSON.stringify(TEST_MBOXSHA1_AGENT) })
-      .expect(StatusCodes.OK, [TEST_STATE_ID]);
+    await getStates({ agent: JSON.stringify(TEST_MBOXSHA1_AGENT) }).expect(StatusCodes.OK, [
+      TEST_STATE_ID,
+    ]);
   });
 
   it('should return state ids when using an openid', async () => {
     await createTextState({ agent: TEST_OPENID_AGENT });
-    await getStates({ agent: JSON.stringify(TEST_OPENID_AGENT) })
-      .expect(StatusCodes.OK, [TEST_STATE_ID]);
+    await getStates({ agent: JSON.stringify(TEST_OPENID_AGENT) }).expect(StatusCodes.OK, [
+      TEST_STATE_ID,
+    ]);
   });
 
   it('should return state ids when using an account', async () => {
     await createTextState({ agent: TEST_ACCOUNT_AGENT });
-    await getStates({ agent: JSON.stringify(TEST_ACCOUNT_AGENT) })
-      .expect(StatusCodes.OK, [TEST_STATE_ID]);
+    await getStates({ agent: JSON.stringify(TEST_ACCOUNT_AGENT) }).expect(StatusCodes.OK, [
+      TEST_STATE_ID,
+    ]);
   });
 });

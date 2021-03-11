@@ -18,20 +18,14 @@ describe('expressPresenter.deleteState with scopes', () => {
   });
 
   it('should throw forbidden error when using expired client', async () => {
-    await deleteState()
-      .set('Authorization', TEST_EXPIRED_ORG_TOKEN)
-      .expect(StatusCodes.FORBIDDEN);
+    await deleteState().set('Authorization', TEST_EXPIRED_ORG_TOKEN).expect(StatusCodes.FORBIDDEN);
   });
 
   it('should throw forbidden error when using untrusted client', async () => {
-    await deleteState()
-      .set('Authorization', TEST_UNTRUSTED_TOKEN)
-      .expect(StatusCodes.FORBIDDEN);
+    await deleteState().set('Authorization', TEST_UNTRUSTED_TOKEN).expect(StatusCodes.FORBIDDEN);
   });
 
   it('should not error when using valid scopes', async () => {
-    await deleteState()
-      .set('Authorization', TEST_VALID_SCOPE_TOKEN)
-      .expect(StatusCodes.NO_CONTENT);
+    await deleteState().set('Authorization', TEST_VALID_SCOPE_TOKEN).expect(StatusCodes.NO_CONTENT);
   });
 });

@@ -22,9 +22,9 @@ const translator: Translator = {
   missingAttachmentsError: (err) => `Received missing attachments (${err.hashes.join(', ')})`,
   extraAttachmentsError: (err) => `Received extra attachments (${err.hashes.join(', ')})`,
   missingLoadedIdError: (err) => `Eager loaded '${err.targetId}' is now missing`,
-  missingStatementIdError: () => 'Missing required \'statementId\' query param',
+  missingStatementIdError: () => "Missing required 'statementId' query param",
   noStatementsError: () => 'No statements in request content',
-  queryIdsError: () => 'Cannot use \'statementId\' and \'voidedStatementId\'',
+  queryIdsError: () => "Cannot use 'statementId' and 'voidedStatementId'",
   unknownParamsError: (err) => {
     return `Cannot use unknown params '${err.unknownParams.join(', ')}'`;
   },

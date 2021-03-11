@@ -18,26 +18,32 @@ export default (createObjectStatement: (object: any) => any) => {
     setup();
 
     it('should not change the format when using an Agent', async () => {
-      const statement = createStatement(createObjectStatement({
-        objectType: 'Agent',
-        mbox: 'mailto:test@example.com',
-      }));
+      const statement = createStatement(
+        createObjectStatement({
+          objectType: 'Agent',
+          mbox: 'mailto:test@example.com',
+        }),
+      );
       await assertCanonicalStatement(statement, statement, [TEST_LANG]);
     });
 
     it('should not change the format when using an Group', async () => {
-      const statement = createStatement(createObjectStatement({
-        objectType: 'Group',
-        mbox: 'mailto:test@example.com',
-      }));
+      const statement = createStatement(
+        createObjectStatement({
+          objectType: 'Group',
+          mbox: 'mailto:test@example.com',
+        }),
+      );
       await assertCanonicalStatement(statement, statement, [TEST_LANG]);
     });
 
     it('should not change the format when using a StatementRef', async () => {
-      const statement = createStatement(createObjectStatement({
-        objectType: 'StatementRef',
-        id: TEST_REF_ID,
-      }));
+      const statement = createStatement(
+        createObjectStatement({
+          objectType: 'StatementRef',
+          id: TEST_REF_ID,
+        }),
+      );
       await assertCanonicalStatement(statement, statement, [TEST_LANG]);
     });
   });

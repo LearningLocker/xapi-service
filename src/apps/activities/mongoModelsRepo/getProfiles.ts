@@ -8,11 +8,7 @@ export default (config: Config) => {
   return async (opts: GetProfilesOptions): Promise<GetProfilesResult> => {
     const collection = (await config.db()).collection(COLLECTION_NAME);
 
-    const sinceFilter = (
-      opts.since !== undefined
-        ? { updatedAt: { $gt: opts.since } }
-        : {}
-    );
+    const sinceFilter = opts.since !== undefined ? { updatedAt: { $gt: opts.since } } : {};
     const filter = {
       activityId: opts.activityId,
       lrs: new ObjectID(opts.client.lrs_id),

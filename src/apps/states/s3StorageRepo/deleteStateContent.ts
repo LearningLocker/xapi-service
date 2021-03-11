@@ -6,9 +6,11 @@ export default (config: Config) => {
   return async (opts: DeleteStateContentOptions): Promise<void> => {
     const dir = getStorageDir({ subfolder: config.subFolder, lrs_id: opts.lrs_id });
     const filePath = `${dir}/${opts.key}`;
-    await config.client.deleteObject({
-      Bucket: config.bucketName,
-      Key: filePath,
-    }).promise();
+    await config.client
+      .deleteObject({
+        Bucket: config.bucketName,
+        Key: filePath,
+      })
+      .promise();
   };
 };

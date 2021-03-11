@@ -20,25 +20,29 @@ describe('expressPresenter.getProfiles with existing model', () => {
 
   it('should return profile ids when using an mbox', async () => {
     await createTextProfile({ agent: TEST_MBOX_AGENT });
-    await getProfiles({ agent: JSON.stringify(TEST_MBOX_AGENT) })
-      .expect(StatusCodes.OK, [TEST_PROFILE_ID]);
+    await getProfiles({ agent: JSON.stringify(TEST_MBOX_AGENT) }).expect(StatusCodes.OK, [
+      TEST_PROFILE_ID,
+    ]);
   });
 
   it('should return profile ids when using an mbox_sha1sum', async () => {
     await createTextProfile({ agent: TEST_MBOXSHA1_AGENT });
-    await getProfiles({ agent: JSON.stringify(TEST_MBOXSHA1_AGENT) })
-      .expect(StatusCodes.OK, [TEST_PROFILE_ID]);
+    await getProfiles({ agent: JSON.stringify(TEST_MBOXSHA1_AGENT) }).expect(StatusCodes.OK, [
+      TEST_PROFILE_ID,
+    ]);
   });
 
   it('should return profile ids when using an openid', async () => {
     await createTextProfile({ agent: TEST_OPENID_AGENT });
-    await getProfiles({ agent: JSON.stringify(TEST_OPENID_AGENT) })
-      .expect(StatusCodes.OK, [TEST_PROFILE_ID]);
+    await getProfiles({ agent: JSON.stringify(TEST_OPENID_AGENT) }).expect(StatusCodes.OK, [
+      TEST_PROFILE_ID,
+    ]);
   });
 
   it('should return profile ids when using an account', async () => {
     await createTextProfile({ agent: TEST_ACCOUNT_AGENT });
-    await getProfiles({ agent: JSON.stringify(TEST_ACCOUNT_AGENT) })
-      .expect(StatusCodes.OK, [TEST_PROFILE_ID]);
+    await getProfiles({ agent: JSON.stringify(TEST_ACCOUNT_AGENT) }).expect(StatusCodes.OK, [
+      TEST_PROFILE_ID,
+    ]);
   });
 });

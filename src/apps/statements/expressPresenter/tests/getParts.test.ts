@@ -84,47 +84,41 @@ describe('expressPresenter/utils/getParts', () => {
     assert.deepEqual(actualParts, expectedParts);
   });
 
-  it('should return one part when the start of the header boundary is across two chunks',
-    async () => {
-      const testHeaders = headersToString(TEST_HEADERS);
-      const stream = new ReadableStream();
-      stream.push(`${TEST_PART_BOUNDARY}\r\n${testHeaders}\r`);
-      stream.push(`\n\r\n${TEST_CONTENT}${TEST_PART_BOUNDARY}--`);
-      stream.push(null);
-      const actualParts = await getTestParts(stream, TEST_BOUNDARY);
-      const expectedParts = [TEST_PART];
-      assert.deepEqual(actualParts, expectedParts);
-    },
-  );
+  it('should return one part when the start of the header boundary is across two chunks', async () => {
+    const testHeaders = headersToString(TEST_HEADERS);
+    const stream = new ReadableStream();
+    stream.push(`${TEST_PART_BOUNDARY}\r\n${testHeaders}\r`);
+    stream.push(`\n\r\n${TEST_CONTENT}${TEST_PART_BOUNDARY}--`);
+    stream.push(null);
+    const actualParts = await getTestParts(stream, TEST_BOUNDARY);
+    const expectedParts = [TEST_PART];
+    assert.deepEqual(actualParts, expectedParts);
+  });
 
-  it('should return one part when the end of the header boundary is across two chunks',
-    async () => {
-      const testHeaders = headersToString(TEST_HEADERS);
-      const stream = new ReadableStream();
-      stream.push(`${TEST_PART_BOUNDARY}\r\n${testHeaders}\r\n\r`);
-      stream.push(`\n${TEST_CONTENT}${TEST_PART_BOUNDARY}--`);
-      stream.push(null);
-      const actualParts = await getTestParts(stream, TEST_BOUNDARY);
-      const expectedParts = [TEST_PART];
-      assert.deepEqual(actualParts, expectedParts);
-    },
-  );
+  it('should return one part when the end of the header boundary is across two chunks', async () => {
+    const testHeaders = headersToString(TEST_HEADERS);
+    const stream = new ReadableStream();
+    stream.push(`${TEST_PART_BOUNDARY}\r\n${testHeaders}\r\n\r`);
+    stream.push(`\n${TEST_CONTENT}${TEST_PART_BOUNDARY}--`);
+    stream.push(null);
+    const actualParts = await getTestParts(stream, TEST_BOUNDARY);
+    const expectedParts = [TEST_PART];
+    assert.deepEqual(actualParts, expectedParts);
+  });
 
-  it('should return two parts when the start of the part boundary is across two chunks',
-    async () => {
-      const testHeaders = `${crlf}${headersToString(TEST_HEADERS)}`;
-      const testContent = `${crlf}${crlf}${TEST_CONTENT}`;
-      const stream = new ReadableStream();
-      const startOfPartBoundary = TEST_PART_BOUNDARY.slice(0, 1);
-      const restOfPartBoundary = TEST_PART_BOUNDARY.slice(1);
-      stream.push(`${TEST_PART_BOUNDARY}${testHeaders}${testContent}${startOfPartBoundary}`);
-      stream.push(`${restOfPartBoundary}${testHeaders}${testContent}${TEST_PART_BOUNDARY}--`);
-      stream.push(null);
-      const actualParts = await getTestParts(stream, TEST_BOUNDARY);
-      const expectedParts = [TEST_PART, TEST_PART];
-      assert.deepEqual(actualParts, expectedParts);
-    },
-  );
+  it('should return two parts when the start of the part boundary is across two chunks', async () => {
+    const testHeaders = `${crlf}${headersToString(TEST_HEADERS)}`;
+    const testContent = `${crlf}${crlf}${TEST_CONTENT}`;
+    const stream = new ReadableStream();
+    const startOfPartBoundary = TEST_PART_BOUNDARY.slice(0, 1);
+    const restOfPartBoundary = TEST_PART_BOUNDARY.slice(1);
+    stream.push(`${TEST_PART_BOUNDARY}${testHeaders}${testContent}${startOfPartBoundary}`);
+    stream.push(`${restOfPartBoundary}${testHeaders}${testContent}${TEST_PART_BOUNDARY}--`);
+    stream.push(null);
+    const actualParts = await getTestParts(stream, TEST_BOUNDARY);
+    const expectedParts = [TEST_PART, TEST_PART];
+    assert.deepEqual(actualParts, expectedParts);
+  });
 
   it('should return two parts when the end of the part boundary is across two chunks', async () => {
     const testHeaders = `${crlf}${headersToString(TEST_HEADERS)}`;

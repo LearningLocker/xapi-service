@@ -24,9 +24,7 @@ describe('expressPresenter.putState with scopes', () => {
   });
 
   it('should throw forbidden error when using untrusted client', async () => {
-    await overwriteState()
-      .set('Authorization', TEST_UNTRUSTED_TOKEN)
-      .expect(StatusCodes.FORBIDDEN);
+    await overwriteState().set('Authorization', TEST_UNTRUSTED_TOKEN).expect(StatusCodes.FORBIDDEN);
   });
 
   it('should not throw an error when using valid scopes', async () => {

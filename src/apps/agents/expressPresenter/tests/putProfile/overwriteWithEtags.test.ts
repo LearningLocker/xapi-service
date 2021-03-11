@@ -26,16 +26,12 @@ describe('expressPresenter.putProfile with etags', () => {
 
   it('should throw precondition error when using an incorrect ifNoneMatch', async () => {
     await createTextProfile();
-    await overwriteProfile()
-      .set('If-None-Match', '*')
-      .expect(StatusCodes.PRECONDITION_FAILED);
+    await overwriteProfile().set('If-None-Match', '*').expect(StatusCodes.PRECONDITION_FAILED);
   });
 
   it('should throw conflict error when not using ifMatch or ifNoneMatch', async () => {
     await createTextProfile();
-    await overwriteProfile()
-      .unset('If-None-Match')
-      .expect(StatusCodes.CONFLICT);
+    await overwriteProfile().unset('If-None-Match').expect(StatusCodes.CONFLICT);
   });
 
   it('should throw max etag error when using ifMatch and ifNoneMatch', async () => {
@@ -47,8 +43,6 @@ describe('expressPresenter.putProfile with etags', () => {
   });
 
   it('should throw missing etags error when not using ifMatch and ifNoneMatch', async () => {
-    await overwriteProfile()
-      .unset('If-None-Match')
-      .expect(StatusCodes.BAD_REQUEST);
+    await overwriteProfile().unset('If-None-Match').expect(StatusCodes.BAD_REQUEST);
   });
 });

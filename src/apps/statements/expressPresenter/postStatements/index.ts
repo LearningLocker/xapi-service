@@ -30,28 +30,30 @@ const parseJsonBody = async (config: Config, req: Request) => {
 };
 
 export default (config: Config) => {
-  return catchErrors(config, async (req: Request, res: Response): Promise<void> => {
+  return catchErrors(
+    config,
+    async (req: Request, res: Response): Promise<void> => {
+      const method = req.query.method as string | undefined;
+      const contentType = defaultTo(req.header('Content-Type'), '');
 
-    const method = req.query.method as string | undefined;
-    const contentType = defaultTo(req.header('Content-Type'), '');
+      if (method === undefined && multipartContentTypePattern.test(contentType)) {
+        return storeWithAttachments({ config, req, res });
+      }
 
-    if (method === undefined && multipartContentTypePattern.test(contentType)) {
-      return storeWithAttachments({ config, req, res });
-    }
+      if (method === undefined && jsonContentTypePattern.test(contentType)) {
+        const client = await getClient(config, defaultTo(req.header('Authorization'), ''));
+        validateVersionHeader(req.header('X-Experience-API-Version'));
 
-    if (method === undefined && jsonContentTypePattern.test(contentType)) {
-      const client = await getClient(config, defaultTo(req.header('Authorization'), ''));
-      validateVersionHeader(req.header('X-Experience-API-Version'));
+        const body = await parseJsonBody(config, req);
+        const attachments: any[] = [];
+        return storeStatements({ config, client, body, attachments, res });
+      }
 
-      const body = await parseJsonBody(config, req);
-      const attachments: any[] = [];
-      return storeStatements({ config, client, body, attachments, res });
-    }
+      if (method !== undefined || alternateContentTypePattern.test(contentType)) {
+        return alternateRequest({ config, method, req, res });
+      }
 
-    if (method !== undefined || alternateContentTypePattern.test(contentType)) {
-      return alternateRequest({ config, method, req, res });
-    }
-
-    throw new InvalidContentType(contentType);
-  });
+      throw new InvalidContentType(contentType);
+    },
+  );
 };

@@ -7,9 +7,6 @@ export default (content: string, fileUrl?: string, contentType = 'text/plain'): 
     contentType,
     length: 0,
     sha2: createSha(content),
-    ...(
-      fileUrl === undefined ? {} :
-        { fileUrl }
-    ),
+    ...(fileUrl === undefined ? {} : { fileUrl }),
   };
 };

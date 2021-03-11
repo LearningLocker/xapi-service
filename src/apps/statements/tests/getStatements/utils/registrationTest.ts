@@ -16,16 +16,19 @@ export default (assertFilteredStatements: FilteredStatementsAsserter) => {
 
   const filterStatements = async (statements: any[]) => {
     await storeStatements(statements);
-    await assertFilteredStatements(service)({
-      registration: TEST_TARGET_REG_ID,
-      client: TEST_CLIENT,
-    }, [TEST_TARGET_ID]);
+    await assertFilteredStatements(service)(
+      {
+        registration: TEST_TARGET_REG_ID,
+        client: TEST_CLIENT,
+      },
+      [TEST_TARGET_ID],
+    );
   };
 
   it('should return statements when they match the registration', async () => {
     await filterStatements([
-      createStatement({ id: TEST_TARGET_ID, context: { registration: TEST_TARGET_REG_ID }}),
-      createStatement({ id: TEST_MISSING_ID, context: { registration: TEST_MISSING_REG_ID }}),
+      createStatement({ id: TEST_TARGET_ID, context: { registration: TEST_TARGET_REG_ID } }),
+      createStatement({ id: TEST_MISSING_ID, context: { registration: TEST_MISSING_REG_ID } }),
     ]);
   });
 };

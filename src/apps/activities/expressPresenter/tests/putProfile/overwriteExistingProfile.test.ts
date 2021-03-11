@@ -2,10 +2,7 @@ import assertImmutableProfile from '../../../utils/assertImmutableProfile';
 import assertProfile from '../../../utils/assertProfile';
 import createImmutableProfile from '../../../utils/createImmutableProfile';
 import createTextProfile from '../../../utils/createTextProfile';
-import {
-  TEST_ACTIVITY_ID,
-  TEST_IMMUTABLE_CONTENT,
- } from '../../../utils/testValues';
+import { TEST_ACTIVITY_ID, TEST_IMMUTABLE_CONTENT } from '../../../utils/testValues';
 import setup from '../utils/setup';
 import overwriteExistingProfile from './utils/overwriteExistingProfile';
 

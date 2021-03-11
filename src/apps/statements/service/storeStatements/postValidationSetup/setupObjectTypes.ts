@@ -12,10 +12,7 @@ const members: modr.Modifier = modr.modifySchema({
 });
 
 const agent = obj('Agent');
-const group = modr.composeModifiers([
-  obj('Group'),
-  members,
-]);
+const group = modr.composeModifiers([obj('Group'), members]);
 const activity = obj('Activity');
 const actor = modr.composeModifiers([agent, group]);
 
@@ -33,12 +30,10 @@ const context = modr.modifySchema({
 });
 
 const subStatement: modr.Modifier = modr.modifyType(Object, (data) => {
-  return (
-    data.objectType === 'SubStatement' ?
-      // eslint-disable-next-line no-use-before-define
-      statementBase(data) :
-      data
-  );
+  return data.objectType === 'SubStatement'
+    ? // eslint-disable-next-line no-use-before-define
+      statementBase(data)
+    : data;
 });
 
 const object = modr.composeModifiers([activity, actor, subStatement]);

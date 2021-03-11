@@ -2,10 +2,7 @@ import * as assert from 'assert';
 import Forbidden from 'jscommons/dist/errors/Forbidden';
 import assertError from 'jscommons/dist/tests/utils/assertError';
 import getTestStates from '../../../utils/getTestStates';
-import {
-  TEST_INVALID_SCOPE_CLIENT,
-  TEST_VALID_SCOPE_CLIENT,
-} from '../../../utils/testValues';
+import { TEST_INVALID_SCOPE_CLIENT, TEST_VALID_SCOPE_CLIENT } from '../../../utils/testValues';
 import setup from '../utils/setup';
 
 describe('getStates with scopes', () => {

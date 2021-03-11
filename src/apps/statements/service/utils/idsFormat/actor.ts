@@ -13,28 +13,31 @@ export interface ActorWithMembers {
 }
 
 const getActorWithId = (actor: Actor): ActorWithId => {
-  if (actor.account !== undefined) { return { account: actor.account }; }
-  if (actor.mbox !== undefined) { return { mbox: actor.mbox }; }
-  if (actor.mbox_sha1sum !== undefined) { return { mbox_sha1sum: actor.mbox_sha1sum }; }
-  if (actor.openid !== undefined) { return { openid: actor.openid }; }
+  if (actor.account !== undefined) {
+    return { account: actor.account };
+  }
+  if (actor.mbox !== undefined) {
+    return { mbox: actor.mbox };
+  }
+  if (actor.mbox_sha1sum !== undefined) {
+    return { mbox_sha1sum: actor.mbox_sha1sum };
+  }
+  if (actor.openid !== undefined) {
+    return { openid: actor.openid };
+  }
   return {};
 };
 
 const getActorWithMembers = (actor: Actor): ActorWithMembers => {
-  return (
-    (actor.objectType === 'Group' && actor.member !== undefined) ?
-      // eslint-disable-next-line no-use-before-define
-      { member: actor.member.map(formatActor) } :
-      {}
-  );
+  return actor.objectType === 'Group' && actor.member !== undefined
+    ? // eslint-disable-next-line no-use-before-define
+      { member: actor.member.map(formatActor) }
+    : {};
 };
 
 const formatActor = (actor: Actor): IdFormattedActor => {
   const actorWithId = getActorWithId(actor);
-  const actorWithMembers = (
-    Object.keys(actorWithId).length > 0 ? {} :
-      getActorWithMembers(actor)
-  );
+  const actorWithMembers = Object.keys(actorWithId).length > 0 ? {} : getActorWithMembers(actor);
   return {
     ...(actor.objectType !== 'Agent' ? { objectType: actor.objectType } : {}),
     ...actorWithId,

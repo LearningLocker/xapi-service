@@ -8,7 +8,7 @@ import {
   TEST_MBOX_AGENT,
   TEST_MBOXSHA1_AGENT,
   TEST_OPENID_AGENT,
- } from '../../../utils/testValues';
+} from '../../../utils/testValues';
 import setup from '../utils/setup';
 import overwriteExistingProfile from './utils/overwriteExistingProfile';
 

@@ -20,9 +20,12 @@ describe('overwriteState with non-existing model', () => {
   });
 
   it('should not error when using non-JSON string as JSON', async () => {
-    await overwriteState({
-      contentType: JSON_CONTENT_TYPE,
-    }, 'Slide3');
+    await overwriteState(
+      {
+        contentType: JSON_CONTENT_TYPE,
+      },
+      'Slide3',
+    );
     await assertState('Slide3');
   });
 

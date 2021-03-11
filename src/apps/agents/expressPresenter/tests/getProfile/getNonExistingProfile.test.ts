@@ -1,8 +1,5 @@
 import { StatusCodes } from 'http-status-codes';
-import {
-  TEST_INVALID_AGENT,
-  TEST_INVALID_JSON_CONTENT,
-} from '../../../utils/testValues';
+import { TEST_INVALID_AGENT, TEST_INVALID_JSON_CONTENT } from '../../../utils/testValues';
 import setup from '../utils/setup';
 import getProfile from './utils/getProfile';
 

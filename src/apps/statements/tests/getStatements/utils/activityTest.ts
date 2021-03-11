@@ -30,11 +30,14 @@ export default (assertFilteredStatements: FilteredStatementsAsserter) => {
       ...createActivity({ objectType: 'Activity', id: TEST_MISSING_ACTIVITY }),
     });
     await storeStatements([statement1, statement2]);
-    await assertFilteredStatements(service)({
-      activity: TEST_TARGET_ACTIVITY,
-      related_activities: relatedActivities,
-      client: TEST_CLIENT,
-    }, [TEST_TARGET_ID]);
+    await assertFilteredStatements(service)(
+      {
+        activity: TEST_TARGET_ACTIVITY,
+        related_activities: relatedActivities,
+        client: TEST_CLIENT,
+      },
+      [TEST_TARGET_ID],
+    );
   };
 
   it('should return statements when they match the activity in the object', async () => {
@@ -67,43 +70,33 @@ export default (assertFilteredStatements: FilteredStatementsAsserter) => {
     }, true);
   });
 
-  it('should return statements when they match the activity in the sub statement object',
-    async () => {
-      await assertFilter((object: any) => {
-        return createSubStatement({ object });
-      }, true);
-    },
-  );
+  it('should return statements when they match the activity in the sub statement object', async () => {
+    await assertFilter((object: any) => {
+      return createSubStatement({ object });
+    }, true);
+  });
 
-  it('should return statements when they match the activity in the sub statement parent',
-    async () => {
-      await assertFilter((activity: any) => {
-        return createSubStatementContext({ parent: [activity] });
-      }, true);
-    },
-  );
+  it('should return statements when they match the activity in the sub statement parent', async () => {
+    await assertFilter((activity: any) => {
+      return createSubStatementContext({ parent: [activity] });
+    }, true);
+  });
 
-  it('should return statements when they match the activity in the sub statement grouping',
-    async () => {
-      await assertFilter((activity: any) => {
-        return createSubStatementContext({ grouping: [activity] });
-      }, true);
-    },
-  );
+  it('should return statements when they match the activity in the sub statement grouping', async () => {
+    await assertFilter((activity: any) => {
+      return createSubStatementContext({ grouping: [activity] });
+    }, true);
+  });
 
-  it('should return statements when they match the activity in the sub statement category',
-    async () => {
-      await assertFilter((activity: any) => {
-        return createSubStatementContext({ category: [activity] });
-      }, true);
-    },
-  );
+  it('should return statements when they match the activity in the sub statement category', async () => {
+    await assertFilter((activity: any) => {
+      return createSubStatementContext({ category: [activity] });
+    }, true);
+  });
 
-  it('should return statements when they match the activity in the sub statement other',
-    async () => {
-      await assertFilter((activity: any) => {
-        return createSubStatementContext({ other: [activity] });
-      }, true);
-    },
-  );
+  it('should return statements when they match the activity in the sub statement other', async () => {
+    await assertFilter((activity: any) => {
+      return createSubStatementContext({ other: [activity] });
+    }, true);
+  });
 };

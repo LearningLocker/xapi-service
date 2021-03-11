@@ -1,9 +1,6 @@
 import { StatusCodes } from 'http-status-codes';
 import { route, xapiHeaderVersion } from '../../../utils/constants';
-import {
-  ALTERNATE_CONTENT_TYPE,
-  TEST_ACTIVITY_ID,
-} from '../../../utils/testValues';
+import { ALTERNATE_CONTENT_TYPE, TEST_ACTIVITY_ID } from '../../../utils/testValues';
 import setup from '../utils/setup';
 
 describe('expressPresenter.getProfiles using the alternate request syntax', () => {

@@ -84,7 +84,7 @@ export const TEST_MERGED_ACTIVITY = {
   },
 };
 export const TEST_CONTEXT_ACTIVITIES = {
-  context : {
+  context: {
     contextActivities: {
       category: [TEST_ACTIVITY],
       grouping: [TEST_ACTIVITY],
@@ -95,7 +95,7 @@ export const TEST_CONTEXT_ACTIVITIES = {
 };
 
 export const ANOTHER_TEST_CONTEXT_ACTIVITIES = {
-  context : {
+  context: {
     contextActivities: {
       category: [{ ...TEST_ACTIVITY, id: ANOTHER_TEST_ACTIVITY_ID }],
       grouping: [{ ...TEST_ACTIVITY, id: ANOTHER_TEST_ACTIVITY_ID }],
@@ -106,7 +106,7 @@ export const ANOTHER_TEST_CONTEXT_ACTIVITIES = {
 };
 
 export const TEST_CONTEXT_ACTIVITIES_RESULT = {
-  context : {
+  context: {
     contextActivities: {
       category: [TEST_ACTIVITY_ID],
       grouping: [TEST_ACTIVITY_ID],
@@ -117,7 +117,7 @@ export const TEST_CONTEXT_ACTIVITIES_RESULT = {
 };
 
 export const TEST_MERGED_CONTEXT_ACTIVITIES_RESULT = {
-  context : {
+  context: {
     contextActivities: {
       category: [TEST_ACTIVITY_ID, ANOTHER_TEST_ACTIVITY_ID],
       grouping: [TEST_ACTIVITY_ID, ANOTHER_TEST_ACTIVITY_ID],

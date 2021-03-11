@@ -1,8 +1,7 @@
 import * as assert from 'assert';
 import { merge } from 'lodash';
 
-import getMetadataFromStatement
-  from '../../../../service/storeStatements/queriables/getMetadataFromStatement';
+import getMetadataFromStatement from '../../../../service/storeStatements/queriables/getMetadataFromStatement';
 import { multipleChoices } from './fixtures/choice-interaction.fixture';
 import { likertStatement } from './fixtures/likert.fixture';
 import { multipleMatchingQuestions } from './fixtures/matching-interaction.fixture';
@@ -33,15 +32,11 @@ describe('Retrieve metadata from statement', () => {
   });
 
   it('should return duration and sequencing metadata from one statement', () => {
-    const statementWithDurationAndSequencing = merge(
-      {},
-      sequencingInteractionActivityStatement,
-      {
-        result: {
-          duration: 'P1Y2M3DT4H5M6S',
-        },
+    const statementWithDurationAndSequencing = merge({}, sequencingInteractionActivityStatement, {
+      result: {
+        duration: 'P1Y2M3DT4H5M6S',
       },
-    );
+    });
     const actualMetadata = getMetadataFromStatement(statementWithDurationAndSequencing);
     const expectedMetadata = {
       'https://learninglocker&46;net/result-duration': { seconds: 37080306 },
@@ -61,16 +56,14 @@ describe('Retrieve metadata from statement', () => {
   });
 
   it('should return choices metadata from statement', () => {
-    const actualMetadata = getMetadataFromStatement(
-      {
-        ...multipleChoices,
-        ...{
-          result: {
-            response: multipleChoices.result?.response,
-          },
+    const actualMetadata = getMetadataFromStatement({
+      ...multipleChoices,
+      ...{
+        result: {
+          response: multipleChoices.result?.response,
         },
       },
-    );
+    });
     const expectedMetadata = {
       'https://learninglocker&46;net/choice-response': ['golf', 'tetris'],
     };

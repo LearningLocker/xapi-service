@@ -8,15 +8,18 @@ import getClient from './utils/getClient';
 import validateHeaderVersion from './utils/validateHeaderVersion';
 
 export default (config: Config) => {
-  return catchErrors(config, async (req: Request, res: Response): Promise<void> => {
-    const client = await getClient(config, req.header('Authorization'));
-    const activityId = getActivityId(req.query.activityId as string | undefined);
+  return catchErrors(
+    config,
+    async (req: Request, res: Response): Promise<void> => {
+      const client = await getClient(config, req.header('Authorization'));
+      const activityId = getActivityId(req.query.activityId as string | undefined);
 
-    validateHeaderVersion(req.header('X-Experience-API-Version'));
+      validateHeaderVersion(req.header('X-Experience-API-Version'));
 
-    const result = await config.service.getFullActivity({ client, activityId });
-    res.status(StatusCodes.OK);
-    res.setHeader('X-Experience-API-Version', xapiHeaderVersion);
-    res.json(result);
-  });
+      const result = await config.service.getFullActivity({ client, activityId });
+      res.status(StatusCodes.OK);
+      res.setHeader('X-Experience-API-Version', xapiHeaderVersion);
+      res.json(result);
+    },
+  );
 };

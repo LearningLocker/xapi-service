@@ -5,7 +5,7 @@ import deleteProfileContent from './deleteProfileContent';
 import getProfileContent from './getProfileContent';
 import storeProfileContent from './storeProfileContent';
 
- export default (config: Config): StorageRepo => {
+export default (config: Config): StorageRepo => {
   return {
     clearRepo: clearRepo(config),
     deleteProfileContent: deleteProfileContent(config),

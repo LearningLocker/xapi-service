@@ -52,9 +52,7 @@ const activityObjectModel: Statement = {
     team: {
       objectType: 'Group',
       mbox: 'mailto:team@test.com',
-      member: [
-        { objectType: 'Agent', mbox: 'mailto:teammember@test.com' },
-      ],
+      member: [{ objectType: 'Agent', mbox: 'mailto:teammember@test.com' }],
     },
     instructor: {
       objectType: 'Agent',
@@ -81,9 +79,7 @@ const subStatementObjectModel: Statement = {
     team: {
       objectType: 'Group',
       mbox: 'mailto:ssteam@test.com',
-      member: [
-        { objectType: 'Agent', mbox: 'mailto:ssteammember@test.com' },
-      ],
+      member: [{ objectType: 'Agent', mbox: 'mailto:ssteammember@test.com' }],
     },
     instructor: {
       objectType: 'Agent',
@@ -96,10 +92,7 @@ describe('create array of queriable agents', () => {
   it('should return the non related agents', () => {
     const idents = getAgentsFromStatement(agentObjectModel);
     const agentObj = agentObjectModel.object as Agent;
-    assert.deepEqual(idents, [
-      agentObjectModel.actor.mbox,
-      agentObj.mbox,
-    ]);
+    assert.deepEqual(idents, [agentObjectModel.actor.mbox, agentObj.mbox]);
   });
 
   it('should return the related activities', () => {

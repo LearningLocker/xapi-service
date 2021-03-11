@@ -54,8 +54,8 @@ export default (config: Config) => {
       return postValidatedModel.statement.id;
     });
 
-    const unstoredStatementProperties = unstoredModels.map(
-      (unstoredModel) => JSON.stringify({
+    const unstoredStatementProperties = unstoredModels.map((unstoredModel) =>
+      JSON.stringify({
         statementId: unstoredModel.statement.id,
         organisationId: unstoredModel.organisation,
       }),
@@ -75,7 +75,8 @@ export default (config: Config) => {
 
     await awaitUpdates(config, unawaitedUpdates);
     if (unstoredStatementProperties.length !== 0) {
-      config.repo.emitNewStatements({ statementProperties: unstoredStatementProperties })
+      config.repo
+        .emitNewStatements({ statementProperties: unstoredStatementProperties })
         .catch((err) => {
           /* istanbul ignore next */
           console.error(err);

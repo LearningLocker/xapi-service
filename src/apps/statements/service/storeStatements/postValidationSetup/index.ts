@@ -19,11 +19,7 @@ import setupObjectTypes from './setupObjectTypes';
 import setupPostHashStatement from './setupPostHashStatement';
 import setupPreHashStatement from './setupPreHashStatement';
 
-export default async (
-  models: any[],
-  attachments: AttachmentModel[],
-  client: ClientModel,
-) => {
+export default async (models: any[], attachments: AttachmentModel[], client: ClientModel) => {
   const storedTime = new Date();
   const storedTimeString = storedTime.toISOString();
 
@@ -40,10 +36,7 @@ export default async (
   const unstoredModelPromises = models.map(
     async (model: any): Promise<UnstoredStatementModel> => {
       const objectTypesModel = setupObjectTypes(model);
-      await checkSignedStatements(
-        objectTypesModel,
-        uniqueHashAttachmentDictionary,
-      );
+      await checkSignedStatements(objectTypesModel, uniqueHashAttachmentDictionary);
       const preHashStatement = setupPreHashStatement(objectTypesModel);
       const fullStatementWithID = { ...objectTypesModel, ...preHashStatement };
       const postHashStatement = setupPostHashStatement(

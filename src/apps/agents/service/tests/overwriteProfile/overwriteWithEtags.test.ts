@@ -5,11 +5,7 @@ import IfNoneMatch from '../../../errors/IfNoneMatch';
 import MaxEtags from '../../../errors/MaxEtags';
 import MissingEtags from '../../../errors/MissingEtags';
 import createTextProfile from '../../../utils/createTextProfile';
-import {
-  TEST_CLIENT,
-  TEST_MBOX_AGENT,
-  TEST_PROFILE_ID,
-} from '../../../utils/testValues';
+import { TEST_CLIENT, TEST_MBOX_AGENT, TEST_PROFILE_ID } from '../../../utils/testValues';
 import setup from '../utils/setup';
 import overwriteProfile from './utils/overwriteProfile';
 

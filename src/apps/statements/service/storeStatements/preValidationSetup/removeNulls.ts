@@ -14,7 +14,9 @@ const removeNulls = (data: any): any => {
 export default (config: Config) => {
   return (data: any) => {
     /* istanbul ignore next */
-    if (!config.enableNullRemoval) { return data; }
+    if (!config.enableNullRemoval) {
+      return data;
+    }
 
     return removeNulls(data);
   };

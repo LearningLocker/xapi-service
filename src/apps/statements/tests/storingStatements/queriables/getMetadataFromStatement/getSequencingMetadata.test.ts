@@ -2,20 +2,21 @@ import * as assert from 'assert';
 
 import Statement from '../../../../models/Statement';
 import { getSequencingMetadata } from '../../../../service/storeStatements/queriables/getMetadataFromStatement/getSequencingMetadata';
-import { sequencingInteractionActivityStatement, statementDefaults } from './fixtures/statements.fixture';
+import {
+  sequencingInteractionActivityStatement,
+  statementDefaults,
+} from './fixtures/statements.fixture';
 
 describe('Retrieve sequencing metadata from statement', () => {
   it('should return empty metadata from empty result', () => {
     const expectedEmptyMetadata = {};
 
-    const actualEmptyMetadataFromEmptyResult = getSequencingMetadata(
-      {
-        ...sequencingInteractionActivityStatement,
-        ...{
-          result: {},
-        },
+    const actualEmptyMetadataFromEmptyResult = getSequencingMetadata({
+      ...sequencingInteractionActivityStatement,
+      ...{
+        result: {},
       },
-    );
+    });
 
     assert.deepEqual(actualEmptyMetadataFromEmptyResult, expectedEmptyMetadata);
   });
@@ -26,38 +27,31 @@ describe('Retrieve sequencing metadata from statement', () => {
 
     assert.deepEqual(actualEmptyMetadataFromInvalidResult, expectedEmptyMetadata);
 
-    const actualMetadataFromIncorrectResponseValue = getSequencingMetadata(
-      {
-        ...sequencingInteractionActivityStatement,
-        ...{
-          result: {
-            response: 'tim',
-          },
-        } as Partial<Statement>,
-      },
-    );
+    const actualMetadataFromIncorrectResponseValue = getSequencingMetadata({
+      ...sequencingInteractionActivityStatement,
+      ...({
+        result: {
+          response: 'tim',
+        },
+      } as Partial<Statement>),
+    });
 
     assert.deepEqual(actualMetadataFromIncorrectResponseValue, expectedEmptyMetadata);
   });
 
-  it(
-    'should return empty metadata when there is only one item provided in result',
-    () => {
-      const expectedEmptyMetadata = {};
-      const actualMetadataFromIncorrectResponseValue = getSequencingMetadata(
-        {
-          ...sequencingInteractionActivityStatement,
-          ...{
-            result: {
-              response: 'tim',
-            },
-          } as Partial<Statement>,
+  it('should return empty metadata when there is only one item provided in result', () => {
+    const expectedEmptyMetadata = {};
+    const actualMetadataFromIncorrectResponseValue = getSequencingMetadata({
+      ...sequencingInteractionActivityStatement,
+      ...({
+        result: {
+          response: 'tim',
         },
-      );
+      } as Partial<Statement>),
+    });
 
-      assert.deepEqual(actualMetadataFromIncorrectResponseValue, expectedEmptyMetadata);
-    },
-  );
+    assert.deepEqual(actualMetadataFromIncorrectResponseValue, expectedEmptyMetadata);
+  });
 
   it('should return choices with proper order(sequence)', () => {
     const actualCorrectMetadata = getSequencingMetadata(sequencingInteractionActivityStatement);

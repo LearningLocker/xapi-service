@@ -31,7 +31,7 @@ export default (config: FacadeConfig): Signature => {
       'statement.object.id': 1,
     };
 
-    const results = await collection.find(query).project(project).toArray() as Result[];
+    const results = (await collection.find(query).project(project).toArray()) as Result[];
 
     return results.map((result) => {
       return {

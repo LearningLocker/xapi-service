@@ -7,7 +7,8 @@ export default (config: FactoryConfig): Facade => {
   switch (config.facade) {
     case 'test':
       return fakeFactory(config.fake);
-    default: case 'mongo':
+    default:
+    case 'mongo':
       return mongoFactory(config.mongo);
   }
 };
