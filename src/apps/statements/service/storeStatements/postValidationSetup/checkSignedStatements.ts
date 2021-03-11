@@ -1,4 +1,3 @@
-
 import { PassThrough } from 'stream';
 import * as jwt from 'jsonwebtoken';
 import { Dictionary, includes, isArray } from 'lodash';
@@ -26,9 +25,7 @@ export default async (
   uniqueHashAttachmentDictionary: Dictionary<AttachmentModel>,
 ): Promise<void> => {
   const { attachments, ...statementWithoutAttachments } = statement;
-  const statementAttachments = (
-    attachments !== undefined ? attachments : []
-  );
+  const statementAttachments = attachments !== undefined ? attachments : [];
   const signaturedAttachments = statementAttachments.filter((attachment) => {
     return attachment.usageType === 'http://adlnet.gov/expapi/attachments/signature';
   });

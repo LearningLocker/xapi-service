@@ -53,13 +53,8 @@ const activityObjectmodel: Statement = {
   object: activity,
   context: {
     contextActivities: {
-      parent: [
-        activity,
-      ],
-      grouping: [
-        activity,
-        activity2,
-      ],
+      parent: [activity],
+      grouping: [activity, activity2],
       category: [],
     },
   },
@@ -78,11 +73,8 @@ const subStatementObjectmodel: Statement = {
   },
   context: {
     contextActivities: {
-      parent: [
-        activity3,
-      ],
-      grouping: [
-      ],
+      parent: [activity3],
+      grouping: [],
       category: [],
       other: [],
     },

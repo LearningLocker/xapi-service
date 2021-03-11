@@ -4,7 +4,9 @@ const removeDuplications = <T, V>(
   uniqueElements: T[],
   existingValues: V[],
 ): T[] => {
-  if (elements.length === 0) { return uniqueElements; }
+  if (elements.length === 0) {
+    return uniqueElements;
+  }
   const [element, ...nextElements] = elements;
   const value: V = mapper(element);
   const isUniqueValue: boolean = existingValues.indexOf(value) === -1;

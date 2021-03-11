@@ -9,7 +9,9 @@ export default async (
   client: ClientModel,
 ): Promise<void> => {
   /* istanbul ignore next */
-  if (!config.enableVoiding) { return; }
+  if (!config.enableVoiding) {
+    return;
+  }
 
   const statementIds = statements.map((model) => {
     return model.statement.id;
@@ -18,10 +20,7 @@ export default async (
     ids: statementIds,
     client,
   });
-  const idsToBeVoided: string[] = [
-    ...voidedObjectIds,
-    ...voidersForStatementIds,
-  ];
+  const idsToBeVoided: string[] = [...voidedObjectIds, ...voidersForStatementIds];
   await config.repo.voidStatements({
     ids: idsToBeVoided,
     client,

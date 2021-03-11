@@ -13,8 +13,5 @@ const getSubFolderPath = (subfolder?: string) => {
   return [subfolder];
 };
 
-export default (opts: GetStorageDirOptions) => join(
-  ...getSubFolderPath(opts.subfolder),
-  opts.lrs_id,
-  'agentProfiles',
-);
+export default (opts: GetStorageDirOptions) =>
+  join(...getSubFolderPath(opts.subfolder), opts.lrs_id, 'agentProfiles');

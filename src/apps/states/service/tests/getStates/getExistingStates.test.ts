@@ -27,13 +27,11 @@ describe('getStates with existing model', () => {
     assert.deepEqual(statesResult.stateIds, [TEST_STATE_ID]);
   });
 
-  it('should return no ids when getting existing model without a registration with one',
-    async () => {
-      await createTextState({ registration: undefined });
-      const statesResult = await getTestStates();
-      assert.deepEqual(statesResult.stateIds, []);
-    },
-  );
+  it('should return no ids when getting existing model without a registration with one', async () => {
+    await createTextState({ registration: undefined });
+    const statesResult = await getTestStates();
+    assert.deepEqual(statesResult.stateIds, []);
+  });
 
   it('should return state ids when using an mbox', async () => {
     await createTextState({ agent: TEST_MBOX_AGENT });

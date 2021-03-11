@@ -21,11 +21,10 @@ import FactoryConfig from './FactoryConfig';
 const defaultMaxTimeMs = 300000; // 5 minutes.
 
 export default (factoryConfig?: FactoryConfig): Facade => {
-  const facadeConfig: FacadeConfig = (
+  const facadeConfig: FacadeConfig =
     factoryConfig !== undefined
       ? factoryConfig
-      : { db: connectToMongoDb(), maxTimeMs: defaultMaxTimeMs }
-  );
+      : { db: connectToMongoDb(), maxTimeMs: defaultMaxTimeMs };
   return {
     clearRepo: async () => {
       await (await facadeConfig.db()).dropDatabase();

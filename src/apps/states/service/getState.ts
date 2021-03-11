@@ -24,11 +24,8 @@ export default (config: Config) => {
     });
 
     if (state.content !== undefined) {
-      const content = (
-        state.contentType === jsonContentType
-          ? JSON.stringify(state.content)
-          : state.content
-      );
+      const content =
+        state.contentType === jsonContentType ? JSON.stringify(state.content) : state.content;
       return {
         content: stringToStream(content),
         contentType: state.contentType,

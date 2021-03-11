@@ -21,11 +21,10 @@ export default (opts: MoreLinkOptions) => {
   }
 
   const moreLinkOpts = pickDefined({
-    agent: (
+    agent:
       opts.statementsOpts.agent !== undefined
         ? encodeURIComponent(JSON.stringify(opts.statementsOpts.agent))
-        : undefined
-    ),
+        : undefined,
     activity: encodeOpt(opts.statementsOpts.activity),
     verb: encodeOpt(opts.statementsOpts.verb),
     related_agents: opts.statementsOpts.related_agents,
@@ -46,9 +45,11 @@ export default (opts: MoreLinkOptions) => {
 
   const moreLinkParams = map(moreLinkOpts, (value, key) => {
     return value === undefined ? '' : `${key}=${value}`;
-  }).filter((param) => {
-    return param !== '';
-  }).join('&');
+  })
+    .filter((param) => {
+      return param !== '';
+    })
+    .join('&');
 
   return `${opts.urlPath}?${moreLinkParams}`;
 };

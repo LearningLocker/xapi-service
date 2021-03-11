@@ -12,7 +12,9 @@ export default (
   attachments: AttachmentModel[],
 ) => {
   /* istanbul ignore next */
-  if (!config.enableAttachmentValidation) { return; }
+  if (!config.enableAttachmentValidation) {
+    return;
+  }
 
   const attachmentHashes = attachments.map((attachment) => {
     return attachment.hash;
@@ -20,11 +22,13 @@ export default (
   const statementsAttachments = getStatementsAttachments(models);
 
   // Checks for attachments defined in statements but not in the attachments.
-  const missingHashes = statementsAttachments.filter((attachment) => {
-    return !includes(attachmentHashes, attachment.sha2) && attachment.fileUrl === undefined;
-  }).map((attachment) => {
-    return attachment.sha2;
-  });
+  const missingHashes = statementsAttachments
+    .filter((attachment) => {
+      return !includes(attachmentHashes, attachment.sha2) && attachment.fileUrl === undefined;
+    })
+    .map((attachment) => {
+      return attachment.sha2;
+    });
   if (missingHashes.length > 0) {
     throw new MissingAttachments(missingHashes);
   }

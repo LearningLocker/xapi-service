@@ -5,7 +5,7 @@ import checkProfileReadScopes from './utils/checkProfileReadScopes';
 import validateAgent from './utils/validateAgent';
 import validateSince from './utils/validateSince';
 
-const getSince = (since?: string): Date|undefined => {
+const getSince = (since?: string): Date | undefined => {
   if (since !== undefined) {
     validateSince(since);
     return new Date(since);
@@ -19,11 +19,13 @@ export default (config: Config) => {
     checkProfileReadScopes(opts.client.scopes);
     validateAgent(opts.agent);
     const since = getSince(opts.since);
-    const profileIds = (await config.repo.getProfiles({
-      agent: opts.agent,
-      client: opts.client,
-      since,
-    })).profileIds;
+    const profileIds = (
+      await config.repo.getProfiles({
+        agent: opts.agent,
+        client: opts.client,
+        since,
+      })
+    ).profileIds;
 
     return { profileIds };
   };

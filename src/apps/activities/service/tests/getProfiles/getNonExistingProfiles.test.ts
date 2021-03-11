@@ -2,10 +2,7 @@ import * as assert from 'assert';
 import assertError from 'jscommons/dist/tests/utils/assertError';
 import { Warnings } from 'rulr';
 import getTestProfiles from '../../../utils/getTestProfiles';
-import {
-  TEST_INVALID_ACTIVITY_ID,
-  TEST_INVALID_TIMESTAMP,
-} from '../../../utils/testValues';
+import { TEST_INVALID_ACTIVITY_ID, TEST_INVALID_TIMESTAMP } from '../../../utils/testValues';
 import setup from '../utils/setup';
 
 describe('getProfiles with non-existing agent', () => {

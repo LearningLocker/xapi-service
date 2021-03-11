@@ -50,7 +50,8 @@ describe('expressPresenter.postProfile with new content', () => {
   });
 
   it('should throw warnings when using an invalid json content', async () => {
-    await patchContent(TEST_INVALID_JSON_CONTENT, JSON_CONTENT_TYPE)
-      .expect(StatusCodes.BAD_REQUEST);
+    await patchContent(TEST_INVALID_JSON_CONTENT, JSON_CONTENT_TYPE).expect(
+      StatusCodes.BAD_REQUEST,
+    );
   });
 });

@@ -37,18 +37,22 @@ export default (config: Config) => {
     // Updates the state if it exists with JSON object content and the correct ETag.
     // Docs: http://mongodb.github.io/node-mongodb-native/2.2/api/Collection.html#findOneAndUpdate
     // Docs: http://bit.ly/findAndModifyWriteOpResult
-    const updateOpResult = await collection.findOneAndUpdate({
-      ...jsonObjectFilter,
-      ...stateFilter,
-    }, {
+    const updateOpResult = await collection.findOneAndUpdate(
+      {
+        ...jsonObjectFilter,
+        ...stateFilter,
+      },
+      {
         $set: {
           ...contentPatch,
           ...update,
         },
-      }, {
+      },
+      {
         returnOriginal: false, // Ensures the updated document is returned.
         upsert: false, // Does not create the state when it doesn't exist.
-      });
+      },
+    );
 
     // Determines if the State was updated.
     // Docs: https://docs.mongodb.com/manual/reference/command/getLastError/#getLastError.n
@@ -60,15 +64,19 @@ export default (config: Config) => {
     // Creates the state if it doesn't already exist.
     // Docs: http://mongodb.github.io/node-mongodb-native/2.2/api/Collection.html#findOneAndUpdate
     // Docs: http://bit.ly/findAndModifyWriteOpResult
-    const createOpResult = await collection.findOneAndUpdate(stateFilter, {
-      $setOnInsert: {
-        content: opts.content,
-        ...update,
+    const createOpResult = await collection.findOneAndUpdate(
+      stateFilter,
+      {
+        $setOnInsert: {
+          content: opts.content,
+          ...update,
+        },
       },
-    }, {
+      {
         returnOriginal: false, // Ensures the updated document is returned.
         upsert: true, // Creates the state when it's not found.
-      });
+      },
+    );
 
     // Determines if the State was created or found.
     // Docs: https://docs.mongodb.com/manual/reference/command/getLastError/#getLastError.n

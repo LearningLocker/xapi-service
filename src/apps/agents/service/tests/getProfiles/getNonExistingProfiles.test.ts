@@ -2,10 +2,7 @@ import * as assert from 'assert';
 import assertError from 'jscommons/dist/tests/utils/assertError';
 import { Warnings } from 'rulr';
 import getTestProfiles from '../../../utils/getTestProfiles';
-import {
-  TEST_INVALID_AGENT,
-  TEST_INVALID_TIMESTAMP,
-} from '../../../utils/testValues';
+import { TEST_INVALID_AGENT, TEST_INVALID_TIMESTAMP } from '../../../utils/testValues';
 import setup from '../utils/setup';
 
 describe('getProfiles with non-existing agent', () => {
@@ -23,10 +20,10 @@ describe('getProfiles with non-existing agent', () => {
     await assertError(Warnings, promise);
   });
 
-    it('should throw warnings when using an invalid since', async () => {
-      const promise = getTestProfiles({
-        since: TEST_INVALID_TIMESTAMP,
-      });
-      await assertError(Warnings, promise);
+  it('should throw warnings when using an invalid since', async () => {
+    const promise = getTestProfiles({
+      since: TEST_INVALID_TIMESTAMP,
     });
+    await assertError(Warnings, promise);
+  });
 });

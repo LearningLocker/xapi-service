@@ -3,10 +3,7 @@ import createSubStatement from './createSubStatement';
 
 export default (attachments: any[], id?: string) => {
   return createStatement({
-    ...(
-      id === undefined ? {} :
-      { id }
-    ),
+    ...(id === undefined ? {} : { id }),
     ...createSubStatement({
       attachments,
     }),

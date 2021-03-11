@@ -18,14 +18,18 @@ export default (
     const assertIdsStatements = setupIdsTest();
 
     it('should not change the format when using a StatementRef', async () => {
-      const exactStatement = createStatement(createObjectStatement({
-        objectType: 'StatementRef',
-        id: TEST_REF_ID,
-      }));
-      const idsStatement = createIdsStatement(createIdsObjectStatement({
-        objectType: 'StatementRef',
-        id: TEST_REF_ID,
-      }));
+      const exactStatement = createStatement(
+        createObjectStatement({
+          objectType: 'StatementRef',
+          id: TEST_REF_ID,
+        }),
+      );
+      const idsStatement = createIdsStatement(
+        createIdsObjectStatement({
+          objectType: 'StatementRef',
+          id: TEST_REF_ID,
+        }),
+      );
       await assertIdsStatements(exactStatement, idsStatement);
     });
   });

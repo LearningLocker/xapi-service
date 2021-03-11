@@ -25,7 +25,7 @@ export default (
   it('should return an attachment when it is referenced once', async () => {
     // Randomly generates content to avoid flaky Google error with "rate of change requests".
     const contentA = uuid();
-    const testAttachmentA = createAttachment(contentA)
+    const testAttachmentA = createAttachment(contentA);
     const testAttachmentModelA = createAttachmentModel(contentA);
     const testStatement = createStatement([testAttachmentA], TEST_ID_1);
     await storeStatements([testStatement], [testAttachmentModelA]);
@@ -41,7 +41,7 @@ export default (
   it('should return an attachment once when it is attached twice', async () => {
     // Randomly generates content to avoid flaky Google error with "rate of change requests".
     const contentA = uuid();
-    const testAttachmentA = createAttachment(contentA)
+    const testAttachmentA = createAttachment(contentA);
     const testAttachmentModelA = createAttachmentModel(contentA);
     const testStatement = createStatement([testAttachmentA], TEST_ID_1);
     await storeStatements([testStatement], [testAttachmentModelA, testAttachmentModelA]);
@@ -51,7 +51,7 @@ export default (
   it('should return an attachment once when it is referenced twice and attached once', async () => {
     // Randomly generates content to avoid flaky Google error with "rate of change requests".
     const contentA = uuid();
-    const testAttachmentA = createAttachment(contentA)
+    const testAttachmentA = createAttachment(contentA);
     const testAttachmentModelA = createAttachmentModel(contentA);
     const testStatement1 = createStatement([testAttachmentA], TEST_ID_1);
     const testStatement2 = createStatement([testAttachmentA], TEST_ID_2);
@@ -62,7 +62,7 @@ export default (
   it('should return an attachment once when it is referenced twice in one statement', async () => {
     // Randomly generates content to avoid flaky Google error with "rate of change requests".
     const contentA = uuid();
-    const testAttachmentA = createAttachment(contentA)
+    const testAttachmentA = createAttachment(contentA);
     const testAttachmentModelA = createAttachmentModel(contentA);
     const testStatement = createStatement([testAttachmentA, testAttachmentA], TEST_ID_1);
     await storeStatements([testStatement], [testAttachmentModelA]);

@@ -10,23 +10,17 @@ describe('expressPresenter.postProfile with etags', () => {
   it('should allow patches when using a correct etag', async () => {
     await createObjectProfile();
     const getProfileResult = await getTestProfile();
-    await patchProfile()
-      .set('If-Match', getProfileResult.etag)
-      .expect(StatusCodes.NO_CONTENT);
+    await patchProfile().set('If-Match', getProfileResult.etag).expect(StatusCodes.NO_CONTENT);
   });
 
   it('should throw precondition error when using an incorrect ifMatch', async () => {
     await createObjectProfile();
-    await patchProfile()
-      .set('If-Match', 'incorrect_etag')
-      .expect(StatusCodes.PRECONDITION_FAILED);
+    await patchProfile().set('If-Match', 'incorrect_etag').expect(StatusCodes.PRECONDITION_FAILED);
   });
 
   it('should throw precondition error when using an incorrect ifNoneMatch', async () => {
     await createObjectProfile();
-    await patchProfile()
-      .set('If-None-Match', '*')
-      .expect(StatusCodes.PRECONDITION_FAILED);
+    await patchProfile().set('If-None-Match', '*').expect(StatusCodes.PRECONDITION_FAILED);
   });
 
   it('should allow patch when not using an ifMatch or ifNoneMatch', async () => {

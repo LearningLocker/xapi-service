@@ -18,25 +18,13 @@ export default (config: FactoryConfig): Repo => {
     ...storageRepo,
 
     clearRepo: async () => {
-      await Promise.all([
-        eventsRepo.clearRepo(),
-        modelsRepo.clearRepo(),
-        storageRepo.clearRepo(),
-      ]);
+      await Promise.all([eventsRepo.clearRepo(), modelsRepo.clearRepo(), storageRepo.clearRepo()]);
     },
     migrate: async () => {
-      await Promise.all([
-        eventsRepo.migrate(),
-        modelsRepo.migrate(),
-        storageRepo.migrate(),
-      ]);
+      await Promise.all([eventsRepo.migrate(), modelsRepo.migrate(), storageRepo.migrate()]);
     },
     rollback: async () => {
-      await Promise.all([
-        eventsRepo.rollback(),
-        modelsRepo.rollback(),
-        storageRepo.rollback(),
-      ]);
+      await Promise.all([eventsRepo.rollback(), modelsRepo.rollback(), storageRepo.rollback()]);
     },
   };
 };

@@ -17,10 +17,13 @@ export default (config: Config) => {
     const profileFilter = getProfileFilter(opts);
 
     // Deletes the document if it matches the profile and etag filters.
-    const opResult = await collection.findOneAndDelete({
-      ...profileFilter,
-      ...etagFilter,
-    }, {});
+    const opResult = await collection.findOneAndDelete(
+      {
+        ...profileFilter,
+        ...etagFilter,
+      },
+      {},
+    );
 
     // Determines if the identifier was deleted.
     const matchedDocuments = opResult.lastErrorObject.n as number;

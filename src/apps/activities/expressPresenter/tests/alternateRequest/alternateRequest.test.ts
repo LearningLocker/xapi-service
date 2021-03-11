@@ -25,9 +25,11 @@ describe('expressPresenter using the alternate request syntax', () => {
       .set('Content-Type', 'invalid_content_type')
       .set('X-Experience-API-Version', xapiHeaderVersion)
       .query({ method: 'GET' })
-      .send(createQueryString({
-        activityId: TEST_ACTIVITY_ID,
-      }))
+      .send(
+        createQueryString({
+          activityId: TEST_ACTIVITY_ID,
+        }),
+      )
       .expect(StatusCodes.OK, []);
   });
 });

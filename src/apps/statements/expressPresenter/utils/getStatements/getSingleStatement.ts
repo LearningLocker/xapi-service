@@ -22,12 +22,7 @@ export default async (opts: Options) => {
   const timestamp = new Date().toISOString();
   const resultOpts = getStatementsResultOptions(queryParams, client);
 
-  checkUnknownParams(queryParams, [
-    'statementId',
-    'voidedStatementId',
-    'format',
-    'attachments',
-  ]);
+  checkUnknownParams(queryParams, ['statementId', 'voidedStatementId', 'format', 'attachments']);
 
   const results = await config.service.getStatement({ id, voided, langs, ...resultOpts });
   res.setHeader('X-Experience-API-Consistent-Through', timestamp);

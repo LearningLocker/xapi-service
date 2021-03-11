@@ -13,13 +13,10 @@ export default async (
     return model.statement.id;
   });
 
-  const emptyGroupedUpRefIds = statementIds.reduce(
-    (result, statementId) => {
-      result[statementId] = [];
-      return result;
-    },
-    {} as any,
-  );
+  const emptyGroupedUpRefIds = statementIds.reduce((result, statementId) => {
+    result[statementId] = [];
+    return result;
+  }, {} as any);
 
   const eagerLoadedUpRefs = await config.repo.getUpRefsByIds({ targetIds: statementIds, client });
   const groupedUpRefs = groupBy(eagerLoadedUpRefs, (upRef: UpRef) => {

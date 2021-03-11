@@ -12,14 +12,13 @@ const formatContextActivity = (langs: string[]) => {
 export default (context: Context, langs: string[]): Context => {
   return {
     ...context,
-    ...(
-      context.contextActivities === undefined ? {} :
-      {
-        contextActivities: formatContextActivities(
-          context.contextActivities,
-          formatContextActivity(langs),
-        ),
-      }
-    ),
+    ...(context.contextActivities === undefined
+      ? {}
+      : {
+          contextActivities: formatContextActivities(
+            context.contextActivities,
+            formatContextActivity(langs),
+          ),
+        }),
   };
 };

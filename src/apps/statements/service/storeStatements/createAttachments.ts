@@ -8,7 +8,9 @@ export default async (
   lrsId: string,
 ): Promise<void> => {
   /* istanbul ignore next */
-  if (!config.enableAttachmentCreation) { return; }
+  if (!config.enableAttachmentCreation) {
+    return;
+  }
 
   const uniqueAttachments = removeDuplicates(attachments, (attachment) => {
     return attachment.hash;

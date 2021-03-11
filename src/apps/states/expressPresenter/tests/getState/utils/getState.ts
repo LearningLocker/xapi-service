@@ -18,10 +18,10 @@ export default (optsOverrides: Record<string, unknown> = {}, sendVersion = true)
     req.set('X-Experience-API-Version', xapiHeaderVersion);
   }
   return req.query({
-      activityId,
-      agent,
-      registration,
-      stateId,
-      ...optsOverrides,
-    });
+    activityId,
+    agent,
+    registration,
+    stateId,
+    ...optsOverrides,
+  });
 };

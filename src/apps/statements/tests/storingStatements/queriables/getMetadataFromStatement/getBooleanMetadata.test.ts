@@ -8,29 +8,25 @@ describe('Retrieve sequencing metadata from statement', () => {
   it('should return empty metadata from empty result', () => {
     const expectedEmptyMetadata = {};
 
-    const actualEmptyMetadataFromEmptyResult = getBooleanMetadata(
-      {
-        ...booleanInteractionActivityStatement,
-        ...{
-          result: {},
-        } as Partial<Statement>,
-      },
-    );
+    const actualEmptyMetadataFromEmptyResult = getBooleanMetadata({
+      ...booleanInteractionActivityStatement,
+      ...({
+        result: {},
+      } as Partial<Statement>),
+    });
 
     assert.deepEqual(actualEmptyMetadataFromEmptyResult, expectedEmptyMetadata);
   });
 
   it('should return false metadata when `false` provided in the result', () => {
-    const actualCorrectMetadata = getBooleanMetadata(
-      {
-        ...booleanInteractionActivityStatement,
-        ...{
-          result: {
-            response: 'false',
-          },
-        } as Partial<Statement>,
-      },
-    );
+    const actualCorrectMetadata = getBooleanMetadata({
+      ...booleanInteractionActivityStatement,
+      ...({
+        result: {
+          response: 'false',
+        },
+      } as Partial<Statement>),
+    });
 
     const expectedCorrectMetadata = {
       'https://learninglocker&46;net/true-false-response': 'false',

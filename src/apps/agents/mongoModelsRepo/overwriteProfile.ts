@@ -40,15 +40,19 @@ export default (config: Config) => {
       const ifMatchFilter = getEtagFilter(opts.ifMatch);
 
       // Updates the profile if it exists with the correct ETag.
-      const updateOpResult = await collection.findOneAndUpdate({
-        ...ifMatchFilter,
-        ...profileFilter,
-      }, {
+      const updateOpResult = await collection.findOneAndUpdate(
+        {
+          ...ifMatchFilter,
+          ...profileFilter,
+        },
+        {
           $set: update,
-        }, {
+        },
+        {
           returnOriginal: false,
           upsert: false,
-        });
+        },
+      );
 
       // Determines if the Profile was updated.
       const updatedDocuments = updateOpResult.lastErrorObject.n as number;
@@ -61,12 +65,16 @@ export default (config: Config) => {
     }
 
     // Creates the profile if it doesn't already exist.
-    const createOpResult = await collection.findOneAndUpdate(profileFilter, {
-      $setOnInsert: update,
-    }, {
+    const createOpResult = await collection.findOneAndUpdate(
+      profileFilter,
+      {
+        $setOnInsert: update,
+      },
+      {
         returnOriginal: false,
         upsert: true,
-      });
+      },
+    );
 
     // Determines if the Profile was created or found.
     const wasCreated = createOpResult.lastErrorObject.upserted !== undefined;

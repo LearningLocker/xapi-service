@@ -1,9 +1,4 @@
-import {
-  ContainerURL,
-  ServiceURL,
-  SharedKeyCredential,
-  StorageURL,
-} from '@azure/storage-blob';
+import { ContainerURL, ServiceURL, SharedKeyCredential, StorageURL } from '@azure/storage-blob';
 import { Storage } from '@google-cloud/storage';
 import S3 from 'aws-sdk/clients/s3';
 import azureStorageRepo from '../../azureStorageRepo';
@@ -37,7 +32,8 @@ export default (factoryConfig: FactoryConfig): Repo => {
       );
       const pipeline = StorageURL.newPipeline(credential);
       const serviceURL = new ServiceURL(
-        `https://${factoryConfig.azure.account}.blob.core.windows.net`, pipeline,
+        `https://${factoryConfig.azure.account}.blob.core.windows.net`,
+        pipeline,
       );
       const containerUrl = ContainerURL.fromServiceURL(
         serviceURL,
@@ -48,7 +44,8 @@ export default (factoryConfig: FactoryConfig): Repo => {
         containerUrl,
         subFolder: factoryConfig.azure.subFolder.replace(/^\//, ''),
       });
-    } default:
+    }
+    default:
     case 'local': {
       return localStorageRepo({
         storageDir: factoryConfig.local.storageDir,

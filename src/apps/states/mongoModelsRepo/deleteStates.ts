@@ -10,7 +10,8 @@ export default (config: Config) => {
 
     const stateFilter = getStatesFilter(opts);
 
-    const stateDocuments = await collection.find(stateFilter)
+    const stateDocuments = await collection
+      .find(stateFilter)
       .project({ _id: 1, content: 1, extension: 1 })
       .toArray();
 

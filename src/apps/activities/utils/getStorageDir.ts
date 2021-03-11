@@ -14,9 +14,5 @@ const getSubFolderPath = (subfolder?: string) => {
 };
 
 export default (opts: GetStorageDirOptions) => {
-  return join(
-    ...getSubFolderPath(opts.subfolder),
-    opts.lrs_id,
-    'activityProfiles',
-  );
+  return join(...getSubFolderPath(opts.subfolder), opts.lrs_id, 'activityProfiles');
 };

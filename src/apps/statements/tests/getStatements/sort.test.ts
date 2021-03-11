@@ -25,21 +25,14 @@ describe('get statements by sorting', () => {
   };
 
   const sortStatements = async (opts: GetStatementsOptions) => {
-    await storeStatements(
-      [
-        createStatement({ id: TEST_ID_1 }),
-        createStatement({ id: TEST_ID_2 }),
-        createStatement({ id: TEST_ID_3 }),
-        createStatement({ id: TEST_ID_4 }),
-      ],
-    );
+    await storeStatements([
+      createStatement({ id: TEST_ID_1 }),
+      createStatement({ id: TEST_ID_2 }),
+      createStatement({ id: TEST_ID_3 }),
+      createStatement({ id: TEST_ID_4 }),
+    ]);
     await Promise.resolve(delay(100)); // eslint-disable-line no-magic-numbers
-    await storeStatements(
-      [
-        createStatement({ id: TEST_ID_5 }),
-        createStatement({ id: TEST_ID_6 }),
-      ],
-    );
+    await storeStatements([createStatement({ id: TEST_ID_5 }), createStatement({ id: TEST_ID_6 })]);
     const sortedStatements = await getStatements(opts);
 
     assert(isArray(sortedStatements));

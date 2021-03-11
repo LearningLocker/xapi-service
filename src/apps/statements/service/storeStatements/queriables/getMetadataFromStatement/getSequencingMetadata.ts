@@ -3,15 +3,11 @@ import { get, has, head } from 'lodash';
 import ActivityInteractionType from '../../../../models/ActivityInteractionType';
 import Statement from '../../../../models/Statement';
 
-export const getSequencingMetadata = (statement: Statement)
-  : {readonly [key: string]: any} => {
+export const getSequencingMetadata = (statement: Statement): { readonly [key: string]: any } => {
   if (
     !(
-      get(
-        statement.object,
-        ['definition', 'interactionType'],
-      ) === ActivityInteractionType.SEQUENCING
-      && has(statement, ['result', 'response'])
+      get(statement.object, ['definition', 'interactionType']) ===
+        ActivityInteractionType.SEQUENCING && has(statement, ['result', 'response'])
     )
   ) {
     return {};

@@ -26,7 +26,7 @@ export default (config: FacadeConfig): Signature => {
       statement: 1,
     };
 
-    const filteredModels = await collection.find(query).project(project).toArray() as Result[];
+    const filteredModels = (await collection.find(query).project(project).toArray()) as Result[];
 
     const filteredStatements = filteredModels.map((model) => {
       return decodeDotsInStatement(model.statement);

@@ -6,14 +6,12 @@ import { statementDefaults } from './fixtures/statements.fixture';
 describe('Retrieve duration metadata from statement', () => {
   it('should return empty metadata from empty result', () => {
     const expectedEmptyMetadata = {};
-    const actualEmptyMetadataFromEmptyResult = getDurationMetadata(
-      {
-        ...statementDefaults,
-        ...{
-          result: {},
-        },
+    const actualEmptyMetadataFromEmptyResult = getDurationMetadata({
+      ...statementDefaults,
+      ...{
+        result: {},
       },
-    );
+    });
 
     assert.deepEqual(actualEmptyMetadataFromEmptyResult, expectedEmptyMetadata);
   });

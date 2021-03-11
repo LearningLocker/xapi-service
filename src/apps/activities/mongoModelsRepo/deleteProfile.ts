@@ -11,11 +11,7 @@ export default (config: Config) => {
     const collection = (await config.db()).collection(COLLECTION_NAME);
 
     // Docs: https://github.com/adlnet/xAPI-Spec/blob/master/xAPI-Communication.md#concurrency
-    const etagFilter = (
-      opts.ifMatch !== undefined
-        ? { etag: opts.ifMatch }
-        : {}
-    );
+    const etagFilter = opts.ifMatch !== undefined ? { etag: opts.ifMatch } : {};
 
     const profileFilter = {
       activityId: opts.activityId,
@@ -27,10 +23,13 @@ export default (config: Config) => {
     // Deletes the document if it matches the profile and etag filters.
     // Docs: http://mongodb.github.io/node-mongodb-native/2.2/api/Collection.html#findOneAndDelete
     // Docs: http://bit.ly/findAndModifyWriteOpResult
-    const opResult = await collection.findOneAndDelete({
-      ...profileFilter,
-      ...etagFilter,
-    }, {});
+    const opResult = await collection.findOneAndDelete(
+      {
+        ...profileFilter,
+        ...etagFilter,
+      },
+      {},
+    );
 
     // Determines if the identifier was deleted.
     // Docs: https://docs.mongodb.com/manual/reference/command/getLastError/#getLastError.n

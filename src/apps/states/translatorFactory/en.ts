@@ -4,16 +4,12 @@ import Translator from './Translator';
 
 const translator: Translator = {
   expiredClientError: () => `Your organisation has expired`,
-  invalidMethodError: (err) => (
-    `Method (${err.method}) is invalid for alternate request syntax`
-  ),
+  invalidMethodError: (err) => `Method (${err.method}) is invalid for alternate request syntax`,
   jsonSyntaxError: (err) => {
     const path = stringPath(err.path);
     return `Expected valid JSON in ${path}`;
   },
-  nonJsonObjectError: () => (
-    'Expected a JSON object to be provided and stored (if it exists)'
-  ),
+  nonJsonObjectError: () => 'Expected a JSON object to be provided and stored (if it exists)',
   untrustedClientError: () => 'Your client has been disabled',
   xapiTypeWarning: (warning) => {
     const path = stringPath(warning.path);

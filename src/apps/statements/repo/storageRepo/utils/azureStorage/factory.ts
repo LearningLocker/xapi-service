@@ -1,6 +1,4 @@
-import {
-  ContainerURL, ServiceURL, SharedKeyCredential, StorageURL,
-} from '@azure/storage-blob';
+import { ContainerURL, ServiceURL, SharedKeyCredential, StorageURL } from '@azure/storage-blob';
 import clearRepo from '../../clearRepo/azure';
 import createAttachments from '../../createAttachments/azure';
 import Facade from '../../Facade';
@@ -21,7 +19,8 @@ export default (factoryConfig: FactoryConfig = {}): Facade => {
   const credential = new SharedKeyCredential(factoryConfig.account, factoryConfig.accountKey);
   const pipeline = StorageURL.newPipeline(credential);
   const serviceURL = new ServiceURL(
-    `https://${factoryConfig.account}.blob.core.windows.net`, pipeline,
+    `https://${factoryConfig.account}.blob.core.windows.net`,
+    pipeline,
   );
   const containerUrl = ContainerURL.fromServiceURL(serviceURL, factoryConfig.containerName);
 

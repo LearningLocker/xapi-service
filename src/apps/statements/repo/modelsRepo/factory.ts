@@ -4,7 +4,8 @@ import mongoFactory from './utils/mongoModels/factory';
 
 export default (config: FactoryConfig): Facade => {
   switch (config.facade) {
-    default: case 'mongo':
+    default:
+    case 'mongo':
       return mongoFactory(config.mongo);
   }
 };

@@ -30,7 +30,6 @@ export const getGroupIdents = (group: Group): string[] => {
 };
 
 const getAgentsFromObject = (obj: StatementObject): string[] => {
-
   switch (obj.objectType) {
     case 'Agent':
       return getActorIdents(obj);
@@ -77,10 +76,7 @@ const getAgentsFromSubStatement = (statement: StatementBase): string[] => {
 };
 
 export const getAgentsFromStatement = (statement: StatementBase): string[] => {
-  return union([
-    ...getAgentsFromObject(statement.actor),
-    ...getAgentsFromObject(statement.object),
-  ]);
+  return union([...getAgentsFromObject(statement.actor), ...getAgentsFromObject(statement.object)]);
 };
 
 export const getRelatedAgentsFromStatement = (statement: Statement): string[] => {

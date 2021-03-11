@@ -1,8 +1,4 @@
-import {
-  Aborter,
-  BlobURL,
-  Models,
-} from '@azure/storage-blob';
+import { Aborter, BlobURL, Models } from '@azure/storage-blob';
 import FacadeConfig from '../utils/azureStorage/FacadeConfig';
 
 export default (config: FacadeConfig) => {
@@ -11,8 +7,10 @@ export default (config: FacadeConfig) => {
     let marker;
     // eslint-disable-next-line functional/no-loop-statement
     do {
-      const listBlobsResponse: Models.ContainerListBlobFlatSegmentResponse =
-        await config.containerUrl.listBlobFlatSegment(Aborter.none, marker);
+      const listBlobsResponse: Models.ContainerListBlobFlatSegmentResponse = await config.containerUrl.listBlobFlatSegment(
+        Aborter.none,
+        marker,
+      );
       marker = listBlobsResponse.nextMarker;
       const deletePromises = listBlobsResponse.segment.blobItems.map(
         async (blobItem: Models.BlobItem) => {

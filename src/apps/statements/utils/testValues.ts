@@ -5,7 +5,7 @@ import { ALL, XAPI_PROFILE_ALL } from './scopes';
 export const TEST_CLIENT: ClientModel = {
   _id: '58fe13e34effd3c26a7fc4b7',
   title: 'Test client',
-  authority: { objectType: 'Agent', mbox: 'mailto:client@example.org'},
+  authority: { objectType: 'Agent', mbox: 'mailto:client@example.org' },
   isTrusted: true,
   lrs_id: '58fe13e34effd3c26a7fc4b7',
   organisation: '58fe13e34effd3c26a7fc4b6',

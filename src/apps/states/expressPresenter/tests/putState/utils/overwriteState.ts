@@ -20,18 +20,17 @@ export default (
   const stateId = TEST_STATE_ID;
   const agent = JSON.stringify(TEST_MBOX_AGENT);
   const registration = TEST_REGISTRATION;
-  const req = supertest
-    .put(route)
-    .set('Content-Type', contentType);
+  const req = supertest.put(route).set('Content-Type', contentType);
   if (sendVersion) {
     req.set('X-Experience-API-Version', xapiHeaderVersion);
   }
-  return req.query({
-    activityId,
-    agent,
-    registration,
-    stateId,
-    ...optsOverrides,
-  })
-  .send(content);
+  return req
+    .query({
+      activityId,
+      agent,
+      registration,
+      stateId,
+      ...optsOverrides,
+    })
+    .send(content);
 };

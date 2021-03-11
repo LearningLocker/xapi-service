@@ -14,22 +14,12 @@ export default (config: Config) => {
         name: fullActivityResult.name,
         description: fullActivityResult.description,
         extensions: fullActivityResult.extensions,
-        ...(
-          fullActivityResult.moreInfo !== undefined
-            ? { moreInfo: fullActivityResult.moreInfo }
-            : {}
-        ),
-        ...(
-          fullActivityResult.type !== undefined
-            ? { type: fullActivityResult.type }
-            : {}
-        ),
+        ...(fullActivityResult.moreInfo !== undefined
+          ? { moreInfo: fullActivityResult.moreInfo }
+          : {}),
+        ...(fullActivityResult.type !== undefined ? { type: fullActivityResult.type } : {}),
       },
-      ...(
-        fullActivityResult.context !== undefined
-          ? { context: fullActivityResult.context }
-          : {}
-      ),
+      ...(fullActivityResult.context !== undefined ? { context: fullActivityResult.context } : {}),
     };
   };
 };

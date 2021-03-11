@@ -9,44 +9,32 @@ describe('mongo matchesCursorOption', () => {
     const testStored = new Date();
     const cursor = `${testId}_${testStored.toISOString()}`;
 
-    assert
-      .deepEqual(
-        matchesCursorOption({ cursor: undefined } as Opts),
-        {},
-      );
+    assert.deepEqual(matchesCursorOption({ cursor: undefined } as Opts), {});
 
-    assert
-      .deepEqual(
-        matchesCursorOption({ cursor, ascending: true } as Opts),
+    assert.deepEqual(matchesCursorOption({ cursor, ascending: true } as Opts), {
+      $or: [
         {
-          $or: [
-            {
-              _id: { $gte: new ObjectID(testId) },
-              stored: testStored,
-            },
-            { stored: { $gt: testStored } },
-          ],
+          _id: { $gte: new ObjectID(testId) },
+          stored: testStored,
         },
-      );
+        { stored: { $gt: testStored } },
+      ],
+    });
 
-    assert
-      .deepEqual(
-        matchesCursorOption({ cursor, ascending: false } as Opts),
+    assert.deepEqual(matchesCursorOption({ cursor, ascending: false } as Opts), {
+      $or: [
         {
-          $or: [
-            {
-              _id: {
-                $lte: new ObjectID(testId),
-              },
-              stored: testStored,
-            },
-            {
-              stored: {
-                $lt: testStored,
-              },
-            },
-          ],
+          _id: {
+            $lte: new ObjectID(testId),
+          },
+          stored: testStored,
         },
-      );
+        {
+          stored: {
+            $lt: testStored,
+          },
+        },
+      ],
+    });
   });
 });

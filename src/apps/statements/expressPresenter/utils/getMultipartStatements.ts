@@ -24,10 +24,9 @@ export default async (req: Request) => {
   const contentType = defaultTo(req.header('Content-Type'), '');
   const boundary = getBoundaryFromContentType(contentType);
   const parts = await getParts(req, boundary);
-  const hasStatements = (
+  const hasStatements =
     parts.length >= 1 &&
-    jsonContentTypePattern.test(get<any, string, string>(parts[0].headers, 'content-type', ''))
-  );
+    jsonContentTypePattern.test(get<any, string, string>(parts[0].headers, 'content-type', ''));
 
   if (!hasStatements) {
     throw new NoStatements();
@@ -35,20 +34,21 @@ export default async (req: Request) => {
 
   const unparsedBody = await streamToString(parts[0].stream);
   const body = parseJson(unparsedBody, ['body']);
-  const attachments = parts.slice(1).map((part): AttachmentModel => {
-    const contentTransferEncoding = get(
-      part.headers,
-      'content-transfer-encoding',
-    ) as string | undefined;
-    if (contentTransferEncoding !== 'binary') {
-      throw new InvalidContentTransferEncoding(contentTransferEncoding);
-    }
-    return {
-      stream: part.stream,
-      hash: get(part.headers, 'x-experience-api-hash') as string,
-      contentType: get(part.headers, 'content-type') as string,
-    };
-  });
+  const attachments = parts.slice(1).map(
+    (part): AttachmentModel => {
+      const contentTransferEncoding = get(part.headers, 'content-transfer-encoding') as
+        | string
+        | undefined;
+      if (contentTransferEncoding !== 'binary') {
+        throw new InvalidContentTransferEncoding(contentTransferEncoding);
+      }
+      return {
+        stream: part.stream,
+        hash: get(part.headers, 'x-experience-api-hash') as string,
+        contentType: get(part.headers, 'content-type') as string,
+      };
+    },
+  );
 
   return { body, attachments };
 };

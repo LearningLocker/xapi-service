@@ -46,19 +46,23 @@ export default (config: Config) => {
       const ifMatchFilter = getEtagFilter(opts.ifMatch);
 
       // Updates the profile if it exists with JSON object content and the correct ETag.
-      const updateOpResult = await collection.findOneAndUpdate({
-        ...ifMatchFilter,
-        ...JSON_OBJECT_FILTER,
-        ...profileFilter,
-      }, {
+      const updateOpResult = await collection.findOneAndUpdate(
+        {
+          ...ifMatchFilter,
+          ...JSON_OBJECT_FILTER,
+          ...profileFilter,
+        },
+        {
           $set: {
             ...contentPatch,
             ...update,
           },
-        }, {
+        },
+        {
           returnOriginal: false, // Ensures the updated document is returned.
           upsert: false, // Does not create the profile when it doesn't exist.
-        });
+        },
+      );
 
       // Determines if the Profile was updated.
       const updatedDocuments = updateOpResult.lastErrorObject.n as number;
@@ -68,15 +72,19 @@ export default (config: Config) => {
     }
 
     // Creates the profile if it doesn't already exist.
-    const createOpResult = await collection.findOneAndUpdate(profileFilter, {
-      $setOnInsert: {
-        content: opts.content,
-        ...update,
+    const createOpResult = await collection.findOneAndUpdate(
+      profileFilter,
+      {
+        $setOnInsert: {
+          content: opts.content,
+          ...update,
+        },
       },
-    }, {
+      {
         returnOriginal: false, // Ensures the updated document is returned.
         upsert: true, // Creates the profile when it's not found.
-      });
+      },
+    );
 
     // Determines if the Profile was created or found.
     const wasCreated = createOpResult.lastErrorObject.upserted !== undefined;

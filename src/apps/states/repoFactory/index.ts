@@ -1,6 +1,4 @@
-import {
-  ContainerURL, ServiceURL, SharedKeyCredential, StorageURL,
-} from '@azure/storage-blob';
+import { ContainerURL, ServiceURL, SharedKeyCredential, StorageURL } from '@azure/storage-blob';
 import { Storage } from '@google-cloud/storage';
 import S3 from 'aws-sdk/clients/s3';
 import connectToDb from 'jscommons/dist/mongoRepo/utils/connectToDb';
@@ -23,7 +21,8 @@ const getAuthRepo = (): AuthRepo => {
   switch (config.repoFactory.authRepoName) {
     case 'test':
       return testAuthRepo({});
-    default: case 'mongo':
+    default:
+    case 'mongo':
       return mongoAuthRepo({
         db: connectToDb({
           dbName: config.mongoModelsRepo.dbName,
@@ -36,7 +35,8 @@ const getAuthRepo = (): AuthRepo => {
 /* istanbul ignore next */
 const getModelsRepo = (): ModelsRepo => {
   switch (config.repoFactory.modelsRepoName) {
-    default: case 'mongo':
+    default:
+    case 'mongo':
       return mongoModelsRepo({
         db: connectToDb({
           dbName: config.mongoModelsRepo.dbName,

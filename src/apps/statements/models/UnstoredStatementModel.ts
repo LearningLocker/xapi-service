@@ -1,6 +1,8 @@
 import Statement from './Statement';
 
-export interface Ref { readonly statement: Statement; }
+export interface Ref {
+  readonly statement: Statement;
+}
 
 interface UnstoredStatementModel {
   readonly hasGeneratedId: boolean;

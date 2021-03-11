@@ -7,7 +7,8 @@ export default (factoryConfig: FactoryConfig): Repo => {
   switch (factoryConfig.factoryName) {
     case 'test':
       return testAuthRepo(factoryConfig.test);
-    default: case 'mongo':
+    default:
+    case 'mongo':
       return mongoAuthRepo(factoryConfig.mongo);
   }
 };

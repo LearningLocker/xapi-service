@@ -34,7 +34,7 @@ const statementDefaults: Statement = {
 
 const sequencingInteractionActivityStatement: Statement = {
   ...statementDefaults,
-  ...{
+  ...({
     result: {
       response: 'tim[,]mike[,]ells[,]ben',
     },
@@ -53,10 +53,7 @@ const sequencingInteractionActivityStatement: Statement = {
         ],
       } as Partial<InteractionActivityDefinition>,
     } as SubStatementObject,
-  } as Partial<Statement>,
+  } as Partial<Statement>),
 };
 
-export {
-  statementDefaults,
-  sequencingInteractionActivityStatement,
-};
+export { statementDefaults, sequencingInteractionActivityStatement };

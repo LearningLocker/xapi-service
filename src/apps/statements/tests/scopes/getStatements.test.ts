@@ -46,11 +46,9 @@ describe('get statements with scopes', () => {
     await testReadAllScope([scopes.XAPI_READ]);
   });
 
-  it('should return a statement when using a different client with xAPI read statements scope',
-    async () => {
-      await testReadAllScope([scopes.XAPI_STATEMENTS_READ]);
-    },
-  );
+  it('should return a statement when using a different client with xAPI read statements scope', async () => {
+    await testReadAllScope([scopes.XAPI_STATEMENTS_READ]);
+  });
 
   it('should return a statement when using a different client with read all scope', async () => {
     await testReadAllScope([scopes.ALL_READ]);

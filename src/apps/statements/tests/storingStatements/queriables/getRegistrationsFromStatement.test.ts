@@ -2,8 +2,7 @@ import assert from 'assert';
 import Activity from '../../../models/Activity';
 import Agent from '../../../models/Agent';
 import Statement from '../../../models/Statement';
-import getRegistrationsFromStatement
-  from '../../../service/storeStatements/queriables/getRegistrationsFromStatement';
+import getRegistrationsFromStatement from '../../../service/storeStatements/queriables/getRegistrationsFromStatement';
 
 const REG = '1c86d8e9-f325-404f-b3d9-24c451035585';
 

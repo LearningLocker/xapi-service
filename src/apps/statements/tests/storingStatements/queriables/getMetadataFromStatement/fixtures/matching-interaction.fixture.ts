@@ -7,7 +7,7 @@ import { statementDefaults } from './statements.fixture';
 
 const singleMatchingQuestion: Statement = {
   ...statementDefaults,
-  ...{
+  ...({
     result: {
       response: 'ben[.]3',
     },
@@ -19,9 +19,7 @@ const singleMatchingQuestion: Statement = {
         description: { 'en-US': 'Match these people to their kickball team:' },
         type: 'http://adlnet.gov/expapi/activities/cmi.interaction',
         interactionType: 'matching',
-        correctResponsesPattern: [
-          'ben[.]3[,]chris[.]2[,]troy[.]4[,]freddie[.]1',
-        ],
+        correctResponsesPattern: ['ben[.]3[,]chris[.]2[,]troy[.]4[,]freddie[.]1'],
         source: [
           {
             id: 'ben',
@@ -60,20 +58,13 @@ const singleMatchingQuestion: Statement = {
         ],
       } as Partial<InteractionActivityDefinition>,
     } as SubStatementObject,
-  } as Partial<Statement>,
+  } as Partial<Statement>),
 };
 
-const multipleMatchingQuestions: Statement = merge(
-  {},
-  singleMatchingQuestion,
-  {
-    result: {
-      response: 'ben[.]3[,]chris[.]2[,]troy[.]4[,]freddie[.]1',
-    },
-  } as Partial<Statement>,
-);
+const multipleMatchingQuestions: Statement = merge({}, singleMatchingQuestion, {
+  result: {
+    response: 'ben[.]3[,]chris[.]2[,]troy[.]4[,]freddie[.]1',
+  },
+} as Partial<Statement>);
 
-export {
-  singleMatchingQuestion,
-  multipleMatchingQuestions,
-};
+export { singleMatchingQuestion, multipleMatchingQuestions };

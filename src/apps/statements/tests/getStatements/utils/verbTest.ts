@@ -16,16 +16,19 @@ export default (assertFilteredStatements: FilteredStatementsAsserter) => {
 
   const filterStatements = async (statements: any[]) => {
     await storeStatements(statements);
-    await assertFilteredStatements(service)({
-      verb: TEST_TARGET_VERB_ID,
-      client: TEST_CLIENT,
-    }, [TEST_TARGET_ID]);
+    await assertFilteredStatements(service)(
+      {
+        verb: TEST_TARGET_VERB_ID,
+        client: TEST_CLIENT,
+      },
+      [TEST_TARGET_ID],
+    );
   };
 
   it('should return statements when they match the verb', async () => {
     await filterStatements([
-      createStatement({ id: TEST_TARGET_ID, verb: { id: TEST_TARGET_VERB_ID }}),
-      createStatement({ id: TEST_MISSING_ID, verb: { id: TEST_MISSING_VERB_ID }}),
+      createStatement({ id: TEST_TARGET_ID, verb: { id: TEST_TARGET_VERB_ID } }),
+      createStatement({ id: TEST_MISSING_ID, verb: { id: TEST_MISSING_VERB_ID } }),
     ]);
   });
 };

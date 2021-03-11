@@ -12,19 +12,14 @@ const READ_ALL_SCOPES = [
 ];
 
 export default (client: ClientModel, enableReadMine = false): Record<string, unknown> => {
-  const canOnlyReadMine = (
+  const canOnlyReadMine =
     enableReadMine &&
     intersection(READ_ALL_SCOPES, client.scopes).length === 0 &&
-    includes(client.scopes, scopes.XAPI_STATEMENTS_READ_MINE)
-  );
+    includes(client.scopes, scopes.XAPI_STATEMENTS_READ_MINE);
 
   return {
     organisation: new ObjectID(client.organisation),
     lrs_id: new ObjectID(client.lrs_id),
-    ...(
-      canOnlyReadMine
-        ? { client: new ObjectID(client._id) }
-        : {}
-    ),
+    ...(canOnlyReadMine ? { client: new ObjectID(client._id) } : {}),
   };
 };

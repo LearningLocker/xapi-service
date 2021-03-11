@@ -30,11 +30,10 @@ export default (config: Config) => {
     }
 
     // Update or create Profile.
-    const jsonContent = (
+    const jsonContent =
       opts.contentType === jsonContentType
         ? parseJson(await streamToString(opts.content), ['content'])
-        : undefined
-    );
+        : undefined;
 
     const extension = getFileExtension(opts.contentType);
     const overwriteProfileResult = await config.repo.overwriteProfile({

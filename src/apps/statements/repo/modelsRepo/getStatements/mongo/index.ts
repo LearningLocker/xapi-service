@@ -48,13 +48,13 @@ export default (config: FacadeConfig): Signature => {
     const limit = opts.limit;
 
     try {
-      const models = await collection
+      const models = (await collection
         .find(query)
         .sort(sort)
         .skip(skip)
         .limit(limit)
         .maxTimeMS(config.maxTimeMs)
-        .toArray() as StoredStatementModel[];
+        .toArray()) as StoredStatementModel[];
 
       const decodedModels = models.map((model) => {
         const statement = decodeDotsInStatement(model.statement);

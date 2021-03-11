@@ -16,10 +16,13 @@ describe('get statements', () => {
   const storeStatements = storeStatementsInService(service);
 
   const assertVoided = async () => {
-    await assertFilteredStatements(service)({
-      agent: TEST_STATEMENT.actor,
-      client: TEST_CLIENT,
-    }, [TEST_VOIDER_ID]);
+    await assertFilteredStatements(service)(
+      {
+        agent: TEST_STATEMENT.actor,
+        client: TEST_CLIENT,
+      },
+      [TEST_VOIDER_ID],
+    );
   };
 
   it('should return only the voider when it is voiding in a following batch', async () => {

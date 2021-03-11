@@ -2,8 +2,7 @@ import assert from 'assert';
 import Activity from '../../../models/Activity';
 import Agent from '../../../models/Agent';
 import Statement from '../../../models/Statement';
-import getVerbsFromStatements
-  from '../../../service/storeStatements/queriables/getVerbsFromStatement';
+import getVerbsFromStatements from '../../../service/storeStatements/queriables/getVerbsFromStatement';
 
 const VERB_ID = 'http://example.org/test-verb';
 

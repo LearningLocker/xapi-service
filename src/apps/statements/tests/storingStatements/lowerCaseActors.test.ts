@@ -21,13 +21,16 @@ const TEST_STATEMENT = {
   actor: {
     objectType: 'Group',
     account: TEST_ACCOUNT,
-    member: [{
-      objectType: 'Agent',
-      mbox: TEST_MBOX,
-    }, {
-      objectType: 'Agent',
-      openid: TEST_OPENID,
-    }],
+    member: [
+      {
+        objectType: 'Agent',
+        mbox: TEST_MBOX,
+      },
+      {
+        objectType: 'Agent',
+        openid: TEST_OPENID,
+      },
+    ],
   },
   verb: { id: 'http://www.example.org/verb' },
   object: {
@@ -35,25 +38,31 @@ const TEST_STATEMENT = {
     actor: {
       objectType: 'Group',
       account: TEST_ACCOUNT,
-      member: [{
-        objectType: 'Agent',
-        mbox: TEST_MBOX,
-      }, {
-        objectType: 'Agent',
-        openid: TEST_OPENID,
-      }],
+      member: [
+        {
+          objectType: 'Agent',
+          mbox: TEST_MBOX,
+        },
+        {
+          objectType: 'Agent',
+          openid: TEST_OPENID,
+        },
+      ],
     },
     verb: { id: 'http://www.example.org/verb' },
     object: {
       objectType: 'Group',
       account: TEST_ACCOUNT,
-      member: [{
-        objectType: 'Agent',
-        mbox: TEST_MBOX,
-      }, {
-        objectType: 'Agent',
-        openid: TEST_OPENID,
-      }],
+      member: [
+        {
+          objectType: 'Agent',
+          mbox: TEST_MBOX,
+        },
+        {
+          objectType: 'Agent',
+          openid: TEST_OPENID,
+        },
+      ],
     },
     context: {
       instructor: {
@@ -77,13 +86,16 @@ const EXPECTED_TEST_STATEMENT = {
       homePage: TEST_ACCOUNT.homePage.toLowerCase(),
       name: TEST_ACCOUNT.name.toLowerCase(),
     },
-    member: [{
-      objectType: TEST_STATEMENT.actor.member[0].objectType,
-      mbox: TEST_MBOX.toLowerCase(),
-    }, {
-      objectType: TEST_STATEMENT.actor.member[1].objectType,
-      openid: TEST_OPENID.toLowerCase(),
-    }],
+    member: [
+      {
+        objectType: TEST_STATEMENT.actor.member[0].objectType,
+        mbox: TEST_MBOX.toLowerCase(),
+      },
+      {
+        objectType: TEST_STATEMENT.actor.member[1].objectType,
+        openid: TEST_OPENID.toLowerCase(),
+      },
+    ],
   },
   verb: TEST_STATEMENT.verb,
   object: {
@@ -94,13 +106,16 @@ const EXPECTED_TEST_STATEMENT = {
         homePage: TEST_ACCOUNT.homePage.toLowerCase(),
         name: TEST_ACCOUNT.name.toLowerCase(),
       },
-      member: [{
-        objectType: TEST_STATEMENT.object.actor.member[0].objectType,
-        mbox: TEST_MBOX.toLowerCase(),
-      }, {
-        objectType: TEST_STATEMENT.object.actor.member[1].objectType,
-        openid: TEST_OPENID.toLowerCase(),
-      }],
+      member: [
+        {
+          objectType: TEST_STATEMENT.object.actor.member[0].objectType,
+          mbox: TEST_MBOX.toLowerCase(),
+        },
+        {
+          objectType: TEST_STATEMENT.object.actor.member[1].objectType,
+          openid: TEST_OPENID.toLowerCase(),
+        },
+      ],
     },
     verb: TEST_STATEMENT.object.verb,
     object: {
@@ -109,13 +124,16 @@ const EXPECTED_TEST_STATEMENT = {
         homePage: TEST_ACCOUNT.homePage.toLowerCase(),
         name: TEST_ACCOUNT.name.toLowerCase(),
       },
-      member: [{
-        objectType: TEST_STATEMENT.object.object.member[0].objectType,
-        mbox: TEST_MBOX.toLowerCase(),
-      }, {
-        objectType: TEST_STATEMENT.object.object.member[1].objectType,
-        openid: TEST_OPENID.toLowerCase(),
-      }],
+      member: [
+        {
+          objectType: TEST_STATEMENT.object.object.member[0].objectType,
+          mbox: TEST_MBOX.toLowerCase(),
+        },
+        {
+          objectType: TEST_STATEMENT.object.object.member[1].objectType,
+          openid: TEST_OPENID.toLowerCase(),
+        },
+      ],
     },
     context: {
       instructor: {

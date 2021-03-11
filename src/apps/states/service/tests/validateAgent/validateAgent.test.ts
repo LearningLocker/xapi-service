@@ -25,24 +25,30 @@ describe('validateAgent', () => {
   });
 
   it('should throw an error when using an invalid homePage value', () => {
-    assertWarnings({ account: {
-      homePage: 'www.example.org',
-      name: 'dummy_account_name',
-    } });
+    assertWarnings({
+      account: {
+        homePage: 'www.example.org',
+        name: 'dummy_account_name',
+      },
+    });
   });
 
   it('should throw an error when using an invalid name type', () => {
-    assertWarnings({ account: {
-      homePage: 'http://www.example.org',
-      name: 10,
-    } });
+    assertWarnings({
+      account: {
+        homePage: 'http://www.example.org',
+        name: 10,
+      },
+    });
   });
 
   it('should throw an error when using an invalid homePage value and name type', () => {
-    assertWarnings({ account: {
-      homePage: 'www.example.org',
-      name: 10,
-    } });
+    assertWarnings({
+      account: {
+        homePage: 'www.example.org',
+        name: 10,
+      },
+    });
   });
 
   it('should throw an error when using an invalid mbox type', () => {
@@ -58,17 +64,21 @@ describe('validateAgent', () => {
   });
 
   it('should throw an error when using an invalid homePage type', () => {
-    assertWarnings({ account: {
-      homePage: 10,
-      name: 'dummy_account_name',
-    } });
+    assertWarnings({
+      account: {
+        homePage: 10,
+        name: 'dummy_account_name',
+      },
+    });
   });
 
   it('should throw an error when using an invalid homePage type and name type', () => {
-    assertWarnings({ account: {
-      homePage: 10,
-      name: 10,
-    } });
+    assertWarnings({
+      account: {
+        homePage: 10,
+        name: 10,
+      },
+    });
   });
 
   it('should throw an error when using too many IFIs', () => {

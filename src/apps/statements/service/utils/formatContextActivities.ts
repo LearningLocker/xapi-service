@@ -7,21 +7,17 @@ export default <ActivityFormat>(
   formatter: (activity: Activity) => ActivityFormat,
 ): FormattedContextActivities<ActivityFormat> => {
   return {
-    ...(
-      contextActivities.parent === undefined ? {} :
-      { parent: contextActivities.parent.map(formatter) }
-    ),
-    ...(
-      contextActivities.grouping === undefined ? {} :
-      { grouping: contextActivities.grouping.map(formatter) }
-    ),
-    ...(
-      contextActivities.category === undefined ? {} :
-      { category: contextActivities.category.map(formatter) }
-    ),
-    ...(
-      contextActivities.other === undefined ? {} :
-      { other: contextActivities.other.map(formatter) }
-    ),
+    ...(contextActivities.parent === undefined
+      ? {}
+      : { parent: contextActivities.parent.map(formatter) }),
+    ...(contextActivities.grouping === undefined
+      ? {}
+      : { grouping: contextActivities.grouping.map(formatter) }),
+    ...(contextActivities.category === undefined
+      ? {}
+      : { category: contextActivities.category.map(formatter) }),
+    ...(contextActivities.other === undefined
+      ? {}
+      : { other: contextActivities.other.map(formatter) }),
   };
 };

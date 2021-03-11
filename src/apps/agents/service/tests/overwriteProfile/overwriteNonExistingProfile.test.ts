@@ -25,9 +25,12 @@ describe('overwriteProfile with non-existing model', () => {
   });
 
   it('should throw warnings when using an invalid json content', async () => {
-    const promise = overwriteProfile({
-      contentType: JSON_CONTENT_TYPE,
-    }, TEST_INVALID_JSON_CONTENT);
+    const promise = overwriteProfile(
+      {
+        contentType: JSON_CONTENT_TYPE,
+      },
+      TEST_INVALID_JSON_CONTENT,
+    );
     await assertError(JsonSyntaxError, promise);
   });
 });

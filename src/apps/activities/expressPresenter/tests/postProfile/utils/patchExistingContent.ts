@@ -1,11 +1,7 @@
 import { Response } from 'supertest';
 import { route, xapiHeaderVersion } from '../../../../utils/constants';
 import service from '../../../../utils/testService';
-import {
-  TEST_ACTIVITY_ID,
-  TEST_CLIENT,
-  TEST_PROFILE_ID,
-} from '../../../../utils/testValues';
+import { TEST_ACTIVITY_ID, TEST_CLIENT, TEST_PROFILE_ID } from '../../../../utils/testValues';
 import supertest from '../../utils/supertest';
 
 export default async (

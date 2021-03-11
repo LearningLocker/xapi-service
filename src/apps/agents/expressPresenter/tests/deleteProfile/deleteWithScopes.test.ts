@@ -24,9 +24,7 @@ describe('expressPresenter.deleteProfile with scopes', () => {
   });
 
   it('should throw forbidden error when using untrusted client', async () => {
-    await deleteProfile()
-      .set('Authorization', TEST_UNTRUSTED_TOKEN)
-      .expect(StatusCodes.FORBIDDEN);
+    await deleteProfile().set('Authorization', TEST_UNTRUSTED_TOKEN).expect(StatusCodes.FORBIDDEN);
   });
 
   it('should not error when using valid scopes', async () => {

@@ -58,19 +58,23 @@ export default (config: Config) => {
       // Updates the profile if it exists with JSON object content and the correct ETag.
       // Docs: http://mongodb.github.io/node-mongodb-native/2.2/api/Collection.html#findOneAndUpdate
       // Docs: http://bit.ly/findAndModifyWriteOpResult
-      const updateOpResult = await collection.findOneAndUpdate({
-        ...ifMatchFilter,
-        ...jsonObjectFilter,
-        ...profileFilter,
-      }, {
+      const updateOpResult = await collection.findOneAndUpdate(
+        {
+          ...ifMatchFilter,
+          ...jsonObjectFilter,
+          ...profileFilter,
+        },
+        {
           $set: {
             ...contentPatch,
             ...update,
           },
-        }, {
+        },
+        {
           returnOriginal: false, // Ensures the updated document is returned.
           upsert: false, // Does not create the profile when it doesn't exist.
-        });
+        },
+      );
 
       // Determines if the Profile was updated.
       // Docs: https://docs.mongodb.com/manual/reference/command/getLastError/#getLastError.n
@@ -83,15 +87,19 @@ export default (config: Config) => {
     // Creates the profile if it doesn't already exist.
     // Docs: http://mongodb.github.io/node-mongodb-native/2.2/api/Collection.html#findOneAndUpdate
     // Docs: http://bit.ly/findAndModifyWriteOpResult
-    const createOpResult = await collection.findOneAndUpdate(profileFilter, {
-      $setOnInsert: {
-        content: opts.content,
-        ...update,
+    const createOpResult = await collection.findOneAndUpdate(
+      profileFilter,
+      {
+        $setOnInsert: {
+          content: opts.content,
+          ...update,
+        },
       },
-    }, {
+      {
         returnOriginal: false, // Ensures the updated document is returned.
         upsert: true, // Creates the profile when it's not found.
-      });
+      },
+    );
 
     // Determines if the Profile was created or found.
     // Docs: https://docs.mongodb.com/manual/reference/command/getLastError/#getLastError.n

@@ -37,12 +37,7 @@ const identifiedGroup: Group = {
 
 const membersGroup: Group = {
   ...identifiedGroup,
-  member: [
-    mboxShaAgent,
-    openIDAgent,
-    accountAgent as Actor,
-    mboxShaAgent,
-  ],
+  member: [mboxShaAgent, openIDAgent, accountAgent as Actor, mboxShaAgent],
 };
 
 describe('create ident from agent', () => {
@@ -79,6 +74,7 @@ describe('create ident from agent', () => {
         openIDAgent.openid,
         `${accountAgent.account.homePage}|${accountAgent.account.name}`,
         mboxShaAgent.mbox_sha1sum,
-      ].sort());
+      ].sort(),
+    );
   });
 });

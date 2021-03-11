@@ -8,7 +8,7 @@ import { statementDefaults } from './statements.fixture';
 
 const singleChoice: Statement = {
   ...statementDefaults,
-  ...{
+  ...({
     result: {
       success: true,
       duration: 'PT0H0M3S',
@@ -31,20 +31,13 @@ const singleChoice: Statement = {
         ],
       } as Partial<InteractionActivityDefinition>,
     } as SubStatementObject,
-  } as Partial<Statement>,
+  } as Partial<Statement>),
 };
 
-const multipleChoices: Statement = merge(
-  {},
-  singleChoice,
-  {
-    result: {
-      response: 'golf[,]tetris',
-    },
-  } as Partial<Statement>,
-);
+const multipleChoices: Statement = merge({}, singleChoice, {
+  result: {
+    response: 'golf[,]tetris',
+  },
+} as Partial<Statement>);
 
-export {
-  singleChoice,
-  multipleChoices,
-};
+export { singleChoice, multipleChoices };

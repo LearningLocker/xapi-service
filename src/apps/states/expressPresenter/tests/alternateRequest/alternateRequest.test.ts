@@ -31,10 +31,12 @@ describe('expressPresenter using the alternate request syntax', () => {
       .set('Content-Type', 'invalid_content_type')
       .set('X-Experience-API-Version', xapiHeaderVersion)
       .query({ method: 'GET' })
-      .send(createQueryString({
-        activityId: TEST_ACTIVITY_ID,
-        agent: JSON.stringify(TEST_MBOX_AGENT),
-      }))
+      .send(
+        createQueryString({
+          activityId: TEST_ACTIVITY_ID,
+          agent: JSON.stringify(TEST_MBOX_AGENT),
+        }),
+      )
       .expect(StatusCodes.OK, []);
   });
 });

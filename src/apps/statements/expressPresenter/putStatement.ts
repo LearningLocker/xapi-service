@@ -13,24 +13,27 @@ import storeStatement from './utils/storeStatement';
 import validateVersionHeader from './utils/validateHeaderVersion';
 
 export default (config: Config) => {
-  return catchErrors(config, async (req: Request, res: Response): Promise<void> => {
-    const contentType = defaultTo(req.header('Content-Type'), '');
-    const client = await getClient(config, defaultTo(req.header('Authorization'), ''));
-    validateVersionHeader(req.header('X-Experience-API-Version'));
+  return catchErrors(
+    config,
+    async (req: Request, res: Response): Promise<void> => {
+      const contentType = defaultTo(req.header('Content-Type'), '');
+      const client = await getClient(config, defaultTo(req.header('Authorization'), ''));
+      validateVersionHeader(req.header('X-Experience-API-Version'));
 
-    const queryParams = req.query;
+      const queryParams = req.query;
 
-    if (multipartContentTypePattern.test(contentType)) {
-      const { body, attachments } = await getMultipartStatements(req);
-      return storeStatement({ config, body, attachments, client, queryParams, res });
-    }
+      if (multipartContentTypePattern.test(contentType)) {
+        const { body, attachments } = await getMultipartStatements(req);
+        return storeStatement({ config, body, attachments, client, queryParams, res });
+      }
 
-    if (jsonContentTypePattern.test(contentType)) {
-      const body = parseJson(await streamToString(req), ['body']);
-      const attachments: AttachmentModel[] = [];
-      return storeStatement({ config, body, attachments, client, queryParams, res });
-    }
+      if (jsonContentTypePattern.test(contentType)) {
+        const body = parseJson(await streamToString(req), ['body']);
+        const attachments: AttachmentModel[] = [];
+        return storeStatement({ config, body, attachments, client, queryParams, res });
+      }
 
-    throw new InvalidContentType(contentType);
-  });
+      throw new InvalidContentType(contentType);
+    },
+  );
 };

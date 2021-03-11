@@ -77,10 +77,10 @@ export default {
     bucketName: getStringOption(process.env.FS_S3_BUCKET, 'xapi-service'),
   },
   statementsService: {
-    awaitUpdates: getBooleanOption(defaultTo<any>(
-      process.env.SERVICE_AWAIT_UPDATES,
-      process.env.SERVICE_AWAIT_UODATES,
-    ), false),
+    awaitUpdates: getBooleanOption(
+      defaultTo<any>(process.env.SERVICE_AWAIT_UPDATES, process.env.SERVICE_AWAIT_UODATES),
+      false,
+    ),
     enableActorLowerCasing: getBooleanOption(
       process.env.STATEMENTS_SERVICE_LOWERCASE_ACTORS,
       false,

@@ -9,10 +9,7 @@ const assertFilteredStatementRefs: FilteredStatementsAsserter = (service) => {
   return async (opts, expectedTargetIds) => {
     const refStatement = createReferenceStatement(TEST_REF_ID, expectedTargetIds[0]);
     await storeStatementsInService(service)([refStatement]);
-    await assertFilteredStatements(service)(opts, [
-      TEST_REF_ID,
-      ...expectedTargetIds,
-    ]);
+    await assertFilteredStatements(service)(opts, [TEST_REF_ID, ...expectedTargetIds]);
   };
 };
 
