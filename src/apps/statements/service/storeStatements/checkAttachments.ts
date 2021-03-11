@@ -11,7 +11,7 @@ export default (
   models: UnstoredStatementModel[],
   attachments: AttachmentModel[],
 ) => {
-  /* istanbul ignore next */
+  /* istanbul ignore if - Deprecated flag */
   if (!config.enableAttachmentValidation) {
     return;
   }

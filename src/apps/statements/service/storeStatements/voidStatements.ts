@@ -8,7 +8,7 @@ export default async (
   voidedObjectIds: string[],
   client: ClientModel,
 ): Promise<void> => {
-  /* istanbul ignore next */
+  /* istanbul ignore if - Deprecated flag */
   if (!config.enableVoiding) {
     return;
   }

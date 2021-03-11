@@ -34,7 +34,7 @@ const stack = <T>(value: T, values: T[]): T[] => {
 };
 
 export default async (config: Config, models: UnstoredStatementModel[], client: ClientModel) => {
-  /* istanbul ignore next */
+  /* istanbul ignore if - Deprecated flag */
   if (!config.enableReferencing) {
     return;
   }

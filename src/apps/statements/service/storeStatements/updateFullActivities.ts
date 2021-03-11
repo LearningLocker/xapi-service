@@ -80,6 +80,7 @@ export interface Opts {
 }
 
 export default async ({ config, models, client }: Opts): Promise<void> => {
+  /* istanbul ignore if - Deprecated flag */
   if (!config.enableActivityUpdates) {
     return;
   }

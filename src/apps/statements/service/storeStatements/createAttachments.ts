@@ -7,7 +7,7 @@ export default async (
   attachments: AttachmentModel[],
   lrsId: string,
 ): Promise<void> => {
-  /* istanbul ignore next */
+  /* istanbul ignore if - Deprecated flag */
   if (!config.enableAttachmentCreation) {
     return;
   }

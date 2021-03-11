@@ -75,7 +75,7 @@ export default async (
   models: UnstoredStatementModel[],
   client: ClientModel,
 ): Promise<UnstoredStatementModel[]> => {
-  /* istanbul ignore next */
+  /* istanbul ignore if - Deprecated flag */
   if (!config.enableConflictChecks) {
     return models;
   }

@@ -75,6 +75,7 @@ export default async (
   statements: UnstoredStatementModel[],
   client: ClientModel,
 ) => {
+  /* istanbul ignore if - Deprecated flag */
   if (!config.enableVoidingChecks) {
     return [];
   }
