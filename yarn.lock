@@ -5320,10 +5320,10 @@ jsbn@~0.1.0:
   resolved "https://registry.yarnpkg.com/jsbn/-/jsbn-0.1.1.tgz#a5e654c2e5a2deb5f201d96cefbca80c0ef2f513"
   integrity sha1-peZUwuWi3rXyAdls77yoDA7y9RM=
 
-jscommons@^3.0.0:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/jscommons/-/jscommons-3.0.0.tgz#5414416c3f98c416d74323f418b9406ad22eb0b4"
-  integrity sha512-XcBA6rSjcY3RAEZGvZBauqEdLiKJGHsVqTQ8WX1srMLLxkbOxnkRkyoafb1WIUYQGCwkDc2Ei1sDMZY/3jJ3IQ==
+jscommons@^3.0.1:
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/jscommons/-/jscommons-3.0.1.tgz#525bde924b071c1d9d4151559ad98445367825fe"
+  integrity sha512-vH2zG583tfPIzST/wYFD2qxw2g3ualUCmSgxA0/GoJUCMJja/cq9hVbFicKulF4N+Kl45qK44wEibIdg5h6t9Q==
   dependencies:
     aws-sdk "^2.249.1"
     bluebird "^3.5.1"
@@ -6814,7 +6814,6 @@ npm@^6.14.9:
     cmd-shim "^3.0.3"
     columnify "~1.5.4"
     config-chain "^1.1.12"
-    debuglog "*"
     detect-indent "~5.0.0"
     detect-newline "^2.1.0"
     dezalgo "~1.0.3"
@@ -6829,7 +6828,6 @@ npm@^6.14.9:
     has-unicode "~2.0.1"
     hosted-git-info "^2.8.8"
     iferr "^1.0.2"
-    imurmurhash "*"
     infer-owner "^1.0.4"
     inflight "~1.0.6"
     inherits "^2.0.4"
@@ -6848,14 +6846,8 @@ npm@^6.14.9:
     libnpx "^10.2.4"
     lock-verify "^2.1.0"
     lockfile "^1.0.4"
-    lodash._baseindexof "*"
     lodash._baseuniq "~4.6.0"
-    lodash._bindcallback "*"
-    lodash._cacheindexof "*"
-    lodash._createcache "*"
-    lodash._getnative "*"
     lodash.clonedeep "~4.5.0"
-    lodash.restparam "*"
     lodash.union "~4.6.0"
     lodash.uniq "~4.5.0"
     lodash.without "~4.4.0"
