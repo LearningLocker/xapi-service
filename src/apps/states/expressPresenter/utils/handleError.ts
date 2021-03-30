@@ -19,23 +19,18 @@ export interface Options extends CommonOptions {
 }
 
 export default ({ config, errorId, res, err }: Options): Response => {
-  const { logger, translator } = config;
-  const logError = (msg: string, meta?: any) => {
-    logger.error(`${errorId}: xapi-state handled - ${msg}`, meta);
-  };
+  const { translator } = config;
 
   res.setHeader('X-Experience-API-Version', xapiHeaderVersion);
 
   if (err instanceof JsonSyntaxError) {
     const code = StatusCodes.BAD_REQUEST;
     const message = translator.jsonSyntaxError(err);
-    logError(message);
     return sendMessage({ res, code, errorId, message });
   }
   if (err instanceof NonJsonObject) {
     const code = StatusCodes.BAD_REQUEST;
     const message = translator.nonJsonObjectError(err);
-    logError(message);
     return sendMessage({ res, code, errorId, message });
   }
   if (err instanceof Warnings) {
@@ -45,13 +40,11 @@ export default ({ config, errorId, res, err }: Options): Response => {
       return translateWarning(translator, warning);
     });
     const obj = { warnings: strWarnings };
-    logError('Validation warnings', strWarnings);
     return sendObject({ res, code, errorId, obj });
   }
   if (err instanceof InvalidMethod) {
     const code = StatusCodes.BAD_REQUEST;
     const message = translator.invalidMethodError(err);
-    logError(message);
     return sendMessage({ res, code, errorId, message });
   }
   if (err instanceof ExpiredClientError) {
