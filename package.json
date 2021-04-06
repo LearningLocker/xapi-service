@@ -51,7 +51,7 @@
     "dotenv": "^8.0.0",
     "express": "^4.14.1",
     "fs-extra": "^8.0.0",
-    "google-auth-library": "7.0.2",
+    "google-auth-library": "7.0.4",
     "http-status-codes": "^2.0.0",
     "install": "^0.13.0",
     "ioredis": "^4.14.0",
