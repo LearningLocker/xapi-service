@@ -339,18 +339,18 @@
     protobufjs "^6.10.0"
     yargs "^16.1.1"
 
-"@ht2-labs/semantic-release@2.0.73":
-  version "2.0.73"
-  resolved "https://registry.yarnpkg.com/@ht2-labs/semantic-release/-/semantic-release-2.0.73.tgz#032a309736b0c1a757aa889b3aee602e5572ffc6"
-  integrity sha512-P5RNSAgcyyK4sggtOaF5P5q4mNUw0hU3GOD/UnXMlTkCWM7+O5is3gxOazR+EZF6prMYEGDG125WkIyhnBHK4Q==
+"@ht2-labs/semantic-release@2.0.75":
+  version "2.0.75"
+  resolved "https://registry.yarnpkg.com/@ht2-labs/semantic-release/-/semantic-release-2.0.75.tgz#67e4cc6a370f29d6f9f8c94744a966af7dfb3544"
+  integrity sha512-RxETn2pqC61/JkKVf3KXaNDaDCdpHZMnQKndk2EeCGimhY6Yd2bm7uSUnnxCfFTsJzvQ9yA6ksrU+tYPHTyfsg==
   dependencies:
     "@semantic-release/github" "7.2.1"
-    "@semantic-release/npm" "7.1.0"
+    "@semantic-release/npm" "7.1.1"
     fs-extra "^9.0.0"
     semantic-release "17.4.2"
     semantic-release-docker "2.2.0"
     semver "7.3.5"
-    simple-git "2.37.0"
+    simple-git "2.38.0"
 
 "@ht2-labs/typescript-project@2.0.60":
   version "2.0.60"
@@ -758,26 +758,7 @@
     p-retry "^4.0.0"
     url-join "^4.0.0"
 
-"@semantic-release/npm@7.1.0":
-  version "7.1.0"
-  resolved "https://registry.yarnpkg.com/@semantic-release/npm/-/npm-7.1.0.tgz#27c56ad18bceb97a061f1fc7e54a85dc4c8016d6"
-  integrity sha512-zr9kTlF3/84QE9XH765TwvG0ljysSrxEGPNL1prxpWS9fHD7Pa+58L7pgLQwmw4i1QIkhh9cANvY9l7uldvh5w==
-  dependencies:
-    "@semantic-release/error" "^2.2.0"
-    aggregate-error "^3.0.0"
-    execa "^5.0.0"
-    fs-extra "^9.0.0"
-    lodash "^4.17.15"
-    nerf-dart "^1.0.0"
-    normalize-url "^5.0.0"
-    npm "^7.0.0"
-    rc "^1.2.8"
-    read-pkg "^5.0.0"
-    registry-auth-token "^4.0.0"
-    semver "^7.1.2"
-    tempy "^1.0.0"
-
-"@semantic-release/npm@^7.0.0":
+"@semantic-release/npm@7.1.1", "@semantic-release/npm@^7.0.0":
   version "7.1.1"
   resolved "https://registry.yarnpkg.com/@semantic-release/npm/-/npm-7.1.1.tgz#90a0970f12b963fa846e5cdf896e6c7d996c1a64"
   integrity sha512-zTYAno1j49XiH+uAVCY47dKOJAagA/MaJb26FFIfNujNHw3GYXk3ygsFa5CSa55xsO0qEMLcsDX3f3ByCg6nZw==
@@ -6400,11 +6381,6 @@ normalize-url@^4.1.0:
   resolved "https://registry.yarnpkg.com/normalize-url/-/normalize-url-4.5.0.tgz#453354087e6ca96957bd8f5baf753f5982142129"
   integrity sha512-2s47yzUxdexf1OhyRi4Em83iQk0aPvwTddtFz4hnSSw9dCEsLEGf6SwIO8ss/19S9iBb5sJaOuTvTGDeZI00BQ==
 
-normalize-url@^5.0.0:
-  version "5.3.0"
-  resolved "https://registry.yarnpkg.com/normalize-url/-/normalize-url-5.3.0.tgz#8959b3cdaa295b61592c1f245dded34b117618dd"
-  integrity sha512-9/nOVLYYe/dO/eJeQUNaGUF4m4Z5E7cb9oNTKabH+bNf19mqj60txTcveQxL0GlcWLXCxkOu2/LwL8oW0idIDA==
-
 normalize-url@^6.0.0:
   version "6.0.0"
   resolved "https://registry.yarnpkg.com/normalize-url/-/normalize-url-6.0.0.tgz#688ba4251cc46350f5adf4e65e14b7113a752684"
@@ -8047,6 +8023,15 @@ simple-git@2.37.0:
     "@kwsites/file-exists" "^1.1.1"
     "@kwsites/promise-deferred" "^1.1.1"
     debug "^4.3.2"
+
+simple-git@2.38.0:
+  version "2.38.0"
+  resolved "https://registry.yarnpkg.com/simple-git/-/simple-git-2.38.0.tgz#5bc66bec40bce4f8ef950f4966f427799b4dd758"
+  integrity sha512-CORjrfirWMEGbJAxaXDH/PjZVOeATeG2bkafM9DsLVcFkbF9sXQGIIpEI6FeyXpvUsFK69T/pa4+4FKY9TUJMQ==
+  dependencies:
+    "@kwsites/file-exists" "^1.1.1"
+    "@kwsites/promise-deferred" "^1.1.1"
+    debug "^4.3.1"
 
 simple-swizzle@^0.2.2:
   version "0.2.2"
