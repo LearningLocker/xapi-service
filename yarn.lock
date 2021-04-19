@@ -374,12 +374,12 @@
   resolved "https://registry.yarnpkg.com/@kwsites/promise-deferred/-/promise-deferred-1.1.1.tgz#8ace5259254426ccef57f3175bc64ed7095ed919"
   integrity sha512-GaHYm+c0O9MjZRu0ongGBRbinu8gVAMd2UZjji6jVmqKtZluZnptXGWhz1E8j8D2HJ3f/yMxKAUC0b+57wncIw==
 
-"@learninglocker/xapi-validation@^2.1.10":
-  version "2.1.11"
-  resolved "https://registry.yarnpkg.com/@learninglocker/xapi-validation/-/xapi-validation-2.1.11.tgz#29d197c4a1c0962c34a6446f89bf3fc854f6aa99"
-  integrity sha512-TNHBB1UTd3R0Ed29wYZGI8h15tQHM+umJJIW5wEVfAeY+EQk8urD+6gJ5gk9VTfenin7uFdYy8NTPhJltpHFoQ==
+"@learninglocker/xapi-validation@^2.1.11":
+  version "2.1.12"
+  resolved "https://registry.yarnpkg.com/@learninglocker/xapi-validation/-/xapi-validation-2.1.12.tgz#5f28715238d7762d810e50a1d4c365312255f94f"
+  integrity sha512-UiU/bRWRU93moc7tfXioykk4WbNml6Bs7YDKSiWEBeTvZuqGnv3DdekxU9DCRlnMw/fJfdc9HVKOaeYH6aAenA==
   dependencies:
-    lodash "^4.17.4"
+    lodash "^4.17.10"
     rulr "^4.0.1"
 
 "@newrelic/aws-sdk@^2.0.0":
