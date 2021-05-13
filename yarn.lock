@@ -1792,23 +1792,10 @@ bl@^2.2.1:
     readable-stream "^2.3.5"
     safe-buffer "^5.1.1"
 
-blamer@^0.1.9:
-  version "0.1.13"
-  resolved "https://registry.yarnpkg.com/blamer/-/blamer-0.1.13.tgz#61f215f2361bd054e6258c0c5e0086f04074e670"
-  integrity sha1-YfIV8jYb0FTmJYwMXgCG8EB05nA=
-  dependencies:
-    bluebird "~2.3.x"
-    xml2js "~0.4.x"
-
-bluebird@3.7.2, bluebird@^3.0.5, bluebird@^3.5.1, bluebird@^3.7.0:
+bluebird@3.7.2, bluebird@^3.5.1, bluebird@^3.7.0:
   version "3.7.2"
   resolved "https://registry.yarnpkg.com/bluebird/-/bluebird-3.7.2.tgz#9f229c15be272454ffa973ace0dbee79a1b0c36f"
   integrity sha512-XpNj6GDQzdfW+r2Wnn7xiSAd7TM3jzkxGXBGTtWKuSXv1xUV+azxAm8jdWZN06QTQk+2N2XB9jRDkvbmQmcRtg==
-
-bluebird@~2.3.x:
-  version "2.3.11"
-  resolved "https://registry.yarnpkg.com/bluebird/-/bluebird-2.3.11.tgz#15bb78ed32abf27b090640c0f85e4b91f615c8b6"
-  integrity sha1-Fbt47TKr8nsJBkDA+F5LkfYVyLY=
 
 body-parser@1.19.0, body-parser@^1.18.3:
   version "1.19.0"
@@ -2192,14 +2179,6 @@ cli-table@^0.3.1:
   dependencies:
     colors "1.0.3"
 
-cli@>=0.10.x:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/cli/-/cli-1.0.1.tgz#22817534f24bfa4950c34d532d48ecbc621b8c14"
-  integrity sha1-IoF1NPJL+klQw01TLUjsvGIbjBQ=
-  dependencies:
-    exit "0.1.2"
-    glob "^7.1.1"
-
 cliui@^4.0.0:
   version "4.1.0"
   resolved "https://registry.yarnpkg.com/cliui/-/cliui-4.1.0.tgz#348422dbe82d800b3022eef4f6ac10bf2e4d1b49"
@@ -2257,11 +2236,6 @@ codecov@3.8.1:
     js-yaml "3.14.0"
     teeny-request "6.0.1"
     urlgrey "0.4.4"
-
-codemirror@5.40.2:
-  version "5.40.2"
-  resolved "https://registry.yarnpkg.com/codemirror/-/codemirror-5.40.2.tgz#f4a41fee2d84e679543591b3680af259d903330b"
-  integrity sha512-yoWuvEiD3v5vTwdoMc/wu/Ld6dh9K/yEiEBTKOPGM+/pN0gTAqFNtrLHv1IJ1UJvzFpNRvMi92XCi3+8/iIaEw==
 
 collection-visit@^1.0.0:
   version "1.0.0"
@@ -3329,11 +3303,6 @@ execa@^5.0.0:
     signal-exit "^3.0.3"
     strip-final-newline "^2.0.0"
 
-exit@0.1.2:
-  version "0.1.2"
-  resolved "https://registry.yarnpkg.com/exit/-/exit-0.1.2.tgz#0632638f8d877cc82107d30a0fff1a17cba1cd0c"
-  integrity sha1-BjJjj42HfMghB9MKD/8aF8uhzQw=
-
 expand-brackets@^0.1.4:
   version "0.1.5"
   resolved "https://registry.yarnpkg.com/expand-brackets/-/expand-brackets-0.1.5.tgz#df07284e342a807cd733ac5af72411e581d1177b"
@@ -3994,7 +3963,7 @@ glob-parent@^5.0.0, glob-parent@^5.1.0, glob-parent@~5.1.0:
   dependencies:
     is-glob "^4.0.1"
 
-glob@7.1.6, glob@>=5.0.x, glob@^7.0.0, glob@^7.0.6, glob@^7.1.1, glob@^7.1.3, glob@^7.1.4, glob@^7.1.6:
+glob@7.1.6, glob@^7.0.0, glob@^7.0.6, glob@^7.1.1, glob@^7.1.3, glob@^7.1.4, glob@^7.1.6:
   version "7.1.6"
   resolved "https://registry.yarnpkg.com/glob/-/glob-7.1.6.tgz#141f33b81a7c2492e125594307480c46679278a6"
   integrity sha512-LwaxwyZ72Lk7vZINtNNrywX0ZuLyStrdDtabefZKAY5ZGJhVtgdznluResxNmPitE0SAO+O26sWTHeKSI2wMBA==
@@ -5113,7 +5082,7 @@ js-yaml@3.14.0:
     argparse "^1.0.7"
     esprima "^4.0.0"
 
-js-yaml@4.0.0, js-yaml@>=3.4.x:
+js-yaml@4.0.0:
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/js-yaml/-/js-yaml-4.0.0.tgz#f426bc0ff4b4051926cd588c71113183409a121f"
   integrity sha512-pqon0s+4ScYUvX30wxQi3PogGFAlUyH0awepWvwkj4jD4v+ova3RiYw8bmA6x2rDrEaj8i/oWKoRxpVNW+Re8Q==
@@ -5157,23 +5126,6 @@ jscommons@^3.0.1:
     uuid "^3.2.1"
     winston "^2.4.2"
     winston-aws-cloudwatch "^2.0.0"
-
-jscpd@0.6.25:
-  version "0.6.25"
-  resolved "https://registry.yarnpkg.com/jscpd/-/jscpd-0.6.25.tgz#c1cbe726bd43507097c3c124ac4f8c6b5e264a30"
-  integrity sha512-Di463/W3CSwqvz/3kFZlcuqOlTP6538NYFCG5LQKVF8UjXQfeuWYy1OewZj5QDGYEJ8bjeZIUQxFjnTysZD+Vg==
-  dependencies:
-    blamer "^0.1.9"
-    bluebird "^3.0.5"
-    cli ">=0.10.x"
-    cli-table "^0.3.1"
-    codemirror "5.40.2"
-    colors "^1.1.2"
-    glob ">=5.0.x"
-    js-yaml ">=3.4.x"
-    minimatch "^3.0.4"
-    underscore ">=1.8.x"
-    winston "2.4.0"
 
 jsesc@^1.3.0:
   version "1.3.0"
@@ -8953,11 +8905,6 @@ undefsafe@^2.0.3:
   dependencies:
     debug "^2.2.0"
 
-underscore@>=1.8.x:
-  version "1.13.0"
-  resolved "https://registry.yarnpkg.com/underscore/-/underscore-1.13.0.tgz#3ccdcbb824230fc6bf234ad0ddcd83dff4eafe5f"
-  integrity sha512-sCs4H3pCytsb5K7i072FAEC9YlSYFIbosvM0tAKAlpSSUgD7yC1iXSEGdl5XrDKQ1YUB+p/HDzYrSG2H2Vl36g==
-
 union-value@^1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/union-value/-/union-value-1.0.1.tgz#0b6fe7b835aecda61c6ea4d4f02c14221e109847"
@@ -9239,18 +9186,6 @@ winston@*:
     triple-beam "^1.3.0"
     winston-transport "^4.4.0"
 
-winston@2.4.0:
-  version "2.4.0"
-  resolved "https://registry.yarnpkg.com/winston/-/winston-2.4.0.tgz#808050b93d52661ed9fb6c26b3f0c826708b0aee"
-  integrity sha1-gIBQuT1SZh7Z+2wms/DIJnCLCu4=
-  dependencies:
-    async "~1.0.0"
-    colors "1.0.x"
-    cycle "1.0.x"
-    eyes "0.1.x"
-    isstream "0.1.x"
-    stack-trace "0.0.x"
-
 winston@^2.4.2:
   version "2.4.5"
   resolved "https://registry.yarnpkg.com/winston/-/winston-2.4.5.tgz#f2e431d56154c4ea765545fc1003bd340c95b59a"
@@ -9337,7 +9272,7 @@ xml2js@0.4.19:
     sax ">=0.6.0"
     xmlbuilder "~9.0.1"
 
-xml2js@^0.4.19, xml2js@~0.4.x:
+xml2js@^0.4.19:
   version "0.4.23"
   resolved "https://registry.yarnpkg.com/xml2js/-/xml2js-0.4.23.tgz#a0c69516752421eb2ac758ee4d4ccf58843eac66"
   integrity sha512-ySPiMjM0+pLDftHgXY4By0uswI3SPKLDw/i3UXbnO8M/p28zqexCUoPmQFrYD+/1BzhGJSs2i1ERWKJAtiLrug==
