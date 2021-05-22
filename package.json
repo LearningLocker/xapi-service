@@ -99,7 +99,7 @@
     "codecov": "3.8.1",
     "colors": "1.4.0",
     "commitlint": "12.0.1",
-    "eslint": "7.24.0",
+    "eslint": "7.27.0",
     "eslint-config-prettier": "8.1.0",
     "eslint-plugin-deprecation": "1.2.0",
     "eslint-plugin-functional": "3.2.1",
