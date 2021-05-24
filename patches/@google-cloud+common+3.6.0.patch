@@ -1,0 +1,17 @@
+diff --git a/node_modules/@google-cloud/common/build/src/util.js b/node_modules/@google-cloud/common/build/src/util.js
+index 4860a5d..022210e 100644
+--- a/node_modules/@google-cloud/common/build/src/util.js
++++ b/node_modules/@google-cloud/common/build/src/util.js
+@@ -49,8 +49,12 @@ class ApiError extends Error {
+         this.code = errorBody.code;
+         this.errors = errorBody.errors;
+         this.response = errorBody.response;
++
++        console.log("API Error. errorBody: ", errorBody);
++
+         try {
+             this.errors = JSON.parse(this.response.body).error.errors;
++            console.log("TRY. parsed response body errors: ", JSON.parse(this.response.body).error.errors);
+         }
+         catch (e) {
+             this.errors = errorBody.errors;
