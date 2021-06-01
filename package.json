@@ -57,7 +57,7 @@
     "jscommons": "^3.0.2",
     "jsonwebtoken": "^8.5.1",
     "lodash": "^4.17.4",
-    "mime-types": "2.1.29",
+    "mime-types": "2.1.31",
     "mongodb": "^3.0.2",
     "node-fetch": "^2.0.0",
     "object-hash": "^2.0.0",
