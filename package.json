@@ -4,7 +4,7 @@
   "description": "A service for the xAPI",
   "main": "dist/server.js",
   "typings": "dist/server.d.ts",
-  "license": "GPL-3.0",
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/LearningLocker/xapi-service.git"
