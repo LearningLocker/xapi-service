@@ -1,5 +1,4 @@
 {
-  "enabled": false,
   "extends": ["@ht2-labs:base"],
   "lockFileMaintenance": {
     "enabled": true,
