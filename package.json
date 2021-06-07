@@ -31,7 +31,8 @@
     "lint": "eslint --cache --quiet --fix src",
     "lint-ci": "eslint --quiet src",
     "semantic-release": "ht2-release-public-circleci-app",
-    "codecov": "nyc report --reporter=text-lcov > coverage.lcov && codecov"
+    "codecov": "nyc report --reporter=text-lcov > coverage.lcov && codecov",
+    "postinstall": "patch-package"
   },
   "engines": {
     "node": ">6.0.0",
@@ -61,6 +62,8 @@
     "mongodb": "^3.0.2",
     "node-fetch": "^2.0.0",
     "object-hash": "^2.0.0",
+    "patch-package": "^6.4.7",
+    "postinstall-postinstall": "^2.1.0",
     "query-string": "^6.8.2",
     "redis": "^3.0.0",
     "rulr": "^4.0.0",
