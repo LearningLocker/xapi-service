@@ -18,14 +18,14 @@ jobs:
       - checkout
       - restore_cache:
           keys:
-            - v1-dependencies-{{ checksum "yarn.lock" }}
+            - v1-dependencies-{{ checksum "yarn.lock" }}-{{ checksum "patches.hash" }}
       - run:
           name: Installing Dependencies
           command: yarn install --ignore-engines --frozen-lockfile
       - save_cache:
           paths:
             - node_modules
-          key: v1-dependencies-{{ checksum "yarn.lock" }}
+          key: v1-dependencies-{{ checksum "yarn.lock" }}-{{ checksum "patches.hash" }}
       - run:
           name: Compiling Code
           command: yarn build
@@ -58,7 +58,7 @@ jobs:
       - checkout
       - restore_cache:
           keys:
-            - v1-dependencies-{{ checksum "yarn.lock" }}
+            - v1-dependencies-{{ checksum "yarn.lock" }}-{{ checksum "patches.hash" }}
       - restore_cache:
           keys:
             - dist-{{ .Branch }}-{{ .Revision }}
@@ -92,7 +92,7 @@ jobs:
       - checkout
       - restore_cache:
           keys:
-            - v1-dependencies-{{ checksum "yarn.lock" }}
+            - v1-dependencies-{{ checksum "yarn.lock" }}-{{ checksum "patches.hash" }}
       - restore_cache:
           keys:
             - dist-{{ .Branch }}-{{ .Revision }}
@@ -134,7 +134,7 @@ jobs:
       - checkout
       - restore_cache:
           keys:
-            - v1-dependencies-{{ checksum "yarn.lock" }}
+            - v1-dependencies-{{ checksum "yarn.lock" }}-{{ checksum "patches.hash" }}
       - restore_cache:
           keys:
             - dist-{{ .Branch }}-{{ .Revision }}
@@ -173,7 +173,7 @@ jobs:
       - checkout
       - restore_cache:
           keys:
-            - v1-dependencies-{{ checksum "yarn.lock" }}
+            - v1-dependencies-{{ checksum "yarn.lock" }}-{{ checksum "patches.hash" }}
       - restore_cache:
           keys:
             - dist-{{ .Branch }}-{{ .Revision }}
@@ -203,7 +203,7 @@ jobs:
           version: 19.03.13
       - restore_cache:
           keys:
-            - v1-dependencies-{{ checksum "yarn.lock" }}
+            - v1-dependencies-{{ checksum "yarn.lock" }}-{{ checksum "patches.hash" }}
       - restore_cache:
           keys:
             - dist-{{ .Branch }}-{{ .Revision }}
