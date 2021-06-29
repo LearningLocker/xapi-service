@@ -16,6 +16,9 @@ jobs:
     working_directory: ~/repo
     steps:
       - checkout
+      - run:
+          name: Create hash for patches folder contents
+          command: cat patches/* | md5sum > patches.hash
       - restore_cache:
           keys:
             - v1-dependencies-{{ checksum "yarn.lock" }}-{{ checksum "patches.hash" }}
@@ -56,6 +59,9 @@ jobs:
     working_directory: ~/repo
     steps:
       - checkout
+      - run:
+          name: Create hash for patches folder contents
+          command: cat patches/* | md5sum > patches.hash
       - restore_cache:
           keys:
             - v1-dependencies-{{ checksum "yarn.lock" }}-{{ checksum "patches.hash" }}
@@ -90,6 +96,9 @@ jobs:
     working_directory: ~/repo
     steps:
       - checkout
+      - run:
+          name: Create hash for patches folder contents
+          command: cat patches/* | md5sum > patches.hash
       - restore_cache:
           keys:
             - v1-dependencies-{{ checksum "yarn.lock" }}-{{ checksum "patches.hash" }}
@@ -132,6 +141,9 @@ jobs:
     working_directory: ~/repo
     steps:
       - checkout
+      - run:
+          name: Create hash for patches folder contents
+          command: cat patches/* | md5sum > patches.hash
       - restore_cache:
           keys:
             - v1-dependencies-{{ checksum "yarn.lock" }}-{{ checksum "patches.hash" }}
@@ -171,6 +183,9 @@ jobs:
     working_directory: ~/repo
     steps:
       - checkout
+      - run:
+          name: Create hash for patches folder contents
+          command: cat patches/* | md5sum > patches.hash
       - restore_cache:
           keys:
             - v1-dependencies-{{ checksum "yarn.lock" }}-{{ checksum "patches.hash" }}
@@ -201,6 +216,9 @@ jobs:
       - setup_remote_docker:
           docker_layer_caching: true
           version: 19.03.13
+      - run:
+          name: Create hash for patches folder contents
+          command: cat patches/* | md5sum > patches.hash
       - restore_cache:
           keys:
             - v1-dependencies-{{ checksum "yarn.lock" }}-{{ checksum "patches.hash" }}
