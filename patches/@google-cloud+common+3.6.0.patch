@@ -1,5 +1,5 @@
 diff --git a/node_modules/@google-cloud/common/build/src/util.js b/node_modules/@google-cloud/common/build/src/util.js
-index 4860a5d..022210e 100644
+index 4860a5d..e910bb3 100644
 --- a/node_modules/@google-cloud/common/build/src/util.js
 +++ b/node_modules/@google-cloud/common/build/src/util.js
 @@ -49,8 +49,12 @@ class ApiError extends Error {
@@ -15,3 +15,27 @@ index 4860a5d..022210e 100644
          }
          catch (e) {
              this.errors = errorBody.errors;
+@@ -214,6 +218,7 @@ class Util {
+         const writeStream = new ProgressStream();
+         writeStream.on('progress', evt => dup.emit('progress', evt));
+         dup.setWritable(writeStream);
++        console.log("makeWritableStream: dup setWritable writeStream");
+         const defaultReqOpts = {
+             method: 'POST',
+             qs: {
+@@ -238,6 +243,7 @@ class Util {
+         options.makeAuthenticatedRequest(reqOpts, {
+             onAuthenticated(err, authenticatedReqOpts) {
+                 if (err) {
++                    console.log("makeWritableStream: onAuthenticated error", err);
+                     dup.destroy(err);
+                     return;
+                 }
+@@ -245,6 +251,7 @@ class Util {
+                 request(authenticatedReqOpts, (err, resp, body) => {
+                     util.handleResp(err, resp, body, (err, data) => {
+                         if (err) {
++                            console.log("makeWritableStream: onAuthenticated handleResponse error", err);
+                             dup.destroy(err);
+                             return;
+                         }
