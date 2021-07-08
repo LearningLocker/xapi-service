@@ -513,15 +513,15 @@
     semver "7.3.5"
     simple-git "2.40.0"
 
-"@ht2-labs/typescript-project@2.0.60":
-  version "2.0.60"
-  resolved "https://registry.yarnpkg.com/@ht2-labs/typescript-project/-/typescript-project-2.0.60.tgz#686841c4c1c3d3c1b3f2ec669cb03c4a7bd839cb"
-  integrity sha512-vvdy66XoC/+Z/dU2timTcH6R+sE9cX2f1VWXxZLwXn39jwRDF4/dGAI+eQfp4dbPMuQWJt0qypeNIkWb0Q677A==
+"@ht2-labs/typescript-project@2.0.62":
+  version "2.0.62"
+  resolved "https://registry.yarnpkg.com/@ht2-labs/typescript-project/-/typescript-project-2.0.62.tgz#610073dca709297abc6a5c2eb7ed08ff577fbfa7"
+  integrity sha512-OWNC/nccRM8k9I6VYdL5pzsG6EVTLOj7OvPSJmh2lpO3EoG1J4OwwQjVLBm8MkQfdcY0i3M7xSI6JL5yrT6muA==
   dependencies:
     tslint "5.20.1"
     tslint-consistent-codestyle "1.16.0"
     tslint-immutable "4.9.1"
-    typescript "3.9.9"
+    typescript "3.9.10"
 
 "@istanbuljs/load-nyc-config@^1.0.0":
   version "1.1.0"
@@ -8722,10 +8722,10 @@ typedarray@^0.0.6:
   resolved "https://registry.yarnpkg.com/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
   integrity sha1-hnrHTjhkGHsdPUfZlqeOxciDB3c=
 
-typescript@3.9.9:
-  version "3.9.9"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-3.9.9.tgz#e69905c54bc0681d0518bd4d587cc6f2d0b1a674"
-  integrity sha512-kdMjTiekY+z/ubJCATUPlRDl39vXYiMV9iyeMuEuXZh2we6zz80uovNN2WlAxmmdE/Z/YQe+EbOEXB5RHEED3w==
+typescript@3.9.10:
+  version "3.9.10"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-3.9.10.tgz#70f3910ac7a51ed6bef79da7800690b19bf778b8"
+  integrity sha512-w6fIxVE/H1PkLKcCPsFqKE7Kv7QUwhU8qQY2MueZXWx5cPZdwFupLgKK3vntcK98BtNHZtAF4LA/yl2a7k8R6Q==
 
 typescript@4.3.3:
   version "4.3.3"
