@@ -1110,10 +1110,10 @@
   dependencies:
     "@types/node" "*"
 
-"@types/ioredis@3.2.24":
-  version "3.2.24"
-  resolved "https://registry.yarnpkg.com/@types/ioredis/-/ioredis-3.2.24.tgz#98a149f913808627e61e7e641a58685c86885019"
-  integrity sha512-bHEdc/lIA9XTtFVENYl1tAuUfbn5T2waUDQODVNm2gMsr2nGOWj/cfeNqqsOhz/dmwvgPwYsfdDNeXAf5U+xmw==
+"@types/ioredis@3.2.26":
+  version "3.2.26"
+  resolved "https://registry.yarnpkg.com/@types/ioredis/-/ioredis-3.2.26.tgz#cb18ad2681c9a925825c1d8012e797c363f949b5"
+  integrity sha512-VfD0g1o+u7CpjaRPmTbVU0GMMEAjDX6/x2wCZXJv7ExqtawEzJ0KI7tcA82lbcuWNWbMjqmQsUcfQnEspCNp8A==
   dependencies:
     "@types/bluebird" "*"
     "@types/node" "*"
