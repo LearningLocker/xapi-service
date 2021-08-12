@@ -43,6 +43,7 @@ export default (config: Config) => {
       preValidatedModels,
       clonedAttachments,
       opts.client,
+      opts.priority,
     );
     const unstoredModels = await getUnstoredModels(config, postValidatedModels, opts.client);
     const voidedObjectIds = await checkVoiders(config, unstoredModels, opts.client);
@@ -74,9 +75,13 @@ export default (config: Config) => {
     });
 
     await awaitUpdates(config, unawaitedUpdates);
+
     if (unstoredStatementProperties.length !== 0) {
       config.repo
-        .emitNewStatements({ statementProperties: unstoredStatementProperties })
+        .emitNewStatements({
+          statementProperties: unstoredStatementProperties,
+          priority: opts.priority,
+        })
         .catch((err) => {
           /* istanbul ignore next */
           console.error(err);

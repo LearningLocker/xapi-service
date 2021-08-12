@@ -1,3 +1,4 @@
+import { StatementProcessingPriority } from '../enums/statementProcessingPriority.enum';
 import Statement from './Statement';
 
 export interface Ref {
@@ -9,6 +10,7 @@ interface UnstoredStatementModel {
   readonly organisation: string;
   readonly client: string;
   readonly lrs_id: string;
+  readonly priority: StatementProcessingPriority;
   readonly person: string | null;
   readonly active: boolean;
   readonly voided: boolean;
