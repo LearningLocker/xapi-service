@@ -1,22 +1,7 @@
-import { StatementProcessingPriority } from '../../../enums/statementProcessingPriority.enum';
+import { CHANNEL_NAME, EVENT_NAME } from '../utils/constants';
+import { getPrefixWithProcessingPriority } from '../utils/getPrefixWithProcessingPriority';
 import FacadeConfig from '../utils/redisEvents/FacadeConfig';
 import Signature from './Signature';
-
-const EVENT_NAME = 'statement.new';
-const CHANNEL_NAME = 'statement.notify';
-
-const getPrefixWithProcessingPriority = (
-  originalPrefix: string,
-  priority: StatementProcessingPriority,
-): string => {
-  switch (priority) {
-    case StatementProcessingPriority.LOW:
-      return `${originalPrefix}_${StatementProcessingPriority.LOW}`;
-    case StatementProcessingPriority.MEDIUM:
-    default:
-      return originalPrefix;
-  }
-};
 
 export default (config: FacadeConfig): Signature => {
   return async ({ statementProperties, priority }) => {

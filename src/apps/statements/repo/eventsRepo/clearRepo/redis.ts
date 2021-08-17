@@ -1,11 +1,21 @@
+import { StatementProcessingPriority } from '../../../enums/statementProcessingPriority.enum';
+import { EVENT_NAME } from '../utils/constants';
+import { getPrefixWithProcessingPriority } from '../utils/getPrefixWithProcessingPriority';
 import FacadeConfig from '../utils/redisEvents/FacadeConfig';
-
-const EVENT_NAME = 'statement.new';
 
 export default (config: FacadeConfig) => {
   return async (): Promise<void> => {
     const client = await config.client();
-    const listName = `${config.prefix}:${EVENT_NAME}`;
-    await client.del(listName);
+
+    await Promise.all(
+      Object.values(StatementProcessingPriority).map((statementProcessingPriority) => {
+        const listName = `${getPrefixWithProcessingPriority(
+          config.prefix,
+          statementProcessingPriority,
+        )}:${EVENT_NAME}`;
+
+        return client.del(listName);
+      }),
+    );
   };
 };
