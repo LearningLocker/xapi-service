@@ -12,6 +12,7 @@ export default (config: FacadeConfig) => {
         const listName = `${getPrefixWithProcessingPriority(
           config.prefix,
           statementProcessingPriority,
+          config.isQueuePriorityEnabled,
         )}:${EVENT_NAME}`;
 
         return client.del(listName);

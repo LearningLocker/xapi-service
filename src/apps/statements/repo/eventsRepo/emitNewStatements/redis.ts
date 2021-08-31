@@ -7,7 +7,11 @@ export default (config: FacadeConfig): Signature => {
   return async ({ statementProperties, priority }) => {
     const client = await config.client();
 
-    const prefixWithPriority = getPrefixWithProcessingPriority(config.prefix, priority);
+    const prefixWithPriority = getPrefixWithProcessingPriority(
+      config.prefix,
+      priority,
+      config.isQueuePriorityEnabled,
+    );
     const listName = `${prefixWithPriority}:${EVENT_NAME}`;
     const channelName = `${prefixWithPriority}:${CHANNEL_NAME}`;
 

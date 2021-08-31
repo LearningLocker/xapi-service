@@ -10,6 +10,7 @@ export default (factoryConfig: FactoryConfig = {}): Facade => {
   const facadeConfig: FacadeConfig = {
     client: defaultTo(factoryConfig.client, connectToRedis()),
     prefix: defaultTo(factoryConfig.prefix, 'xapistatements'),
+    isQueuePriorityEnabled: defaultTo(factoryConfig.isQueuePriorityEnabled, false),
   };
   return {
     emitNewStatements: emitNewStatements(facadeConfig),

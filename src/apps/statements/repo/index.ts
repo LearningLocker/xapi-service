@@ -18,6 +18,7 @@ const repo: Repo = factory({
       client: connectToRedis(),
       prefix: config.redis.prefix,
     },
+    isQueuePriorityEnabled: config.isQueuePriorityEnabled,
   },
   models: {
     facade: config.repoFactory.modelsRepoName,

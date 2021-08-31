@@ -27,6 +27,7 @@ const mongoUrl = getStringOption(process.env.MONGO_URL, defaultMongoUrl);
 
 export default {
   defaultTimeout: getNumberOption(process.env.DEFAULT_TIMEOUT_MS, DEFAULT_TIMEOUT_MS),
+  isQueuePriorityEnabled: process.env.ENABLE_QUEUE_PRIORITY === 'true',
   express: {
     allowFormBody: getBooleanOption(process.env.EXPRESS_ALLOW_FORM_BODY, false),
     allowUndefinedMethod: getBooleanOption(process.env.EXPRESS_ALLOW_UNDEFINED_METHOD, false),
