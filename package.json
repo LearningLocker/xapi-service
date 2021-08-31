@@ -75,7 +75,7 @@
   },
   "devDependencies": {
     "@commitlint/config-conventional": "12.0.1",
-    "@ht2-labs/semantic-release": "2.0.91",
+    "@ht2-labs/semantic-release": "2.0.93",
     "@ht2-labs/typescript-project": "2.0.60",
     "@types/accept-language-parser": "1.5.1",
     "@types/atob": "2.1.2",
@@ -123,7 +123,8 @@
     "typescript": "4.3.3"
   },
   "resolutions": {
-    "normalize-url": "^6.0.1"
+    "normalize-url": "^6.0.1",
+    "@npmcli/git": "2.0.8"
   },
   "publishConfig": {
     "access": "public"
