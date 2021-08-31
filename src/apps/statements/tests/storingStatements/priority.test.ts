@@ -28,6 +28,7 @@ const checkRedisPayloadArray = async ({
   const eventName = `${getPrefixWithProcessingPriority(
     config.redis.prefix,
     priority,
+    config.isQueuePriorityEnabled,
   )}:${EVENT_NAME}`;
   const listLength = await redisClient.llen(eventName);
 
