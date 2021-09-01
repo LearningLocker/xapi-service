@@ -1,7 +1,7 @@
 import config from '../../../config';
+import RepoFactoryConfig from '../repo/FactoryConfig';
 import factory from './factory';
 import Repo from './Repo';
-import RepoFactoryConfig from '../repo/FactoryConfig';
 import connectToMongoDb from './utils/connectToMongoDb';
 import connectToRedis from './utils/connectToRedis';
 
