@@ -1,10 +1,11 @@
 import config from '../../../config';
 import factory from './factory';
 import Repo from './Repo';
+import RepoFactoryConfig from '../repo/FactoryConfig';
 import connectToMongoDb from './utils/connectToMongoDb';
 import connectToRedis from './utils/connectToRedis';
 
-const repo: Repo = factory({
+export const repoFactoryConfig: RepoFactoryConfig = {
   auth: {
     facade: config.repoFactory.authRepoName,
     fake: {},
@@ -17,8 +18,8 @@ const repo: Repo = factory({
     redis: {
       client: connectToRedis(),
       prefix: config.redis.prefix,
+      isQueuePriorityEnabled: config.isQueuePriorityEnabled,
     },
-    isQueuePriorityEnabled: config.isQueuePriorityEnabled,
   },
   models: {
     facade: config.repoFactory.modelsRepoName,
@@ -50,6 +51,8 @@ const repo: Repo = factory({
       subFolder: config.azureStorageRepo.subFolder,
     },
   },
-});
+};
+
+const repo: Repo = factory(repoFactoryConfig);
 
 export default repo;

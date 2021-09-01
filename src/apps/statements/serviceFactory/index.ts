@@ -3,9 +3,10 @@ import logger from '../../../logger';
 import tracker from '../../../tracker';
 import repo from '../repo';
 import service from '../service';
+import Config from '../service/Config';
 import Service from './Service';
 
-export default (): Service => {
+export default (configOverrides?: Partial<Config>): Service => {
   return service({
     repo,
     tracker,
@@ -21,5 +22,6 @@ export default (): Service => {
     enableStatementCreation: config.statementsService.enableStatementCreation,
     enableVoiding: config.statementsService.enableVoiding,
     enableVoidingChecks: config.statementsService.enableVoidingChecks,
+    ...configOverrides,
   });
 };
