@@ -1,14 +1,18 @@
 import assert from 'assert';
 import IORedis from 'ioredis';
 import { isArray } from 'lodash';
+import setupService from 'jscommons/dist/tests/utils/setupService';
+
 import config from '../../../../config';
 import { StatementProcessingPriority } from '../../enums/statementProcessingPriority.enum';
+import { repoFactoryConfig } from '../../repo';
 import { EVENT_NAME } from '../../repo/eventsRepo/utils/constants';
 import { getPrefixWithProcessingPriority } from '../../repo/eventsRepo/utils/getPrefixWithProcessingPriority';
+import factory from '../../repo/factory';
 import connectToRedis from '../../repo/utils/connectToRedis';
+import serviceFactory from '../../serviceFactory';
 import { TEST_ORGANISATION_ID } from '../utils/createClientModel';
 import createStatement from '../utils/createStatement';
-import setup from '../utils/setup';
 import storeStatementsInService from '../utils/storeStatementsInService';
 
 interface StatementPayload {
@@ -20,22 +24,24 @@ const checkRedisPayloadArray = async ({
   redisClient,
   priority,
   items,
+  isQueuePriorityEnabled = true,
 }: {
   readonly redisClient: IORedis.Redis;
   readonly priority: StatementProcessingPriority;
   readonly items: StatementPayload[];
+  readonly isQueuePriorityEnabled?: boolean;
 }) => {
   const eventName = `${getPrefixWithProcessingPriority(
     config.redis.prefix,
     priority,
-    config.isQueuePriorityEnabled,
+    isQueuePriorityEnabled,
   )}:${EVENT_NAME}`;
   const listLength = await redisClient.llen(eventName);
 
   assert.equal(
     listLength,
     items.length,
-    `Expected payload list length is incorrect for for "${priority}" priority`,
+    `Expected payload list length is incorrect for "${priority}" priority`,
   );
 
   const listData = await redisClient.lrange(eventName, 0, listLength);
@@ -51,6 +57,22 @@ const checkRedisPayloadArray = async ({
 };
 
 describe(__filename, () => {
+  const modifiedConfig = {
+    ...repoFactoryConfig,
+    events: {
+      ...repoFactoryConfig.events,
+      redis: {
+        ...repoFactoryConfig.events.redis,
+        isQueuePriorityEnabled: true,
+      },
+    },
+  };
+
+  const repo = factory(modifiedConfig);
+  const serviceFacade = serviceFactory({
+    repo,
+  });
+  const setup = setupService(serviceFacade);
   const service = setup();
   const storeStatements = storeStatementsInService(service);
 
