@@ -281,8 +281,6 @@ workflows:
           requires:
             - test-local
             - test-s3
-            - test-azure
-            - test-google
           filters:
             branches:
               ignore:
