@@ -1,5 +1,6 @@
 import { PassThrough } from 'stream';
 import checkScopes from 'jscommons/dist/service/utils/checkScopes';
+import { StatementProcessingPriority } from '../../enums/statementProcessingPriority.enum';
 import AttachmentModel from '../../models/AttachmentModel';
 import StoreStatementsOptions from '../../serviceFactory/options/StoreStatementsOptions';
 import { STATEMENT_WRITE_SCOPES } from '../../utils/scopes';
@@ -33,20 +34,25 @@ const cloneAttachments = (attachmentModels: AttachmentModel[]): AttachmentModel[
 };
 
 export default (config: Config) => {
-  return async (opts: StoreStatementsOptions): Promise<string[]> => {
-    checkScopes(STATEMENT_WRITE_SCOPES, opts.client.scopes);
-    const preValidatedModels = preValidationSetup(config, opts.models);
+  return async ({
+    models,
+    attachments,
+    client,
+    priority = StatementProcessingPriority.MEDIUM,
+  }: StoreStatementsOptions): Promise<string[]> => {
+    checkScopes(STATEMENT_WRITE_SCOPES, client.scopes);
+    const preValidatedModels = preValidationSetup(config, models);
     validateStatements(preValidatedModels);
-    const attachments = cloneAttachments(opts.attachments);
-    const clonedAttachments = cloneAttachments(opts.attachments);
+    const clonedAttachments = cloneAttachments(attachments);
     const postValidatedModels = await postValidationSetup(
       preValidatedModels,
-      clonedAttachments,
-      opts.client,
+      cloneAttachments(attachments),
+      client,
+      priority,
     );
-    const unstoredModels = await getUnstoredModels(config, postValidatedModels, opts.client);
-    const voidedObjectIds = await checkVoiders(config, unstoredModels, opts.client);
-    checkAttachments(config, postValidatedModels, attachments);
+    const unstoredModels = await getUnstoredModels(config, postValidatedModels, client);
+    const voidedObjectIds = await checkVoiders(config, unstoredModels, client);
+    checkAttachments(config, postValidatedModels, clonedAttachments);
 
     await createStatements(config, unstoredModels);
 
@@ -63,20 +69,24 @@ export default (config: Config) => {
 
     // Completes actions that do not need to be awaited.
     const unawaitedUpdates: Promise<any> = Promise.all([
-      createAttachments(config, attachments, opts.client.lrs_id),
-      voidStatements(config, unstoredModels, voidedObjectIds, opts.client),
-      updateReferences(config, unstoredModels, opts.client),
-      updateFullActivities({ config, models: unstoredModels, client: opts.client }),
-      config.repo.incrementStoreCount({ client: opts.client, count: unstoredModels.length }),
+      createAttachments(config, clonedAttachments, client.lrs_id),
+      voidStatements(config, unstoredModels, voidedObjectIds, client),
+      updateReferences(config, unstoredModels, client),
+      updateFullActivities({ config, models: unstoredModels, client }),
+      config.repo.incrementStoreCount({ client, count: unstoredModels.length }),
     ]).catch((err) => {
       /* istanbul ignore next */
       config.logger.error('Error in unawaited updates', err);
     });
 
     await awaitUpdates(config, unawaitedUpdates);
+
     if (unstoredStatementProperties.length !== 0) {
       config.repo
-        .emitNewStatements({ statementProperties: unstoredStatementProperties })
+        .emitNewStatements({
+          statementProperties: unstoredStatementProperties,
+          priority,
+        })
         .catch((err) => {
           /* istanbul ignore next */
           console.error(err);
@@ -85,7 +95,7 @@ export default (config: Config) => {
 
     const tracker = await config.tracker;
     tracker('batchSize', unstoredModels.length);
-    tracker('sentBatchSize', opts.models.length);
+    tracker('sentBatchSize', models.length);
 
     return statementIds;
   };

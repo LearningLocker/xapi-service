@@ -1,5 +1,6 @@
 import { groupBy, mapValues } from 'lodash';
 import { sha1 } from 'object-hash';
+import { StatementProcessingPriority } from '../../../enums/statementProcessingPriority.enum';
 import AttachmentModel from '../../../models/AttachmentModel';
 import ClientModel from '../../../models/ClientModel';
 import UnstoredStatementModel from '../../../models/UnstoredStatementModel';
@@ -19,7 +20,12 @@ import setupObjectTypes from './setupObjectTypes';
 import setupPostHashStatement from './setupPostHashStatement';
 import setupPreHashStatement from './setupPreHashStatement';
 
-export default async (models: any[], attachments: AttachmentModel[], client: ClientModel) => {
+export default async (
+  models: any[],
+  attachments: AttachmentModel[],
+  client: ClientModel,
+  priority: StatementProcessingPriority,
+) => {
   const storedTime = new Date();
   const storedTimeString = storedTime.toISOString();
 
@@ -51,6 +57,7 @@ export default async (models: any[], attachments: AttachmentModel[], client: Cli
         organisation: client.organisation,
         lrs_id: client.lrs_id,
         client: client._id,
+        priority,
         person: null,
         active: true,
         voided: false,

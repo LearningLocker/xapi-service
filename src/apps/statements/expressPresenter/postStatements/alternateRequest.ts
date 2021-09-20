@@ -2,6 +2,7 @@ import { Request, Response } from 'express';
 import { defaultTo, get } from 'lodash';
 import { parse as parseQueryString } from 'query-string';
 import streamToString from 'stream-to-string';
+import { StatementProcessingPriority } from '../../enums/statementProcessingPriority.enum';
 import InvalidContentType from '../../errors/InvalidContentType';
 import InvalidMethod from '../../errors/InvalidMethod';
 import parseJson from '../../utils/parseJson';
@@ -13,6 +14,7 @@ import getStatements from '../utils/getStatements';
 import getUrlPath from '../utils/getUrlPath';
 import storeStatement from '../utils/storeStatement';
 import validateVersionHeader from '../utils/validateHeaderVersion';
+import { validateStatementProcessingPriority } from '../utils/validateStatementProcessingPriority';
 import storeStatements from './storeStatements';
 
 export interface Options {
@@ -24,6 +26,7 @@ export interface Options {
 
 const checkContentType = (bodyParams: any) => {
   const contentType = get(bodyParams, 'Content-Type', 'application/json');
+
   if (!jsonContentTypePattern.test(contentType)) {
     throw new InvalidContentType(contentType);
   }
@@ -31,8 +34,8 @@ const checkContentType = (bodyParams: any) => {
 
 const getBodyContent = (bodyParams: any) => {
   const unparsedBody = get(bodyParams, 'content', '');
-  const body = parseJson(unparsedBody, ['body', 'content']);
-  return body;
+
+  return parseJson(unparsedBody, ['body', 'content']);
 };
 
 const getHeader = (bodyParams: any, req: Request, name: string): string => {
@@ -41,22 +44,31 @@ const getHeader = (bodyParams: any, req: Request, name: string): string => {
 
 const getBodyParams = async (stream: NodeJS.ReadableStream) => {
   const body = await streamToString(stream);
-  const decodedBody = parseQueryString(body);
-  return decodedBody;
+
+  return parseQueryString(body);
 };
 
 export default async ({ config, method, req, res }: Options) => {
   checkUnknownParams(req.query, ['method']);
 
+  validateStatementProcessingPriority(req.query.priority as string | undefined);
+  const priority =
+    (req.query.priority as StatementProcessingPriority) || StatementProcessingPriority.MEDIUM;
+
   if (method === 'POST' || (method === undefined && config.allowUndefinedMethod)) {
     const bodyParams = await getBodyParams(req);
+
     checkContentType(bodyParams);
+
     const auth = getHeader(bodyParams, req, 'Authorization');
     const client = await getClient(config, auth);
     const version = getHeader(bodyParams, req, 'X-Experience-API-Version');
+
     validateVersionHeader(version);
+
     const body = getBodyContent(bodyParams);
-    return storeStatements({ config, client, body, attachments: [], res });
+
+    return storeStatements({ config, client, priority, body, attachments: [], res });
   }
 
   if (method === 'GET') {
@@ -65,22 +77,30 @@ export default async ({ config, method, req, res }: Options) => {
     const auth = getHeader(bodyParams, req, 'Authorization');
     const client = await getClient(config, auth);
     const version = getHeader(bodyParams, req, 'X-Experience-API-Version');
+
     validateVersionHeader(version);
+
     const acceptedLangs = defaultTo<string>(req.header('Accept-Language'), '');
     const queryParams = bodyParams;
+
     return getStatements({ config, res, client, queryParams, urlPath, acceptedLangs });
   }
 
   if (method === 'PUT') {
     const bodyParams = await getBodyParams(req);
+
     checkContentType(bodyParams);
+
     const auth = getHeader(bodyParams, req, 'Authorization');
     const client = await getClient(config, auth);
     const version = getHeader(bodyParams, req, 'X-Experience-API-Version');
+
     validateVersionHeader(version);
+
     const body = getBodyContent(bodyParams);
-    const queryParams = bodyParams;
-    return storeStatement({ config, client, body, attachments: [], queryParams, res });
+    const statementId = bodyParams.statementId as string | undefined;
+
+    return storeStatement({ config, client, body, priority, attachments: [], statementId, res });
   }
 
   throw new InvalidMethod(method);

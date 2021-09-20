@@ -1,14 +1,20 @@
+import { CHANNEL_NAME, EVENT_NAME } from '../utils/constants';
+import { getPrefixWithProcessingPriority } from '../utils/getPrefixWithProcessingPriority';
 import FacadeConfig from '../utils/redisEvents/FacadeConfig';
 import Signature from './Signature';
 
-const EVENT_NAME = 'statement.new';
-const CHANNEL_NAME = 'statement.notify';
-
 export default (config: FacadeConfig): Signature => {
-  return async ({ statementProperties }) => {
+  return async ({ statementProperties, priority }) => {
     const client = await config.client();
-    const listName = `${config.prefix}:${EVENT_NAME}`;
-    const channelName = `${config.prefix}:${CHANNEL_NAME}`;
+
+    const prefixWithPriority = getPrefixWithProcessingPriority(
+      config.prefix,
+      priority,
+      config.isQueuePriorityEnabled,
+    );
+    const listName = `${prefixWithPriority}:${EVENT_NAME}`;
+    const channelName = `${prefixWithPriority}:${CHANNEL_NAME}`;
+
     await client.rpush(listName, ...statementProperties);
     client.publish(channelName, '');
   };

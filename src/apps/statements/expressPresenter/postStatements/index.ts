@@ -2,6 +2,7 @@ import { Request, Response } from 'express';
 import { defaultTo } from 'lodash';
 import { parse as parseQueryString } from 'query-string';
 import streamToString from 'stream-to-string';
+import { StatementProcessingPriority } from '../../enums/statementProcessingPriority.enum';
 import InvalidContentType from '../../errors/InvalidContentType';
 import parseJson from '../../utils/parseJson';
 import Config from '../Config';
@@ -13,6 +14,7 @@ import {
 } from '../utils/contentTypePatterns';
 import getClient from '../utils/getClient';
 import validateVersionHeader from '../utils/validateHeaderVersion';
+import { validateStatementProcessingPriority } from '../utils/validateStatementProcessingPriority';
 import alternateRequest from './alternateRequest';
 import storeStatements from './storeStatements';
 import storeWithAttachments from './storeWithAttachments';
@@ -34,6 +36,11 @@ export default (config: Config) => {
     config,
     async (req: Request, res: Response): Promise<void> => {
       const method = req.query.method as string | undefined;
+
+      validateStatementProcessingPriority(req.query.priority as string | undefined);
+
+      const priority =
+        (req.query.priority as StatementProcessingPriority) || StatementProcessingPriority.MEDIUM;
       const contentType = defaultTo(req.header('Content-Type'), '');
 
       if (method === undefined && multipartContentTypePattern.test(contentType)) {
@@ -46,7 +53,7 @@ export default (config: Config) => {
 
         const body = await parseJsonBody(config, req);
         const attachments: any[] = [];
-        return storeStatements({ config, client, body, attachments, res });
+        return storeStatements({ config, client, priority, body, attachments, res });
       }
 
       if (method !== undefined || alternateContentTypePattern.test(contentType)) {
