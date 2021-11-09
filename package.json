@@ -64,7 +64,7 @@
     "object-hash": "^2.0.0",
     "patch-package": "^6.4.7",
     "postinstall-postinstall": "^2.1.0",
-    "query-string": "^6.8.2",
+    "query-string": "^7.0.0",
     "redis": "^3.0.0",
     "rulr": "^4.0.0",
     "sha1": "^1.1.1",
