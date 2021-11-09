@@ -29,6 +29,7 @@ expressApp.use(
       redis: {
         client: connectToRedis(),
         prefix: config.redis.prefix,
+        isQueuePriorityEnabled: config.isQueuePriorityEnabled,
       },
       repoFactory: config.repoFactory,
       s3: config.s3StorageRepo,

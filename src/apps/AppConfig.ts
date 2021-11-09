@@ -44,6 +44,7 @@ export default interface AppConfig {
     readonly redis: {
       readonly prefix: string;
       readonly client: () => Promise<Redis>;
+      readonly isQueuePriorityEnabled: boolean;
     };
   };
   readonly service: {
