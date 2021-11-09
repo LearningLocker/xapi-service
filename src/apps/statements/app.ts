@@ -19,6 +19,7 @@ export default (appConfig: AppConfig): Result => {
       redis: {
         client: appConfig.repo.redis.client,
         prefix: appConfig.repo.redis.prefix,
+        isQueuePriorityEnabled: appConfig.repo.redis.isQueuePriorityEnabled,
       },
     },
     models: {
