@@ -65,14 +65,14 @@ const createMongoQuery = (fullActivity: FullActivityDatabase) => {
 const creatBatchQuery = (batch: UnorderedBulkOperation) => (fullActivity: FullActivityDatabase) => {
   const mongoQuery = createMongoQuery(fullActivity);
   const mongoSet = createMongoSet(fullActivity);
-  const mongoAddToSet = createMongoAddToSet(fullActivity);
+  // const mongoAddToSet = createMongoAddToSet(fullActivity);
 
   batch
     .find(mongoQuery)
     .upsert()
     .updateOne({
       ...(!isEmpty(mongoSet) ? { $set: mongoSet } : {}),
-      ...(!isEmpty(mongoAddToSet) ? { $addToSet: mongoAddToSet } : {}),
+      // ...(!isEmpty(mongoAddToSet) ? { $addToSet: mongoAddToSet } : {}),
     });
 };
 
