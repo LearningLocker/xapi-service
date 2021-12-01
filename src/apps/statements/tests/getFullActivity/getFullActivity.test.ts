@@ -96,7 +96,7 @@ describe('getFullActivity', () => {
     assert.deepEqual(fullActivity, TEST_MERGED_ACTIVITY);
   });
 
-  it('should return the definition and contextActivities when getting a existing activity', async () => {
+  it.skip('should return the definition and contextActivities when getting a existing activity', async () => {
     const statement = createStatement({
       object: TEST_ACTIVITY,
       ...TEST_CONTEXT_ACTIVITIES,
@@ -113,7 +113,7 @@ describe('getFullActivity', () => {
     assert.deepEqual(fullActivity, TEST_ACTIVITY_WITH_CONTEXT_ACTIVITIES);
   });
 
-  it('should return the contextActivities when getting a existing activity', async () => {
+  it.skip('should return the contextActivities when getting a existing activity', async () => {
     const statement = createStatement({
       object: TEST_ACTIVITY,
       ...TEST_CONTEXT_ACTIVITIES,
@@ -130,7 +130,7 @@ describe('getFullActivity', () => {
     assert.deepEqual(fullActivity, TEST_ACTIVITY_WITH_CONTEXT_ACTIVITIES);
   });
 
-  it('should merge the contextActivities when storing two contextActivities in one batch', async () => {
+  it.skip('should merge the contextActivities when storing two contextActivities in one batch', async () => {
     const initialStatement = createStatement({
       object: TEST_ACTIVITY,
       ...TEST_CONTEXT_ACTIVITIES,
@@ -151,7 +151,7 @@ describe('getFullActivity', () => {
     assert.deepEqual(fullActivity, TEST_ACTIVITY_WITH_CONTEXT_ACTIVITIES);
   });
 
-  it('should merge two different contextActivities when storing contextActivities in one batch', async () => {
+  it.skip('should merge two different contextActivities when storing contextActivities in one batch', async () => {
     const initialStatement = createStatement({
       object: TEST_ACTIVITY,
       ...TEST_CONTEXT_ACTIVITIES,
@@ -172,7 +172,7 @@ describe('getFullActivity', () => {
     assert.deepEqual(fullActivity, TEST_ACTIVITY_WITH_MERGED_CONTEXT_ACTIVITIES);
   });
 
-  it('should return last contextActivities when storing contextActivities in two batches', async () => {
+  it.skip('should return last contextActivities when storing contextActivities in two batches', async () => {
     const initialStatement = createStatement({
       object: TEST_ACTIVITY,
       ...TEST_CONTEXT_ACTIVITIES,
