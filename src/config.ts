@@ -11,6 +11,8 @@ config();
 
 const DEFAULT_EXPRESS_PORT = 8081;
 const DEFAULT_TIMEOUT_MS = 55000; // 55 seconds.
+const DEFAULT_REDIS_PORT = 6379;
+const DEFAULT_REDIS_DB = 0;
 
 const storageDir = `${process.cwd()}/storage`;
 const googleKeyFileName = `${process.cwd()}/google.keyfile.json`;
@@ -59,6 +61,11 @@ export default {
   redis: {
     prefix: getStringOption(process.env.REDIS_PREFIX, 'LEARNINGLOCKER'),
     url: getStringOption(process.env.REDIS_URL, 'redis://127.0.0.1:6379/0'),
+    tlsIsEnabled: getBooleanOption(process.env.REDIS_URL, false),
+    db: getNumberOption(process.env.REDIS_DB, DEFAULT_REDIS_DB),
+    password: getStringOption(process.env.REDIS_PASSWORD, ''),
+    host: getStringOption(process.env.REDIS_HOST, ''),
+    port: getNumberOption(process.env.REDIS_PORT, DEFAULT_REDIS_PORT),
   },
   repoFactory: {
     authRepoName: getStringOption(process.env.AUTH_REPO, 'mongo'),
