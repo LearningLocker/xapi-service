@@ -64,7 +64,7 @@ export default {
     tlsIsEnabled: getBooleanOption(process.env.REDIS_TLS_IS_ENABLED, false),
     db: getNumberOption(process.env.REDIS_DB, DEFAULT_REDIS_DB),
     password: getStringOption(process.env.REDIS_PASSWORD, ''),
-    host: getStringOption(process.env.REDIS_HOST, ''),
+    host: getStringOption(process.env.REDIS_HOST, '127.0.0.1'),
     port: getNumberOption(process.env.REDIS_PORT, DEFAULT_REDIS_PORT),
   },
   repoFactory: {
