@@ -61,7 +61,7 @@ export default {
   redis: {
     prefix: getStringOption(process.env.REDIS_PREFIX, 'LEARNINGLOCKER'),
     url: getStringOption(process.env.REDIS_URL, 'redis://127.0.0.1:6379/0'),
-    tlsIsEnabled: getBooleanOption(process.env.REDIS_URL, false),
+    tlsIsEnabled: getBooleanOption(process.env.REDIS_TLS_IS_ENABLED, false),
     db: getNumberOption(process.env.REDIS_DB, DEFAULT_REDIS_DB),
     password: getStringOption(process.env.REDIS_PASSWORD, ''),
     host: getStringOption(process.env.REDIS_HOST, ''),
