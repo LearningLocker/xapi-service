@@ -41,6 +41,8 @@ export default (config: Config) => {
 
       const priority =
         (req.query.priority as StatementProcessingPriority) || StatementProcessingPriority.MEDIUM;
+      const bypassQueues = (req.query.bypassQueues as string).split(',');
+
       const contentType = defaultTo(req.header('Content-Type'), '');
 
       if (method === undefined && multipartContentTypePattern.test(contentType)) {
@@ -53,7 +55,7 @@ export default (config: Config) => {
 
         const body = await parseJsonBody(config, req);
         const attachments: any[] = [];
-        return storeStatements({ config, client, priority, body, attachments, res });
+        return storeStatements({ config, client, priority, bypassQueues, body, attachments, res });
       }
 
       if (method !== undefined || alternateContentTypePattern.test(contentType)) {

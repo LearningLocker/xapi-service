@@ -54,6 +54,7 @@ export default async ({ config, method, req, res }: Options) => {
   validateStatementProcessingPriority(req.query.priority as string | undefined);
   const priority =
     (req.query.priority as StatementProcessingPriority) || StatementProcessingPriority.MEDIUM;
+  const bypassQueues = (req.query.bypassQueues as string).split(',');
 
   if (method === 'POST' || (method === undefined && config.allowUndefinedMethod)) {
     const bodyParams = await getBodyParams(req);
@@ -68,7 +69,7 @@ export default async ({ config, method, req, res }: Options) => {
 
     const body = getBodyContent(bodyParams);
 
-    return storeStatements({ config, client, priority, body, attachments: [], res });
+    return storeStatements({ config, client, priority, bypassQueues, body, attachments: [], res });
   }
 
   if (method === 'GET') {
@@ -100,7 +101,16 @@ export default async ({ config, method, req, res }: Options) => {
     const body = getBodyContent(bodyParams);
     const statementId = bodyParams.statementId as string | undefined;
 
-    return storeStatement({ config, client, body, priority, attachments: [], statementId, res });
+    return storeStatement({
+      config,
+      client,
+      body,
+      priority,
+      bypassQueues,
+      attachments: [],
+      statementId,
+      res,
+    });
   }
 
   throw new InvalidMethod(method);

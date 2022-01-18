@@ -25,17 +25,36 @@ export default (config: Config) => {
       const client = await getClient(config, defaultTo(req.header('Authorization'), ''));
       const priority =
         (req.query.priority as StatementProcessingPriority) || StatementProcessingPriority.MEDIUM;
+      const bypassQueues = (req.query.bypassQueues as string).split(',');
       const statementId = req.query.statementId as string;
 
       if (multipartContentTypePattern.test(contentType)) {
         const { body, attachments } = await getMultipartStatements(req);
-        return storeStatement({ config, priority, body, attachments, client, statementId, res });
+        return storeStatement({
+          config,
+          priority,
+          bypassQueues,
+          body,
+          attachments,
+          client,
+          statementId,
+          res,
+        });
       }
 
       if (jsonContentTypePattern.test(contentType)) {
         const body = parseJson(await streamToString(req), ['body']);
         const attachments: AttachmentModel[] = [];
-        return storeStatement({ config, priority, body, attachments, client, statementId, res });
+        return storeStatement({
+          config,
+          priority,
+          bypassQueues,
+          body,
+          attachments,
+          client,
+          statementId,
+          res,
+        });
       }
 
       throw new InvalidContentType(contentType);
