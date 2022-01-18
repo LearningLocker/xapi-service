@@ -39,6 +39,7 @@ export default (config: Config) => {
     attachments,
     client,
     priority = StatementProcessingPriority.MEDIUM,
+    bypassQueues = [],
   }: StoreStatementsOptions): Promise<string[]> => {
     checkScopes(STATEMENT_WRITE_SCOPES, client.scopes);
     const preValidatedModels = preValidationSetup(config, models);
@@ -49,6 +50,7 @@ export default (config: Config) => {
       cloneAttachments(attachments),
       client,
       priority,
+      bypassQueues,
     );
     const unstoredModels = await getUnstoredModels(config, postValidatedModels, client);
     const voidedObjectIds = await checkVoiders(config, unstoredModels, client);

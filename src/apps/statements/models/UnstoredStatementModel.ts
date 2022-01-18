@@ -25,6 +25,7 @@ interface UnstoredStatementModel {
   readonly relatedActivities: string[];
   readonly statement: Statement;
   readonly metadata: { readonly [key: string]: any };
+  readonly completedQueues: string[];
 }
 
 export default UnstoredStatementModel;
