@@ -54,7 +54,7 @@ export default async ({ config, method, req, res }: Options) => {
   validateStatementProcessingPriority(req.query.priority as string | undefined);
   const priority =
     (req.query.priority as StatementProcessingPriority) || StatementProcessingPriority.MEDIUM;
-  const bypassQueues = (req.query.bypassQueues as string).split(',');
+  const bypassQueues = ((req.query.bypassQueues as string) || '').split(',');
 
   if (method === 'POST' || (method === undefined && config.allowUndefinedMethod)) {
     const bodyParams = await getBodyParams(req);

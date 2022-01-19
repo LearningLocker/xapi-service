@@ -20,7 +20,7 @@ export default async ({ config, req, res }: Options) => {
 
   const priority =
     (req.query.priority as StatementProcessingPriority) || StatementProcessingPriority.MEDIUM;
-  const bypassQueues = (req.query.bypassQueues as string).split(',');
+  const bypassQueues = ((req.query.bypassQueues as string) || '').split(',');
   const { body, attachments } = await getMultipartStatements(req);
 
   return storeStatements({ config, client, priority, bypassQueues, body, attachments, res });
