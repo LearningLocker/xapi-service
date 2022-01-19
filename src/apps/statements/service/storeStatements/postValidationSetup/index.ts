@@ -25,7 +25,7 @@ export default async (
   attachments: AttachmentModel[],
   client: ClientModel,
   priority: StatementProcessingPriority,
-  bypassQueues: [],
+  bypassQueues: string[],
 ) => {
   const storedTime = new Date();
   const storedTimeString = storedTime.toISOString();
