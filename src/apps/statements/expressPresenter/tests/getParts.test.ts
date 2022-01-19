@@ -32,8 +32,8 @@ const partToTestPart = async (part: Part) => {
 const getTestParts = async (stream: ReadableStream, boundary: string) => {
   const actualParts = await getParts(stream, boundary);
   const testPartsPromises = actualParts.map(partToTestPart);
-  const testParts = await Promise.all(testPartsPromises);
-  return testParts;
+
+  return Promise.all(testPartsPromises);
 };
 
 const headersToString = (headers: { readonly [key: string]: string }): string => {
@@ -181,12 +181,15 @@ describe('expressPresenter/utils/getParts', () => {
   it('should throw error when there is an error in the stream', async () => {
     const stream = new ReadableStream();
     const error = new Error();
+
     try {
       stream.push('hello');
+      stream.push(null);
       stream.emit('error', error);
     } catch {
       // Do nothing.
     }
+
     try {
       await getTestParts(stream, TEST_BOUNDARY);
       /* istanbul ignore next */
