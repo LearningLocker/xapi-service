@@ -15,6 +15,7 @@ import getUrlPath from '../utils/getUrlPath';
 import storeStatement from '../utils/storeStatement';
 import validateVersionHeader from '../utils/validateHeaderVersion';
 import { validateStatementProcessingPriority } from '../utils/validateStatementProcessingPriority';
+import { validateStatementBypassQueues } from '../utils/validateStatementBypassQueues';
 import storeStatements from './storeStatements';
 
 export interface Options {
@@ -52,6 +53,7 @@ export default async ({ config, method, req, res }: Options) => {
   checkUnknownParams(req.query, ['method']);
 
   validateStatementProcessingPriority(req.query.priority as string | undefined);
+  validateStatementBypassQueues(req.query.bypassQueues as string[] | undefined);
   const priority =
     (req.query.priority as StatementProcessingPriority) || StatementProcessingPriority.MEDIUM;
   const bypassQueues = ((req.query.bypassQueues as string) || '').split(',');

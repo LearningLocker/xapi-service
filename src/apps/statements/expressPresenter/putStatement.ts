@@ -13,12 +13,14 @@ import getMultipartStatements from './utils/getMultipartStatements';
 import storeStatement from './utils/storeStatement';
 import validateVersionHeader from './utils/validateHeaderVersion';
 import { validateStatementProcessingPriority } from './utils/validateStatementProcessingPriority';
+import { validateStatementBypassQueues } from './utils/validateStatementBypassQueues';
 
 export default (config: Config) => {
   return catchErrors(
     config,
     async (req: Request, res: Response): Promise<void> => {
       validateStatementProcessingPriority(req.query.priority as string | undefined);
+      validateStatementBypassQueues(req.query.bypassQueues as string[] | undefined);
       validateVersionHeader(req.header('X-Experience-API-Version'));
 
       const contentType = defaultTo(req.header('Content-Type'), '');

@@ -15,6 +15,7 @@ import {
 import getClient from '../utils/getClient';
 import validateVersionHeader from '../utils/validateHeaderVersion';
 import { validateStatementProcessingPriority } from '../utils/validateStatementProcessingPriority';
+import { validateStatementBypassQueues } from '../utils/validateStatementBypassQueues';
 import alternateRequest from './alternateRequest';
 import storeStatements from './storeStatements';
 import storeWithAttachments from './storeWithAttachments';
@@ -38,6 +39,7 @@ export default (config: Config) => {
       const method = req.query.method as string | undefined;
 
       validateStatementProcessingPriority(req.query.priority as string | undefined);
+      validateStatementBypassQueues(req.query.bypassQueues as string[] | undefined);
 
       const priority =
         (req.query.priority as StatementProcessingPriority) || StatementProcessingPriority.MEDIUM;
