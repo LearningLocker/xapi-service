@@ -180,22 +180,28 @@ describe('expressPresenter/utils/getParts', () => {
 
   it('should throw error when there is an error in the stream', async () => {
     const stream = new ReadableStream();
-    const error = new Error();
+    stream._read = () => true;
+
+    const error = new Error('Test stream error');
+    const errorEmitDelayMs = 50;
 
     try {
-      stream.push('hello');
-      stream.push(null);
-      stream.emit('error', error);
-    } catch {
-      // Do nothing.
+      await Promise.all([
+        getTestParts(stream, TEST_BOUNDARY),
+        new Promise<void>((resolve) => {
+          setTimeout(() => {
+            stream.emit('error', error);
+
+            resolve();
+          }, errorEmitDelayMs);
+        }),
+      ]);
+    } catch (e) {
+      assert.deepEqual(e, error);
+
+      return;
     }
 
-    try {
-      await getTestParts(stream, TEST_BOUNDARY);
-      /* istanbul ignore next */
-      assert.fail('Expected error to be thrown.');
-    } catch {
-      // Do nothing.
-    }
+    assert.fail(`Error "${error.message}" should have thrown`);
   });
 });
