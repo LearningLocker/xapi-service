@@ -39,7 +39,7 @@ export default (config: Config) => {
       const method = req.query.method as string | undefined;
 
       validateStatementProcessingPriority(req.query.priority as string | undefined);
-      validateStatementBypassQueues(req.query.bypassQueues as string[] | undefined);
+      validateStatementBypassQueues(req.query.bypassQueues as string | undefined);
 
       const priority =
         (req.query.priority as StatementProcessingPriority) || StatementProcessingPriority.MEDIUM;

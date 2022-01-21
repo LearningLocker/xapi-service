@@ -18,7 +18,7 @@ export default async ({ config, req, res }: Options) => {
   const client = await getClient(config, defaultTo(req.header('Authorization'), ''));
 
   validateStatementProcessingPriority(req.query.priority as string | undefined);
-  validateStatementBypassQueues(req.query.bypassQueues as string[] | undefined);
+  validateStatementBypassQueues(req.query.bypassQueues as string | undefined);
 
   const priority =
     (req.query.priority as StatementProcessingPriority) || StatementProcessingPriority.MEDIUM;

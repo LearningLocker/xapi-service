@@ -53,7 +53,7 @@ export default async ({ config, method, req, res }: Options) => {
   checkUnknownParams(req.query, ['method']);
 
   validateStatementProcessingPriority(req.query.priority as string | undefined);
-  validateStatementBypassQueues(req.query.bypassQueues as string[] | undefined);
+  validateStatementBypassQueues(req.query.bypassQueues as string | undefined);
   const priority =
     (req.query.priority as StatementProcessingPriority) || StatementProcessingPriority.MEDIUM;
   const bypassQueues = ((req.query.bypassQueues as string) || '').split(',');

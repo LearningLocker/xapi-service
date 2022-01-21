@@ -20,7 +20,7 @@ export default (config: Config) => {
     config,
     async (req: Request, res: Response): Promise<void> => {
       validateStatementProcessingPriority(req.query.priority as string | undefined);
-      validateStatementBypassQueues(req.query.bypassQueues as string[] | undefined);
+      validateStatementBypassQueues(req.query.bypassQueues as string | undefined);
       validateVersionHeader(req.header('X-Experience-API-Version'));
 
       const contentType = defaultTo(req.header('Content-Type'), '');
