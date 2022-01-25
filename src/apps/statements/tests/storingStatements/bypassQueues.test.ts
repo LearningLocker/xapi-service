@@ -8,7 +8,6 @@ import serviceFactory from '../../serviceFactory';
 import createClientModel from '../utils/createClientModel';
 import createStatement from '../utils/createStatement';
 import storeStatementsInService from '../utils/storeStatementsInService';
-import ClientModel from '../../models/ClientModel';
 
 describe(__filename, () => {
   const repo = factory(repoFactoryConfig);
@@ -26,31 +25,25 @@ describe(__filename, () => {
     completedQueues: ['STATEMENT_QUEUE_1'],
   };
 
-  const getStatement = async (id: string, client: ClientModel) => {
-    const result = await service.getStatement({ id, voided: false, client });
-    return result.statements[0];
-  };
-
   beforeEach(async () => {
     await service.clearService();
   });
 
   it('should store statements with specified completed queues', async () => {
+    const expectedSavedCompletedQueues = ['STATEMENT_QUEUE_1'];
     const statementIds: string[] = await storeStatements(
       [createStatement({ id: TEST_ID_1 })],
       undefined,
       TEST_CLIENT,
       undefined,
-      ['STATEMENT_QUEUE_1'],
+      expectedSavedCompletedQueues,
     );
 
     assert.equal(isArray(statementIds), true);
     assert.deepEqual(statementIds, [TEST_ID_1]);
 
-    const actualStatement = await getStatement(TEST_ID_1, TEST_CLIENT);
-    assert.deepEqual(actualStatement, {
-      ...actualStatement,
-      ...EXPECTED_TEST_STATEMENT,
-    });
+    const fullStatement = await repo.getStatement({ id: TEST_ID_1, client: TEST_CLIENT });
+
+    assert.deepEqual(fullStatement.completedQueues, expectedSavedCompletedQueues);
   });
 });
