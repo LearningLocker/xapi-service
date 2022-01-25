@@ -89,6 +89,7 @@ describe(__filename, () => {
       undefined,
       undefined,
       StatementProcessingPriority.LOW,
+      [],
     );
     assert.equal(isArray(lowStatementIds), true);
     assert.deepEqual(lowStatementIds, [TEST_ID_1, TEST_ID_2]);
@@ -98,6 +99,7 @@ describe(__filename, () => {
       undefined,
       undefined,
       StatementProcessingPriority.MEDIUM,
+      [],
     );
     assert.equal(isArray(mediumStatementIds), true);
     assert.deepEqual(mediumStatementIds, [TEST_ID_3]);
