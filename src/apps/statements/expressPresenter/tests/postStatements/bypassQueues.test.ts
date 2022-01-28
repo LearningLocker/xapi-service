@@ -7,21 +7,21 @@ import { jsonContentType, statementsRoute } from '../../../utils/constants';
 import setup from '../../tests/utils/setup';
 import repo from '../../../repo';
 
-describe('putStatement', () => {
+describe('postStatements', () => {
   const { supertest } = setup();
 
   it('should throw error for incorrect bypassQueues query param', async () => {
     const TEST_ID = '1c86d8e9-f325-404f-b3d9-24c451035586';
 
     await supertest
-      .put(statementsRoute)
+      .post(statementsRoute)
       .set('Content-Type', jsonContentType)
       .set('X-Experience-API-Version', xapiHeaderVersion)
       .query({
         bypassQueues: 'abc',
         statementId: TEST_ID,
       })
-      .send(createStatement())
+      .send([createStatement()])
       .expect((response) => {
         assert.equal(response.status, StatusCodes.BAD_REQUEST);
         assert.deepEqual(response.body.warnings, [
@@ -36,14 +36,14 @@ describe('putStatement', () => {
     const expectedCompletedQueues = ['STATEMENT_QUEUE_1', 'STATEMENT_QUEUE_2'];
 
     await supertest
-      .put(statementsRoute)
+      .post(statementsRoute)
       .set('Content-Type', jsonContentType)
       .set('X-Experience-API-Version', xapiHeaderVersion)
       .query({
         bypassQueues: expectedCompletedQueues.join(','),
         statementId: TEST_ID,
       })
-      .send(createStatement())
+      .send([createStatement()])
       .expect(async (response) => {
         assert.equal(response.status, StatusCodes.NO_CONTENT);
 
