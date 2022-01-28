@@ -52,4 +52,28 @@ describe('postStatements', () => {
         assert.deepEqual(fullStatement.completedQueues, expectedCompletedQueues);
       });
   });
+
+  it('should insert statement with proper bypassQueues query param (using alternate request)', async () => {
+    const TEST_ID = '1c86d8e9-f325-404f-b3d9-24c451035588';
+    const TEST_CLIENT = createClientModel();
+    const expectedCompletedQueues = ['STATEMENT_QUEUE_1', 'STATEMENT_QUEUE_2'];
+
+    await supertest
+      .post(statementsRoute)
+      .set('Content-Type', jsonContentType)
+      .set('X-Experience-API-Version', xapiHeaderVersion)
+      .query({
+        bypassQueues: expectedCompletedQueues.join(','),
+        statementId: TEST_ID,
+        method: 'PUT',
+      })
+      .send([createStatement()])
+      .expect(async (response) => {
+        assert.equal(response.status, StatusCodes.NO_CONTENT);
+
+        const fullStatement = await repo.getStatement({ id: TEST_ID, client: TEST_CLIENT });
+
+        assert.deepEqual(fullStatement.completedQueues, expectedCompletedQueues);
+      });
+  });
 });
