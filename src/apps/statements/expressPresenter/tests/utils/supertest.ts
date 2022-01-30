@@ -16,7 +16,7 @@ const presenter = presenterFacade({
   allowUndefinedMethod: config.express.allowUndefinedMethod,
   llClientInfoEndpoint: '',
   bodyParserLimit: config.express.bodyParserLimit,
-  customRoute: 'xAPI/activities/profile/status',
+  customRoute: 'xAPI/statements/status',
   customRouteText: 'ok',
   logger,
   morganDirectory: config.express.morganDirectory,
