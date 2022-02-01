@@ -43,8 +43,10 @@ export default (config: Config) => {
 
       const priority =
         (req.query.priority as StatementProcessingPriority) || StatementProcessingPriority.MEDIUM;
-      const bypassQueues = ((req.query.bypassQueues as string) || '').split(',');
-
+      const bypassQueues =
+        req.query.bypassQueues && (req.query.bypassQueues as string).trim() !== ''
+          ? (req.query.bypassQueues as string).split(',')
+          : [];
       const contentType = defaultTo(req.header('Content-Type'), '');
 
       if (method === undefined && multipartContentTypePattern.test(contentType)) {

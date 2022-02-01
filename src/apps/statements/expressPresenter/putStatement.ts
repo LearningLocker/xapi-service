@@ -27,7 +27,10 @@ export default (config: Config) => {
       const client = await getClient(config, defaultTo(req.header('Authorization'), ''));
       const priority =
         (req.query.priority as StatementProcessingPriority) || StatementProcessingPriority.MEDIUM;
-      const bypassQueues = ((req.query.bypassQueues as string) || '').split(',');
+      const bypassQueues =
+        req.query.bypassQueues && (req.query.bypassQueues as string).trim() !== ''
+          ? (req.query.bypassQueues as string).split(',')
+          : [];
       const statementId = req.query.statementId as string;
 
       if (multipartContentTypePattern.test(contentType)) {
