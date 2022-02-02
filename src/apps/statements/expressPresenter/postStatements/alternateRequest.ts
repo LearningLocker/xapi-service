@@ -15,6 +15,7 @@ import getUrlPath from '../utils/getUrlPath';
 import storeStatement from '../utils/storeStatement';
 import validateVersionHeader from '../utils/validateHeaderVersion';
 import { validateStatementProcessingPriority } from '../utils/validateStatementProcessingPriority';
+import { validateStatementBypassQueues } from '../utils/validateStatementBypassQueues';
 import storeStatements from './storeStatements';
 
 export interface Options {
@@ -52,9 +53,13 @@ export default async ({ config, method, req, res }: Options) => {
   checkUnknownParams(req.query, ['method']);
 
   validateStatementProcessingPriority(req.query.priority as string | undefined);
+  validateStatementBypassQueues(req.query.bypassQueues as string | undefined);
   const priority =
     (req.query.priority as StatementProcessingPriority) || StatementProcessingPriority.MEDIUM;
-
+  const bypassQueues =
+    req.query.bypassQueues && (req.query.bypassQueues as string).trim() !== ''
+      ? (req.query.bypassQueues as string).split(',')
+      : [];
   if (method === 'POST' || (method === undefined && config.allowUndefinedMethod)) {
     const bodyParams = await getBodyParams(req);
 
@@ -68,7 +73,7 @@ export default async ({ config, method, req, res }: Options) => {
 
     const body = getBodyContent(bodyParams);
 
-    return storeStatements({ config, client, priority, body, attachments: [], res });
+    return storeStatements({ config, client, priority, bypassQueues, body, attachments: [], res });
   }
 
   if (method === 'GET') {
@@ -100,7 +105,16 @@ export default async ({ config, method, req, res }: Options) => {
     const body = getBodyContent(bodyParams);
     const statementId = bodyParams.statementId as string | undefined;
 
-    return storeStatement({ config, client, body, priority, attachments: [], statementId, res });
+    return storeStatement({
+      config,
+      client,
+      body,
+      priority,
+      bypassQueues,
+      attachments: [],
+      statementId,
+      res,
+    });
   }
 
   throw new InvalidMethod(method);

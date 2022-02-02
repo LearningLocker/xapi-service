@@ -10,12 +10,14 @@ export default (service: Service) => {
     attachments: any[] = [],
     client: ClientModel = createClientModel(),
     priority: StatementProcessingPriority = StatementProcessingPriority.MEDIUM,
+    bypassQueues: string[] = [],
   ) => {
     return storeAwaitedStatements(service)({
       priority,
       models: statements,
       attachments,
       client,
+      bypassQueues,
     });
   };
 };

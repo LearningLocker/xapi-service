@@ -11,6 +11,7 @@ import Config from '../Config';
 export interface Options {
   readonly config: Config;
   readonly priority: StatementProcessingPriority;
+  readonly bypassQueues: string[];
   readonly body: any;
   readonly attachments: AttachmentModel[];
   readonly client: ClientModel;
@@ -21,6 +22,7 @@ export interface Options {
 export default async ({
   config,
   priority,
+  bypassQueues,
   body,
   attachments,
   client,
@@ -42,7 +44,7 @@ export default async ({
     },
   ];
 
-  await config.service.storeStatements({ priority, models, attachments, client });
+  await config.service.storeStatements({ priority, bypassQueues, models, attachments, client });
 
   res.setHeader('X-Experience-API-Version', xapiHeaderVersion);
   res.status(StatusCodes.NO_CONTENT);

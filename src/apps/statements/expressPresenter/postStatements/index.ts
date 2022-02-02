@@ -15,6 +15,7 @@ import {
 import getClient from '../utils/getClient';
 import validateVersionHeader from '../utils/validateHeaderVersion';
 import { validateStatementProcessingPriority } from '../utils/validateStatementProcessingPriority';
+import { validateStatementBypassQueues } from '../utils/validateStatementBypassQueues';
 import alternateRequest from './alternateRequest';
 import storeStatements from './storeStatements';
 import storeWithAttachments from './storeWithAttachments';
@@ -38,9 +39,14 @@ export default (config: Config) => {
       const method = req.query.method as string | undefined;
 
       validateStatementProcessingPriority(req.query.priority as string | undefined);
+      validateStatementBypassQueues(req.query.bypassQueues as string | undefined);
 
       const priority =
         (req.query.priority as StatementProcessingPriority) || StatementProcessingPriority.MEDIUM;
+      const bypassQueues =
+        req.query.bypassQueues && (req.query.bypassQueues as string).trim() !== ''
+          ? (req.query.bypassQueues as string).split(',')
+          : [];
       const contentType = defaultTo(req.header('Content-Type'), '');
 
       if (method === undefined && multipartContentTypePattern.test(contentType)) {
@@ -53,7 +59,7 @@ export default (config: Config) => {
 
         const body = await parseJsonBody(config, req);
         const attachments: any[] = [];
-        return storeStatements({ config, client, priority, body, attachments, res });
+        return storeStatements({ config, client, priority, bypassQueues, body, attachments, res });
       }
 
       if (method !== undefined || alternateContentTypePattern.test(contentType)) {
