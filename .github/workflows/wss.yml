@@ -6,7 +6,7 @@ on:
 
 env:
   PARAM_REPO: xapi-service
-  PARAM_SERVICE: xapiserver
+  PARAM_SERVICE: xapiservice
 
 jobs:
   curl:
