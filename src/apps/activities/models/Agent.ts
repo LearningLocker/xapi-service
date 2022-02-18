@@ -5,6 +5,7 @@ interface Model {
   readonly mbox_sha1sum?: string;
   readonly openid?: string;
   readonly account?: Account;
+  readonly name?: string;
 }
 
 export default Model;
