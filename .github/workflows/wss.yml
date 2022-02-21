@@ -1,0 +1,21 @@
+name: Whitesource
+
+on:
+  release:
+    types: [published]
+
+env:
+  PARAM_REPO: xapi-service
+  PARAM_SERVICE: xapiservice
+
+jobs:
+  curl:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set output
+        id: vars
+        run: echo ::set-output name=tag::${GITHUB_REF#refs/*/}
+      - name: Call Jenkins Job
+        env:
+          RELEASE_VERSION: ${{ steps.vars.outputs.tag }}
+        run: curl --location --request POST 'https://${{ secrets.JENKINS_USERNAME }}:${{ secrets.JENKINS_TOKEN }}@jenkins.learningpool.com/view/WSS/job/WSS-Scan/buildWithParameters?reponame=${{ env.PARAM_REPO }}&service=${{ env.PARAM_SERVICE }}&tagname=${{ env.RELEASE_VERSION }}'
