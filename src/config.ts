@@ -71,7 +71,7 @@ export default {
     awsConfig: {
       accessKeyId: getStringOption(process.env.FS_S3_ACCESS_KEY_ID),
       apiVersion: '2006-03-01',
-      region: getStringOption(globalAwsRegion, process.env.FS_S3_REGION),
+      region: getStringOption(process.env.FS_S3_REGION, globalAwsRegion),
       secretAccessKey: getStringOption(process.env.FS_S3_SECRET_ACCESS_KEY),
       signatureVersion: 'v4',
       sslEnabled: true,
@@ -115,7 +115,7 @@ export default {
     cloudWatch: {
       awsConfig: {
         accessKeyId: getStringOption(process.env.WINSTON_CLOUDWATCH_ACCESS_KEY_ID),
-        region: getStringOption(globalAwsRegion, process.env.WINSTON_CLOUDWATCH_REGION),
+        region: getStringOption(process.env.WINSTON_CLOUDWATCH_REGION, globalAwsRegion),
         secretAccessKey: getStringOption(process.env.WINSTON_CLOUDWATCH_SECRET_ACCESS_KEY),
       },
       enabled: getBooleanOption(process.env.WINSTON_CLOUDWATCH_ENABLED, false),
