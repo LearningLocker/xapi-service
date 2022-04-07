@@ -22,7 +22,7 @@ const expressPort = getNumberOption(
 const accessLogsDir = `${storageDir}/accessLogs`;
 const newRelicLogsDir = `${storageDir}/newrelic-agent.log`;
 const newRelicLicenseKey = getStringOption(process.env.NEW_RELIC_LICENSE_KEY, '');
-const defaultMongoUrl = 'mongodb://localhost:27017/learninglocker_v2?replicaSet=rs0';
+const defaultMongoUrl = 'mongodb://localhost:27017/learninglocker_v2';
 const mongoUrl = getStringOption(process.env.MONGO_URL, defaultMongoUrl);
 const globalAwsRegion = process.env.GLOBAL_AWS_REGION;
 
