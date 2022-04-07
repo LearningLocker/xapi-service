@@ -24,6 +24,7 @@ const newRelicLogsDir = `${storageDir}/newrelic-agent.log`;
 const newRelicLicenseKey = getStringOption(process.env.NEW_RELIC_LICENSE_KEY, '');
 const defaultMongoUrl = 'mongodb://localhost:27017/learninglocker_v2?replicaSet=rs0';
 const mongoUrl = getStringOption(process.env.MONGO_URL, defaultMongoUrl);
+const globalAwsRegion = process.env.GLOBAL_AWS_REGION;
 
 export default {
   defaultTimeout: getNumberOption(process.env.DEFAULT_TIMEOUT_MS, DEFAULT_TIMEOUT_MS),
@@ -70,7 +71,7 @@ export default {
     awsConfig: {
       accessKeyId: getStringOption(process.env.FS_S3_ACCESS_KEY_ID),
       apiVersion: '2006-03-01',
-      region: getStringOption(process.env.FS_S3_REGION),
+      region: getStringOption(globalAwsRegion, process.env.FS_S3_REGION),
       secretAccessKey: getStringOption(process.env.FS_S3_SECRET_ACCESS_KEY),
       signatureVersion: 'v4',
       sslEnabled: true,
@@ -114,7 +115,7 @@ export default {
     cloudWatch: {
       awsConfig: {
         accessKeyId: getStringOption(process.env.WINSTON_CLOUDWATCH_ACCESS_KEY_ID),
-        region: getStringOption(process.env.WINSTON_CLOUDWATCH_REGION),
+        region: getStringOption(globalAwsRegion, process.env.WINSTON_CLOUDWATCH_REGION),
         secretAccessKey: getStringOption(process.env.WINSTON_CLOUDWATCH_SECRET_ACCESS_KEY),
       },
       enabled: getBooleanOption(process.env.WINSTON_CLOUDWATCH_ENABLED, false),
