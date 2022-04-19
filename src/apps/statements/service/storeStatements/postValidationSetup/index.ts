@@ -25,6 +25,7 @@ export default async (
   attachments: AttachmentModel[],
   client: ClientModel,
   priority: StatementProcessingPriority,
+  bypassQueues: string[],
 ) => {
   const storedTime = new Date();
   const storedTimeString = storedTime.toISOString();
@@ -72,6 +73,7 @@ export default async (
         relatedActivities: getRelatedActivitiesFromStatement(postHashStatement),
         statement: postHashStatement,
         metadata: getMetadataFromStatement(postHashStatement),
+        completedQueues: bypassQueues,
       };
     },
   );

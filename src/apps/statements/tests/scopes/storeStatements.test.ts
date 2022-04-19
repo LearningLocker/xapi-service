@@ -1,6 +1,7 @@
 import Forbidden from 'jscommons/dist/errors/Forbidden';
 import assertError from 'jscommons/dist/tests/utils/assertError';
 import { difference } from 'lodash';
+import { StatementProcessingPriority } from '../../enums/statementProcessingPriority.enum';
 import * as scopes from '../../utils/scopes';
 import allScopes from '../../utils/scopes';
 import createClientModel from '../utils/createClientModel';
@@ -39,5 +40,19 @@ describe('store statements with scopes', () => {
       client,
     });
     await assertError(Forbidden, promise);
+  });
+
+  it('should create statements using default configuration of priority and bypass queues', async () => {
+    const client = createClientModel({
+      _id: 'test_client_b',
+      scopes: [scopes.XAPI_STATEMENTS_WRITE],
+    });
+    await service.storeStatements({
+      models: [],
+      attachments: [],
+      client,
+      priority: StatementProcessingPriority.MEDIUM,
+      bypassQueues: [],
+    });
   });
 });
