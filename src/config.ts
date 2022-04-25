@@ -25,6 +25,10 @@ const newRelicLicenseKey = getStringOption(process.env.NEW_RELIC_LICENSE_KEY, ''
 const defaultMongoUrl = 'mongodb://localhost:27017/learninglocker_v2';
 const mongoUrl = getStringOption(process.env.MONGO_URL, defaultMongoUrl);
 
+const globalAwsRegion = process.env.GLOBAL_AWS_REGION;
+const globalAwsIamAccessKeyId = process.env.GLOBAL_AWS_IAM_ACCESS_KEY_ID;
+const globalAwsIamAccessKeySecret = process.env.GLOBAL_AWS_IAM_SECRET_ACCESS_KEY;
+
 export default {
   defaultTimeout: getNumberOption(process.env.DEFAULT_TIMEOUT_MS, DEFAULT_TIMEOUT_MS),
   isQueuePriorityEnabled: process.env.ENABLE_QUEUE_PRIORITY === 'true',
@@ -68,10 +72,13 @@ export default {
   },
   s3StorageRepo: {
     awsConfig: {
-      accessKeyId: getStringOption(process.env.FS_S3_ACCESS_KEY_ID),
+      accessKeyId: getStringOption(process.env.FS_S3_ACCESS_KEY_ID, globalAwsIamAccessKeyId),
       apiVersion: '2006-03-01',
-      region: getStringOption(process.env.FS_S3_REGION),
-      secretAccessKey: getStringOption(process.env.FS_S3_SECRET_ACCESS_KEY),
+      region: getStringOption(process.env.FS_S3_REGION, globalAwsRegion),
+      secretAccessKey: getStringOption(
+        process.env.FS_S3_SECRET_ACCESS_KEY,
+        globalAwsIamAccessKeySecret,
+      ),
       signatureVersion: 'v4',
       sslEnabled: true,
     } as S3.ClientConfiguration,
@@ -113,9 +120,15 @@ export default {
   winston: {
     cloudWatch: {
       awsConfig: {
-        accessKeyId: getStringOption(process.env.WINSTON_CLOUDWATCH_ACCESS_KEY_ID),
-        region: getStringOption(process.env.WINSTON_CLOUDWATCH_REGION),
-        secretAccessKey: getStringOption(process.env.WINSTON_CLOUDWATCH_SECRET_ACCESS_KEY),
+        accessKeyId: getStringOption(
+          process.env.WINSTON_CLOUDWATCH_ACCESS_KEY_ID,
+          globalAwsIamAccessKeyId,
+        ),
+        region: getStringOption(process.env.WINSTON_CLOUDWATCH_REGION, globalAwsRegion),
+        secretAccessKey: getStringOption(
+          process.env.WINSTON_CLOUDWATCH_SECRET_ACCESS_KEY,
+          globalAwsIamAccessKeySecret,
+        ),
       },
       enabled: getBooleanOption(process.env.WINSTON_CLOUDWATCH_ENABLED, false),
       level: getStringOption(process.env.WINSTON_CLOUDWATCH_LEVEL, 'info'),
