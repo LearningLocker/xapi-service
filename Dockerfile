@@ -1,4 +1,4 @@
-FROM node:12
+FROM node:14
 ENV NPM_CONFIG_LOGLEVEL warn
 WORKDIR /usr/src/app
 

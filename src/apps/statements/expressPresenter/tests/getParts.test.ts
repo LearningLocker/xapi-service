@@ -32,8 +32,8 @@ const partToTestPart = async (part: Part) => {
 const getTestParts = async (stream: ReadableStream, boundary: string) => {
   const actualParts = await getParts(stream, boundary);
   const testPartsPromises = actualParts.map(partToTestPart);
-  const testParts = await Promise.all(testPartsPromises);
-  return testParts;
+
+  return Promise.all(testPartsPromises);
 };
 
 const headersToString = (headers: { readonly [key: string]: string }): string => {
@@ -180,19 +180,28 @@ describe('expressPresenter/utils/getParts', () => {
 
   it('should throw error when there is an error in the stream', async () => {
     const stream = new ReadableStream();
-    const error = new Error();
+    stream._read = () => true;
+
+    const error = new Error('Test stream error');
+    const errorEmitDelayMs = 50;
+
     try {
-      stream.push('hello');
-      stream.emit('error', error);
-    } catch {
-      // Do nothing.
+      await Promise.all([
+        getTestParts(stream, TEST_BOUNDARY),
+        new Promise<void>((resolve) => {
+          setTimeout(() => {
+            stream.emit('error', error);
+
+            resolve();
+          }, errorEmitDelayMs);
+        }),
+      ]);
+    } catch (e) {
+      assert.deepEqual(e, error);
+
+      return;
     }
-    try {
-      await getTestParts(stream, TEST_BOUNDARY);
-      /* istanbul ignore next */
-      assert.fail('Expected error to be thrown.');
-    } catch {
-      // Do nothing.
-    }
+
+    assert.fail(`Error "${error.message}" should have thrown`);
   });
 });
