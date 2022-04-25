@@ -21,6 +21,5 @@ export default async (stream: ReadableStream): Promise<string> => {
     });
   });
 
-  const trimmedData = trim(data, trimmedChars);
-  return trimmedData;
+  return trim(data, trimmedChars);
 };
