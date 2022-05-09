@@ -1,5 +1,5 @@
 import { mapKeys } from 'lodash';
-import { ObjectID } from 'mongodb';
+import { ObjectId } from 'mongodb';
 import IfMatch from '../errors/IfMatch';
 import IfNoneMatch from '../errors/IfNoneMatch';
 import MaxEtags from '../errors/MaxEtags';
@@ -30,8 +30,8 @@ export default (config: Config) => {
 
     const profileFilter = {
       activityId: opts.activityId,
-      lrs: new ObjectID(opts.client.lrs_id),
-      organisation: new ObjectID(opts.client.organisation),
+      lrs: new ObjectId(opts.client.lrs_id),
+      organisation: new ObjectId(opts.client.organisation),
       profileId: opts.profileId,
     };
 
@@ -103,13 +103,13 @@ export default (config: Config) => {
 
     // Determines if the Profile was created or found.
     // Docs: https://docs.mongodb.com/manual/reference/command/getLastError/#getLastError.n
-    const wasCreated = createOpResult.lastErrorObject.upserted !== undefined;
+    const wasCreated = createOpResult.lastErrorObject?.upserted !== undefined;
 
     // When the profile is found at the create stage but not the update stage,
     // And the ifNoneMatch option was not provided.
     // Then the exsting profile either has the wrong content or didn't match the ifMatch option.
     if (!wasCreated && !checkIfNoneMatch) {
-      if (checkIfMatch && createOpResult.value.etag !== opts.ifMatch) {
+      if (checkIfMatch && createOpResult.value?.etag !== opts.ifMatch) {
         throw new IfMatch();
       }
       throw new NonJsonObject();

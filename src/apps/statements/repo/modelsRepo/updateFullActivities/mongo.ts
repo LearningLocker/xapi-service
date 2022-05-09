@@ -1,6 +1,6 @@
 import { Dictionary, mapKeys } from 'lodash';
 import { isEmpty } from 'lodash';
-import { ObjectID, UnorderedBulkOperation } from 'mongodb';
+import { ObjectId, UnorderedBulkOperation } from 'mongodb';
 import FullActivityDatabase from '../../../models/FullActivityDatabase';
 import { FULL_ACTIVITIES_COLLECTION_NAME } from '../utils/mongoModels/constants';
 import FacadeConfig from '../utils/mongoModels/FacadeConfig';
@@ -56,8 +56,8 @@ const createMongoSet = (fullActivity: FullActivityDatabase) => {
 
 const createMongoQuery = (fullActivity: FullActivityDatabase) => {
   const activityId = fullActivity.activityId;
-  const lrsId = new ObjectID(fullActivity.lrsId);
-  const organisationId = new ObjectID(fullActivity.organisationId);
+  const lrsId = new ObjectId(fullActivity.lrsId);
+  const organisationId = new ObjectId(fullActivity.organisationId);
 
   return matchesFullActivity({ activityId, lrsId, organisationId });
 };

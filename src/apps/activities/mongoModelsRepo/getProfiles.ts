@@ -1,4 +1,4 @@
-import { ObjectID } from 'mongodb';
+import { ObjectId } from 'mongodb';
 import GetProfilesOptions from '../repoFactory/options/GetProfilesOptions';
 import GetProfilesResult from '../repoFactory/results/GetProfilesResult';
 import Config from './Config';
@@ -11,8 +11,8 @@ export default (config: Config) => {
     const sinceFilter = opts.since !== undefined ? { updatedAt: { $gt: opts.since } } : {};
     const filter = {
       activityId: opts.activityId,
-      lrs: new ObjectID(opts.client.lrs_id),
-      organisation: new ObjectID(opts.client.organisation),
+      lrs: new ObjectId(opts.client.lrs_id),
+      organisation: new ObjectId(opts.client.organisation),
       ...sinceFilter,
     };
 

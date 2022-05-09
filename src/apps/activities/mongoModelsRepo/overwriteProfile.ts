@@ -1,5 +1,5 @@
 import { isPlainObject } from 'lodash';
-import { ObjectID } from 'mongodb';
+import { ObjectId } from 'mongodb';
 import IfMatch from '../errors/IfMatch';
 import IfNoneMatch from '../errors/IfNoneMatch';
 import MaxEtags from '../errors/MaxEtags';
@@ -23,8 +23,8 @@ export default (config: Config) => {
 
     const profileFilter = {
       activityId: opts.activityId,
-      lrs: new ObjectID(opts.client.lrs_id),
-      organisation: new ObjectID(opts.client.organisation),
+      lrs: new ObjectId(opts.client.lrs_id),
+      organisation: new ObjectId(opts.client.organisation),
       profileId: opts.profileId,
     };
 

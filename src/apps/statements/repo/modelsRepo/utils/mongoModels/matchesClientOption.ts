@@ -1,5 +1,5 @@
 import { includes, intersection } from 'lodash';
-import { ObjectID } from 'mongodb';
+import { ObjectId } from 'mongodb';
 import ClientModel from '../../../../models/ClientModel';
 import * as scopes from '../../../../utils/scopes';
 
@@ -18,8 +18,8 @@ export default (client: ClientModel, enableReadMine = false): Record<string, unk
     includes(client.scopes, scopes.XAPI_STATEMENTS_READ_MINE);
 
   return {
-    organisation: new ObjectID(client.organisation),
-    lrs_id: new ObjectID(client.lrs_id),
-    ...(canOnlyReadMine ? { client: new ObjectID(client._id) } : {}),
+    organisation: new ObjectId(client.organisation),
+    lrs_id: new ObjectId(client.lrs_id),
+    ...(canOnlyReadMine ? { client: new ObjectId(client._id) } : {}),
   };
 };
