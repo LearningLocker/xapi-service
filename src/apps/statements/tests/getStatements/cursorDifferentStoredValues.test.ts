@@ -1,5 +1,4 @@
-import { ObjectId } from 'mongodb';
-import StoredStatementModel from '../../models/StoredStatementModel';
+import { ObjectId, Document } from 'mongodb';
 import connectToMongoDb from '../../repo/utils/connectToMongoDb';
 import createClientModel from '../utils/createClientModel';
 import createStatement from '../utils/createStatement';
@@ -20,7 +19,7 @@ describe('get statements with different stored value using cursor', () => {
     documentId: string,
     statementId: string,
     stored: string,
-  ): Partial<StoredStatementModel> => ({
+  ): Document => ({
     _id: (new ObjectId(documentId) as any) as string,
     person: null,
     active: true,

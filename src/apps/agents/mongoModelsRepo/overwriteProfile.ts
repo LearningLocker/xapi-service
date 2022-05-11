@@ -1,4 +1,5 @@
 import { isPlainObject } from 'lodash';
+import { ReturnDocument } from 'mongodb';
 import IfMatch from '../errors/IfMatch';
 import IfNoneMatch from '../errors/IfNoneMatch';
 import MaxEtags from '../errors/MaxEtags';
@@ -49,17 +50,17 @@ export default (config: Config) => {
           $set: update,
         },
         {
-          returnOriginal: false,
+          returnDocument: ReturnDocument.AFTER,
           upsert: false,
         },
       );
 
       // Determines if the Profile was updated.
-      const updatedDocuments = updateOpResult.lastErrorObject.n as number;
+      const updatedDocuments = updateOpResult.lastErrorObject?.n as number;
       if (updatedDocuments === 1) {
         return {
-          extension: updateOpResult.value.extension,
-          id: updateOpResult.value._id.toString(),
+          extension: updateOpResult.value?.extension,
+          id: updateOpResult.value?._id.toString() as string,
         };
       }
     }
@@ -71,13 +72,13 @@ export default (config: Config) => {
         $setOnInsert: update,
       },
       {
-        returnOriginal: false,
+        returnDocument: ReturnDocument.AFTER,
         upsert: true,
       },
     );
 
     // Determines if the Profile was created or found.
-    const wasCreated = createOpResult.lastErrorObject.upserted !== undefined;
+    const wasCreated = createOpResult.lastErrorObject?.upserted !== undefined;
 
     // Throws the IfMatch error when the profile already exists.
     // This is because there must have been an ETag mismatch in the previous update.
@@ -90,8 +91,8 @@ export default (config: Config) => {
     }
 
     return {
-      extension: createOpResult.value.extension,
-      id: createOpResult.value._id.toString(),
+      extension: createOpResult.value?.extension,
+      id: createOpResult.value?._id.toString() as string,
     };
   };
 };

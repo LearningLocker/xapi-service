@@ -22,7 +22,7 @@ export default (config: FacadeConfig): Signature => {
       ...matchesClientOption(client),
     };
     const queryOptions = {
-      fields: {
+      projection: {
         _id: 0,
         'statement.object.id': 1,
       },

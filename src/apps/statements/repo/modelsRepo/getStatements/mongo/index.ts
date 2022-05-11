@@ -1,4 +1,5 @@
 import { defaultTo } from 'lodash';
+import { Sort } from 'mongodb';
 import Timeout from '../../../../errors/Timeout';
 import StoredStatementModel from '../../../../models/StoredStatementModel';
 import { STATEMENTS_COLLECTION_NAME } from '../../utils/mongoModels/constants';
@@ -30,7 +31,7 @@ const filterModels = (opts: Opts) => {
   };
 };
 
-const sortModels = (ascending: boolean) => {
+const sortModels = (ascending: boolean): Sort => {
   return {
     stored: ascending ? 1 : -1,
     _id: ascending ? 1 : -1,
@@ -48,20 +49,18 @@ export default (config: FacadeConfig): Signature => {
     const limit = opts.limit;
 
     try {
-      const models = (await collection
+      const models = ((await collection
         .find(query)
         .sort(sort)
         .skip(skip)
         .limit(limit)
         .maxTimeMS(config.maxTimeMs)
-        .toArray()) as StoredStatementModel[];
+        .toArray()) as unknown) as StoredStatementModel[];
 
-      const decodedModels = models.map((model) => {
+      return models.map((model) => {
         const statement = decodeDotsInStatement(model.statement);
         return { ...model, statement };
       });
-
-      return decodedModels;
     } catch (err) {
       /* istanbul ignore next - Couldn't test without an unacceptable test duration. */
       if (err?.code === timeoutErrorCode) {

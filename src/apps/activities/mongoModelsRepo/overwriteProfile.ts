@@ -1,5 +1,5 @@
 import { isPlainObject } from 'lodash';
-import { ObjectId } from 'mongodb';
+import { ObjectId, ReturnDocument } from 'mongodb';
 import IfMatch from '../errors/IfMatch';
 import IfNoneMatch from '../errors/IfNoneMatch';
 import MaxEtags from '../errors/MaxEtags';
@@ -56,18 +56,18 @@ export default (config: Config) => {
           $set: update,
         },
         {
-          returnOriginal: false, // Ensures the updated document is returned.
+          returnDocument: ReturnDocument.AFTER, // Ensures the updated document is returned.
           upsert: false, // Does not create the profile when it doesn't exist.
         },
       );
 
       // Determines if the Profile was updated.
       // Docs: https://docs.mongodb.com/manual/reference/command/getLastError/#getLastError.n
-      const updatedDocuments = updateOpResult.lastErrorObject.n as number;
+      const updatedDocuments = updateOpResult.lastErrorObject?.n as number;
       if (updatedDocuments === 1) {
         return {
-          extension: updateOpResult.value.extension,
-          id: updateOpResult.value._id.toString(),
+          extension: updateOpResult.value?.extension,
+          id: updateOpResult.value?._id.toString() as string,
         };
       }
     }
@@ -81,14 +81,14 @@ export default (config: Config) => {
         $setOnInsert: update,
       },
       {
-        returnOriginal: false, // Ensures the updated document is returned.
+        returnDocument: ReturnDocument.AFTER, // Ensures the updated document is returned.
         upsert: true, // Creates the profile when it's not found.
       },
     );
 
     // Determines if the Profile was created or found.
     // Docs: https://docs.mongodb.com/manual/reference/command/getLastError/#getLastError.n
-    const wasCreated = createOpResult.lastErrorObject.upserted !== undefined;
+    const wasCreated = createOpResult.lastErrorObject?.upserted !== undefined;
 
     // Throws the IfMatch error when the profile already exists.
     // This is because there must have been an ETag mismatch in the previous update.
@@ -101,8 +101,8 @@ export default (config: Config) => {
     }
 
     return {
-      extension: createOpResult.value.extension,
-      id: createOpResult.value._id.toString(),
+      extension: createOpResult.value?.extension,
+      id: createOpResult.value?._id.toString() as string,
     };
   };
 };

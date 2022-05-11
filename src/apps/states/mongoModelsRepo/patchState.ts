@@ -1,4 +1,5 @@
 import { mapKeys } from 'lodash';
+import { ReturnDocument } from 'mongodb';
 import NonJsonObject from '../errors/NonJsonObject';
 import PatchStateOptions from '../repoFactory/options/PatchStateOptions';
 import { jsonContentType } from '../utils/constants';
@@ -49,14 +50,14 @@ export default (config: Config) => {
         },
       },
       {
-        returnOriginal: false, // Ensures the updated document is returned.
+        returnDocument: ReturnDocument.AFTER, // Ensures the updated document is returned.
         upsert: false, // Does not create the state when it doesn't exist.
       },
     );
 
     // Determines if the State was updated.
     // Docs: https://docs.mongodb.com/manual/reference/command/getLastError/#getLastError.n
-    const updatedDocuments = updateOpResult.lastErrorObject.n as number;
+    const updatedDocuments = updateOpResult.lastErrorObject?.n as number;
     if (updatedDocuments === 1) {
       return;
     }
@@ -73,14 +74,14 @@ export default (config: Config) => {
         },
       },
       {
-        returnOriginal: false, // Ensures the updated document is returned.
+        returnDocument: ReturnDocument.AFTER, // Ensures the updated document is returned.
         upsert: true, // Creates the state when it's not found.
       },
     );
 
     // Determines if the State was created or found.
     // Docs: https://docs.mongodb.com/manual/reference/command/getLastError/#getLastError.n
-    const wasCreated = createOpResult.lastErrorObject.upserted !== undefined;
+    const wasCreated = createOpResult.lastErrorObject?.upserted !== undefined;
 
     // When the state is found at the create stage but not the update stage,
     // Then the exsting state has the wrong content
