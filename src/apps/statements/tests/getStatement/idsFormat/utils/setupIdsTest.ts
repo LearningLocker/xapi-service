@@ -21,7 +21,7 @@ export default () => {
     const actualStatements = result.statements;
     const expectedStatement = { ...actualStatements[0], ...idStatement };
     assert(isArray(actualStatements));
-    assert.equal(actualStatements.length, 1);
-    assert.deepEqual(actualStatements[0], expectedStatement);
+    assert.strictEqual(actualStatements.length, 1);
+    assert.deepStrictEqual(actualStatements[0], expectedStatement);
   };
 };

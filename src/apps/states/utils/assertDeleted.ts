@@ -8,7 +8,7 @@ import getTestStates from './getTestStates';
 export default async (optsOverrides: Partial<GetStatesOptions> = {}) => {
   // Asserts that the agent has no states.
   const getStatesResult = await getTestStates(optsOverrides);
-  assert.deepEqual([], getStatesResult.stateIds);
+  assert.deepStrictEqual([], getStatesResult.stateIds);
 
   // Asserts that the state does not exist.
   const getStatePromise = getTestState(optsOverrides);

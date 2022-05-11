@@ -65,7 +65,7 @@ describe(__filename, () => {
     await db.collection('lrs').insertOne(TEST_STORE);
     await db.collection('client').insertOne(TEST_CLIENT);
     const result = await authRepo.getClient({ authToken: TEST_BASIC_TOKEN });
-    assert.equal(result.client._id, TEST_CLIENT_MODEL._id);
+    assert.strictEqual(result.client._id, TEST_CLIENT_MODEL._id);
   });
 
   it('should error when getting without any clients in the DB', async () => {
@@ -132,7 +132,7 @@ describe(__filename, () => {
     await db.collection('client').insertOne(TEST_CLIENT);
     await db.collection('oAuthTokens').insertOne(TEST_OAUTH_TOKEN);
     const result = await authRepo.getClient({ authToken: `Bearer ${TEST_ACCESS_TOKEN}` });
-    assert.equal(result.client._id, TEST_CLIENT._id);
+    assert.strictEqual(result.client._id, TEST_CLIENT._id);
   });
 
   it('should error when access_token is not found in collection', async () => {

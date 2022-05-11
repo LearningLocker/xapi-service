@@ -63,7 +63,7 @@ describe('getClient from mongo client', () => {
     await db.collection('lrs').insertOne(TEST_STORE);
     await db.collection('client').insertOne(TEST_CLIENT);
     const result = await authRepo.getClient({ authToken: TEST_TOKEN });
-    assert.equal(result.client._id, TEST_CLIENT._id);
+    assert.strictEqual(result.client._id, TEST_CLIENT._id);
   });
 
   it('should error when getting a untrusted client', async () => {
@@ -130,7 +130,7 @@ describe('getClient from mongo client', () => {
     await db.collection('client').insertOne(TEST_CLIENT);
     await db.collection('oAuthTokens').insertOne(TEST_OAUTH_TOKEN);
     const result = await authRepo.getClient({ authToken: `Bearer ${TEST_ACCESS_TOKEN}` });
-    assert.equal(result.client._id, TEST_CLIENT._id);
+    assert.strictEqual(result.client._id, TEST_CLIENT._id);
   });
 
   it('should error when access_token is not found in collection', async () => {

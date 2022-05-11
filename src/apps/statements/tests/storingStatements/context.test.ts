@@ -18,7 +18,7 @@ describe('store statement with context', () => {
 
   const assertContext = (context: any, expectedContextActivities: any) => {
     if (context !== undefined && context.contextActivities !== undefined) {
-      assert.deepEqual(context.contextActivities, expectedContextActivities);
+      assert.deepStrictEqual(context.contextActivities, expectedContextActivities);
     } else {
       /* istanbul ignore next */
       assert(false, 'Expected context activities to be defined');
@@ -32,8 +32,8 @@ describe('store statement with context', () => {
       voided: false,
       client,
     });
-    const statement = result.statements[0];
-    return statement;
+
+    return result.statements[0];
   };
 
   const testWrappedContext = async (key: string) => {
