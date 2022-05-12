@@ -34,7 +34,6 @@ jobs:
     name: Test Local
     runs-on: ubuntu-latest
     env:
-      NPM_CONFIG_LOGLEVEL: warn
       WINSTON_CONSOLE_LEVEL: none
       EXPRESS_PORT: 1337
 
@@ -81,7 +80,6 @@ jobs:
     name: Test S3
     runs-on: ubuntu-latest
     env:
-      NPM_CONFIG_LOGLEVEL: warn
       WINSTON_CONSOLE_LEVEL: none
       EXPRESS_PORT: 1337
       STORAGE_REPO: s3
@@ -137,7 +135,6 @@ jobs:
     name: Test Azure
     runs-on: ubuntu-latest
     env:
-      NPM_CONFIG_LOGLEVEL: warn
       WINSTON_CONSOLE_LEVEL: none
       EXPRESS_PORT: 1337
       STORAGE_REPO: azure
@@ -190,7 +187,6 @@ jobs:
     name: Test Google
     runs-on: ubuntu-latest
     env:
-      NPM_CONFIG_LOGLEVEL: warn
       WINSTON_CONSOLE_LEVEL: none
       EXPRESS_PORT: 1337
       STORAGE_REPO: google
@@ -241,7 +237,6 @@ jobs:
     name: Release
     runs-on: ubuntu-latest
     env:
-      NPM_CONFIG_LOGLEVEL: warn
       DOCKER_REPO_SLUG: learninglocker/xapi-service
 
     steps:
