@@ -116,10 +116,10 @@ jobs:
 
         - name: Setup S3 Env
           run: |
-              echo 'export SUB_FOLDER_ACTIVITIES=circleci/$CIRCLE_BUILD_NUM' >> "$BASH_ENV"
-              echo 'export SUB_FOLDER_AGENTS=circleci/$CIRCLE_BUILD_NUM' >> "$BASH_ENV"
-              echo 'export SUB_FOLDER_STATE=circleci/$CIRCLE_BUILD_NUM' >> "$BASH_ENV"
-              echo 'export SUB_FOLDER_STATEMENTS=circleci/$CIRCLE_BUILD_NUM' >> "$BASH_ENV"
+              echo "export SUB_FOLDER_ACTIVITIES=circleci/$CIRCLE_BUILD_NUM" >> "$BASH_ENV"
+              echo "export SUB_FOLDER_AGENTS=circleci/$CIRCLE_BUILD_NUM" >> "$BASH_ENV"
+              echo "export SUB_FOLDER_STATE=circleci/$CIRCLE_BUILD_NUM" >> "$BASH_ENV"
+              echo "export SUB_FOLDER_STATEMENTS=circleci/$CIRCLE_BUILD_NUM" >> "$BASH_ENV"
               source "$BASH_ENV"
 
         - name: Mocha Tests S3
@@ -171,7 +171,7 @@ jobs:
 
         - name: Setup Azure Env
           run: |
-            echo 'export FS_AZURE_CONTAINER_SUBFOLDER=circleci/$CIRCLE_BUILD_NUM' >> "$BASH_ENV"
+            echo "export FS_AZURE_CONTAINER_SUBFOLDER=circleci/$CIRCLE_BUILD_NUM" >> "$BASH_ENV"
             source "$BASH_ENV"
 
         - name: Mocha Tests Azure
