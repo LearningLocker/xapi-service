@@ -36,7 +36,7 @@ jobs:
     env:
       WINSTON_CONSOLE_LEVEL: none
       EXPRESS_PORT: 1337
-      STORAGE_REPO: ${{ github.workspace }}/tmp
+      STORAGE_REPO: ${{ github.workspace }}/local
 
     services:
       mongodb:
