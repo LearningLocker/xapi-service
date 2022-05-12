@@ -8,7 +8,7 @@ concurrency:
 
 jobs:
   build:
-    name: build
+    name: Build
     runs-on: ubuntu-latest
     env:
       NPM_CONFIG_LOGLEVEL: warn
@@ -31,9 +31,10 @@ jobs:
         run: yarn lint-ci
 
   test-local:
-    name: test-local
+    name: Test Local
     runs-on: ubuntu-latest
     env:
+      NPM_CONFIG_LOGLEVEL: warn
       WINSTON_CONSOLE_LEVEL: none
       EXPRESS_PORT: 1337
 
@@ -77,9 +78,10 @@ jobs:
           run: yarn codecov
 
   test-s3:
-    name: test-s3
+    name: Test S3
     runs-on: ubuntu-latest
     env:
+      NPM_CONFIG_LOGLEVEL: warn
       WINSTON_CONSOLE_LEVEL: none
       EXPRESS_PORT: 1337
       STORAGE_REPO: s3
@@ -132,9 +134,10 @@ jobs:
           run: yarn codecov
 
   test-azure:
-    name: test-azure
+    name: Test Azure
     runs-on: ubuntu-latest
     env:
+      NPM_CONFIG_LOGLEVEL: warn
       WINSTON_CONSOLE_LEVEL: none
       EXPRESS_PORT: 1337
       STORAGE_REPO: azure
@@ -184,9 +187,10 @@ jobs:
           run: yarn codecov
 
   test-google:
-    name: test-google
+    name: Test Google
     runs-on: ubuntu-latest
     env:
+      NPM_CONFIG_LOGLEVEL: warn
       WINSTON_CONSOLE_LEVEL: none
       EXPRESS_PORT: 1337
       STORAGE_REPO: google
@@ -234,9 +238,10 @@ jobs:
           run: yarn codecov
 
   release:
-    name: release
+    name: Release
     runs-on: ubuntu-latest
     env:
+      NPM_CONFIG_LOGLEVEL: warn
       DOCKER_REPO_SLUG: learninglocker/xapi-service
 
     steps:
