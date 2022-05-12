@@ -1,0 +1,280 @@
+name: Integration Suite
+
+on: ['push']
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: ${{ github.ref != 'refs/heads/master' }}
+
+jobs:
+  build:
+    name: build
+    runs-on: ubuntu-latest
+    env:
+      NPM_CONFIG_LOGLEVEL: warn
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version: "14"
+          cache: 'npm'
+
+      - name: Installing Dependencies
+        run: yarn install --ignore-engines --frozen-lockfile
+
+      - name: Compiling Code
+        run: yarn build
+
+      - name: Linting Code
+        run: yarn lint-ci
+
+      - name: Semantic Release
+        if: github.ref == 'refs/heads/master'
+        run: npm run semantic-release
+        env:
+          GITHUB_TOKEN: ${{ secrets.SEMANTIC_RELEASE_GITHUB_TOKEN }}
+
+  test-local:
+    name: test-local
+    runs-on: ubuntu-latest
+    env:
+      WINSTON_CONSOLE_LEVEL: none
+      EXPRESS_PORT: 1337
+
+    services:
+      mongodb:
+        image: mongo:3.7.9
+        env:
+          MONGO_INITDB_DATABASE: test
+          ALLOW_EMPTY_PASSWORD: yes
+        ports:
+          - 27017:27017
+        options: --health-cmd="mongo" --health-interval=10s --health-timeout=5s --health-retries=5
+
+      redis:
+        image: redis:3.2.12
+        env:
+          REDIS_DATABASE: test
+          ALLOW_EMPTY_PASSWORD: yes
+        ports:
+          - 6379:6379
+        options: --health-cmd="redis-cli ping"
+
+    steps:
+        - uses: actions/checkout@v3
+
+        - uses: actions/setup-node@v3
+          with:
+            node-version: "14"
+            cache: 'npm'
+
+        - name: Installing Dependencies
+          run: yarn install --ignore-engines --frozen-lockfile
+
+        - name: Mocha Tests
+          run: yarn cover-local
+
+        - name: Performance Tests
+          run: sh test.sh
+
+        - name: Codecov
+          run: yarn codecov
+
+  test-s3:
+    name: test-s3
+    runs-on: ubuntu-latest
+    env:
+      WINSTON_CONSOLE_LEVEL: none
+      EXPRESS_PORT: 1337
+      STORAGE_REPO: s3
+
+    services:
+      mongodb:
+        image: mongo:3.7.9
+        env:
+          MONGO_INITDB_DATABASE: test
+          ALLOW_EMPTY_PASSWORD: yes
+        ports:
+          - 27017:27017
+        options: --health-cmd="mongo" --health-interval=10s --health-timeout=5s --health-retries=5
+
+      redis:
+        image: redis:3.2.12
+        env:
+          REDIS_DATABASE: test
+          ALLOW_EMPTY_PASSWORD: yes
+        ports:
+          - 6379:6379
+        options: --health-cmd="redis-cli ping"
+
+    steps:
+        - uses: actions/checkout@v3
+
+        - uses: actions/setup-node@v3
+          with:
+            node-version: "14"
+            cache: 'npm'
+
+        - name: Installing Dependencies
+          run: yarn install --ignore-engines --frozen-lockfile
+
+        - name: Setup S3 Env
+          run: |
+              echo 'export SUB_FOLDER_ACTIVITIES=circleci/$CIRCLE_BUILD_NUM' >> $BASH_ENV
+              echo 'export SUB_FOLDER_AGENTS=circleci/$CIRCLE_BUILD_NUM' >> $BASH_ENV
+              echo 'export SUB_FOLDER_STATE=circleci/$CIRCLE_BUILD_NUM' >> $BASH_ENV
+              echo 'export SUB_FOLDER_STATEMENTS=circleci/$CIRCLE_BUILD_NUM' >> $BASH_ENV
+              source $BASH_ENV
+
+        - name: Mocha Tests S3
+          run: yarn cover-s3
+
+        - name: Performance Tests
+          run: sh test.sh
+
+        - name: Codecov
+          run: yarn codecov
+
+  test-azure:
+    name: test-azure
+    runs-on: ubuntu-latest
+    env:
+      WINSTON_CONSOLE_LEVEL: none
+      EXPRESS_PORT: 1337
+      STORAGE_REPO: azure
+
+    services:
+      mongodb:
+        image: mongo:3.7.9
+        env:
+          MONGO_INITDB_DATABASE: test
+          ALLOW_EMPTY_PASSWORD: yes
+        ports:
+          - 27017:27017
+        options: --health-cmd="mongo" --health-interval=10s --health-timeout=5s --health-retries=5
+
+      redis:
+        image: redis:3.2.12
+        env:
+          REDIS_DATABASE: test
+          ALLOW_EMPTY_PASSWORD: yes
+        ports:
+          - 6379:6379
+        options: --health-cmd="redis-cli ping"
+
+    steps:
+        - uses: actions/checkout@v3
+
+        - uses: actions/setup-node@v3
+          with:
+            node-version: "14"
+            cache: 'npm'
+
+        - name: Installing Dependencies
+          run: yarn install --ignore-engines --frozen-lockfile
+
+        - name: Setup Azure Env
+          run: |
+            echo 'export FS_AZURE_CONTAINER_SUBFOLDER=circleci/$CIRCLE_BUILD_NUM' >> $BASH_ENV
+            source $BASH_ENV
+
+        - name: Mocha Tests Azure
+          run: yarn cover-azure
+
+        - name: Performance Tests
+          run: sh test.sh
+
+        - name: Codecov
+          run: yarn codecov
+
+  test-google:
+    name: test-google
+    runs-on: ubuntu-latest
+    env:
+      WINSTON_CONSOLE_LEVEL: none
+      EXPRESS_PORT: 1337
+      STORAGE_REPO: google
+
+    services:
+      mongodb:
+        image: mongo:3.7.9
+        env:
+          MONGO_INITDB_DATABASE: test
+          ALLOW_EMPTY_PASSWORD: yes
+        ports:
+          - 27017:27017
+        options: --health-cmd="mongo" --health-interval=10s --health-timeout=5s --health-retries=5
+
+      redis:
+        image: redis:3.2.12
+        env:
+          REDIS_DATABASE: test
+          ALLOW_EMPTY_PASSWORD: yes
+        ports:
+          - 6379:6379
+        options: --health-cmd="redis-cli ping"
+
+    steps:
+        - uses: actions/checkout@v3
+
+        - uses: actions/setup-node@v3
+          with:
+            node-version: "14"
+            cache: 'npm'
+
+        - name: Installing Dependencies
+          run: yarn install --ignore-engines --frozen-lockfile
+
+        - name: Setup Google Key File
+          run: echo ${GCLOUD_SERVICE_KEY} > ./google.keyfile.json
+
+        - name: Mocha Tests Google
+          run: yarn cover-google
+
+        - name: Performance Tests
+          run: sh test.sh
+
+        - name: Codecov
+          run: yarn codecov
+
+  release:
+    name: release
+    runs-on: ubuntu-latest
+    env:
+      DOCKER_REPO_SLUG: learninglocker/xapi-service
+
+    steps:
+        - uses: actions/checkout@v3
+
+        - uses: actions/setup-node@v3
+          with:
+            node-version: "14"
+            cache: 'npm'
+
+        - name: Installing Dependencies
+          run: yarn install --ignore-engines --frozen-lockfile
+
+        - name: Docker Install
+          run: |
+            set -x
+            DOCKER_VERSION="19.03.12"
+            curl -L -o /tmp/docker-$DOCKER_VERSION.tgz https://download.docker.com/linux/static/stable/x86_64/docker-$DOCKER_VERSION.tgz
+            tar -xz -C /tmp -f /tmp/docker-$DOCKER_VERSION.tgz
+            mv /tmp/docker/* /usr/bin
+
+        - name: Docker Build
+          run: docker build -t "$DOCKER_REPO_SLUG" .
+
+        - name: Docker Tag
+          run: docker tag $DOCKER_REPO_SLUG $DOCKER_REPO_SLUG:$CIRCLE_BRANCH
+
+        - name: Semantic Release
+          run: yarn semantic-release
+
+        - name: Docker Login
+          run: docker login -u "$DOCKERHUB_USERNAME" -p "$DOCKERHUB_PASSWORD"
+
+        - name: Docker Push
+          run: docker push $DOCKER_REPO_SLUG:$CIRCLE_BRANCH
