@@ -34,8 +34,8 @@ describe('get statements by slicing', () => {
       limit: 1,
       client: TEST_CLIENT,
     });
-    assert.equal(statements.length, 1);
-    assert.equal(statements[0].id, TEST_ID_3);
+    assert.strictEqual(statements.length, 1);
+    assert.strictEqual(statements[0].id, TEST_ID_3);
   });
 
   it('should return statements when they are inside the default limit', async () => {
@@ -43,7 +43,7 @@ describe('get statements by slicing', () => {
       limit: 0,
       client: TEST_CLIENT,
     });
-    assert.equal(statements.length, 3); // eslint-disable-line no-magic-numbers
+    assert.strictEqual(statements.length, 3); // eslint-disable-line no-magic-numbers
   });
 
   it('should return statements when they are not skipped', async () => {
@@ -51,8 +51,8 @@ describe('get statements by slicing', () => {
       skip: 2,
       client: TEST_CLIENT,
     });
-    assert.equal(statements.length, 1);
-    assert.equal(statements[0].id, TEST_ID_1);
+    assert.strictEqual(statements.length, 1);
+    assert.strictEqual(statements[0].id, TEST_ID_1);
   });
 
   it('should return statements when they are not sliced', async () => {
@@ -61,7 +61,7 @@ describe('get statements by slicing', () => {
       limit: 1,
       client: TEST_CLIENT,
     });
-    assert.equal(statements.length, 1);
-    assert.equal(statements[0].id, TEST_ID_2);
+    assert.strictEqual(statements.length, 1);
+    assert.strictEqual(statements[0].id, TEST_ID_2);
   });
 });

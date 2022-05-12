@@ -23,7 +23,7 @@ describe('getFullActivity', () => {
       activityId: TEST_ACTIVITY_ID,
       client: TEST_CLIENT,
     });
-    assert.deepEqual(fullActivity, TEST_BASE_ACTIVITY);
+    assert.deepStrictEqual(fullActivity, TEST_BASE_ACTIVITY);
   });
 
   it('should also return the definition when getting a existing activity', async () => {
@@ -37,7 +37,7 @@ describe('getFullActivity', () => {
       activityId: TEST_ACTIVITY_ID,
       client: TEST_CLIENT,
     });
-    assert.deepEqual(fullActivity, TEST_ACTIVITY);
+    assert.deepStrictEqual(fullActivity, TEST_ACTIVITY);
   });
 
   it('should merge the definitions when storing two definitions in one batch', async () => {
@@ -52,7 +52,7 @@ describe('getFullActivity', () => {
       activityId: TEST_ACTIVITY_ID,
       client: TEST_CLIENT,
     });
-    assert.deepEqual(fullActivity, TEST_MERGED_ACTIVITY);
+    assert.deepStrictEqual(fullActivity, TEST_MERGED_ACTIVITY);
   });
 
   it('should merge the definitions when storing two definitions in two batches', async () => {
@@ -72,7 +72,7 @@ describe('getFullActivity', () => {
       activityId: TEST_ACTIVITY_ID,
       client: TEST_CLIENT,
     });
-    assert.deepEqual(fullActivity, TEST_MERGED_ACTIVITY);
+    assert.deepStrictEqual(fullActivity, TEST_MERGED_ACTIVITY);
   });
 
   it('should merge with existing activities when storing a different ID', async () => {
@@ -93,7 +93,7 @@ describe('getFullActivity', () => {
       activityId: TEST_ACTIVITY_ID,
       client: TEST_CLIENT,
     });
-    assert.deepEqual(fullActivity, TEST_MERGED_ACTIVITY);
+    assert.deepStrictEqual(fullActivity, TEST_MERGED_ACTIVITY);
   });
 
   it.skip('should return the definition and contextActivities when getting a existing activity', async () => {
@@ -110,7 +110,7 @@ describe('getFullActivity', () => {
       activityId: TEST_ACTIVITY_ID,
       client: TEST_CLIENT,
     });
-    assert.deepEqual(fullActivity, TEST_ACTIVITY_WITH_CONTEXT_ACTIVITIES);
+    assert.deepStrictEqual(fullActivity, TEST_ACTIVITY_WITH_CONTEXT_ACTIVITIES);
   });
 
   it.skip('should return the contextActivities when getting a existing activity', async () => {
@@ -127,7 +127,7 @@ describe('getFullActivity', () => {
       activityId: TEST_ACTIVITY_ID,
       client: TEST_CLIENT,
     });
-    assert.deepEqual(fullActivity, TEST_ACTIVITY_WITH_CONTEXT_ACTIVITIES);
+    assert.deepStrictEqual(fullActivity, TEST_ACTIVITY_WITH_CONTEXT_ACTIVITIES);
   });
 
   it.skip('should merge the contextActivities when storing two contextActivities in one batch', async () => {
@@ -148,7 +148,7 @@ describe('getFullActivity', () => {
       activityId: TEST_ACTIVITY_ID,
       client: TEST_CLIENT,
     });
-    assert.deepEqual(fullActivity, TEST_ACTIVITY_WITH_CONTEXT_ACTIVITIES);
+    assert.deepStrictEqual(fullActivity, TEST_ACTIVITY_WITH_CONTEXT_ACTIVITIES);
   });
 
   it.skip('should merge two different contextActivities when storing contextActivities in one batch', async () => {
@@ -169,7 +169,7 @@ describe('getFullActivity', () => {
       activityId: TEST_ACTIVITY_ID,
       client: TEST_CLIENT,
     });
-    assert.deepEqual(fullActivity, TEST_ACTIVITY_WITH_MERGED_CONTEXT_ACTIVITIES);
+    assert.deepStrictEqual(fullActivity, TEST_ACTIVITY_WITH_MERGED_CONTEXT_ACTIVITIES);
   });
 
   it.skip('should return last contextActivities when storing contextActivities in two batches', async () => {
@@ -195,6 +195,6 @@ describe('getFullActivity', () => {
       activityId: TEST_ACTIVITY_ID,
       client: TEST_CLIENT,
     });
-    assert.deepEqual(fullActivity, TEST_ACTIVITY_WITH_MERGED_CONTEXT_ACTIVITIES);
+    assert.deepStrictEqual(fullActivity, TEST_ACTIVITY_WITH_MERGED_CONTEXT_ACTIVITIES);
   });
 });

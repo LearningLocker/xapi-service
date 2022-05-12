@@ -175,7 +175,7 @@ describe(__filename, () => {
   it('should lower case IFIs with sub statements', async () => {
     await storeStatements([createStatement(TEST_STATEMENT)]);
     const actualStatement = await getStatement();
-    assert.deepEqual(actualStatement, {
+    assert.deepStrictEqual(actualStatement, {
       ...actualStatement,
       ...EXPECTED_TEST_STATEMENT,
     });
@@ -192,7 +192,7 @@ describe(__filename, () => {
     };
     await storeStatements([createStatement(testStatement)]);
     const actualStatement = await getStatement();
-    assert.deepEqual(actualStatement, {
+    assert.deepStrictEqual(actualStatement, {
       ...actualStatement,
       ...expectedStatement,
     });

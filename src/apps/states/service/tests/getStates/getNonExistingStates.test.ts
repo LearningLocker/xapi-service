@@ -15,7 +15,7 @@ describe('getStates with non-existing agent', () => {
 
   it('should return no state ids when getting a non-existing activity id', async () => {
     const statesResult = await getTestStates();
-    assert.deepEqual(statesResult.stateIds, []);
+    assert.deepStrictEqual(statesResult.stateIds, []);
   });
 
   it('should throw warnings when using an invalid activity id', async () => {

@@ -6,17 +6,17 @@ describe(__filename, () => {
   it('should return prefix properly', () => {
     const originalPrefix = 'LEARNINGLOCKER';
 
-    assert.equal(
+    assert.strictEqual(
       getPrefixWithProcessingPriority(originalPrefix, StatementProcessingPriority.MEDIUM, true),
       originalPrefix,
     );
 
-    assert.equal(
+    assert.strictEqual(
       getPrefixWithProcessingPriority(originalPrefix, StatementProcessingPriority.LOW, true),
       `${originalPrefix}_${StatementProcessingPriority.LOW}`,
     );
 
-    assert.equal(
+    assert.strictEqual(
       getPrefixWithProcessingPriority(originalPrefix, StatementProcessingPriority.LOW),
       originalPrefix,
     );

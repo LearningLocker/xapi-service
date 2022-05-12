@@ -18,14 +18,14 @@ describe('Retrieve sequencing metadata from statement', () => {
       },
     });
 
-    assert.deepEqual(actualEmptyMetadataFromEmptyResult, expectedEmptyMetadata);
+    assert.deepStrictEqual(actualEmptyMetadataFromEmptyResult, expectedEmptyMetadata);
   });
 
   it('should return empty metadata from invalid result', () => {
     const actualEmptyMetadataFromInvalidResult = getSequencingMetadata(statementDefaults);
     const expectedEmptyMetadata = {};
 
-    assert.deepEqual(actualEmptyMetadataFromInvalidResult, expectedEmptyMetadata);
+    assert.deepStrictEqual(actualEmptyMetadataFromInvalidResult, expectedEmptyMetadata);
 
     const actualMetadataFromIncorrectResponseValue = getSequencingMetadata({
       ...sequencingInteractionActivityStatement,
@@ -36,7 +36,7 @@ describe('Retrieve sequencing metadata from statement', () => {
       } as Partial<Statement>),
     });
 
-    assert.deepEqual(actualMetadataFromIncorrectResponseValue, expectedEmptyMetadata);
+    assert.deepStrictEqual(actualMetadataFromIncorrectResponseValue, expectedEmptyMetadata);
   });
 
   it('should return empty metadata when there is only one item provided in result', () => {
@@ -50,7 +50,7 @@ describe('Retrieve sequencing metadata from statement', () => {
       } as Partial<Statement>),
     });
 
-    assert.deepEqual(actualMetadataFromIncorrectResponseValue, expectedEmptyMetadata);
+    assert.deepStrictEqual(actualMetadataFromIncorrectResponseValue, expectedEmptyMetadata);
   });
 
   it('should return choices with proper order(sequence)', () => {
@@ -59,6 +59,6 @@ describe('Retrieve sequencing metadata from statement', () => {
       'https://learninglocker&46;net/sequencing-response': ['tim', 'mike', 'ells', 'ben'],
     };
 
-    assert.deepEqual(actualCorrectMetadata, expectedCorrectMetadata);
+    assert.deepStrictEqual(actualCorrectMetadata, expectedCorrectMetadata);
   });
 });

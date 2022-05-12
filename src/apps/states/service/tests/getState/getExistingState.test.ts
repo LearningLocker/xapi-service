@@ -23,10 +23,10 @@ describe('getState with existing state', () => {
 
   const assertGetState = async (result: GetStateResult, content: string, contentType: string) => {
     const actualContent = await streamToString(result.content);
-    assert.equal(actualContent, content);
-    assert.equal(result.contentType, contentType);
-    assert.equal(result.updatedAt.constructor, Date);
-    assert.equal(result.etag.constructor, String);
+    assert.strictEqual(actualContent, content);
+    assert.strictEqual(result.contentType, contentType);
+    assert.strictEqual(result.updatedAt.constructor, Date);
+    assert.strictEqual(result.etag.constructor, String);
   };
 
   it('should get when getting text', async () => {

@@ -15,7 +15,7 @@ describe('getStates with since', () => {
     await Promise.resolve(delay(TEST_DELAY_MS));
     const timestamp = new Date();
     const getStatesResult = await getTestStates({ since: timestamp.toISOString() });
-    assert.deepEqual(getStatesResult.stateIds, []);
+    assert.deepStrictEqual(getStatesResult.stateIds, []);
   });
 
   it('should return the state id when updated after since', async () => {
@@ -23,6 +23,6 @@ describe('getStates with since', () => {
     await Promise.resolve(delay(TEST_DELAY_MS));
     await createTextState();
     const getStatesResult = await getTestStates({ since: timestamp.toISOString() });
-    assert.deepEqual(getStatesResult.stateIds, [TEST_STATE_ID]);
+    assert.deepStrictEqual(getStatesResult.stateIds, [TEST_STATE_ID]);
   });
 });
