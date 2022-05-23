@@ -6,7 +6,7 @@ describe('validateAgent', () => {
   const assertWarnings = (agent: any) => {
     try {
       validateAgent(agent);
-    } catch (err) {
+    } catch (err: any) {
       const actualConstructor = err.constructor;
       assert.equal(actualConstructor, Warnings);
     }

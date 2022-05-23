@@ -107,7 +107,7 @@ export default async (config: Config, models: UnstoredStatementModel[], client: 
         ? // eslint-disable-next-line no-use-before-define
           traverseUp([], newVisitedIds, downRefId)
         : traverseDown(downRefId, newVisitedIds);
-    } catch (err) {
+    } catch (err: any) {
       if (err.constructor === NoModel) {
         // eslint-disable-next-line no-use-before-define
         return traverseUp([], [], modelId);

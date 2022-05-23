@@ -1,6 +1,6 @@
 import { ContainerURL, ServiceURL, SharedKeyCredential, StorageURL } from '@azure/storage-blob';
 import { Storage } from '@google-cloud/storage';
-import S3 from 'aws-sdk/clients/s3';
+import { S3Client } from '@aws-sdk/client-s3';
 import connectToDb from 'jscommons/dist/mongoRepo/utils/connectToDb';
 import config from '../../../config';
 import logger from '../../../logger';
@@ -54,7 +54,7 @@ const getStorageRepo = (): StorageRepo => {
     case 's3':
       return s3StorageRepo({
         bucketName: config.s3StorageRepo.bucketName,
-        client: new S3(config.s3StorageRepo.awsConfig) as any,
+        client: new S3Client(config.s3StorageRepo.awsConfig) as any,
         subFolder: config.storageSubFolders.agents,
       });
     case 'google':
