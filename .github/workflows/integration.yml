@@ -128,14 +128,6 @@ jobs:
         - name: Compiling Code
           run: yarn build
 
-#         - name: Setup S3 Env
-#           run: |
-#               echo "export SUB_FOLDER_ACTIVITIES=circleci/$CIRCLE_BUILD_NUM" >> "$BASH_ENV"
-#               echo "export SUB_FOLDER_AGENTS=circleci/$CIRCLE_BUILD_NUM" >> "$BASH_ENV"
-#               echo "export SUB_FOLDER_STATE=circleci/$CIRCLE_BUILD_NUM" >> "$BASH_ENV"
-#               echo "export SUB_FOLDER_STATEMENTS=circleci/$CIRCLE_BUILD_NUM" >> "$BASH_ENV"
-#               source "$BASH_ENV"
-
         - name: Mocha Tests S3
           run: yarn cover-s3
 
@@ -207,6 +199,9 @@ jobs:
       WINSTON_CONSOLE_LEVEL: none
       EXPRESS_PORT: 1337
       STORAGE_REPO: google
+      FS_GOOGLE_CLOUD_BUCKET: ${{ secrets.FS_GOOGLE_CLOUD_BUCKET }} 
+      FS_GOOGLE_CLOUD_PROJECT_ID: ${{ secrets.FS_GOOGLE_CLOUD_PROJECT_ID }} 
+      GCLOUD_SERVICE_KEY: ${{ secrets.GCLOUD_SERVICE_KEY }} 
 
     services:
       mongodb:
