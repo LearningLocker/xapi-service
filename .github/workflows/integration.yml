@@ -144,6 +144,10 @@ jobs:
       WINSTON_CONSOLE_LEVEL: none
       EXPRESS_PORT: 1337
       STORAGE_REPO: azure
+      FS_AZURE_CONTAINER_SUBFOLDER: circleci/$CIRCLE_BUILD_NUM
+      FS_AZURE_ACCOUNT: ${{ secrets.FS_AZURE_ACCOUNT }}
+      FS_AZURE_ACCOUNT_KEY: ${{ secrets.FS_AZURE_ACCOUNT_KEY }}
+      FS_AZURE_CONTAINER_NAME: ${{ secrets.FS_AZURE_CONTAINER_NAME }} 
 
     services:
       mongodb:
@@ -177,11 +181,6 @@ jobs:
           
         - name: Compiling Code
           run: yarn build
-
-        - name: Setup Azure Env
-          run: |
-            echo "export FS_AZURE_CONTAINER_SUBFOLDER=circleci/$CIRCLE_BUILD_NUM" >> "$BASH_ENV"
-            source "$BASH_ENV"
 
         - name: Mocha Tests Azure
           run: yarn cover-azure
