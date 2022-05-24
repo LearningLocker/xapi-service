@@ -90,6 +90,10 @@ jobs:
       SUB_FOLDER_AGENTS: SUB_FOLDER_AGENTS=circleci/$CIRCLE_BUILD_NUM
       SUB_FOLDER_STATE: circleci/$CIRCLE_BUILD_NUM
       SUB_FOLDER_STATEMENTS: circleci/$CIRCLE_BUILD_NUM
+      FS_S3_REGION: ${{ secrets.FS_S3_REGION }}
+      FS_S3_BUCKET: ${{ secrets.FS_S3_BUCKET }}
+      FS_S3_ACCESS_KEY_ID: ${{ secrets.FS_S3_ACCESS_KEY_ID }}
+      FS_S3_SECRET_ACCESS_KEY: ${{ secrets.FS_S3_SECRET_ACCESS_KEY }}      
 
     services:
       mongodb:
