@@ -1,3 +1,4 @@
+import { DeleteObjectsCommand, ObjectIdentifier } from '@aws-sdk/client-s3';
 import DeleteStatesContentOptions from '../repoFactory/options/DeleteStatesContentOptions';
 import getStorageDir from '../utils/getStorageDir';
 import Config from './Config';
@@ -9,15 +10,16 @@ export default (config: Config) => {
     if (opts.keys.length === 0) {
       return;
     }
-    const identifierList: any = opts.keys.map((key) => {
+    const identifierList: ObjectIdentifier[] = opts.keys.map((key) => {
       return { Key: `${dir}/${key}` };
     });
 
-    await config.client
-      .deleteObjects({
-        Bucket: config.bucketName,
-        Delete: { Objects: identifierList },
-      })
-      .promise();
+    const deletionCommand = new DeleteObjectsCommand({
+      Bucket: config.bucketName,
+      Delete: { Objects: identifierList },
+    });
+    await config.client.send(deletionCommand);
+
+    return;
   };
 };
