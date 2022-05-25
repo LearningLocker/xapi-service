@@ -12,7 +12,7 @@ export default (factoryConfig: FactoryConfig = {}): Facade => {
     client: new S3Client({
       apiVersion: '2006-03-01',
       ...factoryConfig.awsConfig,
-    }) as any,
+    }),
     bucketName: defaultTo(factoryConfig.bucketName, 'xapi-server'),
     subFolder: defaultTo(factoryConfig.subFolder, '/storage'),
   };

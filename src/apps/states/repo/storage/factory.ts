@@ -13,7 +13,7 @@ export default (factoryConfig: FactoryConfig): Repo => {
     case 's3':
       return s3StorageRepo({
         bucketName: factoryConfig.s3.bucketName,
-        client: new S3Client(factoryConfig.s3.awsConfig) as any,
+        client: new S3Client(factoryConfig.s3.awsConfig),
         subFolder: factoryConfig.s3.subFolder,
       });
     case 'google':
