@@ -1,5 +1,5 @@
 import { Readable as ReadableStream } from 'stream';
-import { GetObjectCommand } from '@aws-sdk/client-s3';
+import { GetObjectCommand, HeadObjectCommand } from '@aws-sdk/client-s3';
 import GetStateContentOptions from '../repoFactory/options/GetStateContentOptions';
 import GetStateContentResult from '../repoFactory/results/GetStateContentResult';
 import getStorageDir from '../utils/getStorageDir';
@@ -10,11 +10,21 @@ export default (config: Config) => {
     const dir = getStorageDir({ subfolder: config.subFolder, lrs_id: opts.lrs_id });
     const filePath = `${dir}/${opts.key}`;
 
-    const getObjectCommand = new GetObjectCommand({
+    const objectConfig = {
       Bucket: config.bucketName,
       Key: filePath,
-    });
+    };
+
+    const s3HeadObjectCommand = new HeadObjectCommand(objectConfig);
+    await config.client.send(s3HeadObjectCommand);
+
+    const getObjectCommand = new GetObjectCommand(objectConfig);
     const { Body } = await config.client.send(getObjectCommand);
+
+    if (Body === undefined) {
+      throw new Error('Object body not found');
+    }
+
     return { content: Body as ReadableStream };
   };
 };

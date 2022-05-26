@@ -12,20 +12,25 @@ export default (config: FacadeConfig): Signature => {
     const dir = getAttachmentDir({ subFolder: config.subFolder, lrs_id });
     const filePath = getAttachmentPath({ dir, hash, contentType });
 
-    const s3HeadObjectCommand = new HeadObjectCommand({
+    const objectConfig = {
       Bucket: config.bucketName,
       Key: filePath,
-    });
+    };
+
+    const s3HeadObjectCommand = new HeadObjectCommand(objectConfig);
     const s3HeadObject = await config.client.send(s3HeadObjectCommand);
 
     const contentLength = s3HeadObject.ContentLength;
 
     const getObjectCommand = new GetObjectCommand({
-      Bucket: config.bucketName,
-      Key: filePath,
+      ...objectConfig,
       ResponseContentEncoding: 'binary',
     });
     const { Body } = await config.client.send(getObjectCommand);
+
+    if (Body === undefined) {
+      throw new Error('Object body not found');
+    }
 
     const streamAsString = await getStreamData(Body as ReadableStream);
     const streamAsStream = stringToStream(streamAsString);

@@ -10,17 +10,20 @@ export default (config: Config) => {
     const profileDir = getStorageDir({ subfolder: config.subFolder, lrs_id: opts.lrs_id });
     const filePath = `${profileDir}/${opts.key}`;
 
-    const s3HeadObjectCommand = new HeadObjectCommand({
+    const objectConfig = {
       Bucket: config.bucketName,
       Key: filePath,
-    });
+    };
+
+    const s3HeadObjectCommand = new HeadObjectCommand(objectConfig);
     await config.client.send(s3HeadObjectCommand);
 
-    const getObjectCommand = new GetObjectCommand({
-      Bucket: config.bucketName,
-      Key: filePath,
-    });
+    const getObjectCommand = new GetObjectCommand(objectConfig);
     const { Body } = await config.client.send(getObjectCommand);
+
+    if (Body === undefined) {
+      throw new Error('Object body not found');
+    }
 
     return { content: Body as ReadableStream };
   };
