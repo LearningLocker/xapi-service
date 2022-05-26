@@ -13,6 +13,7 @@ export default (factoryConfig: FactoryConfig = {}): Facade => {
       apiVersion: '2006-03-01',
       ...factoryConfig.awsConfig,
     }),
+    tls: true,
     bucketName: defaultTo(factoryConfig.bucketName, 'xapi-server'),
     subFolder: defaultTo(factoryConfig.subFolder, '/storage'),
   };
