@@ -1,4 +1,4 @@
-import { Readable as ReadableStream } from 'stream';
+import { Readable } from 'stream';
 import { Upload } from '@aws-sdk/lib-storage';
 import StoreProfileContentOptions from '../repoFactory/options/StoreProfileContentOptions';
 import getStorageDir from '../utils/getStorageDir';
@@ -10,7 +10,7 @@ export default (config: Config) => {
     const filePath = `${profileDir}/${opts.key}`;
 
     const target = {
-      Body: opts.content as ReadableStream,
+      Body: opts.content as Readable,
       Bucket: config.bucketName,
       Key: filePath,
     };
