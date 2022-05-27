@@ -2749,7 +2749,7 @@ atob@^2.0.3, atob@^2.1.2:
   resolved "https://registry.yarnpkg.com/atob/-/atob-2.1.2.tgz#6d9517eb9e030d2436666651e86bd9f6f13533c9"
   integrity sha512-Wm6ukoaOGJi/73p/cl2GvLjTI5JM1k/O14isD73YML8StrH/7/lRFgmg8nICZgD3bZZvjwCGxtMOD3wWNAu8cg==
 
-aws-sdk@^2.249.1, aws-sdk@^2.58.0:
+aws-sdk@^2.58.0:
   version "2.884.0"
   resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.884.0.tgz#dd82338bb2c26201c59ac799abec3d6db51cbe21"
   integrity sha512-+rhzq7zmntsj4VJRUf0v6ri9vw3dYroy9BbRtbxLHILdnSFPkoqMcodr/pwcUSO5kYEYbCG7mxr5/R2a+cfbxQ==
@@ -6195,12 +6195,12 @@ jsbn@~0.1.0:
   resolved "https://registry.yarnpkg.com/jsbn/-/jsbn-0.1.1.tgz#a5e654c2e5a2deb5f201d96cefbca80c0ef2f513"
   integrity sha1-peZUwuWi3rXyAdls77yoDA7y9RM=
 
-jscommons@^3.0.2:
-  version "3.0.4"
-  resolved "https://registry.yarnpkg.com/jscommons/-/jscommons-3.0.4.tgz#05fde34ac7d8ad99f3490628aeeb55a549a6a3be"
-  integrity sha512-5i+whbSM/iLaZw/9qqOFj2c2T92EYQHv6ljF1X7+pS/TMjKQIpUlbfTsycOI+P6BJmfEX3vblDMj5x96BnRvBA==
+jscommons@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/jscommons/-/jscommons-4.0.0.tgz#05367213442ceca6b915999ab46c55c20f54e60a"
+  integrity sha512-jOCgRPlNY8SMyc/T7h+Tgb5+1P2SxoVhA8dt1zoQgjLTUUoapgNF+8B0hNJY65KxGdCpLup+fAGVO2K0NALDBA==
   dependencies:
-    aws-sdk "^2.249.1"
+    "@aws-sdk/client-s3" "^3.95.0"
     bluebird "^3.5.1"
     body-parser "^1.18.3"
     boolean "^0.1.3"
