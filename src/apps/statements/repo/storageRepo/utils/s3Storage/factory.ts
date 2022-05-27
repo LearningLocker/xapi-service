@@ -10,10 +10,10 @@ import FactoryConfig from './FactoryConfig';
 export default (factoryConfig: FactoryConfig = {}): Facade => {
   const facadeConfig: FacadeConfig = {
     client: new S3Client({
+      tls: true,
       apiVersion: '2006-03-01',
       ...factoryConfig.awsConfig,
     }),
-    tls: true,
     bucketName: defaultTo(factoryConfig.bucketName, 'xapi-server'),
     subFolder: defaultTo(factoryConfig.subFolder, '/storage'),
   };
