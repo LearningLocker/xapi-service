@@ -32,8 +32,8 @@ export default (createLangMapStatement: (langMap: any) => any) => {
     const canonicalStatements = result.statements;
     const expectedStatement = merge({}, canonicalStatements[0], canonicalStatement);
     assert(isArray(canonicalStatements));
-    assert.equal(canonicalStatements.length, 1);
-    assert.deepEqual(canonicalStatements[0], expectedStatement);
+    assert.strictEqual(canonicalStatements.length, 1);
+    assert.deepStrictEqual(canonicalStatements[0], expectedStatement);
   };
 
   const assertCanonicalLangMap = async (

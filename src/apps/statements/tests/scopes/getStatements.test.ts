@@ -25,7 +25,7 @@ describe('get statements with scopes', () => {
       return statement.id;
     });
     const expectedIds = [TEST_ID];
-    assert.deepEqual(actualIds, expectedIds);
+    assert.deepStrictEqual(actualIds, expectedIds);
   };
 
   it('should return no statements when using a different client with read mine scope', async () => {
@@ -35,7 +35,7 @@ describe('get statements with scopes', () => {
     });
     await storeStatements([TEST_STATEMENT]);
     const actualStatements = (await service.getStatements({ client })).statements;
-    assert.deepEqual(actualStatements, []);
+    assert.deepStrictEqual(actualStatements, []);
   });
 
   it('should return a statement when using a different client with xAPI all scope', async () => {

@@ -108,7 +108,7 @@ describe(__filename, () => {
   it('should remove nulls when nulls are provided', async () => {
     await storeStatements([createStatement(TEST_STATEMENT)]);
     const actualStatement = await getStatement();
-    assert.deepEqual(actualStatement, {
+    assert.deepStrictEqual(actualStatement, {
       ...actualStatement,
       ...EXPECTED_TEST_STATEMENT,
     });

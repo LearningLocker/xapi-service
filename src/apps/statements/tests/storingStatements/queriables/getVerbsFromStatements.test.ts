@@ -31,6 +31,6 @@ const statementDefaults: Statement = {
 describe('create array of queriable verbs', () => {
   it('should return the verb from the statement', () => {
     const verbs = getVerbsFromStatements(statementDefaults);
-    assert.deepEqual(verbs, [VERB_ID]);
+    assert.deepStrictEqual(verbs, [VERB_ID]);
   });
 });

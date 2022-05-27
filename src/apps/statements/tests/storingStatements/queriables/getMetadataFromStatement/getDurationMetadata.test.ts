@@ -13,7 +13,7 @@ describe('Retrieve duration metadata from statement', () => {
       },
     });
 
-    assert.deepEqual(actualEmptyMetadataFromEmptyResult, expectedEmptyMetadata);
+    assert.deepStrictEqual(actualEmptyMetadataFromEmptyResult, expectedEmptyMetadata);
   });
 
   it('should retrieve metadata when duration is provided in the result', () => {
@@ -22,6 +22,6 @@ describe('Retrieve duration metadata from statement', () => {
       'https://learninglocker&46;net/result-duration': { seconds: 37080306 },
     };
 
-    assert.deepEqual(actualCorrectMetadata, expectedCorrectMetadata);
+    assert.deepStrictEqual(actualCorrectMetadata, expectedCorrectMetadata);
   });
 });

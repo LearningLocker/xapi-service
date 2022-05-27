@@ -41,7 +41,7 @@ describe('store statement authority', () => {
       TEST_AUTHORITY,
     );
     const statement = await getStatement();
-    assert.equal(statement.authority.mbox, TEST_AUTHORITY.mbox);
+    assert.strictEqual(statement.authority.mbox, TEST_AUTHORITY.mbox);
   });
 
   it('should use the authority option when authority is not set', async () => {
@@ -54,6 +54,6 @@ describe('store statement authority', () => {
       TEST_AUTHORITY,
     );
     const statement = await getStatement();
-    assert.equal(statement.authority.mbox, TEST_AUTHORITY.mbox);
+    assert.strictEqual(statement.authority.mbox, TEST_AUTHORITY.mbox);
   });
 });

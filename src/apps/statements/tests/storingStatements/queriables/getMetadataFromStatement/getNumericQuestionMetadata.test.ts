@@ -17,7 +17,7 @@ describe('Retrieve numeric question metadata from statement', () => {
       },
     });
 
-    assert.deepEqual(actualEmptyMetadataFromEmptyResult, expectedEmptyMetadata);
+    assert.deepStrictEqual(actualEmptyMetadataFromEmptyResult, expectedEmptyMetadata);
   });
 
   it('should return numeric question for correct result', () => {
@@ -26,7 +26,7 @@ describe('Retrieve numeric question metadata from statement', () => {
       'https://learninglocker&46;net/numeric-response': 4,
     };
 
-    assert.deepEqual(actualCorrectMetadata, expectedCorrectMetadata);
+    assert.deepStrictEqual(actualCorrectMetadata, expectedCorrectMetadata);
   });
 
   it('should return numeric question with min and max values for correct result', () => {
@@ -38,6 +38,6 @@ describe('Retrieve numeric question metadata from statement', () => {
       },
     };
 
-    assert.deepEqual(actualCorrectMetadata, expectedCorrectMetadata);
+    assert.deepStrictEqual(actualCorrectMetadata, expectedCorrectMetadata);
   });
 });

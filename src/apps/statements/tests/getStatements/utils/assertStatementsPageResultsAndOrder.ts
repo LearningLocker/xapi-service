@@ -34,13 +34,13 @@ export const assertStatementsPageResultsAndOrder = async ({
   const pageNumberStringPartial = pageNumber > 0 ? ` #${pageNumber + 1}` : '';
 
   if (isNextPageCheckEnabled) {
-    assert.equal(
+    assert.strictEqual(
       isString(pageResults.cursor),
       true,
       `Expected string cursor to page${pageNumberStringPartial}`,
     );
   } else {
-    assert.equal(pageResults.cursor, undefined, "There shouldn't be any cursor to next page");
+    assert.strictEqual(pageResults.cursor, undefined, "There shouldn't be any cursor to next page");
   }
 
   assert(
@@ -50,7 +50,7 @@ export const assertStatementsPageResultsAndOrder = async ({
 
   const pageActualStatementIds = pageResults.statements.map((s) => s.id);
 
-  assert.deepEqual(pageActualStatementIds, expectedPageStatementIds);
+  assert.deepStrictEqual(pageActualStatementIds, expectedPageStatementIds);
 
   return pageResults;
 };

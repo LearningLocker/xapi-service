@@ -24,7 +24,7 @@ describe('getFullActivity outside client', () => {
       activityId: TEST_ACTIVITY_ID,
       client: TEST_OUTSIDE_ORG_CLIENT,
     });
-    assert.deepEqual(fullActivity, TEST_BASE_ACTIVITY);
+    assert.deepStrictEqual(fullActivity, TEST_BASE_ACTIVITY);
   });
 
   it('should return the activity ID when getting a activity outside the store', async () => {
@@ -38,6 +38,6 @@ describe('getFullActivity outside client', () => {
       activityId: TEST_ACTIVITY_ID,
       client: TEST_OUTSIDE_STORE_CLIENT,
     });
-    assert.deepEqual(fullActivity, TEST_BASE_ACTIVITY);
+    assert.deepStrictEqual(fullActivity, TEST_BASE_ACTIVITY);
   });
 });

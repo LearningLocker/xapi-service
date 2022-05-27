@@ -9,9 +9,9 @@ describe('mongo matchesCursorOption', () => {
     const testStored = new Date();
     const cursor = `${testId}_${testStored.toISOString()}`;
 
-    assert.deepEqual(matchesCursorOption({ cursor: undefined } as Opts), {});
+    assert.deepStrictEqual(matchesCursorOption({ cursor: undefined } as Opts), {});
 
-    assert.deepEqual(matchesCursorOption({ cursor, ascending: true } as Opts), {
+    assert.deepStrictEqual(matchesCursorOption({ cursor, ascending: true } as Opts), {
       $or: [
         {
           _id: { $gte: new ObjectID(testId) },
@@ -21,7 +21,7 @@ describe('mongo matchesCursorOption', () => {
       ],
     });
 
-    assert.deepEqual(matchesCursorOption({ cursor, ascending: false } as Opts), {
+    assert.deepStrictEqual(matchesCursorOption({ cursor, ascending: false } as Opts), {
       $or: [
         {
           _id: {

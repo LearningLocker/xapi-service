@@ -12,13 +12,13 @@ describe('store statement ids', () => {
 
   it('should use existing id when they have an id', async () => {
     const ids: string[] = await storeStatements([createStatement({ id: TEST_ID })]);
-    assert.equal(isArray(ids), true);
-    assert.deepEqual(ids, [TEST_ID]);
+    assert.strictEqual(isArray(ids), true);
+    assert.deepStrictEqual(ids, [TEST_ID]);
   });
 
   it('should generate an id when they have no id', async () => {
     const ids: string[] = await storeStatements([createStatement()]);
-    assert.equal(isArray(ids), true);
-    assert.equal(ids.length, 1);
+    assert.strictEqual(isArray(ids), true);
+    assert.strictEqual(ids.length, 1);
   });
 });
