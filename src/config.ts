@@ -76,6 +76,7 @@ export default {
       apiVersion: '2006-03-01',
       region: getStringOption(process.env.FS_S3_REGION, globalAwsRegion),
       endpoint: process.env.FS_S3_ENDPOINT,
+      s3ForcePathStyle: process.env.FS_S3_ENDPOINT != null,
       secretAccessKey: getStringOption(
         process.env.FS_S3_SECRET_ACCESS_KEY,
         globalAwsIamAccessKeySecret,
