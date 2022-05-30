@@ -33,8 +33,8 @@ describe('Retrieve numeric question metadata from statement', () => {
     const actualCorrectMetadata = getNumericQuestionMetadata(statementWithMinAndMaxFixture);
     const expectedCorrectMetadata = {
       'https://learninglocker&46;net/numeric-response': {
-        min: 4,
-        max: 5,
+        min: '4',
+        max: '5',
       },
     };
 

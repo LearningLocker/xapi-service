@@ -130,7 +130,7 @@ describe(__filename, () => {
     await db.collection('client').insertOne(TEST_CLIENT);
     await db.collection('oAuthTokens').insertOne(TEST_OAUTH_TOKEN);
     const result = await authRepo.getClient({ authToken: `Bearer ${TEST_ACCESS_TOKEN}` });
-    assert.strictEqual(result.client._id, TEST_CLIENT._id);
+    assert.strictEqual(result.client._id, TEST_CLIENT._id.toString());
   });
 
   it('should error when access_token is not found in collection', async () => {
