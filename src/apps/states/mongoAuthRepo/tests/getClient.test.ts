@@ -63,7 +63,7 @@ describe(__filename, () => {
     await db.collection('lrs').insertOne(TEST_STORE);
     await db.collection('client').insertOne(TEST_CLIENT);
     const result = await authRepo.getClient({ authToken: TEST_TOKEN });
-    assert.strictEqual(result.client._id, TEST_CLIENT._id);
+    assert.strictEqual(result.client._id, TEST_CLIENT._id.toString());
   });
 
   it('should error when getting without any clients in the DB', async () => {
