@@ -1,4 +1,4 @@
-import { Readable as ReadableStream } from 'stream';
+import { Readable } from 'stream';
 import { GetObjectCommand, HeadObjectCommand } from '@aws-sdk/client-s3';
 import GetProfileContentOptions from '../repoFactory/options/GetProfileContentOptions';
 import GetProfileContentResult from '../repoFactory/results/GetProfileContentResult';
@@ -25,6 +25,10 @@ export default (config: Config) => {
       throw new Error('Object body not found');
     }
 
-    return { content: Body as ReadableStream };
+    if (Body instanceof Blob) {
+      return { content: Readable.from(await Body.text()) };
+    }
+
+    return { content: Body as NodeJS.ReadableStream };
   };
 };

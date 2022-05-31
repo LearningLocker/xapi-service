@@ -25,6 +25,10 @@ export default (config: Config) => {
       throw new Error('Object body not found');
     }
 
-    return { content: Body as Readable };
+    if (Body instanceof Blob) {
+      return { content: Readable.from(await Body.text()) };
+    }
+
+    return { content: Body as NodeJS.ReadableStream };
   };
 };
