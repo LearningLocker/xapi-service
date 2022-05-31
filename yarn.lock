@@ -9573,14 +9573,6 @@ strict-uri-encode@^2.0.0:
   resolved "https://registry.yarnpkg.com/strict-uri-encode/-/strict-uri-encode-2.0.0.tgz#b9c7330c7042862f6b142dc274bbcc5866ce3546"
   integrity sha1-ucczDHBChi9rFC3CdLvMWGbONUY=
 
-string-to-stream@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/string-to-stream/-/string-to-stream-2.0.0.tgz#8a361d3ccc2a9b734b901cc92d2f6d6f71311ba5"
-  integrity sha512-rbppTZSfwkwj0yFiYI1ZeDzJ45qeALfFWeS0XfreEh812/pbzL3PPEjGKnZlySw8iWk9ypZFnrbm9l1Twd/CWQ==
-  dependencies:
-    inherits "^2.0.1"
-    readable-stream "^3.4.0"
-
 string-width@^1.0.1:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/string-width/-/string-width-1.0.2.tgz#118bdf5b8cdc51a2a7e70d211e07e2b0b9b107d3"

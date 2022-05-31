@@ -1,6 +1,6 @@
 import { Readable } from 'stream';
 import { GetObjectCommand, HeadObjectCommand } from '@aws-sdk/client-s3';
-import stringToStream from 'string-to-stream';
+import { stringToStream } from '../../../../../utils/stringToStream';
 import getAttachmentDir from '../../../utils/getAttachmentDir';
 import getAttachmentPath from '../../../utils/getAttachmentPath';
 import getStreamData from '../../../utils/getStreamData';
