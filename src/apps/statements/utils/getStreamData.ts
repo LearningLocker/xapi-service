@@ -1,9 +1,9 @@
-import { Readable as ReadableStream } from 'stream';
+import { Readable } from 'stream';
 import { trim } from 'lodash';
 
 const trimmedChars = `\r\n `;
 
-export default async (stream: ReadableStream): Promise<string> => {
+export default async (stream: Readable): Promise<string> => {
   // eslint-disable-next-line functional/no-let
   let data = '';
 

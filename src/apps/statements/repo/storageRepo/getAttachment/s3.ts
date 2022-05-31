@@ -1,4 +1,5 @@
 import { Readable } from 'stream';
+import { Blob } from 'buffer';
 import { GetObjectCommand, HeadObjectCommand } from '@aws-sdk/client-s3';
 import { stringToStream } from '../../../../../utils/stringToStream';
 import getAttachmentDir from '../../../utils/getAttachmentDir';
@@ -32,7 +33,9 @@ export default (config: FacadeConfig): Signature => {
       throw new Error('Object body not found');
     }
 
-    const streamAsString = await getStreamData(Body as Readable);
+    const body = Body instanceof Blob ? Readable.from(await Body.text()) : (Body as Readable);
+
+    const streamAsString = await getStreamData(body);
     const streamAsStream = stringToStream(streamAsString);
     return { stream: streamAsStream, contentLength };
   };
