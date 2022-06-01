@@ -20,10 +20,6 @@ export default (config: Config) => {
     const getObjectCommand = new GetObjectCommand(objectConfig);
     const { Body } = await config.client.send(getObjectCommand);
 
-    if (Body === undefined) {
-      throw new Error('Object body not found');
-    }
-
     return { content: Body as NodeJS.ReadableStream };
   };
 };

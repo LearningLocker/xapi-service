@@ -28,10 +28,6 @@ export default (config: FacadeConfig): Signature => {
     });
     const { Body } = await config.client.send(getObjectCommand);
 
-    if (Body === undefined) {
-      throw new Error('Object body not found');
-    }
-
     const streamAsString = await getStreamData(Body as Readable);
     const streamAsStream = stringToStream(streamAsString);
     return { stream: streamAsStream, contentLength };
