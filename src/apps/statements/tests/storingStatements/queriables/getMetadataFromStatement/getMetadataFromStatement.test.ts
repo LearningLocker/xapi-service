@@ -17,7 +17,7 @@ describe('Retrieve metadata from statement', () => {
       'https://learninglocker&46;net/result-duration': { seconds: 37080306 },
     };
 
-    assert.deepEqual(actualDurationMetadata, expectedDurationMetadata);
+    assert.deepStrictEqual(actualDurationMetadata, expectedDurationMetadata);
   });
 
   it('should return sequencing metadata from statement', () => {
@@ -28,7 +28,7 @@ describe('Retrieve metadata from statement', () => {
       'https://learninglocker&46;net/sequencing-response': ['tim', 'mike', 'ells', 'ben'],
     };
 
-    assert.deepEqual(actualSequencingMetadata, expectedSequencingMetadata);
+    assert.deepStrictEqual(actualSequencingMetadata, expectedSequencingMetadata);
   });
 
   it('should return duration and sequencing metadata from one statement', () => {
@@ -43,7 +43,7 @@ describe('Retrieve metadata from statement', () => {
       'https://learninglocker&46;net/sequencing-response': ['tim', 'mike', 'ells', 'ben'],
     };
 
-    assert.deepEqual(actualMetadata, expectedMetadata);
+    assert.deepStrictEqual(actualMetadata, expectedMetadata);
   });
 
   it('should retrieve likert metadata from statement', () => {
@@ -52,7 +52,7 @@ describe('Retrieve metadata from statement', () => {
       'https://learninglocker&46;net/likert-response': 'likert_3',
     };
 
-    assert.deepEqual(actualLikertMetadata, expectedLikertMetadata);
+    assert.deepStrictEqual(actualLikertMetadata, expectedLikertMetadata);
   });
 
   it('should return choices metadata from statement', () => {
@@ -68,7 +68,7 @@ describe('Retrieve metadata from statement', () => {
       'https://learninglocker&46;net/choice-response': ['golf', 'tetris'],
     };
 
-    assert.deepEqual(actualMetadata, expectedMetadata);
+    assert.deepStrictEqual(actualMetadata, expectedMetadata);
   });
 
   it('should return matching questions metadata', () => {
@@ -82,6 +82,6 @@ describe('Retrieve metadata from statement', () => {
       ],
     };
 
-    assert.deepEqual(actualMatchingQuestionsMetadata, expectedMatchingQuestionsMetadata);
+    assert.deepStrictEqual(actualMatchingQuestionsMetadata, expectedMatchingQuestionsMetadata);
   });
 });

@@ -38,7 +38,7 @@ const checkRedisPayloadArray = async ({
   )}:${EVENT_NAME}`;
   const listLength = await redisClient.llen(eventName);
 
-  assert.equal(
+  assert.strictEqual(
     listLength,
     items.length,
     `Expected payload list length is incorrect for "${priority}" priority`,
@@ -49,7 +49,7 @@ const checkRedisPayloadArray = async ({
     return JSON.stringify(statementPayload);
   });
 
-  assert.deepEqual(
+  assert.deepStrictEqual(
     listData,
     expectedPayloadItems,
     `Expected payload items are incorrect for "${priority}" priority`,
@@ -91,8 +91,8 @@ describe(__filename, () => {
       StatementProcessingPriority.LOW,
       [],
     );
-    assert.equal(isArray(lowStatementIds), true);
-    assert.deepEqual(lowStatementIds, [TEST_ID_1, TEST_ID_2]);
+    assert.strictEqual(isArray(lowStatementIds), true);
+    assert.deepStrictEqual(lowStatementIds, [TEST_ID_1, TEST_ID_2]);
 
     const mediumStatementIds: string[] = await storeStatements(
       [createStatement({ id: TEST_ID_3 })],
@@ -101,8 +101,8 @@ describe(__filename, () => {
       StatementProcessingPriority.MEDIUM,
       [],
     );
-    assert.equal(isArray(mediumStatementIds), true);
-    assert.deepEqual(mediumStatementIds, [TEST_ID_3]);
+    assert.strictEqual(isArray(mediumStatementIds), true);
+    assert.deepStrictEqual(mediumStatementIds, [TEST_ID_3]);
 
     await checkRedisPayloadArray({
       redisClient,

@@ -23,8 +23,8 @@ describe('postStatements', () => {
       })
       .send([createStatement()])
       .expect((response) => {
-        assert.equal(response.status, StatusCodes.BAD_REQUEST);
-        assert.deepEqual(response.body.warnings, [
+        assert.strictEqual(response.status, StatusCodes.BAD_REQUEST);
+        assert.deepStrictEqual(response.body.warnings, [
           `Problem in 'query.bypassQueues'. Received '"abc"'`,
         ]);
       });
@@ -45,11 +45,11 @@ describe('postStatements', () => {
       })
       .send([createStatement()])
       .expect(async (response) => {
-        assert.equal(response.status, StatusCodes.NO_CONTENT);
+        assert.strictEqual(response.status, StatusCodes.NO_CONTENT);
 
         const fullStatement = await repo.getStatement({ id: TEST_ID, client: TEST_CLIENT });
 
-        assert.deepEqual(fullStatement.completedQueues, expectedCompletedQueues);
+        assert.deepStrictEqual(fullStatement.completedQueues, expectedCompletedQueues);
       });
   });
 
@@ -69,11 +69,11 @@ describe('postStatements', () => {
       })
       .send([createStatement()])
       .expect(async (response) => {
-        assert.equal(response.status, StatusCodes.NO_CONTENT);
+        assert.strictEqual(response.status, StatusCodes.NO_CONTENT);
 
         const fullStatement = await repo.getStatement({ id: TEST_ID, client: TEST_CLIENT });
 
-        assert.deepEqual(fullStatement.completedQueues, expectedCompletedQueues);
+        assert.deepStrictEqual(fullStatement.completedQueues, expectedCompletedQueues);
       });
   });
 });

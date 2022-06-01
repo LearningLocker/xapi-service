@@ -1,4 +1,4 @@
-import { S3 } from 'aws-sdk';
+import { S3ClientConfig } from '@aws-sdk/client-s3';
 
 export default interface FactoryConfig {
   readonly factoryName: string;
@@ -18,7 +18,7 @@ export default interface FactoryConfig {
     readonly storageDir: string;
   };
   readonly s3: {
-    readonly awsConfig: S3.ClientConfiguration;
+    readonly awsConfig: S3ClientConfig;
     readonly bucketName: string;
     readonly subFolder: string;
   };

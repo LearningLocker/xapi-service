@@ -10,7 +10,7 @@ const assertFilteredStatements: FilteredStatementsAsserter = (service) => {
     const actualIds = statements.map((statement) => {
       return statement.id;
     });
-    assert.deepEqual(actualIds, expectedIds);
+    assert.deepStrictEqual(actualIds, expectedIds);
   };
 };
 

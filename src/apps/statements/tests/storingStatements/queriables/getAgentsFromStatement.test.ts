@@ -92,7 +92,7 @@ describe('create array of queriable agents', () => {
   it('should return the non related agents', () => {
     const idents = getAgentsFromStatement(agentObjectModel);
     const agentObj = agentObjectModel.object as Agent;
-    assert.deepEqual(idents, [agentObjectModel.actor.mbox, agentObj.mbox]);
+    assert.deepStrictEqual(idents, [agentObjectModel.actor.mbox, agentObj.mbox]);
   });
 
   it('should return the related activities', () => {
@@ -101,7 +101,7 @@ describe('create array of queriable agents', () => {
     const team = context.team as Group;
     const member = team.member as Actor[];
     const instructor = context.instructor as Agent;
-    assert.deepEqual(idents, [
+    assert.deepStrictEqual(idents, [
       activityObjectModel.actor.mbox,
       team.mbox,
       ...member.map((m) => m.mbox),
@@ -122,7 +122,7 @@ describe('create array of queriable agents', () => {
     const ssteam = sscontext.team as Group;
     const ssmember = ssteam.member as Actor[];
     const ssinstructor = sscontext.instructor as Agent;
-    assert.deepEqual(idents, [
+    assert.deepStrictEqual(idents, [
       subStatementObjectModel.actor.mbox,
 
       team.mbox,

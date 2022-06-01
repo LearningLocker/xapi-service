@@ -21,7 +21,7 @@ describe('getProfiles with since', () => {
     await Promise.resolve(delay(TEST_DELAY_MS));
     const timestamp = new Date();
     const getProfilesResult = await getProfiles(timestamp);
-    assert.deepEqual(getProfilesResult.profileIds, []);
+    assert.deepStrictEqual(getProfilesResult.profileIds, []);
   });
 
   it('should return the profile id when updated after since', async () => {
@@ -29,6 +29,6 @@ describe('getProfiles with since', () => {
     await Promise.resolve(delay(TEST_DELAY_MS));
     await createTextProfile();
     const getProfilesResult = await getProfiles(timestamp);
-    assert.deepEqual(getProfilesResult.profileIds, [TEST_PROFILE_ID]);
+    assert.deepStrictEqual(getProfilesResult.profileIds, [TEST_PROFILE_ID]);
   });
 });

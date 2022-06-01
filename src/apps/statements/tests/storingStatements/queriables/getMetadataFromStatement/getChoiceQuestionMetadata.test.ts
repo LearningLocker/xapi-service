@@ -14,7 +14,7 @@ describe('Retrieve choices metadata from statement', () => {
       },
     });
 
-    assert.deepEqual(actualEmptyMetadataFromEmptyResult, expectedEmptyMetadata);
+    assert.deepStrictEqual(actualEmptyMetadataFromEmptyResult, expectedEmptyMetadata);
   });
 
   it('should retrieve metadata from statement with one choice', () => {
@@ -23,7 +23,7 @@ describe('Retrieve choices metadata from statement', () => {
       'https://learninglocker&46;net/choice-response': ['golf'],
     };
 
-    assert.deepEqual(actualSingleChoiceMetadata, expectedSingleChoiceMetadata);
+    assert.deepStrictEqual(actualSingleChoiceMetadata, expectedSingleChoiceMetadata);
   });
 
   it('should retrieve metadata from statement with multiple choices', () => {
@@ -32,6 +32,6 @@ describe('Retrieve choices metadata from statement', () => {
       'https://learninglocker&46;net/choice-response': ['golf', 'tetris'],
     };
 
-    assert.deepEqual(actualMultipleChoicesMetadata, expectedMultipleChoicesMetadata);
+    assert.deepStrictEqual(actualMultipleChoicesMetadata, expectedMultipleChoicesMetadata);
   });
 });

@@ -13,7 +13,7 @@ describe('Retrieve likert metadata from statement', () => {
       },
     });
 
-    assert.deepEqual(actualEmptyMetadataFromEmptyResult, expectedEmptyMetadata);
+    assert.deepStrictEqual(actualEmptyMetadataFromEmptyResult, expectedEmptyMetadata);
   });
 
   it('should retrieve metadata when likert is provided in the result', () => {
@@ -22,6 +22,6 @@ describe('Retrieve likert metadata from statement', () => {
       'https://learninglocker&46;net/likert-response': 'likert_3',
     };
 
-    assert.deepEqual(actualCorrectMetadata, expectedCorrectMetadata);
+    assert.deepStrictEqual(actualCorrectMetadata, expectedCorrectMetadata);
   });
 });

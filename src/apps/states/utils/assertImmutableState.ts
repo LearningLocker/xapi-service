@@ -27,7 +27,7 @@ export default async (
     ...statesOptsOverrides,
   });
   const actualStateIds = statesResult.stateIds;
-  assert.deepEqual(actualStateIds, expectedStateIds);
+  assert.deepStrictEqual(actualStateIds, expectedStateIds);
 
   // Checks the content.
   const agentStateResult = await service.getState({
@@ -39,8 +39,8 @@ export default async (
     ...stateOptsOverrides,
   });
   const actualContent = await streamToString(agentStateResult.content);
-  assert.equal(actualContent, TEST_IMMUTABLE_CONTENT);
-  assert.equal(agentStateResult.contentType.constructor, String);
-  assert.equal(agentStateResult.updatedAt.constructor, Date);
-  assert.equal(agentStateResult.etag.constructor, String);
+  assert.strictEqual(actualContent, TEST_IMMUTABLE_CONTENT);
+  assert.strictEqual(agentStateResult.contentType.constructor, String);
+  assert.strictEqual(agentStateResult.updatedAt.constructor, Date);
+  assert.strictEqual(agentStateResult.etag.constructor, String);
 };

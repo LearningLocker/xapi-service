@@ -84,21 +84,21 @@ const subStatementObjectmodel: Statement = {
 describe('create array of queriable activities', () => {
   it('should return the non related activities', () => {
     const activities = getActivitiesFromStatement(activityObjectmodel);
-    assert.deepEqual(activities, [ACTIVITY_ID]);
+    assert.deepStrictEqual(activities, [ACTIVITY_ID]);
   });
 
   it('should return the related activities', () => {
     const activities = getRelatedActivitiesFromStatement(activityObjectmodel);
-    assert.deepEqual(activities, [ACTIVITY_ID, ACTIVITY_ID2]);
+    assert.deepStrictEqual(activities, [ACTIVITY_ID, ACTIVITY_ID2]);
   });
 
   it('should return the related activities with a substatement', () => {
     const activities = getRelatedActivitiesFromStatement(subStatementObjectmodel);
-    assert.deepEqual(activities, [ACTIVITY_ID3, ACTIVITY_ID, ACTIVITY_ID2]);
+    assert.deepStrictEqual(activities, [ACTIVITY_ID3, ACTIVITY_ID, ACTIVITY_ID2]);
   });
 
   it('should return no related activities from an agent object statement', () => {
     const activities = getRelatedActivitiesFromStatement(agentObjectModel);
-    assert.deepEqual(activities, []);
+    assert.deepStrictEqual(activities, []);
   });
 });

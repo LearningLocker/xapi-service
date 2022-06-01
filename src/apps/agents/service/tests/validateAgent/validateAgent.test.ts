@@ -8,7 +8,7 @@ describe('validateAgent', () => {
       validateAgent(agent);
     } catch (err) {
       const actualConstructor = err.constructor;
-      assert.equal(actualConstructor, Warnings);
+      assert.strictEqual(actualConstructor, Warnings);
     }
   };
 

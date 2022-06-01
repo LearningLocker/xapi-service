@@ -1,4 +1,4 @@
-import S3 from 'aws-sdk/clients/s3';
+import { S3ClientConfig } from '@aws-sdk/client-s3';
 import Tracker from 'jscommons/dist/tracker/Tracker';
 import { Db } from 'mongodb';
 import { LoggerInstance } from 'winston';
@@ -33,7 +33,7 @@ export default interface AppConfig {
       readonly storageDir: string;
     };
     readonly s3: {
-      readonly awsConfig: S3.ClientConfiguration;
+      readonly awsConfig: S3ClientConfig;
       readonly bucketName: string;
     };
     readonly mongo: {

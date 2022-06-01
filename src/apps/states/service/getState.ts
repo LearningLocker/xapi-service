@@ -1,4 +1,4 @@
-import stringToStream from 'string-to-stream';
+import { stringToStream } from '../../../utils/stringToStream';
 import GetStateOptions from '../serviceFactory/options/GetStateOptions';
 import GetStateResult from '../serviceFactory/results/GetStateResult';
 import { jsonContentType } from '../utils/constants';

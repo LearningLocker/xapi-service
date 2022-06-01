@@ -38,7 +38,7 @@ export default () => {
       }),
     });
     const expectedStatement = merge({}, actualStatement, typedStatement);
-    assert.deepEqual(actualStatement, expectedStatement);
+    assert.deepStrictEqual(actualStatement, expectedStatement);
   };
 
   return assertTypedStatement;

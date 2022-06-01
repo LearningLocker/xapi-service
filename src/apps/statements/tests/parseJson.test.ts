@@ -9,7 +9,7 @@ describe('parseJson', () => {
 
   it('should parse JSON', async () => {
     const parsedJson = parseJson(VALID_JSON, ['test']);
-    assert.deepEqual(parsedJson, OBJ);
+    assert.deepStrictEqual(parsedJson, OBJ);
   });
 
   it('should throw warning when parsing invalid JSON', async () => {

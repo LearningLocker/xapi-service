@@ -54,7 +54,7 @@ describe('store statement extensions', () => {
       ...actualStatement,
       ...statementWithExtensions,
     };
-    assert.deepEqual(actualStatement, expectedStatement);
+    assert.deepStrictEqual(actualStatement, expectedStatement);
   });
 
   it('should store statements with extensions in sub statements', async () => {
@@ -84,6 +84,6 @@ describe('store statement extensions', () => {
       ...actualStatement,
       ...statementWithExtensions,
     };
-    assert.deepEqual(actualStatement, expectedStatement);
+    assert.deepStrictEqual(actualStatement, expectedStatement);
   });
 });

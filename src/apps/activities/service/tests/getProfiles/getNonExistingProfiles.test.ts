@@ -10,7 +10,7 @@ describe('getProfiles with non-existing agent', () => {
 
   it('should return no profile ids when getting a non-existing activity id', async () => {
     const profilesResult = await getTestProfiles();
-    assert.deepEqual(profilesResult.profileIds, []);
+    assert.deepStrictEqual(profilesResult.profileIds, []);
   });
 
   it('should throw warnings when using an invalid activity id', async () => {
