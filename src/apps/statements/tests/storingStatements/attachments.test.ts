@@ -32,14 +32,11 @@ describe('store statements with attachments', () => {
       voided: false,
       client: createClientModel(),
     });
+    assert.strictEqual(result.attachments.length, 1);
     assert.strictEqual(
-      // Why is this a string in case of using Google storage adapter? 🤨
-      typeof result.attachments.length === 'string'
-        ? parseInt(result.attachments.length, 10)
-        : result.attachments.length,
-      1,
+      result.attachments[0].contentLength?.toString(),
+      TEST_ATTACHMENT_MODEL_A.contentLength?.toString(),
     );
-    assert.strictEqual(result.attachments[0].contentLength, TEST_ATTACHMENT_MODEL_A.contentLength);
     assert.strictEqual(result.attachments[0].contentType, TEST_ATTACHMENT_MODEL_A.contentType);
     assert.strictEqual(result.attachments[0].hash, TEST_ATTACHMENT_MODEL_A.hash);
     assert.strictEqual(await streamToString(result.attachments[0].stream), TEST_CONTENT_A);
