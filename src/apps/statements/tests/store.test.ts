@@ -21,7 +21,7 @@ describe('get statement', () => {
   const storeStatements = storeStatementsInService(service);
 
   const assertNoStatements = (actualStatements: Statement[]) => {
-    assert.deepEqual(actualStatements, []);
+    assert.deepStrictEqual(actualStatements, []);
   };
 
   it('should return no statements when getting statements with unknown store', async () => {

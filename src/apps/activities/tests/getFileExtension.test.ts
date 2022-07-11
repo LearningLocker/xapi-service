@@ -5,16 +5,16 @@ import getFileExtension from '../utils/getFileExtension';
 describe('getFileExtension', () => {
   it('should return json on application/json', async () => {
     const ext = getFileExtension(jsonContentType);
-    assert.equal(ext, 'json');
+    assert.strictEqual(ext, 'json');
   });
 
   it('should return known extension', async () => {
     const ext = getFileExtension('text/plain');
-    assert.equal(ext, 'txt');
+    assert.strictEqual(ext, 'txt');
   });
 
   it('should return `bin` on unknown extension', async () => {
     const ext = getFileExtension('ht2/binary');
-    assert.equal(ext, 'bin');
+    assert.strictEqual(ext, 'bin');
   });
 });

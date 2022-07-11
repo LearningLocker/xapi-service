@@ -19,6 +19,6 @@ describe('getStates with scopes', () => {
     const getStatesResult = await getTestStates({
       client: TEST_VALID_SCOPE_CLIENT,
     });
-    assert.deepEqual(getStatesResult.stateIds, []);
+    assert.deepStrictEqual(getStatesResult.stateIds, []);
   });
 });

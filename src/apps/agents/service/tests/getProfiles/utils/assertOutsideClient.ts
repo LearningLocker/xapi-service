@@ -3,5 +3,5 @@ import getTestProfiles from '../../../../utils/getTestProfiles';
 
 export default async () => {
   const profilesResult = await getTestProfiles();
-  assert.deepEqual(profilesResult.profileIds, []);
+  assert.deepStrictEqual(profilesResult.profileIds, []);
 };

@@ -1,4 +1,4 @@
-import stringToStream from 'string-to-stream';
+import { stringToStream } from '../../../utils/stringToStream';
 import createJsonProfile from './createJsonProfile';
 import { TEST_OBJECT_CONTENT } from './testValues';
 

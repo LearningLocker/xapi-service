@@ -23,12 +23,12 @@ describe('store statements ensures version handled correctly', () => {
   it('should change version to use constant when passed in', async () => {
     await storeStatements([TEST_STATEMENT_WITH_VERSION]);
     const statement = await getStatement();
-    assert.equal(statement.version, TEST_STATEMENT_WITH_VERSION.version);
+    assert.strictEqual(statement.version, TEST_STATEMENT_WITH_VERSION.version);
   });
 
   it('should use version 1.0.0 when version not set', async () => {
     await storeStatements([TEST_STATEMENT_WITHOUT_VERSION]);
     const statement = await getStatement();
-    assert.equal(statement.version, xapiStatementVersion);
+    assert.strictEqual(statement.version, xapiStatementVersion);
   });
 });

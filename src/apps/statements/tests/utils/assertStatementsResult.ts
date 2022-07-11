@@ -11,8 +11,8 @@ export default async (result: any, expectedIds: string[], expectedAttachments: a
   const actualIds = statements.map((statement) => {
     return statement.id;
   });
-  assert.deepEqual(actualIds, expectedIds);
-  assert.deepEqual(
+  assert.deepStrictEqual(actualIds, expectedIds);
+  assert.deepStrictEqual(
     attachments,
     expectedAttachments.map(({ hash }: any) => {
       return { hash };

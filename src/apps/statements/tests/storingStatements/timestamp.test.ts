@@ -25,12 +25,12 @@ describe('store statement timestamp', () => {
       }),
     ]);
     const statement = await getStatement();
-    assert.equal(statement.timestamp, TEST_TIMESTAMP);
+    assert.strictEqual(statement.timestamp, TEST_TIMESTAMP);
   });
 
   it('should generate a timestamp when timestamp is not set', async () => {
     await storeStatements([createStatement({ id: TEST_ID })]);
     const statement = await getStatement();
-    assert.equal(statement.timestamp, statement.stored);
+    assert.strictEqual(statement.timestamp, statement.stored);
   });
 });

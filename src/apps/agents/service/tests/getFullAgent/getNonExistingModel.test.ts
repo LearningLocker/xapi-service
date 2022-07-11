@@ -27,7 +27,7 @@ describe('getFullAgent with non-existing model', () => {
       ...resultOverrides,
     };
     const fullAgent = await getFullAgent({ agent });
-    assert.deepEqual(fullAgent, expectedResult);
+    assert.deepStrictEqual(fullAgent, expectedResult);
   };
 
   it('should return the agent when using mbox', async () => {

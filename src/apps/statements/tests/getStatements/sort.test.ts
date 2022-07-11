@@ -36,7 +36,7 @@ describe('get statements by sorting', () => {
     const sortedStatements = await getStatements(opts);
 
     assert(isArray(sortedStatements));
-    assert.equal(sortedStatements.length, 6); // eslint-disable-line no-magic-numbers
+    assert.strictEqual(sortedStatements.length, 6); // eslint-disable-line no-magic-numbers
 
     return sortedStatements;
   };
@@ -57,7 +57,7 @@ describe('get statements by sorting', () => {
       TEST_ID_6,
     ];
 
-    assert.deepEqual(actualStatementsOrder, expectedStatementsOrder);
+    assert.deepStrictEqual(actualStatementsOrder, expectedStatementsOrder);
   });
 
   it('should return statements in the correct order when ascending', async () => {
@@ -76,6 +76,6 @@ describe('get statements by sorting', () => {
       TEST_ID_1,
     ];
 
-    assert.deepEqual(actualStatementsOrder, expectedStatementsOrder);
+    assert.deepStrictEqual(actualStatementsOrder, expectedStatementsOrder);
   });
 });

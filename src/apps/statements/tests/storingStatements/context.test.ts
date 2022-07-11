@@ -18,7 +18,7 @@ describe('store statement with context', () => {
 
   const assertContext = (context: any, expectedContextActivities: any) => {
     if (context !== undefined && context.contextActivities !== undefined) {
-      assert.deepEqual(context.contextActivities, expectedContextActivities);
+      assert.deepStrictEqual(context.contextActivities, expectedContextActivities);
     } else {
       /* istanbul ignore next */
       assert(false, 'Expected context activities to be defined');

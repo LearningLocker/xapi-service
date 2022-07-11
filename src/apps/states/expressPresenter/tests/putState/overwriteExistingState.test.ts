@@ -1,5 +1,5 @@
 import { StatusCodes } from 'http-status-codes';
-import stringToStream from 'string-to-stream';
+import { stringToStream } from '../../../../../utils/stringToStream';
 import assertImmutableState from '../../../utils/assertImmutableState';
 import assertState from '../../../utils/assertState';
 import createImmutableState from '../../../utils/createImmutableState';

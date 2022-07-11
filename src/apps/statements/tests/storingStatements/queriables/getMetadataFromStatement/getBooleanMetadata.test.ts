@@ -15,7 +15,7 @@ describe('Retrieve sequencing metadata from statement', () => {
       } as Partial<Statement>),
     });
 
-    assert.deepEqual(actualEmptyMetadataFromEmptyResult, expectedEmptyMetadata);
+    assert.deepStrictEqual(actualEmptyMetadataFromEmptyResult, expectedEmptyMetadata);
   });
 
   it('should return false metadata when `false` provided in the result', () => {
@@ -32,7 +32,7 @@ describe('Retrieve sequencing metadata from statement', () => {
       'https://learninglocker&46;net/true-false-response': 'false',
     };
 
-    assert.deepEqual(actualCorrectMetadata, expectedCorrectMetadata);
+    assert.deepStrictEqual(actualCorrectMetadata, expectedCorrectMetadata);
   });
 
   it('should return true metadata when `true` provided in the result', () => {
@@ -42,6 +42,6 @@ describe('Retrieve sequencing metadata from statement', () => {
       'https://learninglocker&46;net/true-false-response': 'true',
     };
 
-    assert.deepEqual(actualCorrectMetadata, expectedCorrectMetadata);
+    assert.deepStrictEqual(actualCorrectMetadata, expectedCorrectMetadata);
   });
 });

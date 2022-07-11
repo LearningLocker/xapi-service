@@ -32,11 +32,14 @@ describe('store statements with attachments', () => {
       voided: false,
       client: createClientModel(),
     });
-    assert.equal(result.attachments.length, 1);
-    assert.equal(result.attachments[0].contentLength, TEST_ATTACHMENT_MODEL_A.contentLength);
-    assert.equal(result.attachments[0].contentType, TEST_ATTACHMENT_MODEL_A.contentType);
-    assert.equal(result.attachments[0].hash, TEST_ATTACHMENT_MODEL_A.hash);
-    assert.equal(await streamToString(result.attachments[0].stream), TEST_CONTENT_A);
+    assert.strictEqual(result.attachments.length, 1);
+    assert.strictEqual(
+      result.attachments[0].contentLength?.toString(),
+      TEST_ATTACHMENT_MODEL_A.contentLength?.toString(),
+    );
+    assert.strictEqual(result.attachments[0].contentType, TEST_ATTACHMENT_MODEL_A.contentType);
+    assert.strictEqual(result.attachments[0].hash, TEST_ATTACHMENT_MODEL_A.hash);
+    assert.strictEqual(await streamToString(result.attachments[0].stream), TEST_CONTENT_A);
   });
 
   it('should throw an error when there is a missing SHA from the statements', async () => {

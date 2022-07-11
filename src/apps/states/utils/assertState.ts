@@ -11,13 +11,13 @@ export default async (content: string, optsOverrides: Partial<GetStatesOptions> 
   // Checks the stateIds.
   const statesResult = await getTestStates(optsOverrides);
   const actualStateIds = statesResult.stateIds;
-  assert.deepEqual(actualStateIds, expectedStateIds);
+  assert.deepStrictEqual(actualStateIds, expectedStateIds);
 
   // Checks the content.
   const agentStateResult = await getTestState(optsOverrides);
   const actualContent = await streamToString(agentStateResult.content);
-  assert.equal(actualContent, content);
-  assert.equal(agentStateResult.contentType.constructor, String);
-  assert.equal(agentStateResult.updatedAt.constructor, Date);
-  assert.equal(agentStateResult.etag.constructor, String);
+  assert.strictEqual(actualContent, content);
+  assert.strictEqual(agentStateResult.contentType.constructor, String);
+  assert.strictEqual(agentStateResult.updatedAt.constructor, Date);
+  assert.strictEqual(agentStateResult.etag.constructor, String);
 };

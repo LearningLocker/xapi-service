@@ -38,11 +38,11 @@ const registrationStatement: Statement = {
 describe('create array of queriable registrations', () => {
   it('should return just the registration from the statement', () => {
     const registrations = getRegistrationsFromStatement(registrationStatement);
-    assert.deepEqual(registrations, [REG]);
+    assert.deepStrictEqual(registrations, [REG]);
   });
 
   it('should return just an empty array from a statement with no registrations', () => {
     const registrations = getRegistrationsFromStatement(statementDefaults);
-    assert.deepEqual(registrations, []);
+    assert.deepStrictEqual(registrations, []);
   });
 });

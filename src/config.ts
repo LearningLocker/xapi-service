@@ -1,5 +1,5 @@
 import * as os from 'os';
-import { S3 } from 'aws-sdk';
+import { S3ClientConfig } from '@aws-sdk/client-s3';
 import { config } from 'dotenv';
 import getBooleanOption from 'jscommons/dist/config/getBooleanOption';
 import getNumberOption from 'jscommons/dist/config/getNumberOption';
@@ -72,16 +72,17 @@ export default {
   },
   s3StorageRepo: {
     awsConfig: {
-      accessKeyId: getStringOption(process.env.FS_S3_ACCESS_KEY_ID, globalAwsIamAccessKeyId),
       apiVersion: '2006-03-01',
       region: getStringOption(process.env.FS_S3_REGION, globalAwsRegion),
-      secretAccessKey: getStringOption(
-        process.env.FS_S3_SECRET_ACCESS_KEY,
-        globalAwsIamAccessKeySecret,
-      ),
-      signatureVersion: 'v4',
-      sslEnabled: true,
-    } as S3.ClientConfiguration,
+      tls: true,
+      credentials: {
+        accessKeyId: getStringOption(process.env.FS_S3_ACCESS_KEY_ID, globalAwsIamAccessKeyId),
+        secretAccessKey: getStringOption(
+          process.env.FS_S3_SECRET_ACCESS_KEY,
+          globalAwsIamAccessKeySecret,
+        ),
+      },
+    } as S3ClientConfig,
     bucketName: getStringOption(process.env.FS_S3_BUCKET, 'xapi-service'),
   },
   statementsService: {
