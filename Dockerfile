@@ -6,7 +6,7 @@ COPY package.json package.json
 COPY yarn.lock yarn.lock
 COPY patches patches
 RUN yarn install --production --ignore-engines --frozen-lockfile
-COPY dist dist
+RUN yarn build
 
 EXPOSE 80
 CMD ["yarn", "start"]
