@@ -2,6 +2,9 @@ name: Integration Suite
 
 on: ['push']
 
+env:
+  IMAGE_NAME: learninglocker/xapi-service
+
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: ${{ github.ref != 'refs/heads/master' }}
