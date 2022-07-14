@@ -30,7 +30,7 @@
     "clean": "rm -rf dist",
     "lint": "eslint --cache --quiet --fix src",
     "lint-ci": "eslint --quiet src",
-    "semantic-release": "ht2-release-public-circleci-app",
+    "semantic-release": "ht2-release-public-circleci-lib",
     "codecov": "nyc report --reporter=text-lcov > coverage.lcov && codecov",
     "postinstall": "patch-package"
   },
