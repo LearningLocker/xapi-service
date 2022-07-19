@@ -13,6 +13,7 @@ jobs:
   build:
     name: Build
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     env:
       NPM_CONFIG_LOGLEVEL: warn
 
@@ -37,6 +38,7 @@ jobs:
     name: Test Local
     needs: build
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     env:
       WINSTON_CONSOLE_LEVEL: none
       EXPRESS_PORT: 1337
@@ -87,6 +89,7 @@ jobs:
     name: Test S3
     needs: test-local
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     env:
       WINSTON_CONSOLE_LEVEL: none
       EXPRESS_PORT: 1337
@@ -146,6 +149,7 @@ jobs:
     name: Test Azure
     needs: test-local
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     env:
       WINSTON_CONSOLE_LEVEL: none
       EXPRESS_PORT: 1337
@@ -201,6 +205,7 @@ jobs:
     name: Test Google
     needs: test-local
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     env:
       WINSTON_CONSOLE_LEVEL: none
       EXPRESS_PORT: 1337
@@ -259,6 +264,7 @@ jobs:
     if: github.ref == 'refs/heads/master'
     needs: [test-local, test-s3]
     runs-on: ubuntu-latest
+    timeout-minutes: 15
 
     steps:
       - uses: actions/checkout@v3
@@ -281,6 +287,7 @@ jobs:
     if: (!contains(github.ref_name, 'renovate') && !contains(github.ref_name, 'dependabot'))
     needs: [test-local, test-s3]
     runs-on: ubuntu-latest
+    timeout-minutes: 15
 
     steps:
       - uses: actions/checkout@v3
