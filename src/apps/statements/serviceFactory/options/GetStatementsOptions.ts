@@ -16,6 +16,7 @@ interface GetStatementsOptions extends StatementsResultOptions {
   readonly skip?: number;
   readonly client: ClientModel;
   readonly cursor?: string;
+  readonly readonly?: number;
 }
 
 export default GetStatementsOptions;
