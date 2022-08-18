@@ -1,5 +1,3 @@
-/* eslint-disable no-magic-numbers */
-/* eslint-disable no-console */
 import * as assert from 'assert';
 import { StatusCodes } from 'http-status-codes';
 import { xapiHeaderVersion } from '../../../../activities/utils/constants';
@@ -47,13 +45,11 @@ describe('postStatements', () => {
       })
       .send([createStatement()])
       .expect(async (response) => {
-        assert.strictEqual(response.status, StatusCodes.OK);
-        console.log(101, 'response.status: ', response.status);
+        assert.strictEqual(response.status, StatusCodes.NO_CONTENT);
 
         const fullStatement = await repo.getStatement({ id: TEST_ID, client: TEST_CLIENT });
-        console.log(102, 'fullStatement.completedQueues: ', fullStatement.completedQueues);
 
-        assert.deepStrictEqual(fullStatement.completedQueues, 'some incorrect string');
+        assert.deepStrictEqual(fullStatement.completedQueues, expectedCompletedQueues);
       });
   });
 
