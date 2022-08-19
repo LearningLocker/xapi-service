@@ -5,7 +5,6 @@ interface StatementsResultOptions {
   readonly attachments?: boolean;
   readonly langs?: string[];
   readonly client: ClientModel;
-  readonly readonly?: number;
 }
 
 export default StatementsResultOptions;
