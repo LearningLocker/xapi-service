@@ -1,0 +1,329 @@
+name: Integration Suite
+
+on: ['push']
+
+env:
+  IMAGE_NAME: learninglocker/xapi-service
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: ${{ github.ref != 'refs/heads/master' }}
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      NPM_CONFIG_LOGLEVEL: warn
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '14'
+          cache: 'yarn'
+
+      - name: Installing Dependencies
+        run: yarn install --ignore-engines --frozen-lockfile
+
+      - name: Compiling Code
+        run: yarn build
+
+      - name: Linting Code
+        run: yarn lint-ci
+
+  test-local:
+    name: Test Local
+    needs: build
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      WINSTON_CONSOLE_LEVEL: none
+      EXPRESS_PORT: 1337
+
+    services:
+      mongodb:
+        image: mongo:3.7.9
+        env:
+          MONGO_INITDB_DATABASE: test
+          ALLOW_EMPTY_PASSWORD: yes
+        ports:
+          - 27017:27017
+        options: --health-cmd="mongo" --health-interval=10s --health-timeout=5s --health-retries=5
+
+      redis:
+        image: redis:3.2.12
+        env:
+          REDIS_DATABASE: test
+          ALLOW_EMPTY_PASSWORD: yes
+        ports:
+          - 6379:6379
+        options: --health-cmd="redis-cli ping"
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '14'
+          cache: 'yarn'
+
+      - name: Installing Dependencies
+        run: yarn install --ignore-engines --frozen-lockfile
+
+      - name: Compiling Code
+        run: yarn build
+
+      - name: Mocha Tests
+        run: yarn cover-local
+
+      - name: Performance Tests
+        run: sh test.sh
+
+      - name: Codecov
+        run: yarn codecov
+
+  test-s3:
+    name: Test S3
+    needs: test-local
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      WINSTON_CONSOLE_LEVEL: none
+      EXPRESS_PORT: 1337
+      STORAGE_REPO: s3
+      SUB_FOLDER_ACTIVITIES: gha/$GITHUB_RUN_NUMBER_$GITHUB_RUN_ATTEMPT
+      SUB_FOLDER_AGENTS: SUB_FOLDER_AGENTS=gha/$GITHUB_RUN_NUMBER_$GITHUB_RUN_ATTEMPT
+      SUB_FOLDER_STATE: gha/$GITHUB_RUN_NUMBER_$GITHUB_RUN_ATTEMPT
+      SUB_FOLDER_STATEMENTS: gha/$GITHUB_RUN_NUMBER_$GITHUB_RUN_ATTEMPT
+      FS_S3_REGION: ${{ secrets.FS_S3_REGION }}
+      FS_S3_BUCKET: ${{ secrets.FS_S3_BUCKET }}
+      FS_S3_ACCESS_KEY_ID: ${{ secrets.FS_S3_ACCESS_KEY_ID }}
+      FS_S3_SECRET_ACCESS_KEY: ${{ secrets.FS_S3_SECRET_ACCESS_KEY }}
+
+    services:
+      mongodb:
+        image: mongo:3.7.9
+        env:
+          MONGO_INITDB_DATABASE: test
+          ALLOW_EMPTY_PASSWORD: yes
+        ports:
+          - 27017:27017
+        options: --health-cmd="mongo" --health-interval=10s --health-timeout=5s --health-retries=5
+
+      redis:
+        image: redis:3.2.12
+        env:
+          REDIS_DATABASE: test
+          ALLOW_EMPTY_PASSWORD: yes
+        ports:
+          - 6379:6379
+        options: --health-cmd="redis-cli ping"
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '14'
+          cache: 'yarn'
+
+      - name: Installing Dependencies
+        run: yarn install --ignore-engines --frozen-lockfile
+
+      - name: Compiling Code
+        run: yarn build
+
+      - name: Mocha Tests S3
+        run: yarn cover-s3
+
+      - name: Performance Tests
+        run: sh test.sh
+
+      - name: Codecov
+        run: yarn codecov
+
+  test-azure:
+    name: Test Azure
+    needs: test-local
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      WINSTON_CONSOLE_LEVEL: none
+      EXPRESS_PORT: 1337
+      STORAGE_REPO: azure
+      FS_AZURE_CONTAINER_SUBFOLDER: gha/$GITHUB_RUN_NUMBER_$GITHUB_RUN_ATTEMPT
+      FS_AZURE_ACCOUNT: ${{ secrets.FS_AZURE_ACCOUNT }}
+      FS_AZURE_ACCOUNT_KEY: ${{ secrets.FS_AZURE_ACCOUNT_KEY }}
+      FS_AZURE_CONTAINER_NAME: ${{ secrets.FS_AZURE_CONTAINER_NAME }}
+
+    services:
+      mongodb:
+        image: mongo:3.7.9
+        env:
+          MONGO_INITDB_DATABASE: test
+          ALLOW_EMPTY_PASSWORD: yes
+        ports:
+          - 27017:27017
+        options: --health-cmd="mongo" --health-interval=10s --health-timeout=5s --health-retries=5
+
+      redis:
+        image: redis:3.2.12
+        env:
+          REDIS_DATABASE: test
+          ALLOW_EMPTY_PASSWORD: yes
+        ports:
+          - 6379:6379
+        options: --health-cmd="redis-cli ping"
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '14'
+          cache: 'yarn'
+
+      - name: Installing Dependencies
+        run: yarn install --ignore-engines --frozen-lockfile
+
+      - name: Compiling Code
+        run: yarn build
+
+      - name: Mocha Tests Azure
+        run: yarn cover-azure
+
+      - name: Performance Tests
+        run: sh test.sh
+
+      - name: Codecov
+        run: yarn codecov
+
+  test-google:
+    name: Test Google
+    needs: test-local
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      WINSTON_CONSOLE_LEVEL: none
+      EXPRESS_PORT: 1337
+      STORAGE_REPO: google
+      FS_GOOGLE_CLOUD_BUCKET: ${{ secrets.FS_GOOGLE_CLOUD_BUCKET }}
+      FS_GOOGLE_CLOUD_PROJECT_ID: ${{ secrets.FS_GOOGLE_CLOUD_PROJECT_ID }}
+      GCLOUD_SERVICE_KEY: ${{ secrets.GCLOUD_SERVICE_KEY }}
+
+    services:
+      mongodb:
+        image: mongo:3.7.9
+        env:
+          MONGO_INITDB_DATABASE: test
+          ALLOW_EMPTY_PASSWORD: yes
+        ports:
+          - 27017:27017
+        options: --health-cmd="mongo" --health-interval=10s --health-timeout=5s --health-retries=5
+
+      redis:
+        image: redis:3.2.12
+        env:
+          REDIS_DATABASE: test
+          ALLOW_EMPTY_PASSWORD: yes
+        ports:
+          - 6379:6379
+        options: --health-cmd="redis-cli ping"
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '14'
+          cache: 'yarn'
+
+      - name: Installing Dependencies
+        run: yarn install --ignore-engines --frozen-lockfile
+
+      - name: Compiling Code
+        run: yarn build
+
+      - name: Setup Google Key File
+        run: echo ${GCLOUD_SERVICE_KEY} > ./google.keyfile.json
+
+      - name: Mocha Tests Google
+        run: yarn cover-google
+
+      - name: Performance Tests
+        run: sh test.sh
+
+      - name: Codecov
+        run: yarn codecov
+
+  release:
+    name: Release
+    if: github.ref == 'refs/heads/master'
+    needs: [test-local, test-s3]
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '14'
+          cache: 'yarn'
+
+      - name: Installing Dependencies
+        run: yarn install --ignore-engines --frozen-lockfile
+
+      - name: Run Semantic Release
+        run: npm run semantic-release
+        env:
+          GITHUB_TOKEN: ${{ secrets.SEMANTIC_RELEASE_GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.SEMANTIC_RELEASE_NPM_TOKEN }}
+
+  docker-build:
+    name: Docker Build
+    if: (!contains(github.ref_name, 'renovate') && !contains(github.ref_name, 'dependabot'))
+    needs: [test-local, test-s3]
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Installing Dependencies
+        run: yarn install --ignore-engines --frozen-lockfile
+
+      - name: Compiling Code
+        run: yarn build
+
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v1
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v1
+
+      - name: Login to DockerHub
+        uses: docker/login-action@v1
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+      - name: Get tag name
+        id: image-tag
+        run: |
+          tag=${{ (github.ref_name == 'master' && 'latest') || github.ref_name }}
+          echo "::set-output name=tag::$tag"
+
+      - name: Build and push
+        uses: docker/build-push-action@v2
+        with:
+          context: .
+          push: true
+          tags: |
+            ${{ env.IMAGE_NAME }}:${{ steps.image-tag.outputs.tag }}
+          build-args: |
+            GIT_COMMIT=${{ github.sha }}
+            GIT_COMMIT=${{ github.ref_name }}

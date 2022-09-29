@@ -1,4 +1,4 @@
-import stringToStream from 'string-to-stream';
+import { stringToStream } from '../../../../../../utils/stringToStream';
 import PatchStateOptions from '../../../../serviceFactory/options/PatchStateOptions';
 import service from '../../../../utils/testService';
 import {

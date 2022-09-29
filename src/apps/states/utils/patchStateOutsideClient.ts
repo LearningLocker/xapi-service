@@ -1,4 +1,4 @@
-import stringToStream from 'string-to-stream';
+import { stringToStream } from '../../../utils/stringToStream';
 import ClientModel from '../models/ClientModel';
 import service from './testService';
 import {

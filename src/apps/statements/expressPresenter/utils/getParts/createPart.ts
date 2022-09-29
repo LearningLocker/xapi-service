@@ -1,5 +1,5 @@
 import { trimStart } from 'lodash';
-import stringToStream from 'string-to-stream';
+import { stringToStream } from '../../../../../utils/stringToStream';
 import Part from '../../../models/Part';
 import parseHeaders from './parseHeaders';
 
