@@ -65,30 +65,27 @@ export default (config: Config) => {
       // Docs: https://docs.mongodb.com/manual/reference/command/getLastError/#getLastError.n
       const updatedDocuments = updateOpResult.lastErrorObject?.n as number;
       if (updatedDocuments === 1) {
+        const opResult = await collection.findOne({ _id: updateOpResult.value?._id });
+
         return {
-          extension: updateOpResult.value?.extension,
-          id: updateOpResult.value?._id.toString() as string,
+          extension: opResult?.extension,
+          id: opResult?._id.toString() as string,
         };
       }
     }
 
-    // Creates the profile if it doesn't already exist.
-    // Docs: http://mongodb.github.io/node-mongodb-native/2.2/api/Collection.html#findOneAndUpdate
-    // Docs: http://bit.ly/findAndModifyWriteOpResult
     const createOpResult = await collection.findOneAndUpdate(
       profileFilter,
       {
         $setOnInsert: update,
       },
       {
-        returnDocument: ReturnDocument.AFTER, // Ensures the updated document is returned.
-        upsert: true, // Creates the profile when it's not found.
+        returnDocument: ReturnDocument.AFTER,
+        upsert: true,
       },
     );
 
-    // Determines if the Profile was created or found.
-    // Docs: https://docs.mongodb.com/manual/reference/command/getLastError/#getLastError.n
-    const wasCreated = createOpResult.lastErrorObject?.upserted !== undefined;
+    const wasCreated = !createOpResult.lastErrorObject?.updatedExisting;
 
     // Throws the IfMatch error when the profile already exists.
     // This is because there must have been an ETag mismatch in the previous update.
@@ -100,9 +97,13 @@ export default (config: Config) => {
       throw new IfNoneMatch();
     }
 
+    const id = wasCreated ? createOpResult.lastErrorObject?.upserted : createOpResult.value?._id;
+
+    const opResult = await collection.findOne({ _id: id });
+
     return {
-      extension: createOpResult.value?.extension,
-      id: createOpResult.value?._id.toString() as string,
+      extension: opResult?.extension,
+      id: opResult?._id.toString() as string,
     };
   };
 };
