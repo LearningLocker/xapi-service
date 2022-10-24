@@ -5,6 +5,7 @@ import AttachmentModel from '../../models/AttachmentModel';
 import StoreStatementsOptions from '../../serviceFactory/options/StoreStatementsOptions';
 import { STATEMENT_WRITE_SCOPES } from '../../utils/scopes';
 import Config from '../Config';
+import logger from '../../../../logger';
 import checkAttachments from './checkAttachments';
 import checkVoiders from './checkVoiders';
 import createAttachments from './createAttachments';
@@ -91,7 +92,7 @@ export default (config: Config) => {
         })
         .catch((err) => {
           /* istanbul ignore next */
-          console.error(err);
+          logger.error('emitNewStatements error', err);
         });
     }
 
