@@ -34,9 +34,12 @@ export default (config: Config) => {
       },
     );
 
+    const id = createOpResult.lastErrorObject?.upserted || createOpResult.value?._id;
+    const opResult = await collection.findOne({ _id: id });
+
     return {
-      extension: createOpResult.value?.extension,
-      id: createOpResult.value?._id.toString() as string,
+      extension: opResult?.extension,
+      id: opResult?._id.toString() as string,
     };
   };
 };
