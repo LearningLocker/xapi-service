@@ -39,6 +39,7 @@ export default async (opts: Options) => {
     'ascending',
     'cursor',
     'offset',
+    'readonly',
   ]);
 
   const results = await config.service.getStatements({
