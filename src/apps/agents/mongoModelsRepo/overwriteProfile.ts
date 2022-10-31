@@ -1,4 +1,5 @@
 import { isPlainObject } from 'lodash';
+import { ReturnDocument } from 'mongodb';
 import IfMatch from '../errors/IfMatch';
 import IfNoneMatch from '../errors/IfNoneMatch';
 import MaxEtags from '../errors/MaxEtags';
@@ -49,17 +50,19 @@ export default (config: Config) => {
           $set: update,
         },
         {
-          returnOriginal: false,
+          returnDocument: ReturnDocument.AFTER,
           upsert: false,
         },
       );
 
       // Determines if the Profile was updated.
-      const updatedDocuments = updateOpResult.lastErrorObject.n as number;
+      const updatedDocuments = updateOpResult.lastErrorObject?.n as number;
       if (updatedDocuments === 1) {
+        const opResult = await collection.findOne({ _id: updateOpResult.value?._id });
+
         return {
-          extension: updateOpResult.value.extension,
-          id: updateOpResult.value._id.toString(),
+          extension: opResult?.extension,
+          id: opResult?._id.toString() as string,
         };
       }
     }
@@ -71,13 +74,12 @@ export default (config: Config) => {
         $setOnInsert: update,
       },
       {
-        returnOriginal: false,
+        returnDocument: ReturnDocument.AFTER,
         upsert: true,
       },
     );
 
-    // Determines if the Profile was created or found.
-    const wasCreated = createOpResult.lastErrorObject.upserted !== undefined;
+    const wasCreated = !createOpResult.lastErrorObject?.updatedExisting;
 
     // Throws the IfMatch error when the profile already exists.
     // This is because there must have been an ETag mismatch in the previous update.
@@ -89,9 +91,13 @@ export default (config: Config) => {
       throw new IfNoneMatch();
     }
 
+    const id = wasCreated ? createOpResult.lastErrorObject?.upserted : createOpResult.value?._id;
+
+    const opResult = await collection.findOne({ _id: id });
+
     return {
-      extension: createOpResult.value.extension,
-      id: createOpResult.value._id.toString(),
+      extension: opResult?.extension,
+      id: opResult?._id.toString() as string,
     };
   };
 };

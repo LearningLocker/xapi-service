@@ -1,4 +1,4 @@
-import { ObjectID } from 'mongodb';
+import { ObjectId } from 'mongodb';
 import Agent from '../../models/Agent';
 import ClientModel from '../../models/ClientModel';
 import getAgentFilter from './getAgentFilter';
@@ -16,7 +16,7 @@ export default (opts: Options) => {
     activityId: opts.activityId,
     ...getAgentFilter(opts.agent),
     ...getRegistrationFilter(opts.registration),
-    lrs: new ObjectID(opts.client.lrs_id),
-    organisation: new ObjectID(opts.client.organisation),
+    lrs: new ObjectId(opts.client.lrs_id),
+    organisation: new ObjectId(opts.client.organisation),
   };
 };

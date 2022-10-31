@@ -1,4 +1,4 @@
-import { ObjectID } from 'mongodb';
+import { ObjectId } from 'mongodb';
 import { STATEMENTS_COLLECTION_NAME } from '../utils/mongoModels/constants';
 import FacadeConfig from '../utils/mongoModels/FacadeConfig';
 import { encodeDotsInStatement } from '../utils/mongoModels/replaceDotsInStatement';
@@ -14,9 +14,9 @@ export default (config: FacadeConfig): Signature => {
       const statement = encodeDotsInStatement(model.statement);
       return {
         ...model,
-        organisation: new ObjectID(model.organisation),
-        lrs_id: new ObjectID(model.lrs_id),
-        client: new ObjectID(model.client),
+        organisation: new ObjectId(model.organisation),
+        lrs_id: new ObjectId(model.lrs_id),
+        client: new ObjectId(model.client),
         statement,
       };
     });

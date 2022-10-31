@@ -1,4 +1,4 @@
-import { ObjectID } from 'mongodb';
+import { ObjectId } from 'mongodb';
 import { FULL_ACTIVITIES_COLLECTION_NAME } from '../utils/mongoModels/constants';
 import FacadeConfig from '../utils/mongoModels/FacadeConfig';
 import matchesFullActivity from '../utils/mongoModels/matchesFullActivity';
@@ -7,11 +7,11 @@ import Signature from './Signature';
 
 export default (config: FacadeConfig): Signature => {
   return async ({ activityId, client }) => {
-    const lrsId = new ObjectID(client.lrs_id);
-    const organisationId = new ObjectID(client.organisation);
+    const lrsId = new ObjectId(client.lrs_id);
+    const organisationId = new ObjectId(client.organisation);
     const collection = (await config.db()).collection(FULL_ACTIVITIES_COLLECTION_NAME);
     const query = matchesFullActivity({ activityId, lrsId, organisationId });
-    const fields = {
+    const projection = {
       _id: 0,
       id: 1,
       name: 1,
@@ -22,7 +22,7 @@ export default (config: FacadeConfig): Signature => {
       context: 1,
     };
 
-    const result = await collection.findOne(query, { fields });
+    const result = await collection.findOne(query, { projection });
 
     if (result === null) {
       return {

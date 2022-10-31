@@ -1,6 +1,6 @@
 import NoModel from 'jscommons/dist/errors/NoModel';
 import { defaultTo } from 'lodash';
-import { ObjectID } from 'mongodb';
+import { ObjectId } from 'mongodb';
 import GetProfileOptions from '../repoFactory/options/GetProfileOptions';
 import GetProfileResult from '../repoFactory/results/GetProfileResult';
 import Config from './Config';
@@ -12,8 +12,8 @@ export default (config: Config) => {
 
     const filter = {
       activityId: opts.activityId,
-      lrs: new ObjectID(opts.client.lrs_id),
-      organisation: new ObjectID(opts.client.organisation),
+      lrs: new ObjectId(opts.client.lrs_id),
+      organisation: new ObjectId(opts.client.organisation),
       profileId: opts.profileId,
     };
 

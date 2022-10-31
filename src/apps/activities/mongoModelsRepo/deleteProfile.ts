@@ -1,5 +1,5 @@
 import NoModel from 'jscommons/dist/errors/NoModel';
-import { ObjectID } from 'mongodb';
+import { ObjectId } from 'mongodb';
 import IfMatch from '../errors/IfMatch';
 import DeleteProfileOptions from '../repoFactory/options/DeleteProfileOptions';
 import DeleteProfileResult from '../repoFactory/results/DeleteProfileResult';
@@ -15,8 +15,8 @@ export default (config: Config) => {
 
     const profileFilter = {
       activityId: opts.activityId,
-      lrs: new ObjectID(opts.client.lrs_id),
-      organisation: new ObjectID(opts.client.organisation),
+      lrs: new ObjectId(opts.client.lrs_id),
+      organisation: new ObjectId(opts.client.organisation),
       profileId: opts.profileId,
     };
 
@@ -33,12 +33,12 @@ export default (config: Config) => {
 
     // Determines if the identifier was deleted.
     // Docs: https://docs.mongodb.com/manual/reference/command/getLastError/#getLastError.n
-    const matchedDocuments = opResult.lastErrorObject.n as number;
+    const matchedDocuments = opResult.lastErrorObject?.n as number;
     const wasDeleted = matchedDocuments === 1;
 
     // Returns the result of the deletion if the document was deleted.
     if (wasDeleted) {
-      const deletedDoc = opResult.value;
+      const deletedDoc = opResult.value as any;
       return {
         contentType: deletedDoc.contentType,
         extension: deletedDoc.extension,

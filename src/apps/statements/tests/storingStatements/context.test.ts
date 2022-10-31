@@ -32,8 +32,8 @@ describe('store statement with context', () => {
       voided: false,
       client,
     });
-    const statement = result.statements[0];
-    return statement;
+
+    return result.statements[0];
   };
 
   const testWrappedContext = async (key: string) => {

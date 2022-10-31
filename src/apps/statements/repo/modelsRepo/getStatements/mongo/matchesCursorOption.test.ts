@@ -1,5 +1,5 @@
 import * as assert from 'assert';
-import { ObjectID } from 'mongodb';
+import { ObjectId } from 'mongodb';
 import { Opts } from '../Signature';
 import matchesCursorOption from './matchesCursorOption';
 
@@ -14,7 +14,7 @@ describe('mongo matchesCursorOption', () => {
     assert.deepStrictEqual(matchesCursorOption({ cursor, ascending: true } as Opts), {
       $or: [
         {
-          _id: { $gte: new ObjectID(testId) },
+          _id: { $gte: new ObjectId(testId) },
           stored: testStored,
         },
         { stored: { $gt: testStored } },
@@ -25,7 +25,7 @@ describe('mongo matchesCursorOption', () => {
       $or: [
         {
           _id: {
-            $lte: new ObjectID(testId),
+            $lte: new ObjectId(testId),
           },
           stored: testStored,
         },
