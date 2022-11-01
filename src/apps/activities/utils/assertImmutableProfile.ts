@@ -17,7 +17,7 @@ export default async () => {
     client: TEST_CLIENT,
   });
   const actualProfileIds = profilesResult.profileIds;
-  assert.deepEqual(actualProfileIds, expectedProfileIds);
+  assert.deepStrictEqual(actualProfileIds, expectedProfileIds);
 
   // Checks the content.
   const profileResult = await service.getProfile({
@@ -26,8 +26,8 @@ export default async () => {
     profileId: TEST_PROFILE_ID,
   });
   const actualContent = await streamToString(profileResult.content);
-  assert.equal(actualContent, TEST_IMMUTABLE_CONTENT);
-  assert.equal(profileResult.contentType.constructor, String);
-  assert.equal(profileResult.updatedAt.constructor, Date);
-  assert.equal(profileResult.etag.constructor, String);
+  assert.strictEqual(actualContent, TEST_IMMUTABLE_CONTENT);
+  assert.strictEqual(profileResult.contentType.constructor, String);
+  assert.strictEqual(profileResult.updatedAt.constructor, Date);
+  assert.strictEqual(profileResult.etag.constructor, String);
 };

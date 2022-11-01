@@ -10,6 +10,6 @@ describe('getProfiles with existing model', () => {
   it('should return profile ids when getting a existing model', async () => {
     await createTextProfile();
     const profilesResult = await getTestProfiles();
-    assert.deepEqual(profilesResult.profileIds, [TEST_PROFILE_ID]);
+    assert.deepStrictEqual(profilesResult.profileIds, [TEST_PROFILE_ID]);
   });
 });

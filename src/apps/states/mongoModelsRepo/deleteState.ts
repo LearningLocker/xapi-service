@@ -18,12 +18,12 @@ export default (config: Config) => {
 
     // Determines if the identifier was deleted.
     // Docs: https://docs.mongodb.com/manual/reference/command/getLastError/#getLastError.n
-    const matchedDocuments = opResult.lastErrorObject.n as number;
+    const matchedDocuments = opResult.lastErrorObject?.n as number;
     const wasDeleted = matchedDocuments === 1;
 
     // Returns the result of the deletion if the document was deleted.
     if (wasDeleted) {
-      const deletedDoc = opResult.value;
+      const deletedDoc = opResult.value as any;
       return {
         content: deletedDoc.content === null ? undefined : deletedDoc.content,
         extension: deletedDoc.extension,

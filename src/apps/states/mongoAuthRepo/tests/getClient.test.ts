@@ -2,7 +2,7 @@ import * as assert from 'assert';
 import btoa from 'btoa';
 import NoModel from 'jscommons/dist/errors/NoModel';
 import assertError from 'jscommons/dist/tests/utils/assertError';
-import { ObjectID } from 'mongodb';
+import { ObjectId } from 'mongodb';
 import connectToMongoDb from '../../../../utils/connectToMongoDb';
 import ExpiredClientError from '../../errors/ExpiredClientError';
 import UntrustedClientError from '../../errors/UntrustedClientError';
@@ -13,7 +13,7 @@ const TEST_BASIC_SECRET = 'abc';
 const TEST_TOKEN = `Basic ${btoa(`${TEST_BASIC_KEY}:${TEST_BASIC_SECRET}`)}`;
 const TEST_ACCESS_TOKEN = '11112222-3333-4444-5555-666677778888';
 const TEST_CLIENT = {
-  _id: new ObjectID('5988f0f00000000000000123'),
+  _id: new ObjectId('5988f0f00000000000000123'),
   api: {
     basic_key: TEST_BASIC_KEY,
     basic_secret: TEST_BASIC_SECRET,
@@ -22,27 +22,27 @@ const TEST_CLIENT = {
     mbox: 'mailto:authority@example.com',
     objectType: 'Agent',
   }),
-  lrs_id: new ObjectID('5988f0f00000000000000001'),
-  organisation: new ObjectID('5988f0f00000000000000000'),
+  lrs_id: new ObjectId('5988f0f00000000000000001'),
+  organisation: new ObjectId('5988f0f00000000000000000'),
 };
 const TEST_ORG = {
-  _id: new ObjectID('5988f0f00000000000000000'),
+  _id: new ObjectId('5988f0f00000000000000000'),
   createdAt: new Date('2017-10-25T14:39:44.962Z'),
   name: 'Test Org',
   updatedAt: new Date('2017-10-25T14:39:58.376Z'),
 };
 const TEST_STORE = {
-  _id: new ObjectID('5988f0f00000000000000001'),
+  _id: new ObjectId('5988f0f00000000000000001'),
   createdAt: new Date('2017-10-25T14:39:44.962Z'),
   description: 'Test LRS Description',
-  organisation: new ObjectID('5988f0f00000000000000000'),
+  organisation: new ObjectId('5988f0f00000000000000000'),
   statementCount: 0,
   title: 'Test LRS',
   updatedAt: new Date('2017-10-25T14:39:58.376Z'),
 };
 const TEST_OAUTH_TOKEN = {
-  _id: new ObjectID('5988f0f00000000000000002'),
-  clientId: new ObjectID('5988f0f00000000000000123'),
+  _id: new ObjectId('5988f0f00000000000000002'),
+  clientId: new ObjectId('5988f0f00000000000000123'),
   accessToken: TEST_ACCESS_TOKEN,
   createdAt: new Date('2017-10-25T14:39:44.962Z'),
   expireAt: new Date('2017-10-25T15:39:44.962Z'),
@@ -63,7 +63,7 @@ describe(__filename, () => {
     await db.collection('lrs').insertOne(TEST_STORE);
     await db.collection('client').insertOne(TEST_CLIENT);
     const result = await authRepo.getClient({ authToken: TEST_TOKEN });
-    assert.equal(result.client._id, TEST_CLIENT._id);
+    assert.strictEqual(result.client._id, TEST_CLIENT._id.toString());
   });
 
   it('should error when getting without any clients in the DB', async () => {
@@ -130,7 +130,7 @@ describe(__filename, () => {
     await db.collection('client').insertOne(TEST_CLIENT);
     await db.collection('oAuthTokens').insertOne(TEST_OAUTH_TOKEN);
     const result = await authRepo.getClient({ authToken: `Bearer ${TEST_ACCESS_TOKEN}` });
-    assert.equal(result.client._id, TEST_CLIENT._id);
+    assert.strictEqual(result.client._id, TEST_CLIENT._id.toString());
   });
 
   it('should error when access_token is not found in collection', async () => {

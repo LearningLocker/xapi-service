@@ -1,4 +1,4 @@
-import stringToStream from 'string-to-stream';
+import { stringToStream } from '../../../../../../utils/stringToStream';
 import OverwriteStateOptions from '../../../../serviceFactory/options/OverwriteStateOptions';
 import service from '../../../../utils/testService';
 import {

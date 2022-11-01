@@ -21,8 +21,8 @@ describe('store statement conflicts', () => {
   it('should store statements when they use an existing id without conflicts in 2 batches', async () => {
     await storeStatements([TEST_STATEMENT]);
     const ids: string[] = await storeStatements([TEST_STATEMENT]);
-    assert.equal(isArray(ids), true);
-    assert.deepEqual(ids, [TEST_ID]);
+    assert.strictEqual(isArray(ids), true);
+    assert.deepStrictEqual(ids, [TEST_ID]);
   });
 
   it('should not store statements when they use an existing id with conflicts in 2 batches', async () => {

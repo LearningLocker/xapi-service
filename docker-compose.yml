@@ -1,9 +1,9 @@
 version: '3.6'
 services:
   mongo:
+    command: --bind_ip_all --replSet rs0
     container_name: ll_mongo
     image: mongo:4.4
-    command: --bind_ip_all --replSet rs0
     ports:
       - 27017:27017
     volumes:

@@ -21,7 +21,7 @@ describe('store lrs statements with same ids', () => {
     await storeStatements([TEST_STATEMENT], [], LRS2_CLIENT);
 
     const ids: string[] = await storeStatements([TEST_STATEMENT]);
-    assert.equal(isArray(ids), true);
-    assert.deepEqual(ids, [TEST_ID]);
+    assert.strictEqual(isArray(ids), true);
+    assert.deepStrictEqual(ids, [TEST_ID]);
   });
 });

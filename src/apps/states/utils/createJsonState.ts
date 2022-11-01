@@ -1,4 +1,4 @@
-import stringToStream from 'string-to-stream';
+import { stringToStream } from '../../../utils/stringToStream';
 import service from './testService';
 import {
   JSON_CONTENT_TYPE,

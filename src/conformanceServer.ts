@@ -1,15 +1,15 @@
 import './server'; // eslint-disable-line import/no-unassigned-import
-import { ObjectID } from 'mongodb';
+import { ObjectId } from 'mongodb';
 import connectToMongoDb from './utils/connectToMongoDb';
 
 const testOrg = {
-  _id: new ObjectID('5988f0f00000000000000000'),
+  _id: new ObjectId('5988f0f00000000000000000'),
   createdAt: new Date('2017-10-25T14:39:44.962Z'),
   name: 'Test Org',
   updatedAt: new Date('2017-10-25T14:39:58.376Z'),
 };
 const testStore = {
-  _id: new ObjectID('5988f0f00000000000000001'),
+  _id: new ObjectId('5988f0f00000000000000001'),
   createdAt: new Date('2017-10-25T14:39:44.962Z'),
   description: 'Test LRS Description',
   organisation: testOrg._id,

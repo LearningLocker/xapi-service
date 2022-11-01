@@ -17,7 +17,7 @@ describe('Retrieve matching questions metadata from statement', () => {
       },
     });
 
-    assert.deepEqual(actualEmptyMetadataFromEmptyResult, expectedEmptyMetadata);
+    assert.deepStrictEqual(actualEmptyMetadataFromEmptyResult, expectedEmptyMetadata);
   });
 
   it('should return metadata from single matching question', () => {
@@ -28,7 +28,10 @@ describe('Retrieve matching questions metadata from statement', () => {
       'https://learninglocker&46;net/matching-response': [['ben', '3']],
     };
 
-    assert.deepEqual(actualSingleMatchingQuestionMetadata, expectedSingleMatchingQuestionMetadata);
+    assert.deepStrictEqual(
+      actualSingleMatchingQuestionMetadata,
+      expectedSingleMatchingQuestionMetadata,
+    );
   });
 
   it('should return metadata from multiple matching questions', () => {
@@ -44,7 +47,7 @@ describe('Retrieve matching questions metadata from statement', () => {
       ],
     };
 
-    assert.deepEqual(
+    assert.deepStrictEqual(
       actualMultipleMatchingQuestionsMetadata,
       expectedMultipleMatchingQuestionsMetadata,
     );

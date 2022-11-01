@@ -1,5 +1,5 @@
 import * as assert from 'assert';
-import { ObjectID } from 'mongodb';
+import { ObjectId } from 'mongodb';
 import { Opts } from '../Signature';
 import matchesCursorOption from './matchesCursorOption';
 
@@ -9,23 +9,23 @@ describe('mongo matchesCursorOption', () => {
     const testStored = new Date();
     const cursor = `${testId}_${testStored.toISOString()}`;
 
-    assert.deepEqual(matchesCursorOption({ cursor: undefined } as Opts), {});
+    assert.deepStrictEqual(matchesCursorOption({ cursor: undefined } as Opts), {});
 
-    assert.deepEqual(matchesCursorOption({ cursor, ascending: true } as Opts), {
+    assert.deepStrictEqual(matchesCursorOption({ cursor, ascending: true } as Opts), {
       $or: [
         {
-          _id: { $gte: new ObjectID(testId) },
+          _id: { $gte: new ObjectId(testId) },
           stored: testStored,
         },
         { stored: { $gt: testStored } },
       ],
     });
 
-    assert.deepEqual(matchesCursorOption({ cursor, ascending: false } as Opts), {
+    assert.deepStrictEqual(matchesCursorOption({ cursor, ascending: false } as Opts), {
       $or: [
         {
           _id: {
-            $lte: new ObjectID(testId),
+            $lte: new ObjectId(testId),
           },
           stored: testStored,
         },
