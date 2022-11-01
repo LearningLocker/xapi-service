@@ -1,4 +1,4 @@
-const git = require('simple-git/promise')();
+const git = require('simple-git')();
 const rimraf = require('rimraf');
 const { promisify } = require('util');
 const shelljs = require('shelljs');
@@ -42,17 +42,23 @@ const main = async () => {
   await git.checkoutLocalBranch('xapi-deps');
   await promisify(rimraf)(join(process.cwd(), 'node_modules'));
   await exec('yarn install --ignore-engines');
-  await exec('npm i @learninglocker/xapi-activities@latest @learninglocker/xapi-agents@latest @learninglocker/xapi-state@latest @learninglocker/xapi-statements@latest');
-  await exec('yarn add --ignore-engines @learninglocker/xapi-activities@latest @learninglocker/xapi-agents@latest @learninglocker/xapi-state@latest @learninglocker/xapi-statements@latest');
+  await exec(
+    'npm i @learninglocker/xapi-activities@latest @learninglocker/xapi-agents@latest @learninglocker/xapi-state@latest @learninglocker/xapi-statements@latest',
+  );
+  await exec(
+    'yarn add --ignore-engines @learninglocker/xapi-activities@latest @learninglocker/xapi-agents@latest @learninglocker/xapi-state@latest @learninglocker/xapi-statements@latest',
+  );
   await git.add('./*');
   await git.commit(getCommitMessage());
   await git.push('origin', 'xapi-deps');
 };
 
-main().then(() => {
-  console.log(colors.green('Completed successfully'));
-}).catch((err) => {
-  console.error(colors.red(err));
-  console.log(colors.red('Completed unsuccessfully'));
-});
+main()
+  .then(() => {
+    console.log(colors.green('Completed successfully'));
+  })
+  .catch((err) => {
+    console.error(colors.red(err));
+    console.log(colors.red('Completed unsuccessfully'));
+  });
 // node scripts/updateDeps.js "fix: message"
