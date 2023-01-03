@@ -72,7 +72,7 @@ export default async (
       const publicKey = `-----BEGIN CERTIFICATE-----\n${splitDER}\n-----END CERTIFICATE-----`;
 
       try {
-        jwt.verify(token, publicKey);
+        jwt.verify(token, publicKey, { algorithms: ['none'] });
       } catch {
         throw new InvalidJws(originalStatement.id);
       }
