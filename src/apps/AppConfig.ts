@@ -3,6 +3,7 @@ import { Redis } from 'ioredis';
 import Tracker from 'jscommons/dist/tracker/Tracker';
 import { Db } from 'mongodb';
 import { LoggerInstance } from 'winston';
+import { SQSClient } from '@aws-sdk/client-sqs';
 
 export default interface AppConfig {
   readonly repo: {
@@ -44,6 +45,11 @@ export default interface AppConfig {
     readonly redis: {
       readonly prefix: string;
       readonly client: () => Promise<Redis>;
+      readonly isQueuePriorityEnabled: boolean;
+    };
+    readonly sqs: {
+      readonly prefix: string;
+      readonly client: () => Promise<SQSClient>;
       readonly isQueuePriorityEnabled: boolean;
     };
   };
