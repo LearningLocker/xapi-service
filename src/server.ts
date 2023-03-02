@@ -9,6 +9,7 @@ import config from './config';
 import logger from './logger';
 import connectToMongoDb from './utils/connectToMongoDb';
 import connectToRedis from './utils/connectToRedis';
+import connectToSQS from './utils/connectToSQS';
 
 const expressApp = express();
 
@@ -29,6 +30,11 @@ expressApp.use(
       redis: {
         client: connectToRedis(),
         prefix: config.redis.prefix,
+        isQueuePriorityEnabled: config.isQueuePriorityEnabled,
+      },
+      sqs: {
+        client: connectToSQS(),
+        prefix: config.sqs.prefix,
         isQueuePriorityEnabled: config.isQueuePriorityEnabled,
       },
       repoFactory: config.repoFactory,

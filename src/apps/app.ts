@@ -81,6 +81,7 @@ export default (appConfig: AppConfig): Router => {
       local: appConfig.repo.local,
       mongo: appConfig.repo.mongo,
       redis: appConfig.repo.redis,
+      sqs: appConfig.repo.sqs,
       s3: appConfig.repo.s3,
       storageSubFolder: appConfig.repo.storageSubFolders.statements,
     },

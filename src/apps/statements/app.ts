@@ -21,6 +21,11 @@ export default (appConfig: AppConfig): Result => {
         prefix: appConfig.repo.redis.prefix,
         isQueuePriorityEnabled: appConfig.repo.redis.isQueuePriorityEnabled,
       },
+      sqs: {
+        client: appConfig.repo.sqs.client,
+        prefix: appConfig.repo.sqs.prefix,
+        isQueuePriorityEnabled: appConfig.repo.sqs.isQueuePriorityEnabled,
+      },
     },
     models: {
       facade: appConfig.repo.factory.modelsRepoName,
