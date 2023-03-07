@@ -8,21 +8,15 @@ export default once((): (() => Promise<SQSClient>) => {
     logger.info('Creating SQS connection');
 
     return new SQSClient({
-      ...(
-        config.aws.defaultRegion
-          ? { region: config.aws.defaultRegion }
-          : null
-      ),
-      ...(
-        config.aws.accessKeyId && config.aws.secretAccessKey
-          ? {
+      ...(config.aws.region ? { region: config.aws.region } : null),
+      ...(config.aws.accessKeyId && config.aws.secretAccessKey
+        ? {
             credentials: {
               accessKeyId: config.aws.accessKeyId as string,
               secretAccessKey: config.aws.secretAccessKey as string,
-            }
+            },
           }
-          : null
-      ),
+        : null),
     });
   });
 });

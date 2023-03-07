@@ -65,9 +65,9 @@ export default {
     url: getStringOption(process.env.REDIS_URL, 'redis://127.0.0.1:6379/0'),
   },
   aws: {
-    defaultRegion: getStringOption(process.env.AWS_DEFAULT_REGION, 'eu-west-2'),
-    accessKeyId: getStringOption(process.env.AWS_ACCESS_KEY_ID, ''),
-    secretAccessKey: getStringOption(process.env.AWS_SECRET_ACCESS_KEY, ''),
+    region: globalAwsRegion,
+    accessKeyId: globalAwsIamAccessKeyId,
+    secretAccessKey: globalAwsIamAccessKeySecret,
   },
   sqs: {
     prefix: getStringOption(process.env.SQS_PREFIX, 'DEV'),
