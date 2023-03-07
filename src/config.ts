@@ -70,7 +70,7 @@ export default {
     secretAccessKey: globalAwsIamAccessKeySecret,
   },
   sqs: {
-    prefix: getStringOption(process.env.SQS_PREFIX, 'DEV'),
+    prefix: getStringOption(process.env.QUEUE_NAMESPACE, 'DEV'),
   },
   repoFactory: {
     authRepoName: getStringOption(process.env.AUTH_REPO, 'mongo'),

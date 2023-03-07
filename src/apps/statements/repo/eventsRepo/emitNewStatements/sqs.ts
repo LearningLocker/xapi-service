@@ -63,8 +63,8 @@ const getQueueUrl = async (
 export default (config: FacadeConfig): Signature => {
   return async ({ statementProperties, priority }) => {
     const sqsClient = await config.client();
-    await getQueueUrl(sqsClient, config.prefix, priority, config.isQueuePriorityEnabled);
 
+    await getQueueUrl(sqsClient, config.prefix, priority, config.isQueuePriorityEnabled);
     await publishMessages(sqsClient, statementProperties);
   };
 };
