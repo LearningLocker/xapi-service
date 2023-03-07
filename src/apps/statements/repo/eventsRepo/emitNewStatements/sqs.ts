@@ -9,7 +9,6 @@ import { getPrefixWithProcessingPriority } from '../utils/getPrefixWithProcessin
 import { StatementProcessingPriority } from '../../../enums/statementProcessingPriority.enum';
 import FacadeConfig from '../utils/sqsEvents/FacadeConfig';
 import { STATEMENT_QUEUE } from '../utils/constants';
-import logger from '../../../../../logger';
 import Signature from './Signature';
 
 const MAX_BATCH_SIZE = 10;
@@ -41,7 +40,6 @@ const getQueueUrl = async (
   isQueuePriorityEnabled: boolean,
 ) => {
   if (queueUrl) {
-    logger.info('queueUrl from CACHE');
     return queueUrl;
   }
 
@@ -56,7 +54,6 @@ const getQueueUrl = async (
   });
 
   const commandResult = await sqsClient.send(getQueueUrlCommand);
-  logger.info('queueUrl from QUERY');
 
   queueUrl = commandResult.QueueUrl;
 
@@ -66,14 +63,7 @@ const getQueueUrl = async (
 export default (config: FacadeConfig): Signature => {
   return async ({ statementProperties, priority }) => {
     const sqsClient = await config.client();
-    const queueUrl = await getQueueUrl(
-      sqsClient,
-      config.prefix,
-      priority,
-      config.isQueuePriorityEnabled,
-    );
-
-    logger.info('QUEUE_URL --->', queueUrl);
+    await getQueueUrl(sqsClient, config.prefix, priority, config.isQueuePriorityEnabled);
 
     await publishMessages(sqsClient, statementProperties);
   };
