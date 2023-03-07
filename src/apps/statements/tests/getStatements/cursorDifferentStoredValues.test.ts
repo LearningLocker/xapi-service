@@ -61,7 +61,7 @@ describe('get statements with different stored value using cursor', () => {
   );
 
   it('should return correct statements when ascending', async () => {
-    const db = await connectToMongoDb()();
+    const db = await connectToMongoDb();
     await db
       .collection('statements')
       .insertMany([statement1, statement2, statement3, statement4, statement5]);
@@ -94,7 +94,7 @@ describe('get statements with different stored value using cursor', () => {
   });
 
   it('should return correct statements when descending cursor', async () => {
-    const db = await connectToMongoDb()();
+    const db = await connectToMongoDb();
     await db
       .collection('statements')
       .insertMany([statement1, statement2, statement3, statement4, statement5]);

@@ -23,7 +23,7 @@ expressApp.use(
       google: config.googleStorageRepo,
       local: config.localStorageRepo,
       mongo: {
-        db: connectToMongoDb(),
+        db: connectToMongoDb,
         maxTimeMs: config.defaultTimeout,
       },
       redis: {
