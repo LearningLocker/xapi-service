@@ -37,7 +37,7 @@ const testClient = {
 };
 
 (async () => {
-  const db = await connectToMongoDb()();
+  const db = await connectToMongoDb();
   console.info('Dropping database for ADL conformance tests.');
   await db.dropDatabase();
   console.info('Seeding database for ADL conformance tests.');

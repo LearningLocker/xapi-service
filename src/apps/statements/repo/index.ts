@@ -10,7 +10,7 @@ export const repoFactoryConfig: RepoFactoryConfig = {
     facade: config.repoFactory.authRepoName,
     fake: {},
     mongo: {
-      db: connectToMongoDb(),
+      db: connectToMongoDb,
     },
   },
   events: {
@@ -24,7 +24,7 @@ export const repoFactoryConfig: RepoFactoryConfig = {
   models: {
     facade: config.repoFactory.modelsRepoName,
     mongo: {
-      db: connectToMongoDb(),
+      db: connectToMongoDb,
       maxTimeMs: config.defaultTimeout,
     },
   },
