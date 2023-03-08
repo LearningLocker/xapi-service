@@ -49,7 +49,7 @@ const TEST_OAUTH_TOKEN = {
 };
 
 describe('getClient from mongo client', () => {
-  const connection = connectToMongoDb();
+  const connection = connectToMongoDb;
   const authRepo = mongoFactory({ db: connection });
 
   beforeEach(async () => {

@@ -24,7 +24,7 @@ export default (factoryConfig?: FactoryConfig): Facade => {
   const facadeConfig: FacadeConfig =
     factoryConfig !== undefined
       ? factoryConfig
-      : { db: connectToMongoDb(), maxTimeMs: defaultMaxTimeMs };
+      : { db: connectToMongoDb, maxTimeMs: defaultMaxTimeMs };
   return {
     clearRepo: async () => {
       await (await facadeConfig.db()).dropDatabase();
