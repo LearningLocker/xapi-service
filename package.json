@@ -40,6 +40,7 @@
   },
   "dependencies": {
     "@aws-sdk/client-s3": "^3.100.0",
+    "@aws-sdk/client-sqs": "^3.282.0",
     "@aws-sdk/lib-storage": "^3.100.0",
     "@azure/storage-blob": "^10.3.0",
     "@google-cloud/storage": "^5.8.1",
@@ -208,6 +209,8 @@
       "functional/prefer-type-literal": "off",
       "functional/no-throw-statement": "off",
       "functional/no-try-statement": "off",
+      "functional/no-let": "off",
+      "functional/no-loop-statement": "off",
       "functional/prefer-readonly-type": [
         "error",
         {

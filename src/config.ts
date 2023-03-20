@@ -64,6 +64,14 @@ export default {
     prefix: getStringOption(process.env.REDIS_PREFIX, 'LEARNINGLOCKER'),
     url: getStringOption(process.env.REDIS_URL, 'redis://127.0.0.1:6379/0'),
   },
+  aws: {
+    region: globalAwsRegion,
+    accessKeyId: globalAwsIamAccessKeyId,
+    secretAccessKey: globalAwsIamAccessKeySecret,
+  },
+  sqs: {
+    prefix: getStringOption(process.env.QUEUE_NAMESPACE, 'DEV'),
+  },
   repoFactory: {
     authRepoName: getStringOption(process.env.AUTH_REPO, 'mongo'),
     eventsRepoName: getStringOption(process.env.EVENTS_REPO, 'redis'),
