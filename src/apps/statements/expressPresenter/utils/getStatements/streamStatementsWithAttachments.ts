@@ -1,13 +1,11 @@
+import { Writable } from 'stream';
 import { reduce } from 'bluebird';
+
 import AttachmentModel from '../../../models/AttachmentModel';
 
 export const boundary = 'zzzlearninglockerzzz';
 
-export default async (
-  jsonResponse: any,
-  attachments: AttachmentModel[],
-  stream: NodeJS.WritableStream,
-) => {
+export default async (jsonResponse: any, attachments: AttachmentModel[], stream: Writable) => {
   const crlf = '\r\n';
   const fullBoundary = `${crlf}--${boundary}${crlf}`;
   const stringResponse = JSON.stringify(jsonResponse);
