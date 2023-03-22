@@ -5,7 +5,6 @@ sourceMapSupport.install();
 import assert from 'assert';
 import { Readable as ReadableStream } from 'stream';
 import { map } from 'lodash';
-import 'mocha'; // eslint-disable-line import/no-unassigned-import
 import streamToString from 'stream-to-string';
 import Part from '../../models/Part';
 import getParts from '../utils/getParts';
