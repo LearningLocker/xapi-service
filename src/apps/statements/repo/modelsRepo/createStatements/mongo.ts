@@ -1,5 +1,9 @@
+/* eslint-disable no-console */
 import { ObjectId } from 'mongodb';
-import { STATEMENTS_COLLECTION_NAME } from '../utils/mongoModels/constants';
+import {
+  STATEMENTS_COLLECTION_NAME,
+  STORE_STATEMENT_WRITE_CONCERN_DEFAULT,
+} from '../utils/mongoModels/constants';
 import FacadeConfig from '../utils/mongoModels/FacadeConfig';
 import { encodeDotsInStatement } from '../utils/mongoModels/replaceDotsInStatement';
 import Signature from './Signature';
@@ -22,7 +26,9 @@ export default (config: FacadeConfig): Signature => {
     });
 
     const collection = (await config.db()).collection(STATEMENTS_COLLECTION_NAME);
-    await collection.insertMany(documents);
+    await collection.insertMany(documents, {
+      writeConcern: { w: STORE_STATEMENT_WRITE_CONCERN_DEFAULT },
+    });
     return opts.models;
   };
 };
