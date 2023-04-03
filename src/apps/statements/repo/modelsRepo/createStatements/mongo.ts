@@ -26,9 +26,11 @@ export default (config: FacadeConfig): Signature => {
     });
 
     const collection = (await config.db()).collection(STATEMENTS_COLLECTION_NAME);
+    console.time('STATEMENT INSERTION');
     await collection.insertMany(documents, {
       writeConcern: { w: STORE_STATEMENT_WRITE_CONCERN_DEFAULT },
     });
+    console.timeEnd('STATEMENT INSERTION');
     return opts.models;
   };
 };
