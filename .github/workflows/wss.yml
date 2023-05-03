@@ -11,11 +11,11 @@ env:
 jobs:
   curl:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 10
     steps:
       - name: Set output
         id: vars
-        run: echo ::set-output name=tag::${GITHUB_REF#refs/*/}
+        run: echo "tag=${GITHUB_REF#refs/*/}" >> $GITHUB_OUTPUT
       - name: Call Jenkins Job
         env:
           RELEASE_VERSION: ${{ steps.vars.outputs.tag }}
