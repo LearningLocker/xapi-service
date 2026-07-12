@@ -4493,7 +4493,7 @@ btoa@^1.1.2:
   resolved "https://registry.yarnpkg.com/btoa/-/btoa-1.2.1.tgz#01a9909f8b2c93f6bf680ba26131eb30f7fa3d73"
   integrity sha512-SB4/MIGlsiVkMcHmT+pSmIPoNDoHg+7cMzmt3Uxt628MTz2487DKSqK/fuhFBrkuqrYv5UCEnACpF4dTFNKc/g==
 
-buffer-equal-constant-time@1.0.1:
+buffer-equal-constant-time@1.0.1, buffer-equal-constant-time@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/buffer-equal-constant-time/-/buffer-equal-constant-time-1.0.1.tgz#f8e71132f7ffe6e01a5c9697a4c6f3e48d5cc819"
   integrity sha1-+OcRMvf/5uAaXJaXpMbz5I1cyBk=
@@ -7945,12 +7945,12 @@ jsonparse@^1.2.0, jsonparse@^1.3.1:
   resolved "https://registry.yarnpkg.com/jsonparse/-/jsonparse-1.3.1.tgz#3f4dae4a91fac315f71062f8521cc239f1366280"
   integrity sha1-P02uSpH6wxX3EGL4UhzCOfE2YoA=
 
-jsonwebtoken@^8.5.1:
-  version "8.5.1"
-  resolved "https://registry.yarnpkg.com/jsonwebtoken/-/jsonwebtoken-8.5.1.tgz#00e71e0b8df54c2121a1f26137df2280673bcc0d"
-  integrity sha512-XjwVfRS6jTMsqYs0EsuJ4LGxXV14zQybNd4L2r0UvbVnSF9Af8x7p5MzbJ90Ioz/9TI41/hTCvznF/loiSzn8w==
+jsonwebtoken@^9.0.0:
+  version "9.0.3"
+  resolved "https://registry.yarnpkg.com/jsonwebtoken/-/jsonwebtoken-9.0.3.tgz#6cd57ab01e9b0ac07cb847d53d3c9b6ee31f7ae2"
+  integrity sha512-MT/xP0CrubFRNLNKvxJ2BYfy53Zkm++5bX9dtuPbqAeQpTVe0MQTFhao8+Cp//EmJp244xt6Drw/GVEGCUj40g==
   dependencies:
-    jws "^3.2.2"
+    jws "^4.0.1"
     lodash.includes "^4.3.0"
     lodash.isboolean "^3.0.3"
     lodash.isinteger "^4.0.4"
@@ -7959,7 +7959,7 @@ jsonwebtoken@^8.5.1:
     lodash.isstring "^4.0.1"
     lodash.once "^4.0.0"
     ms "^2.1.1"
-    semver "^5.6.0"
+    semver "^7.5.4"
 
 jsprim@^1.2.2:
   version "1.4.1"
@@ -7991,15 +7991,6 @@ just-diff@^5.0.1:
   resolved "https://registry.yarnpkg.com/just-diff/-/just-diff-5.1.1.tgz#8da6414342a5ed6d02ccd64f5586cbbed3146202"
   integrity sha512-u8HXJ3HlNrTzY7zrYYKjNEfBlyjqhdBkoyTVdjtn7p02RJD5NvR8rIClzeGA7t+UYP1/7eAkWNLU0+P3QrEqKQ==
 
-jwa@^1.4.1:
-  version "1.4.1"
-  resolved "https://registry.yarnpkg.com/jwa/-/jwa-1.4.1.tgz#743c32985cb9e98655530d53641b66c8645b039a"
-  integrity sha512-qiLX/xhEEFKUAJ6FiBMbes3w9ATzyk5W7Hvzpa/SLYdxNtng+gcurvrI7TbACjIXlsJyr05/S1oUhZrc63evQA==
-  dependencies:
-    buffer-equal-constant-time "1.0.1"
-    ecdsa-sig-formatter "1.0.11"
-    safe-buffer "^5.0.1"
-
 jwa@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/jwa/-/jwa-2.0.0.tgz#a7e9c3f29dae94027ebcaf49975c9345593410fc"
@@ -8009,12 +8000,13 @@ jwa@^2.0.0:
     ecdsa-sig-formatter "1.0.11"
     safe-buffer "^5.0.1"
 
-jws@^3.2.2:
-  version "3.2.2"
-  resolved "https://registry.yarnpkg.com/jws/-/jws-3.2.2.tgz#001099f3639468c9414000e99995fa52fb478304"
-  integrity sha512-YHlZCB6lMTllWDtSPHz/ZXTsi8S00usEV6v1tjq8tOUZzw7DpSDWVXjXDre6ed1w/pd495ODpHZYSdkRTsa0HA==
+jwa@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/jwa/-/jwa-2.0.1.tgz#bf8176d1ad0cd72e0f3f58338595a13e110bc804"
+  integrity sha512-hRF04fqJIP8Abbkq5NKGN0Bbr3JxlQ+qhZufXVr0DvujKy93ZCbXZMHDL4EOtodSbCWxOqR8MS1tXA5hwqCXDg==
   dependencies:
-    jwa "^1.4.1"
+    buffer-equal-constant-time "^1.0.1"
+    ecdsa-sig-formatter "1.0.11"
     safe-buffer "^5.0.1"
 
 jws@^4.0.0:
@@ -8023,6 +8015,14 @@ jws@^4.0.0:
   integrity sha512-KDncfTmOZoOMTFG4mBlG0qUIOlc03fmzH+ru6RgYVZhPkyiy/92Owlt/8UEN+a4TXR1FQetfIpJE8ApdvdVxTg==
   dependencies:
     jwa "^2.0.0"
+    safe-buffer "^5.0.1"
+
+jws@^4.0.1:
+  version "4.0.1"
+  resolved "https://registry.yarnpkg.com/jws/-/jws-4.0.1.tgz#07edc1be8fac20e677b283ece261498bd38f0690"
+  integrity sha512-EKI/M/yqPncGUUh44xz0PxSidXFr/+r0pA70+gIYhjv+et7yxM+s29Y+VGDkovRofQem0fs7Uvf4+YmAdyRduA==
+  dependencies:
+    jwa "^2.0.1"
     safe-buffer "^5.0.1"
 
 keyv@^3.0.0:
@@ -10790,6 +10790,11 @@ semver@^7.0.0:
   integrity sha512-NB1ctGL5rlHrPJtFDVIVzTyQylMLu9N9VICA6HSFJo8MCGVTMW6gfpicwKmmK/dAjTOrqu5l63JJOpDSrAis3A==
   dependencies:
     lru-cache "^6.0.0"
+
+semver@^7.5.4:
+  version "7.8.5"
+  resolved "https://registry.yarnpkg.com/semver/-/semver-7.8.5.tgz#39b646037dd50c14fb451e7e4cac58ed8b863f69"
+  integrity sha512-Y7/KDsb8LjooZpwaqGyulO6DQlksgCncchHGk+sZIY4SBvUocMBEFH5Ur1fI4dV+Jvl0w6cjvucaIi40puRioA==
 
 send@0.17.2:
   version "0.17.2"
